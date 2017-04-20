@@ -1,0 +1,23 @@
+<?php
+return [
+    'adminEmail' => 'admin@example.com',
+    'baseUrl' => '',
+    'htmlUrl' => '/html',
+    'SMS_SN' => 'SDK-WSS-010-09431',
+    'SMS_SIG' => '申友国际教育',
+    'SMS_PWD' => '8a^-19e8',
+    'timeLimit' => 600,
+    'phone2' => '您正在通过手机预约申友网留学顾问！',
+    'phone1' => '您正在通过手机免费获取留学评估报告！',
+    'phone3' => '您正在通过手机预约申友网考试培训顾问！',
+    'phone4' => '您正在通过手机免费注册申友网公开课会员！',
+    'phone5' => '您正在通过手机找回申友公开课账号密码！',
+    'phone6' => '您正在通过邮箱免费注册申友网公开课会员！',
+    'phone7' => '您正在通过邮箱找回申友公开课账号密码！',
+    'phone8' => '您正在修改绑定手机！',
+    'phone9' => '您正在修改绑定邮箱！',
+    'schoolUrl' => 'http://schools.smartapply.cn/cn/api/school',
+    'categoryUrl' => 'http://schools.smartapply.cn/cn/api/cats',
+    'contentUrl' => 'http://schools.smartapply.cn/cn/api/content',
+    'schoolConnect' => 'http://schools.smartapply.cn',
+];

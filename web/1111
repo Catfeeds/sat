@@ -1,0 +1,29 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^thinkwithu\.com$ [NC]
+RewriteRule ^(.*)$ http://www.thinkwithu.com/$1 [L,R=301]
+# If a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+# Otherwise forward it to index.php
+#英国优化
+#RewriteRule ^USA\.html$  /user/login  [PT]
+#RewriteRule ^index\.html$  /index.php?r=cn/index/index  [L,NE]
+RewriteRule . index.php
+#
+##RewriteRule ^UK\.html$ /cn/study/index?id=89 [PT]
+
+#RewriteEngine on
+
+#RewriteCond %{HTTP_HOST} ^gmat.cn[NC]
+#RewriteRule ^(.*)$ http://www.gmat.com/ $1 [L,R=301]
+
+
+#RewriteRule ^(.*)$ index.php?r=$1
+#RewriteRule ^user\/login(.*)$ index.php?r=user/login$1 [PT]
+#RewriteRule ^(.*)$ index.php?r=$1 [PT]
+#
+#
+#RewriteRule ^USA\.html$ index.php?r=/cn/study/index&id=88
+
+#RewriteRule . index.php
