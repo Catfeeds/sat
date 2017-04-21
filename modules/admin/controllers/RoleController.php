@@ -59,11 +59,11 @@ class RoleController extends ApiControl {
 //        }
 //
 //    }
-    public function show(){
+    public function actionShow(){
         $id= Yii::$app->request->get('id','');
-        $data= Yii::$app->db->createCommand("select name,id from {{%node}} where pid=".$id)->queryAll();
+        $data= Yii::$app->db->createCommand("select * from {{%node}} where pid=".$id)->queryAll();
 //        var_dump($data);die;
-        return $data;
-
+//        return json_encode($data);
+        echo  json_encode($data);
     }
 }

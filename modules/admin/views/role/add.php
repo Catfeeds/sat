@@ -37,13 +37,19 @@
 <script>
     function show(id){
 //        alert(id);
-        $.get("/admin/role/show", {id: id},
-            function (msg) {
-                if (msg) {
-                    alert('msg');
-                }
-            }, 'text'
-        );
+                $.get("/admin/role/show", {id: id},
+                    function (msg) {
+                        if (msg) {
+//                            var obj = eval( msg );
+//                            console.log(obj);
+////                      var item;
+//                            $.each(msg,function(i,result){
+//                                item = "<tr><td>"+result['num']+"</td><td>"+result['title']+"</td><td>"+result['credate']+"</td><td>操作</td></tr>";
+//                                $('.table').append(item);
+//                            });
+                        }
+                    }, 'json'
+                );
     }
 
 </script>
