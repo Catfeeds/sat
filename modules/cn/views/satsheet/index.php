@@ -328,62 +328,8 @@
     </div>
   </div>
   
-  <!--马上预约享优惠-->
-<div class="favorable">
-    <h2>马上预约享优惠</h2>
-    <ul>
-        <?php
-        foreach($extendData as $k => $v) {
-            ?>
-            <li>
-                <label><span><?php echo $v['required'] == 1?'*':''?></span><?php echo $v['name']?>：</label>
-                <input name="extendValue[]" class="oneWidth"  <?php echo $v['required'] == 1?'class="val"':''?>  type="text"/>
-            </li>
-            <?php
-        }
-        ?>
-        <li>
-            <label>验证码：</label>
-            <input type="text" class="twoWidth" name="code"/>
-            <input type="button" onclick="onlineCode(this)" value="获取验证码"/>
-        </li>
-        <li>
-            <a href="javescript:void(0);" onclick="onlineSub(this)">点击提交 &gt;</a>
-        </li>
-    </ul>
 
-</div>
-	<script type="text/javascript">
-    function onlineCode(_this){
-        var phone = $(_this).closest('li').prev().find('input').val();
-        $.post('/cn/api/phone-code',{type:3,phoneNum:phone},function(re){
-            alert(re.message);
-        },"json")
-    }
 
-    function onlineSub(_this){
-        var phone = $(_this).closest('li').prev().prev().find('input').val();
-        var school = $(_this).closest('li').prev().prev().prev().find('input').val();
-        var name = $(_this).closest('li').prev().prev().prev().prev().find('input').val();
-        var code = $(_this).closest('li').prev().find('input').val();
-        if(phone == ''){
-            alert('留下您的联系方式');
-            return false;
-        }
-        if(code == ''){
-            alert('请输入验证码');
-            return false;
-        }
-        if(name == ''){
-            alert('请输入您的姓名');
-            return false;
-        }
-        $.post('/cn/api/subscribe',{name:name,phone:phone,school:school,code:code},function(re){
-            alert(re.message);
-            window.location.reload()
-        },"json")
-    }
-	</script>
 	<div class="contactWay">
     <div class="contactHead">联系方式</div>
     <div class="contactSlide">
@@ -393,43 +339,7 @@
             <a href="javascript:void(0);" class="next" onclick="slideNext()"><img src="/cn/images/mentor_next.png"
                                                                                   alt="图标"></a>
         </div>
-        <div class="conBd">
-            <ul>
-                <?php
-                $data = \app\modules\cn\models\Content::getContent(['fields' => "place,phone", 'category' => "210", 'pageSize' => 15, 'order' => 'sort']);
-                foreach ($data as $v) {
-                    ?>
-                    <li>
-                        <div class="smallStyle">
-                            <img src="<?php echo $v['image'] ?>" alt="图片">
 
-                            <div class="city"><?php echo $v['name'] ?></div>
-                        </div>
-                        <div class="bigStyle">
-                            <div class="big-left">
-                                <img src="<?php echo $v['image'] ?>" alt="图片">
-
-                                <div class="big-city"><?php echo $v['name'] ?></div>
-                            </div>
-                            <div class="big-right">
-                                <span>咨询热线：</span>
-
-                                <p class="purpleColor"><?php echo $v['phone'] ?></p>
-                                <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">
-                                    <img src="/cn/images/mentor_personIcon.png" alt="咨询图标">
-                                    <span>免费咨询</span>
-                                </a>
-
-                                <p>地址：<?php echo $v['place'] ?></p>
-                            </div>
-                            <div style="clear: both"></div>
-                        </div>
-                    </li>
-                    <?php
-                }
-                ?>
-            </ul>
-        </div>
     </div>
     <script type="text/javascript">
         //        jQuery(".contactSlide").slide({mainCell:".conBd ul",effect:"left",vis:5,pnLoop:false});
@@ -437,8 +347,8 @@
 	</div>
   <!-----------------------------尾部------------------------------>
 	<?php use app\commands\front\FooterWidget;?>
-	<?php FooterWidget::begin();?>
-	<?php FooterWidget::end();?>
+<!--	--><?php //FooterWidget::begin();?>
+<!--	--><?php //FooterWidget::end();?>
 	</body>
 	<script type="text/javascript">
 		 //    判断pc端还是移动端 进入对应页面
