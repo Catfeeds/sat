@@ -37,8 +37,8 @@
     <link rel="stylesheet" href="/cn/css/gmatSheet.css"/>
 
     <script type="text/javascript" src="/cn/js/gmatSheet.js"></script>
-    <link rel="stylesheet" href="/cn/Hirsi/css/reset.css">
-    <link rel="stylesheet" href="/cn/Hirsi/css/index.css">
+    <link rel="stylesheet" href="/cn/css/reset.css">
+    <link rel="stylesheet" href="/cn/css/index.css">
     <link rel="stylesheet" href="/cn/css/fonts/font-awesome/css/font-awesome.min.css"/>
     <link rel="shortcut icon" href="http://www.thinkwithu.com/favicon.ico" />
     <script type="text/javascript" src="/cn/js/public.js"></script>
