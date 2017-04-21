@@ -18,13 +18,16 @@ class RoleController extends ApiControl {
         return $this->render('index',['data'=>$data]);
     }
     public function actionAdd(){
-//        if(!$_POST){
+        if(!$_POST){
 ////            $data= Yii::$app->db->createCommand("select name,id from {{%role}} where pid=0")->queryAll();
 //////            var_dump($data);die;
-        $data= Yii::$app->db->createCommand("select name,id from {{%node}}")->queryAll();
-            return $this->render('add',['data'=>$data]);
-//        }else{
-////            var_dump($_POST);DIE;
+            $data= Yii::$app->db->createCommand("select name,id from {{%node}} where pid=0")->queryAll();
+            $data1= Yii::$app->db->createCommand("select name,id from {{%node}} where pid!=0")->queryAll();
+            return $this->render('add',['data'=>$data,'data1'=>$data1]);
+        }else{
+            $ids= Yii::$app->request->get('ids','');
+
+            var_dump($_POST);DIE;
 //            $node=new node();
 //            $nodeData=$node->add();
 //            if(empty($nodeData['name'])){
@@ -45,7 +48,7 @@ class RoleController extends ApiControl {
 //                echo '<script>alert("数据修改/添加失败，请重试");history.go(-1);</script>';
 //                die;
 //            }
-//        }
+        }
 //
     }
 //    public function actionDel(){
@@ -56,4 +59,11 @@ class RoleController extends ApiControl {
 //        }
 //
 //    }
+    public function show(){
+        $id= Yii::$app->request->get('id','');
+        $data= Yii::$app->db->createCommand("select name,id from {{%node}} where pid=".$id)->queryAll();
+//        var_dump($data);die;
+        return $data;
+
+    }
 }

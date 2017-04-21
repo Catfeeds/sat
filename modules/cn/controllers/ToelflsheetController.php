@@ -8,7 +8,7 @@
 namespace app\modules\cn\controllers;
 use yii;
 use yii\web\controller;
-class ToelflsheetController extends Controller{
+class IeltssheetController extends Controller{
     public function actionIndex(){
         return $this->renderPartial('index');
     }
