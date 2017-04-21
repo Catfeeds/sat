@@ -1,0 +1,342 @@
+.greyBig{
+    width: 100%;
+    height: 38px;
+    background: #eeeeee;
+}
+.greyNav{
+    width: 1001px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto;
+}
+.greyNav>a{
+    background: #973e92;
+    color: white;
+    border-radius: 3px;
+    padding: 0  10px 2px 10px;
+    font-family: '微软雅黑';
+    margin-left: 8px;
+    position: relative;
+    top: -15px;
+}
+.greyNav>a:hover{
+    color: white;
+}
+.greyNav div.rightUL{
+    float: right;
+}
+.greyNav div.rightUL ul li{
+    height: 38px;
+    float: left;
+}
+.greyNav div.rightUL ul li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0 12px;
+    border-left: 1px #c7c7c7 solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.greyNav div.rightUL ul li img{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.greyNav div.rightUL ul li span{
+    vertical-align: middle;
+}
+.greyNav div.rightUL ul li:last-child a{
+    border-right: 1px #c7c7c7 solid;
+}
+.greyNav div.rightUL ul li:hover a{
+    color: #5b258c;
+}
+.firstImg{
+    padding: 10px 5px;
+    border-left: 1px #bcbebd solid;
+    border-right: 1px #bcbebd solid;
+}
+.phoneImg{
+    margin-left: 65px;
+    position: relative;
+    top: -10px;
+}
+.head{
+    width: 1001px;
+    margin: 0 auto;
+    margin-top: 45px;
+    margin-bottom: 27px;
+    position: relative;
+}
+.head img{
+    width: 100%;
+}
+.FocusPicture{
+    width: 1001px;
+    height:448px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.FocusPicture img{
+    width: 100%;
+}
+/*.FocusPicture02{
+    width: 1001px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.FocusPicture02 img{
+    width: 100%;
+}*/
+.headSearch{
+    width: 1001px;
+    margin: 0 auto;
+    margin-top: 18px;
+    margin-bottom: 23px;
+    position: relative;
+}
+.headSearch>a>img{
+    width: 171px;
+}
+.headSearch .search{
+    width: 222px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -143px;
+}
+.headSearch .search input[type='text']{
+    width: 178px;
+    height: 26px;
+    border: 2px #82338c solid;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+}
+.headSearch .search input[type='button']{
+    width: 35px;
+    height: 34px;
+    background: url("../images/index_search.png") no-repeat;
+    background-size: 100% auto;
+    border: none;
+    float: left;
+    margin-left: 2px;
+}
+.headSearch .infoPhone{
+    text-align: center;
+    float: right;
+    margin-right: 24px;
+}
+.headSearch .infoPhone h2{
+    margin-top: -20px;
+}
+.headSearch .infoPhone h2 img{
+    width: 30px;
+}
+.bottomInfo{
+    width: 1001px;
+    margin: 0 auto;
+    margin-top: 19px;
+}
+.bottomInfo ul{
+    float: right;
+    margin-top: 15px;
+}
+.bottomInfo ul li{
+    margin-right: 15px;
+    float: left;
+}
+.bottomInfo ul li:hover a{
+    color: #5b258c;
+}
+.bottomInfo ul li:last-child{
+    margin-right: 0;
+}
+
+.bottomInfo ul li img{
+    margin-right: 2px;
+    vertical-align: middle;
+}
+.bottomInfo ul li a{
+    color: #292929;
+    vertical-align: middle;
+}
+/*导航栏*/
+/*.waiHnav{
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.headNav{
+    width: 100%;
+    height: 35px;
+    background: #81318b;
+}
+.headNavFix{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:50;
+}
+.bac02{
+    width: 67px;
+    height: 35px;
+    background: url("../images/index_navBac02.png") no-repeat;
+    background-size:  auto 100%;
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+.headNav>ul{
+    width: 1001px;
+    margin: 0 auto;
+}
+.headNav>ul>li{
+    width: 123px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    text-align: center;
+    border-left: 1px #a15aaa solid;
+    border-right: 1px #a15aaa solid;
+}
+.headNav>ul>li:not(.backg){
+    position: relative;
+}
+.headNav>ul>li:not(.backg):hover{
+    background: #c3a2e9;
+}
+.headNav>ul>li:not(.backg):hover>a{
+    color: white;
+    font-weight: bold;
+}
+.headNav>ul>li>a{
+    color: white;
+    font-size: 16px;
+}
+.headNav>ul>li.backg{
+    height: 35px;
+    font-weight: bold;
+    background: url("../images/index_navBac.png") no-repeat;
+    background-size: auto 100%;
+    margin-right: 20px;
+}
+.titleML{
+    margin-left: 5px;
+}
+.headNav>ul>li:not(.backg) .america{
+    width: 569px;
+    height: 175px;
+    background: #c3a2e9;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 55;
+    padding-top: 28px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: none;
+}
+
+.headNav>ul>li:not(.backg):hover .america{
+    display: block;
+}
+.headNav>ul>li:not(.backg) .america ul li a{
+    color: white;
+}
+.headNav>ul>li:not(.backg) .america ul li:hover a{
+    color: #200441;
+}
+.headNav>ul>li:not(.backg):hover .otherCountry{
+    display: block;
+}
+.america .more{
+    color: #200441;
+    position: absolute;
+}
+.otherCountry{
+    width: 100%;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 1;
+    background: #c3a2e9;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: none;
+}
+.otherCountry ul li{
+    text-align: left;
+}
+.otherCountry ul li a{
+    color: white;
+}
+.otherCountry ul li:hover a{
+    color: #200441;
+}
+.otherCountry .mores{
+    font-size: 14px;
+    color: #200441;
+}
+.america .moreL{
+    right: 10px;
+    bottom: 15px;
+}
+.america .moreR{
+    right: 44px;
+    bottom: -30px;
+}
+.amerLeft{
+    width: 45%;
+    height: 100%;
+    float: left;
+    padding-left: 23px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+.amerLeft>ul>li{
+    line-height: 25px;
+    padding: 0 10px;
+    float: left;
+}
+.amerLeft>ul>li.ml{
+    margin-left: 80px;
+}
+.amerLeft>ul>li:not(.rightBorder):hover>a{
+    color: #81318b;
+}
+.amerLeft>ul>li.rightBorder{
+    width: 60px;
+    border-right: 1px white solid;
+}
+.amerRight{
+    width: 55%;
+    float: left;
+    padding-left: 40px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    border-left: 2px #0b0b0b solid;
+}
+.amerRight>ul>li{
+    width: 77px;
+    line-height: 25px;
+    float: left;
+}
+.amerRight>ul>li:first-child:hover>a{
+    color: #000000;
+}
+.amerRight>ul>li:hover>a{
+    color: #82338c;
+}
+.amerRight>ul>li.rightBorder{
+    border-right: 1px white solid;
+}*/

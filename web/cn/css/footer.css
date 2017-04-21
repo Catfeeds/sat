@@ -1,0 +1,133 @@
+.footer{
+    width: 100%;
+    /*background: #354a5f;*/
+    padding: 10px 0 30px 0;
+    color: white;
+    background: url("../images/footer_bigBG.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer a{
+    color: white;
+}
+.footerFont{
+    width: 1188px;
+    margin: 0 auto;
+}
+.footerFont>ul>li{
+    width: 236px;
+    float: left;
+    border-right: 2px #f8fdff solid;
+    /*text-align: center;*/
+    /*border: 1px red solid;*/
+}
+.footerFont>ul>li:last-child{
+    border-right: none;
+}
+.footerFont>ul>li>ol{
+    /*border: 1px red solid;*/
+    display: inline-block;
+}
+.footerFont>ul>li>ol>li>a{
+    color: white;
+}
+.footerFont>ul>li>ol>li>a:hover{
+    color: #e9d4fb;
+}
+.footerFont>ul>li>ol.olTwo{
+    margin-left: 97px;
+}
+.footerFont>ul>li>ol.olTwo>li{
+    line-height: 20px;
+
+}
+.footerFont>ul>li>ol.olThree>li{
+    line-height: 26px;
+}
+.threeML{
+    margin-left: 97px;
+}
+.threeDiff{
+    margin-left: 45px;
+}
+.footerFont>ul>li>ol.twoDiff{
+    margin-left: 70px;
+}
+.footerFont>ul>li>ol.olThree>li a.mla{
+    margin-left: 26px;
+}
+.footerPhone{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 14px;
+}
+.footerPhone>b{
+    width: 245px;
+    margin: 0 auto;
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    padding-left: 64px;
+    background: url("../images/index_bigPhone.png") no-repeat;
+    background-size: auto 100%;
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+.footerPhone>b:hover{
+    cursor: pointer;
+    background: url("../images/index_bigPhone02.png") no-repeat;
+    background-size: auto 100%;
+}
+.footerPhone ul li{
+    width: 161px;
+    height: 82px;
+    display: inline-block;
+    /*float: left;*/
+    background: #253850;
+    border-radius: 10px;
+    padding: 5px 0 0 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-right: 50px;
+}
+.footerPhone ul li:last-child{
+    margin-right: 0;
+}
+.left-ewm{
+    width: 75px;
+    height: 75px;
+    float: left;
+    background: white;
+    text-align: center;
+    padding: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.left-ewm img{
+    width: 100%;
+}
+.right-font{
+    width: 82px;
+    height: 100%;
+    line-height: 76px;
+    float: left;
+    text-align: center;
+    color: white;
+}
+.smallFoot{
+    width: 100%;
+    text-align: center;
+    background: #eeeeee;
+    font-size: 12px;
+    padding: 10px 0 5px 0;
+}
+.smallFoot span a{
+    /*color: deepskyblue;*/
+}
