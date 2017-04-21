@@ -696,7 +696,7 @@
 /*****************************footer*********************/
 footer {
     padding: 30px 0;
-    background: url("../images/bg-5.png") no-repeat center center;
+    background: url("/cn/images/bg-5.png") no-repeat center center;
     background-size: cover;
 }
 
@@ -789,7 +789,7 @@ footer .footer-list:last-child {
     /*width: 992px;*/
     width: 1140px;
     padding: 30px;
-    background: url("../images/int-bg.png") no-repeat 0 0;
+    background: url("/cn/images/int-bg.png") no-repeat 0 0;
     background-size: cover;
 }
 
