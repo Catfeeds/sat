@@ -25,12 +25,12 @@
     <!-- 让360双核浏览器用webkit内核渲染页面
     <--================================================== -->
     <meta name="renderer" content="webkit">
-    <link rel="stylesheet" href="/cn/ielts/css/animate.min.css">
+    <link rel="stylesheet" href="/cn/css/animate.min.css">
     <link rel="stylesheet" href="/cn/ielts/css/reset.css">
     <link rel="stylesheet" href="/cn/ielts/css/main.css">
     <!--<script src="/cn/ielts/js/jquery-1.12.2.min.js"></script>-->
-    <script src="/cn/ielts/js/jquery1.42.min.js"></script>
-    <script src="/cn/ielts/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="/cn/js/jquery1.42.min.js"></script>
+    <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
     <link rel="stylesheet" href="/cn/css/header.css"/>
     <link rel="stylesheet" href="/cn/css/footer.css"/>
     <link rel="stylesheet" href="/cn/css/public.css"/>
@@ -51,8 +51,8 @@
 <!-----------------------------头部------------------------------>
 <header class="sy-header">
     <div class="w10 clearfix">
-        <img src="/cn/Hirsi/images/sy-text.png" style="margin-right: 55px" alt="高分成就梦想名校改变人生">
-        <img src="/cn/Hirsi/images/sy-tel.png" alt="400-600-1123">
+        <img src="/cn/images/sy-text.png" style="margin-right: 55px" alt="高分成就梦想名校改变人生">
+        <img src="/cn/images/sy-tel.png" alt="400-600-1123">
         <a class="refer-btn"
            href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw="
            target="_blank">在线咨询</a>
@@ -64,7 +64,7 @@
         <!--搜索-->
         <div class="search-wrap fr">
             <input class="search" type="search" placeholder="请输入关键词">
-            <img src="/cn/Hirsi/images/search-icon.png" style="margin-left: -1px;cursor: pointer;" alt="搜索">
+            <img src="/cn/images/search-icon.png" style="margin-left: -1px;cursor: pointer;" alt="搜索">
         </div>
     </div>
 </header>
@@ -76,7 +76,7 @@
 
 <div class="header" style="margin-top: -10px">
     <div class="h-wrap relative">
-        <img src="/cn/ielts/images/h3-ietl.png" alt="">
+        <img src="/cn/images/h3-ietl.png" alt="">
         <div class="h1-select">
             <a target="_blank" href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">雅思冲6计划</a>
             <a target="_blank" href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">雅思冲6.5计划</a>
@@ -146,7 +146,7 @@
             <h1 class="c-tit">我们用专业说话</h1>
             <p class="c-de">标准严格的服务流程，不让你漏掉任何一个细节，95%的高通过率</p>
         </div>
-        <img class="circle ani" src="/cn/ielts/images/circle.png" alt="">
+        <img class="circle ani" src="/cn/images/circle.png" alt="">
         <div class="l-tit ani">
             <div class="c3-t2-wrap">
                 <span class="c3-num inb">1</span>
@@ -154,7 +154,7 @@
                     <p class="c3-t2">精准测试评估</p>
                     <p class="c3-d2">严格的雅思入学测试，评估学生水平，对症下药</p>
                 </div>
-                <img class="ani n1" src="/cn/ielts/images/n1.png" alt="">
+                <img class="ani n1" src="/cn/images/n1.png" alt="">
             </div>
             <div class="c3-t2-wrap">
                 <span class="c3-num inb">2</span>
@@ -162,7 +162,7 @@
                     <p class="c3-t2">个性化规划</p>
                     <p class="c3-d2">课程顾问根据测试结果，进行一对一面谈，制定科学的学习规划和考试方案。</p>
                 </div>
-                <img class="ani n2" src="/cn/ielts/images/n2.png" alt="">
+                <img class="ani n2" src="/cn/images/n2.png" alt="">
             </div>
             <div class="c3-t2-wrap">
                 <span class="c3-num inb">3</span>
@@ -170,7 +170,7 @@
                     <p class="c3-t2">专业团队配备</p>
                     <p class="c3-d2">申友雅思为学生提供系统化知识结构，改善学习方法，提高答题技巧。</p>
                 </div>
-                <img class="ani n3" src="/cn/ielts/images/n3.png" alt="">
+                <img class="ani n3" src="/cn/images/n3.png" alt="">
             </div>
         </div>
         <div class="r-tit ani tr">
@@ -180,7 +180,7 @@
                     <p class="c3-d2">学生在非上课时间，可与学管老师进行免费答疑。课后高效完成老师布置作业，阶段测试，及时反映学习成果。</p>
                 </div>
                 <span class="c3-num inb">4</span>
-                <img class="ani n4" src="/cn/ielts/images/n-4.png" alt="">
+                <img class="ani n4" src="/cn/images/n-4.png" alt="">
             </div>
             <div class="c3-t2-wrap">
                 <div class="inb c2-text2">
@@ -188,7 +188,7 @@
                     <p class="c3-d2">助教建立学生档案，每周回访一次学生自习情况，单词听写，作业完成情况。搜集家长和学生意见建议。</p>
                 </div>
                 <span class="c3-num inb">5</span>
-                <img class="ani n5" src="/cn/ielts/images/n-5.png" alt="">
+                <img class="ani n5" src="/cn/images/n-5.png" alt="">
             </div>
             <div class="c3-t2-wrap">
                 <div class="inb c2-text2">
@@ -196,10 +196,10 @@
                     <p class="c3-d2">申友雅思学管老师、顾问辅助学生进行考试报名，考前心理疏导。考后跟进学生分数进行诊断。</p>
                 </div>
                 <span class="c3-num inb">6</span>
-                <img class="ani n6" src="/cn/ielts/images/n-6.png" alt="">
+                <img class="ani n6" src="/cn/images/n-6.png" alt="">
             </div>
         </div>
-        <img class="hand ani" src="/cn/ielts/images/hand.png" alt="">
+        <img class="hand ani" src="/cn/images/hand.png" alt="">
     </div>
 </section>
 <section>
@@ -210,7 +210,7 @@
         </div>
         <ul class="teach-list clearfix">
             <li>
-                <div><img src="/cn/ielts/images/c2.png" alt=""></div>
+                <div><img src="/cn/images/c2.png" alt=""></div>
                 <p class="c4-name">Amanda Dai</p>
                 <p class="c4-de">
                     申友雅思教学研发总监，英国兰卡斯特大学
@@ -223,7 +223,7 @@
                    href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>
             </li>
             <li>
-                <div><img src="/cn/ielts/images/c3.png" alt=""></div>
+                <div><img src="/cn/images/c3.png" alt=""></div>
                 <p class="c4-name">Julie Li</p>
                 <p class="c4-de">
                     申友雅思王牌教师，美国加州大学博士，国
@@ -237,7 +237,7 @@
                    href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>
             </li>
             <li>
-                <div><img src="/cn/ielts/images/Gary.png" alt=""></div>
+                <div><img src="/cn/images/Gary.png" alt=""></div>
                 <p class="c4-name">Gary</p>
                 <p class="c4-de">
                     毕业于上海外国语大学，教授雅思阅读、写作；多年的海内外教学经历、理论加实践的复合型学习使自己对于雅思写作的把控有着深刻与独到的见解，培养了无数高分甚至满分学员。才华与颜值兼并的长腿欧巴，教学风格激情、负责、幽默，深受广大学生喜欢。
@@ -258,7 +258,7 @@
                 <span class="show">点击查看</span>
             </a>
             <a class="inb other" target="_blank" href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw="><img
-                    src="/cn/ielts/images/other.png" alt=""></a>
+                    src="/cn/images/other.png" alt=""></a>
             <a class="show-link" href="">
                 <p class="consult-de">申友雅思课程还有哪些增值的服务？</p>
                 <span class="show">点击查看</span>

@@ -40,8 +40,8 @@
 	<!-----------------------------头部------------------------------>
 	<header class="sy-header">
     <div class="w10 clearfix">
-        <img src="/cn/Hirsi/images/sy-text.png" style="margin-right: 55px" alt="高分成就梦想名校改变人生">
-        <img src="/cn/Hirsi/images/sy-tel.png" alt="400-600-1123">
+        <img src="/cn/images/sy-text.png" style="margin-right: 55px" alt="高分成就梦想名校改变人生">
+        <img src="/cn/images/sy-tel.png" alt="400-600-1123">
         <a class="refer-btn"
            href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw="
            target="_blank">在线咨询</a>
@@ -53,7 +53,7 @@
         <!--搜索-->
         <div class="search-wrap fr">
             <input class="search" type="search" placeholder="请输入关键词">
-            <img src="/cn/Hirsi/images/search-icon.png" style="margin-left: -1px;cursor: pointer;" alt="搜索">
+            <img src="/cn/images/search-icon.png" style="margin-left: -1px;cursor: pointer;" alt="搜索">
         </div>
     </div>
 	</header>

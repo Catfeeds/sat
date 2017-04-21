@@ -10,6 +10,6 @@ use yii;
 use yii\web\controller;
 class IeltssheetController extends Controller{
     public function actionIndex(){
-        return $this->renderPartial('index');
+        return $this->render('index');
     }
 }
