@@ -10,6 +10,6 @@ use yii;
 use yii\web\controller;
 class ToelflsheetController extends Controller{
     public function actionIndex(){
-        return $this->renderPartial('index');
+        return $this->render('index');
     }
 }

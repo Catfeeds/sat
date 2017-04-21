@@ -10,6 +10,6 @@ use yii;
 use yii\web\controller;
 class GmatsheetController extends Controller{
     public function actionIndex(){
-        return $this->renderPartial('index');
+        return $this->render('index');
     }
 }
