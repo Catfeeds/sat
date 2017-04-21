@@ -327,28 +327,10 @@
       </div>
     </div>
   </div>
-  
-
-
-	<div class="contactWay">
-    <div class="contactHead">联系方式</div>
-    <div class="contactSlide">
-        <div class="conHd hd">
-            <a href="javascript:void(0);" class="prev" onclick="slidePrev()"><img src="/cn/images/mentor_prev.png"
-                                                                                  alt="图标"></a>
-            <a href="javascript:void(0);" class="next" onclick="slideNext()"><img src="/cn/images/mentor_next.png"
-                                                                                  alt="图标"></a>
-        </div>
-
-    </div>
-    <script type="text/javascript">
-        //        jQuery(".contactSlide").slide({mainCell:".conBd ul",effect:"left",vis:5,pnLoop:false});
-    </script>
-	</div>
   <!-----------------------------尾部------------------------------>
 	<?php use app\commands\front\FooterWidget;?>
-<!--	--><?php //FooterWidget::begin();?>
-<!--	--><?php //FooterWidget::end();?>
+	<?php FooterWidget::begin();?>
+	<?php FooterWidget::end();?>
 	</body>
 	<script type="text/javascript">
 		 //    判断pc端还是移动端 进入对应页面
