@@ -4,59 +4,59 @@
         <ul>
             <li>
                 <ol class="olTwo">
-                    <li><a href="/USA.html">美国留学</a></li>
-                    <li><a href="/UK.html">英国留学</a></li>
-                    <li><a href="/HK.html">香港留学</a></li>
-                    <li><a href="/AUS.html">澳洲留学</a></li>
-                    <li class="tm"><a href="/COUNTRY.html">其他</a></li>
+                    <li><a href="#">美国留学</a></li>
+                    <li><a href="#">英国留学</a></li>
+                    <li><a href="#">香港留学</a></li>
+                    <li><a href="#">澳洲留学</a></li>
+                    <li class="tm"><a href="#">其他</a></li>
                 </ol>
             </li>
             <li>
                 <ol class="olTwo twoDiff tm">
-                    <li><a href="/public-class.html">GMAT课堂</a></li>
+                    <li><a href="#">GMAT课堂</a></li>
                     <li><a href="/gmatsheet.html">GMAT培训</a></li>
                     <li><a href="/gmatsheet.html">GMAT课程</a></li>
                     <li><a href="/toefl/assistance.html">托福培训</a></li>
-                    <li><a href="/case.html">高分案例</a></li>
+                    <li><a href="#">高分案例</a></li>
                 </ol>
             </li>
             <li>
                 <ol class="olThree threeML">
-                    <li><a href="/Undergraduate.html">本科留学</a></li>
-                    <li><a href="/Postgraduate.html">硕士留学</a></li>
-                    <li><a href="/Doctor.html">博士留学</a></li>
-                    <li><a href="/practices.html">游学服务</a></li>
+                    <li><a href="#">本科留学</a></li>
+                    <li><a href="#">硕士留学</a></li>
+                    <li><a href="#">博士留学</a></li>
+                    <li><a href="#">游学服务</a></li>
 
                 </ol>
             </li>
             <li>
                 <ol class="olThree threeDiff">
                     <li>
-                        <a href="/schools.html">院校搜索</a>
-                        <a href="/study-aboard/assistance.html" class="mla">留学方案</a>
+                        <a href="#">院校搜索</a>
+                        <a href="#" class="mla">留学方案</a>
                     </li>
                     <li>
-                        <a style="font-size: 12px" href="/problem.html">GMAT题库</a>
-                        <a style="margin-left: 22px" href="/public-class.html" class="mla">申友课堂</a>
+                        <a style="font-size: 12px" href="#">GMAT题库</a>
+                        <a style="margin-left: 22px" href="#" class="mla">申友课堂</a>
                     </li>
                     <li>
-                        <a href="/mentor.html">留学顾问</a>
-                        <a href="/practices.html" class="mla">实习资源</a>
+                        <a href="#">留学顾问</a>
+                        <a href="#" class="mla">实习资源</a>
                     </li>
                     <li>
-                        <a href="/question.html">留学问答</a>
-                        <a href="/evaluation.html" class="mla">留学评估</a>
+                        <a href="#">留学问答</a>
+                        <a href="#" class="mla">留学评估</a>
                     </li>
 
                 </ol>
             </li>
             <li>
                 <ol class="olTwo">
-                    <li><a href="/about-thinku.html">关于我们</a></li>
-                    <li><a href="/teachers/interviews.html">名师文档</a></li>
-                    <li><a href="/about-thinku.html">行业资质</a></li>
-                    <li><a href="/joinus.html">加入我们</a></li>
-                    <li><a href="/contactus.html">联系我们</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">名师文档</a></li>
+                    <li><a href="#">行业资质</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">联系我们</a></li>
                 </ol>
             </li>
         </ul>
