@@ -11,16 +11,31 @@
         </tr>
         </thead>
         <tbody>
-
+            <?php foreach($data as $val){?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $val['id'] ?></td>
+                <td><?php echo $val['name'] ?></td>
+                <td><?php echo $val['ids'] ?></td>
+                <td><?php echo $val['path'] ?></td>
                 <td>
-
+                    <a  href="<?php echo baseUrl."/admin/role/add"."?id=".$val['id']?>">修改</a>
+                    <a  href="" onclick="del(<?php echo $val['id'] ?>)">删除</a>
                 </td>
             </tr>
-        </volist>
+
+        <?php }?>
         </tbody>
     </table>
+    <script>
+        function del(id){
+            if(confirm("确定删除内容吗")) {
+                $.get("/admin/role/del", {id: id},
+                    function (msg) {
+                        if (msg) {
+                            alert('删除成功');
+                        }
+                    }, 'text'
+                );
+            }
+        }
+    </script>

@@ -31,7 +31,7 @@
                 <td><? echo $v['teacher']?></td>
                 <td><? echo $v['introduction']?></td>
                 <td>
-                    <a class="link-update" href="<?php echo baseUrl.'/admin/classes/edit'.'?'.'id='.$v['id']?>">修改</a>
+                    <a class="link-update" href="<?php echo baseUrl.'/admin/classes/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>
                 </td>
             </tr>

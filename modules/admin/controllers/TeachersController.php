@@ -22,6 +22,7 @@ class TeachersController extends ApiControl {
 //    添加讲师
     public function actionAdd()
     {
+        $enableCsrfValidation = false;
 //        $apps     = Yii::$app->request;
         if(!$_POST){
             $id= Yii::$app->request->get('id','');

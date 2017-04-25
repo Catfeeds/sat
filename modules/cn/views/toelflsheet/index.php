@@ -1,6 +1,44 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/cn/css/footer.css"/>
+  	<link rel="stylesheet" href="/cn/css/public.css"/>
+	<link rel="stylesheet" href="/cn/css/reset.css">
+	<link rel="stylesheet" href="/cn/css/index.css">
     <link rel="stylesheet" href="/cn/css/toeflSheet.css"/>
-    <script type="text/javascript" src="/cn/js/toeflSheet.js"></script>
+    <link rel="stylesheet" href="/cn/css/gmatSheet.css"/>
+  	<script src="/cn/js/jquery1.42.min.js"></script>
+  	<script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
+  	<script type="text/javascript" src="/cn/js/toeflSheet.js"></script>
+  	<script type="text/javascript" src="/cn/js/gmatSheet.js"></script>
+  	<script type="text/javascript" src="/cn/js/public.js"></script>
+</head>
+<body>
+<!-----------------------------头部------------------------------>
+	<header class="sy-header">
+    <div class="w10 clearfix">
+        <img src="/cn/images/sy-text.png" style="margin-right: 55px" alt="高分成就梦想名校改变人生">
+        <img src="/cn/images/sy-tel.png" alt="400-600-1123">
+        <a class="refer-btn"
+           href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw="
+           target="_blank">在线咨询</a>
+        <!--登录&注册-->
+        <div class="login-wrap fr" style="display: none;">
+            <span class="on">登录</span>
+            <span>注册</span>
+        </div>
+        <!--搜索-->
+        <div class="search-wrap fr">
+            <input class="search" type="search" placeholder="请输入关键词">
+            <img src="/cn/images/search-icon.png" style="margin-left: -1px;cursor: pointer;" alt="搜索">
+        </div>
+    </div>
+	</header>
+  <?php use app\commands\front\BannerWidget;?>
+	<?php BannerWidget::begin();?>
+	<?php BannerWidget::end();?>
+	<div style="clear: both;margin-bottom: 10px;"></div>
+	<!--导航栏结束-->
 <div class="toefl-banner">
 	<img src="/cn/images/toefl-topBanner.png"/>
     <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">提分课程咨询</a>
@@ -357,3 +395,21 @@
 <script type="text/javascript">
     jQuery(".connection").slide({mainCell:".connectBd",trigger:"mouseover"});
 </script>
+  <!-----------------------------尾部------------------------------>
+	<?php use app\commands\front\FooterWidget;?>
+	<?php FooterWidget::begin();?>
+	<?php FooterWidget::end();?>
+	</body>
+	<script type="text/javascript">
+		 //    判断pc端还是移动端 进入对应页面
+    function goPAGE() {
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            window.location.href = "mob/index.html";
+        }
+        else {
+//            window.location.href="index.html";
+        }
+    }
+    goPAGE();
+	</script>
+</html>

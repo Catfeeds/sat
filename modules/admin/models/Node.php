@@ -26,6 +26,7 @@ class Node extends ActiveRecord{
     public function add(){
         $nodeData['name']= Yii::$app->request->post('name','');
         $nodeData['pid']= Yii::$app->request->post('pid','');
+        $nodeData['id']= Yii::$app->request->post('id','');
         $nodeData['module']= Yii::$app->request->post('module','');
         $nodeData['controller']= Yii::$app->request->post('controller','');
         $nodeData['action']= Yii::$app->request->post('action','');
@@ -40,7 +41,7 @@ class Node extends ActiveRecord{
             if($value['pid'] == $pid){
                 $value['lev'] = $lev;
                 $arr[] = $value;
-                $this->getCateList($data, $value['id'], $lev+1);
+                $this->getList($data, $value['id'], $lev+1);
             }
         }
         return $arr;

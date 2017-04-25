@@ -13,6 +13,7 @@ class KnowledgeController extends ApiControl
 
     public function actionAdd()
     {
+        $enableCsrfValidation = false;
         if(!$_POST){
             $id=Yii::$app->request->get('id','');
             if(empty($id)){

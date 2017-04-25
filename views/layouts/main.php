@@ -14,7 +14,7 @@
     <link href="/css/coreCss/layoutit.css" rel="stylesheet">
     <link href="/css/coreCss/plugin.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Uploadify/uploadify.css">
-    <script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="/easyui/jquery.min.js"></script>-->
 
     <script src="/Uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
 </head>

@@ -20,6 +20,7 @@ class InfoController extends ApiControl {
 //    添加资讯
     public function actionAdd()
     {
+        $enableCsrfValidation = false;
         if(!$_POST){
 //            查找资讯，取出资讯的分类信息，展示到添加页面
 //           $arr=$this->getCate('资讯');

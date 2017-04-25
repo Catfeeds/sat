@@ -10,60 +10,70 @@ namespace app\modules\admin\controllers;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\role;
-//use yii\filters\AccessControl;
-//use yii\filters\VerbFilter;
 class RoleController extends ApiControl {
+
     public function actionIndex(){
         $data= Yii::$app->db->createCommand("select * from {{%role}}")->queryAll();
         return $this->render('index',['data'=>$data]);
     }
     public function actionAdd(){
+        $enableCsrfValidation = false;
+        $id=Yii::$app->request->get('id', '');
+        $role=new Role();
         if(!$_POST){
-////            $data= Yii::$app->db->createCommand("select name,id from {{%role}} where pid=0")->queryAll();
-//////            var_dump($data);die;
-            $data= Yii::$app->db->createCommand("select name,id from {{%node}} where pid=0")->queryAll();
-            $data1= Yii::$app->db->createCommand("select name,id from {{%node}} where pid!=0")->queryAll();
-            return $this->render('add',['data'=>$data,'data1'=>$data1]);
-        }else{
-            $ids= Yii::$app->request->get('ids','');
+            $data= Yii::$app->db->createCommand("select * from {{%node}}")->queryAll();
+            $data=$role->getCateList($data);
+//            #id 为空即为非修改页面
+            if(empty($id)){
+                return $this->render('add',['data'=>$data]);
+            }else{
+                $data1= Yii::$app->db->createCommand("select id,name,ids from {{%role}} where id=".$id)->queryOne();
+                return $this->render('add',['data'=>$data,'data1'=>$data1]);
+            }
 
-            var_dump($_POST);DIE;
-//            $node=new node();
-//            $nodeData=$node->add();
-//            if(empty($nodeData['name'])){
-//                die('<script>alert("请填写节点名");history.go(-1);</script>');
-//            }
-//
-//            if(empty($nodeData['controller'])){
-//                die('<script>alert("请添加控制器名");history.go(-1);</script>');
-//            }
-//            if(empty($nodeData['action'])){
-//                die('<script>alert("请添加方法名");history.go(-1);</script>');
-//            }
-////            var_dump($nodeData);die;
-//            $re = Yii::$app->db->createCommand()->insert("{{%node}}", $nodeData)->execute();
-//            if($re){
-//                $this->redirect('index');
-//            }else{
-//                echo '<script>alert("数据修改/添加失败，请重试");history.go(-1);</script>';
-//                die;
-//            }
+        }else{
+            $ids = Yii::$app->request->post('ids', '');
+            if(!empty($ids)) $ids = implode(',', $ids);
+            $roleData['ids'] = $ids;
+            $roleData['name'] = Yii::$app->request->post('name', '');
+            $roleData['id'] = Yii::$app->request->post('id', '');
+//            var_dump($_POST);die;
+            if(!empty($ids)){
+                $data = Yii::$app->db->createCommand("select path from {{%node}} where id in ($ids)")->queryAll();
+                $str='';
+                foreach($data as $v){
+                    $str .=$v['path'].","."</br>";
+                }
+            }else{
+                $str='';
+            }
+//            组装path；
+
+            $roleData['path']=$str;
+//            var_dump($str);die;
+            if (empty($roleData['name'] || $roleData['ids']) ) {
+                die('<script>alert("请将数据填写完整");history.go(-1);</script>');
+            }
+//            存在$roleData['id']即为修改提交，否则为添加
+            if(empty($roleData['id'])){
+                $re = Yii::$app->db->createCommand()->insert("{{%role}}", $roleData)->execute();
+            }else{
+                $re = $role->updateAll($roleData,'id=:id',array(':id'=>$roleData['id']));
+            }
+            if ($re) {
+                $this->redirect('index');
+            } else {
+                echo '<script>alert("数据添加添加\修改失败，请重试");history.go(-1);</script>';
+                die;
+            }
         }
-//
     }
-//    public function actionDel(){
-//        $id= Yii::$app->request->get('id','');
-//        $re =Node::deleteAll("id=:id",array(':id' => $id));
-//        if($re){
-//            echo true;
-//        }
-//
-//    }
-    public function actionShow(){
+    public function actionDel(){
         $id= Yii::$app->request->get('id','');
-        $data= Yii::$app->db->createCommand("select * from {{%node}} where pid=".$id)->queryAll();
-//        var_dump($data);die;
-//        return json_encode($data);
-        echo  json_encode($data);
+        $re =Role::deleteAll("id=:id",array(':id' => $id));
+        if($re){
+            echo true;
+        }
+
     }
 }

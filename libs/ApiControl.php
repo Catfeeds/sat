@@ -9,22 +9,25 @@
     use app\modules\basic\models\Params;
     use app\modules\basic\models\Block;
 	class ApiControl extends Controller {
+//        private $m;
 		public function init() {
             $this->config();
             $session  = Yii::$app->session;
             $userId   = $session->get('adminId');
+//            无登录无法进入后台
             if(!$userId){
                 $this->redirect('/admin/login/index');
             }
+               $this->role();
 		}
 // 4.12日，目前不知道这个配置嘛用
         public function config(){
             define('baseUrl',Yii::$app->params['baseUrl']);
             define('tablePrefix',Yii::$app->db->tablePrefix);
-            $data = Params::find()->all();
-            foreach($data as $v){
-                define($v->key,$v->value);
-            }
+//            $data = Params::find()->all();
+//            foreach($data as $v){
+//                define($v->key,$v->value);
+//            }
         }
 //        @$name 类别的名称，通过父类来获取子类的id
         public function getCate($name){
@@ -48,6 +51,26 @@
                 $path=ltrim($a['savepath'].$a['savename'],'.');
                 return $path;
             }
+
+	    }
+        public function role()
+        {
+//            获取当前的路径与权限路径对比
+            $now_path=ltrim($_SERVER['REQUEST_URI'],'/');
+            $now_path=explode('?',$now_path);
+            $now_path=$now_path[0];
+//            var_dump($now_path) ;
+            $rid  =  Yii::$app->session->get('rid');
+////            根据管理员的ID，查找权限
+            $path= Yii::$app->db->createCommand("select path from {{%role}} where id='$rid'")->queryOne();
+            $path=$path['path'];
+//            echo $path;
+////            return $path;
+            if(strpos(rtrim($path,','),$now_path)===false){
+                echo '<script>alert("越权，请重试");history.go(-1);</script>';
+                die;
+            }
         }
-	}
+
+    }
 ?>

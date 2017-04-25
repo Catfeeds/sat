@@ -1,55 +1,20 @@
-<div class="table-box" xmlns="http://www.w3.org/1999/html">
-    <form action="<?php echo baseUrl."/admin/role/add"?>" method="post">
-        <table>
-            <tr>
-                <td>角色名:</td>
-                <td><input type="text" name="name"></td>
-            </tr>
-            <tr>
-                <td>模&nbsp;&nbsp;块:</td>
-                <td><input type="text" name="modules" value="admin" readonly="readonly"></td>
-
-            </tr>
-            <tr>
-                <td>控制器:</td>
-                <td>
-                    <?php foreach($data as $v){?>
-                    <a id="<?php echo$v['id']?>" onclick="show(<?php echo$v['id']?>)"> <?php echo $v['name'] ?></a>
-                    <?php } ?>
-                </td>
-            </tr>
-            <tr>
-                <td>方法:</td>
-                <td ><?php foreach($data1 as $val){?>
-                        <input type="checkbox" name="action" value="<?php echo $val['id'] ?>"/><?php echo $val['name'] ?>
-
-                    <?php } ?></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="right">
-                    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                    <input id="btn" type="button" value="分配权限" onclick="this.disabled=true; this.form.submit();">
-                </td>
-            </tr>
-        </table>
+<div class="span10">
+    <form action="<?php echo baseUrl."/admin/role/add" ?>" method="post">
+        <span>角色名:</span>
+        <div><input type="text" name="name" value="<?php echo isset($data1)? $data1['name']:''?>"></div>
+        <span>模&nbsp;&nbsp;块:</span>
+        <div><input type="text" name="modules" value="admin" readonly="readonly"></div>
+        <span>方法:</span>
+        <div class="action" width="50%">
+            <?php foreach($data as $v){?>
+              <span style="padding-left:<?php echo $v['level']*20?>px">
+                <input type="checkbox" name="ids[]" value="<?php echo $v['id']?>" <?php echo isset($data1) && strpos($data1['ids'],$v['id'])!==false ?  'checked':''?>>
+                 <?php echo $v['name'] ?>
+              </span></br>
+            <?php } ?>
+        </div>
+            <input type="hidden" name="id" value="<?php echo isset($data1)? $data1['id']:''?>" />
+            <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+            <input id="btn" type="button" value="分配权限" onclick="this.disabled=true; this.form.submit();">
     </form>
 </div>
-<script>
-    function show(id){
-//        alert(id);
-                $.get("/admin/role/show", {id: id},
-                    function (msg) {
-                        if (msg) {
-//                            var obj = eval( msg );
-//                            console.log(obj);
-////                      var item;
-//                            $.each(msg,function(i,result){
-//                                item = "<tr><td>"+result['num']+"</td><td>"+result['title']+"</td><td>"+result['credate']+"</td><td>操作</td></tr>";
-//                                $('.table').append(item);
-//                            });
-                        }
-                    }, 'json'
-                );
-    }
-
-</script>

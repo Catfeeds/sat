@@ -20,7 +20,7 @@
         <?php foreach($data as $v){?>
             <tr>
                 <td><?php echo $v['id']?></td>
-                <td><?php echo $v['name']?></td>
+                <td style="padding-left:<?php echo $v['level']*20?>px"><?php echo $v['name']?></td>
                 <td><?php echo $v['level']?></td>
                 <td><?php echo $v['pid']?></td>
                 <td><?php echo $v['module']?></td>
@@ -41,7 +41,7 @@
 <script>
     function del(id){
         if(confirm("确定删除内容吗")) {
-            $.get("/admin/cate/del", {id: id},
+            $.get("/admin/node/del", {id: id},
                 function (msg) {
                     if (msg) {
                         alert('删除成功');

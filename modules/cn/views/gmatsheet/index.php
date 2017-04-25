@@ -1,7 +1,43 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/cn/css/footer.css"/>
+  	<link rel="stylesheet" href="/cn/css/public.css"/>
+	<link rel="stylesheet" href="/cn/css/reset.css">
+	<link rel="stylesheet" href="/cn/css/index.css">
+    <link rel="stylesheet" href="/cn/css/toeflSheet.css"/>
     <link rel="stylesheet" href="/cn/css/gmatSheet.css"/>
+  	<script src="/cn/js/jquery1.42.min.js"></script>
+  	<script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
+  	<script type="text/javascript" src="/cn/js/public.js"></script>
     <script type="text/javascript" src="/cn/js/gmatSheet.js"></script>
-
+</head>
+<body>
+<!-----------------------------头部------------------------------>
+	<header class="sy-header">
+    <div class="w10 clearfix">
+        <img src="/cn/images/sy-text.png" style="margin-right: 55px" alt="高分成就梦想名校改变人生">
+        <img src="/cn/images/sy-tel.png" alt="400-600-1123">
+        <a class="refer-btn"
+           href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw="
+           target="_blank">在线咨询</a>
+        <!--登录&注册-->
+        <div class="login-wrap fr" style="display: none;">
+            <span class="on">登录</span>
+            <span>注册</span>
+        </div>
+        <!--搜索-->
+        <div class="search-wrap fr">
+            <input class="search" type="search" placeholder="请输入关键词">
+            <img src="/cn/images/search-icon.png" style="margin-left: -1px;cursor: pointer;" alt="搜索">
+        </div>
+    </div>
+	</header>
+  <?php use app\commands\front\BannerWidget;?>
+	<?php BannerWidget::begin();?>
+	<?php BannerWidget::end();?>
+	<div style="clear: both;margin-bottom: 10px;"></div>
+	<!--导航栏结束-->
 <div style="clear: both"></div>
 <div class="gmat-topImg">
     <img src="/cn/images/gmat_bigBG.jpg"/>
@@ -288,16 +324,6 @@
                    href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>          
             		</li>
             		<li>
-            			<img src="/cn/images/gmat_natasha.jpg" alt="老师照片"/>
-            			<div class="summer-title">
-            				<p>Natasha</p>
-            				<p>主讲：GMAT阅读、写作、逻辑、数学、IR</p>
-            			</div>
-            			<p class="summer-cent">GMAT团队阅读名师，英语师范专业毕业，专业八级。拥有丰富的教育培训行业经验，善于把握重难点，预测常考语言特征及其推理方向；提出“错误特征排除，正确特征验证”的做题方法，和适用于阅读推断题的“就近推理法”，在实践教学中帮助学生拓宽思维、加深理解，提高正确率。</p>
-					    <a class="btn-2" target="_blank"
-                   href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>
-            		</li>
-            		<li>
             			<img src="/cn/images/gmat_portia.jpg" alt="教师照片"/>
             			<div class="summer-title">
             				<p>Portia</p>
@@ -403,3 +429,21 @@
     <img src="/cn/images/mentor_phoneFont.png" alt="电话文字">
     <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">点击咨询报名</a>
 </div>
+  <!-----------------------------尾部------------------------------>
+	<?php use app\commands\front\FooterWidget;?>
+	<?php FooterWidget::begin();?>
+	<?php FooterWidget::end();?>
+	</body>
+	<script type="text/javascript">
+		 //    判断pc端还是移动端 进入对应页面
+    function goPAGE() {
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            window.location.href = "mob/index.html";
+        }
+        else {
+//            window.location.href="index.html";
+        }
+    }
+    goPAGE();
+	</script>
+</html>

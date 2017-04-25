@@ -25,7 +25,7 @@ class LoginController extends Controller {
         $userId = $session->get('adminId');
         if($userId)
         {
-            $this->redirect('/index/index');
+            $this->redirect('admin/index/index');
         }else{
             return $this->renderPartial('index');
         }
@@ -50,12 +50,8 @@ class LoginController extends Controller {
            if(!empty($loginsdata['id']))
            {
                $session->set('adminId',$loginsdata['id']);
-               if ($loginsdata['image'] == null) {
-                   $loginsdata['image'] = '';
-               }
                $session->set('userName',$loginsdata['userName']);
-//               session保存的数据太多了
-//               $session->set('adminData', $loginsdata);
+               $session->set('rid',$loginsdata['roleId']);
                $this->redirect('/index/index');
            }
            else
