@@ -9423,3 +9423,3112 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1493686965.1848
     'REQUEST_TIME' => 1493686965
 ]
+2017-05-02 10:19:13 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: D:\WWW\sat\modules\cn\views\satsheet\index.php' in D:\WWW\sat\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\WWW\\sat\\modu...', Array, Object(app\modules\cn\controllers\SatsheetController))
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('index', Array, Object(app\modules\cn\controllers\SatsheetController))
+#2 D:\WWW\sat\modules\cn\controllers\SatsheetController.php(13): yii\base\Controller->renderPartial('index')
+#3 [internal function]: app\modules\cn\controllers\SatsheetController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/satsheet/ind...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+2017-05-02 10:19:13 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1912'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61249'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493691553.262
+    'REQUEST_TIME' => 1493691553
+]
+2017-05-02 10:19:15 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: D:\WWW\sat\modules\cn\views\satsheet\index.php' in D:\WWW\sat\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\WWW\\sat\\modu...', Array, Object(app\modules\cn\controllers\SatsheetController))
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('index', Array, Object(app\modules\cn\controllers\SatsheetController))
+#2 D:\WWW\sat\modules\cn\controllers\SatsheetController.php(13): yii\base\Controller->renderPartial('index')
+#3 [internal function]: app\modules\cn\controllers\SatsheetController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/satsheet/ind...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+2017-05-02 10:19:15 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1912'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61262'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493691555.254
+    'REQUEST_TIME' => 1493691555
+]
+2017-05-02 10:20:29 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: D:\WWW\sat\modules\cn\views\satsheet\index.php' in D:\WWW\sat\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\WWW\\sat\\modu...', Array, Object(app\modules\cn\controllers\SatsheetController))
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('index', Array, Object(app\modules\cn\controllers\SatsheetController))
+#2 D:\WWW\sat\modules\cn\controllers\SatsheetController.php(13): yii\base\Controller->renderPartial('index')
+#3 [internal function]: app\modules\cn\controllers\SatsheetController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/satsheet/ind...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+2017-05-02 10:20:28 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1912'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61293'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493691628.985
+    'REQUEST_TIME' => 1493691628
+]
+2017-05-02 10:25:50 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: D:\WWW\sat\modules\cn\views\satsheet\index.php' in D:\WWW\sat\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\WWW\\sat\\modu...', Array, Object(app\modules\cn\controllers\SatsheetController))
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('index', Array, Object(app\modules\cn\controllers\SatsheetController))
+#2 D:\WWW\sat\modules\cn\controllers\SatsheetController.php(13): yii\base\Controller->renderPartial('index')
+#3 [internal function]: app\modules\cn\controllers\SatsheetController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/satsheet/ind...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+2017-05-02 10:25:50 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1912'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61346'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493691950.271
+    'REQUEST_TIME' => 1493691950
+]
+2017-05-02 10:25:51 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'thinku.x2_classes' doesn't exist' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#3 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'thinku.x2_classes' doesn't exist
+The SQL being executed was: select id,major,introduction,cate from `x2_classes` ' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select id,major...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#3 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'thinku.x2_classes' doesn't exist
+)
+
+2017-05-02 10:25:51 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1912'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61347'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493691951.748
+    'REQUEST_TIME' => 1493691951
+]
+2017-05-02 10:33:20 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sat.x2_classes' doesn't exist' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#3 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sat.x2_classes' doesn't exist
+The SQL being executed was: select id,major,introduction,cate from `x2_classes` ' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select id,major...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#3 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'sat.x2_classes' doesn't exist
+)
+
+2017-05-02 10:33:20 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1940'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61007'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692400.341
+    'REQUEST_TIME' => 1493692400
+]
+2017-05-02 10:33:25 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sat.x2_classes' doesn't exist' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#3 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sat.x2_classes' doesn't exist
+The SQL being executed was: select id,major,introduction,cate from `x2_classes` ' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select id,major...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#3 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'sat.x2_classes' doesn't exist
+)
+
+2017-05-02 10:33:25 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61014'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692405.517
+    'REQUEST_TIME' => 1493692405
+]
+2017-05-02 10:34:21 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)' in D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=127....', 'admin', 'admin', NULL)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(206): yii\db\Connection->getSlavePdo()
+#5 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(819): yii\db\Command->prepare(true)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#8 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#9 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#10 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#11 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#12 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#13 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)' in D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(206): yii\db\Connection->getSlavePdo()
+#3 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(819): yii\db\Command->prepare(true)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#6 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#7 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#10 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#11 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#13 {main}
+Additional Information:
+
+2017-05-02 10:34:21 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61066'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692461.763
+    'REQUEST_TIME' => 1493692461
+]
+2017-05-02 10:34:23 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)' in D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=127....', 'admin', 'admin', NULL)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(206): yii\db\Connection->getSlavePdo()
+#5 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(819): yii\db\Command->prepare(true)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#8 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#9 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#10 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#11 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#12 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#13 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)' in D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(206): yii\db\Connection->getSlavePdo()
+#3 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(819): yii\db\Command->prepare(true)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 D:\WWW\sat\modules\cn\controllers\ClassesController.php(14): yii\db\Command->queryAll()
+#6 [internal function]: app\modules\cn\controllers\ClassesController->actionIndex()
+#7 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#10 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#11 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#13 {main}
+Additional Information:
+
+2017-05-02 10:34:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61067'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692463.234
+    'REQUEST_TIME' => 1493692463
+]
+2017-05-02 10:36:08 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:36:08 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65327'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692568.463
+    'REQUEST_TIME' => 1493692568
+]
+2017-05-02 10:36:08 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:36:08 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65327'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692568.903
+    'REQUEST_TIME' => 1493692568
+]
+2017-05-02 10:37:06 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "details.html".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('details.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:37:06 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/details.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/details.html'
+    'REMOTE_PORT' => '65343'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692626.408
+    'REQUEST_TIME' => 1493692626
+]
+2017-05-02 10:37:09 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "course.html".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('course.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:37:09 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/course.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/course.html'
+    'REMOTE_PORT' => '65343'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692629.741
+    'REQUEST_TIME' => 1493692629
+]
+2017-05-02 10:37:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "course.html".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('course.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:37:15 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/course.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/course.html'
+    'REMOTE_PORT' => '65358'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692635.459
+    'REQUEST_TIME' => 1493692635
+]
+2017-05-02 10:37:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "details.html".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('details.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:37:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/details.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/details.html'
+    'REMOTE_PORT' => '65358'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692639.175
+    'REQUEST_TIME' => 1493692639
+]
+2017-05-02 10:37:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:37:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65366'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692641.768
+    'REQUEST_TIME' => 1493692641
+]
+2017-05-02 10:37:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:37:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65366'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692641.8
+    'REQUEST_TIME' => 1493692641
+]
+2017-05-02 10:39:04 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65471'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692744.501
+    'REQUEST_TIME' => 1493692744
+]
+2017-05-02 10:39:04 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65471'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692744.536
+    'REQUEST_TIME' => 1493692744
+]
+2017-05-02 10:39:05 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: cn/classes/details.html' in D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/deta...', Array)
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:05 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/classes/details.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/classes/details.html'
+    'REMOTE_PORT' => '65478'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692745.512
+    'REQUEST_TIME' => 1493692745
+]
+2017-05-02 10:39:22 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:22 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65489'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692762.007
+    'REQUEST_TIME' => 1493692762
+]
+2017-05-02 10:39:22 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:22 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65489'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692762.035
+    'REQUEST_TIME' => 1493692762
+]
+2017-05-02 10:39:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: cn/classes/details.html' in D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/deta...', Array)
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/classes/details.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/classes/details.html'
+    'REMOTE_PORT' => '65489'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692763.016
+    'REQUEST_TIME' => 1493692763
+]
+2017-05-02 10:39:29 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: cn/classes/details.html' in D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/deta...', Array)
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:29 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/classes/details.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/classes/details.html'
+    'REMOTE_PORT' => '65497'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692769.784
+    'REQUEST_TIME' => 1493692769
+]
+2017-05-02 10:39:32 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: cn/classes/index.html' in D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/classes/inde...', Array)
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:39:32 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/classes/index.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/classes/index.html'
+    'REMOTE_PORT' => '65498'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692772.145
+    'REQUEST_TIME' => 1493692772
+]
+2017-05-02 10:40:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65513'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692823.267
+    'REQUEST_TIME' => 1493692823
+]
+2017-05-02 10:40:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65513'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692823.301
+    'REQUEST_TIME' => 1493692823
+]
+2017-05-02 10:40:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/details.html".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/details.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:24 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1932'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/details.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/details.html'
+    'REMOTE_PORT' => '65513'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692824.527
+    'REQUEST_TIME' => 1493692824
+]
+2017-05-02 10:40:25 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:25 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '65521'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692825.764
+    'REQUEST_TIME' => 1493692825
+]
+2017-05-02 10:40:26 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/index.html".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/index.html', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:26 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/index.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/index.html'
+    'REMOTE_PORT' => '65521'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692826.517
+    'REQUEST_TIME' => 1493692826
+]
+2017-05-02 10:40:49 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49159'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692849.209
+    'REQUEST_TIME' => 1493692849
+]
+2017-05-02 10:40:49 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:40:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49159'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692849.24
+    'REQUEST_TIME' => 1493692849
+]
+2017-05-02 10:41:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49206'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692877.811
+    'REQUEST_TIME' => 1493692877
+]
+2017-05-02 10:41:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49206'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692877.845
+    'REQUEST_TIME' => 1493692877
+]
+2017-05-02 10:41:43 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.eot".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:43 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.eot?'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.eot'
+    'REDIRECT_QUERY_STRING' => ''
+    'REMOTE_PORT' => '49500'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692903.898
+    'REQUEST_TIME' => 1493692903
+]
+2017-05-02 10:41:43 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:43 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49495'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692903.944
+    'REQUEST_TIME' => 1493692903
+]
+2017-05-02 10:41:44 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49496'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692904.192
+    'REQUEST_TIME' => 1493692904
+]
+2017-05-02 10:41:56 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.eot".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:56 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.eot?'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.eot'
+    'REDIRECT_QUERY_STRING' => ''
+    'REMOTE_PORT' => '49533'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/class_details/10.html'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692916.765
+    'REQUEST_TIME' => 1493692916
+]
+2017-05-02 10:41:56 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:56 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49532'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/class_details/10.html'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692916.804
+    'REQUEST_TIME' => 1493692916
+]
+2017-05-02 10:41:56 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:56 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49537'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/class_details/10.html'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692916.83
+    'REQUEST_TIME' => 1493692916
+]
+2017-05-02 10:41:58 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.eot".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:58 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.eot?'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.eot'
+    'REDIRECT_QUERY_STRING' => ''
+    'REMOTE_PORT' => '49536'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692918.125
+    'REQUEST_TIME' => 1493692918
+]
+2017-05-02 10:41:58 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49539'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692918.158
+    'REQUEST_TIME' => 1493692918
+]
+2017-05-02 10:41:58 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:41:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49540'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692918.202
+    'REQUEST_TIME' => 1493692918
+]
+2017-05-02 10:42:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.eot".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:42:21 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.eot?'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.eot'
+    'REDIRECT_QUERY_STRING' => ''
+    'REMOTE_PORT' => '49552'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692941.419
+    'REQUEST_TIME' => 1493692941
+]
+2017-05-02 10:42:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:42:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49551'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692941.463
+    'REQUEST_TIME' => 1493692941
+]
+2017-05-02 10:42:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:42:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1812'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49555'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN'
+    'HTTP_REFERER' => 'http://sat.cc/'
+    'HTTP_ACCEPT' => '*/*'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493692941.487
+    'REQUEST_TIME' => 1493692941
+]
+2017-05-02 10:48:36 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.woff".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:48:36 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1736'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.woff?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.woff'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49655'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493693316.032
+    'REQUEST_TIME' => 1493693316
+]
+2017-05-02 10:48:36 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/font/fontawesome-webfont.ttf".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/font/fontawe...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-05-02 10:48:36 [127.0.0.1][-][-][info][application] $_GET = [
+    'v' => '3.2.1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8' => '1492746005'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1736'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/font/fontawesome-webfont.ttf?v=3.2.1'
+    'QUERY_STRING' => 'v=3.2.1'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/font/fontawesome-webfont.ttf'
+    'REDIRECT_QUERY_STRING' => 'v=3.2.1'
+    'REMOTE_PORT' => '49655'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.cc'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_e59a33493ccdfd0202bca0a2225bb1c8=1492746005'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://sat.cc/cn/css/font-awesome.min.css'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'http://sat.cc'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'sat.cc'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1493693316.079
+    'REQUEST_TIME' => 1493693316
+]

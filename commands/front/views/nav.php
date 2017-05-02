@@ -14,8 +14,8 @@
             </ul>
         </li>
         <li><a href="#">模考</a></li>
-        <li><a href="details.html">报告</a></li>
-        <li><a href="course.html">课程</a></li>
+        <li><a href="#">报告</a></li>
+        <li><a href="#">课程</a></li>
         <li><a href="#">名师团队</a></li>
         <li><a href="#">学员案例</a></li>
         <li><a href="#">公开课</a></li>
