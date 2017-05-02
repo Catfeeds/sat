@@ -14,22 +14,7 @@
          * 定义函数
          * */
         public function init()
-        {//这个可以取侧边栏数据
-//            $userId = Yii::$app->session->get('adminId');
-//            $model = new Block();
-//            $this->navData = $model->find()->where("pid = 1 AND status = 1")->orderBy('id')->all();
-//            // 取出所有的数据
-//            $this->navData = $model->find()->where("pid = 1 AND status = 1")->orderBy('id')->all();
-           // var_dump($data);exit;
-            //$userBlock = Yii::$app->db->createCommand("select ub.blockId from {{%user_block}} ub LEFT JOIN {{%block}} b ON ub.blockId = b.id WHERE ub.userId = $userId AND b.pid=1")->queryAll();
-            //foreach($userBlock as $v){
-            //     $this->blockArr[] = $v['blockId'];
-            // }
-//            foreach ($data as $v){
-//                echo "<li>";
-//
-//                echo "</li>";
-//            }
+        {//这个可以取侧边栏数
         }
 
         /**

@@ -17,7 +17,7 @@ class Classes extends ActiveRecord
     {
         return [
             // username and password are both required
-            [['className','cate','','duration'], 'required'],
+            [['student','cate','','duration'], 'required'],
 
         ];
     }

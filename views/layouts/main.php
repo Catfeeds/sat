@@ -7,7 +7,7 @@
     <meta name="description" content="sat在线后台">
     <meta name="keywords" content="sat在线后台">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>新网站在线后台</title>
+    <title>sat在线后台</title>
     <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
     <!-- Le styles -->
     <link href="/css/coreCss/bootstrap-combined.min.css" rel="stylesheet">

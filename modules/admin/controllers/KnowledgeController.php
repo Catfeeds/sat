@@ -51,7 +51,6 @@ class KnowledgeController extends ApiControl
                 die;
             }
         }
-
     }
 
     public function actionDel()

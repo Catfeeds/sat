@@ -24,9 +24,9 @@
                 <span>
                     <input type="text"  name="nums" value="<?php echo isset($data)?$data['nums']:''?>" placeholder="上边题干所包含的题目题号，如1,2,3 标点为英文状态" style="width:80%;">
                 </span></br>
-                <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷:  </span>
+                <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷&nbsp;:  </span>
                 <span>
-                    <input type="text"  name="tpID" value="<?php echo isset($data)?$data['tpID']:''?>" placeholder="上边题干所包含的题目题号，如1,2,3 标点为英文状态" style="width:80%;">
+                    <input type="text"  name="tpID" value="<?php echo isset($data)?$data['tpID']:''?>" placeholder="试卷的id名" style="width:80%;">
                 </span>
                 </br>
                 <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>

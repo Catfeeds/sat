@@ -22,17 +22,17 @@ class Info extends ActiveRecord
 
         ];
     }
-//    上传文件处理
-    public function upImage(){
-        $up=new \UploadFile();
-        $savePath="D:/phpStudy/WWW/shenyousat/Upload/images/";
-        $file=$_FILES['up'];
-        $data= $up->uploadOne($file,$savePath);
-
-        $a=$data['arr_data']['arr_data'][0];
-        $path=$a['savepath'].$a['savename'];
-//        var_dump($path);
-        return $path;
-
-    }
+////    上传文件处理
+//    public function upImage(){
+//        $up=new \UploadFile();
+//        $savePath="D:/phpStudy/WWW/shenyousat/Upload/images/";
+//        $file=$_FILES['up'];
+//        $data= $up->uploadOne($file,$savePath);
+//
+//        $a=$data['arr_data']['arr_data'][0];
+//        $path=$a['savepath'].$a['savename'];
+////        var_dump($path);
+//        return $path;
+//
+//    }
 }

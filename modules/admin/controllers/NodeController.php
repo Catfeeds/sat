@@ -11,9 +11,6 @@ namespace app\modules\admin\controllers;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\Node;
-
-//use yii\filters\AccessControl;
-//use yii\filters\VerbFilter;
 class NodeController extends ApiControl
 {
     public function actionIndex()

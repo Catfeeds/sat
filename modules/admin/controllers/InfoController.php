@@ -13,7 +13,6 @@ class InfoController extends ApiControl {
 //    所有资讯的显示
     public function actionIndex()
     {
-        $model      = new Info();
         $data = Yii::$app->db->createCommand("select * from {{%info}} ")->queryAll();
         return $this->render('index',['data'=>$data]);
     }
@@ -23,7 +22,6 @@ class InfoController extends ApiControl {
         $enableCsrfValidation = false;
         if(!$_POST){
 //            查找资讯，取出资讯的分类信息，展示到添加页面
-//           $arr=$this->getCate('资讯');
             $id= Yii::$app->request->get('id','');
             if(empty($id)){
 //               添加时
@@ -31,7 +29,6 @@ class InfoController extends ApiControl {
             }else{
 //                修改时显示到修改页面的数据
                 $data= Yii::$app->db->createCommand("select * from {{%info}} where id=".$id)->queryOne();
-//                var_dump($data);die;
                 return $this->render('add',['data'=>$data]);
             }
 
@@ -42,8 +39,8 @@ class InfoController extends ApiControl {
             $infoData['title'] = Yii::$app->request->post('title','');
             $infoData['cate']      = Yii::$app->request->post('cate','');
             $infoData['content']  = Yii::$app->request->post('content','');
-            $infoData['publishTime']=time();
-//            var_dump($infoData);die;
+            $infoData['publishTime']=date("Y-m-d H:i:s",time());
+//            var_dump($infoData['publishTime']);die;
             if(empty($infoData['title'])){
                 die('<script>alert("请添加资讯标题");history.go(-1);</script>');
             }
@@ -55,29 +52,27 @@ class InfoController extends ApiControl {
             }
             $info=new Info();
 //            添加时不带id
+//            无上传图片时
             if(empty( $infoData['id'])){
-                $path=$this->upImage('info');
-                $infoData['pic']       = $path;
-                $re = Yii::$app->db->createCommand()->insert("{{%info}}",$infoData)->execute();
-                if($re){
-                    echo '<script>alert("数据添加成功")</script>';
-                    $this->redirect('index');
+//                var_dump($_FILES);die;
+                if(empty($_FILES['up']['name'])){
+                    $infoData['pic']='';
                 }else{
-                    echo '<script>alert("数据添加失败，请重试");history.go(-1);</script>';
-                    die;
+                    $path=$this->upImage('info');
+                    $infoData['pic']       = $path;
                 }
+                $re = Yii::$app->db->createCommand()->insert("{{%info}}",$infoData)->execute();
             }else{
 //                修改时，提交id
                 $infoData['pic']       = Yii::$app->request->post('up','');
                 $re = $info->updateAll($infoData,'id=:id',array(':id'=>$infoData['id']));
-                if($re){
-                    echo '<script>alert("数据修改成功")</script>';
-                    $this->redirect('index');
-                }else{
-                    echo '<script>alert("数据修改失败，请重试");history.go(-1);</script>';
-                    die;
-                }
            }
+            if($re){
+                $this->redirect('index');
+            }else{
+                echo '<script>alert("数据添加/修改失败，请重试");history.go(-1);</script>';
+                die;
+            }
 
         }
     }

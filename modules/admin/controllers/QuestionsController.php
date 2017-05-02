@@ -34,12 +34,10 @@ class QuestionsController extends ApiControl
                 return $this->render('add');
             } else {
                 $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $id)->queryOne();
-//                var_dump($data);die;
                 return $this->render('add', ['data' => $data]);
             }
         } else {
             //      添加数据到数据
-
             $model = new Questions();
             $questionsData = Yii::$app->request->post('teachers');
             $questionsData ['id'] = Yii::$app->request->post('id', '');
@@ -54,7 +52,6 @@ class QuestionsController extends ApiControl
             $questionsData ['major'] = Yii::$app->request->post('major', '');
             $questionsData ['sourceid'] = Yii::$app->request->post('sourceid', '');
             $questionsData ['leverid'] = Yii::$app->request->post('leverid', '');
-//            var_dump($questionsData);die;
             if (empty($questionsData ['essay'])) {
                 if (empty($questionsData ['content'])) {
                     die('<script>alert("请添加题目");history.go(-1);</script>');
@@ -68,7 +65,6 @@ class QuestionsController extends ApiControl
             } else {
 
             }
-//            var_dump($className);exit;
             if ($questionsData['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $questionsData)->execute();
                 if ($re) {
@@ -90,12 +86,11 @@ class QuestionsController extends ApiControl
             }
         }
     }
-
+//ajax删除数据
     public function actionDel()
     {
         $id = Yii::$app->request->get('id', '');
         $model = new Questions();
-//        var_dump($id);die;
         $re = Questions::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             echo true;
@@ -130,15 +125,12 @@ class QuestionsController extends ApiControl
             $paperData['id'] = Yii::$app->request->post('id', '');
             $paperData ['time'] = Yii::$app->request->post('time', '');
             $paperData ['source'] = Yii::$app->request->post('source', '');
-//            var_dump($questionsData);die;
             if (empty($paperData['name'])) {
                 die('<script>alert("请添加试卷名称");history.go(-1);</script>');
             }
             if (empty($paperData['major'])) {
                 die('<script>alert("请选择科目");history.go(-1);</script>');
             }
-
-//            var_dump($className);exit;
             if ($paperData['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%testpaper}}", $paperData)->execute();
                 if ($re) {
@@ -172,11 +164,9 @@ class QuestionsController extends ApiControl
 
     public function actionEssay()
     {
-
         $essayData ['essay'] = Yii::$app->request->post('essay', '');
         $essayData ['nums'] = Yii::$app->request->post('nums', '');
         $essayData ['tpID'] = Yii::$app->request->post('tpID', '');
-//        var_dump($essayData);
         $re = Yii::$app->db->createCommand()->insert("{{%essay}}", $essayData)->execute();
         if ($re) {
             echo '<script>alert("数据添加成功")</script>';

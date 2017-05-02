@@ -72,13 +72,4 @@ class LoginController extends Controller {
         $session->remove('adminId');
         $this->redirect('/admin/login');
     }
-//
-//    /**生成静态页
-//     * @Obelisk
-//     */
-//    public function actionHtml(){
-//        if(@unlink("html\cn\heard.html")){
-//            die("<script>history.go(-1) </script>");
-//        }
-//    }
 }

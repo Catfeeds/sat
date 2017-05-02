@@ -6,8 +6,6 @@
 	namespace app\libs;
     use yii;
     use yii\web\Controller;
-    use app\modules\basic\models\Params;
-    use app\modules\basic\models\Block;
 	class ApiControl extends Controller {
 //        private $m;
 		public function init() {
@@ -67,7 +65,7 @@
 //            echo $path;
 ////            return $path;
             if(strpos(rtrim($path,','),$now_path)===false){
-                echo '<script>alert("越权，请重试");history.go(-1);</script>';
+                echo '<script>alert("无权限，如有需要请联系管理员");history.go(-1);</script>';
                 die;
             }
         }

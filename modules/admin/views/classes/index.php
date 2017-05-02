@@ -8,7 +8,7 @@
     <a href="<?php echo baseUrl.'/admin/classes/add'?>">添加课程</>
     <table border="1" allrules="0" width="800px">
         <tr align="center">
-            <th>课程名称</th>
+            <th>适合学生</th>
             <th>图片地址</th>
             <th>课程类别</th>
             <th>课时</th>
@@ -22,7 +22,7 @@
 //        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['className']?></td>
+                <td><? echo $v['student']?></td>
                 <td><? echo $v['pic']?></td>
                 <td><? echo $v['cate']?></td>
                 <td><? echo $v['duration']?></td>

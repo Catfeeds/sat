@@ -37,7 +37,6 @@ class RoleController extends ApiControl {
             $roleData['ids'] = $ids;
             $roleData['name'] = Yii::$app->request->post('name', '');
             $roleData['id'] = Yii::$app->request->post('id', '');
-//            var_dump($_POST);die;
             if(!empty($ids)){
                 $data = Yii::$app->db->createCommand("select path from {{%node}} where id in ($ids)")->queryAll();
                 $str='';
@@ -48,9 +47,7 @@ class RoleController extends ApiControl {
                 $str='';
             }
 //            组装path；
-
             $roleData['path']=$str;
-//            var_dump($str);die;
             if (empty($roleData['name'] || $roleData['ids']) ) {
                 die('<script>alert("请将数据填写完整");history.go(-1);</script>');
             }
@@ -74,6 +71,5 @@ class RoleController extends ApiControl {
         if($re){
             echo true;
         }
-
     }
 }

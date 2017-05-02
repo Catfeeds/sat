@@ -9,8 +9,8 @@
     <form class="form" method="post" action="<?php echo baseUrl."/admin/classes/add"?>" enctype="multipart/form-data">
         <table>
             <tr>
-                <td width="80px">课程:</td>
-                <td><input type="text" name="className" placeholder="课程名" value="<?php echo isset($data)? $data['className']:''?>"></td>
+                <td width="80px">适合学生:</td>
+                <td><input type="text" name="student" placeholder="入学要求" value="<?php echo isset($data)? $data["student"]:''?>"></td>
             </tr>
             <tr>
                 <td>图片:</td>
@@ -21,14 +21,27 @@
                 </td>
             </tr>
             <tr>
+                <td>科目:</td>
+                <td>
+                    <select name="major" >
+                        <option value ="">请选择课程</option>
+                        <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
+                        <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
+                        <option value ="文法" <?php echo isset($data)&& $data['major']=="文法" ?  'selected':''?>>文法</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td>类别:</td>
 <!--                <td><input type="text" name="cate" placeholder="类别"></td>-->
                 <td>
                     <select name="cate">
                         <option value ="">请选择班级</option>
                         <option value ="基础班" <?php echo isset($data)&& $data['cate']=="基础班" ?  'selected':''?>>基础班</option>
-                        <option value ="提高班" <?php echo isset($data)&& $data['cate']=="提高班" ?  'selected':''?>>提高班</option>
+                        <option value ="强化班" <?php echo isset($data)&& $data['cate']=="强化班" ?  'selected':''?>>强化班</option>
                         <option value ="精英班" <?php echo isset($data)&& $data['cate']=="精英班" ?  'selected':''?>>精英班</option>
+                        <option value ="词汇班" <?php echo isset($data)&& $data['cate']=="词汇班" ?  'selected':''?>>词汇班</option>
+                        <option value ="冲刺班" <?php echo isset($data)&& $data['cate']=="冲刺班" ?  'selected':''?>>冲刺班</option>
                     </select>
                 </td>
             </tr>
@@ -40,17 +53,7 @@
                 <td>课时:</td>
                 <td><input type="text" name="duration" placeholder="课时" value="<?php echo isset($data)? $data['duration']:''?>" ></br></td>
             </tr>
-            <tr>
-                <td>科目:</td>
-                <td>
-                    <select name="major" >
-                        <option value ="">请选择课程</option>
-                        <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
-                        <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
-                        <option value ="写作" <?php echo isset($data)&& $data['major']=="写作" ?  'selected':''?>>写作</option>
-                    </select>
-                </td>
-            </tr>
+
             <tr>
                 <td>讲师:</td>
                 <td><input type="text" name="teacher" placeholder="讲师" value="<?php echo isset($data)? $data['teacher']:''?>"></td>
