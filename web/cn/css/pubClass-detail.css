@@ -1,0 +1,205 @@
+.breadcrumb {
+    background-color: transparent;
+}
+.breadcrumb li a{
+    font-size: 14px;
+}
+.breadcrumb .active {
+    color: #30A7ED;
+}
+.s-pd-bg img {
+    width: 100%;
+    height: 250px;
+}
+.s-pd-title-bg {
+    position: relative;
+    margin: 15px 0;
+}
+.s-pd-title-bg:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 400px;
+    height: 1px;
+    bottom: -10px;
+    background-color: rgb(51,113,158);
+}
+.s-pd-left {
+    width: 760px;
+    padding: 0 15px;
+}
+.s-pd-left .s-pd-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+.s-pd-left .s-pd-time span{
+    margin-left: 15px;
+}
+.s-pd-left .s-pd-time i {
+    margin: 0 5px;
+    color: #e568d7;
+}
+.s-pd-left h3 {
+    font-size: 14px;
+    color: rgb(51,113,158);
+    margin: 10px 0;
+    line-height: 22px;
+}
+/*公共广告位*/
+.s-adver {
+    position: relative;
+    display: block;
+}
+.s-adver img {
+    width: 100%;
+}
+.s-adver p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.3);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.s-adver:hover p{
+    opacity: 1;
+}
+/*底部广告位*/
+.s-pd-left .s-ad-bottom {
+    border: 1px solid #000;
+    padding: 2px;
+    margin-top: 85px;
+}
+
+/*相关文章*/
+.s-pd-left .s-left-about {
+    margin-top: 60px;
+    padding: 20px 5px;
+    border: 1px solid #000;
+}
+.s-pd-left .s-left-about div {
+    margin-bottom: 20px;
+}
+.s-pd-left .s-left-about div img{
+    width: 200px;
+}
+.s-pd-left .s-left-about div h2 {
+    margin-left: 220px;
+    padding-top: 5px;
+    border-top: 5px solid #30A7ED;
+    font-size: 16px;
+    width: 65px;
+}
+.s-pd-left .s-left-about ul{
+    float: left;
+}
+.s-pd-left .s-left-about ul:first-of-type{
+    position: relative;
+    margin-right: 6%;
+}
+.s-pd-left .s-left-about ul:first-of-type:after {
+    height: 150px;
+    position: absolute;
+    display: block;
+    content: "";
+    border: 1px dashed #000;
+    top: 0;
+    right: -42px;
+}
+.s-pd-left .s-left-about ul:last-child {
+    margin-left: 6%;
+}
+.s-pd-left .s-left-about ul li {
+    width: 310px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.s-pd-left .s-left-about li a {
+    font-size: 14px;
+}
+.s-pd-left .jiathis_style_24x24 {
+    margin-top: 30px;
+    float: right;
+}
+.s-pd-left .jiathis_style_24x24 strong {
+    float: left;
+    line-height: 24px;
+    padding-right: 10px;
+}
+
+.s-pd-right {
+    width: 360px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.s-pd-right .s-pd-ad {
+    width: 100%;
+    height: 140px;
+    background-color: #000;
+    margin-bottom: 50px;
+    -webkit-box-shadow:  3px 3px 3px #969696;
+    -moz-box-shadow:  3px 3px 3px #969696;
+    box-shadow:  3px 3px 3px #969696;
+}
+.s-pd-right .s-pd-ad img {
+    width: 100%;
+}
+.s-pd-right .s-pd-list {
+    padding: 15px;
+    border: 1px solid #000;
+    -webkit-box-shadow:  3px 3px 3px #969696;
+    -moz-box-shadow:  3px 3px 3px #969696;
+    box-shadow:  3px 3px 3px #969696;
+}
+.s-pd-right .s-pd-list h2{
+    font-size: 16px;
+    margin: 0;
+}
+.s-pd-list li {
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid rgb(51,113,158);
+}
+.s-pd-list li h4 {
+    width: 80%;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.s-pd-list li h4 span {
+    padding: 2px 5px;
+    background-color: #30A7ED;
+    color: #fff;
+}
+.s-pd-list li img {
+    width: 88px;
+    height: 73px;
+}
+.s-pd-list li a {
+    display: block;
+    height: 60px;
+    overflow: hidden;
+    margin-left: 103px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.s-pd-right .s-pd-qr {
+    margin-top: 20px;
+    text-align: center;
+}
+.s-pd-right .s-pd-qr img {
+    width: 154px;
+}
+.s-pd-right .s-pd-qr p {
+    font-weight: bold;
+}

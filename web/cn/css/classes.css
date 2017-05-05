@@ -1,0 +1,473 @@
+.sc-title {
+  width: 114px;
+  height: 52px;
+  border: 1px solid #000;
+  margin-bottom: 66px;
+}
+.sc-title h1 {
+  position: relative;
+  width: 145px;
+  margin: 14px 0 0 -16px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #fff;
+}
+.sc-title h1:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 25px;
+  height: 1px;
+  background-color: #000;
+  left: -30px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.sc-title h1:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 25px;
+  height: 1px;
+  background-color: #000;
+  right: -30px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+/*轮播图*/
+.carousel-indicators .active {
+  background-color: rgb(229,104,215);
+  border-color: rgb(229,104,215);
+}
+.carousel-control {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  font: 400 50px simsun;
+}
+.s-left {
+  left: 10%;
+}
+.s-right {
+  right: 10%;
+  left: auto;
+}
+/*热门课程*/
+.s-course {
+  padding: 70px 0 80px 0;
+}
+.s-course-cnt .s-course-left {
+  width: 172px;
+  padding: 29px 35px;
+  background-color: rgb(54,178,251);
+}
+.s-course-left li {
+  position: relative;
+  width: 95px;
+  height: 126px;
+  line-height: 126px;
+  text-align: center;
+  border-bottom: 1px dashed #fff;
+  cursor: default;
+}
+.s-course-left li:last-child {
+  border-bottom-width: 0;
+}
+.s-course-left li p {
+  z-index: 2;
+}
+.s-course-left li p.on {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 250px;
+  height: 50px;
+  color: #fff;
+  left: -35px;
+  top: 50%;
+  line-height:50px;
+  padding-right: 75px;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  background-color: rgb(33,133,191);
+}
+.s-course-right {
+  position: relative;
+  max-width: 720px;
+  margin-left: 333px;
+}
+.s-course-right:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 700px;
+  height: 230px;
+  border: 3px solid rgb(54,178,251);
+  bottom: -60px;
+  right: -70px;
+}
+.s-course-right .s-course-pub {
+  display: none;
+}
+.s-course-right .s-course-pub.on {
+  display: block;
+}
+.s-course-right .s-course-pub li {
+  position: relative;
+  float: left;
+  width: 33%;
+  height: 440px;
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+  -ms-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
+}
+.s-course-right .s-course-pub li span {
+  position: absolute;
+  display: block;
+  width: 110px;
+  height: 50px;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, .7);
+  text-align: center;
+  line-height: 50px;
+}
+.s-course-right .s-course-pub li span:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: rgb(54,178,251);
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.s-course-right .s-course-pub li span:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: rgb(54,178,251);
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.s-course-right .s-course-pub li a {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  /*color: #fff;*/
+  padding: 30px 20px;
+  display: none;
+  text-decoration: none;
+}
+.s-course-right .s-course-pub li a p {
+  color: #fff;
+}
+.s-course-right .s-course-basis li:first-child {
+  background: gray url("../images/course-basis01.png") no-repeat;
+}
+.s-course-right .s-course-basis li:nth-child(2) {
+  background: url("../images/course-basis02.png") no-repeat;
+}
+.s-course-right .s-course-basis li:nth-child(3) {
+  background: url("../images/course-basis03.png") no-repeat;
+}
+.s-course-right .s-course-intensify li:first-child {
+  background: gray url("../images/course-basis01.png") no-repeat;
+}
+.s-course-right .s-course-intensify li:nth-child(2) {
+  background: gray url("../images/course-basis02.png") no-repeat;
+}
+.s-course-right .s-course-intensify li:nth-child(3) {
+  background: gray url("../images/course-basis03.png") no-repeat;
+}
+.s-course-right li:first-child {
+  background: gray url("../images/course-basis01.png") no-repeat;
+}
+.s-course-right li:nth-child(2) {
+  background: gray url("../images/course-basis02.png") no-repeat;
+}
+.s-course-right li:nth-child(3) {
+  background: gray url("../images/course-basis03.png") no-repeat;
+}
+/*专项课程*/
+.s-special {
+  height: 560px;
+  padding: 70px 0 80px 0;
+  background: gray url("../images/course-bg02.png") no-repeat;
+  background-size: 100% 100%;
+}
+.s-special .sc-title {
+  border-width: 0;
+}
+.s-special .sc-title h1 {
+  background-color: transparent;
+  color: #fff;
+}
+.s-special .sc-title h1:before,
+.s-special .sc-title h1:after {
+  background-color: #fff;
+}
+.s-special-pub {
+  width: 600px;
+  float: left;
+  padding: 0 50px 0 25px;
+}
+.s-special-pub .s-img-container {
+  position: relative;
+  float: left;
+}
+.s-special-pub .s-img-container:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 258px;
+  height: 258px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid rgb(229,104,215);
+  top: -13px;
+  left: -13px;
+}
+.s-special-pub .s-img-container img{
+  width: 232px;
+  height: 232px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.s-special-pub .s-font-container {
+  margin-left: 270px;
+  color: #fff;
+}
+.s-special-pub .s-font-container h2 {
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.s-special-pub .s-font-container h2:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color:rgb(229,104,215);
+  bottom: -5px;
+  left: 0;
+}
+.s-special-pub .s-font-container p {
+  color: #fff;
+  padding-top: 30px;
+}
+.s-special-pub .s-font-container {
+  font-size: 14px;
+  line-height: 26px;
+}
+/*开班信息*/
+.s-classes {
+  padding: 70px 0 80px 0;
+}
+.s-classes #Index_Box {
+  position: relative;
+  width: 100%;
+  height: 435px;
+}
+.s-classes #Index_Box:hover {
+  cursor: default;
+}
+.s-classes #Index_Box pre {
+  position: absolute;
+  width: 80px;
+  border-width: 0;
+  background-color: transparent;
+  color: gray;
+  font: 400 50px/100px simsun;
+  top: 30%;
+  z-index: 9;
+}
+.s-classes #Index_Box pre:hover {
+  color: #000;
+}
+.s-classes #Index_Box pre.next {
+  right: 0;
+}
+.s-classes #Index_Box ul {
+  position: absolute;
+  width: 100%;
+  height: 435px;
+}
+.s-classes #Index_Box li {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: rgb(54,178,251);
+  padding: 2%;
+  color: #fff;
+  top: 50px;
+  left: 60px;
+}
+.s-classes #Index_Box h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.s-classes #Index_Box p {
+  font-size: 14px;
+  text-align: left;
+  text-indent: 14px;
+  min-height: 60%;
+  overflow: hidden;
+  color: #fff;
+}
+.s-classes #Index_Box a {
+  display: block;
+  width: 55%;
+  padding: 5px 20px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: rgb(229,104,215);
+  text-align: center;
+}
+/*名师团队*/
+.s-teacher {
+  padding: 70px 0 80px 0;
+  height: 726px;
+  background: gray url("../images/course-bg03.png") no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.s-teacher .sc-title {
+  border-width: 0;
+}
+.s-teacher .sc-title h1 {
+  background-color: transparent;
+  color: #fff;
+}
+.s-teacher .sc-title h1:before,
+.s-teacher .sc-title h1:after {
+  background-color: #fff;
+}
+.s-teacher-cnt {
+  position: relative;
+  width: 100%;
+}
+.s-teacher-cnt ul {
+  width: 100%;
+}
+.s-teacher-cnt ul li {
+  position: relative;
+  float: left;
+  width: 245px;
+  text-align: center;
+  margin: 0 27.5px;
+}
+.s-teacher-cnt ul li:last-child {
+  margin-right: 0;
+}
+.s-teacher-cnt ul li img {
+  width: 170px;
+  height: 170px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid rgb(54,178,251);
+}
+.s-teacher-cnt ul li div {
+  width: 245px;
+  height: 340px;
+  padding: 85px 15px 0 15px;
+  margin-top: -85px;
+  background-color: rgba(255, 255, 255, .9);
+}
+.s-teacher-cnt ul li div h2 {
+  width: 80px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 5px 0 3px 0;
+  border-bottom: 1px solid #000;
+}
+.s-teacher-cnt ul li div h4,
+.s-teacher-cnt ul li div p {
+  font-size: 14px;
+}
+.s-teacher-cnt ul li div p {
+  text-align: left;
+  text-indent: 20px;
+}
+.s-teacher-cnt ul li a {
+display: block;
+width: 94px;
+height: 32px;
+padding: 7px 15px;
+color: #fff;
+background-color: rgb(229,104,215);
+margin: -16px auto 0;
+}
+.s-teacher-cnt ul li div a:hover {
+background-color: rgb(206,93,193);
+text-decoration: none;
+}
+.s-teacher-cnt .s-arrow {
+  position: absolute;
+  font: 400 50px/100px simsun;
+  color: gray;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: default;
+}
+.s-teacher-cnt .s-arrow:hover {
+  color: #fff;
+}
+.s-teacher-cnt .prev {
+  left: -50px;
+}
+.s-teacher-cnt .next {
+  right: -50px;
+}

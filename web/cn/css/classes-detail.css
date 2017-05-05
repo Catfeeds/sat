@@ -1,0 +1,176 @@
+.breadcrumb {
+  background-color: transparent;
+}
+.breadcrumb .active {
+  font-size: .8rem;
+  color: rgb(54,178,251);
+}
+
+.s-course-details {
+  padding: 60px 0 100px 0;
+  border-bottom: 1px solid rgb(229,104,215);
+}
+.s-course-details img {
+  width: 470px;
+  margin-right: 90px;
+}
+.s-course-details div h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.s-course-details div .s-now {
+  color: rgb(229,104,215);
+  font-size: 24px;
+  margin-right: 15px;
+}
+.s-course-details div .s-before {
+  font-size: 16px;
+  text-decoration: line-through;
+}
+.s-course-details div p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+span {
+  font-weight: normal;
+}
+.s-course-details div .s-object {
+  margin-bottom: 70px;
+}
+.s-course-details div a {
+  padding: 11px 23px;
+  background-color: rgb(229,104,215);
+  color: #fff;
+}
+.s-introduce {
+  padding: 50px 0 110px 0;
+  border-bottom: 1px solid rgb(229,104,215);
+}
+.s-introduce .nav li {
+  margin-right: 20px;
+}
+.s-introduce .nav li.active a {
+  border-color: transparent;
+  background-color: rgb(54,178,251);
+  color: #fff;
+}
+.s-introduce .nav li a {
+  padding: 10px 30px;
+  border: 1px solid #000;
+}
+.s-introduce .nav li a:hover,
+.s-introduce .nav li a:focus {
+  border-color: transparent;
+  background-color: rgb(54,178,251);
+}
+.tab-content {
+  padding-top: 30px;
+}
+.tab-content #course h2 {
+  max-width: 140px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(229,104,215);
+  text-align: center;
+}
+.tab-content #course p {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.tab-content  #teacher .s-introduce-font {
+  width: 600px;
+}
+.tab-content  #teacher .s-introduce-font h2 {
+  max-width: 60px;
+  text-align: center;
+  margin-right: 50px;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(229,104,215);
+}
+.tab-content  #teacher .s-introduce-font p {
+  font-size: 14px;
+  background-color: rgb(54,178,251);
+  padding: 15px 60px 15px 15px;
+  color: #fff;
+}
+.s-introduce-img .s-big-img {
+  width: 530px;
+  max-height: 440px;
+  margin-left: -40px;
+}
+.s-introduce-img div img {
+  width: 230px;
+  height: 190px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.tab-content #plan div {
+  padding: 15px 30px;
+}
+.tab-content #plan div h2 {
+  width: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(229,104,215);
+  text-align: center;
+}
+.tab-content #plan div p {
+  font-size: 14px;
+}
+.s-policy {
+  width: 800px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.s-policy h2 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.s-policy h2:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: #000;
+  top: 50%;
+  left: 40%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.s-policy h2:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: #000;
+  top: 50%;
+  right: 40%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.s-policy img {
+  width: 160px;
+  margin-right: 70px;
+}
+.s-policy li {
+  margin-bottom: 24px;
+  font-size: 14px;
+}
