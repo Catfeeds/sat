@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="/cn/css/reset.css">
   <link rel="stylesheet" href="/cn/css/bootstrap.css">
   <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-  <link rel="stylesheet/less" href="/cn/css/course.less">
-  <script src="/cn/js/less.js"></script>
+  <link rel="stylesheet" href="/cn/css/public.css">
+  <link rel="stylesheet" href="/cn/css/classes.css">
+<!--  <script src="/cn/js/less.js"></script>-->
   <script src="/cn/js/jquery-2.1.3.js"></script>
   <script src="/cn/js/bootstrap.js"></script>
   <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
@@ -112,7 +113,6 @@
               <img src="/cn/images/course-basis01.png" alt="">
             </a>
             <div class="s-font-container">
-
               <h2><?php echo $v['major']?></h2>
               <p><?php echo $v['introduction']?></p>
             </div>
@@ -237,7 +237,7 @@
       </div>
     </div>
     <script>
-//      jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
+      jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
     </script>
   </section>
   <!--底部-->
