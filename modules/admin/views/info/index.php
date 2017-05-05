@@ -1,27 +1,36 @@
+<style>
+    td {
+        white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+    }
+</style>
 <div class="span10">
     <div >
         <a href="">首页</a><span >&gt;</span><span>资讯管理</span>
     </div>
     <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</>
-    <table border="1"  width="800px">
+    <table border="1"  style="table-layout: fixed;width:800px;">
         <tr align="center">
+            <th>id</th>
             <th>资讯标题</th>
             <th>图片</th>
-            <th>内容</th>
+            <th style="width:100px;">内容</th>
             <th>资讯类别</th>
             <th>发布时间</th>
             <th>点击量</th>
+            <th>有效时间</th>
             <th>操作</th>
         </tr>
         <?php
         foreach($data as $v){?>
             <tr>
+                <td><? echo $v['id']?></td>
                 <td><? echo $v['title']?></td>
                 <td><? echo $v['pic']?></td>
-                <td><? echo $v['content']?></td>
+                <td style="width:300px;align:left;" title="<? echo $v['content']?>"><? echo $v['content']?></td>
                 <td><? echo $v['cate']?></td>
                 <td><? echo $v['publishTime']?></td>
                 <td><? echo $v['hits']?></td>
+                <td><? echo $v['validTime']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/info/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

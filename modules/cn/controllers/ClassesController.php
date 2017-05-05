@@ -18,7 +18,9 @@ class ClassesController extends Controller{
 //            $table="classes";
 //        $data=$classes->getData($table,$fiels);
 //        var_dump($now_path);
-        return $this->renderPartial('index',['data'=>$data]);
+        $banner = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='classes'")->queryAll();
+//        var_dump($banner);
+        return $this->renderPartial('index',['data'=>$data,'banner'=>$banner]);
     }
     public function actionDetails(){
 //        从数据表获取数据

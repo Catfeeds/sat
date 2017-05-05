@@ -1,6 +1,6 @@
 
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 
 <div class="span10">
@@ -10,7 +10,31 @@
 
             <tr>
                 <td width="80px">标题:</td>
-                <td><input type="text" name="title" placeholder="标题" style="width: 500px;;" value="<?php echo isset($data)? $data['title']:''?>"></td>
+                <td><input type="text" name="title" placeholder="标题" style="width: 500px;" value="<?php echo isset($data)? $data['title']:''?>"></td>
+            </tr>
+            <tr>
+                <td>类别:</td>
+                <!--                <td><input type="text" name="cate" placeholder="类别"></td>-->
+                <td>
+                    <select name="cate" id="cate" >
+                        <option value ="">请选择类型</option>
+                        <option value ="备考资讯" <?php echo isset($data)&& $data['cate']=="备考资讯" ?  'selected':''?>>备考资讯</option>
+                        <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected':''?>>新闻资讯</option>
+                        <option value ="公开课" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected':''?>>公开课</option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="name" style="display:none">
+                <td>主讲人</td>
+                <td>
+                    <input type="text" name="name" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['name']:''?>" />
+                </td>
+            </tr>
+            <tr id="activeTime" style="display:none">
+                <td>活动时间</td>
+                <td>
+                    <input type="text" name="activeTime" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['activeTime']:''?>" />
+                </td>
             </tr>
             <tr>
                 <td>内容图片</td>
@@ -22,20 +46,18 @@
                 <!--                    <input id="file_upload" name="file_upload" type="file" multiple="true">-->
             </tr>
             <tr>
-                <td>内容:</td>
-                <td>
-                    <textarea id="editor" type="text/plain" name="content"  style="width:600px;height:300px;" ><?php echo isset($data)? $data['content']:''?></textarea>
+                <td>内容</td>
+                <td id="content">
+                    <textarea id="editor" type="text/plain" name="" style="width:600px;height:300px;">
+                        <?echo isset($data)? $data['content']:''?>
+                    </textarea>
                 </td>
             </tr>
+
             <tr>
-                <td>类别:</td>
-                <!--                <td><input type="text" name="cate" placeholder="类别"></td>-->
+                <td>有效时间:</td>
                 <td>
-                    <select name="cate">
-                        <option value ="">请选择类型</option>
-                        <option value ="备考资讯" <?php echo isset($data)&& $data['cate']=="备考资讯" ?  'selected':''?>>备考资讯</option>
-                        <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected':''?>>新闻资讯</option>
-                    </select>
+                    <input type="text" name="validTime" placeholder="格式为: 年-月-日 时：分, 注：所有输入均为英文状态"  style="width: 500px;" value="<?php echo isset($data)? $data['validTime']:''?>" />
                 </td>
             </tr>
             <tr>
@@ -50,14 +72,22 @@
 </div>
 <script>
     //实例化编辑器
+
     var ue = UE.getEditor('editor');
-            //这段要放在文本编辑器的实例化之后
-//        function uptext(){
-//            if (!UE.getEditor('editor').hasContents()){
-//                alert('请先填写内容!');
-//            }else{
-//                document.setweb.info.value=UE.getEditor('editor').getContent();
-//                document.setweb.submit();
-//            }
-//        }
+//    var ue2 = UE.getEditor('editor2');
+//    $('#content1').hide();
+        $("#cate").change(function(){
+        var cate = document.getElementById("cate").value;
+        if(cate=="公开课"){
+            $('#name').show();
+            $('#activeTime').show();
+//            $('#editor1').attr('name','content[1]');
+        }else{
+            $('#name').hide();
+            $('#activeTime').hide();
+        }
+        })
+
+
+
 </script>

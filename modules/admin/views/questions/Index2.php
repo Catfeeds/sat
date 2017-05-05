@@ -10,6 +10,7 @@
     <a href="<?php echo baseUrl.'/admin/questions/add2'?>">添加试卷</>
     <table border="1"  width="100%">
         <tr align="center">
+            <th>id</th>
             <th>试卷名称</th>
             <th>科目</th>
             <th>年份</th>
@@ -20,6 +21,7 @@
         //        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
+                <td><? echo $v['id']?></td>
                 <td><? echo $v['name']?></td>
                 <td><? echo $v['major']?></td>
                 <td><? echo $v['time']?></td>

@@ -7,6 +7,7 @@
     <a href="<?php echo baseUrl.'/admin/knowledge/add'?>">添加知识点</a>
     <table border="1" width="80%">
         <tr>
+            <th>id</th>
             <th>知识点名</th>
             <th>科目</th>
             <th>知识点分析</th>
@@ -15,6 +16,7 @@
         </tr>
         <?php foreach ($data as $v){?>
         <tr>
+            <td><?php echo $v['id']?></td>
             <td><?php echo $v['name']?></td>
             <td><?php echo $v['major']?></td>
             <td><?php echo $v['analysis']?></td>

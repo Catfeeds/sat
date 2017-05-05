@@ -7,6 +7,7 @@
  */
 namespace app\modules\admin\models;
 use yii\db\ActiveRecord;
+use yii;
 class Info extends ActiveRecord
 {
     public static function tableName()
@@ -22,17 +23,24 @@ class Info extends ActiveRecord
 
         ];
     }
-////    上传文件处理
-//    public function upImage(){
-//        $up=new \UploadFile();
-//        $savePath="D:/phpStudy/WWW/shenyousat/Upload/images/";
-//        $file=$_FILES['up'];
-//        $data= $up->uploadOne($file,$savePath);
-//
-//        $a=$data['arr_data']['arr_data'][0];
-//        $path=$a['savepath'].$a['savename'];
-////        var_dump($path);
-//        return $path;
-//
-//    }
+    public function add(){
+        $infoData = Yii::$app->request->post('info');
+        $infoData['id'] = Yii::$app->request->post('id','');
+        $infoData['title'] = Yii::$app->request->post('title','');
+        $infoData['cate']      = Yii::$app->request->post('cate','');
+        if($infoData['cate'] =="公开课"){
+            $infoData['name']      = Yii::$app->request->post('name','');
+            $infoData['activeTime']      = Yii::$app->request->post('activeTime','');
+        }else{
+            $infoData['name']      = '';
+            $infoData['activeTime']      = '';
+        }
+        $infoData['content']      = Yii::$app->request->post('editorValue','');
+        $infoData['validTime']  = Yii::$app->request->post('validTime','');
+        $infoData['validTime']=strtotime($infoData['validTime']);
+        $infoData['publishTime']=time();
+        $infoData['hits']=rand(100,500);
+        return $infoData;
+    }
+
 }

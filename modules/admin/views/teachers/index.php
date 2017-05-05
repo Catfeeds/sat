@@ -8,6 +8,7 @@
     <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</>
     <table border="1" allrules="0" width="800px">
         <tr align="center">
+            <th>id</th>
             <th>讲师</th>
             <th>图片</th>
             <th>简介</th>
@@ -20,6 +21,7 @@
 //        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
+                <td><? echo $v['id']?></td>
                 <td><? echo $v['name']?></td>
                 <td><? echo $v['pic']?></td>
                 <td><? echo $v['introduction']?></td>

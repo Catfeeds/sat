@@ -10,6 +10,7 @@
     <a href="<?php echo baseUrl.'/admin/questions/index2'?>">试卷</>
     <table border="1"  width="100%">
         <tr align="center">
+            <th>id</th>
             <th>题目</th>
             <th>选项A</th>
             <th>选项B</th>
@@ -27,6 +28,7 @@
 //        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
+                <td><? echo $v['id']?></td>
                 <td><? echo $v['content']?></td>
                 <td><? echo $v['keyA']?></td>
                 <td><? echo $v['keyB']?></td>

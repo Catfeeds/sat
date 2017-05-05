@@ -34,23 +34,18 @@ class InfoController extends ApiControl {
 
         }else{
 //            提交数据处理
-            $infoData = Yii::$app->request->post('info');
-            $infoData['id'] = Yii::$app->request->post('id','');
-            $infoData['title'] = Yii::$app->request->post('title','');
-            $infoData['cate']      = Yii::$app->request->post('cate','');
-            $infoData['content']  = Yii::$app->request->post('content','');
-            $infoData['publishTime']=date("Y-m-d H:i:s",time());
-//            var_dump($infoData['publishTime']);die;
+            $info=new Info();
+            $infoData=$info->add();
+//            var_dump($infoData);die;
             if(empty($infoData['title'])){
                 die('<script>alert("请添加资讯标题");history.go(-1);</script>');
             }
-            if(empty($infoData['content'])){
+            if(empty($_POST['editorValue'])){
                 die('<script>alert("请添加内容");history.go(-1);</script>');
             }
             if(empty($infoData['cate'])){
                 die('<script>alert("请选择分类");history.go(-1);</script>');
             }
-            $info=new Info();
 //            添加时不带id
 //            无上传图片时
             if(empty( $infoData['id'])){

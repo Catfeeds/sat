@@ -62,8 +62,6 @@
 ////            根据管理员的ID，查找权限
             $path= Yii::$app->db->createCommand("select path from {{%role}} where id='$rid'")->queryOne();
             $path=$path['path'];
-//            echo $path;
-////            return $path;
             if(strpos(rtrim($path,','),$now_path)===false){
                 echo '<script>alert("无权限，如有需要请联系管理员");history.go(-1);</script>';
                 die;
