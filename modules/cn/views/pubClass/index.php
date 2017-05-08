@@ -6,15 +6,12 @@
   <link rel="stylesheet" href="/cn/css/reset.css">
   <link rel="stylesheet" href="/cn/css/bootstrap.css">
   <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-  <link rel="stylesheet/less" href="/cn/css/public.less">
-  <link rel="stylesheet" href="/cn/css/class.css">
-  <script src="/cn/js/less.js"></script>
   <link rel="stylesheet" href="/cn/css/public.css">
   <link rel="stylesheet" href="/cn/css/pubClass.css">
 <!--  <script src="/cn/js/less.js"></script>-->
   <script src="/cn/js/jquery-2.1.3.js"></script>
   <script src="/cn/js/bootstrap.js"></script>
-  <script src="/cn/js/jquery.SuperSlide.2.1.js"></script>
+  <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
   <script src="/cn/js/public.js"></script>
   <!--<script src="/cn/js/class.js"></script>-->
 </head>
@@ -44,6 +41,9 @@
           <div class="item">
             <img src="/cn/images/course-bg01.png" alt="Third slide">
           </div>
+        </div>
+      </div>
+    </div>
     <div class="s-w1200">
       <div class="s-new-title">
         <h2>最新公开课</h2>
@@ -58,6 +58,10 @@
               <li class="pull-left">
                 <span>授课老师:</span>
                 <span><?php echo $v['name']?></span>
+              </li>
+              <li class="pull-left">
+                <span>报名人数：</span>
+                <span>230</span>
               </li>
               <li class="pull-right">
                 <span><?php echo $v['activeTime']?></span>
@@ -196,8 +200,6 @@
     }
     $('.s-more').click(function () {
       var curHeight=  sCnt.height();
-      console.log(curHeight);
-      console.log(defHeight);
       if (curHeight == slideHeight) {
         sCnt.animate({
           height: defHeight
@@ -210,10 +212,8 @@
         $('.s-more').html('查看更多');
       }
       $('.s-history-cnt li embed').each(function () {
-        console.log($(this).attr('1'));
         if ($(this).attr('data-src')) {
           this.src = $(this).attr('data-src');
-          console.log('1');
         }
       })
     })

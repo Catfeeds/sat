@@ -43,6 +43,7 @@
 .s-new-cnt li div  ul  li {
   padding: 0;
   margin: 0;
+  margin-right: 20px;
 }
 .s-new-cnt li div  ul  li i {
   font-size: 12px;
@@ -51,9 +52,9 @@
 .s-new-cnt li div  ul  li  span {
   font-size: 12px;
 }
-.s-new-cnt li div  ul  li  span:first-of-type {
-  margin-right: 10px;
-}
+/*.s-new-cnt li div  ul  li  span:first-of-type {*/
+  /*margin-right: 10px;*/
+/*}*/
 .s-new-cnt li div  p {
   font-size: 14px;
   text-indent: 28px;
