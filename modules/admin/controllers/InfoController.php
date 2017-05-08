@@ -20,6 +20,7 @@ class InfoController extends ApiControl {
     public function actionAdd()
     {
         $enableCsrfValidation = false;
+//        var_dump($_POST);die;
         if(!$_POST){
 //            查找资讯，取出资讯的分类信息，展示到添加页面
             $id= Yii::$app->request->get('id','');

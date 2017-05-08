@@ -10,13 +10,14 @@
     <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</>
     <table border="1"  style="table-layout: fixed;width:800px;">
         <tr align="center">
-            <th>id</th>
+            <th style="width: 30px;">id</th>
             <th>资讯标题</th>
             <th>图片</th>
+            <th>摘要</th>
             <th style="width:100px;">内容</th>
             <th>资讯类别</th>
             <th>发布时间</th>
-            <th>点击量</th>
+            <th style="width: 50px;">点击量</th>
             <th>有效时间</th>
             <th>操作</th>
         </tr>
@@ -25,7 +26,8 @@
             <tr>
                 <td><? echo $v['id']?></td>
                 <td><? echo $v['title']?></td>
-                <td><? echo $v['pic']?></td>
+                <td title="<? echo $v['pic']?>"><? echo $v['pic']?></td>
+                <td><? echo $v['summary']?></td>
                 <td style="width:300px;align:left;" title="<? echo $v['content']?>"><? echo $v['content']?></td>
                 <td><? echo $v['cate']?></td>
                 <td><? echo $v['publishTime']?></td>

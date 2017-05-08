@@ -28,6 +28,7 @@
                         <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
                         <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
                         <option value ="文法" <?php echo isset($data)&& $data['major']=="文法" ?  'selected':''?>>文法</option>
+                        <option value ="专项课程" <?php echo isset($data)&& $data['major']=="专项课程" ?  'selected':''?>>专项课程</option>
                     </select>
                 </td>
             </tr>

@@ -28,6 +28,7 @@ class Info extends ActiveRecord
         $infoData['id'] = Yii::$app->request->post('id','');
         $infoData['title'] = Yii::$app->request->post('title','');
         $infoData['cate']      = Yii::$app->request->post('cate','');
+        $infoData['summary']      = Yii::$app->request->post('summary','');
         if($infoData['cate'] =="公开课"){
             $infoData['name']      = Yii::$app->request->post('name','');
             $infoData['activeTime']      = Yii::$app->request->post('activeTime','');
@@ -36,7 +37,11 @@ class Info extends ActiveRecord
             $infoData['activeTime']      = '';
         }
         $infoData['content']      = Yii::$app->request->post('editorValue','');
-        $infoData['validTime']  = Yii::$app->request->post('validTime','');
+        if(Yii::$app->request->post('validTime','')==false){
+            $infoData['validTime']="2038-00-00";
+        }else{
+            $infoData['validTime']  = Yii::$app->request->post('validTime','');
+        }
         $infoData['validTime']=strtotime($infoData['validTime']);
         $infoData['publishTime']=time();
         $infoData['hits']=rand(100,500);

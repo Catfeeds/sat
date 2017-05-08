@@ -65,7 +65,8 @@
             </ul>
             <?php echo $v['content']?>
             <a href="#">报名</a>
-            <a href="info_details/<?php echo$v['id']?>.html.html">详情</a>
+            <a href="/info_details/<?php echo $v['id']?>.html">详情</a>
+<!--            <a href="info_details.html">详情</a>-->
           </div>
         </li>
         <?php }?>

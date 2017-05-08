@@ -15,10 +15,10 @@
         </li>
         <li><a href="#">模考</a></li>
         <li><a href="#">报告</a></li>
-        <li><a href="class.html">课程</a></li>
+        <li><a href="/class.html">课程</a></li>
         <li><a href="#">名师团队</a></li>
         <li><a href="#">学员案例</a></li>
-        <li><a href="pubclass.html">公开课</a></li>
+        <li><a href="/pubclass.html">公开课</a></li>
         <li><a href="#">资讯</a></li>
     </ul>
     <form action="">

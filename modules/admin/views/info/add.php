@@ -7,7 +7,6 @@
     <a href="">首页</a><span >&gt;</span><span>资讯管理</span><span >&gt;</span><span>添加/修改</span>
     <form name="form" method="post" action="<?php echo baseUrl."/admin/info/add"?>" enctype="multipart/form-data">
         <table>
-
             <tr>
                 <td width="80px">标题:</td>
                 <td><input type="text" name="title" placeholder="标题" style="width: 500px;" value="<?php echo isset($data)? $data['title']:''?>"></td>
@@ -45,6 +44,12 @@
                 </td>
                 <!--                    <input id="file_upload" name="file_upload" type="file" multiple="true">-->
             </tr>
+            <tr id="summary">
+                <td >摘要</td>
+                <td>
+                    <input type="text" name="summary" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['summary']:''?>" />限200字内
+                </td>
+            </tr>
             <tr>
                 <td>内容</td>
                 <td id="content">
@@ -72,16 +77,12 @@
 </div>
 <script>
     //实例化编辑器
-
     var ue = UE.getEditor('editor');
-//    var ue2 = UE.getEditor('editor2');
-//    $('#content1').hide();
         $("#cate").change(function(){
         var cate = document.getElementById("cate").value;
         if(cate=="公开课"){
             $('#name').show();
             $('#activeTime').show();
-//            $('#editor1').attr('name','content[1]');
         }else{
             $('#name').hide();
             $('#activeTime').hide();

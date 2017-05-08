@@ -18,10 +18,11 @@ class PubclassController extends Controller{
 //        var_dump($data);die;
         return $this->renderPartial('index',['data'=>$data,'arr'=>$arr]);
     }
-    public function actionDetails(){
-//        从数据表获取数据
-         $id = Yii::$app->request->get('id', '');
-        $data = Yii::$app->db->createCommand("select * from {{%classes}} where id=$id ")->queryOne();
-        return $this->renderPartial('details',["data"=>$data]);
-    }
+//    public function actionDetails(){
+////        从数据表获取数据
+//         $id = Yii::$app->request->get('id', '');
+//        $data = Yii::$app->db->createCommand("select * from {{%classes}} where id=$id ")->queryOne();
+//        $arr = Yii::$app->db->createCommand('select * from {{%info}}  order by hits desc ')->queryAll();
+//        return $this->renderPartial('info/details',["data"=>$data,arr''=>$arr]);
+//    }
 }

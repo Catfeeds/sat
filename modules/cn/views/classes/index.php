@@ -108,23 +108,24 @@
         </div>
         <div class="s-special-cnt clearfix">
           <div class="s-special-pub s-special-left">
-          <?php  foreach($data as $v){if($v['cate']=="词汇班"){?>
-            <a href="/class_details/<?php echo$v['id']?>.html" class="s-img-container">
+          <?php  foreach($data as $v){if($v['major']=="专项课程" && $v['cate']=='词汇班'){?>
+            <a href="/class_details/<?php echo $v['id']?>.html" class="s-img-container">
               <img src="/cn/images/course-basis01.png" alt="">
             </a>
             <div class="s-font-container">
-              <h2><?php echo $v['major']?></h2>
+              <h2><?php
+                echo $v['cate']?></h2>
               <p><?php echo $v['introduction']?></p>
             </div>
           <?php }}?>
           </div>
           <div class="s-special-pub s-special-right">
-          <?php  foreach($data as $v){if($v['cate']=="冲刺班"){?>
+          <?php  foreach($data as $v){if($v['major']=="专项课程" && $v['cate']=='冲刺班'){?>
             <a href="/class_details/<?php echo $v['id']?>.html" class="s-img-container">
               <img src="/cn/images/course-basis02.png" alt="">
             </a>
             <div class="s-font-container">
-              <h2><?php echo $v['major']?></h2>
+              <h2><?php echo $v['cate']?></h2>
               <p><?php echo $v['introduction']?></p>
             </div>
           <?php }}?>
