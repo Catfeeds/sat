@@ -1,0 +1,186 @@
+.s-information .s-adv {
+  margin-top: 25px;
+}
+.s-information .s-adv img{
+  height: 250px;
+}
+.s-information .s-cnt {
+  margin-top: 35px;
+}
+
+.s-information .s-left {
+  width: 800px;
+}
+#myCarousel {
+  width: 350px;
+  height: 270px;
+}
+#myCarousel img {
+  height: 270px;
+}
+.carousel-control {
+  font: 200 20px simsun;
+  border: none;
+}
+.s-information .s-headline dl{
+  height: 270px;
+  margin-left: 370px;
+  background-color: rgb(245,245,245);
+  padding: 8px 15px;
+  overflow: hidden;
+}
+.s-information .s-headline dl dt {
+  color: #e568d7;
+  font-weight: bold;
+}
+.s-information .s-headline dl dd {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+.s-information .s-headline dl dd a {
+  font-size: 14px;
+}
+.s-information h1 {
+  display: inline-block;
+  font-weight: 200;
+  color: rgb(51,113,158);
+  padding: 10px 20px;
+  border: 1px solid rgb(51,113,158);
+  margin-top: 60px;
+}
+.s-information .s-toggle {
+  font-size: 0;
+}
+.s-information .s-toggle li {
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 20px;
+  border: 1px solid #000;
+  margin-right: 20px;
+}
+.s-information .s-toggle li a:hover,
+.s-information .s-toggle li a:focus {
+  text-decoration: none;
+}
+.s-information .s-toggle li.active {
+  background-color: rgb(54,178,251);
+  border-color: #fff;
+}
+.s-information .s-toggle li.active a {
+  color: #fff;
+}
+
+.s-information .tab-content .tab-pane {
+  position: relative;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0 0 5px #7a7270;
+  -moz-box-shadow: 0 0 5px #7a7270;
+  box-shadow: 0 0 5px #7a7270;
+}
+.s-information .tab-content .s-article {
+  padding: 20px;
+  background-color: rgb(245,245,245);
+  margin-bottom: 10px;
+}
+.img-thumbnail {
+  border: none;
+  background-color: rgb(214,214,214);
+  padding: 10px;
+}
+.s-information .tab-content .s-article div {
+  margin-left: 215px;
+}
+.s-information .tab-content .s-article h3 {
+  margin-top: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #000;
+}
+.s-information .tab-content .s-article li {
+  display: inline-block;
+}
+.s-information .tab-content .s-article li:nth-last-child(2) a{
+  border-right: 0;
+}
+.s-information .tab-content .s-article li:last-child {
+  font-size: 14px;
+}
+.s-information .tab-content .s-article li a {
+  font-size: 14px;
+  padding: 0 10px;
+  border-right: 1px solid #000;
+  color: rgb(54,178,251);
+}
+.s-information .tab-content .s-article p {
+  margin-top: 25px;
+  font-size: 14px;
+  max-height: 140px;
+  overflow: hidden;
+}
+.s-information .tab-content .s-page {
+  text-align: center;
+}
+
+
+
+.s-information .s-right {
+  width: 370px;
+}
+.s-information .s-read,
+.s-information .s-case{
+  padding: 20px 10px;
+  -webkit-box-shadow: 0 0 5px #7a7270;
+  -moz-box-shadow: 0 0 5px #7a7270;
+  box-shadow: 0 0 5px #7a7270;
+}
+.s-information .s-read h2,
+.s-information .s-case h2{
+  font-size: 14px;
+  font-weight: bold;
+}
+.s-information .s-read img,
+.s-information .s-case img{
+  float: left;
+  width: 95px;
+  height: 75px;
+}
+.s-information .s-read div,
+.s-information .s-case div{
+  margin-left: 110px;
+}
+.s-information .s-read div h3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  height: 50px;
+  overflow: hidden;
+}
+.s-information .s-read div li {
+  font-size: 12px;
+}
+.s-information .s-read div li a {
+  font-size: 12px;
+  color: rgb(54,178,251);
+}
+.s-information .s-right .s-middle-adv {
+  display: block;
+  margin: 40px 0 45px 0;
+}
+.s-information .s-right .s-middle-adv img {
+  width: 100%;
+}
+/*学员案例*/
+.s-information .s-case .s-case-cnt {
+  padding: 10px 0;
+  border-bottom: 1px dashed #000;
+}
+.s-information .s-case div li {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.s-information .s-case div li:last-of-type {
+  margin-bottom: 0;
+}

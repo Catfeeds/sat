@@ -1,4 +1,11 @@
 <div class="span10">
+    <div >
+        <a>首页</a>
+        <span >&gt;</span>
+        <span>角色权限管理</span>
+        <span >&gt;</span>
+        <span>添加角色</span>
+    </div>
     <form action="<?php echo baseUrl."/admin/role/add" ?>" method="post">
         <span>角色名:</span>
         <div><input type="text" name="name" value="<?php echo isset($data1)? $data1['name']:''?>"></div>

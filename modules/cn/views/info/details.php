@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>公开课详情页</title>
-  <link rel="stylesheet" href="/cn/css/reset.css">
-  <link rel="stylesheet" href="/cn/css/public.css">
-  <link rel="stylesheet" href="/cn/css/bootstrap.css">
-  <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/cn/css/pubClass-detail.css">
-  <script src="/cn/js/less.js"></script>
-  <script src="/cn/js/jquery-2.1.3.js"></script>
-  <script src="/cn/js/bootstrap.js"></script>
-  <script src="/cn/js/jquery.SuperSlide.2.1.js"></script>
+    <meta charset="UTF-8">
+    <title>公开课详情页</title>
+    <link rel="stylesheet" href="/cn/css/reset.css">
+    <link rel="stylesheet" href="/cn/css/public.css">
+    <link rel="stylesheet" href="/cn/css/bootstrap.css">
+    <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/cn/css/pubClass-detail.css">
+    <script src="/cn/js/less.js"></script>
+    <script src="/cn/js/jquery-2.1.3.js"></script>
+    <script src="/cn/js/bootstrap.js"></script>
+    <script src="/cn/js/jquery.SuperSlide.2.1.js"></script>
 </head>
 <body>
   <!--导航-->

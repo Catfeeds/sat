@@ -8,6 +8,23 @@ a {
   width:1200px;
   margin: 0 auto;
 }
+.border-radius {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.border-blue {
+  border: 1px solid rgb(54,178,251);
+}
+.border-purple {
+  border: 1px solid rgb(229,104,215);
+}
+.over-ellipse {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
 /*.border-radius(@radius) {*/
   /*-webkit-border-radius: @radius;*/
   /*-moz-border-radius: @radius;*/

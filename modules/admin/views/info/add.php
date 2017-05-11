@@ -20,6 +20,7 @@
                         <option value ="备考资讯" <?php echo isset($data)&& $data['cate']=="备考资讯" ?  'selected':''?>>备考资讯</option>
                         <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected':''?>>新闻资讯</option>
                         <option value ="公开课" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected':''?>>公开课</option>
+                        <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected':''?>>开班信息</option>
                     </select>
                 </td>
             </tr>

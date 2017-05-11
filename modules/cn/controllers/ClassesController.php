@@ -9,18 +9,16 @@ namespace app\modules\cn\controllers;
 use yii;
 use yii\web\controller;
 use app\modules\cn\models\classes;
+use app\modules\cn\models\teachers;
 class ClassesController extends Controller{
     public function actionIndex(){
         $data = Yii::$app->db->createCommand("select id,major,introduction,cate from {{%classes}} ")->queryAll();
-//        $now_path=ltrim($_SERVER['REQUEST_URI'],'/');
-//        $classes=new Classes();
-//        $fiels="id,major,introduction,cate";
-//            $table="classes";
-//        $data=$classes->getData($table,$fiels);
-//        var_dump($now_path);
         $banner = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='classes'")->queryAll();
 //        var_dump($banner);
-        return $this->renderPartial('index',['data'=>$data,'banner'=>$banner]);
+        $teachers= Yii::$app->db->createCommand("select pic,name,subject,introduction from {{%teachers}} ")->queryAll();
+        $info= Yii::$app->db->createCommand("select id,title,summary from {{%info}} where isShow=1 and cate='开班信息'")->queryAll();
+//        var_dump($info);die;
+        return $this->renderPartial('index',['data'=>$data,'banner'=>$banner,'teachers'=>$teachers,'info'=>$info]);
     }
     public function actionDetails(){
 //        从数据表获取数据

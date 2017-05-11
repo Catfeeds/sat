@@ -1,4 +1,9 @@
 <div class="span10">
+    <div >
+        <a>首页</a>
+        <span >&gt;</span>
+        <span>角色权限管理</span>
+    </div>
     <a href="<?php echo baseUrl?>/admin/role/add">分配权限</a>
     <table border="1" width="60%">
         <thead>

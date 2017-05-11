@@ -1,5 +1,7 @@
 
 <div class="stran10">
+    <span >&gt;</span>
+    <span>添加节点/span>
     <form action="<?php echo baseUrl."/admin/node/add"?>" method="post">
         <table>
         <tr>

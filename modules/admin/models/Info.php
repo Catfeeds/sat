@@ -32,9 +32,11 @@ class Info extends ActiveRecord
         if($infoData['cate'] =="公开课"){
             $infoData['name']      = Yii::$app->request->post('name','');
             $infoData['activeTime']      = Yii::$app->request->post('activeTime','');
+            $infoData['hits']=10;
         }else{
             $infoData['name']      = '';
             $infoData['activeTime']      = '';
+            $infoData['hits']=rand(100,500);
         }
         $infoData['content']      = Yii::$app->request->post('editorValue','');
         if(Yii::$app->request->post('validTime','')==false){
@@ -44,7 +46,7 @@ class Info extends ActiveRecord
         }
         $infoData['validTime']=strtotime($infoData['validTime']);
         $infoData['publishTime']=time();
-        $infoData['hits']=rand(100,500);
+
         return $infoData;
     }
 
