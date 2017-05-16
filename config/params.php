@@ -16,6 +16,7 @@ return [
     'phone7' => '您正在通过邮箱找回申友公开课账号密码！',
     'phone8' => '您正在修改绑定手机！',
     'phone9' => '您正在修改绑定邮箱！',
+    'phone10' => '您正在通过手机注册！',
     'schoolUrl' => 'http://schools.smartapply.cn/cn/api/school',
     'categoryUrl' => 'http://schools.smartapply.cn/cn/api/cats',
     'contentUrl' => 'http://schools.smartapply.cn/cn/api/content',
