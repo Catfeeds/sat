@@ -72,6 +72,14 @@ $(function () {
   //   })
   // }
 
+  //点击注册
+  $('.s-register').click(function () {
+    if ($('#sPhone').hasClass('active')) {
+      regTel('signTel','signPwd1','signCode');
+    }else {
+      regEmail('signEmail','signPwd2')
+    }
+  })
 
 })
 //正则email匹配
@@ -190,22 +198,29 @@ function check() {
   return cResult;
 }
 
-function register(name,pwd) {
-  $.ajax({
-    url: '',
-    data: {
-      userName: $('#'+name).val(),
-      passWord: $('#'+pwd).val()
-    },
-    dataType: 'json',
-    success: function (data) {
-      if (data.msg = false) {
-        alert ('注册失败')
-      }else {
-        alert('注册成功')
-      }
+function regTel() {
+  var signTel = $('#signTel').val(),
+      signPwd1 = $('#signPwd1').val(),
+      signCode = $('#signCode').val();
+  $.post('test.php', {userName: "signTel",passWord: "signPwd1",
+  code: "signCode"}, function(data){
+    if (data) {
+      alert('注册成功');
+      loginOut();
+      login('.s-sign-cnt','.s-login-cnt',1000);
     }
-  })
+  },'json')
+}
+function regEmail() {
+  var signEmail = $('#signEmail').val(),
+      signPwd2 = $('#signPwd2').val();
+  $.post('test.php', {userName: "signEmail",passWord: "signPwd2"}, function(data){
+    if (data) {
+      alert ('注册成功');
+      loginOut();
+      login('.s-sign-cnt','.s-login-cnt',1000);
+    }
+  },'json')
 }
 
 
@@ -213,43 +228,24 @@ function login() {
   if (window.localStorage) {
     var userName = $('#loginName').val(),
         loginPwd = $('#loginPass').val();
-    // storage = window.localStorage;
     if ($('#loginBtn').attr('checked')) {
       localStorage.setItem('userName',userName);
       localStorage.setItem('password',loginPwd);
     }else {
       localStorage.setItem('userName',userName);
     }
-    $.ajax({
-      url: '',
-      data: {
-        userName: 'userName',
-        passWord: 'loginPwd'
-      },
-      dataType: 'json',
-      success: function (data) {
-        if (data.msg = '') {
-          alert ('用户名或密码错误')
-        }else {
-          window.location.href = 'www.baidu.com'
-        }
-      },
-      error: function () {
-        alert('系统错误');
+    $.post('test.php', {userName: 'userName', passWord: 'loginPwd'}, function(data){
+      if (data.msg == '') {
+        alert ('用户名或密码错误')
+      }else {
+        window.location.href = 'www.baidu.com'
       }
-    })
+    },'json')
   }else {
     alert('当前浏览器不支持HTML5存储')
   }
 }
-//点击注册
-$('.s-register').click(function () {
-  if ($('#sPhone').hasClass('active')) {
-    register('signTel','signPwd1');
-  }else {
-    register('signEmail','signPwd2')
-  }
-})
+
 //禁止右键
 // function stop(){
 //   return false;
