@@ -251,6 +251,7 @@ body {
   right: 0;
   bottom: 0;
   display: none;
+  z-index: 99;
 }
 .s-login .s-login-cnt,
 .s-login .s-sign-cnt {
