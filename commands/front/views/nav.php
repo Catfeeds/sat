@@ -26,8 +26,8 @@
         <input type="text">
     </form>
     <ul class="s-nav-login pull-right">
-        <li><a href="#">登录</a></li>
-        <li><a href="#">注册</a></li>
+        <li><a class="s-login-in" href="#">登录</a></li>
+        <li><a class="s-sign-up" href="#">注册</a></li>
     </ul>
 </div>
 </nav>

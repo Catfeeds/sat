@@ -241,3 +241,218 @@ body {
   font-size: 14px;
   color: #fff;
 }
+
+/*登录注册*/
+.s-login{
+  background-color: rgba(0,0,0,.35);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.s-login .s-login-cnt,
+.s-login .s-sign-cnt {
+  position: fixed;
+  width: 670px;
+  height: 425px;
+  padding: 55px 130px 45px;
+  background-color: rgb(251,251,251);
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.s-login .s-login-cnt h2 {
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.s-login .s-login-cnt h2:before,
+.s-login .s-login-cnt h2:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 140px;
+  height: 2px;
+  background-color: #ccc;
+}
+.s-login .s-login-cnt h2:before {
+  left: 0;
+  top: 10px;
+}
+.s-login .s-login-cnt h2:after {
+  right: 0;
+  top: 10px;
+}
+.s-login button,
+.s-login .form-control{
+  width: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+.s-login .form-control,
+.s-login .form-control {
+  -webkit-box-shadow:  3px 3px 3px #ccc;
+  -moz-box-shadow:  3px 3px 3px #ccc;
+  box-shadow:  3px 3px 3px #ccc;
+  margin-bottom: 33px;
+  padding: 5px 20px;
+  font-size: 14px;
+}
+.s-login .s-btn {
+  font-size: 16px;
+  letter-spacing: 20px;
+  background-color: rgb(54,178,251);
+  margin-bottom: 15px;
+}
+.s-login .s-btn:hover {
+  background-color: rgb(48,167,237);
+}
+.s-login .s-login-cnt form div.not('.s-tooltip') {
+  line-height: 30px;
+}
+.s-login .s-login-cnt label {
+  font-size: 14px;
+  font-weight: 400;
+}
+.s-login .s-login-cnt form a{
+  font-size: 14px;
+  color: rgb(54,178,251);
+}
+.s-login .s-login-bottom,
+.s-login .s-sign-bottom {
+  margin-top: 40px;
+}
+.s-login .s-login-bottom a,
+.s-login .s-sign-bottom a {
+  font-size: 14px;
+  color: rgb(54,178,251);
+}
+.s-login .s-login-bottom div,
+.s-login .s-sign-bottom div{
+  float: right;
+  font-size: 16px;
+}
+.s-login .s-login-bottom div a:hover,
+.s-login .s-login-bottom div a:after,
+.s-login .s-sign-bottom div a:hover,
+.s-login .s-sign-bottom div a:focus {
+  text-decoration: none;
+}
+.s-login .s-login-bottom img,
+.s-login .s-sign-bottom img {
+  width: 25px;
+  margin: 0 5px;
+}
+/*关闭*/
+.s-login .icon-remove {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: #ccc;
+  font-size: 25px;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.s-login .icon-remove:hover {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/*注册*/
+.s-sign-cnt .nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 20px;
+}
+.s-sign-cnt .nav-tabs li a:hover {
+  background-color: rgb(54,178,251);
+}
+.s-sign-cnt .nav-tabs li.active a:hover {
+  background-color: #fff;
+}
+.s-login .s-sign-cnt .s-sign-code,
+.s-login .s-sign-cnt .tab-pane button{
+  width: 40%;
+  display:  inline-block;
+}
+.s-login .s-sign-cnt .tab-pane button {
+  font-size: 16px;
+  background-color: rgb(54,178,251);
+  color: #fff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-left: 10%;
+  padding: 5px;
+}
+.s-login .s-sign-cnt .tab-pane button:hover {
+  background-color: rgb(48, 167, 237);
+}
+.s-login .s-sign-cnt .form-control {
+  margin-bottom: 20px;
+}
+.s-login .s-sign-bottom {
+  margin-top: 27px;
+}
+.s-login .s-sign-cnt .s-sign-agree span,
+.s-login .s-sign-cnt .s-sign-agree a{
+  font-size: 14px;
+}
+.s-login .s-sign-cnt .s-sign-agree a {
+  color: rgb(54,178,251);
+  cursor: pointer;
+}
+/*提示*/
+.s-tooltip {
+  position: relative;
+}
+.s-tooltip div {
+  position: absolute;
+  display: inline-block;
+  padding: 0 10px;
+  background-color: #FFCFCF;
+  border: 1px solid #FF1F1F;
+  font-size: 14px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  top: 0;
+  display: none;
+}
+.s-tooltip div:before,
+.s-tooltip div:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+}
+.s-tooltip div:before {
+  border: 8px solid transparent;
+  border-top-color: #FF1F1F;
+  bottom: -16px;
+  left: 50px
+}
+.s-tooltip div:after {
+  border: 7px solid transparent;
+  border-top-color: #FFCFCF;
+  bottom: -14px;
+  left: 51px;
+}
