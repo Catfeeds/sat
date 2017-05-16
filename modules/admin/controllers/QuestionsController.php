@@ -11,7 +11,7 @@ use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\questions;
 use app\modules\admin\models\testPaper;
-
+use app\libs\GetData;
 class QuestionsController extends ApiControl
 {
     public function actionIndex()
@@ -39,50 +39,20 @@ class QuestionsController extends ApiControl
         } else {
             //      添加数据到数据
             $model = new Questions();
-            $questionsData = Yii::$app->request->post('teachers');
-            $questionsData ['id'] = Yii::$app->request->post('id', '');
-            $questionsData ['content'] = Yii::$app->request->post('content', '');
-            $questionsData ['keyA'] = Yii::$app->request->post('keyA', '');
-            $questionsData ['keyB'] = Yii::$app->request->post('keyB', '');
-            $questionsData ['keyC'] = Yii::$app->request->post('keyC', '');
-            $questionsData ['keyD'] = Yii::$app->request->post('keyD', '');
-            $questionsData ['keyE'] = Yii::$app->request->post('keyE', '');
-            $questionsData ['answer'] = Yii::$app->request->post('answer', '');
-            $questionsData ['score'] = Yii::$app->request->post('score', '');
-            $questionsData ['major'] = Yii::$app->request->post('major', '');
-            $questionsData ['sourceid'] = Yii::$app->request->post('sourceid', '');
-            $questionsData ['leverid'] = Yii::$app->request->post('leverid', '');
-            if (empty($questionsData ['essay'])) {
-                if (empty($questionsData ['content'])) {
-                    die('<script>alert("请添加题目");history.go(-1);</script>');
-                }
-                if (empty($questionsData ['score'])) {
-                    die('<script>alert("请添加分数");history.go(-1);</script>');
-                }
-                if (empty($questionsData ['answer'])) {
-                    die('<script>alert("请添加答案");history.go(-1);</script>');
-                }
+            $getdata=new GetData();
+            $must=array('content'=>'题目','score'=>'分数','answer'=>'答案');
+            $data=$getdata->PostData($must);
+            if ($data['id'] == '') {
+                $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
             } else {
-
+                $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
-            if ($questionsData['id'] == '') {
-                $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $questionsData)->execute();
-                if ($re) {
-                    echo '<script>alert("数据添加成功")</script>';
-                    $this->redirect('index');
-                } else {
-                    echo '<script>alert("数据添加失败，请重试");history.go(-1);</script>';
-                    die;
-                }
+            if ($re) {
+                echo '<script>alert("数据\修改成功")</script>';
+                $this->redirect('index');
             } else {
-                $re = $model->updateAll($questionsData, 'id=:id', array(':id' => $questionsData['id']));
-                if ($re) {
-                    echo '<script>alert("数据修改成功")</script>';
-                    $this->redirect('index');
-                } else {
-                    echo '<script>alert("数据修改失败，请重试");history.go(-1);</script>';
-                    die;
-                }
+                echo '<script>alert("数据添加\修改失败，请重试");history.go(-1);</script>';
+                die;
             }
         }
     }
@@ -98,62 +68,46 @@ class QuestionsController extends ApiControl
     }
 
 //    展示试卷
-    public function actionIndex2()
+    public function actionTestpaper()
     {
         $data = Yii::$app->db->createCommand("select * from {{%testPaper}} ")->queryAll();
 //        var_dump($data);die;
-        return $this->render('Index2', ['data' => $data]);
+        return $this->render('testpaper', ['data' => $data]);
     }
 
 //    添加试卷信息
-    public function actionAdd2()
+    public function actionAdd_testpaper()
     {
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
             if ($id == '') {
-                return $this->render('Add2');
+                return $this->render('add_testpaper');
             } else {
                 $data = Yii::$app->db->createCommand("select * from {{%testpaper}} where id=" . $id)->queryOne();
 //                var_dump($data);die;
-                return $this->render('Add2', ['data' => $data]);
+                return $this->render('add_testpaper', ['data' => $data]);
             }
         } else {
             $model = new testPaper();
-            $paperData = Yii::$app->request->post('testPaper');
-            $paperData ['name'] = Yii::$app->request->post('name', '');
-            $paperData ['major'] = Yii::$app->request->post('major', '');
-            $paperData['id'] = Yii::$app->request->post('id', '');
-            $paperData ['time'] = Yii::$app->request->post('time', '');
-            $paperData ['source'] = Yii::$app->request->post('source', '');
-            if (empty($paperData['name'])) {
-                die('<script>alert("请添加试卷名称");history.go(-1);</script>');
-            }
-            if (empty($paperData['major'])) {
-                die('<script>alert("请选择科目");history.go(-1);</script>');
-            }
-            if ($paperData['id'] == '') {
-                $re = Yii::$app->db->createCommand()->insert("{{%testpaper}}", $paperData)->execute();
-                if ($re) {
-                    echo '<script>alert("数据添加成功")</script>';
-                    $this->redirect('index2');
-                } else {
-                    echo '<script>alert("数据添加失败，请重试");history.go(-1);</script>';
-                    die;
-                }
+            $getdata=new GetData();
+            $must=array('name'=>'试卷名称','major'=>'科目');
+            $data=$getdata->PostData($must);
+//            var_dump($data);die;
+            if ($data['id'] == '') {
+                $re = Yii::$app->db->createCommand()->insert("{{%testpaper}}", $data)->execute();
             } else {
-                $re = $model->updateAll($paperData, 'id=:id', array(':id' => $paperData['id']));
-                if ($re) {
-                    echo '<script>alert("数据修改成功")</script>';
-                    $this->redirect('index2');
-                } else {
-                    echo '<script>alert("数据修改失败，请重试");history.go(-1);</script>';
-                    die;
-                }
+                $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
+            }
+            if ($re) {
+                $this->redirect('testpaper');
+            } else {
+                echo '<script>alert("数据修改失败，请重试");history.go(-1);</script>';
+                die;
             }
         }
     }
 
-    public function actionDel2()
+    public function actionDel_testpaper()
     {
         $id = Yii::$app->request->get('id', '');
         $re = testPaper::deleteAll("id=:id", array(':id' => $id));

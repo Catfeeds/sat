@@ -13,8 +13,11 @@ use app\modules\admin\models\role;
 class RoleController extends ApiControl {
 
     public function actionIndex(){
-        $data= Yii::$app->db->createCommand("select * from {{%role}}")->queryAll();
-        return $this->render('index',['data'=>$data]);
+        return $this->render('index');
+    }
+    public function actionRole_node(){
+    $data= Yii::$app->db->createCommand("select * from {{%role}}")->queryAll();
+    return $this->render('role_node',['data'=>$data]);
     }
     public function actionAdd(){
         $enableCsrfValidation = false;
@@ -58,7 +61,7 @@ class RoleController extends ApiControl {
                 $re = $role->updateAll($roleData,'id=:id',array(':id'=>$roleData['id']));
             }
             if ($re) {
-                $this->redirect('index');
+                $this->redirect('role_node');
             } else {
                 echo '<script>alert("数据添加添加\修改失败，请重试");history.go(-1);</script>';
                 die;

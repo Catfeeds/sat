@@ -7,7 +7,7 @@
     </div>
     <a href="<?php echo baseUrl.'/admin/questions/add'?>">添加题目</>
     </br>
-    <a href="<?php echo baseUrl.'/admin/questions/index2'?>">试卷</>
+    <a href="<?php echo baseUrl.'/admin/questions/testpaper'?>">试卷</>
     <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>

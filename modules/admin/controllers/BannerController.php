@@ -11,6 +11,7 @@ namespace app\modules\admin\controllers;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\banner;
+use app\libs\GetData;
 class BannerController extends ApiControl
 {
     public function actionIndex()
@@ -35,25 +36,15 @@ class BannerController extends ApiControl
 
         } else {
             $banner=new Banner();
-            $bannerData['module'] = Yii::$app->request->post('module', '');
-            $bannerData['url'] = Yii::$app->request->post('url', '');
-            $bannerData['alt'] = Yii::$app->request->post('alt', '');
-            $bannerData['id'] = Yii::$app->request->post('id', '');
-            $bannerData['time']=date("Y-m-d",time());
-
-            if (empty($bannerData['module'] || $bannerData['url']|| $bannerData['alt'])) {
-                die('<script>alert("请将信息填完整");history.go(-1);</script>');
-            }
-            if(empty($bannerData['id'])){
-                $path=$this->upImage('banner');
-                $bannerData['pic']       = $path;
-                $re = Yii::$app->db->createCommand()->insert("{{%banner}}", $bannerData)->execute();
+            $getdata=new GetData();
+            $must=array('module'=>'模块','url'=>'地址','alt'=>'说明');
+            $data=$getdata->PostData($must,'banner');
+            $data['time']=date("Y-m-d",time());
+            if(empty($data['id'])){
+                $re = Yii::$app->db->createCommand()->insert("{{%banner}}", $data)->execute();
             }else{
-//                var_dump($_POST);die;
-                $bannerData['pic']= Yii::$app->request->post('up', '');
-                $re = $banner->updateAll($bannerData,'id=:id',array(':id'=>$bannerData['id']));
+                $re = $banner->updateAll($data,'id=:id',array(':id'=>$data['id']));
             }
-//            var_dump($nodeData);die;
             if ($re) {
                 $this->redirect('index');
             } else {

@@ -1,7 +1,10 @@
 
 <div class="stran10">
+    <span><a href="/admin/role/index">权限管理</a></span>
     <span >&gt;</span>
-    <span>添加节点/span>
+    <span>节点管理</span>
+    <span >&gt;</span>
+    <span>添加节点</span>
     <form action="<?php echo baseUrl."/admin/node/add"?>" method="post">
         <table>
         <tr>

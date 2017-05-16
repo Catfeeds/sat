@@ -15,8 +15,8 @@
             <tr>
                 <td>图片:</td>
                 <td>
-                    <?php  if(isset($data)&& $data['pic']!='') {$pic=$data['pic'];echo"<input name='up' type='text' value='$pic'>";}
-                    else {echo '<input id="file" type="file" name="up" >';
+                    <?php  if(isset($data)&& $data['pic']!='') {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic'>";}
+                    else {echo '<input id="file" type="file" name="pic" >';
                     }?> 只能添加'gif','jpg','jpeg','bmp','png'格式的图片
                 </td>
             </tr>
