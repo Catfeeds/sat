@@ -12,7 +12,7 @@ use app\modules\cn\models\info;
 use app\libs\pager;
 class InfoController extends Controller{
     public function actionIndex(){
-        $pagesize = 1;
+        $pagesize = 5;
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $countNews = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='新闻资讯'")->queryOne();
@@ -27,7 +27,6 @@ class InfoController extends Controller{
         $pageNews=new Pager('info.html?p',$countNews,$page,$pagesize);
         $strTest=$pageTest->GetPager();
         $strNews=$pageTest->GetPager();
-
         return $this->renderPartial('index', ['student' => $student,'infoTest' => $infoTest,'infoNews' => $infoNews,'strTest'=>$strTest,'strNews'=>$strNews,'info' => $info,]);
     }
     public function actionDetails(){
