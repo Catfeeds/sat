@@ -9,14 +9,26 @@ namespace app\modules\cn\controllers;
 use yii;
 use yii\web\controller;
 use app\modules\cn\models\info;
+use app\libs\pager;
 class InfoController extends Controller{
     public function actionIndex(){
-//        $pubclass=new pubclass();
-//        $pubclass->getTime();
-        $data = Yii::$app->db->createCommand("select * from {{%info}}")->queryAll();
-//        $arr = Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课'")->queryAll();
-//        var_dump($data);die;
-        return $this->renderPartial('index',['data'=>$data]);
+        $pagesize = 1;
+        $page = Yii::$app->request->get('p', 1);
+        $offset = $pagesize * ($page - 1);
+        $countNews = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='新闻资讯'")->queryOne();
+        $countNews = $countNews['count'];
+        $countTest = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='备考资讯'")->queryOne();
+        $countTest = $countTest['count'];
+        $infoNews = Yii::$app->db->createCommand("select * from {{%info}} where cate='新闻资讯' limit $offset,$pagesize")->queryAll();
+        $infoTest= Yii::$app->db->createCommand("select * from {{%info}} where cate='备考资讯' limit $offset,$pagesize")->queryAll();
+        $info  = Yii::$app->db->createCommand("select * from {{%info}} order by hits desc limit 5")->queryAll();
+        $student= Yii::$app->db->createCommand("select * from {{%student_case}} limit 5")->queryAll();
+        $pageTest=new Pager('info.html?p',$countTest,$page,$pagesize);
+        $pageNews=new Pager('info.html?p',$countNews,$page,$pagesize);
+        $strTest=$pageTest->GetPager();
+        $strNews=$pageTest->GetPager();
+
+        return $this->renderPartial('index', ['student' => $student,'infoTest' => $infoTest,'infoNews' => $infoNews,'strTest'=>$strTest,'strNews'=>$strNews,'info' => $info,]);
     }
     public function actionDetails(){
 //        从数据表获取数据

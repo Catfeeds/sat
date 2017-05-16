@@ -11,10 +11,10 @@
             </dl>
             <dl class="pull-left">
                 <dt>网站说明</dt>
-                <dd><a href="#">关于我们</a></dd>
-                <dd><a href="#">联系我们</a></dd>
-                <dd><a href="#">加入我们</a></dd>
-                <dd><a href="#">您的建议</a></dd>
+                <dd><a href="/about.html">关于我们</a></dd>
+                <dd><a href="/about.html">联系我们</a></dd>
+                <dd><a href="/about.html">加入我们</a></dd>
+                <dd><a href="/about.html">您的建议</a></dd>
             </dl>
             <div class="s-qr">
                 <img src="/cn/images/qr-code01.png" alt="">

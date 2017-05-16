@@ -18,7 +18,6 @@
             }
                $this->role();
 		}
-// 4.12日，目前不知道这个配置嘛用
         public function config(){
             define('baseUrl',Yii::$app->params['baseUrl']);
             define('tablePrefix',Yii::$app->db->tablePrefix);
@@ -28,11 +27,11 @@
 //            }
         }
 //        @$name 类别的名称，通过父类来获取子类的id
-        public function getCate($name){
-            $I = Yii::$app->db->createCommand("select id from {{%cate}} where name='$name'")->queryOne();
-            $arr= Yii::$app->db->createCommand("select * from {{%cate}} where pid=".$I['id'])->queryAll();
-            return $arr;
-        }
+//        public function getCate($name){
+//            $I = Yii::$app->db->createCommand("select id from {{%cate}} where name='$name'")->queryOne();
+//            $arr= Yii::$app->db->createCommand("select * from {{%cate}} where pid=".$I['id'])->queryAll();
+//            return $arr;
+//        }
 //        @$position 使用的位置
         public function upImage($position){
 //            允许上传的图片格式

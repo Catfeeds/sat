@@ -7,7 +7,9 @@
             <div class="nav-collapse navbar-responsive-collapse collapse">
 
                 <ul class="nav pull-right">
-
+                    <li>
+                        <a href="<?php echo baseUrl?>/admin/role/index" >后台权限管理</a>
+                    </li>
                     <li>
                         <a href="<?php echo baseUrl?>/basic/index/index" >后台首页</a>
                     </li>

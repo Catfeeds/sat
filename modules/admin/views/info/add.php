@@ -17,10 +17,10 @@
                 <td>
                     <select name="cate" id="cate" >
                         <option value ="">请选择类型</option>
-                        <option value ="备考资讯" <?php echo isset($data)&& $data['cate']=="备考资讯" ?  'selected':''?>>备考资讯</option>
-                        <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected':''?>>新闻资讯</option>
-                        <option value ="公开课" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected':''?>>公开课</option>
-                        <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected':''?>>开班信息</option>
+                        <option value ="备考资讯" <?php echo isset($data)&& $data['cate']=="备考资讯" ?  'selected=selected':''?>>备考资讯</option>
+                        <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected=selected':''?>>新闻资讯</option>
+                        <option value ="公开课" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected=selected':''?>>公开课</option>
+                        <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "开班信息" ?  'selected=selected':''?>>开班信息</option>
                     </select>
                 </td>
             </tr>
@@ -39,8 +39,8 @@
             <tr>
                 <td>内容图片</td>
                 <td>
-                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='up' type='text' value='$pic' style='width: 500px;;'>";}
-                    else {echo '<input id="file" type="file" name="up" >';
+                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic' style='width: 500px;;'>";}
+                    else {echo '<input id="file" type="file" name="pic" value='.'"$pic">';
                     }?>
                 </td>
                 <!--                    <input id="file_upload" name="file_upload" type="file" multiple="true">-->
@@ -63,7 +63,7 @@
             <tr>
                 <td>有效时间:</td>
                 <td>
-                    <input type="text" name="validTime" placeholder="格式为: 年-月-日 时：分, 注：所有输入均为英文状态"  style="width: 500px;" value="<?php echo isset($data)? $data['validTime']:''?>" />
+                    <input type="text" name="validTime" placeholder="格式为: 年-月-日 时：分, 无则填：2037-8-8"  style="width: 500px;" value="<?php echo isset($data)? $data['validTime']:''?>" />
                 </td>
             </tr>
             <tr>

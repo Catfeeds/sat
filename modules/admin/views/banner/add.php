@@ -15,8 +15,8 @@
             <tr>
                 <td>图片</td>
                 <td>
-                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='up' type='text' value='$pic' style='width: 500px;;'>";}
-                    else {echo '<input id="file" type="file" name="up" >';
+                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic' style='width: 500px;;'>";}
+                    else {echo '<input id="file" type="file" name="pic" >';
                     }?>
                 </td>
             </tr>

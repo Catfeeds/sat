@@ -1,6 +1,8 @@
 <div class="span10">
     <a>首页</a>
     <span >&gt;</span>
+    <span><a href="/admin/role/index">权限管理</a></span>
+    <span >&gt;</span>
     <span>节点管理</span></br>
     <a href="<?php echo baseUrl?>/admin/node/add">节点添加</a>
 

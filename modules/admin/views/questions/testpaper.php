@@ -7,7 +7,7 @@
         <span>试卷管理</span>
     </div>
     <a href="<?php echo baseUrl.'/admin/questions/index'?>">返回</></br>
-    <a href="<?php echo baseUrl.'/admin/questions/add2'?>">添加试卷</>
+    <a href="<?php echo baseUrl.'/admin/questions/add_testpaper'?>">添加试卷</>
     <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>
@@ -27,7 +27,7 @@
                 <td><? echo $v['time']?></td>
                 <td><? echo $v['source']?></td>
                 <td>
-                    <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add2'.'?'.'id='.$v['id']?>">修改</a>
+                    <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add_testpaper'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>
                 </td>
             </tr>
@@ -37,7 +37,7 @@
 <script>
     function del(id){
         if(confirm("确定删除内容吗")) {
-            $.get("/admin/questions/del2", {id: id},
+            $.get("/admin/questions/del_testpaper", {id: id},
                 function (msg) {
                     if (msg) {
                         alert('删除成功');

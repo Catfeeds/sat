@@ -6,7 +6,7 @@
         <span >&gt;</span>
         <span>添加试卷</span>
     </div>
-    <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add2"?>">
+    <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add_testpaper"?>">
         <table width="100%">
             <tr>
                 <td width="80px">试卷名称:</td>

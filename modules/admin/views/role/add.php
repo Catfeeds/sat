@@ -2,7 +2,7 @@
     <div >
         <a>首页</a>
         <span >&gt;</span>
-        <span>角色权限管理</span>
+        <span><a href="/admin/role/index">权限管理</a></span>
         <span >&gt;</span>
         <span>添加角色</span>
     </div>
