@@ -69,11 +69,12 @@
             <div role="tabpanel" class="tab-pane active" id="sPhone">
                 <input type="email" class="form-control" id="signTel" onblur="signTel(this.value)" placeholder="请输入手机号">
                 <input type="password" class="form-control" id="signPwd1" onblur="signPwd1(this.value)" placeholder="请输入密码">
-                <input type="text" class="form-control s-sign-code" id="signCode" placeholder="请输入验证码"><button>点击获取验证码</button>
+                <input type="text" class="form-control s-sign-code" id="signCode" placeholder="请输入验证码"><button onclick="leftCode()">点击获取验证码</button>
             </div>
             <div role="tabpanel" class="tab-pane" id="sEmail">
                 <input type="email" class="form-control" id="signEmail" onblur="signEmail(this.value)" placeholder="请输入邮箱">
                 <input type="password" class="form-control" id="signPwd2" onblur="signPwd2(this.value)" placeholder="请输入密码">
+<!--                <button onclick="Code()">点击验证邮箱</button>-->
             </div>
         </div>
         <form action="" onsubmit="return check()">
@@ -97,3 +98,17 @@
         </div>
     </div>
 </div>
+<script>
+    function leftCode(){
+        var phone = $('#signTel').val();
+        $.post('/user/api/phone-code',{type:10,phoneNum:phone},function(re){
+            alert(re.message);
+        },"json")
+    }
+//    function Code(){
+//        var email = $('#signEmail').val();
+//        $.post('/user/api/sendmail',{email:email},function(re){
+//            alert(re);
+//        },"text")
+//    }
+</script>
