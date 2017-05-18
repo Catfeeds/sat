@@ -74,6 +74,7 @@
             <div role="tabpanel" class="tab-pane" id="sEmail">
                 <input type="email" class="form-control" id="signEmail" onblur="signEmail(this.value)" placeholder="请输入邮箱">
                 <input type="password" class="form-control" id="signPwd2" onblur="signPwd2(this.value)" placeholder="请输入密码">
+<!--                <button onclick="Code()">点击验证邮箱</button>-->
             </div>
         </div>
         <form action="" onsubmit="return check()">
@@ -100,9 +101,14 @@
 <script>
     function leftCode(){
         var phone = $('#signTel').val();
-        alert(phone);
         $.post('/user/api/phone-code',{type:10,phoneNum:phone},function(re){
             alert(re.message);
         },"json")
     }
+//    function Code(){
+//        var email = $('#signEmail').val();
+//        $.post('/user/api/sendmail',{email:email},function(re){
+//            alert(re);
+//        },"text")
+//    }
 </script>
