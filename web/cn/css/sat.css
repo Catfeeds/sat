@@ -1,0 +1,350 @@
+.s-sat .s-banner {
+  height: 420px;
+  margin-top: 30px;
+}
+.s-sat .s-banner .carousel {
+  width: 850px;
+}
+.s-sat .s-banner .carousel img {
+  height: 420px;
+}
+.s-sat .s-left {
+  left: 2%;
+}
+.s-sat .s-right {
+  right: 2%;
+  left: auto;
+}
+.s-sat .carousel-control {
+  top: 50%;
+  font: 400 30px simsun;
+}
+/*个人登录、公告区*/
+.s-sat .s-person {
+  width: 320px;
+  height: 420px;
+  border: 1px solid #000;
+  margin-left: 870px;
+  padding: 44px 26px;
+  overflow: hidden;
+}
+.s-sat .s-person-logo {
+  width: 83px;
+  height: 83px;
+  background: url("../images/sat01.png") center center no-repeat;
+  border: 2px solid rgb(48,167,237);
+}
+.s-sat .s-hi {
+  margin-left: 90px;
+}
+.s-sat .s-hi h3,
+.s-sat .s-hi p {
+  font-size: 16px;
+}
+.s-sat .s-btn {
+  margin-top: 30px;
+}
+.s-sat .s-btn button {
+  background-color: rgb(48,167,237);
+  font-size: 14px;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  padding: 3px 20px;
+  margin: 0 15px;
+}
+.s-sat .s-btn button:hover {
+  background-color: rgb(54,178,251);
+}
+.s-sat .s-person .s-adv {
+  margin: 45px 0 20px 0;
+  font-size: 16px;
+}
+.s-sat .s-person li {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.s-sat .s-person li a {
+  font-size: 14px;
+}
+/*免费公开课*/
+.s-sat .s-pubclass {
+  margin: 60px 0 120px;
+}
+.s-sat .s-sat-title {
+  width: 190px;
+  position: relative;
+  margin: 0 auto 85px;
+}
+.s-sat .s-sat-title:before,
+.s-sat .s-sat-title:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 165px;
+  height: 1px;
+  background-color: #ccc;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.s-sat .s-sat-title:before {
+  left: -200px;
+}
+.s-sat .s-sat-title:after {
+  right: -160px;
+}
+.s-sat .s-sat-title>p {
+  display: inline-block;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgb(54,178,251);
+}
+.s-sat .s-sat-title>div {
+  padding-top: 5px;
+  margin-left: 30px;
+}
+.s-sat .s-sat-title>div p {
+  font-size: 18px;
+  margin: 0;
+}
+#Index_Box {
+  position: relative;
+  width: 100%;
+  height: 490px;
+  cursor: default;
+}
+.s-sat .s-pubclass .s-pubcnt-cnt pre {
+  position: absolute;
+  width: 80px;
+  border-width: 0;
+  background-color: transparent;
+  color: gray;
+  font: 400 50px/100px simsun;
+  top: 30%;
+  z-index: 9;
+}
+.s-pubclass .s-pubcnt-cnt pre:hover {
+  color: #000;
+}
+.s-pubclass .s-pubcnt-cnt pre.next {
+  right: 0;
+}
+.s-pubclass .s-pubcnt-cnt ul {
+  position: absolute;
+  width: 100%;
+  height: 435px;
+}
+.s-pubclass .s-pubcnt-cnt li {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: rgb(240,240,240);
+  color: #fff;
+  top: 50px;
+  left: 60px;
+  padding-bottom: 100px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.s-pubclass .s-pubcnt-cnt li a {
+  display: block;
+  width: 65%;
+  padding: 5px 20px;
+  margin: 7% auto;
+  color: #fff;
+  background-color: rgb(54,178,251);
+  text-align: center;
+}
+/*暑期班*/
+.s-course {
+  width: 100%;
+  margin-bottom: 120px;
+}
+.s-course .s-detail {
+  margin: 0;
+  font-size: 0;
+}
+.s-course .s-detail li {
+  width: 380px;
+  height: 330px;
+  display: inline-block;
+  overflow: hidden;
+}
+.s-course .s-font {
+  padding: 55px 20px 20px;
+}
+.s-course .s-cnt h2 {
+  position: relative;
+  width: 30%;
+  font-size: 14px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ccc;
+}
+.s-course .s-cnt h2:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(54,178,251);
+}
+.s-course .s-cnt p {
+  font-size: 14px;
+  height: 100px;
+  margin-top: 30px;
+  line-height: 24px;
+  overflow: auto;
+}
+.s-course .s-cnt a {
+  padding: 5px 20px;
+  background-color: rgb(54,178,251);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+.s-course .s-cnt a:hover {
+  background-color: rgb(48,167,237);
+}
+.s-course .s-detail img {
+  width: 100%;
+}
+.s-course .s-cnt .s-img {
+  -webkit-box-shadow:  3px 3px 3px #ccc;
+  -moz-box-shadow:  3px 3px 3px #ccc;
+  box-shadow:  3px 3px 3px #ccc;
+}
+  /*文章资讯*/
+.s-article {
+  margin: 30px 0 40px 0;
+}
+.s-article .s-cnt div {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.s-article .s-cnt img {
+  width: 350px;
+  height: 400px;
+}
+.s-article .s-cnt a {
+  font-size: 16px;
+  cursor: pointer;
+}
+.s-article .s-cnt h2 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.s-article .s-cnt p {
+  font-size: 14px;
+}
+.s-article .s-cnt ul {
+}
+.s-article .s-text li {
+  width: 700px;
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/*名师团队*/
+.s-teacher {
+  padding: 70px 0 80px 0;
+  height: 726px;
+}
+.s-teacher-cnt {
+  position: relative;
+  width: 100%;
+}
+.s-teacher-cnt ul {
+  width: 100%;
+}
+.s-teacher-cnt ul li {
+  position: relative;
+  float: left;
+  width: 245px;
+  text-align: center;
+  margin: 0 27.5px;
+}
+.s-teacher-cnt ul li:last-child {
+  margin-right: 0;
+}
+.s-teacher-cnt ul li img {
+  width: 170px;
+  height: 170px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid rgb(54,178,251);
+}
+.s-teacher-cnt ul li div {
+  width: 245px;
+  height: 340px;
+  padding: 85px 15px 0 15px;
+  margin-top: -85px;
+  background-color: rgba(255, 255, 255, .9);
+  -webkit-box-shadow:  3px 3px 3px #ccc;
+  -moz-box-shadow:  3px 3px 3px #ccc;
+  box-shadow:  3px 3px 3px #ccc;
+}
+.s-teacher-cnt ul li div h2 {
+  width: 80px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 5px 0 3px 0;
+  border-bottom: 1px solid #000;
+}
+.s-teacher-cnt ul li div h4,
+.s-teacher-cnt ul li div p {
+  font-size: 14px;
+}
+.s-teacher-cnt ul li div p {
+  text-align: left;
+  text-indent: 20px;
+}
+.s-teacher-cnt ul li a {
+  display: block;
+  width: 94px;
+  height: 32px;
+  padding: 7px 15px;
+  color: #fff;
+  background-color: rgb(54,178,251);
+  margin: -16px auto 0;
+}
+.s-teacher-cnt ul li div a:hover {
+  background-color: rgb(206,93,193);
+  text-decoration: none;
+}
+.s-teacher-cnt .s-arrow {
+  position: absolute;
+  font: 400 50px/100px simsun;
+  color: gray;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: default;
+}
+.s-teacher-cnt .s-arrow:hover {
+  color: #000;
+}
+.s-teacher-cnt .prev {
+  left: -50px;
+}
+.s-teacher-cnt .next {
+  right: -50px;
+}
