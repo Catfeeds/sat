@@ -321,9 +321,9 @@ body {
 .s-login .s-btn:hover {
   background-color: rgb(48,167,237);
 }
-.s-login .s-login-cnt form div.not('.s-tooltip') {
-  line-height: 30px;
-}
+/*.s-login .s-login-cnt form div.not('.s-tooltip') {*/
+  /*line-height: 30px;*/
+/*}*/
 .s-login .s-login-cnt label {
   font-size: 14px;
   font-weight: 400;

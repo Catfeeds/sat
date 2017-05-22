@@ -18,8 +18,11 @@
 #myCarousel img {
   height: 270px;
 }
+.carousel-indicators {
+  bottom: 0;
+}
 .carousel-control {
-  font: 200 20px simsun;
+  font: 200 40px/270px simsun;
   border: none;
 }
 .s-information .s-headline dl{
@@ -44,6 +47,7 @@
 .s-information .s-headline dl dd a {
   font-size: 14px;
 }
+/*文章列*/
 .s-information h1 {
   display: inline-block;
   font-weight: 200;

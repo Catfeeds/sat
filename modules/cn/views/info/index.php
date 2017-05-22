@@ -10,10 +10,9 @@
   <link rel="stylesheet" href="/cn/css/public.css">
   <link rel="stylesheet" href="/cn/css/information.css">
 
-<!--  <script src="/cn/js/less.js"></script>-->
   <script src="/cn/js/jquery-2.1.3.js"></script>
   <script src="/cn/js/bootstrap.js"></script>
-  <script src="/cn/js/jquery.SuperSlide.2.1.js"></script>
+  <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
   <script src="/cn/js/public.js"></script>
 </head>
 <body>
@@ -63,10 +62,8 @@
           </dl>
         </div>
         <h1><strong>IN</strong>FORMATION</h1>
-        <ul >
-<!--          <li class="active"><a href="#active" data-toggle="tab">新闻资讯</a></li>-->
-<!--          <li><a href="#exam" data-toggle="tab">备考资讯</a></li>-->
-          <li class="active">
+        <ul class="s-toggle">
+          <li>
             <a href="/info.html?c=n" >新闻资讯</a></li>
           </li >
           <li>
@@ -149,9 +146,17 @@
   <?php FootWidget::end();?>
 </body>
 <script>
-  $('.s-toggle a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  })
+ $(function() {
+   var toggle = window.location.href.split('?')[1];
+   if (!toggle){
+     $('.s-toggle li').eq(0).addClass('active')
+   }else {
+     if (toggle.indexOf('n') == -1) {
+       $('.s-toggle li').eq(1).addClass('active')
+     }else {
+       $('.s-toggle li').eq(0).addClass('active')
+     }
+   }
+ })
 </script>
 </html>
