@@ -125,6 +125,7 @@ class ApiController extends Controller
 
     public function actionRegister()
     {
+        set_time_limit(0);
         $login = new Login();
         $registerStr = Yii::$app->request->post('userName');
         $pass = Yii::$app->request->post('passWord');
@@ -177,12 +178,10 @@ class ApiController extends Controller
             }
         }else{
             $checkEmail = $login->checkEmail($registerStr);
-//            var_dump($checkEmail);die;
             if(!$checkEmail){
                 $res['code'] = 1;
                 $res['message'] = '邮箱不合法';
                 $res['type'] = '3';
-//                die($res);
             }else{
                 $login->email = $registerStr;
                 $login->userPass = md5($pass);
@@ -190,15 +189,18 @@ class ApiController extends Controller
                 $re = $login->save();
                 if ($re) {
                     $res['code'] = 1;
-                    $res['message'] = '注册成功，正在发送邮件...';
-                    $send=$this->actionSendMail($registerStr);
-                    if($send){
-                        $res['message']=$res['message']."邮件发送成功";
-                    }else{
-                        $res['message']=$res['message']."邮件发送失败";
+                    $res['message'] = '注册成功，且邮件发送成功，请到邮箱进行验证';
+                    $mail = Yii::$app->mailer;
+                    $mail->useFileTransport = false;
+                    $mail= $mail->compose();
+                    $em_1=md5($registerStr);
+                    $mail->setTo($registerStr);
+                    $mail->setSubject("【申友网(thinku)】邮件验证码");
+                    $content="<a href='http://www.sysat.com/index.php/user/api/live?em_1=".$em_1."&email=".$registerStr."'>点击此链接</a>激活账号【申友网(thinku)】";
+                    $mail->setHtmlBody("$content");
+                    if ($mail->send()) {
+                        die(json_encode($res));
                     }
-//                    $res['message']=$re['message'];
-
                 } else {
                     $res['code'] = 0;
                     $res['message'] = '注册失败，请重试';
@@ -209,13 +211,7 @@ class ApiController extends Controller
         die(json_encode($res));
     }
 
-
-    /**
-     * 发送邮箱
-     * @Obelisk
-     */
-
-    public function actionSendmail($email)
+    public function actionSendMail($email)
     {   set_time_limit(0);
         $mail = Yii::$app->mailer->compose();
         $em_1=md5($email);
@@ -230,8 +226,10 @@ class ApiController extends Controller
             $res['code'] = 0;
             $res['message'] = '邮件发送失败！';
         }
-        return $res;
+        die(json_encode($res));
     }
+
+
     // 邮箱的账号激活
     public function actionLive()
     {
