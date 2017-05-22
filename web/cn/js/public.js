@@ -202,14 +202,16 @@ function regEmail() {
   var signEmail = $('#signEmail').val(),
       signPwd2 = $('#signPwd2').val(),
       type=2;
-  $.post('/user/api/register', {userName: signEmail,passWord: signPwd2,type: type}, function(data){
-    if (data) {
-      alert (data.message);
-      loginOut();
-      login('.s-sign-cnt','.s-login-cnt',1000);
-    }else{
-      alert("发送邮件失败，请到个人中心，重新进行验证");
-    }
+  //alert (111);
+  $.post('/user/api/register',{userName: signEmail,passWord: signPwd2,type: type},function(data){
+  //  if (data) {
+    alert(data.message);
+      //alert (data);
+      //loginOut();
+  //    login('.s-sign-cnt','.s-login-cnt',1000);
+  //  }else{
+  //    alert("发送邮件失败，请到个人中心，重新进行验证");
+  //  }
   },'json')
 }
 

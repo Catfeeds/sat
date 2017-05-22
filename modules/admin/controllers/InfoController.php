@@ -14,16 +14,17 @@ use app\libs\GetData;
 
 class InfoController extends ApiControl
 {
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
-        $data = Yii::$app->db->createCommand("select * from {{%info}} ")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%info}} order by id desc")->queryAll();
         return $this->render('index', ['data' => $data]);
     }
 
     // 修改和添加资讯，判断依据是$_POST['id']是否提交
     public function actionAdd()
     {
-        $enableCsrfValidation = false;
+
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
             if (empty($id)) {

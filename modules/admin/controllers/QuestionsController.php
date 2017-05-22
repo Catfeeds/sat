@@ -18,7 +18,7 @@ class QuestionsController extends ApiControl
     {
 ////        从数据库获取数据
 //        $model      = new Classes();
-        $data = Yii::$app->db->createCommand("select * from {{%questions}} ")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%questions}} order by id desc")->queryAll();
 
 //        var_dump($data);
         return $this->render('index', ['data' => $data]);

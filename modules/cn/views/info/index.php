@@ -56,26 +56,27 @@
             </a>
           </div>
           <dl>
-            <dt>今日头条</dt>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
-            <dd><a href="#">国外求职全解析，美国导师带你玩转国外就业市场</a></dd>
+            <dt>最新资讯</dt>
+            <?php foreach($newinfo as $v){?>
+            <dd><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a></dd>
+           <?php }?>
           </dl>
         </div>
         <h1><strong>IN</strong>FORMATION</h1>
-        <ul class="s-toggle">
-          <li class="active"><a href="#active" data-toggle="tab">新闻资讯</a></li>
-          <li><a href="#exam" data-toggle="tab">备考资讯</a></li>
+        <ul >
+<!--          <li class="active"><a href="#active" data-toggle="tab">新闻资讯</a></li>-->
+<!--          <li><a href="#exam" data-toggle="tab">备考资讯</a></li>-->
+          <li class="active">
+            <a href="/info.html?c=n" >新闻资讯</a></li>
+          </li >
+          <li>
+            <a href="/info.html?c=t" >备考资讯</a></li>
+          </li>
         </ul>
         <div>
           <div class="tab-content">
             <ul class="tab-pane active" id="active">
-              <?php foreach($infoNews as $v){?>
+              <?php foreach($info as $v){?>
               <li class="s-article clearfix">
                 <a class="pull-left" href="/info_details/<?php echo $v['id']?>.html">
                   <img class="img-thumbnail" src="<?php echo $v['pic']?>" alt="">
@@ -92,28 +93,7 @@
                 </div>
               </li>
               <?php }?>
-              <?php echo $strNews?>
-            </ul>
-            <ul class="tab-pane" id="exam">
-              <?php foreach($infoTest as $v){?>
-              <li class="s-article clearfix">
-                <a class="pull-left" href=/info_details/<?php echo $v['id']?>.html">
-                  <img class="img-thumbnail" src="<?php echo $v['pic']?>" alt="">
-                </a>
-                <div>
-                  <h3><a href=""/info_details/<?php echo $v['id']?>.html""> <?php echo $v['title']?></a></h3>
-                  <ul>
-                    <li><a href=""/info_details/<?php echo $v['id']?>.html""><?php echo $v['cate']?></a></li>
-                    <li><a href="#">SAT资料</a></li>
-                    <li class="pull-right"><?php echo date("Y-m-d",$v['publishTime'])?></li>
-                  </ul>
-                  <p>
-                    <?php echo $v['summary']?>
-                  </p>
-                </div>
-              </li>
-              <?php }?>
-              <?php echo $strTest?>
+              <?php echo $str?>
             </ul>
           </div>
         </div>
@@ -122,7 +102,7 @@
         <div class="s-read">
           <h2>阅读排行</h2>
           <ul>
-            <?php foreach($info as $v){?>
+            <?php foreach($hot as $v){?>
             <li>
               <a href="/info_details/<?php echo $v['id']?>.html">
                 <img src="<?php echo$v['pic']?>" alt="">

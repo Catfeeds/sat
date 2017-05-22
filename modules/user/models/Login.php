@@ -2,6 +2,7 @@
 //用户模型
 namespace app\modules\user\models;
 use yii\db\ActiveRecord;
+use yii;
 class Login extends ActiveRecord
 {
     public static function tableName(){
@@ -91,4 +92,6 @@ class Login extends ActiveRecord
             return true;
         }
     }
+//    发送邮件
+
 }

@@ -14,7 +14,7 @@
     <!--  <script src="/cn/js/less.js"></script>-->
     <script src="/cn/js/jquery-2.1.3.js"></script>
     <script src="/cn/js/bootstrap.js"></script>
-    <script src="/cn/js/jquery.SuperSlide.2.1.js"></script>
+    <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
     <script src="/cn/js/public.js"></script>
 </head>
 <body>

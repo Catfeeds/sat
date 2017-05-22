@@ -98,86 +98,7 @@
           </div>
         </li>
         <?php }?>
-<!--        <li>-->
-<!--          <embed src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="" data-src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="" data-src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="" data-src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="" data-src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="" data-src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <embed src="" data-src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
-<!--          <div class="s-cnt">-->
-<!--            <h2 class="center-block">公开课名称</h2>-->
-<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
-<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
+
       </ul>
       <button class="s-more center-block">查看更多</button>
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
@@ -220,7 +141,7 @@
 </html>
 <script>
   function apply(id){
-      $.get("/cn/pubclass/apply", {id: id},
+      $.get("/cn/pubclass/apply",{id: id},
           function (msg) {
             if (msg) {
               alert('报名成功');
@@ -228,5 +149,7 @@
             }
           }, 'text'
       );
+
+
   }
 </script>

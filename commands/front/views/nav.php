@@ -4,6 +4,7 @@
         <img src="/cn/images/logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
+<<<<<<< HEAD
         <li><a class="on" href="#">首页</a></li>
 <!--        <li class="s-nav-work">-->
 <!--            <a href="#">做题<i class=" icon-caret-down"></i></a>-->
@@ -15,6 +16,19 @@
 <!--        </li>-->
 <!--        <li><a href="#">模考</a></li>-->
 <!--        <li><a href="#">报告</a></li>-->
+=======
+        <li><a class="on" href="/index.html">首页</a></li>
+        <li class="s-nav-work">
+            <a href="#">做题<i class=" icon-caret-down"></i></a>
+            <ul class="s-nav-showing">
+                <li><a href="#">练习</a></li>
+                <li><a href="#">知识库</a></li>
+                <li><a href="#">测评</a></li>
+            </ul>
+        </li>
+        <li><a href="#">模考</a></li>
+        <li><a href="#">报告</a></li>
+>>>>>>> 16fd957b8cf49ed623da8591a66f60506d1c34fb
         <li><a href="/class.html">课程</a></li>
         <li><a href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
