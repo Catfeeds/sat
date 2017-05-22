@@ -21,6 +21,8 @@
                         <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected=selected':''?>>新闻资讯</option>
                         <option value ="公开课" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected=selected':''?>>公开课</option>
                         <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "开班信息" ?  'selected=selected':''?>>开班信息</option>
+                        <option value ="公告" <?php echo isset($data)&& $data['cate']== "公告" ?  'selected=selected':''?>>公告</option>
+
                     </select>
                 </td>
             </tr>

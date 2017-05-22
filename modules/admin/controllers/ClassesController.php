@@ -15,7 +15,7 @@ class ClassesController extends ApiControl {
     public function actionIndex()
     {
 //        从数据库获取数据
-        $data = Yii::$app->db->createCommand("select * from {{%classes}} ")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%classes}} order by id desc ")->queryAll();
         return $this->render('index',['data' => $data]);
     }
 //    添加课程

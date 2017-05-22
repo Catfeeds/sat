@@ -41,7 +41,7 @@
           <div class="clearfix">
             <p class="s-pd-time pull-right"><span><?php echo date('Y-m-d',$data['publishTime'])?></span><span>阅读<i><?php echo $data['hits']?></i></span></p>
           </div>
-          <h3>摘要：<?php echo $data['summary']?></h3>
+          <h3><?php if($data['summary']!=false) echo "摘要：".$data['summary']?></h3>
           <div class="s-pd-font"><?php echo $data['content']?></div>
           <!-- 分享插件 -->
           <div class="jiathis_style_24x24">

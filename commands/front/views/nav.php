@@ -4,7 +4,7 @@
         <img src="/cn/images/logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
-        <li><a class="on" href="#">首页</a></li>
+        <li><a class="on" href="/index.html">首页</a></li>
         <li class="s-nav-work">
             <a href="#">做题<i class=" icon-caret-down"></i></a>
             <ul class="s-nav-showing">

@@ -15,10 +15,6 @@ class Info extends ActiveRecord
     {
         return '{{%info}}';
     }
-    public function Page(){
-
-
-    }
 
 
 
