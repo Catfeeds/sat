@@ -34,43 +34,30 @@ $(function () {
   };
 
   $('.s-login-in').click(function () {
-    login('.s-login-cnt','.s-sign-cnt',1000);
+    login('.s-login-cnt','.s-sign-cnt',500);
   });
   $('.s-go-sign').click(function () {
     loginOut();
-    login('.s-sign-cnt','.s-login-cnt',1000);
+    login('.s-sign-cnt','.s-login-cnt',500);
   });
   $('.icon-remove').click(function () {
     $('.s-login').fadeOut(1000);
-    $('.s-login-cnt').animate({top: 0},1000);
-    $('.s-sign-cnt').animate({top: 0},1000)
+    $('.s-login-cnt').animate({top: 0},500);
+    $('.s-sign-cnt').animate({top: 0},500)
   });
   //注册
   $('.s-sign-up').click(function () {
-    login('.s-sign-cnt','.s-login-cnt',1000);
+    login('.s-sign-cnt','.s-login-cnt',500);
   });
   $('.s-login-back').click(function () {
     loginOut();
-    login('.s-login-cnt','.s-sign-cnt',1000);
+    login('.s-login-cnt','.s-sign-cnt',500);
   });
 
   //表单聚焦隐藏提示
   $('.s-login .form-control').focus(function () {
     hideTips($(this).attr('id'));
   })
-
-  // if (window.localStorage) {
-  //   var user = localStorage.getItem('username'),
-  //       pwd = localStorage.getItem('password');
-  //   $('#loginName').val(user);
-  //   $('#loginPass').val(pwd);
-  //   $('#loginBtn').click(function () {
-  //     if ($('.s-rember-pwd').attr('checked')) {
-  //       localStorage.setItem('username',$('#loginName').val());
-  //       localStorage.setItem('password',$('#loginPass').val());
-  //     }
-  //   })
-  // }
 
   //点击注册
   $('.s-register').click(function () {
@@ -108,8 +95,8 @@ function showTips(msgId,msg) {
 }
 function hideTips(msgId) {
   try {
-    $('#'+msgId).parent().children('.s-tooltip').children().fadeOut('slow');
-    $('#'+msgId).parent().children('.s-tooltip').remove();
+    $('#'+msgId).parent().find('.s-tooltip').fadeOut('slow');
+    $('#'+msgId).parent().find('.s-tooltip').remove();
   }catch (e){}
 }
 function hideAllTips() {
