@@ -11,13 +11,16 @@ namespace app\modules\admin\controllers;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\Node;
+
 class NodeController extends ApiControl
 {
+    public $enableCsrfValidation = false;
+
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%node}}")->queryAll();
-        $node=new Node();
-        $data=$node->getList($data);
+        $node = new Node();
+        $data = $node->getList($data);
         return $this->render('index', ['data' => $data]);
     }
 
@@ -25,27 +28,27 @@ class NodeController extends ApiControl
     {
         $enableCsrfValidation = false;
         if (!$_POST) {
-            $id=Yii::$app->request->get('id', '');
+            $id = Yii::$app->request->get('id', '');
             $data = Yii::$app->db->createCommand("select name,id from {{%node}} where pid=0")->queryAll();
-            if(empty($id)){
+            if (empty($id)) {
                 return $this->render('add', ['data' => $data]);
-            }else{
-                $arr  = Yii::$app->db->createCommand("select * from {{%node}} where id=".$id)->queryOne();
-                return $this->render('add', ['data' => $data,'arr'=>$arr]);
+            } else {
+                $arr = Yii::$app->db->createCommand("select * from {{%node}} where id=" . $id)->queryOne();
+                return $this->render('add', ['data' => $data, 'arr' => $arr]);
             }
 //            var_dump($data);die;
 
         } else {
             $node = new node();
             $nodeData = $node->add();
-            if (empty($nodeData['name'] || $nodeData['controller']|| $nodeData['action'])) {
+            if (empty($nodeData['name'] || $nodeData['controller'] || $nodeData['action'])) {
                 die('<script>alert("请将信息填完整");history.go(-1);</script>');
             }
-            if(empty($nodeData['id'])){
+            if (empty($nodeData['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%node}}", $nodeData)->execute();
-            }else{
+            } else {
 //                var_dump($_POST);die;
-                $re = $node->updateAll($nodeData,'id=:id',array(':id'=>$nodeData['id']));
+                $re = $node->updateAll($nodeData, 'id=:id', array(':id' => $nodeData['id']));
             }
 //            var_dump($nodeData);die;
             if ($re) {

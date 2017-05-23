@@ -10,6 +10,7 @@ use app\modules\user\models\Login;
 use app\libs\Sms;
 use yii\web\Controller;
 use yii\db\ActiveRecord;
+
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: X-Requested-With');
 
@@ -52,66 +53,66 @@ class ApiController extends Controller
         $session = Yii::$app->session;
         $logins = new Login();
 //        if ($apps->isPost) {
-            $userName = $apps->post('userName');
-            $userPass = $apps->post('userPass');
-            if (!$userName) {
+        $userName = $apps->post('userName');
+        $userPass = $apps->post('userPass');
+        if (!$userName) {
+            $re['code'] = 0;
+            $re['message'] = '请输入用户名';
+            die(json_encode($re));
+        }
+        $userPass = md5($userPass);
+        $loginsdata = Yii::$app->db->createCommand("select * from {{%user}} where(phone='$userName' or userName='$userName' or email='$userName')")->queryOne();
+        if (!empty($loginsdata['id'])) {
+
+            if (!$userPass) {
+
                 $re['code'] = 0;
-                $re['message'] = '请输入用户名';
+
+                $re['message'] = '请输入密码';
+
                 die(json_encode($re));
+
             }
-            $userPass = md5($userPass);
-            $loginsdata= Yii::$app->db->createCommand("select * from {{%user}} where(phone='$userName' or userName='$userName' or email='$userName')")->queryOne();
-            if (!empty($loginsdata['id'])) {
 
-                if (!$userPass) {
+            if ($loginsdata['userPass'] == $userPass) {
 
-                    $re['code'] = 0;
+                //用户名
 
-                    $re['message'] = '请输入密码';
+                // 在要发送的响应中添加一个新的session
 
-                    die(json_encode($re));
+                $session->set('userId', $loginsdata['id']);
 
-                }
+                if ($loginsdata['image'] == null) {
 
-                if ($loginsdata['userPass'] == $userPass) {
-
-                    //用户名
-
-                    // 在要发送的响应中添加一个新的session
-
-                    $session->set('userId', $loginsdata['id']);
-
-                    if ($loginsdata['image'] == null) {
-
-                        $loginsdata['image'] = '';
-
-                    }
-
-                    $session->set('userData', $loginsdata);
-
-                    @unlink("html\cn\heard.html");
-
-                    $re['code'] = 1;
-
-                    $re['message'] = '登录成功';
-
-                } else {
-
-                    $re['code'] = 0;
-
-                    $re['message'] = '密码错误';
+                    $loginsdata['image'] = '';
 
                 }
+
+                $session->set('userData', $loginsdata);
+
+                @unlink("html\cn\heard.html");
+
+                $re['code'] = 1;
+
+                $re['message'] = '登录成功';
 
             } else {
 
                 $re['code'] = 0;
 
-                $re['message'] = '用户名错误';
+                $re['message'] = '密码错误';
 
             }
 
-            die(json_encode($re));
+        } else {
+
+            $re['code'] = 0;
+
+            $re['message'] = '用户名错误';
+
+        }
+
+        die(json_encode($re));
 
 //        }
 
@@ -129,7 +130,7 @@ class ApiController extends Controller
         $login = new Login();
         $registerStr = Yii::$app->request->post('userName');
         $pass = Yii::$app->request->post('passWord');
-        $code = Yii::$app->request->post('code','');
+        $code = Yii::$app->request->post('code', '');
         $type = Yii::$app->request->post('type');
         $checkPhoneEmail = $login->checkPhoneEmail($registerStr, $type);
         if (!$checkPhoneEmail) {
@@ -139,11 +140,12 @@ class ApiController extends Controller
             } else {
                 $res['message'] = '邮箱已经被注册';
             }
-            $res['type'] = '3';die(json_encode($res));
+            $res['type'] = '3';
+            die(json_encode($res));
         }
-        if($type==1){
+        if ($type == 1) {
             $checkTel = $login->checkTel($registerStr);
-            if(!$checkTel){
+            if (!$checkTel) {
                 $res['code'] = 0;
                 $res['message'] = '请输入正确的手机号';
                 $res['type'] = '3';
@@ -155,7 +157,7 @@ class ApiController extends Controller
                 if ($checkCode) {
                     $login->phone = $registerStr;
                     $login->userPass = md5($pass);
-                    $login->status =1;
+                    $login->status = 1;
                     $login->createTime = time();
                     $re = $login->save();
                     if ($re) {
@@ -176,13 +178,13 @@ class ApiController extends Controller
                 $res['message'] = '验证码过期';
                 $res['type'] = '1';
             }
-        }else{
+        } else {
             $checkEmail = $login->checkEmail($registerStr);
-            if(!$checkEmail){
+            if (!$checkEmail) {
                 $res['code'] = 1;
                 $res['message'] = '邮箱不合法';
                 $res['type'] = '3';
-            }else{
+            } else {
                 $login->email = $registerStr;
                 $login->userPass = md5($pass);
                 $login->createTime = time();
@@ -192,11 +194,11 @@ class ApiController extends Controller
                     $res['message'] = '注册成功，且邮件发送成功，请到邮箱进行验证';
                     $mail = Yii::$app->mailer;
                     $mail->useFileTransport = false;
-                    $mail= $mail->compose();
-                    $em_1=md5($registerStr);
+                    $mail = $mail->compose();
+                    $em_1 = md5($registerStr);
                     $mail->setTo($registerStr);
                     $mail->setSubject("【申友网(thinku)】邮件验证码");
-                    $content="<a href='http://www.sysat.com/index.php/user/api/live?em_1=".$em_1."&email=".$registerStr."'>点击此链接</a>激活账号【申友网(thinku)】";
+                    $content = "<a href='http://www.sysat.com/index.php/user/api/live?em_1=" . $em_1 . "&email=" . $registerStr . "'>点击此链接</a>激活账号【申友网(thinku)】";
                     $mail->setHtmlBody("$content");
                     if ($mail->send()) {
                         die(json_encode($res));
@@ -212,12 +214,13 @@ class ApiController extends Controller
     }
 
     public function actionSendMail($email)
-    {   set_time_limit(0);
+    {
+        set_time_limit(0);
         $mail = Yii::$app->mailer->compose();
-        $em_1=md5($email);
+        $em_1 = md5($email);
         $mail->setTo($email);
         $mail->setSubject("【申友网(thinku)】邮件验证码");
-        $content="<a href='http://www.sysat.com/index.php/user/api/live?em_1=".$em_1."&email=".$email."'>点击此链接</a>激活账号【申友网(thinku)】";
+        $content = "<a href='http://www.sysat.com/index.php/user/api/live?em_1=" . $em_1 . "&email=" . $email . "'>点击此链接</a>激活账号【申友网(thinku)】";
         $mail->setHtmlBody("$content");
         if ($mail->send()) {
             $res['code'] = 1;
@@ -233,25 +236,19 @@ class ApiController extends Controller
     // 邮箱的账号激活
     public function actionLive()
     {
-        $email=Yii::$app->request->get('email');
-        $em_1=Yii::$app->request->get('em_1');
-        $em_2=md5($email);
-        if($em_1==$em_2)
-        {
-            $res=Yii::$app->db;
+        $email = Yii::$app->request->get('email');
+        $em_1 = Yii::$app->request->get('em_1');
+        $em_2 = md5($email);
+        if ($em_1 == $em_2) {
+            $res = Yii::$app->db;
             $login = new login();
-            $data = $login->updateAll(["status"=>1], 'email=:email', array(':email' => $email));
-            if($data)
-            {
+            $data = $login->updateAll(["status" => 1], 'email=:email', array(':email' => $email));
+            if ($data) {
                 echo "<script>alert('激活成功，可登录');location.href='http://www.sysat.com'</script>";
-            }
-            else
-            {
+            } else {
                 echo "<script>alert('激活失败')</script>";
             }
-        }
-        else
-        {
+        } else {
             echo "<script>alert('参数错误,重新激活')</script>";
         }
     }

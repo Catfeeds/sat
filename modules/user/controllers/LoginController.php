@@ -1,58 +1,60 @@
 <?php
 namespace app\modules\user\controllers;
+
 use yii;
 use app\libs\ApiControl;
 //use app\modules\user\models\User;
 use app\modules\admin\models\Admin;
 use yii\web\Controller;
-class LoginController extends Controller {
+
+class LoginController extends Controller
+{
     public $enableCsrfValidation = false;
+
     /**
      * 登陆界面
      * @return string
      */
-    public function actionLogin(){
-        $session  = Yii::$app->session;
+    public function actionLogin()
+    {
+        $session = Yii::$app->session;
         $userId = $session->get('adminId');
-        if($userId)
-        {
+        if ($userId) {
             $this->redirect('admin/index/index');
-        }else{
+        } else {
             return $this->renderPartial('index');
         }
     }
 
 
-   /**
-    * 登陆验证
-    * @return string
-    * */
-   public function actionCheck()
-   {
-       header('Content-Type:text/html;charset=utf-8');
-       $apps       = Yii::$app->request;
-       $session    = Yii::$app->session;
-       $logins     = new Admin();
-       if($apps->isPost)
-       {
-           $userName   = $apps->post('userName');
-           $userPass   = md5($apps->post('userPass'));
-           $loginsdata =  $logins->find()->where(['userName'=>$userName,'userPass'=>$userPass])->one();
-           if(!empty($loginsdata['id']))
-           {
-               $session->set('adminId',$loginsdata['id']);
-               $session->set('userName',$loginsdata['userName']);
-               $session->set('rid',$loginsdata['roleId']);
-               $this->redirect('/index/index');
-           }
-           else
-           {
-               echo '<script>alert("帐号或密码不正确");history.go(-1);</script>';
-               exit;
-           }
-       }
-   }
-    public function actionRegister(){
+    /**
+     * 登陆验证
+     * @return string
+     * */
+    public function actionCheck()
+    {
+        header('Content-Type:text/html;charset=utf-8');
+        $apps = Yii::$app->request;
+        $session = Yii::$app->session;
+        $logins = new Admin();
+        if ($apps->isPost) {
+            $userName = $apps->post('userName');
+            $userPass = md5($apps->post('userPass'));
+            $loginsdata = $logins->find()->where(['userName' => $userName, 'userPass' => $userPass])->one();
+            if (!empty($loginsdata['id'])) {
+                $session->set('adminId', $loginsdata['id']);
+                $session->set('userName', $loginsdata['userName']);
+                $session->set('rid', $loginsdata['roleId']);
+                $this->redirect('/index/index');
+            } else {
+                echo '<script>alert("帐号或密码不正确");history.go(-1);</script>';
+                exit;
+            }
+        }
+    }
+
+    public function actionRegister()
+    {
 //        var_dump(Yii::$app->params);die;
 
         $login = new Login();
@@ -67,17 +69,17 @@ class LoginController extends Controller {
 
         $userName = Yii::$app->request->post('userName');
 
-        $checkPhoneEmail = $login->checkPhoneEmail($registerStr,$type);
+        $checkPhoneEmail = $login->checkPhoneEmail($registerStr, $type);
 
-        if(!$checkPhoneEmail){
+        if (!$checkPhoneEmail) {
 
             $res['code'] = 0;
 
-            if($type == 1){
+            if ($type == 1) {
 
                 $res['message'] = '手机已经被注册';
 
-            }else{
+            } else {
 
                 $res['message'] = '邮箱已经被注册';
 
@@ -91,7 +93,7 @@ class LoginController extends Controller {
 
         $checkUserName = $login->checkUserName($userName);
 
-        if(!$checkUserName){
+        if (!$checkUserName) {
 
             $res['code'] = 0;
 
@@ -105,13 +107,13 @@ class LoginController extends Controller {
 
         $checkTime = $login->checkTime();
 
-        if($checkTime){
+        if ($checkTime) {
 
-            $checkCode = $login->checkCode($registerStr,$code);
+            $checkCode = $login->checkCode($registerStr, $code);
 
-            if($checkCode){
+            if ($checkCode) {
 
-                if($type == 1){
+                if ($type == 1) {
 
                     $login->phone = $registerStr;
 
@@ -121,7 +123,7 @@ class LoginController extends Controller {
 
                     $login->userName = $userName;
 
-                }else{
+                } else {
 
                     $login->email = $registerStr;
 
@@ -135,13 +137,13 @@ class LoginController extends Controller {
 
                 $re = $login->save();
 
-                if($re){
+                if ($re) {
 
                     $res['code'] = 1;
 
                     $res['message'] = '注册成功';
 
-                }else{
+                } else {
 
                     $res['code'] = 0;
 
@@ -151,7 +153,7 @@ class LoginController extends Controller {
 
                 }
 
-            }else{
+            } else {
 
                 $res['code'] = 0;
 
@@ -161,7 +163,7 @@ class LoginController extends Controller {
 
             }
 
-        }else{
+        } else {
 
             $res['code'] = 0;
 
@@ -174,13 +176,14 @@ class LoginController extends Controller {
         die(json_encode($res));
 
     }
+
     /**
      * 注销账户
      * @return string
      * */
     public function actionLoginOut()
     {
-        $session    = Yii::$app->session;
+        $session = Yii::$app->session;
         $session->remove('adminData');
         $session->remove('adminId');
         $this->redirect('/admin/login');

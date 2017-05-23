@@ -1,7 +1,9 @@
 <?php
 namespace app\modules\admin\models;
+
 use yii\db\ActiveRecord;
 use yii;
+
 class Banner extends ActiveRecord
 {
     public static function tableName()

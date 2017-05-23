@@ -16,7 +16,7 @@ use app\modules\admin\models\Cate;
 //use yii\filters\VerbFilter;
 class CateController extends ApiControl
 {
-
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
         $model = new Cate();

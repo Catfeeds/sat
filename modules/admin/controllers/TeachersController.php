@@ -6,32 +6,38 @@
  * Time: 17:04
  */
 namespace app\modules\admin\controllers;
+
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\teachers;
 use app\libs\GetData;
-class TeachersController extends ApiControl {
+
+class TeachersController extends ApiControl
+{
+    public $enableCsrfValidation = false;
+
 //    所有教师
     public function actionIndex()
     {
 //        从数据库获取数据
-        $model      = new teachers();
+        $model = new teachers();
         $data = Yii::$app->db->createCommand("select * from {{%teachers}} ")->queryAll();
-        return $this->render('index',['data' => $data]);
+        return $this->render('index', ['data' => $data]);
     }
+
 //    添加讲师
     public function actionAdd()
     {
         $enableCsrfValidation = false;
-        if(!$_POST){
-            $id= Yii::$app->request->get('id','');
-            if($id==''){
+        if (!$_POST) {
+            $id = Yii::$app->request->get('id', '');
+            if ($id == '') {
                 return $this->render('add');
-            }else{
-                $data = Yii::$app->db->createCommand("select * from {{%teachers}} where id=".$id)->queryOne();
-                return $this->render('add',['data' => $data]);
+            } else {
+                $data = Yii::$app->db->createCommand("select * from {{%teachers}} where id=" . $id)->queryOne();
+                return $this->render('add', ['data' => $data]);
             }
-        }else{
+        } else {
             //      添加数据到数据
 //            if(empty($_FILES['up']['name'])){
 //                $pic='';
@@ -56,30 +62,32 @@ class TeachersController extends ApiControl {
 //            if(empty($teachersData['subject'])){
 //                die('<script>alert("请添加主讲");history.go(-1);</script>');
 //            }
-            $getdata=new GetData();
-            $must=array('name'=>'教师名字','introduction'=>'教师简介','subject'=>'主讲课程');
-            $data=$getdata->PostData($must,'teachers');
-            if($data['id']==''){
-                $re = Yii::$app->db->createCommand()->insert("{{%teachers}}",$data)->execute();
-            }else{
+            $getdata = new GetData();
+            $must = array('name' => '教师名字', 'introduction' => '教师简介', 'subject' => '主讲课程');
+            $data = $getdata->PostData($must, 'teachers');
+            if ($data['id'] == '') {
+                $re = Yii::$app->db->createCommand()->insert("{{%teachers}}", $data)->execute();
+            } else {
 //                   修改
 //                $teachersData['pic']       = Yii::$app->request->post('up','');
-                $model      = new Teachers();
-                $re = $model->updateAll($data,'id=:id',array(':id'=>$data['id']));
+                $model = new Teachers();
+                $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
-            if($re){
+            if ($re) {
                 $this->redirect('index');
-            }else{
+            } else {
                 echo '<script>alert("数据添加\修改失败，请重试");history.go(-1);</script>';
                 die;
             }
         }
     }
+
 //    删除讲师信息
-    public function actionDel(){
-        $id= Yii::$app->request->get('id','');
-        $re =Teachers::deleteAll("id=:id",array(':id' => $id));
-        if($re){
+    public function actionDel()
+    {
+        $id = Yii::$app->request->get('id', '');
+        $re = Teachers::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
             echo true;
         }
     }

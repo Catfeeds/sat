@@ -1,6 +1,8 @@
 <?php
 namespace app\modules\admin\models;
+
 use yii\db\ActiveRecord;
+
 class Role extends ActiveRecord
 {
     public static function tableName()
@@ -16,13 +18,15 @@ class Role extends ActiveRecord
 
         ];
     }
-    public function getCateList($data,$pid=0,$lev=0){
+
+    public function getCateList($data, $pid = 0, $lev = 0)
+    {
         static $arr = array();
-        foreach($data as $key=>$value){
-            if($value['pid'] == $pid){
+        foreach ($data as $key => $value) {
+            if ($value['pid'] == $pid) {
                 $value['lev'] = $lev;
                 $arr[] = $value;
-                $this->getCateList($data, $value['id'], $lev+1);
+                $this->getCateList($data, $value['id'], $lev + 1);
             }
         }
         return $arr;
