@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
     <title>sat首页</title>
-    <link rel="stylesheet" href="/cn/css/reset.css">
-    <link rel="stylesheet" href="/cn/css/bootstrap.css">
-    <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/cn/css/public.css">
     <link rel="stylesheet" href="/cn/css/sat.css">
-
-    <script src="/cn/js/jquery-2.1.3.js"></script>
-    <script src="/cn/js/bootstrap.js"></script>
-    <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="/cn/js/public.js"></script>
     <script src="/cn/js/carousel.js"></script>
-</head>
-<body>
-<!--导航-->
 
-<!--登录、注册框-->
-<?php use app\commands\front\NavWidget;?>
-<?php NavWidget::begin();?>
-<?php NavWidget::end();?>
 <section>
     <div class="s-w1200 s-sat">
         <!--轮播图-->
@@ -284,10 +264,6 @@
     </div>
 </section>
 <!--底部-->
-<?php use app\commands\front\FootWidget;?>
-<?php FootWidget::begin();?>
-<?php FootWidget::end();?>
-</body>
 <script>
     <!--高分榜-->
     jQuery(".s-banner").slide({mainCell:".s-person ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
@@ -309,4 +285,3 @@
         })
     })
 </script>
-</html>

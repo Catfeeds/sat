@@ -14,7 +14,7 @@ use app\modules\cn\models\teachers;
 
 class SatController extends Controller
 {
-//    public $layout='cn.php';
+    public $layout='cn.php';
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select id,cate,introduction,cate from {{%classes}} ")->queryAll();
@@ -26,6 +26,6 @@ class SatController extends Controller
         $info3 = Yii::$app->db->createCommand("select id,title,summary from {{%info}} order by id desc limit 10")->queryAll();
 
 //        var_dump($info);die;
-        return $this->renderPartial('index', ['data' => $data, 'banner' => $banner, 'teachers' => $teachers, 'info1' => $info1, 'info3' => $info3]);
+        return $this->render('index', ['data' => $data, 'banner' => $banner, 'teachers' => $teachers, 'info1' => $info1, 'info3' => $info3]);
     }
 }

@@ -8,21 +8,11 @@
     <link rel="stylesheet" href="/cn/css/bootstrap.css">
     <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
     <link rel="stylesheet" href="/cn/css/public.css">
-    <link rel="stylesheet" href="/cn/css/about.css">
-    <link rel="stylesheet" href="/cn/css/classes-detail.css">
-    <link rel="stylesheet" href="cn/css/course-new.css">
-    <link rel="stylesheet" href="/cn/css/pubClass.css">
-    <link rel="stylesheet" href="/cn/css/pubClass-detail.css">
-    <link rel="stylesheet" href="/cn/css/information.css">
-    <link rel="stylesheet" href="/cn/css/sat.css">
-    <link rel="stylesheet" href="/cn/css/teacher-detail.css">
-    <link rel="stylesheet" href="/cn/css/teacher.css">
-
     <script src="/cn/js/jquery-2.1.3.js"></script>
     <script src="/cn/js/bootstrap.js"></script>
     <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
     <script src="/cn/js/public.js"></script>
-    <script src="/cn/js/carousel.js"></script>
+
 </head>
 <body>
 <!--导航-->

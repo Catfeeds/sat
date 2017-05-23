@@ -14,7 +14,7 @@ use app\modules\cn\models\Info;
 
 class PubclassController extends Controller
 {
-//    public $layout='cn.php';
+    public $layout='cn.php';
     public function actionIndex()
     {
         $pubclass = new pubclass();
@@ -22,7 +22,7 @@ class PubclassController extends Controller
         $data = Yii::$app->db->createCommand("select * from {{%info}} where isShow=1 and cate='公开课'")->queryAll();
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课'")->queryAll();
 //        var_dump($data);die;
-        return $this->renderPartial('index', ['data' => $data, 'arr' => $arr]);
+        return $this->render('index', ['data' => $data, 'arr' => $arr]);
     }
 
     public function actionApply()

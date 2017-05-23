@@ -1,6 +1,6 @@
 
     <title>公开课详情页</title>
-
+    <link rel="stylesheet" href="/cn/css/pubClass-detail.css">
   <section>
     <div class="s-w1200">
       <!--路径导航-->
