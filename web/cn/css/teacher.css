@@ -10,32 +10,6 @@
     box-shadow:  3px 3px 3px #969696;
     margin-bottom: 20px;
 }
-.s-teacher .s-w1200 li:before,
-.s-teacher .s-w1200 li:after {
-    position: absolute;
-    display: block;
-    content: '';
-    width: 20px;
-    height: 20px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    background-color: #fff;
-}
-.s-teacher .s-w1200 li:before {
-    bottom: -8px;
-    left: -10px;
-    -webkit-box-shadow: 2px -2px 2px #969696;
-    -moz-box-shadow: 2px -2px 2px #969696;
-    box-shadow: 2px -2px 2px #969696;
-}
-.s-teacher .s-w1200 li:after {
-    bottom: -8px;
-    right: -8px;
-    -webkit-box-shadow: -2px -2px 2px #969696;
-    -moz-box-shadow: -2px -2px 2px #969696;
-    box-shadow: -2px -2px 2px #969696;
-}
 .s-teacher .s-w1200 .s-img img{
     display: block;
     width: 180px;
@@ -90,7 +64,7 @@
 .s-teacher .s-introduce p {
     font-size: 14px;
     height: 70px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .s-teacher .s-introduce .s-details {
     padding: 7px 25px;

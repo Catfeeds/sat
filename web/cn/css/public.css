@@ -321,9 +321,9 @@ body {
 .s-login .s-btn:hover {
   background-color: rgb(48,167,237);
 }
-.s-login .s-login-cnt form div.not('.s-tooltip') {
-  line-height: 30px;
-}
+/*.s-login .s-login-cnt form div.not('.s-tooltip') {*/
+  /*line-height: 30px;*/
+/*}*/
 .s-login .s-login-cnt label {
   font-size: 14px;
   font-weight: 400;
@@ -334,7 +334,7 @@ body {
 }
 .s-login .s-login-bottom,
 .s-login .s-sign-bottom {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .s-login .s-login-bottom a,
 .s-login .s-sign-bottom a {
@@ -410,7 +410,7 @@ body {
   margin-bottom: 20px;
 }
 .s-login .s-sign-bottom {
-  margin-top: 27px;
+  margin-top: 20px;
 }
 .s-login .s-sign-cnt .s-sign-agree span,
 .s-login .s-sign-cnt .s-sign-agree a{
