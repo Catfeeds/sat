@@ -14,6 +14,7 @@ use app\modules\admin\models\banner;
 use app\libs\GetData;
 class BannerController extends ApiControl
 {
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%banner}}")->queryAll();

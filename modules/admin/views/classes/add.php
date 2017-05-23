@@ -21,43 +21,44 @@
                 </td>
             </tr>
             <tr>
-                <td>科目:</td>
-                <td>
-                    <select name="major" >
-                        <option value ="">请选择课程</option>
-                        <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
-                        <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
-                        <option value ="文法" <?php echo isset($data)&& $data['major']=="文法" ?  'selected':''?>>文法</option>
-                        <option value ="专项课程" <?php echo isset($data)&& $data['major']=="专项课程" ?  'selected':''?>>专项课程</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
                 <td>类别:</td>
 <!--                <td><input type="text" name="cate" placeholder="类别"></td>-->
                 <td>
                     <select name="cate">
                         <option value ="">请选择班级</option>
-                        <option value ="基础班" <?php echo isset($data)&& $data['cate']=="基础班" ?  'selected':''?>>基础班</option>
-                        <option value ="强化班" <?php echo isset($data)&& $data['cate']=="强化班" ?  'selected':''?>>强化班</option>
-                        <option value ="精英班" <?php echo isset($data)&& $data['cate']=="精英班" ?  'selected':''?>>精英班</option>
-                        <option value ="词汇班" <?php echo isset($data)&& $data['cate']=="词汇班" ?  'selected':''?>>词汇班</option>
-                        <option value ="冲刺班" <?php echo isset($data)&& $data['cate']=="冲刺班" ?  'selected':''?>>冲刺班</option>
+                        <option value ="全能小班" <?php echo isset($data)&& $data['cate']=="全能小班" ?  'selected':''?>>全能小班</option>
+                        <option value ="冲刺小班" <?php echo isset($data)&& $data['cate']=="冲刺小班" ?  'selected':''?>>冲刺小班</option>
+                        <option value ="全能周末班" <?php echo isset($data)&& $data['cate']=="全能周末班" ?  'selected':''?>>全能周末班</option>
                     </select>
                 </td>
             </tr>
+<!--            <tr>-->
+<!--                <td>总课时</td>-->
+<!--                <td><input type="text" name="duration" placeholder="课程总时长" value="--><?php //echo isset($data)? $data['duration']:''?><!--"/></td>-->
+<!--            </tr>-->
             <tr>
-                <td>价格:</td>
-                <td><input type="text" name="price" placeholder="价格" value="<?php echo isset($data)? $data['price']:''?>"/></td>
+                <td>阅读课时</td>
+                <td><input type="text" name="read" placeholder="阅读的课时" value="<?php echo isset($data)? $data['read']:''?>"/></td>
             </tr>
             <tr>
-                <td>课时:</td>
-                <td><input type="text" name="duration" placeholder="课时" value="<?php echo isset($data)? $data['duration']:''?>" ></br></td>
+                <td>文法课时:</td>
+                <td><input type="text" name="grammar" placeholder="文法课时" value="<?php echo isset($data)? $data['grammar']:''?>" ></br></td>
             </tr>
-
             <tr>
-                <td>讲师:</td>
-                <td><input type="text" name="teacher" placeholder="讲师" value="<?php echo isset($data)? $data['teacher']:''?>"></td>
+                <td>词汇课时:</td>
+                <td><input type="text" name="vocabulary" placeholder="词汇课时" value="<?php echo isset($data)? $data['vocabulary']:''?>" ></br></td>
+            </tr>
+            <tr>
+                <td>数学课时:</td>
+                <td><input type="text" name="math" placeholder="数学课时" value="<?php echo isset($data)? $data['math']:''?>" ></br></td>
+            </tr>
+            <tr>
+                <td>写作课时:</td>
+                <td><input type="text" name="write" placeholder="写作课时" value="<?php echo isset($data)? $data['write']:''?>" ></br></td>
+            </tr>
+            <tr>
+                <td>模考点评:</td>
+                <td><input type="text" name="comments" placeholder="模考点评" value="<?php echo isset($data)? $data['comments']:''?>" ></br></td>
             </tr>
             <tr>
                 <td>课程简介:</td>

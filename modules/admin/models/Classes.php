@@ -6,18 +6,21 @@
  * Time: 17:11
  */
 namespace app\modules\admin\models;
+
 use yii\db\ActiveRecord;
+
 class Classes extends ActiveRecord
 {
     public static function tableName()
     {
         return '{{%classes}}';
     }
+
     public function rules()
     {
         return [
             // username and password are both required
-            [['student','cate','','duration'], 'required'],
+            [['student', 'cate', '', 'duration'], 'required'],
 
         ];
     }

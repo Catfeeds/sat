@@ -6,8 +6,10 @@
  * Time: 17:11
  */
 namespace app\modules\admin\models;
+
 use yii\db\ActiveRecord;
 use yii;
+
 class Info extends ActiveRecord
 {
     public static function tableName()

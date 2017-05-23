@@ -12,8 +12,11 @@ use app\libs\ApiControl;
 use app\modules\admin\models\questions;
 use app\modules\admin\models\testPaper;
 use app\libs\GetData;
+
 class QuestionsController extends ApiControl
 {
+    public $enableCsrfValidation = false;
+
     public function actionIndex()
     {
 ////        从数据库获取数据
@@ -39,9 +42,9 @@ class QuestionsController extends ApiControl
         } else {
             //      添加数据到数据
             $model = new Questions();
-            $getdata=new GetData();
-            $must=array('content'=>'题目','score'=>'分数','answer'=>'答案');
-            $data=$getdata->PostData($must);
+            $getdata = new GetData();
+            $must = array('content' => '题目', 'score' => '分数', 'answer' => '答案');
+            $data = $getdata->PostData($must);
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
             } else {
@@ -56,6 +59,7 @@ class QuestionsController extends ApiControl
             }
         }
     }
+
 //ajax删除数据
     public function actionDel()
     {
@@ -89,9 +93,9 @@ class QuestionsController extends ApiControl
             }
         } else {
             $model = new testPaper();
-            $getdata=new GetData();
-            $must=array('name'=>'试卷名称','major'=>'科目');
-            $data=$getdata->PostData($must);
+            $getdata = new GetData();
+            $must = array('name' => '试卷名称', 'major' => '科目');
+            $data = $getdata->PostData($must);
 //            var_dump($data);die;
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%testpaper}}", $data)->execute();

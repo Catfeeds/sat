@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>课程详情页</title>
-  <link rel="stylesheet" href="/cn/css/reset.css">
-  <link rel="stylesheet" href="/cn/css/bootstrap.css">
-  <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/cn/css/public.css">
-  <link rel="stylesheet/less" href="/cn/css/classes-detail.css">
-  <script src="/cn/js/less.js"></script>
-  <script src="/cn/js/jquery-2.1.3.js"></script>
-  <script src="/cn/js/bootstrap.js"></script>
-  <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="/cn/js/public.js"></script>
-</head>
-<body>
-  <!--导航-->
-  <?php use app\commands\front\NavWidget;?>
-  <?php NavWidget::begin();?>
-  <?php NavWidget::end();?>
+
+<title>课程详情页</title>
   <section>
     <div class="s-w1200">
       <ol class="breadcrumb">
@@ -29,11 +10,11 @@
       <div class="s-course-details clearfix">
         <img class="pull-left" src="/cn/images/cou-details01.png" alt="">
         <div>
-          <h2>SAT<?php echo $data['major'].$data['cate']?>课程</h2>
-          <span class="s-now">￥<?php echo$data['price']?></span>
-          <span class="s-before">￥<?php echo $data['price']*1.2 ?></span>
-          <p><?php echo$data['duration']?>课时</p>
-          <p class="s-object">课程对象：<span><?php echo$data['student']?></span></p>
+          <h2>SAT<?php echo $data['cate']?>课程</h2>
+<!--          <span class="s-now">￥--><?php //echo$data['price']?><!--</span>-->
+<!--          <span class="s-before">￥--><?php //echo $data['price']*1.2 ?><!--</span>-->
+          <p><?php echo ($data['read']+$data['grammar']+$data['vocabulary']+$data['math']+$data['write']+$data['comments'])?>课时</p>
+          <p class="s-object">课程对象：<span><?php echo $data['student']?></span></p>
           <a href="#">立即预约</a>
         </div>
       </div>
@@ -45,8 +26,8 @@
         </ul>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="course">
-            <h2><?php echo $data['major'].$data['cate']?>课程</h2>
-            <p><?php echo $data['major'].$data['introduction']?>
+            <h2><?php echo $data['cate']?>课程</h2>
+            <p><?php echo $data['introduction']?>
             </p>
           </div>
           <div role="tabpanel" class="tab-pane clearfix" id="teacher">
@@ -97,9 +78,3 @@
       </div>
     </div>
   </section>
-  <!--底部-->
-  <?php use app\commands\front\FootWidget;?>
-  <?php FootWidget::begin();?>
-  <?php FootWidget::end();?>
-</body>
-</html>

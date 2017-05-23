@@ -14,6 +14,8 @@ use app\modules\admin\models\joboffers;
 use app\libs\GetData;
 class AboutController extends ApiControl
 {
+    public $enableCsrfValidation = false;
+
     public function actionIndex()
     {
         return $this->render('index');

@@ -15,6 +15,7 @@ use app\libs\GetData;
 class InfoController extends ApiControl
 {
     public $enableCsrfValidation = false;
+
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%info}} order by id desc")->queryAll();
