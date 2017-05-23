@@ -1,4 +1,7 @@
-<section class="s-teacher-detail s-w1200">
+
+  <title>名师详情页</title>
+  <link rel="stylesheet" href="/cn/css/teacher-detail.css">
+  <section class="s-teacher-detail s-w1200">
     <a href="#" class="s-adv">
       <img src="/cn/images/teacher-detail01.png" alt="">
     </a>

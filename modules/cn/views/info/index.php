@@ -1,6 +1,6 @@
 
   <title>资讯</title>
-
+  <link rel="stylesheet" href="/cn/css/information.css">
 
   <section class="s-w1200 s-information">
     <a class="s-adv" href="#">

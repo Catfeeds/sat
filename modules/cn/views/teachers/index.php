@@ -1,6 +1,6 @@
 
     <title>名师团队</title>
-
+    <link rel="stylesheet" href="/cn/css/teacher.css">
 
 <section class="s-teacher">
     <!--背景图-->
@@ -35,7 +35,6 @@
         </ol>
     </div>
 </section>
-
 
 <script>
     $(function () {

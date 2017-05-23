@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+
   <title>公开课</title>
-  <link rel="stylesheet" href="/cn/css/reset.css">
-  <link rel="stylesheet" href="/cn/css/bootstrap.css">
-  <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/cn/css/public.css">
   <link rel="stylesheet" href="/cn/css/pubClass.css">
-<!--  <script src="/cn/js/less.js"></script>-->
-  <script src="/cn/js/jquery-2.1.3.js"></script>
-  <script src="/cn/js/bootstrap.js"></script>
-  <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="/cn/js/public.js"></script>
-  <!--<script src="/cn/js/class.js"></script>-->
-</head>
-<body>
-  <!--导航-->
-  <?php use app\commands\front\NavWidget;?>
-  <?php NavWidget::begin();?>
-  <?php NavWidget::end();?>
+
   <section>
     <!--轮播图-->
     <div class="bnr-wrap center-block clearfix">
@@ -90,7 +72,7 @@
         </li>
         <?php foreach($arr as $k=>$v){?>
         <li>
-          <embed  <?php if($k<6){echo "src=".$v['pic'];}else{echo "data-src=".$v['pic'];}?> type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
+          <embed  <?php if($k<6 && isset($k)){echo "src=".$v['pic'];}else{echo "data-src=".$v['pic'];}?> type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
           <div class="s-cnt">
             <h2 class="center-block"><?php echo $v['title']?></h2>
             <p><?php echo $v['summary']?></p>
@@ -104,11 +86,7 @@
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
   </section>
-<!--底部-->
-  <?php use app\commands\front\FootWidget;?>
-  <?php FootWidget::begin();?>
-  <?php FootWidget::end();?>
-</body>
+
 <script>
   $(function () {
     var sCnt = $('.s-history-cnt'),
@@ -138,7 +116,7 @@
     })
   })
 </script>
-</html>
+
 <script>
   function apply(id){
       $.get("/cn/pubclass/apply",{id: id},
