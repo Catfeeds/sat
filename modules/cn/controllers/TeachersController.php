@@ -14,6 +14,7 @@ use app\modules\cn\models\teachers;
 
 class TeachersController extends Controller
 {
+    public $layout='cn.php';
     public function actionIndex()
     {
         $count = Yii::$app->db->createCommand("select count(*) as count from {{%teachers}} ")->queryOne();
@@ -23,7 +24,7 @@ class TeachersController extends Controller
         $maxpage = ceil($count / $pagesize);
         $offset = $pagesize * ($page - 1);
         $data = Yii::$app->db->createCommand("select * from {{%teachers}} limit $offset,$pagesize")->queryAll();
-        return $this->renderPartial('index', ['data' => $data, 'maxpage' => $maxpage]);
+        return $this->render('index', ['data' => $data, 'maxpage' => $maxpage]);
     }
 
     public function actionDetails()
@@ -43,6 +44,6 @@ class TeachersController extends Controller
         }
 
 //        var_dump($arr);die;
-        return $this->renderPartial('details', ["data" => $data, 'brr' => $brr]);
+        return $this->render('details', ["data" => $data, 'brr' => $brr]);
     }
 }

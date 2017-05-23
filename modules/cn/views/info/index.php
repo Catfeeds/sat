@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <title>资讯</title>
-  <link rel="stylesheet" href="/cn/css/reset.css">
-  <link rel="stylesheet" href="/cn/css/bootstrap.css">
-  <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/cn/css/public.css">
-  <link rel="stylesheet" href="/cn/css/information.css">
 
-  <script src="/cn/js/jquery-2.1.3.js"></script>
-  <script src="/cn/js/bootstrap.js"></script>
-  <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="/cn/js/public.js"></script>
-</head>
-<body>
-  <!--导航-->
-  <?php use app\commands\front\NavWidget;?>
-  <?php NavWidget::begin();?>
-  <?php NavWidget::end();?>
+  <title>资讯</title>
+
+
   <section class="s-w1200 s-information">
     <a class="s-adv" href="#">
       <img src="/cn/images/teacher-detail01.png" alt="背景图片">
@@ -118,33 +100,30 @@
         <a class="s-middle-adv" href="#">
           <img src="/cn/images/pubClass-dea_11.png" alt="">
         </a>
-        <div class="s-case">
-          <h2>学员案例</h2>
-          <ul>
-            <?php foreach($student as $v){?>
-            <li class="s-case-cnt">
-              <a href="#">
-                <img src="<?php echo $v['pic']?>" alt="">
-              </a>
-              <div>
-                <ul>
-                  <li><?php echo $v['name']?></li>
-                  <li>申请专业：<?php echo $v['direction']?></li>
-                  <li>录取学校：<?php echo $v['matriculate']?></li>
-                </ul>
-              </div>
-            </li>
-            <?php }?>
-          </ul>
-        </div>
+<!--        <div class="s-case">-->
+<!--          <h2>学员案例</h2>-->
+<!--          <ul>-->
+<!--            --><?php //foreach($student as $v){?>
+<!--            <li class="s-case-cnt">-->
+<!--              <a href="#">-->
+<!--                <img src="--><?php //echo $v['pic']?><!--" alt="">-->
+<!--              </a>-->
+<!--              <div>-->
+<!--                <ul>-->
+<!--                  <li>--><?php //echo $v['name']?><!--</li>-->
+<!--                  <li>申请专业：--><?php //echo $v['direction']?><!--</li>-->
+<!--                  <li>录取学校：--><?php //echo $v['matriculate']?><!--</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--            --><?php //}?>
+<!--          </ul>-->
+<!--        </div>-->
       </div>
     </div>
   </section>
-  <!--底部-->
-  <?php use app\commands\front\FootWidget;?>
-  <?php FootWidget::begin();?>
-  <?php FootWidget::end();?>
-</body>
+
+
 <script>
  $(function() {
    var toggle = window.location.href.split('?')[1];
@@ -159,4 +138,3 @@
    }
  })
 </script>
-</html>

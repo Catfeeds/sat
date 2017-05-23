@@ -14,9 +14,11 @@ use app\modules\cn\models\teachers;
 
 class AboutController extends Controller
 {
+    public $enableCsrfValidation = false;
+    public $layout = 'cn.php';
     public function actionAbout()
     {
-        return $this->renderPartial('about');
+        return $this->render('about');
     }
 
     public function actionSuggest()

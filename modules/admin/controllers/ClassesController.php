@@ -27,7 +27,6 @@ class ClassesController extends ApiControl
 //    添加课程
     public function actionAdd()
     {
-        $enableCsrfValidation = false;
         if (!$_POST) {
 //            判断是修改还是添加$id
             $id = Yii::$app->request->get('id', '');

@@ -14,6 +14,7 @@ use app\modules\cn\models\teachers;
 
 class SatController extends Controller
 {
+//    public $layout='cn.php';
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select id,cate,introduction,cate from {{%classes}} ")->queryAll();

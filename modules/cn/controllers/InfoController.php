@@ -14,6 +14,7 @@ use app\libs\pager;
 
 class InfoController extends Controller
 {
+    public $layout='cn.php';
     public function actionIndex()
     {
         $pagesize = 1;
@@ -38,7 +39,7 @@ class InfoController extends Controller
         $hot = Yii::$app->db->createCommand("select * from {{%info}} order by hits desc limit 5")->queryAll();
         $student = Yii::$app->db->createCommand("select * from {{%student_case}} limit 5")->queryAll();
         $newinfo = Yii::$app->db->createCommand("select * from {{%info}} order by id desc limit 6")->queryAll();
-        return $this->renderPartial('index', ['student' => $student, 'info' => $info, 'str' => $str, 'hot' => $hot, 'newinfo' => $newinfo]);
+        return $this->render('index', ['student' => $student, 'info' => $info, 'str' => $str, 'hot' => $hot, 'newinfo' => $newinfo]);
     }
 
     public function actionDetails()
@@ -49,6 +50,6 @@ class InfoController extends Controller
         $cate = $data['cate'];
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where cate='$cate' order by hits desc ")->queryAll();
         $brr = Yii::$app->db->createCommand('select * from {{%info}} where isShow=1 order by hits desc limit 5 ')->queryAll();
-        return $this->renderPartial('details', ['data' => $data, 'arr' => $arr, 'brr' => $brr]);
+        return $this->render('details', ['data' => $data, 'arr' => $arr, 'brr' => $brr]);
     }
 }

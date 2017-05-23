@@ -14,6 +14,7 @@ use app\modules\cn\models\teachers;
 
 class ClassesController extends Controller
 {
+    public $layout="cn.php";
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%classes}} ")->queryAll();
@@ -22,7 +23,7 @@ class ClassesController extends Controller
 //        $teachers= Yii::$app->db->createCommand("select pic,name,subject,introduction from {{%teachers}} ")->queryAll();
 //        $info= Yii::$app->db->createCommand("select id,title,summary from {{%info}} where isShow=1 and cate='开班信息'")->queryAll();
 //        var_dump($info);die;
-        return $this->renderPartial('index', ['data' => $data, 'banner' => $banner]);
+        return $this->render('index', ['data' => $data, 'banner' => $banner]);
     }
 
     public function actionDetails()
@@ -30,6 +31,6 @@ class ClassesController extends Controller
 //        从数据表获取数据
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%classes}} where id=$id ")->queryOne();
-        return $this->renderPartial('details', ["data" => $data]);
+        return $this->render('details', ["data" => $data]);
     }
 }

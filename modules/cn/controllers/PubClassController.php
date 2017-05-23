@@ -14,6 +14,7 @@ use app\modules\cn\models\Info;
 
 class PubclassController extends Controller
 {
+//    public $layout='cn.php';
     public function actionIndex()
     {
         $pubclass = new pubclass();
