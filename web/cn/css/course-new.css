@@ -60,7 +60,13 @@
   font-size: 14px;
 }
 .s-course .s-text h2 {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.s-course .s-text .s-font {
+  line-height: 24px;
+  margin-bottom: 30px;
+  padding: 0 5px;
 }
 .s-course .s-text li {
   display: inline-block;

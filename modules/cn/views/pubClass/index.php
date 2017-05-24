@@ -70,25 +70,25 @@
             <p><span>2017-4-20</span><span>16:00-17:00</span></p>
           </div>
         </li>
-        <?php foreach($arr as $k=>$v){?>
-        <li>
-          <embed  <?php if($k<6 && isset($k)){echo "src=".$v['pic'];}else{echo "data-src=".$v['pic'];}?> type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
-          <div class="s-cnt">
-            <h2 class="center-block"><?php echo $v['title']?></h2>
-            <p><?php echo $v['summary']?></p>
-            <p><span><?php echo $v['activeTime']?></span></p>
-          </div>
-        </li>
-        <?php }?>
-
+<!--        --><?php //foreach($arr as $k=>$v){?>
+<!--          <li>-->
+<!--            <embed  --><?php //if($k<6 && isset($k)){echo "src=".$v['pic'];}else{echo "data-src=".$v['pic'];}?><!-- type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
+<!--            <div class="s-cnt">-->
+<!--              <h2 class="center-block">--><?php //echo $v['title']?><!--</h2>-->
+<!--              <p>--><?php //echo $v['summary']?><!--</p>-->
+<!--              <p><span>--><?php //echo $v['activeTime']?><!--</span></p>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        --><?php //}?>
       </ul>
-      <button class="s-more center-block">查看更多</button>
+<!--      <button class="s-more center-block">查看更多</button>-->
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
   </section>
 
 <script>
-  $(function () {
+
+ /* $(function () {
     var sCnt = $('.s-history-cnt'),
         slideHeight = 1125,
         defHeight = $('.s-history-cnt').height();
@@ -115,19 +115,13 @@
       })
     })
   })
-</script>
-
-<script>
   function apply(id){
-      $.get("/cn/pubclass/apply",{id: id},
-          function (msg) {
-            if (msg) {
-              alert('报名成功');
-//              $("span['id=data']").html=msg;
-            }
-          }, 'text'
-      );
-
-
-  }
+    $.get("/cn/pubclass/apply",{id: id},
+        function (msg) {
+          if (msg) {
+            alert('报名成功');
+          }
+        }, 'text'
+    );
+  }*/
 </script>

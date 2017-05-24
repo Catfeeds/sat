@@ -18,9 +18,8 @@ class Pubclass extends ActiveRecord{
         foreach ($data as $v) {
             if($v['validTime']<$time){
                 $v['isShow']=0;
-                $re = $info->updateAll($v,'validTime=:validTime',array(':validTime'=>$v['validTime']));
+                $re = $info->updateAll($v,'id=:id',array(':id'=>$v['id']));
             }
         }
-
     }
 }
