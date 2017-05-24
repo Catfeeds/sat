@@ -4,10 +4,14 @@
  */
     namespace app\commands\front;
     use yii\base\Widget;
-    use yii;;
-	class NavWidget extends Widget  {
-        public $category;
+    use yii;
+    use yii\web\application;
+    use yii\web\controller;
+	class BannerWidget extends Widget  {
+        public $now_path;
         public $banner;
+        public $data;
+        public $controller;
         /**
          * 定义函数
          * */
@@ -18,8 +22,17 @@
         /**
          * 运行覆盖程序
          * */
+
+        public function path(){
+            $action = Yii::$app->controller->action->id;
+            $this->controller = Yii::$app->controller->id;
+//            var_dump($controller);die;
+//            $this->data = Yii::$app->db->createCommand("select * from {{%banner}} where module=".$controller)->queryAll();
+//            $now_path=$controller.'/'.$action;
+//            var_dump($this->data);
+        }
         public function run(){
-            return $this->render('nav');
+            return $this->render('banner',['data'=>$this->data,'controller'=>$this->controller]);
         }
 	}
 ?>
