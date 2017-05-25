@@ -68,7 +68,6 @@
                 },
                 success: function (data) {
                     _self.opts.success(data);
-
                     //后台返回数据格式：{"total":0,"items":[]}
                     _self.opts.totalCount = data.total;
                     _self.getTotalPage();

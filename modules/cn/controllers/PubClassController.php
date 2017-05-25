@@ -43,7 +43,7 @@ class PubclassController extends Controller
     // ajax分页
     public function actionPage()
     {
-        $p = Yii::$app->request->get('p', '1');
+        $p = Yii::$app->request->get('p','1');
         $pagesize=6;
         $data= Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课' limit ".($p-1)*$pagesize.",".$pagesize)->queryAll();
         $re= Yii::$app->db->createCommand("select count(id) from {{%info}} where isShow=0 and cate='公开课'")->queryAll();
@@ -62,6 +62,5 @@ class PubclassController extends Controller
             );
         }
         echo json_encode($arr);
-
     }
 }

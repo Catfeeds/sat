@@ -1,6 +1,8 @@
 
   <title>公开课</title>
   <link rel="stylesheet" href="/cn/css/pubClass.css">
+  <link rel="stylesheet" href="/cn/css/page.css">
+  <script src="/cn/js/page.js"></script>
 
   <section>
     <!--轮播图-->
@@ -81,12 +83,34 @@
 <!--          </li>-->
 <!--        --><?php //}?>
       </ul>
-<!--      <button class="s-more center-block">查看更多</button>-->
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
+    <div id="pager"></div>
   </section>
-
 <script>
+//  $(function(){
+//    $('#pager').sjAjaxPager({
+//      url: "/cn/pubclass/page",
+//      beforeSend: function () {
+//
+//      },
+//      success: function (data) {
+//        $('.s-history-cnt').empty();
+//        var li ='';
+//        console.log(data.list)
+//        $.each(data.list,function(index,array){
+//          li+="<li><embed src='"+array['pic']+"'type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'></embed>"+
+//              "<div class='s-cnt'>"+
+//          "<h2 class='center-block'>"+array['title']+"</h2>"+
+//              "<p>"+array['summary']+"</p>"+
+//          "<p><span>"+array['publishTime']+"</span><span>16:00-17:00</span></p>"+
+//          "</div></li>"
+//        })
+//        $('.s-history-cnt').append(li);
+//      }
+//    })
+//  })
+
 
  /* $(function () {
     var sCnt = $('.s-history-cnt'),

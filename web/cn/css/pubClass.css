@@ -157,15 +157,3 @@
   color: #fff;
   text-decoration: none;
 }
-.s-more {
-  outline: none;
-  border-width: 0;
-  display: block;
-  width: 660px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  background-color: rgb(54,178,251);
-  color: #fff;
-  margin-top: 40px;
-}
