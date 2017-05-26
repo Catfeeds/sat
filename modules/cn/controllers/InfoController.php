@@ -39,7 +39,9 @@ class InfoController extends Controller
         $hot = Yii::$app->db->createCommand("select * from {{%info}} order by hits desc limit 5")->queryAll();
         $student = Yii::$app->db->createCommand("select * from {{%student_case}} limit 5")->queryAll();
         $newinfo = Yii::$app->db->createCommand("select * from {{%info}} order by id desc limit 6")->queryAll();
-        return $this->render('index', ['student' => $student, 'info' => $info, 'str' => $str, 'hot' => $hot, 'newinfo' => $newinfo]);
+        $controller = Yii::$app->controller->id;
+        $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
+        return $this->render('index', ['student' => $student, 'info' => $info, 'str' => $str, 'hot' => $hot, 'newinfo' => $newinfo,'pic'=>$pic]);
     }
 
     public function actionDetails()

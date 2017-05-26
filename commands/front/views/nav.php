@@ -1,10 +1,12 @@
+
 <nav class="s-nav navbar-fixed-top">
 <div class="container clearfix">
     <a class="s-nav-logo pull-left" href="#">
         <img src="/cn/images/logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
-        <li><a class="on" href="/index.html">首页</a></li>
+
+        <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
 <!--        <li class="s-nav-work">-->
 <!--            <a href="#">做题<i class=" icon-caret-down"></i></a>-->
 <!--            <ul class="s-nav-showing">-->
@@ -15,20 +17,26 @@
 <!--        </li>-->
 <!--        <li><a href="#">模考</a></li>-->
 <!--        <li><a href="#">报告</a></li>-->
-        <li><a href="/class.html">课程</a></li>
-        <li><a href="/teachers.html">名师团队</a></li>
+        <li><a <?php if($path=='class.html'){echo 'class="on"';}?> href="/class.html">课程</a></li>
+        <li><a <?php if($path=='teachers.html'){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
-        <li><a href="/pubclass.html">公开课</a></li>
-        <li><a href="/info.html">资讯</a></li>
+        <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
+        <li><a  <?php if($path=='info.html'){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
     <form action="">
         <i class="icon-search"></i>
         <input type="text">
     </form>
-    <ul class="s-nav-login pull-right">
-        <li><a class="s-login-in" href="#">登录</a></li>
-        <li><a class="s-sign-up" href="#">注册</a></li>
-    </ul>
+
+        <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
+             <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['userName'];}else{echo '欢迎您';}?></a></li>
+             <li id="out"><a><span onclick="Out()">退出登录</span></a></li>
+        </ul>
+
+       <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
+            <li id="login"><a class="s-login-in" href="#">登录</a></li>
+            <li id="register"><a class="s-sign-up" href="#">注册</a></li>
+        </ul>
 </div>
 </nav>
 <!--登录、注册框-->
@@ -117,10 +125,11 @@
             alert(re.message);
         },"json")
     }
-//    function Code(){
-//        var email = $('#signEmail').val();
-//        $.post('/user/api/sendmail',{email:email},function(re){
-//            alert(re);
-//        },"text")
-//    }
+    function Out(){
+        $.post('/user/api/login-out',function(re){
+            alert('退出成功');
+            history.go(0);
+        },"json")
+    }
+
 </script>

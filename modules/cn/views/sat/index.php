@@ -2,24 +2,35 @@
     <title>sat首页</title>
     <link rel="stylesheet" href="/cn/css/sat.css">
     <script src="/cn/js/carousel.js"></script>
-
 <section>
     <div class="s-w1200 s-sat">
         <!--轮播图-->
         <div class="bnr-wrap clearfix s-banner">
-            <?php use app\commands\front\BannerWidget;?>
-            <?php BannerWidget::begin();?>
-            <?php BannerWidget::end();?>
+                <?php use app\commands\front\BannerWidget;?>
+                <?php BannerWidget::begin();?>
+                <?php BannerWidget::end();?>
             <div class="s-person clearfix">
                 <div class="s-person-logo border-radius pull-left"></div>
                 <div class="s-hi">
                     <h3>hi</h3>
                     <p>欢迎来到申友</p>
                 </div>
-                <div class="s-btn">
+                <?php if($user){
+                    echo '<div class="s-btn">
+                    <button >欢迎您</button>
+                    <button onclick="Out()" >退出</button>
+                    </div>';
+                }else{
+                    echo '<div class="s-btn">
                     <button class="s-login-in">登录</button>
                     <button class="s-sign-up">注册</button>
-                </div>
+                    </div>';
+                }?>
+
+<!--                <div class="s-btn">-->
+<!--                    <button class="s-login-in">登录</button>-->
+<!--                    <button class="s-sign-up">注册</button>-->
+<!--                </div>-->
                 <h3 class="s-adv">公告:</h3>
                 <ul>
                     <li><a href="#">kevin老师5.16号公开课</a></li>
@@ -53,10 +64,12 @@
                 <pre class="prev">&lt;</pre>
                 <pre class="next">&gt;</pre>
                 <ul>
+                    <?php foreach($info1 as $v){?>
                     <li class="s-cnt">
-                        <img src="/cn/images/sat03.png" alt="">
-                        <a href="#">查看详情</a>
+                        <img src="<?php echo $v['content']?>" alt="">
+                        <a href="/info_details/<?php echo $v['id']?>.html">查看详情</a>
                     </li>
+                    <?php }?>
                     <li class="s-cnt">
                         <img src="/cn/images/sat03.png" alt="">
                         <a href="#">查看详情</a>
@@ -109,23 +122,23 @@
                 <ul class="s-detail">
                     <li class="s-img"><img src="/cn/images/sat-course01.png" alt=""></li>
                     <li class="s-font">
-                        <h2><?php echo $data[0]['cate']?></h2>
-                        <p><?php echo $data[0]['introduction']?></p>
-                        <a href="/class_details/<?php echo $data[0]['id']?>.html">查看更多</a>
+                        <h2><?php echo $classes[0]['cate']?></h2>
+                        <p><?php echo $classes[0]['introduction']?></p>
+                        <a href="/class_details/<?php echo $classes[0]['id']?>.html">查看更多</a>
                     </li>
                     <li class="s-img"><img src="/cn/images/sat-course02.png" alt=""></li>
                 </ul>
                 <ul class="s-detail">
                     <li class="s-font">
-                        <h2><?php echo $data[1]['cate']?></h2>
-                        <p><?php echo $data[1]['introduction']?></p>
-                        <a href="/class_details/<?php echo $data[1]['id']?>.html">查看更多</a>
+                        <h2><?php echo $classes[1]['cate']?></h2>
+                        <p><?php echo $classes[1]['introduction']?></p>
+                        <a href="/class_details/<?php echo $classes[1]['id']?>.html">查看更多</a>
                     </li>
                     <li class="s-img"><img src="/cn/images/sat-course03.png" alt=""></li>
                     <li class="s-font">
-                        <h2><?php echo $data[2]['cate']?></h2>
-                        <p><?php echo $data[2]['introduction']?></p>
-                        <a href="/class_details/<?php echo $data[2]['id']?>.html">查看更多</a>
+                        <h2><?php echo $classes[2]['cate']?></h2>
+                        <p><?php echo $classes[2]['introduction']?></p>
+                        <a href="/class_details/<?php echo $classes[2]['id']?>.html">查看更多</a>
                     </li>
                 </ul>
             </div>

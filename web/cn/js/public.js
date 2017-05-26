@@ -206,6 +206,7 @@ function regEmail() {
   $.post('/user/api/register',{userName: signEmail,passWord: signPwd2,type: type},function(data){
     if (data) {
     alert(data.message);
+
       //alert (data);
       //loginOut();
   //    login('.s-sign-cnt','.s-login-cnt',1000);
@@ -214,8 +215,6 @@ function regEmail() {
     }
   },'json')
 }
-
-
 function login() {
   if (window.localStorage) {
     var userName = $('#loginName').val(),
@@ -227,8 +226,11 @@ function login() {
       localStorage.setItem('userName',userName);
     }
     $.post('/user/api/check-login', {userName: userName, userPass: loginPwd}, function(data){
-      alert(data.message);
-    },'json')
+      $('.s-login').hide();
+      $('.s-sign-cnt').css('top',0);
+      $('.s-login-cnt').css('top',0);
+      history.go(0);
+    },'json');
   }else {
     alert('当前浏览器不支持HTML5存储')
   }
