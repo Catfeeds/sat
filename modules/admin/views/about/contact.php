@@ -1,6 +1,6 @@
 <div class="span10">
     <div >
-        <a href="/admin/about/index">关于我们</a><span >&gt;</span><span>联系我们</span>
+        <a href="/admin/about/index">关于我们</a><span >&gt;</span><span><a href='<?php echo baseUrl."/admin/about/contact"?>'>联系我们</a></span>
     </div>
     <a href="<?php echo baseUrl.'/admin/about/contact_add'?>">添加联系方式</>
     <table border="1"  width="800px">

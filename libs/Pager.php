@@ -189,15 +189,62 @@ class Pager
         }
         $str.=' <span aria-hidden="true">&laquo;</span></a> </li>';
 //中间页码
-        for($i=1;$i<= $this->totalPagesCount;$i++){
-            $page = Yii::$app->request->get('p', 1);
-            if($i==$page){
-                $str.="<li class='active'>";
-            }else{
-                $str.="<li>";
+        if ($this->totalPagesCount <= 10) {
+            for($i=1;$i<= $this->totalPagesCount;$i++){
+//                $page = Yii::$app->request->get('p', 1);
+                if($i==$this->pageIndex){
+                    $str.="<li class='active'>";
+                }else{
+                    $str.="<li>";
+                }
+                $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
+                $str.='</li>';
             }
-            $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
-            $str.='</li>';
+        }
+        else{
+            if($this->pageIndex-4<=0){
+                for($i=1;$i<= 10;$i++){
+                    if($i==$this->pageIndex){
+                        $str.="<li class='active'>";
+                    }else{
+                        $str.="<li>";
+                    }
+                    $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
+                    $str.='</li>';
+                }
+            }elseif($this->pageIndex>4 && $this->pageIndex<$this->totalPagesCount-5){
+                for($i=$this->pageIndex-4;$i<= $this->pageIndex+5;$i++){
+                    $page = Yii::$app->request->get('p', 1);
+                    if($i==$page){
+                        $str.="<li class='active'>";
+                    }else{
+                        $str.="<li>";
+                    }
+                    $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
+                    $str.='</li>';
+                }
+            }elseif($this->pageIndex>=$this->totalPagesCount-5){
+                for($i=$this->totalPagesCount-9;$i<= $this->totalPagesCount;$i++){
+                    if($i==$this->pageIndex){
+                        $str.="<li class='active'>";
+                    }else{
+                        $str.="<li>";
+                    }
+                    $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
+                    $str.='</li>';
+                }
+            }
+
+//            for($i=$this->totalPagesCount-9;$i<= $this->totalPagesCount;$i++){
+//                $page = Yii::$app->request->get('p', 1);
+//                if($i==$page){
+//                    $str.="<li class='active'>";
+//                }else{
+//                    $str.="<li>";
+//                }
+//                $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
+//                $str.='</li>';
+//            }
         }
 
         //下一页 末页
