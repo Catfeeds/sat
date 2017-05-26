@@ -11,15 +11,17 @@
     <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>
+            <th>题号</th>
             <th>题目</th>
             <th>选项A</th>
             <th>选项B</th>
             <th>选项C</th>
             <th>选项D</th>
-<!--            <th>选项E</th>-->
+            <th>选项E</th>
             <th>答案</th>
             <th>分数</th>
             <th>科目</th>
+            <th>短文id</th>
             <th>题目来源</th>
             <th>难度</th>
             <th>操作</th>
@@ -29,15 +31,17 @@
         foreach($data as $v){?>
             <tr>
                 <td><? echo $v['id']?></td>
+                <td><? echo $v['number']?></td>
                 <td><? echo $v['content']?></td>
                 <td><? echo $v['keyA']?></td>
                 <td><? echo $v['keyB']?></td>
                 <td><? echo $v['keyC']?></td>
                 <td><? echo $v['keyD']?></td>
-<!--                <td>--><?// echo $v['keyE']?><!--</td>-->
+                <td><? echo $v['keyE']?></td>
                 <td><? echo $v['answer']?></td>
                 <td><? echo $v['score']?></td>
                 <td><? echo $v['major']?></td>
+                <td><? echo $v['essayId']?></td>
                 <td><? echo $v['sourceId']?></td>
                 <td><? echo $v['leverId']?></td>
                 <td>

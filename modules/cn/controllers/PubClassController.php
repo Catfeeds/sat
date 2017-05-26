@@ -22,7 +22,9 @@ class PubclassController extends Controller
         $data = Yii::$app->db->createCommand("select * from {{%info}} where isShow=1 and cate='公开课'")->queryAll();
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课'")->queryAll();
 //        var_dump($data);die;
-        return $this->render('index', ['data' => $data, 'arr' => $arr]);
+        $controller = Yii::$app->controller->id;
+        $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
+        return $this->render('index', ['data' => $data, 'arr' => $arr,'pic'=>$pic]);
     }
 
     public function actionApply()

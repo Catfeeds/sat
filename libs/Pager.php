@@ -11,6 +11,7 @@
        echo $pageStr;   
  */
 namespace app\libs;
+use Yii;
 class Pager
 {
     private $pageSize = 10;
@@ -189,7 +190,12 @@ class Pager
         $str.=' <span aria-hidden="true">&laquo;</span></a> </li>';
 //中间页码
         for($i=1;$i<= $this->totalPagesCount;$i++){
-            $str.="<li>";
+            $page = Yii::$app->request->get('p', 1);
+            if($i==$page){
+                $str.="<li class='active'>";
+            }else{
+                $str.="<li>";
+            }
             $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
             $str.='</li>';
         }

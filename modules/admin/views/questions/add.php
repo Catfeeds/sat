@@ -10,7 +10,7 @@
         <span>添加题目</span>
     </div>
 
-            若有短文题干，先添加题干<a><span id="addessay">添加</span></a> </br>
+            若有短文题干，先添加短文<a><span id="addessay">添加</span></a> </br>
             若无短文题干，请直接添加题目 <a><span id="addquestion">添加题目</span></a></br>
         <div id="essay" style="display:none;">
             <form method="post" action="<?php echo baseUrl."/admin/questions/essay"?>">
@@ -63,10 +63,10 @@
                 <span>选 &nbsp;项&nbsp; D:</span>
                 <span><input type="text" name="keyD" value="<?php echo isset($data)?$data['keyD']:''?>" placeholder="D选项" style="width:80%;"></span>
                 </br>
-<!--            -->
-<!--                <span>选项E:</span>-->
-<!--                <span><input type="text" name="keyE" value="--><?php //echo isset($data)?$data['keyE']:''?><!--" placeholder="E选项" style="width:80%;"></span>-->
-<!--            -->
+
+                <span>选&nbsp;项&nbsp;E:</span>
+                <span><input type="text" name="keyE" value="<?php echo isset($data)?$data['keyE']:''?>" placeholder="E选项" style="width:80%;"></span>
+                </br>
             
                 <span>答 &nbsp;&nbsp;&nbsp;&nbsp;案 :</span>
                 <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案"></span>
@@ -74,8 +74,15 @@
             
                 <span>分 &nbsp;&nbsp;&nbsp;&nbsp;数 :</span>
                 <span><input type="text" name="score" value="<?php echo isset($data)?$data['score']:''?>" placeholder="分数" ></span>
+                </br>
+                <span>小 &nbsp;&nbsp;&nbsp;&nbsp;节 :</span>
+                <span><input type="text" name="section" value="<?php echo isset($data)?$data['section']:''?>" placeholder="所属小节" ></span>
+                </br>
 
-                 </br>
+                <span>短&nbsp;文&nbsp;id  :</span>
+                <span><input type="text" name="essayId" value="<?php echo isset($data)?$data['essayId']:''?>" placeholder="短文的id" ></span>
+                </br>
+
                 <span>题目来源:</span>
                 <span><input type="text" name="sourceid" value="<?php echo isset($data)?$data['sourceId']:''?>"  placeholder="题目来源" ></span>
                 </br>

@@ -13,9 +13,9 @@
                 <td>
                     <select name="module">
                         <option value ="">请添加banner图位置</option>
-                        <option value ="sat" <?php echo isset($data)&& $data['path']=="sat" ?  'selected':''?>>首页</option>
-                        <option value ="pubclass" <?php echo isset($data)&& $data['cate']=="pubclass" ?  'selected':''?>>公开课</option>
-                        <option value ="info" <?php echo isset($data)&& $data['cate']=="info" ?  'selected':''?>>资讯</option>
+                        <option value ="sat" <?php echo isset($data)&& $data['module']=="sat" ?  'selected':''?>>首页</option>
+                        <option value ="pubclass" <?php echo isset($data)&& $data['module']=="pubclass" ?  'selected':''?>>公开课</option>
+                        <option value ="info" <?php echo isset($data)&& $data['module']=="info" ?  'selected':''?>>资讯</option>
                     </select>
                 </td>
 <!--                <td><input type="text" name="module" placeholder="模块"  value="--><?php //echo isset($data)? $data['controller']:''?><!--"></td>-->
