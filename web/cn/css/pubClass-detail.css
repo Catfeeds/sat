@@ -6,6 +6,7 @@
 }
 .breadcrumb .active {
     color: #30A7ED;
+    font-size: 14px;
 }
 .s-pd-bg img {
     width: 100%;

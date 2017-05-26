@@ -1,6 +1,7 @@
 
   <title>公开课</title>
   <link rel="stylesheet" href="/cn/css/pubClass.css">
+  <script src="/cn/js/page2.js"></script>
 
   <section>
     <!--轮播图-->
@@ -85,64 +86,122 @@
             <p><span>2017-4-20</span><span>16:00-17:00</span></p>
           </div>
         </li>
-        <?php foreach($arr as $k=>$v){?>
-        <li>
-          <embed  <?php if($k<6 && isset($k)){echo "src=".$v['pic'];}else{echo "data-src=".$v['pic'];}?> type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
-          <div class="s-cnt">
-            <h2 class="center-block"><?php echo $v['title']?></h2>
-            <p><?php echo $v['summary']?></p>
-            <p><span><?php echo $v['activeTime']?></span></p>
-          </div>
-        </li>
-        <?php }?>
-
       </ul>
-      <button class="s-more center-block">查看更多</button>
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
+    <div id="pageCount"></div>
   </section>
-
 <script>
-  $(function () {
-    var sCnt = $('.s-history-cnt'),
-        slideHeight = 1125,
-        defHeight = $('.s-history-cnt').height();
-    if (defHeight>slideHeight) {
-      sCnt.css('height',slideHeight+'px');
-    }
-    $('.s-more').click(function () {
-      var curHeight=  sCnt.height();
-      if (curHeight == slideHeight) {
-        sCnt.animate({
-          height: defHeight
-        },1000);
-        $('.s-more').html('点击隐藏');
-      }else {
-        sCnt.animate({
-          height: slideHeight
-        },'normal');
-        $('.s-more').html('查看更多');
+
+  var curPage = 1; //当前页码
+
+  function getData(page) {
+    $.ajax({
+      type: 'GET',
+      url: "/cn/pubclass/page",
+      data: {
+        'p': page
+      },
+      dataType: 'json',
+      beforeSend: function () {
+        var li = "<li><i class='fa fa-spinner fa-spin'></i></li>"
+      },
+      success: function (data) {
+        $('.s-history-cnt').empty();
+        var li ='';
+        total = data.total;//总记录数
+        totalPage = data.totalPage;//总页数
+        curPage = page;
+        console.log(data);
+        $.each(data.list,function(index,array){
+          li+="<li><embed src='"+array['pic']+"'type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'></embed>"+
+              "<div class='s-cnt'>"+
+              "<h2 class='center-block'>"+array['title']+"</h2>"+
+              "<p>"+array['summary']+"</p>"+
+              "<p><span>"+array['publishTime']+"</span><span>16:00-17:00</span></p>"+
+              "</div></li>"
+        });
+        $('.s-history-cnt').append(li);
+      },
+      complete: function() {
+        getPage({
+          id: 'pageCount',
+          nowNum: curPage,
+          allNum: totalPage
+        });
       }
-      $('.s-history-cnt li embed').each(function () {
-        if ($(this).attr('data-src')) {
-          this.src = $(this).attr('data-src');
-        }
-      })
     })
-  })
-</script>
-
-<script>
-  function apply(id){
-      $.get("/cn/pubclass/apply",{id: id},
-          function (msg) {
-            if (msg) {
-              alert('报名成功');
-//              $("span['id=data']").html=msg;
-            }
-          }, 'text'
-      );
-
-
   }
+
+  function getPage(opt) {
+    if(!opt.id) {return false};
+
+    var obj = $('#'+opt.id),
+        pageStr = '',
+        nowNum = opt.nowNum || 1,//当前页数
+        allNum = opt.allNum || 5;//总页数
+    //var callBack = opt.callBack || function () {};//回调函数
+    //当前页数大于等于4或者总页数大于等于6时显示首页
+    if (nowNum >= 4 && allNum >= 6){
+      pageStr+="<a href='#1' class='grey'>首页</a>";
+    };
+    //当前页数大于等于2时显示上一页
+    if (nowNum>=2) {
+      pageStr+="<a href='#"+(nowNum-1)+"' class='grey fa fa-angle-left'></a>";
+    };
+    //总页数小于等于5时
+    if (allNum<=5) {
+      for (var i=1;i<=allNum;i++) {
+        if (nowNum == i){
+          pageStr+="<a href='#"+i+"' class='blue'>"+i+"</a>"
+        }else {
+          pageStr+="<a href='#"+i+"' class='grey'>"+i+"</a>"
+        }
+      }
+    }
+    else {
+      for (var i=1;i<=5;i++) {
+        if (nowNum == 1 || nowNum == 2) {
+          if (nowNum == i) {
+            pageStr+="<a href='#"+i+"' class='blue'>"+i+"</a>"
+          } else {
+            pageStr+="<a href='#"+i+"' class='grey'>"+i+"</a>"
+          }
+        }else if((allNum == nowNum) || (nowNum == allNum-1)) {
+          if ((allNum == nowNum) && i==5) {
+            pageStr+="<a href='#"+(allNum-5+i)+"' class='blue'>"+(allNum-5+i)+"</a>"
+          }else if ((nowNum == allNum-1) && i == 4) {
+            pageStr+="<a href='#"+(allNum-5+i)+"' class='blue'>"+(allNum-5+i)+"</a>"
+          } else {
+            pageStr+="<a href='#"+(allNum-5+i)+"' class='grey'>"+(allNum-5+i)+"</a>"
+          }
+        } else {
+          if (i == 3) {
+            pageStr+="<a href='#"+(nowNum-3+i)+"' class='blue'>"+(nowNum-3+i)+"</a>"
+          } else {
+            pageStr+="<a href='#"+(nowNum-3+i)+"' class='grey'>"+(nowNum-3+i)+"</a>"
+          }
+        }
+      }
+    };
+    if ((allNum - nowNum) >= 1) {
+      pageStr+="<a href='#"+(nowNum+1)+"' class='grey fa fa-angle-right'></a>"
+    };
+    if ((allNum - nowNum) >= 3 && allNum >= 6) {
+      pageStr+="<a href='#"+allNum+"' disabled='true' class='grey forbid'>尾页</a>"
+    };
+    obj.append(pageStr);
+    $("#pageCount a").on('click',function(){
+      var rel = parseInt($(this).attr("href").substring(1));
+      obj.empty();
+      if(rel){
+        getData(rel);
+      }
+    });
+  }
+
+  $(function(){
+    getData(1);
+  });
+
 </script>

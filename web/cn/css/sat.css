@@ -6,6 +6,7 @@
   width: 850px;
 }
 .s-sat .s-banner .carousel img {
+  width: 100%;
   height: 420px;
 }
 .s-sat .s-left {
@@ -16,8 +17,8 @@
   left: auto;
 }
 .s-sat .carousel-control {
-  top: 50%;
-  font: 400 30px simsun;
+  top: 45%;
+  font: 400 50px simsun;
 }
 /*个人登录、公告区*/
 .s-sat .s-person {
@@ -230,34 +231,65 @@
 .s-article {
   margin: 30px 0 40px 0;
 }
-.s-article .s-cnt div {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
+.s-article .s-information {
+  width: 30%;
+  padding: 1%;
+  float: left;
+  margin-right: 4%;
 }
-.s-article .s-cnt img {
-  width: 350px;
-  height: 400px;
+.s-article .s-information:last-child {
+  margin-right: 0;
 }
-.s-article .s-cnt a {
+.s-article .s-information:hover {
+  box-shadow: 0 0 3px #000;
+}
+.s-article .s-title-wrapper {
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+.s-article .s-information .s-title {
   font-size: 16px;
-  cursor: pointer;
 }
-.s-article .s-cnt h2 {
-  margin-bottom: 0;
-  margin-top: 10px;
+.s-article .s-more {
+  font-size: 20px;
 }
-.s-article .s-cnt p {
+.s-article .s-information .s-logo {
+  margin-right: 10px;
+}
+.s-article .s-information img {
+  width: 150px;
+  height: 200px;
+}
+.s-article .s-article-img,
+.s-article .s-article-title {
+  display: inline-block;
+  vertical-align: top;
+}
+.s-article .s-article-title {
+  width: 160px;
+  max-height: 200px;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.s-article .s-article-title p {
+  line-height: 24px;
   font-size: 14px;
 }
-.s-article .s-cnt ul {
-}
-.s-article .s-text li {
-  width: 700px;
+.s-article .s-more-title {
+  margin: 10px 0;
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
+}
+.s-article .s-more-title a {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.s-article a:hover {
+  color: rgb(54,178,251);
 }
 /*名师团队*/
 .s-teacher {

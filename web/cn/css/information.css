@@ -129,9 +129,16 @@
 .s-information .tab-content .s-page {
   text-align: center;
 }
+.s-information .s-page a {
+  color: #000;
+}
+.s-information .s-page .active a {
+  background-color: rgb(54,178,251);
+  border-color: rgb(54,178,251);
+  color: #fff;
+}
 
-
-
+/*左边栏*/
 .s-information .s-right {
   width: 370px;
 }
