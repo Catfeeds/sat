@@ -1,3 +1,6 @@
+.bnr-wrap .carousel-inner img {
+    max-height: 640px;
+}
 .s-teacher .s-w1200 {
     margin-top: 30px;
 }

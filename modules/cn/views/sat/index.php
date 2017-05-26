@@ -159,35 +159,102 @@
                 </div>
             </div>
             <div class="s-cnt clearfix">
-                <div class="s-text s-text1">
-                    <img src="/cn/images/sat-course01.png" alt="">
+                <div class="s-information s-news">
+                    <div class="s-title-wrapper clearfix">
+                        <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
+                        <a class="s-more pull-right" href="#"><i class="fa fa-angle-right"></i></a>
+                    </div>
                     <ul>
-                        <?php foreach($info3 as $v){?>
                         <li>
-                            <h2><a href="#"><?php echo $v['title']?></a></h2>
-                            <p><?php echo $v['summary']?></p>
+                            <a class="s-article-img" href="#">
+                                <img src="/cn/images/sat-article01.png" alt="">
+                            </a>
+                            <div class="s-article-title">
+                                <h3><a href="#">新西兰纳新新服安徽库尔德丽兰</a></h3>
+                                <p>奥克兰理工大学（AUT）是新西兰八大院校之一，建于1895年，在2016年QS世家大学排名中位居新西兰第一、全球第82名。奥克兰理工大学的教学计划和学位设置采用了在国际上最有声望和最得到认可的英国教育模式与体制。一对一的“导师制”可以让学生们直接且快速地从老师那里学到知识―这些老师大都在他们的领域中成就非凡。</p>
+                            </div>
                         </li>
-                        <?php }?>
-<!--                        <li>-->
-<!--                            <h2><a href="#">美国大学申请必备考试之一 SAT须达到多少词汇量才能过关？</a></h2>-->
-<!--                            <p>考生掌握的SAT考试词汇量的大小对于其取得的SAT成绩是有直接影响的，所以大部分考生都需要在备考SAT考试的时候留出一段时间来专门记忆SAT词汇。</p>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <h2><a href="#">美国大学申请必备考试之一 SAT须达到多少词汇量才能过关？</a></h2>-->
-<!--                            <p>考生掌握的SAT考试词汇量的大小对于其取得的SAT成绩是有直接影响的，所以大部分考生都需要在备考SAT考试的时候留出一段时间来专门记忆SAT词汇。</p>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <h2><a href="#">美国大学申请必备考试之一 SAT须达到多少词汇量才能过关？</a></h2>-->
-<!--                            <p>考生掌握的SAT考试词汇量的大小对于其取得的SAT成绩是有直接影响的，所以大部分考生都需要在备考SAT考试的时候留出一段时间来专门记忆SAT词汇。</p>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <h2><a href="#">美国大学申请必备考试之一 SAT须达到多少词汇量才能过关？</a></h2>-->
-<!--                            <p>考生掌握的SAT考试词汇量的大小对于其取得的SAT成绩是有直接影响的，所以大部分考生都需要在备考SAT考试的时候留出一段时间来专门记忆SAT词汇。</p>-->
-<!--                        </li>-->
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
                     </ul>
                 </div>
-                <!--<div class="s-text2"></div>-->
-                <!--<div class="s-text s-text3"></div>-->
+                <div class="s-information s-exam">
+                    <div class="s-title-wrapper clearfix">
+                        <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>备考资讯</span>
+                        <a class="s-more pull-right" href="#"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="s-article-img" href="#">
+                                <img src="/cn/images/sat-article02.png" alt="">
+                            </a>
+                            <div class="s-article-title">
+                                <h3><a href="#">新西兰纳新新服安徽库尔德丽兰</a></h3>
+                                <p>奥克兰理工大学（AUT）是新西兰八大院校之一，建于1895年，在2016年QS世家大学排名中位居新西兰第一、全球第82名。奥克兰理工大学的教学计划和学位设置采用了在国际上最有声望和最得到认可的英国教育模式与体制。一对一的“导师制”可以让学生们直接且快速地从老师那里学到知识―这些老师大都在他们的领域中成就非凡。</p>
+                            </div>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="s-information s-exam">
+                    <div class="s-title-wrapper clearfix">
+                        <span class="s-title pull-left"><i class="s-logo fa fa-leaf"></i>高分经验</span>
+                        <a class="s-more pull-right" href="#"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a class="s-article-img" href="#">
+                                <img src="/cn/images/sat-article03.png" alt="">
+                            </a>
+                            <div class="s-article-title">
+                                <h3><a href="#">新西兰纳新新服安徽库尔德丽兰</a></h3>
+                                <p>奥克兰理工大学（AUT）是新西兰八大院校之一，建于1895年，在2016年QS世家大学排名中位居新西兰第一、全球第82名。奥克兰理工大学的教学计划和学位设置采用了在国际上最有声望和最得到认可的英国教育模式与体制。一对一的“导师制”可以让学生们直接且快速地从老师那里学到知识―这些老师大都在他们的领域中成就非凡。</p>
+                            </div>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                        <li class="s-more-title">
+                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!--名师团队-->

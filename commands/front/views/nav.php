@@ -24,7 +24,7 @@
         <li><a  <?php if($path=='info.html'){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
     <form action="">
-        <i class="icon-search"></i>
+        <i class="fa fa-search"></i>
         <input type="text">
     </form>
 
@@ -69,7 +69,7 @@
 <!--                </a>-->
 <!--            </div>-->
         </div>
-        <i class="icon-remove"></i>
+        <i class="fa fa-close icon-remove"></i>
     </div>
     <!--注册-->
     <div class="s-sign-cnt">
@@ -114,7 +114,7 @@
 <!--                    <img src="/cn/images/QQ.png" alt="qq图标">-->
 <!--                </a>-->
 <!--            </div>-->
-            <i class="icon-remove"></i>
+            <i class="fa fa-close icon-remove"></i>
         </div>
     </div>
 </div>

@@ -103,6 +103,9 @@
         'p': page
       },
       dataType: 'json',
+      beforeSend: function () {
+        var li = "<li><i class='fa fa-spinner fa-spin'></i></li>"
+      },
       success: function (data) {
         $('.s-history-cnt').empty();
         var li ='';
@@ -144,7 +147,7 @@
     };
     //当前页数大于等于2时显示上一页
     if (nowNum>=2) {
-      pageStr+="<a href='#"+(nowNum-1)+"' class='grey'>上一页</a>";
+      pageStr+="<a href='#"+(nowNum-1)+"' class='grey fa fa-angle-left'></a>";
     };
     //总页数小于等于5时
     if (allNum<=5) {
@@ -182,7 +185,7 @@
       }
     };
     if ((allNum - nowNum) >= 1) {
-      pageStr+="<a href='#"+(nowNum+1)+"' class='grey'>下一页</a>"
+      pageStr+="<a href='#"+(nowNum+1)+"' class='grey fa fa-angle-right'></a>"
     };
     if ((allNum - nowNum) >= 3 && allNum >= 6) {
       pageStr+="<a href='#"+allNum+"' disabled='true' class='grey forbid'>尾页</a>"
