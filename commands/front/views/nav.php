@@ -17,11 +17,11 @@
 <!--        </li>-->
 <!--        <li><a href="#">模考</a></li>-->
 <!--        <li><a href="#">报告</a></li>-->
-        <li><a <?php if($path=='class.html'){echo 'class="on"';}?> href="/class.html">课程</a></li>
-        <li><a <?php if($path=='teachers.html'){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
+        <li><a <?php if($path=='class.html'|| (strpos($path,'class_details'))!==false){echo 'class="on"';}?> href="/class.html">课程</a></li>
+        <li><a <?php if($path=='teachers.html'|| (strpos($path,'teachers_details'))!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
-        <li><a  <?php if($path=='info.html'){echo 'class="on"';}?> href="/info.html">资讯</a></li>
+        <li><a  <?php if($path=='info.html'|| (strpos($path,'info_details'))!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
     <form action="">
         <i class="fa fa-search"></i>

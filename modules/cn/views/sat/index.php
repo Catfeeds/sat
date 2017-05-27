@@ -170,25 +170,15 @@
                                 <img src="/cn/images/sat-article01.png" alt="">
                             </a>
                             <div class="s-article-title">
-                                <h3><a href="#">新西兰纳新新服安徽库尔德丽兰</a></h3>
-                                <p>奥克兰理工大学（AUT）是新西兰八大院校之一，建于1895年，在2016年QS世家大学排名中位居新西兰第一、全球第82名。奥克兰理工大学的教学计划和学位设置采用了在国际上最有声望和最得到认可的英国教育模式与体制。一对一的“导师制”可以让学生们直接且快速地从老师那里学到知识―这些老师大都在他们的领域中成就非凡。</p>
+                                <h3><a href="/info_details/<?php echo  $infoNews[0]['id']?>.html"><?php echo $infoNews[0]['title']?></a></h3>
+                                <p><?php echo $infoNews[0]['summary']?></p>
                             </div>
                         </li>
+                        <?php foreach($infoNews as $k=>$v){if($k>=1){?>
                         <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>
+                            <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                         </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
+                        <?php }}?>
                     </ul>
                 </div>
                 <div class="s-information s-exam">
@@ -202,25 +192,30 @@
                                 <img src="/cn/images/sat-article02.png" alt="">
                             </a>
                             <div class="s-article-title">
-                                <h3><a href="#">新西兰纳新新服安徽库尔德丽兰</a></h3>
-                                <p>奥克兰理工大学（AUT）是新西兰八大院校之一，建于1895年，在2016年QS世家大学排名中位居新西兰第一、全球第82名。奥克兰理工大学的教学计划和学位设置采用了在国际上最有声望和最得到认可的英国教育模式与体制。一对一的“导师制”可以让学生们直接且快速地从老师那里学到知识―这些老师大都在他们的领域中成就非凡。</p>
+                                <h3><a href="/info_details/<?php echo  $infoTest[0]['id']?>.html"><?php echo $infoTest[0]['title']?></a></h3>
+                                <p><?php echo $infoTest[0]['summary']?></p>
                             </div>
                         </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
+                        <?php foreach($infoTest as $k=>$v){if($k>=1){?>
+                            <li class="s-more-title">
+                                <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
+                            </li>
+                        <?php }}?>
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
                     </ul>
                 </div>
                 <div class="s-information s-exam">
@@ -234,25 +229,30 @@
                                 <img src="/cn/images/sat-article03.png" alt="">
                             </a>
                             <div class="s-article-title">
-                                <h3><a href="#">新西兰纳新新服安徽库尔德丽兰</a></h3>
-                                <p>奥克兰理工大学（AUT）是新西兰八大院校之一，建于1895年，在2016年QS世家大学排名中位居新西兰第一、全球第82名。奥克兰理工大学的教学计划和学位设置采用了在国际上最有声望和最得到认可的英国教育模式与体制。一对一的“导师制”可以让学生们直接且快速地从老师那里学到知识―这些老师大都在他们的领域中成就非凡。</p>
+                                <h3><a href="#"><?php echo $info3[0]['title']?></a></h3>
+                                <p><?php echo $info3[0]['summary']?></p>
                             </div>
                         </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
-                        <li class="s-more-title">
-                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>
-                        </li>
+                        <?php foreach($info3 as $k=>$v){if($k>=1){?>
+                            <li class="s-more-title">
+                                <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
+                            </li>
+                        <?php }}?>
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
+<!--                        <li class="s-more-title">-->
+<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>
