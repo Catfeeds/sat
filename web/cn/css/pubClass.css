@@ -178,6 +178,7 @@
   text-decoration: none;
 }
 /*分页*/
+<<<<<<< HEAD
 #pageCount {
   margin-top: 20px;
   text-align: center;
@@ -193,17 +194,18 @@
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+=======
+.pagination {
+  width: 560px;
+  display: block;
+  margin: 20px auto 0;
+>>>>>>> e59b8760ef387ee067a2366ab395c82ca386f50f
 }
-#pageCount a.grey:hover {
-  background-color: rgb(232, 230, 229);
+.pagination li a {
+  margin: 5px;
+  color: #000;
 }
-#pageCount a.blue {
-  color: #fff;
+.pagination li.active a {
   background-color: rgb(54,178,251);
-}
-#pageCount a.fa-angle-left {
-  font-size: 18px;
-}
-#pageCount a.fa-angle-right {
-  font-size: 18px;
+  border-color: rgb(54,178,251);
 }

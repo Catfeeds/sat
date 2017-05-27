@@ -8,10 +8,7 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-
 use yii\web\controller;
-use app\modules\cn\models\classes;
-use app\modules\cn\models\teachers;
 
 class AboutController extends Controller
 {

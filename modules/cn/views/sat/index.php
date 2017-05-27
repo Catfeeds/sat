@@ -32,17 +32,18 @@
 <!--                    <button class="s-sign-up">注册</button>-->
 <!--                </div>-->
                 <h3 class="s-adv">公告:</h3>
-                <ul>
-                    <li><a href="#">kevin老师5.16号公开课</a></li>
-                    <li><a href="#">SAT强化班限时优惠</a></li>
-                    <li><a href="#">SAT强化班限时优惠SAT强化班限时优惠SAT强化班限时优惠</a></li>
-                    <li><a href="#">SAT强化班限时优惠</a></li>
-                    <li><a href="#">SAT强化班限时优惠</a></li>
-                    <li><a href="#">SAT强化班限时优惠</a></li>
-                    <li><a href="#">SAT强化班限时优惠</a></li>
-                    <li><a href="#">SAT强化班限时优惠</a></li>
-                </ul>
-
+                <div class="s-adv-wrap">
+                    <ul>
+                        <li><a href="#">kevin老师5.16号公开课</a></li>
+                        <li><a href="#">SAT强化班限时优惠</a></li>
+                        <li><a href="#">SAT强化班限时优惠SAT强化班限时优惠SAT强化班限时优惠</a></li>
+                        <li><a href="#">SAT强化班限时优惠</a></li>
+                        <li><a href="#">SAT强化班限时优惠</a></li>
+                        <li><a href="#">SAT强化班限时优惠</a></li>
+                        <li><a href="#">SAT强化班限时优惠</a></li>
+                        <li><a href="#">SAT强化班限时优惠</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!--免费公开课-->
@@ -323,11 +324,10 @@
 </section>
 <!--底部-->
 <script>
-    <!--高分榜-->
-    jQuery(".s-banner").slide({mainCell:".s-person ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+    //   高分榜
+    jQuery(".s-person").slide({mainCell:".s-adv-wrap ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
     //  名师团队
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
-    jQuery(".s-article").slide({mainCell:".s-text1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
 
     $(function () {
         $('.s-article .s-text ul').parent().css({

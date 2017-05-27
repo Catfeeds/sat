@@ -271,8 +271,11 @@
   overflow: hidden;
   margin-left: 20px;
 }
+.s-article .s-article-title h3 {
+  margin-top: 10px;
+}
 .s-article .s-article-title p {
-  line-height: 24px;
+  line-height: 22px;
   font-size: 14px;
 }
 .s-article .s-more-title {
