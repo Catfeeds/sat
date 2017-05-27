@@ -1,5 +1,5 @@
 <div class="span10">
-    <a href='<?php echo baseUrl."/admin/about/index"?>'>关于我们</a><span >&gt;</span><span>联系我们</span><span >&gt;</span><span>添加/修改</span>
+    <a href='<?php echo baseUrl."/admin/about/index"?>'>关于我们</a><span >&gt;</span><span><a href='<?php echo baseUrl."/admin/about/contact"?>'>联系我们</a></span><span >&gt;</span><span>添加/修改</span>
     <form name="form" method="post" action="<?php echo baseUrl."/admin/about/contact_add"?>" enctype="multipart/form-data">
         <table>
             <tr>
