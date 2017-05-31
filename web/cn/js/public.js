@@ -84,7 +84,7 @@ function isTel(value) {
     return false;
   }
 };
-
+//显示提示
 function showTips(msgId,msg) {
   if(msgId == ''){return}
   if(msg==''){msg == 'ERROR'}
@@ -93,12 +93,14 @@ function showTips(msgId,msg) {
     top: '-23px'
   },1000)
 }
+//隐藏提示
 function hideTips(msgId) {
   try {
     $('#'+msgId).parent().find('.s-tooltip').fadeOut('slow');
     $('#'+msgId).parent().find('.s-tooltip').remove();
   }catch (e){}
 }
+//隐藏全部提示
 function hideAllTips() {
   try {
     $('.s-tooltip div').fadeOut('slow');
@@ -185,51 +187,57 @@ function check() {
   return cResult;
 }
 
+//手机注册
 function regTel() {
-
   var signTel = $('#signTel').val(),
       signPwd1 = $('#signPwd1').val(),
       signCode = $('#signCode').val(),
       type=1;
   $.post('/user/api/register',{userName: signTel,passWord: signPwd1,type: type,
-    code: signCode},function(re){
-    var obj = eval('(' + re + ')');
-    alert(obj.message);
-
-  },"text");
+    code: signCode},function(data){
+    console.log(data);
+    alert(data.message);
+    if (data.code) {
+      $('.s-login').hide();
+      $('.s-sign-cnt').css('top',0);
+      $('.s-login-cnt').css('top',0);
+    }
+  },"json");
 }
+//邮箱注册
 function regEmail() {
   var signEmail = $('#signEmail').val(),
       signPwd2 = $('#signPwd2').val(),
       type=2;
-  //alert (111);
   $.post('/user/api/register',{userName: signEmail,passWord: signPwd2,type: type},function(data){
     if (data) {
     alert(data.message);
-
-      //alert (data);
-      //loginOut();
-  //    login('.s-sign-cnt','.s-login-cnt',1000);
     }else{
       alert("发送邮件失败，请到个人中心，重新进行验证");
     }
   },'json')
 }
+//登录
 function login() {
   if (window.localStorage) {
     var userName = $('#loginName').val(),
         loginPwd = $('#loginPass').val();
-    if ($('#loginBtn').attr('checked')) {
+    if ($('.s-rember-pwd').prop('checked')) {
       localStorage.setItem('userName',userName);
       localStorage.setItem('password',loginPwd);
     }else {
       localStorage.setItem('userName',userName);
     }
     $.post('/user/api/check-login', {userName: userName, userPass: loginPwd}, function(data){
-      $('.s-login').hide();
-      $('.s-sign-cnt').css('top',0);
-      $('.s-login-cnt').css('top',0);
-      history.go(0);
+      alert(data.message);
+      if (data.code) {
+        $('.s-login').hide();
+        $('.s-sign-cnt').css('top',0);
+        $('.s-login-cnt').css('top',0);
+        window.history.go(0);
+      } else {
+       window.history.go(-1);
+      }
     },'json');
   }else {
     alert('当前浏览器不支持HTML5存储')
