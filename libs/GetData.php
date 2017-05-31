@@ -14,11 +14,11 @@ class GetData {
      * $postion,上传图片保存位置
      */
     public function PostData($must,$postion=''){
-//        获取post提交的数据
+        // 获取post提交的数据
         foreach($_POST as $k=>$val){
             $data["$k"]=Yii::$app->request->post("$k",'');
         }
-//        判断是修改还是添加时图片的处理
+        // 判断是修改还是添加时图片的处理
         if(empty($data['id'])){
             if(isset($_FILES['pic']['name'])){
                 if(empty($_FILES['pic']['name'])){
@@ -37,7 +37,7 @@ class GetData {
             unset($data['editorValue']);
         }
         unset($data['_csrf']);
-//        判断完整性
+        // 判断完整性
         foreach($must as $k=>$v){
             if(empty($data["$k"])){
                 die("<script>alert(\"请填写".$v."\");history.go(-1);</script>");
@@ -45,15 +45,14 @@ class GetData {
         }
         return $data;
     }
-//    图片上传处理，@position为上传文件的位置
+    // 图片上传处理，@position为上传文件的位置
     public function upImage($position){
-//            允许上传的图片格式
-        $config=array('arr_allow_exts'=>  array('gif','jpg','jpeg','bmp','png'),);
+        $config=array('arr_allow_exts'=>  array('gif','jpg','jpeg','bmp','png'),);  // 允许上传的图片格式
         $up=new \UploadFile($config);
         $savePath="./Upload/images/".$position."/";
         $file=$_FILES['pic'];
         $data= $up->uploadOne($file,$savePath);
-//            包含错误信息
+        // 包含错误信息
         if($data['arr_data']['int_error']){
             die('<script>alert("上传文件失败");history.go(-1);</script>');
         }else{
@@ -63,8 +62,8 @@ class GetData {
         }
 
     }
-//   自动完成字段，即不需要表单提交的数据的添加字段
-//time表示当前时间，hits表示点击量
+    // 自动完成字段，即不需要表单提交的数据的添加字段
+    // time表示当前时间，hits表示点击量
     public function Auto($time='',$hits=''){
         if($time!=false){
             $data["$time"]=time();

@@ -16,15 +16,15 @@ class ClassesController extends ApiControl
 {
     public $enableCsrfValidation = false;
 
-//    所有课程的显示
+    // 所有课程的显示
     public function actionIndex()
     {
-//        从数据库获取数据
+        // 从数据库获取数据
         $data = Yii::$app->db->createCommand("select * from {{%classes}} order by id desc ")->queryAll();
         return $this->render('index', ['data' => $data]);
     }
 
-//    添加课程
+    // 添加课程
     public function actionAdd()
     {
         if (!$_POST) {
@@ -56,7 +56,7 @@ class ClassesController extends ApiControl
         }
     }
 
-//    删除课程
+    //删除课程
     public function actionDel()
     {
         $id = Yii::$app->request->get('id', '');

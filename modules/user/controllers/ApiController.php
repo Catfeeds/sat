@@ -49,10 +49,8 @@ class ApiController extends Controller
 
     {
         $apps = Yii::$app->request;
-
         $session = Yii::$app->session;
-        $logins = new Login();
-//        if ($apps->isPost) {
+        $login = new Login();
         $userName = $apps->post('userName');
         $userPass = $apps->post('userPass');
         if (!$userName) {
@@ -60,56 +58,32 @@ class ApiController extends Controller
             $re['message'] = '请输入用户名';
             die(json_encode($re));
         }
-        $userPass = md5($userPass);
+        if (!$userPass) {
+            $re['code'] = 0;
+            $re['message'] = '请输入密码';
+            die(json_encode($re));
+        }
+        $userPass = $login->passProtection($userPass);
         $loginsdata = Yii::$app->db->createCommand("select * from {{%user}} where(phone='$userName' or userName='$userName' or email='$userName')")->queryOne();
         if (!empty($loginsdata['id'])) {
-
-            if (!$userPass) {
-
-                $re['code'] = 0;
-
-                $re['message'] = '请输入密码';
-
-                die(json_encode($re));
-
-            }
-
             if ($loginsdata['userPass'] == $userPass) {
-
                 //用户名
-
                 // 在要发送的响应中添加一个新的session
-
                 $session->set('userId', $loginsdata['id']);
-
                 if ($loginsdata['image'] == null) {
-
                     $loginsdata['image'] = '';
-
                 }
-
                 $session->set('userData', $loginsdata);
-
                 @unlink("html\cn\heard.html");
-
                 $re['code'] = 1;
-
                 $re['message'] = '登录成功';
-
             } else {
-
                 $re['code'] = 0;
-
                 $re['message'] = '密码错误';
-
             }
-
         } else {
-
             $re['code'] = 0;
-
             $re['message'] = '用户名错误';
-
         }
 
         die(json_encode($re));
@@ -132,84 +106,99 @@ class ApiController extends Controller
         $pass = Yii::$app->request->post('passWord');
         $code = Yii::$app->request->post('code', '');
         $type = Yii::$app->request->post('type');
-        $checkPhoneEmail = $login->checkPhoneEmail($registerStr, $type);
-        if (!$checkPhoneEmail) {
+
+        if($registerStr==false||$pass==false|| $code==false){
             $res['code'] = 0;
-            if ($type == 1) {
-                $res['message'] = '手机已经被注册';
-            } else {
-                $res['message'] = '邮箱已经被注册';
-            }
+            $res['message'] = '请将信息填写完整';
             $res['type'] = '3';
             die(json_encode($res));
-        }
-        if ($type == 1) {
-            $checkTel = $login->checkTel($registerStr);
-            if (!$checkTel) {
+        }else{
+            if (strlen($pass)<6||strlen($pass)>20) {
                 $res['code'] = 0;
-                $res['message'] = '请输入正确的手机号';
+                $res['message'] = '密码长度不符合要求';
                 $res['type'] = '3';
                 die(json_encode($res));
             }
-            $checkTime = $login->checkTime();
-            if ($checkTime) {
-                $checkCode = $login->checkCode($registerStr, $code);
-                if ($checkCode) {
-                    $login->phone = $registerStr;
+            $checkPhoneEmail = $login->checkPhoneEmail($registerStr, $type);
+            if (!$checkPhoneEmail) {
+                $res['code'] = 0;
+                if ($type == 1) {
+                    $res['message'] = '手机已经被注册';
+                } else {
+                    $res['message'] = '邮箱已经被注册';
+                }
+                $res['type'] = '3';
+                die(json_encode($res));
+            }
+            if ($type == 1) {
+                $checkTel = $login->checkTel($registerStr);
+                if (!$checkTel) {
+                    $res['code'] = 0;
+                    $res['message'] = '请输入正确的手机号';
+                    $res['type'] = '3';
+                    die(json_encode($res));
+                }
+                $checkTime = $login->checkTime();
+                if ($checkTime) {
+                    $checkCode = $login->checkCode($registerStr, $code);
+                    if ($checkCode) {
+                        $login->phone = $registerStr;
+                        $login->userPass = $login->passProtection($pass);
+                        $login->status = 1;
+                        $login->createTime = time();
+                        $re = $login->save();
+                        if ($re) {
+                            $res['code'] = 1;
+                            $res['message'] = '注册成功,请登录';
+                        } else {
+                            $res['code'] = 0;
+                            $res['message'] = '注册失败，请重试';
+                            $res['type'] = '3';
+                        }
+                    } else {
+                        $res['code'] = 0;
+                        $res['message'] = '验证码错误';
+                        $res['type'] = '1';
+                    }
+                } else {
+                    $res['code'] = 0;
+                    $res['message'] = '验证码过期';
+                    $res['type'] = '1';
+                }
+            } else {
+                $checkEmail = $login->checkEmail($registerStr);
+                if (!$checkEmail) {
+                    $res['code'] = 0;
+                    $res['message'] = '邮箱不合法';
+                    $res['type'] = '3';
+                } else {
+                    $login->email = $registerStr;
                     $login->userPass = md5($pass);
-                    $login->status = 1;
                     $login->createTime = time();
                     $re = $login->save();
                     if ($re) {
                         $res['code'] = 1;
-                        $res['message'] = '注册成功';
+                        $res['message'] = '注册成功，且邮件发送成功，请到邮箱进行验证';
+                        $mail = Yii::$app->mailer;
+                        $mail->useFileTransport = false;
+                        $mail = $mail->compose();
+                        $em_1 = md5($registerStr);
+                        $mail->setTo($registerStr);
+                        $mail->setSubject("【申友网(thinku)】邮件验证码");
+                        $content = "<a href='http://www.sysat.com/index.php/user/api/live?em_1=" . $em_1 . "&email=" . $registerStr . "'>点击此链接</a>激活账号【申友网(thinku)】";
+                        $mail->setHtmlBody("$content");
+                        if ($mail->send()) {
+                            die(json_encode($res));
+                        }
                     } else {
                         $res['code'] = 0;
                         $res['message'] = '注册失败，请重试';
                         $res['type'] = '3';
                     }
-                } else {
-                    $res['code'] = 0;
-                    $res['message'] = '验证码错误';
-                    $res['type'] = '1';
-                }
-            } else {
-                $res['code'] = 0;
-                $res['message'] = '验证码过期';
-                $res['type'] = '1';
-            }
-        } else {
-            $checkEmail = $login->checkEmail($registerStr);
-            if (!$checkEmail) {
-                $res['code'] = 1;
-                $res['message'] = '邮箱不合法';
-                $res['type'] = '3';
-            } else {
-                $login->email = $registerStr;
-                $login->userPass = md5($pass);
-                $login->createTime = time();
-                $re = $login->save();
-                if ($re) {
-                    $res['code'] = 1;
-                    $res['message'] = '注册成功，且邮件发送成功，请到邮箱进行验证';
-                    $mail = Yii::$app->mailer;
-                    $mail->useFileTransport = false;
-                    $mail = $mail->compose();
-                    $em_1 = md5($registerStr);
-                    $mail->setTo($registerStr);
-                    $mail->setSubject("【申友网(thinku)】邮件验证码");
-                    $content = "<a href='http://www.sysat.com/index.php/user/api/live?em_1=" . $em_1 . "&email=" . $registerStr . "'>点击此链接</a>激活账号【申友网(thinku)】";
-                    $mail->setHtmlBody("$content");
-                    if ($mail->send()) {
-                        die(json_encode($res));
-                    }
-                } else {
-                    $res['code'] = 0;
-                    $res['message'] = '注册失败，请重试';
-                    $res['type'] = '3';
                 }
             }
         }
+
         die(json_encode($res));
     }
 

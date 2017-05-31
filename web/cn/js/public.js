@@ -195,7 +195,9 @@ function regTel() {
     code: signCode},function(re){
     var obj = eval('(' + re + ')');
     alert(obj.message);
-
+    $('.s-login').hide();
+    $('.s-sign-cnt').css('top',0);
+    $('.s-login-cnt').css('top',0);
   },"text");
 }
 function regEmail() {
@@ -219,13 +221,14 @@ function login() {
   if (window.localStorage) {
     var userName = $('#loginName').val(),
         loginPwd = $('#loginPass').val();
-    if ($('#loginBtn').attr('checked')) {
+    if ($('.s-rember-pwd').prop('checked')) {
       localStorage.setItem('userName',userName);
       localStorage.setItem('password',loginPwd);
     }else {
       localStorage.setItem('userName',userName);
     }
     $.post('/user/api/check-login', {userName: userName, userPass: loginPwd}, function(data){
+      alert(data.message);
       $('.s-login').hide();
       $('.s-sign-cnt').css('top',0);
       $('.s-login-cnt').css('top',0);

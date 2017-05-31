@@ -37,6 +37,9 @@ class AboutController extends Controller
         if($count>10){
             die('<script>alert("您已经给我们提出了很多意见了，给其他人一个机会吧");history.go(-1)</script>');
         }else{
+            if( $sugData['suggest']==false){
+                die('<script>alert("请先填写内容");history.go(-1)</script>');
+            }
             $re = Yii::$app->db->createCommand()->insert("{{%suggest}}", $sugData)->execute();
             if($re){
                 echo'<script>alert("发表成功，谢谢您宝贵的意见");window.location.href="/about.html"  </script>';

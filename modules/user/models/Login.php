@@ -103,6 +103,12 @@ class Login extends ActiveRecord
             return true;
         }
     }
-//    发送邮件
+//    密码加密
+    public function passProtection($pass){
+        $str=substr($pass, 1);
+        $str='_@5!'.$str."*a1";
+        $str=md5($str);
+        return $str;
+    }
 
 }

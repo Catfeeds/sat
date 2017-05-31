@@ -17,7 +17,7 @@ class InfoController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
-        $pagesize = 1;
+        $pagesize = 6;
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $cate = Yii::$app->request->get('c', 'n');
