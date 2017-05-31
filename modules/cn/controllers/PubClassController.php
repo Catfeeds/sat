@@ -56,11 +56,14 @@ class PubclassController extends Controller
         $arr['totalPage'] = $totalPage;
         $arr['curPage'] = $p;
         foreach($data as $k=>$v){
+            $time=explode(' ',$v['activeTime']);
             $arr['list'][]= array(
                 'summary' => $v['summary'],
                 'title' => $v['title'],
                 'pic' => $v['pic'],
                 'publishTime' => date('Y-m-d',$v['publishTime']),
+                'activeDate' =>$time[0],
+                'activeTime' =>$time[1]
             );
         }
         echo json_encode($arr);

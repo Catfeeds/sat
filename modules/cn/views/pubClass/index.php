@@ -118,7 +118,7 @@
               "<div class='s-cnt'>"+
               "<h2 class='center-block'>"+array['title']+"</h2>"+
               "<p>"+array['summary']+"</p>"+
-              "<p><span>"+array['publishTime']+"</span><span>16:00-17:00</span></p>"+
+              "<p><span>"+array['activeDate']+"</span><span>"+array['activeTime']+"</span></p>"+
               "</div></li>"
         });
         $('.s-history-cnt').append(li);
