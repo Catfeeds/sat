@@ -75,7 +75,7 @@
     <div class="s-sign-cnt">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#sPhone" aria-controls="sPhone" role="tab" data-toggle="tab">手机注册</a></li>
-            <li role="presentation"><a href="#sEmail" aria-controls="sEmail" role="tab" data-toggle="tab">邮箱注册</a></li>
+<!--            <li role="presentation"><a href="#sEmail" aria-controls="sEmail" role="tab" data-toggle="tab">邮箱注册</a></li>-->
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="sPhone">
@@ -90,15 +90,14 @@
                     <button onclick="leftCode()">点击获取验证码</button>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="sEmail">
-                <div>
-                    <input type="email" class="form-control" id="signEmail" onblur="signEmail(this.value)" placeholder="请输入邮箱">
-                </div>
-                <div>
-                    <input type="password" class="form-control" id="signPwd2" onblur="signPwd2(this.value)" placeholder="请输入密码">
-                </div>
-<!--                <button onclick="Code()">点击验证邮箱</button>-->
-            </div>
+<!--            <div role="tabpanel" class="tab-pane" id="sEmail">-->
+<!--                <div>-->
+<!--                    <input type="email" class="form-control" id="signEmail" onblur="signEmail(this.value)" placeholder="请输入邮箱">-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <input type="password" class="form-control" id="signPwd2" onblur="signPwd2(this.value)" placeholder="请输入密码">-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
         <form action="" onsubmit="return check()">
             <button type="submit" class="btn btn-info s-btn s-register">注册</button>
