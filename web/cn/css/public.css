@@ -139,6 +139,7 @@ body {
   position: relative;
   float: left;
   width: 150px;
+  height: 60px;
   margin-left: 5%;
 }
 .s-nav form i{
@@ -149,6 +150,7 @@ body {
   color: gray;
 }
 .s-nav form input {
+  margin-top: 20px;
   width: 100%;
   height: 24px;
   vertical-align: middle;

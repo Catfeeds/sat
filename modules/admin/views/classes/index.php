@@ -12,6 +12,7 @@
             <th>适合学生</th>
             <th>图片地址</th>
             <th>课程类别</th>
+            <th>价格</th>
             <th>阅读课时</th>
             <th>文法课时</th>
             <th>词汇课时</th>
@@ -29,6 +30,7 @@
                 <td><? echo $v['student']?></td>
                 <td><? echo $v['pic']?></td>
                 <td><? echo $v['cate']?></td>
+                <td><? echo $v['price']?></td>
                 <td><? echo $v['read']?></td>
                 <td><? echo $v['grammar']?></td>
                 <td><? echo $v['vocabulary']?></td>

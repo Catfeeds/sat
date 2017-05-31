@@ -33,7 +33,6 @@
 	    }
         public function url(){
             $this->now_path=ltrim($_SERVER['REQUEST_URI'],'/');
-//            var_dump( $this->now_path);die;
         }
     }
 ?>

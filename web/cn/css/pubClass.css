@@ -178,10 +178,28 @@
   text-decoration: none;
 }
 /*分页*/
+<<<<<<< HEAD
+#pageCount {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0;
+}
+#pageCount a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 5px;
+  font-size: 16px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+=======
 .pagination {
   width: 560px;
   display: block;
   margin: 20px auto 0;
+>>>>>>> e59b8760ef387ee067a2366ab395c82ca386f50f
 }
 .pagination li a {
   margin: 5px;

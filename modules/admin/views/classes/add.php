@@ -37,6 +37,10 @@
 <!--                <td><input type="text" name="duration" placeholder="课程总时长" value="--><?php //echo isset($data)? $data['duration']:''?><!--"/></td>-->
 <!--            </tr>-->
             <tr>
+                <td>价格</td>
+                <td><input type="text" name="price" placeholder="课程价格" value="<?php echo isset($data)? $data['price']:''?>"/></td>
+            </tr>
+            <tr>
                 <td>阅读课时</td>
                 <td><input type="text" name="read" placeholder="阅读的课时" value="<?php echo isset($data)? $data['read']:''?>"/></td>
             </tr>

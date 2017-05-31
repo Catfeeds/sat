@@ -210,10 +210,11 @@
         <div id="sAdvice">
           <h3>您的建议</h3>
           <div>
-            <form name="form" method="post" action="/cn/about/suggest" >
-              <textarea name="suggest"><?php if(!isset($user)){echo "请先登录";}?>
+            <form name="form" method="post" action="/cn/about/suggest" onsubmit="return dosubmit()">
+              <textarea name="suggest" >
+                <?php if(!isset($user)){echo "请先登录";}?>
               </textarea>
-              <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+<!--              <input type="hidden" name="_csrf" value="--><?//=Yii::$app->request->getCsrfToken()?><!--" />-->
               <?php if(isset($user)) echo '<button type="submit" class="btn btn-info btn-lg">提交</button>'?>
             </form>
           </div>
@@ -236,4 +237,13 @@
       $('#sRelation li').eq(index-1).addClass('s-active');
     })
   })
+  var isCommitted = false;//表单是否已经提交标识，默认为false
+           function dosubmit(){
+                 if(isCommitted==false){
+                       isCommitted = true;//提交表单后，将表单是否已经提交标识设置为true
+                       return true;//返回true让表单正常提交
+                   }else{
+                       return false;//返回false那么表单将不提交
+                 }
+           }
 </script>

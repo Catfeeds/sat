@@ -60,7 +60,7 @@ class PubclassController extends Controller
                 'summary' => $v['summary'],
                 'title' => $v['title'],
                 'pic' => $v['pic'],
-                'publishTime' => $v['publishTime'],
+                'publishTime' => date('Y-m-d',$v['publishTime']),
             );
         }
         echo json_encode($arr);
