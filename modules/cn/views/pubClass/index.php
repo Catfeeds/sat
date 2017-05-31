@@ -113,7 +113,7 @@
         totalPage = data.totalPage;//总页数
         curPage = p;
         $.each(data.list,function(index,array){
-          console.log(array.publishTime)
+          console.log(data.list)
           li+="<li><embed src='"+array['pic']+"'type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'></embed>"+
               "<div class='s-cnt'>"+
               "<h2 class='center-block'>"+array['title']+"</h2>"+

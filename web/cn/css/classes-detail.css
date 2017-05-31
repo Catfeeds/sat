@@ -66,6 +66,7 @@ span {
   background-color: rgb(54,178,251);
 }
 .tab-content {
+  position: relative;
   padding-top: 30px;
 }
 .tab-content #course h2 {
@@ -80,35 +81,73 @@ span {
   padding: 10px 20px;
   font-size: 14px;
 }
-.tab-content  #teacher .s-introduce-font {
+.tab-content .s-introduce-font {
+  position: absolute;
   width: 600px;
+  top: 20%;
+  left: 600px;
 }
-.tab-content  #teacher .s-introduce-font h2 {
+.tab-content .s-introduce-font h2 {
   max-width: 60px;
   text-align: center;
-  margin-right: 50px;
-  margin-left: auto;
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 5px;
   border-bottom: 2px solid rgb(229,104,215);
 }
-.tab-content  #teacher .s-introduce-font p {
+.tab-content .s-introduce-font p {
   font-size: 14px;
   background-color: rgb(54,178,251);
   padding: 15px 60px 15px 15px;
   color: #fff;
 }
+.s-introduce-img .s-top-left,
+.s-introduce-img .s-bottom-right {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: rgb(54,178,251);
+}
+.s-introduce-img .s-bottom-right {
+  left: 530px;
+}
+.s-introduce-img .s-top-left:after,
+.s-introduce-img .s-bottom-right:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 2px;
+  height: 70px;
+  background-color: rgb(54,178,251);
+}
+.s-introduce-img .s-top-left:after {
+  top: 0;
+  left: 0;
+}
+.s-introduce-img .s-bottom-right:after {
+  bottom: 0;
+  right: 0;
+}
 .s-introduce-img .s-big-img {
   width: 530px;
   max-height: 440px;
-  margin-left: -40px;
+  margin: 40px;
+  -webkit-box-shadow: 0 0 3px 3px #ccc;
+  -moz-box-shadow: 0 0 3px 3px #ccc;
+  box-shadow: 0 0 3px 3px #ccc;
 }
-.s-introduce-img div img {
+.s-introduce-img .s-down-img {
+  position: relative;
+  top: -95px;
+  left: 30px;
+}
+.s-introduce-img .s-down-img img {
   width: 230px;
   height: 190px;
-  margin-left: 10px;
-  margin-top: 20px;
+  margin: 20px 0 0 10px;
+  padding: 5px;
+  background-color: #fff;
 }
 .tab-content #plan div {
   padding: 15px 30px;
