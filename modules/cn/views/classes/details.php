@@ -30,22 +30,24 @@
             <p><?php echo $data['introduction']?>
             </p>
           </div>
-          <div role="tabpanel" class="tab-pane clearfix" id="teacher">
-            <div class="s-introduce-font pull-left">
-              <img src="/cn/images/cou-details01.png" alt="">
-              <h2>Kevin</h2>
-              <p>Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet scelerisque justo. Proin in bland
-                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
-                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
-                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
-                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet</p>
-            </div>
+          <div role="tabpanel" class="tab-pane" id="teacher">
             <div class="s-introduce-img">
+              <span class="s-top-left"></span>
               <img class="s-big-img" src="/cn/images/course-basis01.png" alt="">
-              <div>
+              <span class="s-bottom-right"></span>
+              <div class="s-down-img">
                 <img src="/cn/images/course-basis02.png" alt="">
                 <img src="/cn/images/course-basis03.png" alt="">
               </div>
+            </div>
+            <div class="s-introduce-font">
+              <h2>Kevin</h2>
+              <p>Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet scelerisque justo. Proin in bland-->
+                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
+                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
+                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
+                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet
+              </p>
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="plan">

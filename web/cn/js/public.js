@@ -195,7 +195,6 @@ function regTel() {
       type=1;
   $.post('/user/api/register',{userName: signTel,passWord: signPwd1,type: type,
     code: signCode},function(data){
-    console.log(data);
     alert(data.message);
     if (data.code) {
       $('.s-login').hide();

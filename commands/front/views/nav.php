@@ -23,10 +23,10 @@
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if($path=='info.html'|| (strpos($path,'info_details'))!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
-    <form action="">
-        <i class="fa fa-search"></i>
-        <input type="text">
-    </form>
+<!--    <form action="">-->
+<!--        <i class="fa fa-search"></i>-->
+<!--        <input type="text">-->
+<!--    </form>-->
 
         <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
              <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['userName'];}else{echo '欢迎您';}?></a></li>
@@ -73,10 +73,11 @@
     </div>
     <!--注册-->
     <div class="s-sign-cnt">
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#sPhone" aria-controls="sPhone" role="tab" data-toggle="tab">手机注册</a></li>
+<!--        <ul class="nav nav-tabs" role="tablist">-->
+<!--            <li role="presentation" class="active"><a href="#sPhone" aria-controls="sPhone" role="tab" data-toggle="tab">手机注册</a></li>-->
 <!--            <li role="presentation"><a href="#sEmail" aria-controls="sEmail" role="tab" data-toggle="tab">邮箱注册</a></li>-->
-        </ul>
+<!--        </ul>-->
+        <h2>注册会员</h2>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="sPhone">
                 <div>
