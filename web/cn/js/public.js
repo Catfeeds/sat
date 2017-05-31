@@ -202,6 +202,7 @@ function regTel() {
       $('.s-login-cnt').css('top',0);
     }
   },"json");
+
 }
 //邮箱注册
 function regEmail() {
