@@ -34,14 +34,10 @@
                 <h3 class="s-adv">公告:</h3>
                 <div class="s-adv-wrap">
                     <ul>
-                        <li><a href="#">kevin老师5.16号公开课</a></li>
-                        <li><a href="#">SAT强化班限时优惠</a></li>
-                        <li><a href="#">SAT强化班限时优惠SAT强化班限时优惠SAT强化班限时优惠</a></li>
-                        <li><a href="#">SAT强化班限时优惠</a></li>
-                        <li><a href="#">SAT强化班限时优惠</a></li>
-                        <li><a href="#">SAT强化班限时优惠</a></li>
-                        <li><a href="#">SAT强化班限时优惠</a></li>
-                        <li><a href="#">SAT强化班限时优惠</a></li>
+                        <?php foreach($infoAd as $v){?>
+                        <li><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a></li>
+                        <?php }?>
+
                     </ul>
                 </div>
             </div>

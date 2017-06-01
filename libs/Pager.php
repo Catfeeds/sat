@@ -182,12 +182,16 @@ class Pager
     {
         $str='<div class="s-page" aria-label="Page navigation">';
         $str.='<ul class="pagination">';
+        $str.="<li><a  href='{$this->pageUrl}=1'>&laquo;</a> </li>";
         if ($this->pageIndex == '1'||$this->pageIndex <1) {
             $str.="<li><a href='{$this->pageUrl}=1' aria-label='Previous'>";
         } else {
             $str .= "<li><a href='{$this->pageUrl}=" . ($this->pageIndex-1) . "' aria-label='Previous'>" ;
         }
-        $str.=' <span aria-hidden="true">&laquo;</span></a> </li>';
+//        $str.=' <span aria-hidden="true">&laquo;</span></a> </li>';
+        $str.=' <span aria-hidden="true">&lt;</span></a> </li>';
+
+//        $str.=' <li>&lt;</li>';
 //中间页码
         if ($this->totalPagesCount <= 10) {
             for($i=1;$i<= $this->totalPagesCount;$i++){
@@ -254,7 +258,10 @@ class Pager
             $str .=  "<li><a href='{$this->pageUrl}=" . ($this->pageIndex+1) . "' aria-label='Next' > ";
 //
         }
-        $str .= "<span aria-hidden='true'>&raquo;</span></a></li>";
+//        $str .= "<span>&gt;</span></a></li>";
+//
+        $str .= "<span aria-hidden='true'>&gt;</span></a></li>";
+        $str .= "<li><a href='{$this->pageUrl}=" . ($this->totalPagesCount ) . "'>&raquo;</a></li>";
         $str .= "</div>";
 //        var_dump($this->totalPagesCount,$this->pageIndex,$this->totalNum,$this->pageSize);die;
         return $str;

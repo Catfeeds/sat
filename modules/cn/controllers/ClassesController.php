@@ -15,15 +15,25 @@ use app\modules\cn\models\teachers;
 class ClassesController extends Controller
 {
     public $layout="cn.php";
+    public $brr;
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%classes}} ")->queryAll();
-        $banner = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='classes'")->queryAll();
-//        var_dump($banner);
-//        $teachers= Yii::$app->db->createCommand("select pic,name,subject,introduction from {{%teachers}} ")->queryAll();
-//        $info= Yii::$app->db->createCommand("select id,title,summary from {{%info}} where isShow=1 and cate='开班信息'")->queryAll();
-//        var_dump($info);die;
-        return $this->render('index', ['data' => $data, 'banner' => $banner]);
+//        var_dump($data);die;
+        $arr=$this->brr=array();
+        foreach($data as $k=>$v){
+            array_push($arr,$v['duration']);
+        }
+//        var_dump($arr);die;
+        for($i=0;$i<count($arr);$i++){
+            $this->brr[$i]=explode(',',$arr[$i]);
+//            var_dump($brr[$i]);
+            for($j=0;$j<count($this->brr[$i]);$j++){
+                $this->brr[$i][$j]=explode(':',$this->brr[$i][$j]);
+            }
+        }
+//        var_dump($brr);die;
+        return $this->render('index', ['data' => $data,'brr'=>$this->brr]);
     }
 
     public function actionDetails()
@@ -31,6 +41,9 @@ class ClassesController extends Controller
 //        从数据表获取数据
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%classes}} where id=$id ")->queryOne();
-        return $this->render('details', ["data" => $data]);
+        $teacher=$data['teacher'];
+        $teacher = Yii::$app->db->createCommand("select * from {{%teachers}} where name='$teacher'" )->queryOne();
+//        var_dump($teacher);die;
+        return $this->render('details', ["data" => $data,'brr'=>$this->brr,'teacher'=>$teacher]);
     }
 }

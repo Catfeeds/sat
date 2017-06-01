@@ -13,12 +13,15 @@
             <th>图片地址</th>
             <th>课程类别</th>
             <th>价格</th>
-            <th>阅读课时</th>
-            <th>文法课时</th>
-            <th>词汇课时</th>
-            <th>数学课时</th>
-            <th>写作课时</th>
-            <th>点评课时</th>
+            <th>课时及模块</th>
+            <th>授课教师</th>
+            <th>学习计划</th>
+<!--            <th>阅读课时</th>-->
+<!--            <th>文法课时</th>-->
+<!--            <th>词汇课时</th>-->
+<!--            <th>数学课时</th>-->
+<!--            <th>写作课时</th>-->
+<!--            <th>点评课时</th>-->
             <th>课程简介</th>
             <th>操作</th>
         </tr>
@@ -31,12 +34,15 @@
                 <td><? echo $v['pic']?></td>
                 <td><? echo $v['cate']?></td>
                 <td><? echo $v['price']?></td>
-                <td><? echo $v['read']?></td>
-                <td><? echo $v['grammar']?></td>
-                <td><? echo $v['vocabulary']?></td>
-                <td><? echo $v['math']?></td>
-                <td><? echo $v['write']?></td>
-                <td><? echo $v['comments']?></td>
+                <td><? echo $v['duration']?></td>
+                <td><? echo $v['teacher']?></td>
+                <td><? echo $v['plan']?></td>
+<!--                <td>--><?// echo $v['read']?><!--</td>-->
+<!--                <td>--><?// echo $v['grammar']?><!--</td>-->
+<!--                <td>--><?// echo $v['vocabulary']?><!--</td>-->
+<!--                <td>--><?// echo $v['math']?><!--</td>-->
+<!--                <td>--><?// echo $v['write']?><!--</td>-->
+<!--                <td>--><?// echo $v['comments']?><!--</td>-->
                 <td><? echo $v['introduction']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/classes/add'.'?'.'id='.$v['id']?>">修改</a>
