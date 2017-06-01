@@ -1,5 +1,4 @@
 
-  <title>课程</title>
   <link rel="stylesheet" href="cn/css/course-new.css">
 <section>
   <div class="s-course s-w1200">

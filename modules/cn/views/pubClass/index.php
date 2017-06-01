@@ -1,5 +1,4 @@
 
-  <title>公开课</title>
   <link rel="stylesheet" href="/cn/css/pubClass.css">
   <script src="/cn/js/jqPaginator.js"></script>
 
@@ -78,14 +77,14 @@
         <h2>往期公开课</h2>
       </div>
       <ul class="s-history-cnt clearfix">
-        <li>
-          <embed src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
-          <div class="s-cnt">
-            <h2 class="center-block">公开课名称</h2>
-            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>
-            <p><span>2017-4-20</span><span>16:00-17:00</span></p>
-          </div>
-        </li>
+<!--        <li>-->
+<!--          <embed src="http://www.tudou.com/v/WVdpMQ1En8Q/&bid=05&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>-->
+<!--          <div class="s-cnt">-->
+<!--            <h2 class="center-block">公开课名称</h2>-->
+<!--            <p>是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。请看下面的实例，研究一下这些是如何工作的。</p>-->
+<!--            <p><span>2017-4-20</span><span>16:00-17:00</span></p>-->
+<!--          </div>-->
+<!--        </li>-->
       </ul>
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
@@ -94,7 +93,6 @@
   </section>
 <script>
   var curPage = 1; //当前页码
-
   function getData(p) {
     $.ajax({
       type: 'GET',
@@ -113,7 +111,6 @@
         totalPage = data.totalPage;//总页数
         curPage = p;
         $.each(data.list,function(index,array){
-          console.log(data.list)
           li+="<li><embed src='"+array['pic']+"'type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'></embed>"+
               "<div class='s-cnt'>"+
               "<h2 class='center-block'>"+array['title']+"</h2>"+

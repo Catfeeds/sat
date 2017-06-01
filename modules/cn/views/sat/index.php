@@ -1,5 +1,4 @@
 
-    <title>sat首页</title>
     <link rel="stylesheet" href="/cn/css/sat.css">
     <script src="/cn/js/carousel.js"></script>
 <section>
