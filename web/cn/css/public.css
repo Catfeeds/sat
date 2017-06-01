@@ -25,47 +25,9 @@ a {
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
-/*.border-radius(@radius) {*/
-  /*-webkit-border-radius: @radius;*/
-  /*-moz-border-radius: @radius;*/
-  /*border-radius: @radius;*/
-/*}*/
-/*.transform-translate(@x,@y) {*/
-  /*-webkit-transform: translate(@x,@y);*/
-  /*-moz-transform: translate(@x,@y);*/
-  /*-ms-transform: translate(@x,@y);*/
-  /*-o-transform: translate(@x,@y);*/
-  /*transform: translate(@x,@y);*/
-/*}*/
-/*.before-after {*/
-  /*position: absolute;*/
-  /*display: block;*/
-  /*content: "";*/
-/*}*/
-/*.background-size {*/
-  /*-webkit-background-size: 100% 100%;*/
-  /*background-size: 100% 100%;*/
-/*}*/
-/*.font(@size,@weight) {*/
-  /*font-size: @size;*/
-  /*font-weight: @weight;*/
-/*}*/
-/*.transition(@effect,@time) {*/
-  /*-webkit-transition: @effect @time;*/
-  /*-moz-transition: @effect @time;*/
-  /*-ms-transition: @effect @time;*/
-  /*-o-transition: @effect @time;*/
-  /*transition: @effect @time;*/
-/*}*/
-/*@base-color01: rgb(229,104,215);*/
-/*@base-color02: rgb(54,178,251);*/
 body {
   padding-top: 75px;
 }
-/*.input {*/
-  /*border: none;*/
-  /*outline: none;*/
-/*}*/
 
 /*导航栏*/
 .s-nav {
@@ -187,7 +149,7 @@ body {
   color: #fff;
   background-color: rgba(48,167,237,.8);
 }
-/*底部*/
+/*--------------------底部----------------------*/
 .s-footer-top {
   padding: 80px 0 30px 0;
 }
@@ -243,8 +205,7 @@ body {
   font-size: 14px;
   color: #fff;
 }
-
-/*登录注册*/
+/*--------------------登录注册-----------------*/
 .s-login{
   background-color: rgba(0,0,0,.35);
   position: fixed;
@@ -256,7 +217,8 @@ body {
   z-index: 99;
 }
 .s-login .s-login-cnt,
-.s-login .s-sign-cnt {
+.s-login .s-sign-cnt,
+.s-login .s-forget-cnt {
   position: fixed;
   width: 670px;
   height: 425px;
@@ -273,14 +235,14 @@ body {
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
-.s-login .s-login-cnt h2 {
+.s-login .s-title {
   position: relative;
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
 }
-.s-login .s-login-cnt h2:before,
-.s-login .s-login-cnt h2:after {
+.s-login .s-title:before,
+.s-login .s-title:after {
   position: absolute;
   display: block;
   content: '';
@@ -288,11 +250,11 @@ body {
   height: 2px;
   background-color: #ccc;
 }
-.s-login .s-login-cnt h2:before {
+.s-login .s-title:before {
   left: 0;
   top: 10px;
 }
-.s-login .s-login-cnt h2:after {
+.s-login .s-title:after {
   right: 0;
   top: 10px;
 }
@@ -323,42 +285,6 @@ body {
 .s-login .s-btn:hover {
   background-color: rgb(48,167,237);
 }
-/*.s-login .s-login-cnt form div.not('.s-tooltip') {*/
-  /*line-height: 30px;*/
-/*}*/
-.s-login .s-login-cnt label {
-  font-size: 14px;
-  font-weight: 400;
-}
-.s-login .s-login-cnt form a{
-  font-size: 14px;
-  color: rgb(54,178,251);
-}
-.s-login .s-login-bottom,
-.s-login .s-sign-bottom {
-  margin-top: 30px;
-}
-.s-login .s-login-bottom a,
-.s-login .s-sign-bottom a {
-  font-size: 14px;
-  color: rgb(54,178,251);
-}
-.s-login .s-login-bottom div,
-.s-login .s-sign-bottom div{
-  float: right;
-  font-size: 16px;
-}
-.s-login .s-login-bottom div a:hover,
-.s-login .s-login-bottom div a:after,
-.s-login .s-sign-bottom div a:hover,
-.s-login .s-sign-bottom div a:focus {
-  text-decoration: none;
-}
-.s-login .s-login-bottom img,
-.s-login .s-sign-bottom img {
-  width: 25px;
-  margin: 0 5px;
-}
 /*关闭*/
 .s-login .icon-remove {
   position: absolute;
@@ -379,23 +305,31 @@ body {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+/*登录*/
+.s-login .s-login-cnt label {
+  font-size: 14px;
+  font-weight: 400;
+}
+.s-login .s-login-cnt form a{
+  font-size: 14px;
+  color: rgb(54,178,251);
+}
+.s-login .s-login-bottom,
+.s-login .s-sign-bottom {
+  margin-top: 30px;
+}
+.s-login .s-login-bottom a,
+.s-login .s-sign-bottom a {
+  font-size: 14px;
+  color: rgb(54,178,251);
+}
 /*注册*/
-.s-sign-cnt .nav-tabs {
-  border-bottom: 0;
-  margin-bottom: 20px;
-}
-.s-sign-cnt .nav-tabs li a:hover {
-  background-color: rgb(54,178,251);
-}
-.s-sign-cnt .nav-tabs li.active a:hover {
-  background-color: #fff;
-}
-.s-login .s-sign-cnt .s-sign-code,
-.s-login .s-sign-cnt .tab-pane button{
+.s-login .s-sign-code,
+.s-login .s-btn-code {
   width: 40%;
   display:  inline-block;
 }
-.s-login .s-sign-cnt .tab-pane button {
+.s-login .s-btn-code {
   font-size: 16px;
   background-color: rgb(54,178,251);
   color: #fff;
@@ -405,22 +339,15 @@ body {
   margin-left: 10%;
   padding: 5px;
 }
-.s-login .s-sign-cnt .tab-pane button:hover {
+.s-login .s-btn-code:hover {
   background-color: rgb(48, 167, 237);
 }
-.s-login .s-sign-cnt .form-control {
+.s-login .s-sign-cnt .form-control,
+.s-login .s-forget-cnt .form-control{
   margin-bottom: 20px;
 }
 .s-login .s-sign-bottom {
   margin-top: 20px;
-}
-.s-login .s-sign-cnt .s-sign-agree span,
-.s-login .s-sign-cnt .s-sign-agree a{
-  font-size: 14px;
-}
-.s-login .s-sign-cnt .s-sign-agree a {
-  color: rgb(54,178,251);
-  cursor: pointer;
 }
 /*提示*/
 .s-tooltip {

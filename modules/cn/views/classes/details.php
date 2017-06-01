@@ -1,5 +1,5 @@
+
 <link rel="stylesheet" href="/cn/css/classes-detail.css">
-<title>课程详情页</title>
   <section>
     <div class="s-w1200">
       <ol class="breadcrumb">
