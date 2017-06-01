@@ -88,8 +88,7 @@
       </ul>
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
-    <ul class="pagination"></ul>
-    <div id="pageCount"></div>
+    <ul class="pagination clearfix"></ul>
   </section>
 <script>
   var curPage = 1; //当前页码

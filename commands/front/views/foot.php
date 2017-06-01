@@ -1,15 +1,15 @@
 <footer class="s-footer">
     <div class="s-footer-top">
         <div class="s-w1200 clearfix">
-            <dl class="pull-left">
-                <dt>快速入口</dt>
-                <dd><a href="#">SAT</a></dd>
-                <dd><a href="#">GMAT</a></dd>
-                <dd><a href="#">TOEFL</a></dd>
-                <dd><a href="#">IELTS</a></dd>
-                <dd><a href="#">ACT</a></dd>
-            </dl>
-            <dl class="pull-left">
+<!--            <dl class="pull-left">-->
+<!--                <dt>快速入口</dt>-->
+<!--                <dd><a href="#">SAT</a></dd>-->
+<!--                <dd><a href="#">GMAT</a></dd>-->
+<!--                <dd><a href="#">TOEFL</a></dd>-->
+<!--                <dd><a href="#">IELTS</a></dd>-->
+<!--                <dd><a href="#">ACT</a></dd>-->
+<!--            </dl>-->
+            <dl>
                 <dt>网站说明</dt>
                 <dd><a href="/about.html">关于我们</a></dd>
                 <dd><a href="/about.html">联系我们</a></dd>

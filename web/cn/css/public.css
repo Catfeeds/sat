@@ -151,10 +151,17 @@ body {
 }
 /*--------------------底部----------------------*/
 .s-footer-top {
-  padding: 80px 0 30px 0;
+  margin: 80px 0 30px 0;
+  text-align: center;
+}
+.s-footer-top dl,
+.s-footer-top .s-qr,
+.s-footer-top .s-tel {
+  display: inline-block;
+  vertical-align: top;
 }
 .s-footer-top dl {
-  text-align: center;
+  /*text-align: center;*/
   padding: 0 50px;
 }
 .s-footer-top dl dt {
@@ -163,11 +170,11 @@ body {
   border-bottom: 2px solid rgb(25,78,108);
 }
 .s-footer-top .s-w1200 div {
-  float: left;
+  /*float: left;*/
 }
 .s-footer-top .s-w1200 div.s-qr {
   width: 140px;
-  text-align: center;
+  /*text-align: center;*/
   margin-left: 8%;
 }
 .s-footer-top .s-w1200 div.s-qr img {
@@ -176,7 +183,7 @@ body {
 }
 .s-footer-top .s-w1200 div.s-tel {
   padding: 30px 0;
-  text-align: center;
+  /*text-align: center;*/
   margin-left: 100px;
 }
 .s-footer-top .s-w1200 div.s-tel img {
@@ -234,6 +241,7 @@ body {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+  display: none;
 }
 .s-login .s-title {
   position: relative;
