@@ -47,6 +47,17 @@ $(function () {
   $('.s-login .form-control').focus(function () {
     hideTips($(this).attr('id'));
   })
+  $(document).on('keydown',function(){
+    if ($('.s-login-cnt').css('display') == 'block') {
+      keyLogin();
+    }
+    if ($('.s-sign-cnt').css('display') == 'block') {
+      regTel();
+    }
+    if ($('.s-forget-cnt').css('display') == 'block') {
+      findPwd();
+    }
+  })
 })
 //登录注册框隐藏
 function loginOut() {
@@ -192,6 +203,7 @@ function loginIn() {
       alert(data.message);
       if (data.code) {
        loginOut();
+        sessionStorage.setItem('userId',data.uid);
         window.history.go(0);
       } else {
         window.history.go(-1);
@@ -231,6 +243,25 @@ function findPwd() {
       login('.s-login-cnt','.s-sign-cnt','.s-forget-cnt',500);
     }
   },'json');
+}
+
+function keyLogin() {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    loginIn();
+  }
+}
+function keySign() {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    regTel();
+  }
+}
+function keyFind() {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    findPwd();
+  }
 }
 
 //邮箱注册

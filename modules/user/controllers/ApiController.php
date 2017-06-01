@@ -77,6 +77,7 @@ class ApiController extends Controller
                 @unlink("html\cn\heard.html");
                 $re['code'] = 1;
                 $re['message'] = '登录成功';
+                $re['uid']= $session->get('userId');
             } else {
                 $re['code'] = 0;
                 $re['message'] = '密码错误';
