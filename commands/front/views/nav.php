@@ -79,7 +79,7 @@
                 </div>
                 <div>
                     <input type="text" class="form-control s-sign-code" id="signCode" placeholder="请输入验证码">
-                    <button class="s-btn-code" onclick="leftCode()">点击获取验证码</button>
+                    <button class="s-btn-code" onclick="leftCode('signTel')">点击获取验证码</button>
                 </div>
             </div>
 <!--            <div role="tabpanel" class="tab-pane" id="sEmail">-->
@@ -108,12 +108,12 @@
             </div>
             <div>
                 <input type="text" class="form-control s-sign-code" id="forgetCode" placeholder="请输入验证码">
-                <button class="s-btn-code" onclick="leftCode()">点击获取验证码</button>
+                <button class="s-btn-code" onclick="leftCode('forgetName')">点击获取验证码</button>
             </div>
             <div>
                 <input type="password" class="form-control" id="forgetPass" onblur="signPwd(this.value,'forgetPass')" placeholder="请输入密码">
             </div>
-            <button type="submit" class="btn btn-info s-btn" id="forgetBtn">确定</button>
+            <button type="submit" class="btn btn-info s-btn" id="forgetBtn"  onclick="findPwd()">确定</button>
         </form>
         <div class="s-sign-bottom">
             <a class="s-login-in" href="#">返回登录</a>
@@ -122,12 +122,14 @@
     </div>
 </div>
 <script>
-    function leftCode(){
-        var phone = $('#signTel').val();
+    // 获取手机验证码
+    function leftCode(code){
+        var phone = $('#'+code).val();
         $.post('/user/api/phone-code',{type:10,phoneNum:phone},function(re){
             alert(re.message);
         },"json")
     }
+    // 用户登出
     function Out(){
         $.post('/user/api/login-out',function(re){
             alert('退出成功');
