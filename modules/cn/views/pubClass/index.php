@@ -15,7 +15,7 @@
       </div>
       <ul class="s-new-cnt">
         <?php foreach($data as $v){?>
-        <li>
+        <li class="s-new-list">
           <img src="/cn/images/class_img01.png" alt="">
           <div>
             <h2><?php echo $v['title']?></h2>
@@ -26,14 +26,14 @@
               </li>
               <li class="pull-left">
                 <span>报名人数：</span>
-                <span id="data"><?php echo $v['hits']?></span>
+                <span class="s-apply-num"><?php echo $v['hits']?></span>
               </li>
               <li class="pull-right">
                 <span><?php echo $v['activeTime']?></span>
               </li>
             </ul>
             <p><?php echo $v['summary']?></p>
-            <a href=""  onclick="apply(<?php echo $v['id'] ?>)">报名</a>
+            <button class="s-apply on">报名</button>
             <a href="/info_details/<?php echo $v['id']?>.html">详情</a>
 <!--            <a href="info_details.html">详情</a>-->
           </div>
@@ -59,6 +59,41 @@
     <ul class="pagination clearfix"></ul>
   </section>
 <script>
+
+  $('.s-apply').click(function() {
+//      console.log($(this).parent().find('.s-apply-num').html());
+//    console.log($(this).next().attr('href').split('/')[2].split('.')[0]);
+    applyNum($(this));
+    })
+  function applyNum(ele) {
+    var _this = ele;
+    var num =  _this.parent().find('.s-apply-num').html();
+    var userTel = $('#loginName').val();
+    var classId = _this.next().attr('href').split('/')[2].split('.')[0];
+    console.log(classId);
+    console.log(userTel);
+    console.log(num);
+    var userId = sessionStorage.getItem('userId');
+    if (userId) {
+      $.get('',{userTel: userTel,num: num,classId: classId},function(data) {
+        alert(data.message);
+        _this.parent().find('.s-apply-num').html(data.hits);
+        _this.attr({
+          'disabled': 'disabled'
+        });
+        _this.removeClass('on');
+        _this.css({
+          'cursor':'not-allowed',
+          'backgroundColor': 'rgb(250,250,250)',
+          'borderColor': '#ccc',
+          'color': '#ccc'
+        });
+      })
+    } else {
+      alert ('请登录后报名');
+      return false;
+    }
+  };
   var curPage = 1; //当前页码
   function getData(p) {
     $.ajax({

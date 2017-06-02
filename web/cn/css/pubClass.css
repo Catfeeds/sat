@@ -40,57 +40,64 @@
   top: 23px;
   left: 0;
 }
-.s-new-cnt li {
+.s-new-cnt .s-new-list {
   background-color: rgb(244, 244, 244);
   padding: 10px 50px 10px 25px;
   margin-bottom: 15px;
 }
-.s-new-cnt li img {
+.s-new-cnt .s-new-list img {
   float: left;
 }
-.s-new-cnt li div {
+.s-new-cnt .s-new-list div {
   margin-left: 250px;
 }
-.s-new-cnt li div  h2 {
+.s-new-cnt .s-new-list div  h2 {
   font-size: 16px;
   padding: 10px 0;
   margin: 0;
 }
-.s-new-cnt li div  ul {
+.s-new-cnt .s-new-list div  ul {
   height: 30px;
 }
-.s-new-cnt li div  ul  li {
+.s-new-list div  ul  li {
   padding: 0;
   margin: 0;
   margin-right: 20px;
 }
-.s-new-cnt li div  ul  li i {
+.s-new-list div  ul  li i {
   font-size: 12px;
   color: rgb(229,104,215);
 }
-.s-new-cnt li div  ul  li  span {
+.s-new-list div  ul  li  span {
   font-size: 12px;
 }
-/*.s-new-cnt li div  ul  li  span:first-of-type {*/
-  /*margin-right: 10px;*/
-/*}*/
-.s-new-cnt li div  p {
+.s-new-list div  p {
   font-size: 14px;
   text-indent: 28px;
   height: 55px;
   overflow: hidden;
 }
-.s-new-cnt li div a {
+.s-new-list div a,
+.s-new-list .s-apply{
   padding: 5px 30px;
   border: 1px solid #000;
   margin-right: 10px;
 }
-.s-new-cnt li div a:hover {
+.s-new-list div a:hover,
+.s-new-list button.on:hover{
   background-color: rgb(229,104,215);
   color: #fff;
   border-color: rgb(229,104,215);
   text-decoration: none;
 }
+.s-new-list .s-apply {
+  font-size: 16px;
+  background-color: rgb(244,244,244);
+}
+/*.s-new-list button.on {*/
+  /*cursor: not-allowed;*/
+  /*background-color: rgb(250,250,250);*/
+/*}*/
 /*往期公开课*/
 .s-history-title {
   background-color: rgb(83, 103, 116);
