@@ -158,8 +158,8 @@ function check() {
     showTips('signTel', '手机号不能为空');
     cResult = false;
   }
-  if ($('#signPwd1').val() == '') {
-    showTips('signPwd1','密码不能为空');
+  if ($('#signPwd').val() == '') {
+    showTips('signPwd','密码不能为空');
     cResult = false;
   }
   if ($('#signEmail').val() == '') {
@@ -217,10 +217,10 @@ function loginIn() {
 //手机注册
 function regTel() {
   var signTel = $('#signTel').val(),
-      signPwd1 = $('#signPwd1').val(),
+      signPwd = $('#signPwd').val(),
       signCode = $('#signCode').val(),
       type=1;
-  $.post('/user/api/register',{userName: signTel,passWord: signPwd1,type: type,
+  $.post('/user/api/register',{userName: signTel,passWord: signPwd,type: type,
     code: signCode},function(data){
     alert(data.message);
     if (data.code) {
@@ -234,11 +234,12 @@ function findPwd() {
   var findTel = $('#forgetName').val(),
       findCode = $('#forgetCode').val(),
       findPass = $('#forgetPass').val();
-  $.post('',{
+  $.post('/user/api/find-pass',{
     userName: findTel,
     passWord: findPass,
     code: findCode
   },function(data) {
+    alert(data.message);
     if (data.code) {
       loginOut();
       login('.s-login-cnt','.s-sign-cnt','.s-forget-cnt',500);

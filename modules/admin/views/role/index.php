@@ -6,4 +6,5 @@
     </div>
     <a href="<?php echo baseUrl?>/admin/node/index">节点管理</a></br>
     <a href="<?php echo baseUrl?>/admin/role/role_node">角色管理</a></br>
+    <a href="<?php echo baseUrl?>/admin/role/admin_index">管理员</a></br>
 </div>

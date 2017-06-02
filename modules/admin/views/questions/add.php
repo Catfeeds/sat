@@ -5,15 +5,19 @@
     <div >
         <a>首页</a>
         <span >&gt;</span>
-        <span>题库管理</span>
+        <span><a href="/admin/questions/index">题库管理</a></span>
         <span >&gt;</span>
         <span>添加题目</span>
     </div>
 
             若有短文题干，先添加短文<a><span id="addessay">添加</span></a> </br>
-            若无短文题干，请直接添加题目 <a><span id="addquestion">添加题目</span></a></br>
+            若无短文题干，请直接添加题目 <a><span id="addquestion">添加题目</span></a></br></br>
         <div id="essay" style="display:none;">
             <form method="post" action="<?php echo baseUrl."/admin/questions/essay"?>">
+                <span>所属小节:</span>
+                <span>
+                    <input type="text"  name="section" value="<?php echo isset($data)?$data['section']:''?>" placeholder="短文所属的小节" style="width:80%;">
+                </span></br>
                 <span>题干:</span>
                 <span>
                     <textarea id="editor" type="text/plain" name="essay"   style="width:600px;height:300px;" ><?php echo isset($data)? $data['essay']:''?></textarea>
@@ -72,10 +76,10 @@
                 <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案"></span>
                 </br>
             
-                <span>分 &nbsp;&nbsp;&nbsp;&nbsp;数 :</span>
-                <span><input type="text" name="score" value="<?php echo isset($data)?$data['score']:''?>" placeholder="分数" ></span>
-                </br>
-                <span>小 &nbsp;&nbsp;&nbsp;&nbsp;节 :</span>
+<!--                <span>分 &nbsp;&nbsp;&nbsp;&nbsp;数 :</span>-->
+<!--                <span><input type="text" name="score" value="--><?php //echo isset($data)?$data['score']:''?><!--" placeholder="分数" ></span>-->
+<!--                </br>-->
+                <span>所属小节 :</span>
                 <span><input type="text" name="section" value="<?php echo isset($data)?$data['section']:''?>" placeholder="所属小节" ></span>
                 </br>
 
@@ -98,8 +102,27 @@
                    </select>
                </span>
                 </br>
-                <span>难&nbsp;&nbsp;&nbsp;&nbsp;度:</span>
-                <span><input type="text" name="leverid" value="<?php echo isset($data)?$data['leverId']:''?>" placeholder="难度" ></span>
+                <span>subScores:</span>
+                <span>
+                    <select name="subScores">
+                        <option value ="">请选择类型</option>
+                        <option value ="Heart of Algebra" <?php echo isset($data)&& $data['subScores']=="Heart of Algebra" ?  'selected':''?>>Heart of Algebra</option>
+                        <option value ="Problem Solving and Data Analysis" <?php echo isset($data)&& $data['subScores']=="Problem Solving and Data Analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
+                        <option value ="Passport to Advanced Math" <?php echo isset($data)&& $data['subScores']=="Passport to Advanced Math" ?  'selected':''?>>Passport to Advanced Math</option>
+                        <option value ="Expression of Ideas" <?php echo isset($data)&& $data['subScores']=="Expression of Ideas" ?  'selected':''?>>Expression of Ideas</option>
+                        <option value ="Standard English Conventions" <?php echo isset($data)&& $data['subScores']=="Standard English Conventions" ?  'selected':''?>>Standard English Conventions</option>
+                        <option value ="Words in Context" <?php echo isset($data)&& $data['subScores']=="Words in Context" ?  'selected':''?>>Words in Context</option>
+                        <option value ="Command of Evidence" <?php echo isset($data)&& $data['subScores']=="Command of Evidence" ?  'selected':''?>>Command of Evidence</option>
+                    </select>
+                </span>
+                </br>
+                <span>cross-testScores:</span>
+                <span><select name="cross-testScores">
+                        <option value ="">请选择类型</option>
+                        <option value ="history/social" <?php echo isset($data)&& $data['cross-testScores']=="history/social" ?  'selected':''?>>history/social</option>
+                        <option value ="science" <?php echo isset($data)&& $data['cross-testScores']=="science" ?  'selected':''?>>science</option>
+
+                    </select></span>
                 </br>
                 <span colspan="2" align="center">
                     <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>

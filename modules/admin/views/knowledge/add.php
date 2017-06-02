@@ -1,7 +1,7 @@
 <div class="span10">
     <div >
         <div >
-            <a>首页</a>
+            <a href="/index/index">首页</a>
             <span >&gt;</span>
             <span>知识点管理</span>
             <span >&gt;</span>
@@ -13,11 +13,22 @@
             <tr>
                 <td>科目:</td>
                 <td>
-                    <select name="major">
-                        <option value ="">请选择类型</option>
+                    <select name="major" style="width:500px;">
+                        <option value ="">请选择科目</option>
                         <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
                         <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
                         <option value ="作文" <?php echo isset($data)&& $data['major']=="作文" ?  'selected':''?>>作文</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>类别:</td>
+                <td>
+                    <select name="cate" style="width:500px;">
+                        <option value ="">请选择类型</option>
+                        <option value ="Expression Of Ideas" <?php echo isset($data)&& $data['cate']=="Expression Of Ideas" ?  'selected':''?>>Expression Of Ideas</option>
+                        <option value ="Standard English Conventions" <?php echo isset($data)&& $data['cate']=="Standard English Conventions" ?  'selected':''?>>Standard English Conventions</option>
+<!--                        <option value ="作文" --><?php //echo isset($data)&& $data['cate']=="作文" ?  'selected':''?><!-->作文</option>-->
                     </select>
                 </td>
             </tr>

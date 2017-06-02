@@ -293,93 +293,43 @@ class ApiController extends Controller
     public function actionFindPass()
 
     {
-
         $login = new Login();
-
-        $registerStr = Yii::$app->request->post('registerStr');
-
-        $pass = Yii::$app->request->post('pass');
-
+        $registerStr = Yii::$app->request->post('userName');
+        $pass = Yii::$app->request->post('passWord');
         $code = Yii::$app->request->post('code');
-
-        $type = Yii::$app->request->post('type');
-
-        $re = $login->find()->where("phone='$registerStr' or email='$registerStr'")->one();
-
-        if (!$re) {
-
+//        $type = Yii::$app->request->post('type');
+        $re = $login->find()->where("phone='$registerStr'")->one();
+        if ($re==false) {
             $res['code'] = 0;
-
-            if ($type == 1) {
-
-                $res['message'] = '此电话还没有注册！';
-
-            } else {
-
-                $res['message'] = '此邮箱还没有注册！';
-
-            }
-
+            $res['message'] = $registerStr;
             die(json_encode($res));
-
         }
-
         $checkTime = $login->checkTime();
-
         if ($checkTime) {
-
             $checkCode = $login->checkCode($registerStr, $code);
-
             if ($checkCode) {
 
-                if ($type == 1) {
-
-                    $re = $login->updateAll(['userPass' => md5($pass)], "phone='$registerStr'");
-
-                } else {
-
-                    $re = $login->updateAll(['userPass' => md5($pass)], "email='$registerStr'");
-
-                }
-
+                    $passwd=$login->passProtection($pass);
+                    $re = $login->updateAll(['userPass' => $passwd], "phone='$registerStr'");
                 if ($re) {
-
                     $res['code'] = 1;
-
                     $res['message'] = '密码找回成功';
-
                 } else {
-
                     $res['code'] = 0;
-
                     $res['message'] = '找回失败，请重试';
-
                     $res['type'] = '3';
-
                 }
-
             } else {
-
                 $res['code'] = 0;
-
                 $res['message'] = '验证码错误';
-
                 $res['type'] = '1';
-
             }
-
         } else {
-
             $res['code'] = 0;
-
             $res['message'] = '验证码过期';
-
             $res['type'] = '1';
-
         }
-
         die(json_encode($res));
-
     }
 
     /**

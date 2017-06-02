@@ -29,17 +29,22 @@ class PubclassController extends Controller
 
     public function actionApply()
     {
-        $id = Yii::$app->request->get('id', '');
+        $id = Yii::$app->request->post('id', '');
         $data = Yii::$app->db->createCommand("select hits,id from {{%info}} where id=$id ")->queryOne();
         $data['hits'] += 1;
 //        var_dump($hits);die();
         $info = new Info();
         $re = $info->updateAll($data, 'id=:id', array(':id' => $id));
         if ($re) {
-            echo $data['hits'];
+            $res['code']=1;
+            $res['hits']=$data['hits'];
+            $res['message']='报名成功';
         } else {
-            echo "报名失败！";
+            $res['code']=0;
+            $res['hits']=$data['hits']-1;
+            $res['message']='报名失败';
         }
+        die(json_encode($res));
 
     }
     // ajax分页
@@ -56,11 +61,14 @@ class PubclassController extends Controller
         $arr['totalPage'] = $totalPage;
         $arr['curPage'] = $p;
         foreach($data as $k=>$v){
+            $time=explode(' ',$v['activeTime']);
             $arr['list'][]= array(
                 'summary' => $v['summary'],
                 'title' => $v['title'],
                 'pic' => $v['pic'],
                 'publishTime' => date('Y-m-d',$v['publishTime']),
+                'activeDate' =>$time[0],
+                'activeTime' =>$time[1]
             );
         }
         echo json_encode($arr);

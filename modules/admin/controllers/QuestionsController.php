@@ -19,17 +19,13 @@ class QuestionsController extends ApiControl
 
     public function actionIndex()
     {
-////        从数据库获取数据
-//        $model      = new Classes();
+        // 从数据库获取数据
         $data = Yii::$app->db->createCommand("select * from {{%questions}} order by id desc")->queryAll();
-
-//        var_dump($data);
         return $this->render('index', ['data' => $data]);
     }
 
     public function actionAdd()
     {
-        $enableCsrfValidation = false;
         $apps = Yii::$app->request;
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
@@ -43,7 +39,7 @@ class QuestionsController extends ApiControl
             //      添加数据到数据
             $model = new Questions();
             $getdata = new GetData();
-            $must = array('content' => '题目', 'score' => '分数', 'answer' => '答案');
+            $must = array('content' => '题目', 'answer' => '答案');
             $data = $getdata->PostData($must);
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
@@ -94,7 +90,7 @@ class QuestionsController extends ApiControl
         } else {
             $model = new testPaper();
             $getdata = new GetData();
-            $must = array('name' => '试卷名称', 'major' => '科目');
+            $must = array('name' => '试卷名称');
             $data = $getdata->PostData($must);
 //            var_dump($data);die;
             if ($data['id'] == '') {

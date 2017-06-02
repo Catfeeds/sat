@@ -17,7 +17,6 @@ class KnowledgeController extends ApiControl
 
     public function actionAdd()
     {
-        $enableCsrfValidation = false;
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
             if (empty($id)) {
@@ -42,7 +41,7 @@ class KnowledgeController extends ApiControl
                 die('<script>alert("请添加知识点分析");history.go(-1);</script>');
             }
             $model = new Knowledge();
-//            添加时不带id
+            // 添加时不带id
             if (empty($knowledgeData['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%knowledge}}", $knowledgeData)->execute();
             } else {
