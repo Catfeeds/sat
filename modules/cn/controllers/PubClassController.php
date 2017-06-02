@@ -32,7 +32,6 @@ class PubclassController extends Controller
         $id = Yii::$app->request->post('id', '');
         $data = Yii::$app->db->createCommand("select hits,id from {{%info}} where id=$id ")->queryOne();
         $data['hits'] += 1;
-//        var_dump($hits);die();
         $info = new Info();
         $re = $info->updateAll($data, 'id=:id', array(':id' => $id));
         if ($re) {
@@ -45,7 +44,6 @@ class PubclassController extends Controller
             $res['message']='报名失败';
         }
         die(json_encode($res));
-
     }
     // ajax分页
     public function actionPage()

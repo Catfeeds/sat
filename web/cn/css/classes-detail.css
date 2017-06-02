@@ -80,6 +80,8 @@ span {
 .tab-content #course p {
   padding: 10px 20px;
   font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 2px;
 }
 .tab-content .s-introduce-font {
   position: absolute;

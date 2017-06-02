@@ -59,23 +59,14 @@
     <ul class="pagination clearfix"></ul>
   </section>
 <script>
-
-  $('.s-apply').click(function() {
-//      console.log($(this).parent().find('.s-apply-num').html());
-//    console.log($(this).next().attr('href').split('/')[2].split('.')[0]);
-    applyNum($(this));
-    })
   function applyNum(ele) {
     var _this = ele;
     var num =  _this.parent().find('.s-apply-num').html();
     var userTel = $('#loginName').val();
     var classId = _this.next().attr('href').split('/')[2].split('.')[0];
-    console.log(classId);
-    console.log(userTel);
-    console.log(num);
     var userId = sessionStorage.getItem('userId');
     if (userId) {
-      $.get('',{userTel: userTel,num: num,classId: classId},function(data) {
+      $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
         alert(data.message);
         _this.parent().find('.s-apply-num').html(data.hits);
         _this.attr({
@@ -88,7 +79,7 @@
           'borderColor': '#ccc',
           'color': '#ccc'
         });
-      })
+      },'json')
     } else {
       alert ('请登录后报名');
       return false;
@@ -107,6 +98,7 @@
         var li = "<li><i class='fa fa-spinner fa-spin'></i></li>"
       },
       success: function (data) {
+        console.log(data.list);
         $('.s-history-cnt').empty();
         var li ='';
         total = data.total;//总记录数
@@ -130,6 +122,7 @@
           onPageChange: function () {
             $(".pagination li a").on('click',function(){
               var rel = parseInt($(this).parent().attr("jp-data"));
+              console.log(rel);
               if(rel){
                getData(rel)
               }
@@ -141,6 +134,9 @@
   }
 
   $(function(){
+    $('.s-apply').click(function() {
+      applyNum($(this));
+    });
     getData(1);
   });
 
