@@ -15,6 +15,7 @@ use app\modules\cn\models\Info;
 class PubclassController extends Controller
 {
     public $layout='cn.php';
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
         $pubclass = new pubclass();
@@ -29,7 +30,7 @@ class PubclassController extends Controller
 
     public function actionApply()
     {
-        $id = Yii::$app->request->post('id', '');
+        $id = Yii::$app->request->post('classId', '');
         $data = Yii::$app->db->createCommand("select hits,id from {{%info}} where id=$id ")->queryOne();
         $data['hits'] += 1;
         $info = new Info();

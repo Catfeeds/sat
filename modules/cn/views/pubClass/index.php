@@ -75,7 +75,7 @@
     console.log(num);
     var userId = sessionStorage.getItem('userId');
     if (userId) {
-      $.get('',{userTel: userTel,num: num,classId: classId},function(data) {
+      $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
         alert(data.message);
         _this.parent().find('.s-apply-num').html(data.hits);
         _this.attr({
@@ -88,7 +88,7 @@
           'borderColor': '#ccc',
           'color': '#ccc'
         });
-      })
+      },'json')
     } else {
       alert ('请登录后报名');
       return false;
