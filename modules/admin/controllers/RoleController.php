@@ -11,6 +11,7 @@ namespace app\modules\admin\controllers;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\role;
+use app\modules\admin\models\admin;
 
 class RoleController extends ApiControl
 {
@@ -29,7 +30,6 @@ class RoleController extends ApiControl
 
     public function actionAdd()
     {
-        $enableCsrfValidation = false;
         $id = Yii::$app->request->get('id', '');
         $role = new Role();
         if (!$_POST) {
@@ -82,6 +82,60 @@ class RoleController extends ApiControl
     {
         $id = Yii::$app->request->get('id', '');
         $re = Role::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
+            echo true;
+        }
+    }
+    public function actionAdmin_index(){
+        $data = Yii::$app->db->createCommand("select * from {{%admin}}")->queryAll();
+        return $this->render('admin_index',['data'=>$data]);
+    }
+    public function actionAdmin_add(){
+
+        $id = Yii::$app->request->get('id', '');
+        $admin = new Admin();
+        if (!$_POST) {
+            // #id 为空即为非修改页面
+            if (empty($id)) {
+                return $this->render('admin_add');
+            } else {
+                $data = Yii::$app->db->createCommand("select id,userPass,userName,roleId from {{%admin}} where id=" . $id)->queryOne();
+                return $this->render('admin_add', ['data' => $data]);
+            }
+
+        } else {
+            $userPass = Yii::$app->request->post('userPass', '');
+            if(strlen($userPass)==32){
+                $Data['userPass']= $userPass;
+            }else{
+                $Data['userPass'] = md5($userPass);
+            }
+            $Data['userName'] = Yii::$app->request->post('userName', '');
+            $Data['roleId'] = Yii::$app->request->post('roleId', '');
+            $Data['id'] = Yii::$app->request->post('id', '');
+            if (empty($Data['userName'] || $Data['userPass']||$Data['roleId'])) {
+                die('<script>alert("请将数据填写完整");history.go(-1);</script>');
+            }
+            // 存在$roleData['id']即为修改提交，否则为添加
+            if (empty($Data['id'])) {
+                $re = Yii::$app->db->createCommand()->insert("{{%admin}}", $Data)->execute();
+            } else {
+                $re = $admin->updateAll($Data, 'id=:id', array(':id' => $Data['id']));
+            }
+            if ($re) {
+                $this->redirect('admin_index');
+            } else {
+                echo '<script>alert("数据添加添加\修改失败，请重试");history.go(-1);</script>';
+                die;
+            }
+        }
+
+//        return $this->render('admin_index',['data'=>$data]);
+    }
+    public function actionAdmin_del()
+    {
+        $id = Yii::$app->request->get('id', '');
+        $re = Admin::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             echo true;
         }

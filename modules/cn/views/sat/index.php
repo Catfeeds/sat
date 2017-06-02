@@ -66,26 +66,6 @@
                         <a href="/info_details/<?php echo $v['id']?>.html">查看详情</a>
                     </li>
                     <?php }?>
-                    <li class="s-cnt">
-                        <img src="/cn/images/sat03.png" alt="">
-                        <a href="#">查看详情</a>
-                    </li>
-                    <li class="s-cnt">
-                        <img src="/cn/images/sat03.png" alt="">
-                        <a href="#">查看详情</a>
-                    </li>
-                    <li class="s-cnt">
-                        <img src="/cn/images/sat03.png" alt="">
-                        <a href="#">查看详情</a>
-                    </li>
-                    <li class="s-cnt">
-                        <img src="/cn/images/sat03.png" alt="">
-                        <a href="#">查看详情</a>
-                    </li>
-                    <li class="s-cnt">
-                        <img src="/cn/images/sat03.png" alt="">
-                        <a href="#">查看详情</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -197,21 +177,6 @@
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
                     </ul>
                 </div>
                 <div class="s-information s-exam">
@@ -234,21 +199,6 @@
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
-<!--                        <li class="s-more-title">-->
-<!--                            <a href="#">新西兰纳新新服安徽库尔德丽兰</a>-->
-<!--                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -284,33 +234,7 @@
                             <a href="#">立即预约</a>
                         </li>
                         <?php }?>
-                        <li>
-                            <img src="/cn/images/course-basis01.png" alt="">
-                            <div>
-                                <h2>Kevin</h2>
-                                <h4>主讲：SAT语法、数学、写作、数学、写作</h4>
-                                <p>申友SAT教学研发总监，英国兰卡斯特大学硕士，国内重本英语专业毕业；国外的几年深造，使她对西方人的思维方式和表达习惯有着深刻的了解；上课内容深入浅出，上课风格诙谐活泼，深受学生的喜欢。</p>
-                            </div>
-                            <a href="#">立即预约</a>
-                        </li>
-                        <li>
-                            <img src="/cn/images/course-basis01.png" alt="">
-                            <div>
-                                <h2>Kevin</h2>
-                                <h4>主讲：SAT语法、数学、写作、数学、写作</h4>
-                                <p>申友SAT教学研发总监，英国兰卡斯特大学硕士，国内重本英语专业毕业；国外的几年深造，使她对西方人的思维方式和表达习惯有着深刻的了解；上课内容深入浅出，上课风格诙谐活泼，深受学生的喜欢。</p>
-                            </div>
-                            <a href="#">立即预约</a>
-                        </li>
-                        <li>
-                            <img src="/cn/images/course-basis01.png" alt="">
-                            <div>
-                                <h2>Kevin</h2>
-                                <h4>主讲：SAT语法、数学、写作、数学、写作</h4>
-                                <p>申友SAT教学研发总监，英国兰卡斯特大学硕士，国内重本英语专业毕业；国外的几年深造，使她对西方人的思维方式和表达习惯有着深刻的了解；上课内容深入浅出，上课风格诙谐活泼，深受学生的喜欢。</p>
-                            </div>
-                            <a href="#">立即预约</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

@@ -5,38 +5,6 @@
   <section>
     <!--轮播图-->
     <div class="bnr-wrap center-block clearfix">
-<!--      <div id="myCarousel" class="carousel slide">-->
-<!--        <!-- 轮播（Carousel）指标 -->
-<!--        <ol class="carousel-indicators">-->
-<!--          --><?php //foreach ($pic as $k=>$v){
-//            if($k==0){
-//              echo '<li data-target="#myCarousel" data-slide-to="'.$k.'" class="active"></li>';
-//            }else{
-//              echo '<li data-target="#myCarousel" data-slide-to="'.$k.'"></li>';
-//            }
-//          }?>
-<!---->
-<!--        </ol>-->
-<!--        <!-- 轮播（Carousel）项目 -->
-<!--        <div class="carousel-inner">-->
-<!--          --><?php //foreach($pic as $k=>$v){
-//            if($k==0){
-//              echo '<div class="item active">';
-//            }else{
-//              echo '<div class="item">';
-//            }
-//            echo '<a href="'.$v['url'].'"> <img src="'.$v['pic'].'" alt="'.$v['alt'].'"></a>
-//                    </div>';
-//          }?>
-<!--        </div>-->
-<!--        <!-- 轮播（Carousel）导航 -->
-<!--        <a class="carousel-control left" href="#myCarousel"-->
-<!--           data-slide="prev">&lt;-->
-<!--        </a>-->
-<!--        <a class="carousel-control right" href="#myCarousel"-->
-<!--           data-slide="next">&gt;-->
-<!--        </a>-->
-<!--      </div>-->
       <?php use app\commands\front\BannerWidget;?>
       <?php BannerWidget::begin();?>
       <?php BannerWidget::end();?>

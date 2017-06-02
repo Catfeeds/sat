@@ -36,10 +36,17 @@ class PubclassController extends Controller
         $info = new Info();
         $re = $info->updateAll($data, 'id=:id', array(':id' => $id));
         if ($re) {
-            echo $data['hits'];
+//
+//            echo $data['hits'];
+            $res['code']=1;
+            $res['hits']=$data['hits'];
+            $res['message']='报名成功';
         } else {
-            echo "报名失败！";
+            $res['code']=0;
+            $res['hits']=$data['hits']-1;
+            $res['message']='报名失败';
         }
+        die(json_encode($re));
 
     }
     // ajax分页
