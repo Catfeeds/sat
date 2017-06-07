@@ -26,7 +26,6 @@ class NodeController extends ApiControl
 
     public function actionAdd()
     {
-        $enableCsrfValidation = false;
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
             $data = Yii::$app->db->createCommand("select name,id from {{%node}} where pid=0")->queryAll();
@@ -36,7 +35,6 @@ class NodeController extends ApiControl
                 $arr = Yii::$app->db->createCommand("select * from {{%node}} where id=" . $id)->queryOne();
                 return $this->render('add', ['data' => $data, 'arr' => $arr]);
             }
-//            var_dump($data);die;
 
         } else {
             $node = new node();
@@ -47,10 +45,8 @@ class NodeController extends ApiControl
             if (empty($nodeData['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%node}}", $nodeData)->execute();
             } else {
-//                var_dump($_POST);die;
                 $re = $node->updateAll($nodeData, 'id=:id', array(':id' => $nodeData['id']));
             }
-//            var_dump($nodeData);die;
             if ($re) {
                 $this->redirect('index');
             } else {

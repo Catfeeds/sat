@@ -46,7 +46,6 @@ class InfoController extends Controller
 
     public function actionDetails()
     {
-//        从数据表获取数据
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%info}} where id=$id")->queryOne();
         $cate = $data['cate'];

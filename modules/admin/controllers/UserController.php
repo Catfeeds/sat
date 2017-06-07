@@ -7,6 +7,7 @@
  */
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\Apply;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\user;
@@ -21,7 +22,28 @@ class UserController extends ApiControl
     }
     public function actionApply()
     {
-        $data = Yii::$app->db->createCommand("select * from {{%class_apply}} ")->queryALL();
+        // 公开课的ID，报名者电话，的取到title
+        $data = Yii::$app->db->createCommand("select c.*,i.title from {{%class_apply}} c join {{%info}} i on c.pubclass_id=i.id ")->queryALL();
         return $this->render('apply',['data'=>$data]);
+    }
+    public function actionApply_edit()
+    {
+        $id= Yii::$app->request->get('id', '');
+        if(!$_POST){
+            return $this->render('apply_edit',['id'=>$id]);
+        }else{
+            $data['id'] = Yii::$app->request->post('id', '');
+            $data['address'] = Yii::$app->request->post('address', '');
+            $model = new Apply();
+            $re = $model->updateAll($data,'id=:id', array(':id'=> $data['id']));
+            if ($re) {
+                $this->redirect('apply');
+            } else {
+                echo '<script>alert("数据添加/修改失败，请重试");history.go(-1);</script>';
+                die;
+            }
+        }
+
+
     }
 }

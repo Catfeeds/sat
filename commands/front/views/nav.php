@@ -10,11 +10,11 @@
 <!--            <a href="#">做题<i class=" icon-caret-down"></i></a>-->
 <!--            <ul class="s-nav-showing">-->
 <!--                <li><a href="#">练习</a></li>-->
-<!--                <li><a href="#">知识库</a></li>-->
+                <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
 <!--                <li><a href="#">测评</a></li>-->
 <!--            </ul>-->
 <!--        </li>-->
-<!--        <li><a href="#">模考</a></li>-->
+        <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
 <!--        <li><a href="#">报告</a></li>-->
         <li><a <?php if($path=='class.html'|| (strpos($path,'class_details'))!==false){echo 'class="on"';}?> href="/class.html">课程</a></li>
         <li><a <?php if($path=='teachers.html'|| (strpos($path,'teachers_details'))!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>

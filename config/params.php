@@ -18,6 +18,7 @@ return [
     'phone8' => '您正在修改绑定手机！',
     'phone9' => '您正在修改绑定邮箱！',
     'phone10' => '您正在通过手机注册！',
+    'phone11' => '您正在通过手机预定申友教育公开课！',
     'schoolUrl' => 'http://schools.smartapply.cn/cn/api/school',
     'categoryUrl' => 'http://schools.smartapply.cn/cn/api/cats',
     'contentUrl' => 'http://schools.smartapply.cn/cn/api/content',

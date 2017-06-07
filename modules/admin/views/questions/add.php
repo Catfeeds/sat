@@ -33,7 +33,7 @@
                     <input type="text"  name="tpID" value="<?php echo isset($data)?$data['tpID']:''?>" placeholder="试卷的id名" style="width:80%;">
                 </span>
                 </br>
-                <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>
+                <input type="hidden" name="id" value="<?php echo isset($data)?$data['essayId']:''?>"/>
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                 <button type="submit" id="login-button">添加/修改</button></span>
             </form>
@@ -88,7 +88,7 @@
                 </br>
 
                 <span>题目来源:</span>
-                <span><input type="text" name="sourceid" value="<?php echo isset($data)?$data['sourceId']:''?>"  placeholder="题目来源" ></span>
+                <span><input type="text" name="sourceId" value="<?php echo isset($data)?$data['sourceId']:''?>"  placeholder="题目来源" ></span>
                 </br>
             
                 <span>科 &nbsp;&nbsp;&nbsp;&nbsp;目 &nbsp;:</span>
@@ -117,11 +117,10 @@
                 </span>
                 </br>
                 <span>cross-testScores:</span>
-                <span><select name="cross-testScores">
+                <span><select name="crosstestScores">
                         <option value ="">请选择类型</option>
-                        <option value ="history/social" <?php echo isset($data)&& $data['cross-testScores']=="history/social" ?  'selected':''?>>history/social</option>
-                        <option value ="science" <?php echo isset($data)&& $data['cross-testScores']=="science" ?  'selected':''?>>science</option>
-
+                        <option value ="history/social" <?php echo isset($data)&& $data['crosstestScores']=="history/social" ?  'selected':''?>>history/social</option>
+                        <option value ="science" <?php echo isset($data)&& $data['crosstestScores']=="science" ?  'selected':''?>>science</option>
                     </select></span>
                 </br>
                 <span colspan="2" align="center">

@@ -45,7 +45,7 @@
                 <td><? echo $v['essayId']?></td>
                 <td><? echo $v['sourceId']?></td>
                 <td><? echo $v['subScores']?></td>
-                <td><? echo $v['cross-testScores']?></td>
+                <td><? echo $v['crosstestScores']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

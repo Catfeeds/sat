@@ -47,17 +47,17 @@ $(function () {
   $('.s-login .form-control').focus(function () {
     hideTips($(this).attr('id'));
   })
-  //$(document).on('keydown',function(){
-  //  if ($('.s-login-cnt').css('display') == 'block') {
-  //    keyLogin();
-  //  }
-  //  if ($('.s-sign-cnt').css('display') == 'block') {
-  //    regTel();
-  //  }
-  //  if ($('.s-forget-cnt').css('display') == 'block') {
-  //    findPwd();
-  //  }
-  //})
+  $(document).on('keydown',function(){
+    if ($('.s-login-cnt').css('display') == 'block') {
+      keyLogin();
+    }
+    if ($('.s-sign-cnt').css('display') == 'block') {
+      keySign();
+    }
+    if ($('.s-forget-cnt').css('display') == 'block') {
+      keyFind();
+    }
+  })
 })
 //登录注册框隐藏
 function loginOut() {

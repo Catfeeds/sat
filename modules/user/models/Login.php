@@ -12,10 +12,10 @@ class Login extends ActiveRecord
         return '{{%user}}';
     }
 
-    /**s
+    /**
      * 验证短信码
      * @param $code
-     * @Obelisk
+     * @param $phone
      */
     public function checkCode($phone, $code)
     {
@@ -31,7 +31,6 @@ class Login extends ActiveRecord
 
     /**
      * 验证短信的时间是否过期
-     * @Obelisk
      */
     public function checkTime()
     {
@@ -47,7 +46,6 @@ class Login extends ActiveRecord
 
     /**
      * 验证邮箱是否合法
-     * @Obelisk
      */
     public function checkEmail($email)
     {
@@ -60,7 +58,6 @@ class Login extends ActiveRecord
 
     /**
      * 验证邮箱是否合法
-     * @Obelisk
      */
     public function checkTel($phone)
     {

@@ -58,12 +58,12 @@ class RoleController extends ApiControl
             } else {
                 $str = '';
             }
-//            组装path；
+            // 组装path；
             $roleData['path'] = $str;
             if (empty($roleData['name'] || $roleData['ids'])) {
                 die('<script>alert("请将数据填写完整");history.go(-1);</script>');
             }
-//            存在$roleData['id']即为修改提交，否则为添加
+            // 存在$roleData['id']即为修改提交，否则为添加
             if (empty($roleData['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%role}}", $roleData)->execute();
             } else {
@@ -129,8 +129,6 @@ class RoleController extends ApiControl
                 die;
             }
         }
-
-//        return $this->render('admin_index',['data'=>$data]);
     }
     public function actionAdmin_del()
     {
