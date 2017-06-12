@@ -40,7 +40,7 @@ class QuestionsController extends ApiControl
             // 添加数据到数据
             $model = new Questions();
             $getdata = new GetData();
-            $must = array('content' => '题目', 'answer' => '答案');
+            $must = array('content' => '题目', 'answer' => '答案','section' => '所属小节');
             $data = $getdata->PostData($must);
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();

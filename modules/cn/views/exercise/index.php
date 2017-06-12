@@ -10,9 +10,9 @@
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li class="active"><a href="/exercise.html?path=math"> 数学</a></li>
-          <li><a href="/exercise.html?path=reading">阅读</a></li>
-          <li><a href="/exercise.html?path=writing">写作</a></li>
+          <li class="active"><a href="/exercise.html?m=math"> 数学</a></li>
+          <li><a href="/exercise.html?m=reading">阅读</a></li>
+          <li><a href="/exercise.html?m=writing">写作</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
@@ -24,9 +24,10 @@
         </dl>
         <div class="s-subject-cnt">
           <ul>
+            <?php foreach($data as $v) ?>
             <li>
-              <h3>题目标题</h3>
-              <p>fuif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jnsan njak fjoaeg lnda fiaiuwe asbv  nask</p>
+              <h3><?php echo $v['id']?></h3>
+              <p></p>
               <a href="#">做题</a>
             </li>
             <li>
@@ -97,14 +98,27 @@
   })
   function getCate(cate){
     var url=window.location.href;
-    var re=url.indexOf('c=');
-    if(re==-1){
-      window.location = url+"&c="+cate;
+    var rec=url.indexOf('c=');
+    var rep=url.indexOf('m=');
+    // 链接不含科目
+    if(rep!=-1){
+      // 链接包含分类时
+      if(rec==-1){
+        window.location = url+"&c="+cate;
+      }else{
+        var port=window.location.search;
+        url=port.substring(port.lastIndexOf('&c='),port.length-rec)+"&c="+cate;
+        window.location.href=url;
+      }
     }else{
-      var port=window.location.search;
-      url=port.substring(port.lastIndexOf('&c='),port.length-re)+"&c="+cate;
-      window.location.href=url;
-
+      if(rec==-1){
+        window.location = url+"?&c="+cate;
+      }else{
+        var port=window.location.search;
+        url=port.substring(port.lastIndexOf('&c='),port.length-rec)+"&c="+cate;
+        window.location.href=url;
+      }
     }
+
   }
 </script>

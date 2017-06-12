@@ -96,9 +96,9 @@
                <span>
                    <select name="major">
                     <option value ="">请选择类型</option>
-                    <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
-                    <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
-                    <option value ="作文" <?php echo isset($data)&& $data['major']=="作文" ?  'selected':''?>>作文</option>
+                    <option value ="math" <?php echo isset($data)&& $data['major']=="math" ?  'selected':''?>>数学</option>
+                    <option value ="reading" <?php echo isset($data)&& $data['major']=="reading" ?  'selected':''?>>阅读</option>
+                    <option value ="writing" <?php echo isset($data)&& $data['major']=="writing" ?  'selected':''?>>作文</option>
                    </select>
                </span>
                 </br>

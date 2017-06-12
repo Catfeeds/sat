@@ -15,13 +15,23 @@ class ExerciseController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
-        $path=Yii::$app->request->get('path','');
+        $major=Yii::$app->request->get('m','');
         $cate=Yii::$app->request->get('c','');
-//        if($cate!=false){
-//            $data = Yii::$app->db->createCommand("select * from {{%testpaper}} where =".$path)->queryAll();
-//        }
-//            $data = Yii::$app->db->createCommand("select * from {{%questions}} where major=".$path)->queryAll();
-        return $this->render('index');
+        if($major!=false){
+            $where="where major = '$major'";
+            if($cate!=false){
+                $where=$where." and cate='$cate'";
+            }
+        }else{
+            if($cate!=false){
+                $where="where cate='$cate'";
+            }else{
+                $where='';
+            }
+        }
+        $data = Yii::$app->db->createCommand("select * from {{%questions}} $where")->queryAll();
+//        var_dump($data);die;
+        return $this->render('index',['data'=>$data]);
     }
 
     public function actionExercise()

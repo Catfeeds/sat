@@ -86,9 +86,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details?m=reading&id='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details?m=reading&id='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 <!--              <li><a href="#">普林斯顿第二套</a></li>-->
@@ -107,9 +107,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details?m=math&id='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details?m=math&id='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 <!--              <li><a href="#">普林斯顿第二套</a></li>-->
@@ -123,9 +123,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details?m=writing&id='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details?m=writing&id='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 <!--              <li><a href="#">普林斯顿第二套</a></li>-->
@@ -161,7 +161,7 @@
   jQuery(".s-mock-side").slide({mainCell:".s-score ul",autoPlay:true,effect:"topMarquee",vis:8,interTime:50});
   $(function () {
     $('.s-mock-cnt .s-subject li a').click(function () {
-      if ($(this).next().hasClass('icon-lock')) {
+      if ($(this).next().hasClass('fa-lock')) {
         if (!sessionStorage.getItem('userId')) {
           alert('请登录');
           return false;
