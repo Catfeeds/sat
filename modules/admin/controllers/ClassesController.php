@@ -28,7 +28,7 @@ class ClassesController extends ApiControl
     public function actionAdd()
     {
         if (!$_POST) {
-//            判断是修改还是添加$id
+            // 判断是修改还是添加$id
             $id = Yii::$app->request->get('id', '');
             if (empty($id)) {
                 return $this->render('add');
@@ -44,7 +44,6 @@ class ClassesController extends ApiControl
                 $re = Yii::$app->db->createCommand()->insert("{{%classes}}", $data)->execute();
             } else {
                 $model = new Classes();
-//                var_dump($data);die;
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
             if ($re) {

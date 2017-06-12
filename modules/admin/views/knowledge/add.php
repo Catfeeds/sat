@@ -10,25 +10,39 @@
     </div>
     <form action="<?php echo baseUrl.'/admin/knowledge/add'?>" method="post">
         <table>
+<!--            <tr>-->
+<!--                <td>科目:</td>-->
+<!--                <td>-->
+<!--                    <select name="major" style="width:500px;">-->
+<!--                        <option value ="">请选择科目</option>-->
+<!--                        <option value ="数学" --><?php //echo isset($data)&& $data['major']=="数学" ?  'selected':''?><!--></option>
+<!--                        <option value ="阅读" --><?php //echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--></option>
+<!--                        <option value ="作文" --><?php //echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--></option>
+<!--                    </select>-->
+<!--                </td>-->
+<!--            </tr>-->
             <tr>
-                <td>科目:</td>
+                <td>类别:</td>
                 <td>
                     <select name="major" style="width:500px;">
-                        <option value ="">请选择科目</option>
-                        <option value ="数学" <?php echo isset($data)&& $data['major']=="数学" ?  'selected':''?>>数学</option>
-                        <option value ="阅读" <?php echo isset($data)&& $data['major']=="阅读" ?  'selected':''?>>阅读</option>
-                        <option value ="作文" <?php echo isset($data)&& $data['major']=="作文" ?  'selected':''?>>作文</option>
+                        <option value ="">请选择类型</option>
+                        <option value ="Expression Of Ideas" <?php echo isset($data)&& $data['major']=="Expression Of Ideas" ?  'selected':''?>>Expression Of Ideas</option>
+                        <option value ="Standard English Conventions" <?php echo isset($data)&& $data['major']=="Standard English Conventions" ?  'selected':''?>>Standard English Conventions</option>
+                        <option value ="数学" <?php echo isset($data)&& $data['major']=="作文" ?  'selected':''?>>数学</option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <td>类别:</td>
+                <td>小类:</td>
                 <td>
                     <select name="cate" style="width:500px;">
                         <option value ="">请选择类型</option>
-                        <option value ="Expression Of Ideas" <?php echo isset($data)&& $data['cate']=="Expression Of Ideas" ?  'selected':''?>>Expression Of Ideas</option>
-                        <option value ="Standard English Conventions" <?php echo isset($data)&& $data['cate']=="Standard English Conventions" ?  'selected':''?>>Standard English Conventions</option>
-<!--                        <option value ="作文" --><?php //echo isset($data)&& $data['cate']=="作文" ?  'selected':''?><!-->作文</option>-->
+                        <option value ="development" <?php echo isset($data)&& $data['cate']=="development" ?  'selected':''?>>development</option>
+                        <option value ="organization" <?php echo isset($data)&& $data['cate']=="organization" ?  'selected':''?>>organization</option>
+                        <option value ="effective language use" <?php echo isset($data)&& $data['cate']=="effective language use" ?  'selected':''?>>effective language use</option>
+                        <option value ="structure" <?php echo isset($data)&& $data['cate']=="structure" ?  'selected':''?>>structure</option>
+                        <option value ="usage" <?php echo isset($data)&& $data['cate']=="usage" ?  'selected':''?>>usage</option>
+                        <option value ="punctutation" <?php echo isset($data)&& $data['cate']=="punctutation" ?  'selected':''?>>punctutation</option>
                     </select>
                 </td>
             </tr>

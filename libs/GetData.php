@@ -25,7 +25,7 @@ class GetData {
                     $data['pic']='';
                 }else{
                     $path=$this->upImage($postion);
-                    $data['pic']       = $path;
+                    $data['pic']  = $path;
                 }
             }
         }

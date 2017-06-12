@@ -29,13 +29,10 @@ class TeachersController extends Controller
 
     public function actionDetails()
     {
-//        从数据表获取数据
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%teachers}} where id=$id ")->queryOne();
-//
         $name = $data['name'];
         $arr = Yii::$app->db->createCommand("select * from {{%student_case}} where teacher='$name' limit 5")->queryAll();
-//        var_dump($arr);die;
         if ($arr != false) {
             $teacher = new Teachers();
             $brr = $teacher->formatting($arr);
@@ -43,7 +40,6 @@ class TeachersController extends Controller
             $brr = array();
         }
 
-//        var_dump($arr);die;
         return $this->render('details', ["data" => $data, 'brr' => $brr]);
     }
 }

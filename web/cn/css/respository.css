@@ -1,0 +1,98 @@
+.s-respository {
+  margin-top: 50px;
+}
+.s-tag-list {
+  padding: 0 20px;
+  width: 175px;
+  -webkit-box-shadow: 0 0 3px #000;
+  -moz-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+}
+.s-tag-list ul {
+  margin-bottom: 0;
+}
+.s-tag-list li {
+  padding: 35px 0;
+  text-align: center;
+  border-bottom: 1px dashed rgb(171,171,171);
+}
+.s-tag-list li:last-child {
+  border-bottom: 0;
+}
+.s-tag-list li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.s-tag-list li.active a {
+  background-color: rgb(54,178,251);
+  color: #fff;
+}
+.s-tag-list li.active a:after {
+  border-left-color: #fff;
+}
+.s-tag-list li a:after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: rgb(54,178,251);
+}
+.s-tag-cnt {
+  margin-left: 206px;
+  font-size: 14px;
+}
+.s-tag-cnt ul {
+  padding: 14px 0 40px 0;
+  border-bottom: 1px dashed rgb(238,238,238);
+}
+.s-tag-cnt h3 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.s-tag-cnt h3:after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 2px;
+  background-color: rgb(54,178,251);
+}
+.s-tag-cnt li {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  vertical-align: top;
+  width: 155px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 70px;
+  border: 1px solid #000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.s-tag-cnt li:nth-child(4n+1) {
+  margin-right: 0;
+}

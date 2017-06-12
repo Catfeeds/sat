@@ -80,7 +80,7 @@ class Pager
                 } else {
                     $currnt = "";
                 }
-                $str .= "<a href='{$this->pageUrl}={$i} ' {$currnt}>$i</a>" . "\n";
+                $str .= "<a href='{$this->pageUrl}={$i}            ' {$currnt}>$i</a>" . "\n";
             }
         } else                                //10页以上
         {
@@ -96,12 +96,12 @@ class Pager
                 }
 
                 $str .= "<span class=\"dot\">……</span>" . "\n";
-
                 for ($i = $this->totalPagesCount - 3 + 1; $i <= $this->totalPagesCount; $i++)//功能1
                 {
                     $str .= "<a href='{$this->pageUrl}={$i}' >$i</a>" . "\n";
 
                 }
+
             } elseif ($this->pageIndex <= 5)   //   5 >= 当前页 >= 3
             {
                 for ($i = 1; $i <= ($this->pageIndex + 1); $i++) {

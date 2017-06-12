@@ -12,8 +12,6 @@ use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\Cate;
 
-//use yii\filters\AccessControl;
-//use yii\filters\VerbFilter;
 class CateController extends ApiControl
 {
     public $enableCsrfValidation = false;
@@ -21,9 +19,9 @@ class CateController extends ApiControl
     {
         $model = new Cate();
         $data = Yii::$app->db->createCommand("select * from {{%cate}} ")->queryAll();
-        //            重新排序递归
+        // 重新排序递归
         $data = $model->getCateList($data);
-//            var_dump($data);
+        // var_dump($data);
         return $this->render('index', ['data' => $data]);
     }
 
@@ -39,13 +37,10 @@ class CateController extends ApiControl
             }
 
         } else {
-//            $model= new Cate();
-//            var_dump($_POST);
             $cateData = Yii::$app->request->post('cate');
             $cateData['name'] = Yii::$app->request->post('name', '');
             $cateData['level'] = Yii::$app->request->post('level', '');
             $cateData['pid'] = Yii::$app->request->post('pid', '0');
-//            var_dump($_POST);die;
             $re = Yii::$app->db->createCommand()->insert("{{%cate}}", $cateData)->execute();
             if ($re) {
                 echo '<script>alert("数据添加成功")</script>';

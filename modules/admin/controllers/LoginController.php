@@ -10,12 +10,8 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-//use app\modules\user\models\User;
 use app\modules\admin\models\Admin;
 use yii\web\Controller;
-
-//use yii\filters\AccessControl;
-//use yii\filters\VerbFilter;
 class LoginController extends Controller
 {
     public $enableCsrfValidation = false;

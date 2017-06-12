@@ -1,0 +1,112 @@
+/*模考内容*/
+.s-mock-cnt {
+  width: 700px;
+}
+.s-mock-cnt .s-title {
+  padding: 20px 0 20px 10px;
+  font-size: 16px;
+  background-color: rgb(244,244,244);
+}
+.s-mock-cnt .s-tag {
+  font-size: 0;
+  border-bottom: 2px solid rgb(54,178,251);
+}
+.s-mock-cnt .s-tag li {
+  position: relative;
+  display: inline-block;
+  margin-right: 50px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: default;
+}
+.s-mock-cnt .s-tag li.active{
+  color: rgb(54,178,251);
+}
+.s-mock-cnt .s-tag li.active:after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: rgb(54,178,251);
+}
+.s-mock-cnt .s-subject {
+  font-size: 0;
+}
+.s-mock-cnt .s-subject li {
+  position: relative;
+  display: inline-block;
+  padding: 25px 0;
+  width: 175px;
+  border-bottom: 1px solid rgb(240,240,240);
+  text-align: center;
+}
+.s-mock-cnt .s-subject li a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.s-mock-cnt .s-subject li i {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 16px;
+  color: #7a7270;
+}
+.s-mock-cnt .s-subject li:hover a{
+  -webkit-box-shadow: 0 0 5px #7a7270;
+  -moz-box-shadow: 0 0 5px #7a7270;
+  box-shadow: 0 0 5px #7a7270;
+}
+.s-all-mock {
+  margin-bottom: 120px;
+}
+/*侧边栏*/
+.s-mock-side {
+  width: 390px;
+}
+.s-score {
+  position: relative;
+  margin-top: 40px;
+  padding: 37px 15px;
+  background-color: rgb(245,245,245);
+}
+.s-score h2 {
+  position: absolute;
+  padding: 12px 35px;
+  top: -40px;
+  left: 130px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: rgb(54,178,251);
+  color: #fff;
+}
+.s-score li {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dashed rgb(220,220,220);
+}
+.s-score li span {
+  display: inline-block;
+  width: 30%;
+  margin-right: 8%;
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.s-score li span:last-child {
+  width: 20%;
+  margin: 0 0 0 10px;
+}

@@ -98,7 +98,6 @@
         var li = "<li><i class='fa fa-spinner fa-spin'></i></li>"
       },
       success: function (data) {
-        console.log(data.list);
         $('.s-history-cnt').empty();
         var li ='';
         total = data.total;//总记录数
@@ -122,7 +121,6 @@
           onPageChange: function () {
             $(".pagination li a").on('click',function(){
               var rel = parseInt($(this).parent().attr("jp-data"));
-              console.log(rel);
               if(rel){
                getData(rel)
               }

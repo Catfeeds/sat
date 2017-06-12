@@ -20,7 +20,6 @@ class ApiController extends Controller
 
     /**
      * 短信接口
-     * @Obelisk
      */
     public function actionPhoneCode()
     {
@@ -96,7 +95,6 @@ class ApiController extends Controller
 
     /**
      * 用户注册
-     * @Obelisk
      */
 
     public function actionRegister()
@@ -334,7 +332,6 @@ class ApiController extends Controller
 
     /**
      * 修改用户资料
-     * @Obelisk
      */
 
     public function actionChangeUserInfo()
@@ -463,7 +460,6 @@ class ApiController extends Controller
 
     /**
      * 修改用户邮箱
-     * @Obelisk
      */
 
     public function actionChangeUserEmail()
@@ -527,7 +523,6 @@ class ApiController extends Controller
 
     /**
      * 修改用户邮箱
-     * @Obelisk
      */
 
     public function actionChangeUserPhone()
@@ -591,7 +586,6 @@ class ApiController extends Controller
 
     /**
      * 上传头像
-     * @Obelisk
      */
 
     public function actionUpImage()
@@ -631,7 +625,6 @@ class ApiController extends Controller
 
     /**
      * 修改用户密码
-     * @Obelisk
      */
 
     public function actionChangeUserPass()
@@ -675,7 +668,6 @@ class ApiController extends Controller
 
     /**
      * 添加收藏
-     * @Obelisk
      */
 
     public function actionAddCollect()
@@ -738,7 +730,6 @@ class ApiController extends Controller
     /**
      * 预约
      * @return string
-     * @Obelisk
      */
     public function actionSubscribe()
     {
@@ -769,7 +760,6 @@ class ApiController extends Controller
     /**
      * 预约
      * @return string
-     * @Obelisk
      */
     public function actionSmart()
     {
@@ -784,5 +774,30 @@ class ApiController extends Controller
         $res['code'] = 1;
         $res['message'] = '我们的工作人员将于1-2个工作日内跟你联系';
         die(json_encode($res));
+    }
+
+    // 发送公开课课程信息
+    public function actionClassAddress()
+    {
+        $sms = new Sms();
+        $phone = Yii::$app->request->post('phone');
+        $title = Yii::$app->request->post('title');
+        $address = Yii::$app->request->post('address');
+        if (!empty($phone)) {
+            if(empty($address)){
+                $res['code'] = 0;
+                $res['message'] = '上课地址不能为空';
+                die(json_encode($res));
+            }
+            $content = '您预定的公开课：'.$title.'，上课地址为：'.$address;
+            $sms->send($phone, $content, $ext = '', $stime = '', $rrid = '');
+            $res['code'] = 1;
+            $res['message'] = '短信发送成功！';
+        } else {
+            $res['code'] = 0;
+            $res['message'] = '发送失败!手机号码为空！';
+        }
+        die(json_encode($res));
+
     }
 }

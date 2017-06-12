@@ -4,7 +4,7 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\knowledge;
-
+use app\libs\GetData;
 class KnowledgeController extends ApiControl
 {
     public $enableCsrfValidation = false;
@@ -26,21 +26,10 @@ class KnowledgeController extends ApiControl
                 return $this->render('add', ['data' => $data]);
             }
         } else {
-            $knowledgeData['major'] = Yii::$app->request->post('major', '');
-            $knowledgeData['name'] = Yii::$app->request->post('name', '');
-            $knowledgeData['id'] = Yii::$app->request->post('id', '');
-            $knowledgeData['analysis'] = Yii::$app->request->post('analysis', '');
-            $knowledgeData['related'] = Yii::$app->request->post('related', '');
-            if (empty($knowledgeData['major'])) {
-                die('<script>alert("请选择科目");history.go(-1);</script>');
-            }
-            if (empty($knowledgeData['name'])) {
-                die('<script>alert("请添加知识点名");history.go(-1);</script>');
-            }
-            if (empty($knowledgeData['analysis'])) {
-                die('<script>alert("请添加知识点分析");history.go(-1);</script>');
-            }
             $model = new Knowledge();
+            $getdata = new GetData();
+            $must = array('name' => '知识点名称', 'major' => '科目类', 'analysis' => '知识点分析');
+            $knowledgeData = $getdata->PostData($must);
             // 添加时不带id
             if (empty($knowledgeData['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%knowledge}}", $knowledgeData)->execute();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>资讯</title>
+<!--    <title>资讯</title>-->
     <meta name="keywords" content="SAT课程 SAT培训 申友SAT">
     <meta name="description" content="SAT课程 SAT培训 申友SAT">
     <!--阻止浏览器缓存-->

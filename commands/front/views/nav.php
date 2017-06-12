@@ -6,21 +6,21 @@
     </a>
     <ul class="s-nav-cnt pull-left">
         <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
-<!--        <li class="s-nav-work">-->
-<!--            <a href="#">做题<i class=" icon-caret-down"></i></a>-->
-<!--            <ul class="s-nav-showing">-->
-<!--                <li><a href="#">练习</a></li>-->
-<!--                <li><a href="#">知识库</a></li>-->
+        <li class="s-nav-work">
+            <a href="#">做题<i class="fa fa-sort-desc"></i></a>
+            <ul class="s-nav-showing">
+                <li><a href="/exercise.html" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
+                <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
 <!--                <li><a href="#">测评</a></li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li><a href="#">模考</a></li>-->
+            </ul>
+        </li>
+        <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
 <!--        <li><a href="#">报告</a></li>-->
-        <li><a <?php if($path=='class.html'|| (strpos($path,'class_details'))!==false){echo 'class="on"';}?> href="/class.html">课程</a></li>
-        <li><a <?php if($path=='teachers.html'|| (strpos($path,'teachers_details'))!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
+        <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">课程</a></li>
+        <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
-        <li><a  <?php if($path=='info.html'|| (strpos($path,'info_details'))!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
+        <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
 <!--    <form action="">-->
 <!--        <i class="fa fa-search"></i>-->

@@ -8,8 +8,9 @@
     <table border="1" width="80%">
         <tr>
             <th>id</th>
-            <th>知识点名</th>
             <th>科目</th>
+            <th>类别</th>
+            <th>知识点名</th>
             <th>知识点分析</th>
             <th>相关题目</th>
             <th>操作</th>
@@ -17,8 +18,9 @@
         <?php foreach ($data as $v){?>
         <tr>
             <td><?php echo $v['id']?></td>
-            <td><?php echo $v['name']?></td>
             <td><?php echo $v['major']?></td>
+            <td><?php echo $v['cate']?></td>
+            <td><?php echo $v['name']?></td>
             <td><?php echo $v['analysis']?></td>
             <td><?php echo $v['related']?></td>
             <td>
