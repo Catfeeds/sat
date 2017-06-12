@@ -40,8 +40,9 @@ class InfoController extends ApiControl
             $data = $getdata->PostData($must, 'info');
             $arr = $getdata->Auto('publishTime', 'hits');
             if (($data['cate']) == '公开课') {
-                $data['hits'] = 10;
+                $arr['hits'] = 10;
             }
+//            var_dump($data);die;
             $data = array_merge($data, $arr);
             if (empty($data['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%info}}", $data)->execute();

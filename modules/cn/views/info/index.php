@@ -47,8 +47,8 @@
            <?php }?>
           </dl>
         </div>
-        <h1><strong>IN</strong>FORMATION</h1>
-        <ul class="s-toggle">
+        <h1 id ='0'><strong>IN</strong>FORMATION</h1>
+        <ul class="s-toggle" >
           <li>
             <a href="/info.html?c=n" >新闻资讯</a></li>
           </li >
@@ -56,7 +56,7 @@
             <a href="/info.html?c=t" >备考资讯</a></li>
           </li>
         </ul>
-        <div>
+        <div >
           <div class="tab-content">
             <ul class="tab-pane active" id="active">
               <?php foreach($info as $v){?>

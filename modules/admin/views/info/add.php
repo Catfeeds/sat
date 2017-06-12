@@ -23,7 +23,6 @@
                         <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "开班信息" ?  'selected=selected':''?>>开班信息</option>
                         <option value ="公告" <?php echo isset($data)&& $data['cate']== "公告" ?  'selected=selected':''?>>公告</option>
                         <option value ="高分经验" <?php echo isset($data)&& $data['cate']== "高分经验" ?  'selected=selected':''?>>高分经验</option>
-
                     </select>
                 </td>
             </tr>
@@ -82,7 +81,7 @@
 <script>
     //实例化编辑器
     var ue = UE.getEditor('editor');
-        $("#cate").change(function(){
+    function chageCate(){
         var cate = document.getElementById("cate").value;
         if(cate=="公开课"){
             $('#name').show();
@@ -91,8 +90,9 @@
             $('#name').hide();
             $('#activeTime').hide();
         }
-        })
-
-
-
+    }
+    chageCate();
+    $("#cate").change(function(){
+        chageCate();
+    })
 </script>

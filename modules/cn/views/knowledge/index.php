@@ -6,10 +6,10 @@
       <div class="s-tag-list pull-left">
         <ul role="tablist">
           <li role="presentation" class="active">
-            <a class="active" href="#first" aria-controls="first" role="tab" data-toggle="tab">逻辑</a>
+            <a class="active" href="#first" aria-controls="first" role="tab" data-toggle="tab">表达</a>
           </li>
           <li role="presentation">
-            <a href="#second" aria-controls="second" role="tab" data-toggle="tab">SC</a>
+            <a href="#second" aria-controls="second" role="tab" data-toggle="tab">语法</a>
           </li>
           <li role="presentation">
             <a href="#third" aria-controls="third" role="tab" data-toggle="tab">Math</a>

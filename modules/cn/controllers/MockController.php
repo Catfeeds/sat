@@ -15,12 +15,11 @@ class MockController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
-//        $keyword='OG';
-        $data=Yii::$app->db->createCommand("select name,time from {{%testpaper}}")->queryAll();
-        $og=Yii::$app->db->createCommand("select name,time from {{%testpaper}} where name='OG'")->queryAll();
-        $princeton=Yii::$app->db->createCommand("select name,time from {{%testpaper}} where name='普林斯顿'")->queryAll();
-        $kaplan=Yii::$app->db->createCommand("select name,time from {{%testpaper}} where name='开普兰'")->queryAll();
-        $barron=Yii::$app->db->createCommand("select name,time from {{%testpaper}} where name='BARRON'")->queryAll();
+        $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
+        $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
+        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='普林斯顿'")->queryAll();
+        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='开普兰'")->queryAll();
+        $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
         return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
     }
 
@@ -40,4 +39,8 @@ class MockController extends Controller
 //        }
 //        die(json_encode($data));
 //    }
+    // 模考报告的生成
+    // 1、判断正确略
+    // 2、得出报告分数（数学，reading。writing）
+
 }

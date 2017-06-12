@@ -19,24 +19,12 @@
               <?php foreach($brr[0] as $v){
                 echo '<li>'.$v[0].'</li>';
               }?>
-<!--              <li>阅读</li>-->
-<!--              <li>文法</li>-->
-<!--              <li>词汇</li>-->
-<!--              <li>数学</li>-->
-<!--              <li>写作</li>-->
-<!--              <li>模考点评</li>-->
             </ul>
             <ul>
               <li>课时</li>
               <?php foreach($brr[0] as $v){
                 echo '<li>'.$v[1].'</li>';
               }?>
-<!--              <li>30</li>-->
-<!--              <li>30</li>-->
-<!--              <li>15</li>-->
-<!--              <li>15</li>-->
-<!--              <li>15</li>-->
-<!--              <li>15</li>-->
             </ul>
             <a class="s-consult" href="/class_details/<?php echo $data[0]['id']?>.html">查看详情</a>
           </div>

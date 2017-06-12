@@ -16,7 +16,6 @@ class KnowledgeController extends Controller
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc")->queryAll();
-//        var_dump($data);die;
         return $this->render('index',['data'=>$data]);
     }
 
