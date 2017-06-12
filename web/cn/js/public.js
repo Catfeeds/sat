@@ -47,17 +47,17 @@ $(function () {
   $('.s-login .form-control').focus(function () {
     hideTips($(this).attr('id'));
   })
-  //$(document).on('keydown',function(){
-  //  if ($('.s-login-cnt').css('display') == 'block') {
-  //    keyLogin();
-  //  }
-  //  if ($('.s-sign-cnt').css('display') == 'block') {
-  //    regTel();
-  //  }
-  //  if ($('.s-forget-cnt').css('display') == 'block') {
-  //    findPwd();
-  //  }
-  //})
+  $(document).on('keydown',function(){
+    if ($('.s-login-cnt').css('display') == 'block') {
+      keyLogin();
+    }
+    if ($('.s-sign-cnt').css('display') == 'block') {
+      keySign();
+    }
+    if ($('.s-forget-cnt').css('display') == 'block') {
+      keyFind();
+    }
+  })
 })
 //登录注册框隐藏
 function loginOut() {
@@ -200,7 +200,6 @@ function loginIn() {
       localStorage.setItem('userName',userName);
     }
     $.post('/user/api/check-login', {userName: userName, userPass: loginPwd}, function(data){
-      console.log(data);
       alert(data.message);
       if (data.code) {
        loginOut();

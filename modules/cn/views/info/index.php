@@ -126,10 +126,15 @@
       </div>
     </div>
   </section>
-
-
 <script>
  $(function() {
+//   页面刷新跳转到指定高度
+  $(window).on('load', function () {
+    var location = window.location.href;
+    if (location.indexOf('?') != -1) {
+      $(window).scrollTop(620)
+    }
+  })
    var toggle = window.location.href.split('?')[1];
    if (!toggle){
      $('.s-toggle li').eq(0).addClass('active')
