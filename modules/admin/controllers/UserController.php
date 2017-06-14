@@ -10,7 +10,7 @@ namespace app\modules\admin\controllers;
 use app\modules\admin\models\Apply;
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\user;
+use app\modules\admin\models\User;
 
 class UserController extends ApiControl
 {

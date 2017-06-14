@@ -13,13 +13,14 @@
             <th>id</th>
             <th>题号</th>
             <th>题目</th>
-            <th>选项A</th>
-            <th>选项B</th>
-            <th>选项C</th>
-            <th>选项D</th>
-            <th>选项E</th>
+            <th>短文</th>
+
+<!--            <th>选项A</th>-->
+<!--            <th>选项B</th>-->
+<!--            <th>选项C</th>-->
+<!--            <th>选项D</th>-->
+<!--            <th>选项E</th>-->
             <th>答案</th>
-<!--            <th>分数</th>-->
             <th>科目</th>
             <th>短文id</th>
             <th>题目来源</th>
@@ -30,19 +31,20 @@
         <?php
 //        var_dump($data);exit;
         foreach($data as $v){?>
-            <tr>
+            <tr style="line-height:50px;overflow:hidden;">
                 <td><? echo $v['id']?></td>
                 <td><? echo $v['number']?></td>
                 <td style="overflow:hidden;"><? echo $v['content']?></td>
-                <td style="overflow:hidden;"><? echo $v['keyA']?></td>
-                <td style="overflow:hidden;"><? echo $v['keyB']?></td>
-                <td style="overflow:hidden;"><? echo $v['keyC']?></td>
-                <td style="overflow:hidden;"><? echo $v['keyD']?></td>
-                <td style="overflow:hidden;"><? echo $v['keyE']?></td>
+                <td style="overflow:hidden;"><? echo  ($v['essay']!=false)? '此处有短文':'无内容';?></td>
+<!--                <td style="overflow:hidden;">--><?// echo $v['keyA']?><!--</td>-->
+<!--                <td style="overflow:hidden;">--><?// echo $v['keyB']?><!--</td>-->
+<!--                <td style="overflow:hidden;">--><?// echo $v['keyC']?><!--</td>-->
+<!--                <td style="overflow:hidden;">--><?// echo $v['keyD']?><!--</td>-->
+<!--                <td style="overflow:hidden;">--><?// echo $v['keyE']?><!--</td>-->
                 <td><? echo $v['answer']?></td>
 <!--                <td>--><?// echo $v['score']?><!--</td>-->
                 <td><? echo $v['major']?></td>
-                <td><? echo $v['essayId']?></td>
+                <td><? echo $v['pid']?></td>
                 <td><? echo $v['sourceId']?></td>
                 <td><? echo $v['subScores']?></td>
                 <td><? echo $v['crosstestScores']?></td>

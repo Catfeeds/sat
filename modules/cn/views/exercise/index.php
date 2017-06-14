@@ -16,7 +16,7 @@
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
-          <dd class="active"><span data-id="All">全部</span></dd>
+          <dd class="active"><span data-id="All" onclick="getCate('')">全部</span></dd>
           <dd><span onclick="getCate('OG')" >OG</span></dd>
           <dd><span onclick="getCate('princeton')" >普林斯顿</span></dd>
           <dd><span onclick="getCate('kaplan')">开普兰</span></dd>
@@ -24,31 +24,13 @@
         </dl>
         <div class="s-subject-cnt">
           <ul>
+            <?php foreach($data as $k=>$v){ ?>
             <li>
-              <h3>题目标题</h3>
-              <p>fuif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jnsan njak fjoaeg lnda fiaiuwe asbv  nask</p>
-              <a href="#">做题</a>
+              <h3><?php echo $v['id']?></h3>
+              <p><?php echo isset($v['content'])? $v['content']:$v['essay']?></p>
+              <a href="/exercise_details/<?php echo $v['id']?>.html">做题</a>
             </li>
-            <li>
-              <h3>题目标题</h3>
-              <p>fuif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jnsan njak fjoaeg lnda fiaiuwe asbv  nask</p>
-              <a href="#">做题</a>
-            </li>
-            <li>
-              <h3>题目标题</h3>
-              <p>fuif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jnsan njak fjoaeg lnda fiaiuwe asbv  nask</p>
-              <a href="#">做题</a>
-            </li>
-            <li>
-              <h3>题目标题</h3>
-              <p>fuif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jnsan njak fjoaeg lnda fiaiuwe asbv  nask</p>
-              <a href="#">做题</a>
-            </li>
-            <li>
-              <h3>题目标题</h3>
-              <p>fuif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jnsan njak fjoaeg lnda fiaiuwe asbv  nask</p>
-              <a href="#">做题</a>
-            </li>
+            <?php }?>
           </ul>
         </div>
       </div>
@@ -142,5 +124,6 @@
       console.log(url+'/exercise.html?path=math'+'&c='+cate);
 //      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
     }
+
   }
 </script>

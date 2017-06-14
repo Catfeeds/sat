@@ -8,9 +8,9 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-use yii\web\controller;
-use app\modules\cn\models\info;
-use app\libs\pager;
+use yii\web\Controller;
+use app\modules\cn\models\Info;
+use app\libs\Pager;
 
 class InfoController extends Controller
 {

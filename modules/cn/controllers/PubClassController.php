@@ -8,7 +8,7 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-use yii\web\controller;
+use yii\web\Controller;
 use app\modules\cn\models\Pubclass;
 use app\modules\cn\models\Info;
 
@@ -18,7 +18,7 @@ class PubclassController extends Controller
     public $enableCsrfValidation = false;
     public function actionIndex()
     {
-        $pubclass = new pubclass();
+        $pubclass = new Pubclass();
         $pubclass->getTime();
         $data = Yii::$app->db->createCommand("select * from {{%info}} where isShow=1 and cate='公开课'")->queryAll();
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课'")->queryAll();

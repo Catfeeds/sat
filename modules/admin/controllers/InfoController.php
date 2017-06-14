@@ -9,7 +9,7 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\info;
+use app\modules\admin\models\Info;
 use app\libs\GetData;
 
 class InfoController extends ApiControl
