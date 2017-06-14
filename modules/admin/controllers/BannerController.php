@@ -10,7 +10,7 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\banner;
+use app\modules\admin\models\Banner;
 use app\libs\GetData;
 class BannerController extends ApiControl
 {

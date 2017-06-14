@@ -3,7 +3,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\knowledge;
+use app\modules\admin\models\Knowledge;
 use app\libs\GetData;
 class KnowledgeController extends ApiControl
 {

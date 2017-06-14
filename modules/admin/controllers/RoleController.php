@@ -10,8 +10,8 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\role;
-use app\modules\admin\models\admin;
+use app\modules\admin\models\Role;
+use app\modules\admin\models\Admin;
 
 class RoleController extends ApiControl
 {

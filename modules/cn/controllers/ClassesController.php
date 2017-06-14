@@ -8,9 +8,9 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-use yii\web\controller;
-use app\modules\cn\models\classes;
-use app\modules\cn\models\teachers;
+use yii\web\Controller;
+use app\modules\cn\models\Classes;
+use app\modules\cn\models\Teachers;
 
 class ClassesController extends Controller
 {

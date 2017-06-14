@@ -8,7 +8,7 @@
 namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
 use yii;
-use app\libs\Pager;
+
 class Info extends ActiveRecord
 {
     public static function tableName()

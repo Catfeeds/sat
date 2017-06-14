@@ -201,7 +201,7 @@ class Pager
                 }else{
                     $str.="<li>";
                 }
-                $str.="<a href='{$this->pageUrl}=" .$i."#0'>$i</a>";
+                $str.="<a href='{$this->pageUrl}=" .$i."'>$i</a>";
                 $str.='</li>';
             }
         }

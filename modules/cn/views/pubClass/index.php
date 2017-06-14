@@ -59,12 +59,6 @@
     <ul class="pagination clearfix"></ul>
   </section>
 <script>
-
-  $('.s-apply').click(function() {
-//      console.log($(this).parent().find('.s-apply-num').html());
-//    console.log($(this).next().attr('href').split('/')[2].split('.')[0]);
-    applyNum($(this));
-    })
   function applyNum(ele) {
     var _this = ele;
     var num =  _this.parent().find('.s-apply-num').html();
@@ -138,6 +132,9 @@
   }
 
   $(function(){
+    $('.s-apply').click(function() {
+      applyNum($(this));
+    });
     getData(1);
   });
 

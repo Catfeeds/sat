@@ -9,8 +9,8 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\contact;
-use app\modules\admin\models\joboffers;
+use app\modules\admin\models\Contact;
+use app\modules\admin\models\Joboffers;
 use app\libs\GetData;
 class AboutController extends ApiControl
 {

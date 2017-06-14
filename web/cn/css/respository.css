@@ -56,9 +56,21 @@
   border-bottom: 1px dashed rgb(238,238,238);
 }
 .s-tag-cnt h3 {
+  position: relative;
   margin-bottom: 20px;
+  padding-bottom: 10px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
+}
+.s-tag-cnt h3:after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 2px;
+  background-color: rgb(54,178,251);
 }
 .s-tag-cnt li {
   display: inline-block;
@@ -72,7 +84,7 @@
   height: 40px;
   line-height: 40px;
   text-align: center;
-  margin-right: 65px;
+  margin-right: 70px;
   border: 1px solid #000;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -80,4 +92,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.s-tag-cnt li:nth-child(4n+1) {
+  margin-right: 0;
 }

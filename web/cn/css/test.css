@@ -26,7 +26,7 @@
 .s-test .s-label-list li:last-child {
   border-right: 1px solid #000;
 }
-.s-test .s-label-list li.active {
+.s-test .s-label-list li.active a{
   color: rgb(54,178,251);
 }
 .s-test .s-label-list li.active:before,

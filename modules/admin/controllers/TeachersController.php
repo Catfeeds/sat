@@ -9,7 +9,7 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\teachers;
+use app\modules\admin\models\Teachers;
 use app\libs\GetData;
 
 class TeachersController extends ApiControl

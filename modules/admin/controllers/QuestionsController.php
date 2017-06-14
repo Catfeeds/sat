@@ -9,9 +9,9 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\questions;
-use app\modules\admin\models\essay;
-use app\modules\admin\models\testPaper;
+use app\modules\admin\models\Questions;
+use app\modules\admin\models\Essay;
+use app\modules\admin\models\TestPaper;
 use app\libs\GetData;
 
 class QuestionsController extends ApiControl
@@ -30,17 +30,20 @@ class QuestionsController extends ApiControl
         $apps = Yii::$app->request;
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
+            // 取出试卷的名称
+            $arr = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
+//            var_dump($arr);die;
             if ($id == '') {
-                return $this->render('add');
+                return $this->render('add',['arr'=>$arr]);
             } else {
-                $data = Yii::$app->db->createCommand("select e.*,q.* from {{%questions}} q join {{%essay}} e on q.essayId=e.id where q.id=" . $id)->queryOne();
-                return $this->render('add', ['data' => $data]);
+                $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $id)->queryOne();
+                return $this->render('add', ['data' => $data,'arr'=>$arr]);
             }
         } else {
             // 添加数据到数据
             $model = new Questions();
             $getdata = new GetData();
-            $must = array('content' => '题目', 'answer' => '答案','section' => '所属小节');
+            $must = array('sourceId' => '试卷','section' => '所属小节');
             $data = $getdata->PostData($must);
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
@@ -117,7 +120,7 @@ class QuestionsController extends ApiControl
     public function actionEssay()
     {
         $getdata = new GetData();
-        $model = new essay();
+        $model = new Essay();
         $must = array('essay' => '短文');
         $data = $getdata->PostData($must);
         if ($data['id'] == '') {

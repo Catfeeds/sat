@@ -7,7 +7,6 @@
  */
 namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
-use app\modules\admin\models\info;
 use yii;
 class Collection extends ActiveRecord{
     public static function tableName()

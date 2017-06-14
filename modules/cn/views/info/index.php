@@ -47,7 +47,7 @@
            <?php }?>
           </dl>
         </div>
-        <h1 id ='0'><strong>IN</strong>FORMATION</h1>
+        <h1><strong>IN</strong>FORMATION</h1>
         <ul class="s-toggle" >
           <li>
             <a href="/info.html?c=n" >新闻资讯</a></li>
@@ -126,10 +126,15 @@
       </div>
     </div>
   </section>
-
-
 <script>
  $(function() {
+//   页面刷新跳转到指定高度
+  $(window).on('load', function () {
+    var location = window.location.href;
+    if (location.indexOf('?') != -1) {
+      $(window).scrollTop(620)
+    }
+  })
    var toggle = window.location.href.split('?')[1];
    if (!toggle){
      $('.s-toggle li').eq(0).addClass('active')

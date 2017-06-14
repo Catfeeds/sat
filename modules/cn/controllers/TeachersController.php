@@ -8,9 +8,9 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-use yii\web\controller;
+use yii\web\Controller;
 use app\libs\Pager;
-use app\modules\cn\models\teachers;
+use app\modules\cn\models\Teachers;
 
 class TeachersController extends Controller
 {
