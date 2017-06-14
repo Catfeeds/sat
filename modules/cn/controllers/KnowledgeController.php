@@ -8,7 +8,7 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-use yii\web\controller;
+use yii\web\Controller;
 
 class KnowledgeController extends Controller
 {
@@ -16,7 +16,6 @@ class KnowledgeController extends Controller
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc")->queryAll();
-//        var_dump($data);die;
         return $this->render('index',['data'=>$data]);
     }
 

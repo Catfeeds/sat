@@ -200,7 +200,6 @@ function loginIn() {
       localStorage.setItem('userName',userName);
     }
     $.post('/user/api/check-login', {userName: userName, userPass: loginPwd}, function(data){
-      console.log(data);
       alert(data.message);
       if (data.code) {
        loginOut();

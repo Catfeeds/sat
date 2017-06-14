@@ -48,7 +48,7 @@
           </dl>
         </div>
         <h1><strong>IN</strong>FORMATION</h1>
-        <ul class="s-toggle">
+        <ul class="s-toggle" >
           <li>
             <a href="/info.html?c=n" >新闻资讯</a></li>
           </li >
@@ -56,7 +56,7 @@
             <a href="/info.html?c=t" >备考资讯</a></li>
           </li>
         </ul>
-        <div>
+        <div >
           <div class="tab-content">
             <ul class="tab-pane active" id="active">
               <?php foreach($info as $v){?>
@@ -126,10 +126,15 @@
       </div>
     </div>
   </section>
-
-
 <script>
  $(function() {
+//   页面刷新跳转到指定高度
+  $(window).on('load', function () {
+    var location = window.location.href;
+    if (location.indexOf('?') != -1) {
+      $(window).scrollTop(620)
+    }
+  })
    var toggle = window.location.href.split('?')[1];
    if (!toggle){
      $('.s-toggle li').eq(0).addClass('active')

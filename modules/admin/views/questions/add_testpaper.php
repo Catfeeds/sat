@@ -16,8 +16,8 @@
                     <select name="name">
                         <option value ="">请选择类型</option>
                         <option value ="OG" <?php echo isset($data)&& $data['name']=="OG" ?  'selected':''?>>OG</option>
-                        <option value ="普林斯顿" <?php echo isset($data)&& $data['name']=="普林斯顿" ?  'selected':''?>>普林斯顿</option>
-                        <option value ="开普兰" <?php echo isset($data)&& $data['name']=="开普兰" ?  'selected':''?>>开普兰</option>
+                        <option value ="princeton" <?php echo isset($data)&& $data['name']=="princeton" ?  'selected':''?>>普林斯顿</option>
+                        <option value ="kaplan" <?php echo isset($data)&& $data['name']=="kaplan" ?  'selected':''?>>开普兰</option>
                         <option value ="BARRON" <?php echo isset($data)&& $data['name']=="BARRON" ?  'selected':''?>>BARRON</option>
                     </select>
                 </td>

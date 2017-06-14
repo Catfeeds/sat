@@ -6,10 +6,10 @@
       <div class="s-tag-list pull-left">
         <ul role="tablist">
           <li role="presentation" class="active">
-            <a class="active" href="#first" aria-controls="first" role="tab" data-toggle="tab">逻辑</a>
+            <a class="active" href="#first" aria-controls="first" role="tab" data-toggle="tab">表达</a>
           </li>
           <li role="presentation">
-            <a href="#second" aria-controls="second" role="tab" data-toggle="tab">SC</a>
+            <a href="#second" aria-controls="second" role="tab" data-toggle="tab">语法</a>
           </li>
           <li role="presentation">
             <a href="#third" aria-controls="third" role="tab" data-toggle="tab">Math</a>
@@ -19,13 +19,13 @@
       <div class="s-tag-cnt tab-content">
         <div role="tabpanel" class="tab-pane active" id="first">
           <ul class="s-development">
-            <h3>development</h3>
+            <h3>Development</h3>
             <?php foreach ($data as $v){if($v['cate']=='development'){?>
             <li><a href="#"><?echo $v['name']?></a></li>
             <?php }}?>
           </ul>
           <ul class="s-organization">
-          <h3>organization</h3>
+          <h3>Organization</h3>
             <?php foreach ($data as $v){if($v['cate']=='organization'){?>
               <li><a href="#"><?echo $v['name']?></a></li>
             <?php }}?>
@@ -35,7 +35,7 @@
 <!--          <li><a href="#">style and tone</a></li>-->
         </ul>
           <ul class="s-effective">
-            <h3>effective language use</h3>
+            <h3>Effective language use</h3>
             <?php foreach ($data as $v){if($v['cate']=='effective language use'){?>
               <li><a href="#"><?echo $v['name']?></a></li>
             <?php }}?>
@@ -46,7 +46,7 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="second">
           <ul class="s-structure">
-            <h3>structure</h3>
+            <h3>Structure</h3>
             <?php foreach ($data as $v){if($v['cate']=='structure'){?>
               <li><a href="#"><?echo $v['name']?></a></li>
             <?php }}?>
@@ -57,7 +57,7 @@
 <!--            <li><a href="#">subordination and coordination</a></li>-->
           </ul>
           <ul class="s-usage">
-            <h3>usage</h3>
+            <h3>Usage</h3>
             <?php foreach ($data as $v){if($v['cate']=='usage'){?>
               <li><a href="#"><?echo $v['name']?></a></li>
             <?php }}?>
@@ -69,7 +69,7 @@
 <!--            <li><a href="#">confused words</a></li>-->
           </ul>
           <ul class="s-punctutation">
-            <h3>punctutation</h3>
+            <h3>Punctutation</h3>
             <?php foreach ($data as $v){if($v['cate']=='punctutation'){?>
               <li><a href="#"><?echo $v['name']?></a></li>
             <?php }}?>

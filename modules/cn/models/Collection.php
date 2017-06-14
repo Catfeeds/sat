@@ -2,20 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2017/4/6 0006
- * Time: 17:11
+ * Date: 2017/5/4 0004
+ * Time: 10:01
  */
 namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
 use yii;
-
-class Info extends ActiveRecord
-{
+class Collection extends ActiveRecord{
     public static function tableName()
     {
-        return '{{%info}}';
+        return '{{%collection}}';
     }
-
-
-
 }

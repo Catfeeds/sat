@@ -18,9 +18,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -29,9 +29,9 @@
             <ul class="s-subject">
               <?php foreach($og as $k=>$v){
                 if($k==0) {
-                  echo ' <li><a href="#">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 
@@ -41,9 +41,9 @@
             <ul class="s-subject">
               <?php foreach($princeton as $k=>$v){
                 if($k==0) {
-                  echo ' <li><a href="#">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 
@@ -53,9 +53,9 @@
             <ul class="s-subject">
               <?php foreach($kaplan as $k=>$v){
                 if($k==0) {
-                  echo ' <li><a href="#">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -64,9 +64,9 @@
             <ul class="s-subject">
               <?php foreach($barron as $k=>$v){
                 if($k==0) {
-                  echo ' <li><a href="#">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details/'.$v["id"].'.html">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -86,51 +86,33 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details?m=reading&id='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details?m=reading&id='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
-<!--              <li><a href="#">普林斯顿第二套</a></li>-->
-<!--              <li><a href="#">普林斯顿第三套</a></li>-->
-<!--              <li><a href="#">普林斯顿第一套</a><i class="icon-lock"></i></li>-->
-<!--              <li><a href="https://www.baidu.com/">BARRON'S NEW SAT 3</a><i class="icon-lock"></i></li>-->
-<!--              <li><a href="#">BARRON'S NEW SAT 5</a><i class="icon-lock"></i></li>-->
-<!--              <li><a href="#">BARRON'S NEW SAT 1</a></li>-->
-<!--              <li><a href="#">开普兰第一套</a></li>-->
-<!--              <li><a href="#">普林斯顿第一套</a></li>-->
-<!--              <li><a href="#">BARRON'S NEW SAT 3</a></li>-->
-<!--              <li><a href="#">BARRON'S NEW SAT 3</a></li>-->
             </ul>
           </div>
           <div role="tabpanel" class="tab-pane" id="Math">
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details?m=math&id='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details?m=math&id='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
-<!--              <li><a href="#">普林斯顿第二套</a></li>-->
-<!--              <li><a href="#">普林斯顿第三套</a></li>-->
-<!--              <li><a href="#">普林斯顿第一套</a><i class="icon-lock"></i></li>-->
-<!--              <li><a href="#">BARRON'S NEW SAT 3</a><i class="icon-lock"></i></li>-->
-<!--              <li><a href="#">BARRON'S NEW SAT 5</a><i class="icon-lock"></i></li>-->
             </ul>
           </div>
           <div role="tabpanel" class="tab-pane" id="Write">
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($k==0){
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="mock_details?m=writing&id='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="#">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="mock_details?m=writing&id='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
-<!--              <li><a href="#">普林斯顿第二套</a></li>-->
-<!--              <li><a href="#">普林斯顿第三套</a></li>-->
-<!--              <li><a href="#">普林斯顿第一套</a><i class="icon-lock"></i></li>-->
             </ul>
           </div>
         </div>
@@ -158,10 +140,10 @@
   <!--底部-->
 
 <script>
-  jQuery(".s-mock-side").slide({mainCell:".s-score ul",autoPlay:true,effect:"topMarquee",vis:8,interTime:50});
+  jQuery(".s-mock-side").slide({mainCell:".s-score ul",autoPlay:true,effect:"topMarquee",vis:8,interTime:100});
   $(function () {
     $('.s-mock-cnt .s-subject li a').click(function () {
-      if ($(this).next().hasClass('icon-lock')) {
+      if ($(this).next().hasClass('fa-lock')) {
         if (!sessionStorage.getItem('userId')) {
           alert('请登录');
           return false;
