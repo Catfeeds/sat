@@ -98,23 +98,23 @@
                 <ul class="s-detail">
                     <li class="s-img"><img src="/cn/images/sat-course01.png" alt=""></li>
                     <li class="s-font">
-                        <h2><?php echo $classes[0]['cate']?></h2>
-                        <p><?php echo $classes[0]['introduction']?></p>
-                        <a href="/class_details/<?php echo $classes[0]['id']?>.html">查看更多</a>
+                        <h2><?php echo isset($classes[0]['cate'])?$classes[0]['cate']:''?></h2>
+                        <p><?php echo isset($classes[0]['introduction'])?$classes[0]['introduction']:''?></p>
+                        <a href="/class_details/<?php echo isset($classes[0]['id'])?$classes[0]['id']:''?>.html">查看更多</a>
                     </li>
                     <li class="s-img"><img src="/cn/images/sat-course02.png" alt=""></li>
                 </ul>
                 <ul class="s-detail">
                     <li class="s-font">
-                        <h2><?php echo $classes[1]['cate']?></h2>
-                        <p><?php echo $classes[1]['introduction']?></p>
-                        <a href="/class_details/<?php echo $classes[1]['id']?>.html">查看更多</a>
+                        <h2><?php echo isset($classes[1]['cate'])?$classes[1]['cate']:''?></h2>
+                        <p><?php echo isset($classes[1]['introduction'])?$classes[1]['introduction']:''?></p>
+                        <a href="/class_details/<?php echo isset($classes[1]['id'])?$classes[1]['id']:''?>.html">查看更多</a>
                     </li>
                     <li class="s-img"><img src="/cn/images/sat-course03.png" alt=""></li>
                     <li class="s-font">
-                        <h2><?php echo $classes[2]['cate']?></h2>
-                        <p><?php echo $classes[2]['introduction']?></p>
-                        <a href="/class_details/<?php echo $classes[2]['id']?>.html">查看更多</a>
+                        <h2><?php echo isset($classes[2]['cate'])?$classes[2]['cate']:''?></h2>
+                        <p><?php echo isset($classes[2]['introduction'])?$classes[2]['introduction']:''?></p>
+                        <a href="/class_details/<?php echo isset($classes[2]['id'])?$classes[2]['id']:''?>.html">查看更多</a>
                     </li>
                 </ul>
             </div>
@@ -146,8 +146,8 @@
                                 <img src="/cn/images/sat-article01.png" alt="">
                             </a>
                             <div class="s-article-title">
-                                <h3><a href="/info_details/<?php echo  $infoNews[0]['id']?>.html"><?php echo $infoNews[0]['title']?></a></h3>
-                                <p><?php echo $infoNews[0]['summary']?></p>
+                                <h3><a href="/info_details/<?php echo isset($infoNews[0]['id'])?$infoNews[0]['id']:''?>.html"><?php echo isset($infoNews[0]['title'])?$infoNews[0]['title']:''?></a></h3>
+                                <p><?php echo isset($infoNews[0]['summary'])?$infoNews[0]['summary']:''?></p>
                             </div>
                         </li>
                         <?php foreach($infoNews as $k=>$v){if($k>=1){?>
@@ -168,8 +168,8 @@
                                 <img src="/cn/images/sat-article02.png" alt="">
                             </a>
                             <div class="s-article-title">
-                                <h3><a href="/info_details/<?php echo  $infoTest[0]['id']?>.html"><?php echo $infoTest[0]['title']?></a></h3>
-                                <p><?php echo $infoTest[0]['summary']?></p>
+                                <h3><a href="/info_details/<?php echo  isset($infoTest[0]['id'])?$infoTest[0]['id']:''?>.html"><?php echo isset($infoTest[0]['title'])?$infoTest[0]['title']:''?></a></h3>
+                                <p><?php echo isset($infoTest[0]['summary'])? $infoTest[0]['summary']:''?></p>
                             </div>
                         </li>
                         <?php foreach($infoTest as $k=>$v){if($k>=1){?>
@@ -190,8 +190,8 @@
                                 <img src="/cn/images/sat-article03.png" alt="">
                             </a>
                             <div class="s-article-title">
-                                <h3><a href="#"><?php echo $info3[0]['title']?></a></h3>
-                                <p><?php echo $info3[0]['summary']?></p>
+                                <h3><a href="#"><?php echo isset($info3[0]['title'])?$info3[0]['title']:''?></a></h3>
+                                <p><?php echo isset($info3[0]['summary'])?$info3[0]['summary']:''?></p>
                             </div>
                         </li>
                         <?php foreach($info3 as $k=>$v){if($k>=1){?>
