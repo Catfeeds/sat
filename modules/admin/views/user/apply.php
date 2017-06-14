@@ -10,7 +10,6 @@
                 <th>操作</th>
             </tr>
         <?php
-//        var_dump($data);die;
         foreach($data as $v){?>
             <tr>
                 <td><? echo $v['id']?></td>
