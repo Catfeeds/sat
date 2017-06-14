@@ -12,7 +12,7 @@ use yii\web\Controller;
 use app\modules\cn\models\Pubclass;
 use app\modules\cn\models\Info;
 
-class PubClassController extends Controller
+class PubclassController extends Controller
 {
     public $layout='cn.php';
     public $enableCsrfValidation = false;
