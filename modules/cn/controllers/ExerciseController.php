@@ -18,8 +18,10 @@ class ExerciseController extends Controller
     {
        $model=new Questions();
         $data=$model->data();
+        $str=$data['str'];
+        unset($data['str']);
 //        var_dump($data);die;
-        return $this->render('index',['data'=>$data]);
+        return $this->render('index',['data'=>$data,'page'=>$str]);
     }
 
     public function actionExercise()
@@ -27,6 +29,7 @@ class ExerciseController extends Controller
         $id=Yii::$app->request->get('id');
         $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=".$id)->queryOne();
 //        如果有短文或图片
+//        var_dump($data);die;
         return $this->render('exercise',['data'=>$data]);
     }
 

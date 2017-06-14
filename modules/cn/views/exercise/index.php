@@ -24,15 +24,31 @@
         </dl>
         <div class="s-subject-cnt">
           <ul>
-            <?php foreach($data as $k=>$v){ ?>
-            <li>
-              <h3><?php echo $v['id']?></h3>
-              <p><?php echo isset($v['content'])? $v['content']:$v['essay']?></p>
-              <a href="/exercise_details/<?php echo $v['id']?>.html">做题</a>
-            </li>
-            <?php }?>
+<!--            --><?php //foreach($data as $k=>$v){ if(isset($v['content']) && $v['pid']==false){?>
+<!--            <li>-->
+<!--              <h3>--><?php //echo $v['id']?><!--</h3>-->
+<!--              <p>--><?php //echo isset($v['content']) && $v['pid']==false? $v['content']:$v['essay']?><!--</p>-->
+<!--              <a href="/exercise_details/--><?php //echo $v['id']?><!--.html">做题</a>-->
+<!--            </li>-->
+<!--            -->
+            <?php foreach($data as $k=>$v){
+            if($v['content']!=false && $v['pid']==false){
+              $str='<li>';
+              $str.='<h3>'.$v['id'].'</h3>';
+              $str.='<p>'.$v['content'].'</p>';
+              $str.='<a href="/exercise_details/'.$v['id'].'.html">做题</a></li>';
+              echo $str;
+             }else{
+              $str='<li>';
+              $str.='<h3>'.$v['id'].'</h3>';
+              $str.='<p>'.$v['essay'].'</p>';
+              $str.='<a href="/exercise_details/'.$v['id'].'.html">做题</a></li>';
+              echo $str;
+            }}?>
           </ul>
+
         </div>
+        <?php echo $page?>
       </div>
       <div class="s-right pull-right">
         <div class="s-right-adv">
