@@ -8,7 +8,7 @@
 namespace app\modules\cn\controllers;
 
 use yii;
-use yii\web\controller;
+use yii\web\Controller;
 
 class AboutController extends Controller
 {

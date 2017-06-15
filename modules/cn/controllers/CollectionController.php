@@ -9,7 +9,7 @@ namespace app\modules\cn\controllers;
 
 use app\modules\cn\models\Collection;
 use yii;
-use yii\web\controller;
+use yii\web\Controller;
 
 class CollectionController extends Controller
 {

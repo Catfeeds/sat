@@ -7,7 +7,7 @@
  */
 namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
-use app\modules\admin\models\info;
+use app\modules\admin\models\Info;
 use yii;
 class Pubclass extends ActiveRecord{
     public function getTime()

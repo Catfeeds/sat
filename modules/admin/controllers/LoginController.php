@@ -9,7 +9,6 @@
 namespace app\modules\admin\controllers;
 
 use yii;
-use app\libs\ApiControl;
 use app\modules\admin\models\Admin;
 use yii\web\Controller;
 class LoginController extends Controller

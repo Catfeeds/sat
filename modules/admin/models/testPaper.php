@@ -9,7 +9,7 @@ namespace app\modules\admin\models;
 
 use yii\db\ActiveRecord;
 
-class testPaper extends ActiveRecord
+class TestPaper extends ActiveRecord
 {
     public static function tableName()
     {

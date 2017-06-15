@@ -3,9 +3,6 @@ namespace app\modules\user\controllers;
 
 use yii;
 
-//use app\libs\ThinkUApiControl;
-//use app\modules\cn\models\Content;
-//use app\modules\cn\models\Collect;
 use app\modules\user\models\Login;
 use app\libs\Sms;
 use yii\web\Controller;
