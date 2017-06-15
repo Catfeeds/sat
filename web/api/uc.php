@@ -151,7 +151,7 @@ class uc_note {
         $u = $this->dbLink->fetch_first($sql);
         if (!$u) {
             $time = time();
-            $sql = "INSERT INTO sat_user ('userName','email','userPass','phone','createTime','uid') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}')";
+            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}')";
             $this->dbLink->query($sql);
             $userId = $this->dbLink->insert_id();
             $data = array(
@@ -171,13 +171,14 @@ class uc_note {
                 $sql = "UPDATE sat_user SET email = '$email' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
-            if($username != $u['userName']){
-                $sql = "UPDATE sat_user SET userName = '$username' WHERE uid = $uid";
+            if($username != $u['username']){
+                $sql = "UPDATE sat_user SET username = '$username' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
 
-            if(md5($password) != $u['userPass']){
-                $sql = "UPDATE sat_user SET userPass = '$password' WHERE uid = $uid";
+            if(md5($str) != $u['password']){
+				$password=md5($str);
+                $sql = "UPDATE sat_user SET password = '$password' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
 

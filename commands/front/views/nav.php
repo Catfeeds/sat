@@ -24,8 +24,8 @@
         </ul>
 
        <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
-            <li id="login"><a class="s-login-in" href="#">登录</a></li>
-            <li id="register"><a class="s-sign-up" href="#">注册</a></li>
+            <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
+            <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
         </ul>
 </div>
 </nav>
