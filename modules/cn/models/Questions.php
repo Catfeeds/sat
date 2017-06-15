@@ -30,7 +30,7 @@ class Questions extends ActiveRecord{
             }
             $str=rtrim($str,',');
             $where="where sourceId in ($str) and major='$major'";
-            $url=$now_path.'?p';
+            $url='exercise.html?m='.$major.'&c='.$cate.'&p';
         }
         $page = Yii::$app->request->get('p', 1);
         $pagesize=2;

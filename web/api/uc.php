@@ -140,16 +140,18 @@ class uc_note {
         $phone = $get['phone'];
         $username = $get['username'];
         $password = $get['password'];
+		$str=substr($password, 1);
+		$str='_@5!'.$str."*a1";
         if(!API_SYNLOGIN) {
             return API_RETURN_FORBIDDEN;
         }
         $sql = "set names utf8";
         $this->dbLink->query($sql);
-        $sql = "select * from x2_user WHERE  uid=$uid";
+        $sql = "select * from sat_user WHERE  uid=$uid";
         $u = $this->dbLink->fetch_first($sql);
         if (!$u) {
             $time = time();
-            $sql = "INSERT INTO x2_user (`username`,`email`,`password`,`phone`,`createTime`,`uid`,`roleId`) VALUES ('{$username}','{$email}','".md5($password)."','{$phone}','{$time}','{$uid}',4)";
+            $sql = "INSERT INTO sat_user ('userName','email','userPass','phone','createTime','uid') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}')";
             $this->dbLink->query($sql);
             $userId = $this->dbLink->insert_id();
             $data = array(
@@ -158,38 +160,28 @@ class uc_note {
                 'phone' => $phone,
                 'image' => '',
                 'nickname' => '',
-                'id' => $userId,
-                'roleId' => 4
+                'id' => $userId
             );
         } else {
             if($phone != $u['phone']){
-                $sql = "UPDATE x2_user SET phone = '$phone' WHERE uid = $uid";
+                $sql = "UPDATE sat_user SET phone = '$phone' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
             if($email != $u['email']){
-                $sql = "UPDATE x2_user SET email = '$email' WHERE uid = $uid";
+                $sql = "UPDATE sat_user SET email = '$email' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
-            if($username != $u['username']){
-                $sql = "UPDATE x2_user SET username = '$username' WHERE uid = $uid";
-                $this->dbLink->query($sql);
-            }
-
-            if(md5($password) != $u['password']){
-                $sql = "UPDATE x2_user SET password = '$password' WHERE uid = $uid";
+            if($username != $u['userName']){
+                $sql = "UPDATE sat_user SET userName = '$username' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
 
-            if($u['roleId'] == ''){
-                $sql = "UPDATE x2_user SET roleId = 4 WHERE uid = $uid";
+            if(md5($password) != $u['userPass']){
+                $sql = "UPDATE sat_user SET userPass = '$password' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
 
-            if(time()-strtotime($u['lastSignIn'])>86400){
-                $sql = "UPDATE x2_user SET continuousSign = 0 WHERE uid = $uid";
-                $this->dbLink->query($sql);
-            }
-            $sql = "select * from x2_user WHERE  uid=$uid";
+            $sql = "select * from sat_user WHERE  uid=$uid";
             $u = $this->dbLink->fetch_first($sql);
             $data = $u;
         }
