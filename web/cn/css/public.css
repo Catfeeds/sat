@@ -72,7 +72,10 @@ body {
   position: relative;
 }
 .s-nav .s-nav-cnt li.s-nav-work i {
-  padding-left: .5rem;
+  position: relative;
+  padding-right: 10px;
+  left: 10px;
+  bottom: 3px;
 }
 .s-nav .s-nav-cnt li.s-nav-work ul {
   position: absolute;

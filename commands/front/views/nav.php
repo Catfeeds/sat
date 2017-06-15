@@ -7,7 +7,7 @@
     <ul class="s-nav-cnt pull-left">
         <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
         <li class="s-nav-work">
-            <a href="#">做题<i class="fa fa-sort-desc"></i></a>
+            <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>
             <ul class="s-nav-showing">
                 <li><a href="/exercise.html" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
                 <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
