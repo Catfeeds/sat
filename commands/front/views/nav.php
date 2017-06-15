@@ -19,7 +19,7 @@
 <!--    </form>-->
 
         <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
-             <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['userName'];}else{echo '欢迎您';}?></a></li>
+             <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['username'];}else{echo '欢迎您';}?></a></li>
              <li id="out"><a><span onclick="Out()">退出登录</span></a></li>
         </ul>
 
