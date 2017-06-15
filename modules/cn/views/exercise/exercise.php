@@ -14,28 +14,30 @@
       <div class="clearfix">
         <!--题目-->
         <div class="s-exam pull-left">
-          <h2 class="s-num">SAT-1903</h2>
-          <p class="s-title">In virtually any industry, technological improvements increase labor productivity, which is the output of goods and services per person-hour worked. In Parland's industries, labor productivity is significantly higher than it is in Vergia's industries. Clearly, therefore, Parland's industries must, on the whole, be further advanced technologically than Vergia's are.
-            The argument is most vulnerable to which of the following criticisms?
+          <?if(!isset($arr)){?>
+          <h2 class="s-num"><?php echo $data['id']?></h2>
+          <p class="s-title">
+            <?php echo $data['content']?>
           </p>
           <ul class="s-que-list">
             <li>
               <div class="s-select" data-id="A">A</div>
-              <div class="s-que">describe a boy's reactions to his irresponsible parents. </div>
+              <div class="s-que"> <?php echo $data['A']?> </div>
             </li>
             <li>
               <div class="s-select" data-id="B">B</div>
-              <div class="s-que">portray a selfish and unfeeling mother and son.</div>
+              <div class="s-que"> <?php echo $data['B']?></div>
             </li>
             <li>
               <div class="s-select" data-id="C">C</div>
-              <div class="s-que">denounce the ill treatment of an exceptional child.</div>
+              <div class="s-que"> <?php echo $data['C']?></div>
             </li>
             <li>
               <div class="s-select" data-id="D">D</div>
-              <div class="s-que">recount an outsider's impressions of an odd family.</div>
+              <div class="s-que"> <?php echo $data['D']?></div>
             </li>
           </ul>
+          <?php }?>
           <div class="s-btn-list clearfix">
             <div class="s-collect pull-left">
               <i class="fa fa-star-o"></i>
@@ -43,8 +45,8 @@
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li>上一题</li>
-              <li>下一题</li>
+              <li><a href="">上一题</a></li>
+              <li><a href="">下一题</a></li>
             </ul>
           </div>
           <!--答案解析-->

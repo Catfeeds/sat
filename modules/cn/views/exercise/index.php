@@ -24,27 +24,16 @@
         </dl>
         <div class="s-subject-cnt">
           <ul>
-<!--            --><?php //foreach($data as $k=>$v){ if(isset($v['content']) && $v['pid']==false){?>
-<!--            <li>-->
-<!--              <h3>--><?php //echo $v['id']?><!--</h3>-->
-<!--              <p>--><?php //echo isset($v['content']) && $v['pid']==false? $v['content']:$v['essay']?><!--</p>-->
-<!--              <a href="/exercise_details/--><?php //echo $v['id']?><!--.html">做题</a>-->
-<!--            </li>-->
-<!--            -->
-            <?php foreach($data as $k=>$v){
-            if($v['content']!=false && $v['pid']==false){
-              $str='<li>';
-              $str.='<h3>'.$v['id'].'</h3>';
-              $str.='<p>'.$v['content'].'</p>';
-              $str.='<a href="/exercise_details/'.$v['id'].'.html">做题</a></li>';
-              echo $str;
-             }else{
-              $str='<li>';
-              $str.='<h3>'.$v['id'].'</h3>';
-              $str.='<p>'.$v['essay'].'</p>';
-              $str.='<a href="/exercise_details/'.$v['id'].'.html">做题</a></li>';
-              echo $str;
-            }}?>
+            <?php foreach($data as $k=>$v){?>
+            <li>
+              <h3><?php echo $v['id']?></h3>
+              <p><?php
+                    if($v['content']!=false){echo $v['content'];}else{echo $v['essay'];
+                  }?>
+              </p>
+              <a href="/exercise_details/<?php echo $v['id']?>.html">做题</a>
+            </li>
+            <?php }?>
           </ul>
 
         </div>
@@ -56,26 +45,15 @@
         </div>
         <ul class="s-right-subject">
           <h2>最新题目</h2>
+          <?php foreach($arr as $k=>$v){?>
           <li>
-            <h3>SAT-1005</h3>
-            <a href="#">uif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jn</a>
-          </li>
+            <h3><?php echo $v['id']?></h3>
+            <a href="/exercise_details/<?php echo $v['id']?>.html"><?php
+              if($v['content']!=false){echo $v['content'];}else{echo $v['essay'];
+              }?>
+            </a>
           <li>
-            <h3>SAT-1005</h3>
-            <a href="#">uif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jn</a>
-          </li>
-          <li>
-            <h3>SAT-1005</h3>
-            <a href="#">uif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jn</a>
-          </li>
-          <li>
-            <h3>SAT-1005</h3>
-            <a href="#">uif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jn</a>
-          </li>
-          <li>
-            <h3>SAT-1005</h3>
-            <a href="#">uif jan fk anf naf uifn husafhui nfsj dbahfba fdmaof bdhasvhj maoi jds ak afa; sai  sn vak aifia wehuifaiu jn</a>
-          </li>
+          <?php }?>
         </ul>
         <div class="s-right-code">
           <img src="/cn/images/qr-code01.png" alt="">

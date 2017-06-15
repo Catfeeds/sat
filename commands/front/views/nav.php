@@ -19,13 +19,13 @@
 <!--    </form>-->
 
         <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
-             <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['userName'];}else{echo '欢迎您';}?></a></li>
+             <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['username'];}else{echo '欢迎您';}?></a></li>
              <li id="out"><a><span onclick="Out()">退出登录</span></a></li>
         </ul>
 
        <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
-            <li id="login"><a class="s-login-in" href="#">登录</a></li>
-            <li id="register"><a class="s-sign-up" href="#">注册</a></li>
+            <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
+            <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
         </ul>
 </div>
 </nav>

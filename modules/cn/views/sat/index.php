@@ -21,15 +21,11 @@
                     </div>';
                 }else{
                     echo '<div class="s-btn">
-                    <button class="s-login-in">登录</button>
-                    <button class="s-sign-up">注册</button>
+                    <button class="s-login-in"><a  href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></button>
+                     <button class="s-sign-up"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></button>
                     </div>';
                 }?>
 
-<!--                <div class="s-btn">-->
-<!--                    <button class="s-login-in">登录</button>-->
-<!--                    <button class="s-sign-up">注册</button>-->
-<!--                </div>-->
                 <h3 class="s-adv">公告:</h3>
                 <div class="s-adv-wrap">
                     <ul>
