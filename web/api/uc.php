@@ -84,7 +84,7 @@ class uc_note {
     function __construct(){
         require_once DISCUZ_ROOT . './libs/ucenter/include/db_mysql.class.php';
         $this->dbLink = new dbstuff;
-        $this->dbLink->connect('rm-2zey73j5g3cwl2sji.mysql.rds.aliyuncs.com', 'syzxleigewang', '4q8YmF48E78y', 'class', 0, true, 'utf-8');
+        $this->dbLink->connect('rm-2zey73j5g3cwl2sji.mysql.rds.aliyuncs.com', 'syzxleigewang', '4q8YmF48E78y', 'sat', 0, true, 'utf-8');
     }
 
 	function _serialize($arr, $htmlon = 0) {
