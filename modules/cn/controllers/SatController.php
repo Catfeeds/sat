@@ -29,7 +29,6 @@ class SatController extends Controller
         $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
         $session = Yii::$app->session;
         $user=$session->get('userData');
-//        var_dump($_SESSION);die;
         return $this->render('index', ['classes' => $classes, 'infoNews' => $infoNews, 'infoAd' => $infoAd,'infoTest' => $infoTest,'user'=>$user, 'banner' => $banner, 'teachers' => $teachers, 'info1' => $info1, 'info3' => $info3,'pic'=>$pic]);
     }
 }
