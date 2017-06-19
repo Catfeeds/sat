@@ -3,11 +3,11 @@ namespace app\modules\admin\models;
 
 use yii\db\ActiveRecord;
 
-class Essay extends ActiveRecord
+class Topic extends ActiveRecord
 {
     public static function tableName()
     {
-        return '{{%essay}}';
+        return '{{%topic}}';
     }
 
 

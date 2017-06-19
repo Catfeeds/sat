@@ -36,7 +36,7 @@ class GetData {
             $data['content']=$data['editorValue'];
             unset($data['editorValue']);
         }
-        unset($data['_csrf']);
+        if(isset($data['_csrf'])){unset($data['_csrf']);};
         // 判断完整性
         foreach($must as $k=>$v){
             if(empty($data["$k"])){

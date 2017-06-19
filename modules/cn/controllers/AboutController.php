@@ -31,7 +31,7 @@ class AboutController extends Controller
         $sugData['suggest'] = Yii::$app->request->post('suggest');
         $sugData['suggest']=htmlspecialchars($sugData['suggest']);
         $session = Yii::$app->session;
-        $sugData['uid']=$session->get('userId');
+        $sugData['uid']=$session->get('uid');
         $count = Yii::$app->db->createCommand("select count(*) from {{%suggest}}where uid=". $sugData['uid'])->queryOne();
         $count=$count['count(*)'];
         if($count>10){
