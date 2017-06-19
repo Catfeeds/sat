@@ -32,7 +32,7 @@ class Topic extends ActiveRecord{
                 $str.=$v['id'].',';
             }
             $str=rtrim($str,',');
-            $where="where sourceId in ($str) and major='$major'";
+            $where="where tpId in ($str) and major='$major'";
             $url='exercise.html?m='.$major.'&c='.$cate.'&p';
         }
         $page = Yii::$app->request->get('p', 1);
