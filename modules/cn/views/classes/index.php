@@ -60,7 +60,7 @@
           </div>
           <div class="s-img">
             <div class="s-img-bg01">
-              <img src="cn/images/course.png" alt="">
+              <img src="cn/images/course02.png" alt="">
             </div>
             <div class="s-img-bg s-img-bg02"></div>
             <div class="s-img-bg s-img-bg03"></div>
@@ -89,7 +89,7 @@
           </div>
           <div class="s-img">
             <div class="s-img-bg01">
-              <img src="cn/images/course.png" alt="">
+              <img src="cn/images/course03.png" alt="">
             </div>
             <div class="s-img-bg s-img-bg02"></div>
             <div class="s-img-bg s-img-bg03"></div>

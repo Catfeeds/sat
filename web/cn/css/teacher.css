@@ -1,5 +1,10 @@
+.bnr-wrap .carousel-inner {
+    width: 1200px;
+    margin: 0 auto;
+}
 .bnr-wrap .carousel-inner img {
-    max-height: 640px;
+    width: 100%;
+    height: 250px;
 }
 .s-teacher .s-w1200 {
     margin-top: 30px;
@@ -13,7 +18,7 @@
     box-shadow:  3px 3px 3px #969696;
     margin-bottom: 20px;
 }
-.s-teacher .s-w1200 .s-img img{
+.s-teacher .s-img img{
     display: block;
     width: 180px;
     height: 180px;
