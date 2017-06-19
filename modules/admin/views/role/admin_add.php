@@ -15,7 +15,6 @@
         <div><input type="text" name="roleId" value="<?php echo isset($data)? $data['roleId']:''?>" style="width:500px"></div>
 
             <input type="hidden" name="id" value="<?php echo isset($data)? $data['id']:''?>" />
-<!--            <input type="hidden" name="_csrf" value="--><?//=Yii::$app->request->getCsrfToken()?><!--" />-->
             <input id="btn" type="button" value="添加管理员" onclick="this.disabled=true; this.form.submit();">
     </form>
 </div>
