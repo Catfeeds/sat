@@ -25,6 +25,7 @@ class PubclassController extends Controller
         $controller = Yii::$app->controller->id;
         $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
         return $this->render('index', ['data' => $data, 'arr' => $arr,'pic'=>$pic]);
+
     }
 
     public function actionApply()

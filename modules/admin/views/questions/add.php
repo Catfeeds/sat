@@ -28,12 +28,24 @@
             <input type="text"  name="section" value="<?php echo isset($data)?$data['section']:''?>" placeholder="短文所属的小节" >
         </span>
         </br>
+
+        <span>科 &nbsp;&nbsp;&nbsp;&nbsp;目 &nbsp;:</span>
+            <span>
+                <select name="major">
+                    <option value ="">请选择类型</option>
+                    <option value ="math" <?php echo isset($data)&& $data['major']=="math" ?  'selected':''?>>数学</option>
+                    <option value ="reading" <?php echo isset($data)&& $data['major']=="reading" ?  'selected':''?>>阅读</option>
+                    <option value ="writing" <?php echo isset($data)&& $data['major']=="writing" ?  'selected':''?>>作文</option>
+                </select>
+            </span>
+        </br>
         <div id="essay" style="display:none;">
             <span>短文、图片:</span>
             <span>
                 <textarea id="editor" type="text/plain" name="essay"   style="width:600px;height:300px;" ><?php echo isset($data)? $data['essay']:''?></textarea>
             </span>
             </br>
+
 <!--                <span>包含题目:</span>-->
 <!--                <span>-->
 <!--                    <input type="text"  name="nums" value="--><?php //echo isset($data)?$data['nums']:''?><!--" placeholder="上边题干所包含的题目题号，如1,2,3 标点为英文状态" style="width:80%;">-->
@@ -94,16 +106,6 @@
 <!--                <span>题目来源:</span>-->
 <!--                <span><input type="text" name="sourceId" value="--><?php //echo isset($data)?$data['sourceId']:''?><!--"  placeholder="题目来源" ></span>-->
 <!--                </br>-->
-            <span>科 &nbsp;&nbsp;&nbsp;&nbsp;目 &nbsp;:</span>
-            <span>
-                <select name="major">
-                    <option value ="">请选择类型</option>
-                    <option value ="math" <?php echo isset($data)&& $data['major']=="math" ?  'selected':''?>>数学</option>
-                    <option value ="reading" <?php echo isset($data)&& $data['major']=="reading" ?  'selected':''?>>阅读</option>
-                    <option value ="writing" <?php echo isset($data)&& $data['major']=="writing" ?  'selected':''?>>作文</option>
-                </select>
-            </span>
-            </br>
 
             <span>短文图片id:</span>
             <span><input type="text" name="pid" value="<?php echo isset($data)?$data['pid']:''?>" placeholder="短文图片的id" ></span>

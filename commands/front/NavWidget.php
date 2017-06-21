@@ -28,7 +28,7 @@
         }
         public function udata(){
             $this->session = Yii::$app->session;
-            $this->uid=$this->session->get('userId');
+            $this->uid=$this->session->get('uid');
             $this->user=$this->session->get('userData');
 	    }
         public function url(){
