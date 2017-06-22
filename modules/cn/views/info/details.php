@@ -4,7 +4,7 @@
     <div class="s-w1200">
       <!--路径导航-->
       <ol class="breadcrumb">
-        <li><a href="#">首页</a></li>
+        <li><a href="/index.html">首页</a></li>
         <li><a href="#"><?php echo $data['cate']?></a></li>
         <li class="active">正文</li>
       </ol>

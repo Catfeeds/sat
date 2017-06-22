@@ -18,11 +18,11 @@
             </dl>
             <div class="s-qr">
                 <img src="/cn/images/qr-code01.png" alt="">
-                <p>SAT公众号</p>
+                <p>申友留学</p>
             </div>
             <div class="s-qr">
-                <img src="/cn/images/qr-code01.png" alt="">
-                <p>SAT公众号</p>
+                <img src="/cn/images/qr-code02.png" alt="">
+                <p>本科留学与考试</p>
             </div>
             <div class="s-tel">
                 <img src="/cn/images/tel_icon.png" alt="">
@@ -35,14 +35,14 @@
             <dl>
                 <dt>友情链接:</dt>
                 <dd>
-                <dd><a href="#">申友网</a></dd>
-                <dd><a href="#">申友网</a></dd>
-                <dd><a href="#">雷哥网</a></dd>
-                <dd><a href="#">雷哥网</a></dd>
-                <dd><a href="#">申友网</a></dd>
+                <dd><a href="http://www.thinkwithu.com" target="_blank">申友网</a></dd>
+                <dd><a href="http://www.gmatonline.cn" target="_blank">雷哥网</a></dd>
+                <dd><a href="http://www.thinkugmat.com/" target="_blank">申友在线</a></dd>
+                <dd><a href="http://bbs.gmatonline.cn/forum.php" target="_blank">留学社区</a></dd>
+                <dd><a href="http://quliuxue.net.cn/" target="_blank">去留学网</a></dd>
                 </dd>
             </dl>
-            <p>Copyright © 2015 All Right Reserved 申友教育 版权所有 京ICP备16000003号 京公网安备 11010802018491 免责声明
+            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17017179号-1</a> 京公网安备 11010802018491 免责声明
             </p>
         </div>
     </div>

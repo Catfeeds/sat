@@ -102,7 +102,6 @@
 <script>
   $(function () {
     var height = document.documentElement.clientHeight;
-    console.log(height);
     $('.s-course').css('height', height)
     $('.s-course .s-title-list').css('paddingTop', 0.05*height)
     $('.s-course .s-desc').css('marginBottom', 0.1*height)

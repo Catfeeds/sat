@@ -12,7 +12,7 @@
                 <div class="s-person-logo border-radius pull-left"></div>
                 <div class="s-hi">
                     <h3>hi</h3>
-                    <p>欢迎来到申友</p>
+                    <p>欢迎来到雷哥网</p>
                 </div>
                 <?php if($user){
                     echo '<div class="s-btn">
@@ -134,14 +134,14 @@
                 <div class="s-information s-news">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
-                        <a class="s-more pull-right" href="#"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
-                        <li>
-                            <a class="s-article-img" href="#">
+                        <li class="clearfix">
+                            <a class="s-article-img pull-left" href="#">
                                 <img src="/cn/images/sat-article01.png" alt="">
                             </a>
-                            <div class="s-article-title">
+                            <div class="s-article-title pull-right">
                                 <h3><a href="/info_details/<?php echo isset($infoNews[0]['id'])?$infoNews[0]['id']:''?>.html"><?php echo isset($infoNews[0]['title'])?$infoNews[0]['title']:''?></a></h3>
                                 <p><?php echo isset($infoNews[0]['summary'])?$infoNews[0]['summary']:''?></p>
                             </div>
@@ -156,14 +156,14 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>备考资讯</span>
-                        <a class="s-more pull-right" href="#"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
-                        <li>
-                            <a class="s-article-img" href="#">
+                        <li class="clearfix">
+                            <a class="s-article-img pull-left" href="#">
                                 <img src="/cn/images/sat-article02.png" alt="">
                             </a>
-                            <div class="s-article-title">
+                            <div class="s-article-title pull-right">
                                 <h3><a href="/info_details/<?php echo  isset($infoTest[0]['id'])?$infoTest[0]['id']:''?>.html"><?php echo isset($infoTest[0]['title'])?$infoTest[0]['title']:''?></a></h3>
                                 <p><?php echo isset($infoTest[0]['summary'])? $infoTest[0]['summary']:''?></p>
                             </div>
@@ -178,14 +178,14 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-leaf"></i>高分经验</span>
-                        <a class="s-more pull-right" href="#"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
-                        <li>
-                            <a class="s-article-img" href="#">
+                        <li class="clearfix">
+                            <a class="s-article-img pull-left" href="#">
                                 <img src="/cn/images/sat-article03.png" alt="">
                             </a>
-                            <div class="s-article-title">
+                            <div class="s-article-title pull-right">
                                 <h3><a href="#"><?php echo isset($info3[0]['title'])?$info3[0]['title']:''?></a></h3>
                                 <p><?php echo isset($info3[0]['summary'])?$info3[0]['summary']:''?></p>
                             </div>
@@ -220,9 +220,9 @@
                     <div class="s-arrow next">&gt;</div>
                     <ul class="s-teacher-int clearfix">
                         <?php foreach($teachers as $v){?>
-                        <li>
+                        <li class="s-teacher-list">
                             <img src="<?php echo $v['pic']?>" alt="">
-                            <div>
+                            <div class="s-teacher-text">
                                 <h2><?php echo $v['name']?></h2>
                                 <h4>主讲：<?php echo $v['subject']?></h4>
                                 <p><?php echo $v['introduction']?></p>
@@ -230,7 +230,6 @@
                             <a href="#">立即预约</a>
                         </li>
                         <?php }?>
-
                     </ul>
                 </div>
             </div>
