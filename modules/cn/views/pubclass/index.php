@@ -65,6 +65,8 @@
     var userTel = $('#loginName').val();
     var classId = _this.next().attr('href').split('/')[2].split('.')[0];
     var userId = sessionStorage.getItem('userId');
+//    var userId = <?php //session_start();echo $_SESSION['uid'];?>//;
+    alert(userId);
     if (userId) {
       $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
         alert(data.message);
