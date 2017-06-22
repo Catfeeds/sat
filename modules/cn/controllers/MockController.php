@@ -9,6 +9,7 @@ namespace app\modules\cn\controllers;
 
 use yii;
 use yii\web\Controller;
+use app\libs\KeepAnswer;
 
 class MockController extends Controller
 {
@@ -29,15 +30,17 @@ class MockController extends Controller
     {
         $major=Yii::$app->request->get('m','');
         $id=Yii::$app->request->get('id');
-//        $id=10;
-
         if($major!=false){
-            $where="where sourceId=".$id." and major='$major'";
+            if($major=='math'){
+                $where="where tpId=".$id."and (major='math1' or major='math2')";
+            }else{
+                $where="where tpId=".$id." and major='$major'";
+            }
         }else{
-            $where="where sourceId=".$id;
+            $where="where tpId=".$id;
         }
-//        var_dump($where);die;
-        $data = Yii::$app->db->createCommand("select * from {{%questions}} $where" )->queryAll();
+        $id=Yii::$app->db->createCommand("select id from {{%topic}} $where order by id asc limit 1")->queryOne();
+        $data=Yii::$app->db->createCommand("select t.*,te.* from {{%topic}} t left join {{%topic_extend}} te on  t.id=te.topicId where te.topicId=".$id['id']." order by t.id ASC ")->queryAll();
         var_dump($data);die;
         return $this->render('mock_details');
     }
@@ -55,5 +58,19 @@ class MockController extends Controller
     // 模考报告的生成
     // 1、判断正确略
     // 2、得出报告分数（数学，reading。writing）
+    // 选题逻辑
+    // 将题目的ID，答案都传过来
+    public function actionAnswer(){
+        $answer=Yii::$app->request->post('answer');
+        $id=Yii::$app->request->post('id');
+        // 调用方法
+        $a=KeepAnswer::getCat();
+        $re=$a->addPro($id,$answer);
+        var_dump($_SESSION);
+        var_dump($re);die;
+        if(re){
+
+        }
+    }
 
 }

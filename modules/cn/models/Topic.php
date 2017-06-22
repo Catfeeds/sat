@@ -12,28 +12,31 @@ class Topic extends ActiveRecord{
         $major=Yii::$app->request->get('m','');
         $cate=Yii::$app->request->get('c','');
         // 判断地址栏参数是否存在，构建where语句
-        if($cate==false){
-            if($major!=false ){
+        if($major!=false){
+            if($cate==false){
                 if($major=='math'){
                     $where="where major='math1' or major='math2'";
                 }else{
-                    $where="where major = '$major'";
+                    $where="where major='$major'";
                 }
                 $url='exercise.html?m='.$major.'&p';
             }else{
-                $where='';
-                $url='exercise.html?p';
+                $ids= Yii::$app->db->createCommand("select id from {{%testpaper}} where name='$cate'")->queryAll();
+                $str='';
+                foreach($ids as $v){
+                    $str.=$v['id'].',';
+                }
+                $str=rtrim($str,',');
+                if($major=='math'){
+                    $where="where tpId in ($str) and (major='math1' or major='math2')";
+                }else{
+                    $where="where tpId in ($str) and major='$major'";
+                }
+                $url='exercise.html?m='.$major.'&c='.$cate.'&p';
             }
         }else{
-            $where2="where name='$cate'";
-            $ids= Yii::$app->db->createCommand("select id from {{%testpaper}} $where2")->queryAll();
-            $str='';
-            foreach($ids as $v){
-                $str.=$v['id'].',';
-            }
-            $str=rtrim($str,',');
-            $where="where tpId in ($str) and major='$major'";
-            $url='exercise.html?m='.$major.'&c='.$cate.'&p';
+            $where='';
+            $url='exercise.html?p';
         }
         $page = Yii::$app->request->get('p', 1);
         $pagesize=2;
