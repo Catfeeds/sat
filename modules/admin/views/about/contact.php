@@ -18,14 +18,14 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['city']?></td>
-                <td><? echo $v['pic']?></td>
-                <td><? echo $v['name']?></td>
-                <td><? echo $v['telephone']?></td>
-                <td><? echo $v['address']?></td>
-                <td><? echo $v['bus']?></td>
-                <td><? echo $v['subWay']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['city']?></td>
+                <td><?php echo $v['pic']?></td>
+                <td><?php echo $v['name']?></td>
+                <td><?php echo $v['telephone']?></td>
+                <td><?php echo $v['address']?></td>
+                <td><?php echo $v['bus']?></td>
+                <td><?php echo $v['subWay']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/about/contact_add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

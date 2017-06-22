@@ -19,11 +19,24 @@ class GetData {
             $data["$k"]=Yii::$app->request->post("$k",'');
         }
         // 判断是修改还是添加时图片的处理
-        if(empty($data['id'])){
-            if(isset($_FILES['pic']['name'])){
-                if(empty($_FILES['pic']['name'])){
+        if(empty($data['id'])){ // 添加时
+            if(isset($_FILES['pic']['name'])){ // 有上传的输入框时，不定有上传
+                if(empty($_FILES['pic']['name'])){  // 上传框为空时
                     $data['pic']='';
-                }else{
+                }else{    // 上传框非空时
+                    $path=$this->upImage($postion);
+                    $data['pic']  = $path;
+                }
+            }
+        }else{
+            if(isset($_FILES['pic']['name'])){ // 有上传的输入框时，不定有上传
+                if(empty($_FILES['pic']['name'])){  // 上传框为空时
+                    if($data['pic']==false){
+                        $data['pic']='';
+                    }else{
+                        $data['pic']=$data['pic'];
+                    }
+                }else{    // 上传框非空时
                     $path=$this->upImage($postion);
                     $data['pic']  = $path;
                 }

@@ -29,21 +29,21 @@
 //        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['student']?></td>
-                <td><? echo $v['pic']?></td>
-                <td><? echo $v['cate']?></td>
-                <td><? echo $v['price']?></td>
-                <td><? echo $v['duration']?></td>
-                <td><? echo $v['teacher']?></td>
-                <td><? echo $v['plan']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['student']?></td>
+                <td><?php echo $v['pic']?></td>
+                <td><?php echo $v['cate']?></td>
+                <td><?php echo $v['price']?></td>
+                <td><?php echo $v['duration']?></td>
+                <td><?php echo $v['teacher']?></td>
+                <td><?php echo $v['plan']?></td>
 <!--                <td>--><?// echo $v['read']?><!--</td>-->
 <!--                <td>--><?// echo $v['grammar']?><!--</td>-->
 <!--                <td>--><?// echo $v['vocabulary']?><!--</td>-->
 <!--                <td>--><?// echo $v['math']?><!--</td>-->
 <!--                <td>--><?// echo $v['write']?><!--</td>-->
 <!--                <td>--><?// echo $v['comments']?><!--</td>-->
-                <td><? echo $v['introduction']?></td>
+                <td><?php echo $v['introduction']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/classes/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

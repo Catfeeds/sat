@@ -10,12 +10,27 @@
                 <td width="80px">服务区名:</td>
                 <td><input type="text" name="name" placeholder="城市"  value="<?php echo isset($data)? $data['name']:''?>"></td>
             </tr>
+<!--            <tr>-->
+<!--                <td>图片</td>-->
+<!--                <td>-->
+<!--                    --><?php // if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic'>";}
+//                    else {echo '<input id="file" type="file" name="pic" >';
+//                    }?>
+<!--                </td>-->
+<!--            </tr>-->
+            <?php if(isset($data)) {
+                $str = '<tr>';
+                $str .= '<td>原图片:</td>';
+                $str .= '<td>';
+                $pic = $data['pic'];
+                $str .= "<input name='pic' type='text' value='" . $pic . "'></td></tr>";
+                echo $str;
+            } ?>
+
             <tr>
-                <td>图片</td>
+                <td>上传、修改图片:</td>
                 <td>
-                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic'>";}
-                    else {echo '<input id="file" type="file" name="pic" >';
-                    }?>
+                    <input id="file" type="file" name="pic" >
                 </td>
             </tr>
             <tr>

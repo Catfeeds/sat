@@ -12,12 +12,27 @@
                 <td width="80px">适合学生:</td>
                 <td><input type="text" name="student" placeholder="入学要求" value="<?php echo isset($data)? $data["student"]:''?>" style="width: 600px;"></td>
             </tr>
+<!--            <tr>-->
+<!--                <td>图片:</td>-->
+<!--                <td>-->
+<!--                    --><?php // if(isset($data)&& $data['pic']!='') {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic'>";}
+//                    else {echo '<input id="file" type="file" name="pic" >';
+//                    }?><!-- 只能添加'gif','jpg','jpeg','bmp','png'格式的图片-->
+<!--                </td>-->
+<!--            </tr>-->
+            <?php if(isset($data)) {
+                $str = '<tr>';
+                $str .= '<td>原图片:</td>';
+                $str .= '<td>';
+                $pic = $data['pic'];
+                $str .= "<input name='pic' type='text' value='" . $pic . "'></td></tr>";
+                echo $str;
+            } ?>
+
             <tr>
-                <td>图片:</td>
+                <td>上传\修改图片:</td>
                 <td>
-                    <?php  if(isset($data)&& $data['pic']!='') {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic'>";}
-                    else {echo '<input id="file" type="file" name="pic" >';
-                    }?> 只能添加'gif','jpg','jpeg','bmp','png'格式的图片
+                    <input id="file" type="file" name="pic" >
                 </td>
             </tr>
             <tr>

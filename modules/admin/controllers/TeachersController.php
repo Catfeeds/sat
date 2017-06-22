@@ -37,11 +37,10 @@ class TeachersController extends ApiControl
             $getdata = new GetData();
             $must = array('name' => '教师名字', 'introduction' => '教师简介', 'subject' => '主讲课程');
             $data = $getdata->PostData($must, 'teachers');
+//            var_dump($data);die;
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%teachers}}", $data)->execute();
             } else {
-                //  修改
-                //  $teachersData['pic']       = Yii::$app->request->post('up','');
                 $model = new Teachers();
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }

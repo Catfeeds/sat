@@ -16,12 +16,12 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['module']?></td>
-                <td><? echo $v['pic']?></td>
-                <td><? echo $v['url']?></td>
-                <td><? echo $v['alt']?></td>
-                <td><? echo $v['time']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['module']?></td>
+                <td><?php echo $v['pic']?></td>
+                <td><?php echo $v['url']?></td>
+                <td><?php echo $v['alt']?></td>
+                <td><?php echo $v['time']?></td>
 
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/banner/add'.'?'.'id='.$v['id']?>">修改</a>
