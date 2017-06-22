@@ -6,7 +6,7 @@
         <span>讲师管理</span>
     </div>
     <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</>
-    <table border="1" allrules="0" width="800px">
+    <table border="1" allrules="0" width="100%">
         <tr align="center">
             <th>id</th>
             <th>讲师</th>
@@ -27,7 +27,6 @@
                 <td><?php echo $v['subject']?></td>
                 <td><?php echo $v['honorary']?></td>
                 <td><?php echo $v['seniority']?></td>
-
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/teachers/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>
