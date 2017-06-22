@@ -11,9 +11,9 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['uid']?></td>
-                <td><? echo $v['suggest']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['uid']?></td>
+                <td><?php echo $v['suggest']?></td>
             </tr>
         <?php }?>
     </table>

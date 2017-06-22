@@ -31,9 +31,9 @@ class AboutController extends Controller
         $sugData['suggest'] = Yii::$app->request->post('suggest');
         $sugData['suggest']=htmlspecialchars($sugData['suggest']);
         $session = Yii::$app->session;
-        $sugData['uid']=$session->get('userId');
-        $count = Yii::$app->db->createCommand("select count(*) from {{%suggest}}where uid=". $sugData['uid'])->queryOne();
-        $count=$count['count(*)'];
+        $uid=$sugData['uid']=$session->get('uid');
+        $arr = Yii::$app->db->createCommand("select id from {{%suggest}} where uid='$uid'")->queryAll();
+        $count=count($arr);
         if($count>10){
             die('<script>alert("您已经给我们提出了很多意见了，给其他人一个机会吧");history.go(-1)</script>');
         }else{

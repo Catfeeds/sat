@@ -12,13 +12,20 @@
                 <td width="80px">讲师:</td>
                 <td><input type="text" name="name" value="<?php echo isset($data)?$data['name']:''?>" placeholder="讲师名"></td>
             </tr>
+
+                    <?php if(isset($data)) {
+                        $str = '<tr>';
+                        $str .= '<td>原照片:</td>';
+                        $str .= '<td>';
+                        $pic = $data['pic'];
+                        $str .= "<input name='pic' type='text' value='" . $pic . "'></td></tr>";
+                        echo $str;
+                    } ?>
+
             <tr>
-                <td>照片:</td>
+                <td>上传、修改照片:</td>
                 <td>
-<!--                    <input type="text" name="pic" value="--><?php //echo isset($data)?$data[0]['pic']:''?><!--" placeholder="图片">-->
-                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic'>";}
-                    else {echo '<input id="file" type="file" name="pic" >';
-                    }?>
+                   <input id="file" type="file" name="pic" >
                 </td>
             </tr>
             <tr>

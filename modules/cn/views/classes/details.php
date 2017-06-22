@@ -3,8 +3,8 @@
   <section>
     <div class="s-w1200">
       <ol class="breadcrumb">
-        <li><a href="#">首页</a></li>
-        <li><a href="#">课程</a></li>
+        <li><a href="/index.html">首页</a></li>
+        <li><a href="/class.html">课程</a></li>
         <li class="active"><?php echo$data['cate']?></li>
       </ol>
       <div class="s-course-details clearfix">

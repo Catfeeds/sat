@@ -98,7 +98,6 @@
           <div>
             <form name="form" method="post" action="/cn/about/suggest" onsubmit="return dosubmit()">
               <textarea name="suggest"  placeholder="请写出对我们的建议和意见"><?php if(!isset($user)){echo "请先登录";}?></textarea>
-<!--              <input type="hidden" name="_csrf" value="--><?//=Yii::$app->request->getCsrfToken()?><!--" />-->
               <?php if(isset($user)) echo '<button type="submit" class="btn btn-info btn-lg">提交</button>'?>
             </form>
           </div>

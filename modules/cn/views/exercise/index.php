@@ -28,8 +28,8 @@
             <li>
               <h3><?php echo $v['id']?></h3>
               <p><?php
-                    if($v['content']!=false){echo $v['content'];}else{echo $v['essay'];
-                  }?>
+                    echo $v['topic'];
+                  ?>
               </p>
               <a href="/exercise_details/<?php echo $v['id']?>.html">做题</a>
             </li>
@@ -49,8 +49,8 @@
           <li>
             <h3><?php echo $v['id']?></h3>
             <a href="/exercise_details/<?php echo $v['id']?>.html"><?php
-              if($v['content']!=false){echo $v['content'];}else{echo $v['essay'];
-              }?>
+              echo $v['topic'];
+              ?>
             </a>
           <li>
           <?php }?>
