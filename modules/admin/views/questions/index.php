@@ -57,7 +57,7 @@
             <tr style="line-height:50px;overflow:hidden;">
                 <td><?php echo $v['id']?></td>
                 <td><?php echo $v['number']?></td>
-                <td style="overflow:hidden;"><?php echo $v['content']?></td>
+                <td><?php echo $v['content']?></td>
                 <td><?php echo $v['answer']?></td>
                 <td><?php echo $v['major']?></td>
                 <td><?php echo $v['topicId']?></td>
@@ -66,8 +66,8 @@
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>
-                  </td>
-              </tr>
+                </td>
+            </tr>
          <?php }?>
     </table>
     </div>

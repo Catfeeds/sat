@@ -5,7 +5,7 @@
         <span >&gt;</span>
         <span>课程管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/classes/add'?>">添加课程</>
+    <a href="<?php echo baseUrl.'/admin/classes/add'?>">添加课程</a>
     <table border="1" rules="0" width="800px">
         <tr align="center">
             <th>id</th>

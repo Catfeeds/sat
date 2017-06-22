@@ -2,7 +2,7 @@
     <div >
         <a href="">首页</a><span >&gt;</span><span>banner管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/banner/add'?>">添加banner</>
+    <a href="<?php echo baseUrl.'/admin/banner/add'?>">添加banner</a>
     <table border="1"  width="800px">
         <tr align="center">
             <th>id</th>

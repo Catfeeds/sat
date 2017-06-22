@@ -2,7 +2,7 @@
     <div >
         <a href="/admin/about/index">关于我们</a><span >&gt;</span><span><a href='<?php echo baseUrl."/admin/about/contact"?>'>联系我们</a></span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/about/contact_add'?>">添加联系方式</>
+    <a href="<?php echo baseUrl.'/admin/about/contact_add'?>">添加联系方式</a>
     <table border="1"  width="800px">
         <tr align="center">
             <th>id</th>

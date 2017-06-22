@@ -1,14 +1,14 @@
 <style>
-    td {
-        white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
-    }
+    /*td {*/
+        /*white-space:nowrap;overflow:hidden;text-overflow: ellipsis;*/
+    /*}*/
 </style>
 <div class="span10">
     <div >
         <a href="">首页</a><span >&gt;</span><span>资讯管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</>
-    <table border="1"  style="table-layout: fixed;width:800px;">
+    <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</a>
+    <table border="1"  >
         <tr align="center">
             <th style="width: 30px;">id</th>
             <th>资讯标题</th>
