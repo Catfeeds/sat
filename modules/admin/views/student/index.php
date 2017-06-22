@@ -1,6 +1,6 @@
 <div class="span10">
     <a href="/admin/student/case">添加学员案例</a>
-    <table border="1"  width="800px">
+    <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>
             <th>姓名</th>

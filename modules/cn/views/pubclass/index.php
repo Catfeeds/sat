@@ -35,7 +35,6 @@
             <p><?php echo $v['summary']?></p>
             <button class="s-apply on">报名</button>
             <a href="/info_details/<?php echo $v['id']?>.html">详情</a>
-<!--            <a href="info_details.html">详情</a>-->
           </div>
         </li>
         <?php }?>
