@@ -24,15 +24,15 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['title']?></td>
-                <td title="<? echo $v['pic']?>"><? echo $v['pic']?></td>
-                <td><? echo $v['summary']?></td>
-                <td style="width:300px;align:left;" title="<? echo $v['content']?>"><? echo $v['content']?></td>
-                <td><? echo $v['cate']?></td>
-                <td><? echo $v['publishTime']?></td>
-                <td><? echo $v['hits']?></td>
-                <td><? echo $v['validTime']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['title']?></td>
+                <td title="<?php echo $v['pic']?>"><?php echo $v['pic']?></td>
+                <td><?php echo $v['summary']?></td>
+                <td style="width:300px;align:left;" title="<?php echo $v['content']?>"><?php echo $v['content']?></td>
+                <td><?php echo $v['cate']?></td>
+                <td><?php echo $v['publishTime']?></td>
+                <td><?php echo $v['hits']?></td>
+                <td><?php echo $v['validTime']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/info/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

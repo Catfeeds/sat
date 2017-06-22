@@ -14,30 +14,30 @@
       <div class="clearfix">
         <!--题目-->
         <div class="s-exam pull-left">
-          <?if(!isset($arr)){?>
+
           <h2 class="s-num"><?php echo $data['id']?></h2>
           <p class="s-title">
-            <?php echo $data['content']?>
+            <?php echo $data['topic']?>
           </p>
           <ul class="s-que-list">
             <li>
               <div class="s-select" data-id="A">A</div>
-              <div class="s-que"> <?php echo $data['A']?> </div>
+              <div class="s-que"> <?php echo $data['keyA']?> </div>
             </li>
             <li>
               <div class="s-select" data-id="B">B</div>
-              <div class="s-que"> <?php echo $data['B']?></div>
+              <div class="s-que"> <?php echo $data['keyB']?></div>
             </li>
             <li>
               <div class="s-select" data-id="C">C</div>
-              <div class="s-que"> <?php echo $data['C']?></div>
+              <div class="s-que"> <?php echo $data['keyC']?></div>
             </li>
             <li>
               <div class="s-select" data-id="D">D</div>
-              <div class="s-que"> <?php echo $data['D']?></div>
+              <div class="s-que"> <?php echo $data['keyD']?></div>
             </li>
           </ul>
-          <?php }?>
+
           <div class="s-btn-list clearfix">
             <div class="s-collect pull-left">
               <i class="fa fa-star-o"></i>

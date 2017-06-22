@@ -19,12 +19,27 @@
                     <input name="name" value="<?php echo isset($data)?$data['name']:''?>" type="text" style="width:500px;">*必填
                 </td>
             </tr>
+<!--            <tr>-->
+<!--                <td>照片:</td>-->
+<!--                <td>-->
+<!--                    --><?php // if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic' style='width: 500px;;'>";}
+//                    else {echo '<input id="file" type="file" name="pic" >';
+//                    }?>
+<!--                </td>-->
+<!--            </tr>-->
+            <?php if(isset($data)) {
+                $str = '<tr>';
+                $str .= '<td>原照片:</td>';
+                $str .= '<td>';
+                $pic = $data['pic'];
+                $str .= "<input name='pic' type='text' value='" . $pic . "'></td></tr>";
+                echo $str;
+            } ?>
+
             <tr>
-                <td>照片:</td>
+                <td>上传照片:</td>
                 <td>
-                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic' style='width: 500px;;'>";}
-                    else {echo '<input id="file" type="file" name="pic" >';
-                    }?>
+                    <input id="file" type="file" name="pic" >
                 </td>
             </tr>
             <tr>
@@ -74,7 +89,7 @@
                 <td>内容：</td>
                 <td id="content">
                     <textarea id="editor" type="text/plain" name="content" style="width:600px;height:300px;">
-                        <?echo isset($data)? $data['content']:''?>
+                        <?php echo isset($data)? $data['content']:''?>
                     </textarea>
                 </td>
             </tr>

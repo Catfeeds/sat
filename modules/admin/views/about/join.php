@@ -15,11 +15,11 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['cate']?></td>
-                <td><? echo $v['job']?></td>
-                <td><? echo $v['demand']?></td>
-                <td><? echo $v['city']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['cate']?></td>
+                <td><?php echo $v['job']?></td>
+                <td><?php echo $v['demand']?></td>
+                <td><?php echo $v['city']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/about/join_add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>
