@@ -5,10 +5,8 @@
         <span >&gt;</span>
         <span>课程管理</span>
     </div>
-
     <a href="<?php echo baseUrl.'/admin/classes/add'?>">添加课程</a>
     <table border="1" rules="0" width="100%">
-
         <tr align="center">
             <th>id</th>
             <th>适合学生</th>
@@ -18,19 +16,13 @@
             <th>课时及模块</th>
             <th>授课教师</th>
             <th>学习计划</th>
-<!--            <th>阅读课时</th>-->
-<!--            <th>文法课时</th>-->
-<!--            <th>词汇课时</th>-->
-<!--            <th>数学课时</th>-->
-<!--            <th>写作课时</th>-->
-<!--            <th>点评课时</th>-->
             <th>课程简介</th>
             <th>操作</th>
         </tr>
         <?php
-//        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
+
                 <td><?php echo $v['id']?></td>
                 <td><?php echo $v['student']?></td>
                 <td><?php echo $v['pic']?></td>
@@ -39,13 +31,8 @@
                 <td><?php echo $v['duration']?></td>
                 <td><?php echo $v['teacher']?></td>
                 <td><?php echo $v['plan']?></td>
-<!--                <td>--><?// echo $v['read']?><!--</td>-->
-<!--                <td>--><?// echo $v['grammar']?><!--</td>-->
-<!--                <td>--><?// echo $v['vocabulary']?><!--</td>-->
-<!--                <td>--><?// echo $v['math']?><!--</td>-->
-<!--                <td>--><?// echo $v['write']?><!--</td>-->
-<!--                <td>--><?// echo $v['comments']?><!--</td>-->
                 <td><?php echo $v['introduction']?></td>
+
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/classes/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

@@ -29,9 +29,15 @@ class ExerciseController extends Controller
         $id=Yii::$app->request->get('id');
         $data = Yii::$app->db->createCommand("select t.*,te.* from {{%topic}} t left join {{%topic_extend}} te on  t.id=te.topicId where t.id=".$id)->queryAll();
         // 上下一题逻辑不太对
-        var_dump($data);die;
-        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
-        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+
+//        var_dump($data);die;
+        $nextid = Yii::$app->db->createCommand("select id from {{%topic}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+        $upid = Yii::$app->db->createCommand("select id from {{%topic}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+
+//        var_dump($data);die;
+//        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+//        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+
             return $this->render('exercise',['data'=>$data,'nextid'=>$nextid,'upid'=>$nextid]);
 
     }
