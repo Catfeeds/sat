@@ -29,7 +29,7 @@
        data-slide="next">&gt;</a>
 </div>
 <script>
-    $('.bnr-wrap').carousel({
-//        interval: 2000
+    $('#myCarousel').carousel({
+        interval: 3000
     })
 </script>
