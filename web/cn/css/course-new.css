@@ -104,6 +104,10 @@
 .s-course .s-img-bg01 {
   box-shadow: 0 0 3px 2px #c0c0c0;
 }
+.s-course .s-img-bg01 img {
+  width: 574px;
+  height: 479px;
+}
 .s-course .s-img-bg02 {
   top: 15px;
   left: 15px;

@@ -1,0 +1,255 @@
+.work-mk p {
+    margin: 0;
+}
+.work-mk-top {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 60px;
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.work-mk-top .work-top-cnt {
+    width: 100%;
+    text-align: center;
+}
+.work-title-pos {
+    text-align: left;
+}
+.work-top-cnt .work-main-title {
+    font-size: 24px;
+}
+.work-top-cnt .work-subhead {
+    font-size: 18px;
+}
+.work-collect {
+    text-align: right;
+    cursor: pointer;
+}
+/*做题区域*/
+.work-mk-cnt {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+}
+.work-wrap-left {
+    width: 590px;
+    padding: 0 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.work-wrap-left h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    line-height: 26px;
+}
+.work-wrap-left h5 {
+    padding: 10px 0;
+    line-height: 28px;
+    font-weight: normal;
+    font-family: Times New Roman;
+    font-style: italic;
+    font-size: 22px;
+    color: #333;
+}
+.work-wrap-left .read-text {
+    width: 530px;
+}
+.work-wrap-left .read-text p {
+    font-size: 22px;
+    line-height: 28px;
+    font-family: Times New Roman;
+    color: #333;
+}
+.work-wrap-right {
+    width: 598px;
+    padding: 0 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.work-question-part h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: normal;
+}
+.work-question-part .work-que-wrap {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.work-question-part .work-select {
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    border-radius: 50%;
+    border: 2px solid rgb(54,178,251);
+    text-align: center;
+    color: rgb(54,178,251);
+}
+.work-que-wrap:hover .work-select{
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.work-select.active {
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.work-question-part .work-que {
+    margin-left: 40px;
+    padding: 3px 0;
+    font-size: 18px;
+}
+/*数学*/
+.work-mk-math,
+.work-math-gap {
+    padding: 10px 20px;
+}
+/*数学填空*/
+.math-gap-table {
+    margin: 0;
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid #333;
+    /*color: rgb(54,178,251);*/
+}
+.math-gap-table.sure {
+    border-color: #ccc;
+    color: #ccc;
+}
+.math-gap-table tr {
+    border: 1px solid #333;
+}
+.math-gap-table tr.sure {
+    border-color: #ccc;
+}
+.math-gap-table td {
+    padding: 20px;
+    cursor: pointer;
+}
+.math-gap-table td:not(.math-gap-result):hover {
+    color: #fff;
+    background-color: rgb(54,178,251);
+}
+.math-gap-table .math-gap-result {
+    padding: 0;
+}
+.math-gap-result input {
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    border: 0;
+    outline: 0;
+    text-align: right;
+}
+/*底部*/
+.work-mk-btm {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.work-mk-btm .work-btm-cnt {
+    width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.work-mk-btm .work-btm-cnt a {
+    color: #fff;
+}
+/*离开*/
+.work-time-icon,
+.work-time span,
+.work-out-off,
+.work-out span {
+    vertical-align: middle;
+}
+.work-time-icon,
+.work-out-off {
+    font-size: 30px;
+    margin-right: 10px;
+}
+.work-out {
+    cursor: pointer;
+}
+.work-out:hover {
+    color: #ccc;
+}
+/*时间、进度*/
+.work-time,
+.work-sec-process,
+.work-all-process {
+    text-align: center;
+}
+/*下一题*/
+.work-btm-next {
+    text-align: right;
+}
+.work-btm-next .work-next-icon {
+    font-size: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.work-btm-next:hover a {
+    color: #ccc;
+    text-decoration: none;
+}
+/*遮罩层*/
+.work-shade {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+}
+.shade-wrap {
+    position: absolute;
+    display: none;
+    width: 500px;
+    height: 300px;
+    padding: 50px 25px 0;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+.shade-select {
+    padding: 0 10px;
+    margin-top: 16%;
+}
+.shade-wrap span {
+    display: block;
+    width: 190px;
+    line-height: 42px;
+    background-color: #444;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+.shade-wrap .shade-out {
+
+}
+.shade-wrap .shade-out:hover {
+    background-color: #333;
+}
+.shade-wrap .shade-in {
+    background-color: rgb(54,178,251);
+}
+.shade-wrap .shade-in:hover {
+    background-color: rgb(48,167,237);
+}
