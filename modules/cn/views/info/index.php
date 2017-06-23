@@ -88,10 +88,10 @@
             <?php foreach($hot as $v){?>
             <li>
               <a href="/info_details/<?php echo $v['id']?>.html">
-                <img src="<?php echo$v['pic']?>" alt="">
+                <img src="<?php echo $v['pic']?>" alt="">
               </a>
               <div>
-                <h3><a href="#"><?php echo$v['title']?></a></h3>
+                <h3><a href="/info_details/<?php echo $v['id']?>.html"><?php echo$v['title']?></a></h3>
                 <ul class="clearfix">
                   <li class="pull-left"><a href="#"><?php echo$v['cate']?></a></li>
                   <li class="pull-right"><?php echo date("Y-m-d",$v['publishTime'])?></li>

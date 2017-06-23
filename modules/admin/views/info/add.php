@@ -52,10 +52,22 @@
                     <input id="file" type="file" name="pic" >
                 </td>
             </tr>
+            <tr>
+                <td>视频网址:</td>
+                <td>
+                    <input type="text" name="videoAddress" value="<?php echo isset($data)? $data['videoAddress']:''?>">
+                </td>
+            </tr>
             <tr id="summary">
-                <td >摘要</td>
+                <td>摘要</td>
                 <td>
                     <input type="text" name="summary" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['summary']:''?>" />限200字内
+                </td>
+            </tr>
+            <tr>
+                <td>关键词</td>
+                <td>
+                    <input type="text" name="keywords" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['keywords']:''?>" />限200字内
                 </td>
             </tr>
             <tr>

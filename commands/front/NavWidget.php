@@ -10,6 +10,7 @@
         public $uid;
         public $user;
         public $now_path;
+        public $url;
         /**
          * 定义函数
          * */
@@ -17,14 +18,13 @@
         {//这个可以取侧边栏数
             $this->udata();
             $this->url();
-//            var_dump($this->data);
         }
 
         /**
          * 运行覆盖程序
          * */
         public function run(){
-            return $this->render('nav',['user'=>$this->user,'path'=>$this->now_path]);
+            return $this->render('nav',['user'=>$this->user,'path'=>$this->now_path,'uid'=>$this->uid]);
         }
         public function udata(){
             $this->session = Yii::$app->session;
@@ -34,6 +34,7 @@
         public function url(){
             $this->now_path=ltrim($_SERVER['REQUEST_URI'],'/');
         }
+
     }
 ?>
 

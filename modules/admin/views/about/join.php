@@ -2,7 +2,7 @@
     <div >
         <a href="/admin/about/index">关于我们</a><span >&gt;</span><span><a href='<?php echo baseUrl."/admin/about/join"?>'>加入我们</a></span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/about/join_add'?>">添加招聘信息</>
+    <a href="<?php echo baseUrl.'/admin/about/join_add'?>">添加招聘信息</a>
     <table border="1"  width="800px">
         <tr align="center">
             <th>id</th>

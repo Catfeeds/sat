@@ -58,7 +58,7 @@
                 <ul>
                     <?php foreach($info1 as $v){?>
                     <li class="s-cnt">
-                        <img src="<?php echo $v['content']?>" alt="">
+                        <img src="<?php echo $v['pic']?>" alt="">
                         <a href="/info_details/<?php echo $v['id']?>.html">查看详情</a>
                     </li>
                     <?php }?>
