@@ -16,7 +16,7 @@
       <ul class="s-new-cnt">
         <?php foreach($data as $v){?>
         <li class="s-new-list">
-          <img src="/cn/images/class_img01.png" alt="">
+          <img src="<?php if($v['pic']!=false){echo $v['pic'];}else{echo '/cn/images/class_img01.png';}?>" alt="">
           <div>
             <h2><?php echo $v['title']?></h2>
             <ul>
@@ -35,7 +35,6 @@
             <p><?php echo $v['summary']?></p>
             <button class="s-apply on">报名</button>
             <a href="/info_details/<?php echo $v['id']?>.html">详情</a>
-<!--            <a href="info_details.html">详情</a>-->
           </div>
         </li>
         <?php }?>
@@ -65,10 +64,15 @@
     var userTel = $('#loginName').val();
     var classId = _this.next().attr('href').split('/')[2].split('.')[0];
     var userId = sessionStorage.getItem('userId');
+<<<<<<< HEAD
 //    var userId = <?php //session_start();echo $_SESSION['uid'];?>//;
 //    alert(userId);
     if (userId) {
       $.post('/cn/Pubclass/Apply',{userTel: userTel,num: num,classId: classId},function(data) {
+=======
+    if (userId) {
+      $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
+>>>>>>> master
         _this.parent().find('.s-apply-num').html(data.hits);
         _this.attr({
           'disabled': 'disabled'

@@ -5,8 +5,10 @@
         <span >&gt;</span>
         <span>讲师管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</>
+
+    <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</a>
     <table border="1" allrules="0" width="100%">
+
         <tr align="center">
             <th>id</th>
             <th>讲师</th>

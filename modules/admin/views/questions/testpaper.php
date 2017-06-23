@@ -6,8 +6,8 @@
         <span >&gt;</span>
         <span>试卷管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/questions/index'?>">返回</></br>
-    <a href="<?php echo baseUrl.'/admin/questions/add_testpaper'?>">添加试卷</>
+    <a href="<?php echo baseUrl.'/admin/questions/index'?>">返回</a></br>
+    <a href="<?php echo baseUrl.'/admin/questions/add_testpaper'?>">添加试卷</a>
     <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>
