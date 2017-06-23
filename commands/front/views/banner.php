@@ -28,3 +28,8 @@
     <a class="carousel-control s-right" href="#myCarousel"
        data-slide="next">&gt;</a>
 </div>
+<script>
+    $('.bnr-wrap').carousel({
+//        interval: 2000
+    })
+</script>

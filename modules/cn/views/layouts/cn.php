@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<?php
+    $now_path=ltrim($_SERVER['REQUEST_URI'],'/');
+    $st =stripos($now_path,'/');
+    if($st!=false){
+        $url=substr($now_path,0,($st));
+    }else{
+        $st =stripos($now_path,'.');
+        $url=substr($now_path,0,($st));
+    }
+    if($url!='info_details'){
+    $data = Yii::$app->db->createCommand("select * from {{%seo}} where url='$url'")->queryOne();
+    }else{
+        $id = Yii::$app->request->get('id', '');
+        $data = Yii::$app->db->createCommand("select id,title,summary,keywords from {{%info}} where id=" . $id)->queryOne();
+        $data['description']=$data['summary'];
+    }
+//var_dump($data);die;
 
-<!--    <title>资讯</title>-->
-    <meta name="keywords" content="SAT课程 SAT培训 申友SAT">
-    <meta name="description" content="SAT课程 SAT培训 申友SAT">
+?>
+    <title><?php echo isset($data['title'])?$data['title']:''?></title>
+    <meta name="keywords" content="<?php echo isset($data['keywords'])?$data['keywords']:'SAT课程 SAT培训 申友SAT'?>">
+    <meta name="description" content="<?php echo isset($data['description'])?$data['description']:'SAT课程 SAT培训 申友SAT'?>">
     <!--阻止浏览器缓存-->
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">

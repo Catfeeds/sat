@@ -121,7 +121,7 @@
 <!--    </div>-->
 </div>
 <script>
-    var sess ='<?php if(isset($user)){echo $user;}?>' ;
+    var sess ='<?php if(isset($uid)){echo $uid;}?>' ;
     sessionStorage.uid = sess;
     // 获取手机验证码
     function leftCode(code){

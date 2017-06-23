@@ -19,9 +19,6 @@ class Pubclass extends ActiveRecord{
             if($v['validTime']<$time){
                 $v['isShow']=0;
                 $re = $info->updateAll($v,'id=:id',array(':id'=>$v['id']));
-            }else{
-                $v['isShow']=1;
-                $re = $info->updateAll($v,'id=:id',array(':id'=>$v['id']));
             }
 
         }
