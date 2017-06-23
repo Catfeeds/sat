@@ -28,3 +28,8 @@
     <a class="carousel-control s-right" href="#myCarousel"
        data-slide="next">&gt;</a>
 </div>
+<script>
+    $('#myCarousel').carousel({
+        interval: 3000
+    })
+</script>

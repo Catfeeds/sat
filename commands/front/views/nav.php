@@ -6,26 +6,26 @@
     </a>
     <ul class="s-nav-cnt pull-left">
         <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
-<!--        <li class="s-nav-work">-->
-<!--            <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>-->
-<!--            <ul class="s-nav-showing">-->
-<!--                <li><a href="/exercise.html" --><?php //if(strpos($path,'exercise')!==false) echo 'class="on"';?><!-->练习</a></li>-->
-<!--                <li><a href="/knowledge.html" --><?php //if($path=='knowledge.html') echo 'class="on"';?><!-->知识库</a></li>-->
-<!--                <li><a href="#">测评</a></li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li><a href="/mock.html" --><?php //if($path=='mock.html') echo 'class="on"';?><!-->模考</a></li>-->
-<!--        <li><a href="#">报告</a></li>-->
+        <li class="s-nav-work">
+            <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>
+            <ul class="s-nav-showing">
+                <li><a href="/exercise.html" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
+                <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
+                <li><a href="#">测评</a></li>
+            </ul>
+        </li>
+        <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
+        <li><a href="#">报告</a></li>
         <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">课程</a></li>
         <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
-<!--    <form action="">-->
-<!--        <i class="fa fa-search"></i>-->
-<!--        <input type="text">-->
-<!--    </form>-->
+    <form action="">
+        <i class="fa fa-search"></i>
+        <input type="text">
+    </form>
 
         <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
              <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['username'];}else{echo '欢迎您';}?></a></li>

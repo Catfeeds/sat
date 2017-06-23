@@ -12,7 +12,7 @@
         <a href="">首页</a><span >&gt;</span><span>资讯管理</span>
     </div>
     <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</>
-    <table border="1"  style="table-layout: fixed;width:100%;">
+    <table border="1" style="table-layout: fixed;width:100%;">
         <tr align="center">
             <th width="60px">id</th>
             <th>资讯标题</th>
