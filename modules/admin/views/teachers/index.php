@@ -5,8 +5,10 @@
         <span >&gt;</span>
         <span>讲师管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</>
-    <table border="1" allrules="0" width="800px">
+
+    <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</a>
+    <table border="1" allrules="0" width="100%">
+
         <tr align="center">
             <th>id</th>
             <th>讲师</th>
@@ -18,17 +20,15 @@
             <th>操作</th>
         </tr>
         <?php
-//        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['name']?></td>
-                <td><? echo $v['pic']?></td>
-                <td><? echo $v['introduction']?></td>
-                <td><? echo $v['subject']?></td>
-                <td><? echo $v['honorary']?></td>
-                <td><? echo $v['seniority']?></td>
-
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['name']?></td>
+                <td><?php echo $v['pic']?></td>
+                <td><?php echo $v['introduction']?></td>
+                <td><?php echo $v['subject']?></td>
+                <td><?php echo $v['honorary']?></td>
+                <td><?php echo $v['seniority']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/teachers/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

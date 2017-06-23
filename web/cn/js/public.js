@@ -5,24 +5,16 @@ $(function () {
     $('#loginName').val(userName);
     $('#loginPass').val(passWord);
   }
-  //导航栏
-  function nav() {
-    $('.s-nav-cnt li a').on("click",function () {
-      $('.s-nav-cnt li a').removeClass('on');
-      if (!$(this).parent().hasClass('s-nav-work')){
-        $('.s-nav-work').children().eq(1).addClass('s-nav-showing');
-      }
-      $(this).addClass("on");
-    });
-    $('.s-nav-work>a').on('click',function () {
-      $(this).next().toggleClass('s-nav-showing');
-    });
-    $('.s-nav-work ul li').on('click',function () {
-      $('.s-nav-work>a').addClass('on');
-      $(this).parent().addClass('s-nav-showing');
-    });
-  }
-  nav();
+  //导航栏下拉菜单
+  $(document).click( function (e) {
+    e.stopPropagation();
+    var $t = $(e.target);
+    if (($t.attr('id') == 'showA')||($t.attr('class') == 'fa fa-sort-desc')) {
+      $('.s-nav-showing').show();
+    } else {
+      $('.s-nav-showing').hide();
+    }
+  })
 
   //进入登录
   $('.s-login-in').click(function () {

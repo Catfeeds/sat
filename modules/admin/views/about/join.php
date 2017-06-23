@@ -2,7 +2,7 @@
     <div >
         <a href="/admin/about/index">关于我们</a><span >&gt;</span><span><a href='<?php echo baseUrl."/admin/about/join"?>'>加入我们</a></span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/about/join_add'?>">添加招聘信息</>
+    <a href="<?php echo baseUrl.'/admin/about/join_add'?>">添加招聘信息</a>
     <table border="1"  width="800px">
         <tr align="center">
             <th>id</th>
@@ -15,11 +15,11 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['cate']?></td>
-                <td><? echo $v['job']?></td>
-                <td><? echo $v['demand']?></td>
-                <td><? echo $v['city']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['cate']?></td>
+                <td><?php echo $v['job']?></td>
+                <td><?php echo $v['demand']?></td>
+                <td><?php echo $v['city']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/about/join_add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

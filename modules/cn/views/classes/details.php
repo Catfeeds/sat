@@ -3,12 +3,12 @@
   <section>
     <div class="s-w1200">
       <ol class="breadcrumb">
-        <li><a href="#">首页</a></li>
-        <li><a href="#">课程</a></li>
-        <li class="active"><?php echo$data['cate']?></li>
+        <li><a href="/index.html">首页</a></li>
+        <li><a href="/class.html">课程</a></li>
+        <li class="active"><?php echo $data['cate']?></li>
       </ol>
       <div class="s-course-details clearfix">
-        <img class="pull-left" src="/cn/images/cou-details01.png" alt="">
+        <img class="pull-left" src="<?php if($data['pic']!=false){echo $data['pic'];}else{echo '/cn/images/cou-details01.png';}?>" alt="">
         <div>
           <h2>SAT<?php echo $data['cate']?>课程</h2>
 <!--          <span class="s-now">￥--><?php //echo$data['price']?><!--</span>-->
@@ -49,19 +49,10 @@
           <div role="tabpanel" class="tab-pane" id="plan">
             <div>
               <h2></h2>
-              <p>1.全程线上题库、模考平台</br>
-                2.学管跟进</br>
-                3.词汇打卡群</br>
-                4.长难句训练营</br>
-                5.每月模考真题课</p>
+              <p>
+                <?php echo $data['plan']?>
+              </p>
             </div>
-<!--            <div>-->
-<!--              <h2>Day 2</h2>-->
-<!--              <p>Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet-->
-<!--                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet-->
-<!--                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet-->
-<!--                Nam id semper purus, sit amet scelerisque justo. Proin in blandNam id semper purus, sit amet</p>-->
-<!--            </div>-->
           </div>
         </div>
       </div>

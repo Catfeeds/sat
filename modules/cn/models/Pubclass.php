@@ -20,6 +20,7 @@ class Pubclass extends ActiveRecord{
                 $v['isShow']=0;
                 $re = $info->updateAll($v,'id=:id',array(':id'=>$v['id']));
             }
+
         }
     }
 }

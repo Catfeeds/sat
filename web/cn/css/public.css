@@ -72,7 +72,10 @@ body {
   position: relative;
 }
 .s-nav .s-nav-cnt li.s-nav-work i {
-  padding-left: .5rem;
+  position: relative;
+  padding-right: 10px;
+  left: 10px;
+  bottom: 3px;
 }
 .s-nav .s-nav-cnt li.s-nav-work ul {
   position: absolute;
@@ -161,7 +164,6 @@ body {
   vertical-align: top;
 }
 .s-footer-top dl {
-  /*text-align: center;*/
   padding: 0 50px;
 }
 .s-footer-top dl dt {
@@ -169,24 +171,21 @@ body {
   padding-bottom: 5px;
   border-bottom: 2px solid rgb(25,78,108);
 }
-.s-footer-top .s-w1200 div {
-  /*float: left;*/
-}
-.s-footer-top .s-w1200 div.s-qr {
+.s-footer-top .s-qr {
   width: 140px;
-  /*text-align: center;*/
   margin-left: 8%;
+  font-size: 16px;
+  text-align: center;
 }
-.s-footer-top .s-w1200 div.s-qr img {
+.s-footer-top .s-qr img {
   width: 100%;
   margin-bottom: 10px;
 }
-.s-footer-top .s-w1200 div.s-tel {
+.s-footer-top .s-tel {
   padding: 30px 0;
-  /*text-align: center;*/
   margin-left: 100px;
 }
-.s-footer-top .s-w1200 div.s-tel img {
+.s-footer-top .s-tel img {
   margin-bottom: 20px;
 }
 .s-footer-bottom {
@@ -208,9 +207,13 @@ body {
   font-size: 14px;
   margin-right: 10px;
 }
-.s-footer-bottom p {
+.s-footer-bottom p,
+.s-footer-bottom p a {
   font-size: 14px;
   color: #fff;
+}
+.s-footer-bottom p a:hover {
+  color:  #e568d7;
 }
 /*--------------------登录注册-----------------*/
 .s-login{

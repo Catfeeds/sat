@@ -15,7 +15,7 @@
             <td>父节点：</td>
             <td>
                 <select name="pid">
-                    <option value="0" <?echo isset($arr)&&$arr['pid']=="0" ? "selected":''?>>顶级节点</option>
+                    <option value="0" <?php echo isset($arr)&&$arr['pid']=="0" ? "selected":''?>>顶级节点</option>
                     <?php foreach($data as $v){?>
                     <option value="<?php echo $v['id']?>" <?php echo isset($arr)&&$arr['pid']==$v['id'] ? "selected":''?>><?php echo $v['name']?></option>
                     <?php }?>

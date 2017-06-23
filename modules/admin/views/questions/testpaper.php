@@ -6,8 +6,8 @@
         <span >&gt;</span>
         <span>试卷管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/questions/index'?>">返回</></br>
-    <a href="<?php echo baseUrl.'/admin/questions/add_testpaper'?>">添加试卷</>
+    <a href="<?php echo baseUrl.'/admin/questions/index'?>">返回</a></br>
+    <a href="<?php echo baseUrl.'/admin/questions/add_testpaper'?>">添加试卷</a>
     <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>
@@ -23,13 +23,13 @@
         //        var_dump($data);exit;
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['name']?></td>
-                <td><? echo $v['math']?></td>
-                <td><? echo $v['read']?></td>
-                <td><? echo $v['language']?></td>
-                <td><? echo $v['write']?></td>
-                <td><? echo $v['time']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['name']?></td>
+                <td><?php echo $v['math']?></td>
+                <td><?php echo $v['read']?></td>
+                <td><?php echo $v['language']?></td>
+                <td><?php echo $v['write']?></td>
+                <td><?php echo $v['time']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add_testpaper'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

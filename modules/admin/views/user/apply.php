@@ -12,11 +12,11 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['pubclass_id']?></td>
-                <td id="title<?php echo $v['id']?>"><? echo $v['title']?></td>
-                <td id="vip<?php echo $v['id']?>"><? echo $v['phone']?></td>
-                <td id="addr<?php echo $v['id']?>"><? echo $v['address']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['pubclass_id']?></td>
+                <td id="title<?php echo $v['id']?>"><?php echo $v['title']?></td>
+                <td id="vip<?php echo $v['id']?>"><?php echo $v['phone']?></td>
+                <td id="addr<?php echo $v['id']?>"><?php echo $v['address']?></td>
                 <td><a><span onclick="leftCode('<?php echo $v['id']?>')">发送公开课地址</span></a>
                     <a href="<?php echo baseUrl.'/admin/user/apply_edit'.'?'.'id='.$v['id']?>">添加公开课地址</a>
                 </td>

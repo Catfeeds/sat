@@ -5,8 +5,8 @@
         <span >&gt;</span>
         <span>课程管理</span>
     </div>
-    <a href="<?php echo baseUrl.'/admin/classes/add'?>">添加课程</>
-    <table border="1" rules="0" width="800px">
+    <a href="<?php echo baseUrl.'/admin/classes/add'?>">添加课程</a>
+    <table border="1" rules="0" width="100%">
         <tr align="center">
             <th>id</th>
             <th>适合学生</th>
@@ -22,15 +22,17 @@
         <?php
         foreach($data as $v){?>
             <tr>
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['student']?></td>
-                <td><? echo $v['pic']?></td>
-                <td><? echo $v['cate']?></td>
-                <td><? echo $v['price']?></td>
-                <td><? echo $v['duration']?></td>
-                <td><? echo $v['teacher']?></td>
-                <td><? echo $v['plan']?></td>
-                <td><? echo $v['introduction']?></td>
+
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['student']?></td>
+                <td><?php echo $v['pic']?></td>
+                <td><?php echo $v['cate']?></td>
+                <td><?php echo $v['price']?></td>
+                <td><?php echo $v['duration']?></td>
+                <td><?php echo $v['teacher']?></td>
+                <td><?php echo $v['plan']?></td>
+                <td><?php echo $v['introduction']?></td>
+
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/classes/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>

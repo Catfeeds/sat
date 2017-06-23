@@ -10,7 +10,7 @@
       </div>
       <div class="s-cnt">
         <h2><?php echo $data['name']?> SAT主讲名师</h2>
-        <a class="border-blue" href="#">点我聊聊</a>
+        <a class="border-blue" href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">点我聊聊</a>
         <p class="s-cnt-introduce"><?php echo $data['introduction']?></p>
         <div class="s-title">
           <img src="/cn/images/teacher-detail02.png" alt="成功案例">

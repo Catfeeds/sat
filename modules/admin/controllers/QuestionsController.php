@@ -46,6 +46,7 @@ class QuestionsController extends ApiControl
             $getdata = new GetData();
             $must = array('content' => '题目');
             $data = $getdata->PostData($must);
+//            var_dump($data);die;
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%topic_extend}}", $data)->execute();
             } else {

@@ -74,7 +74,7 @@
                 <td>内容：</td>
                 <td id="content">
                     <textarea id="editor" type="text/plain" name="content" style="width:600px;height:300px;">
-                        <?echo isset($data)? $data['content']:''?>
+                        <?php echo isset($data)? $data['content']:''?>
                     </textarea>
                 </td>
             </tr>

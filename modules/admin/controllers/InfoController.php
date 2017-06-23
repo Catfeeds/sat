@@ -61,7 +61,7 @@ class InfoController extends ApiControl
 
     }
 
-    // 删除课程
+    // 删除
     public function actionDel()
     {
         $id = Yii::$app->request->get('id', '');

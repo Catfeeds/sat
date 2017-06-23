@@ -24,11 +24,11 @@
             <?php
             foreach($arr as $v){?>
                 <tr>
-                    <td><? echo $v['id']?></td>
-                    <td><? echo $v['number']?></td>
-                    <td><? echo $v['topic']?></td>
-                    <td><? echo $v['tpId']?></td>
-                    <td><? echo $v['section']?></td>
+                    <td><?php echo $v['id']?></td>
+                    <td><?php echo $v['number']?></td>
+                    <td><?php echo $v['topic']?></td>
+                    <td><?php echo $v['tpId']?></td>
+                    <td><?php echo $v['section']?></td>
                     <td>
                         <a class="link-update" href="<?php echo baseUrl.'/admin/questions/topic'.'?'.'id='.$v['id']?>">修改</a>
                         <a class="link-del" href="" onclick="del2(<?php echo $v['id'] ?>)">删除</a>
@@ -55,19 +55,19 @@
         <?php
         foreach($data as $v){?>
             <tr style="line-height:50px;overflow:hidden;">
-                <td><? echo $v['id']?></td>
-                <td><? echo $v['number']?></td>
-                <td style="overflow:hidden;"><? echo $v['content']?></td>
-                <td><? echo $v['answer']?></td>
-                <td><? echo $v['major']?></td>
-                <td><? echo $v['topicId']?></td>
-                <td><? echo $v['subScores']?></td>
-                <td><? echo $v['crosstestScores']?></td>
+                <td><?php echo $v['id']?></td>
+                <td><?php echo $v['number']?></td>
+                <td><?php echo $v['content']?></td>
+                <td><?php echo $v['answer']?></td>
+                <td><?php echo $v['major']?></td>
+                <td><?php echo $v['topicId']?></td>
+                <td><?php echo $v['subScores']?></td>
+                <td><?php echo $v['crosstestScores']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add'.'?'.'id='.$v['id']?>">修改</a>
                     <a class="link-del" href="" onclick="del(<?php echo $v['id'] ?>)">删除</a>
-                  </td>
-              </tr>
+                </td>
+            </tr>
          <?php }?>
     </table>
     </div>

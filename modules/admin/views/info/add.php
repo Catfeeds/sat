@@ -38,26 +38,43 @@
                     <input type="text" name="activeTime" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['activeTime']:''?>" />
                 </td>
             </tr>
+            <?php if(isset($data)) {
+                $str = '<tr>';
+                $str .= '<td>原图片:</td>';
+                $str .= '<td>';
+                $pic = $data['pic'];
+                $str .= "<input name='pic' type='text' value='" . $pic . "'></td></tr>";
+                echo $str;
+            } ?>
             <tr>
-                <td>内容图片</td>
+                <td>内容图片:</td>
                 <td>
-                    <?php  if(isset($data)) {$pic=$data['pic'];echo"<input name='pic' type='text' value='$pic' style='width: 500px;;'>";}
-                    else {echo '<input id="file" type="file" name="pic" value='.'"$pic">';
-                    }?>
+                    <input id="file" type="file" name="pic" >
                 </td>
-                <!--                    <input id="file_upload" name="file_upload" type="file" multiple="true">-->
+            </tr>
+            <tr>
+                <td>视频网址:</td>
+                <td>
+                    <input type="text" name="videoAddress" value="<?php echo isset($data)? $data['videoAddress']:''?>">
+                </td>
             </tr>
             <tr id="summary">
-                <td >摘要</td>
+                <td>摘要</td>
                 <td>
                     <input type="text" name="summary" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['summary']:''?>" />限200字内
+                </td>
+            </tr>
+            <tr>
+                <td>关键词</td>
+                <td>
+                    <input type="text" name="keywords" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['keywords']:''?>" />限200字内
                 </td>
             </tr>
             <tr>
                 <td>内容</td>
                 <td id="content">
                     <textarea id="editor" type="text/plain" name="" style="width:600px;height:300px;">
-                        <?echo isset($data)? $data['content']:''?>
+                        <?php echo isset($data)? $data['content']:''?>
                     </textarea>
                 </td>
             </tr>
