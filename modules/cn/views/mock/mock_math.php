@@ -1,6 +1,6 @@
 
-    <link rel="stylesheet" href="/cn/css/eval-details.css">
-    <script src="/cn/js/eval-details.js"></script>
+    <link rel="stylesheet" href="/cn/css/mock-details.css">
+    <script src="/cn/js/mock-details.js"></script>
 
 <div class="work-mk">
     <div class="work-mk-top container">
@@ -11,63 +11,65 @@
         </div>
     </div>
     <!--数学-->
-    <!--<div class="work-mk-cnt work-mk-math">-->
-    <!--<div class="work-question-part">-->
-    <!--<h3>1.Over the course of the passage, the narrator’s attitude shifts from</h3>-->
-    <!--<ul class="work-que-list" data-id="2358636904440836">-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="A">A</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. </div>-->
-    <!--</li>-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="B">B</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. describe a boy's reactions to his irresponsible parents.</div>-->
-    <!--</li>-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="C">C</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. </div>-->
-    <!--</li>-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="D">D</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. </div>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--数学填空-->
-    <!--<div class="work-mk-cnt work-math-gap">
-      <div class="work-question-part">
-        <h3>1.Over the course of the passage, the narrator’s attitude shifts from</h3>
+    <div class="work-mk-cnt <?php echo $data['isFilling']=="1"?'work-math-gap':'work-mk-math'?>">
+    <div class="work-question-part">
+    <h3><?php echo $data['number']?> . <?php echo $data['content']?></h3>
+        <?php
+        if($data['isFilling']==='0'){
+            $ul='<ul class="work-que-list" data-id="2358636904440836">
+            <li class="work-que-wrap clearfix">
+                <div class="work-select" data-id="A">A</div>
+                <div class="work-que">'. $data['keyA'].'</div>
+            </li>
+            <li class="work-que-wrap clearfix">
+                <div class="work-select" data-id="B">B</div>
+                <div class="work-que">'. $data['keyB'].'</div>
+            </li>
+            <li class="work-que-wrap clearfix">
+                <div class="work-select" data-id="C">C</div>
+                <div class="work-que">'. $data['keyC'].'</div>
+            </li>
+            <li class="work-que-wrap clearfix">
+                <div class="work-select" data-id="D">D</div>
+                <div class="work-que">'. $data['keyD'].'</div>
+            </li>
+        </ul>';
+            echo $ul;
+        }
+       if($data['isFilling']==='1'){
+        $str='
         <table class="math-gap-table" border="1" align="center">
-          <tr>
-            <td class="math-gap-result" colspan="4"><input type="text"></td>
-          </tr>
-          <tr>
-            <td class="math-btn">7</td>
-            <td class="math-btn">8</td>
-            <td class="math-btn">9</td>
-            <td class="math-sure" rowspan="2">确定</td>
-          </tr>
-          <tr>
-            <td class="math-btn">4</td>
-            <td class="math-btn">5</td>
-            <td class="math-btn">6</td>
-          </tr>
-          <tr>
-            <td class="math-btn">1</td>
-            <td class="math-btn">2</td>
-            <td class="math-btn">3</td>
-            <td class="math-clear" rowspan="2">清空</td>
-          </tr>
-          <tr>
-            <td class="math-btn">0</td>
-            <td class="math-btn">.</td>
-            <td class="math-btn">/</td>
-          </tr>
-        </table>
+            <tr>
+                <td class="math-gap-result" colspan="4"><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="math-btn">7</td>
+                <td class="math-btn">8</td>
+                <td class="math-btn">9</td>
+                <td class="math-sure" rowspan="2">确定</td>
+            </tr>
+            <tr>
+                <td class="math-btn">4</td>
+                <td class="math-btn">5</td>
+                <td class="math-btn">6</td>
+            </tr>
+            <tr>
+                <td class="math-btn">1</td>
+                <td class="math-btn">2</td>
+                <td class="math-btn">3</td>
+                <td class="math-clear" rowspan="2">清空</td>
+            </tr>
+            <tr>
+                <td class="math-btn">0</td>
+                <td class="math-btn">.</td>
+                <td class="math-btn">/</td>
+            </tr>
+        </table>';
+        echo $str;
+       }
+        ?>
       </div>
-    </div>-->
+    </div>
 
     <div class="work-mk-btm container">
         <div class="work-btm-cnt row">
