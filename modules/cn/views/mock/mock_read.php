@@ -127,6 +127,7 @@
                 <button class="notice-next-start pull-right">开始做题</button>
             </div>
         </div>
+        <!--离开弹窗-->
         <div class="quit-wrap shade-wrap">
             <h3>小主,你忍心弃我而去吗?</h3>
             <div class="shade-select clearfix">
@@ -134,6 +135,7 @@
                 <span class="shade-in pull-right">逗你玩呢!</span>
             </div>
         </div>
+        <!--选择答案弹窗-->
         <div class="next-wrap shade-wrap">
             <h3>答案都木有</h3>
             <h4>(根据SAT考试规定,按照答对题目数得分)</h4>
@@ -142,6 +144,7 @@
                 <span class="shade-in pull-right">这么简单,我来答</span>
             </div>
         </div>
+        <!--自动提交弹窗-->
         <div class="auto-wrap shade-wrap">
             <h3>答题时间到,点击确定进入到下一小节</h3>
             <div class="shade-select">
@@ -151,9 +154,21 @@
     </div>
     <!--隐藏数据-->
     <div class="worl-btm-hidden">
+        <!--试卷ID-->
+        <input type="hidden" id="testId" value="4546888">
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="1">
         <!--本section总题目-->
-        <input type="hidden" id="sectionNum" value="67">
+        <input type="hidden" id="sectionAllNum" value="67">
+        <!--本section当前题目-->
+        <input type="hidden" id="sectionNum" value="20">
+        <!--当前本篇阅读小题-->
+        <input type="hidden" id="readNum" value="2">
+        <!--本篇阅读总题数-->
+        <input type="hidden" id="readAllNum" value="5">
+        <!--模考总题目数-->
+        <input type="hidden" id="mkAllNum" value="155">
+        <!--当前模考题目号-->
+        <input type="hidden" id="mkNum" value="55">
     </div>
 </div>

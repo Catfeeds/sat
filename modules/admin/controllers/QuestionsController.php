@@ -37,8 +37,8 @@ class QuestionsController extends ApiControl
             if ($id == '') {
                 return $this->render('add', ['arr' => $arr]);
             } else {
-                $questions = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $id)->queryOne();
-                return $this->render('add', ['questions' => $questions, 'arr' => $arr]);
+                $data= Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $id)->queryOne();
+                return $this->render('add', ['data' => $data, 'arr' => $arr]);
             }
         } else {
             // 添加数据到数据

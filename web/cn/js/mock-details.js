@@ -136,13 +136,34 @@ function autoSubmit() {
 //     })
 //   })
 // }
-//提交题目
+
+//进入下一题
 function checkBefore() {
     var done = true;
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
             done = false;
-            console.log($(this).data('id'));
+            var ans = $(this).data('id'),
+                subId = $('.work-que-list').data('id'),
+                testId = $('#testId').val(),
+                readAllNum = $('#readAllNum').val(),
+                readNum = $('#readNum').val();
+            if (readNum >= (readAllNum-1)) {
+
+            }
+            $.ajax({
+                type: 'POST',
+                url: '',
+                data: {
+                    testId: testId,
+                    ans: ans,
+                    subId: subId
+                },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                }
+            })
         }
     });
     if (done) {
