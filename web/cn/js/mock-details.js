@@ -143,17 +143,15 @@ function checkBefore() {
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
             done = false;
-            var ans = $(this).data('id'),
-                subId = $('.work-que-list').data('id'),
-                testId = $('#testId').val(),
+            var ans = $(this).data('id'),//用户答案
+                subId = $('.work-que-list').data('id'),//题目ID
+                testId = $('#testId').val(),//试卷ID
+                correctAns = $('#correctAns').val(),//正确答案
                 readAllNum = $('#readAllNum').val(),
                 readNum = $('#readNum').val();
-            if (readNum >= (readAllNum-1)) {
-
-            }
             $.ajax({
                 type: 'POST',
-                url: '',
+                url: '/cn/mock/next',
                 data: {
                     testId: testId,
                     ans: ans,

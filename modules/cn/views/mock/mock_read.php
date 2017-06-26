@@ -156,6 +156,8 @@
     <div class="worl-btm-hidden">
         <!--试卷ID-->
         <input type="hidden" id="testId" value="4546888">
+        <!-- 正确答案-->
+        <input type="hidden" id="correctAns" value="B">
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="1">
         <!--本section总题目-->
