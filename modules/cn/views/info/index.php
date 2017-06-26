@@ -3,7 +3,7 @@
 
   <section class="s-w1200 s-information">
     <a class="s-adv" href="#">
-      <img src="/cn/images/teacher-detail01.png" alt="背景图片">
+      <img src="/cn/images/info-bc.jpg" alt="背景图片">
     </a>
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">

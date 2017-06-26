@@ -6,7 +6,7 @@
     <div class="bnr-wrap center-block">
         <div class="carousel-inner">
             <div class="item active">
-                <img src="/cn/images/course-bg01.png" alt="First slide">
+                <img src="/cn/images/teacher-bc.jpg" alt="First slide">
             </div>
         </div>
     </div>
