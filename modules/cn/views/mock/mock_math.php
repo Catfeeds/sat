@@ -3,6 +3,7 @@
     <script src="/cn/js/mock-details.js"></script>
 
 <div class="work-mk">
+    <!-- 头部-->
     <div class="work-mk-top container">
         <div class="work-top-cnt row">
             <p class="work-title-pos col-lg-3 col-md-3">第(1/5)题</p>
@@ -95,6 +96,59 @@
     </div>
     <!--遮罩层-->
     <div class="work-shade">
+        <!--注意事项弹窗-->
+        <div class="notice-wrap">
+            <div class="notice-cnt">
+                <h1>测评注意事项</h1>
+                <div class="s-wrap">
+                    <div class="s-tag">
+                        <div class="s-line"></div>
+                        <h3>01</h3>
+                        <p>测评内容</p>
+                    </div>
+                    <div class="s-list">
+                        <ul>
+                            <li>阅读部分: 共52题,65分钟</li>
+                            <li>文法部分: 共44题,35分钟</li>
+                            <li>数学部分: 共58题,80分钟;其中20道题无计算器,25分钟;38道题可使用计算器,55分钟</li>
+                            <li>测试题共计154题,阅读+文法=200~800分,数学=200~800分,限时180分钟</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="s-wrap">
+                    <div class="s-tag">
+                        <div class="s-line"></div>
+                        <h3>02</h3>
+                        <p>测评要求</p>
+                    </div>
+                    <div class="s-list">
+                        <ul>
+                            <li>关闭QQ等其他可能骚扰你的软件</li>
+                            <li>禁止使用网络工具查询答案</li>
+                            <li>请一次性将测评题目完成,建议不要中断</li>
+                            <li>若超过测评限时,将直接跳转至测评结果页面</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="s-wrap s-third">
+                    <div class="s-tag">
+                        <div class="s-line"></div>
+                        <h3>03</h3>
+                        <p>测评结果</p>
+                    </div>
+                    <div class="s-list">
+                        <ul>
+                            <li>测评完成后,点击提交,将显示此次测评分数报告及针对这次测试结果的复习指南</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="notice-next clearfix">
+                <button class="exit-out work-out pull-left">离开</button>
+                <button class="notice-next-start pull-right">开始做题</button>
+            </div>
+        </div>
+        <!--离开弹窗-->
         <div class="quit-wrap shade-wrap">
             <h3>小主,你忍心弃我而去吗?</h3>
             <div class="shade-select clearfix">
@@ -102,6 +156,7 @@
                 <span class="shade-in pull-right">逗你玩呢!</span>
             </div>
         </div>
+        <!--选择答案弹窗-->
         <div class="next-wrap shade-wrap">
             <h3>答案都木有</h3>
             <h4>(根据SAT考试规定,按照答对题目数得分)</h4>
@@ -110,6 +165,7 @@
                 <span class="shade-in pull-right">这么简单,我来答</span>
             </div>
         </div>
+        <!--自动提交弹窗-->
         <div class="auto-wrap shade-wrap">
             <h3>答题时间到,点击确定进入到下一小节</h3>
             <div class="shade-select">

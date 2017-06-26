@@ -4,7 +4,7 @@
     <div class="s-w1200">
       <!--路径导航-->
       <ol class="breadcrumb">
-        <li><a href="#">首页</a></li>
+        <li><a href="/index.html">首页</a></li>
         <li><a href="#">数学</a></li>
         <li class="active">SAT-1904</li>
       </ol>
