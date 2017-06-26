@@ -132,7 +132,7 @@
   $(window).on('load', function () {
     var location = window.location.href;
     if (location.indexOf('?') != -1) {
-      $(window).scrollTop(620)
+      $(window).scrollTop(600);
     }
   })
    var toggle = window.location.href.split('?')[1];
