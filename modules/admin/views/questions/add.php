@@ -37,7 +37,7 @@
                     </span>
                     </br>
 
-                    <span>科&nbsp;&nbsp;&nbsp;&nbsp;目:</span>
+                    <span>科&nbsp;&nbsp;&nbsp;&nbsp; 目 :</span>
                     <span>
                         <select name="major">
                             <option value ="">请选择类型</option>
@@ -60,9 +60,9 @@
                     <span><input type="text" name="essayId" value="<?php echo isset($data)?$data['essayId']:''?>" placeholder="题干的id" ></span>
                     </br>
 
-                    <span width="80px">问 &nbsp;&nbsp;&nbsp;&nbsp;题 ：</span>
+                    <span width="80px">问 &nbsp;&nbsp;&nbsp;&nbsp;题：</span>
                     <span>
-                         <textarea id="editor" type="text/plain" name="content"   style="width:600px;height:300px;" ><?php echo isset($data)? $data['content']:''?></textarea>
+                         <textarea  type="text/plain" name="content"   style="width:500px;height:100px;" ><?php echo isset($data)? $data['content']:''?></textarea>
                     </span>
                     </br>
 
@@ -88,6 +88,9 @@
 
                     <span>答 &nbsp;&nbsp;&nbsp;&nbsp;案 :</span>
                     <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案"></span>
+                    </br>
+                    <span>解 &nbsp;&nbsp;&nbsp;&nbsp;析 :</span>
+                    <span><textarea type="text" name="analysis" style="width:500px;height: 100px;"><?php echo isset($data)?$data['analysis']:''?></textarea>限400字</span>
                     </br>
 
                     <span>subScores:</span>

@@ -16,15 +16,18 @@ class MockController extends Controller
     public $layout=' ';
     public function actionIndex()
     {
-        $this->layout='cn.php';
-        $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
-        $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
-        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
-        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
-        $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
-//        var_dump($data);die;
-        return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
+//        $this->layout='cn.php';
+//        $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
+//        $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
+//        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
+//        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
+//        $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
+////        var_dump($data);die;
+//        return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
 
+
+
+        $this->actionAnswer();
     }
 
     public function actionDetails()
@@ -57,16 +60,19 @@ class MockController extends Controller
     // 选题逻辑
     // 将题目的ID，答案都传过来
     public function actionAnswer(){
-        $answer=Yii::$app->request->post('answer');
-        $id=Yii::$app->request->post('id');
+
+//        $solution=Yii::$app->request->post('solution');// 用户提交的答案
+        $solution='C';// 用户提交的答案
+//        $answer=Yii::$app->request->post('answer');// 正确答案
+        $answer='A';// 正确答案
+//        $id=Yii::$app->request->post('qid');
+        $id=5;
         // 调用方法
         $a=KeepAnswer::getCat();
         $re=$a->addPro($id,$answer);
         var_dump($_SESSION);
         var_dump($re);die;
-        if(re){
 
-        }
 
     }
     // 前端点击传递id，和用户所选答案过来，

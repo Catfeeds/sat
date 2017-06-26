@@ -15,7 +15,11 @@ class Questions extends ActiveRecord{
         // 判断地址栏参数是否存在，构建where语句
         if($cate==false){
             if($major!=false ){
-                $where="where major = '$major'";
+                if($major=='Math'){
+                    $where="where major = 'Math1' or major='Math2'";
+                }else{
+                    $where="where major = '$major'";
+                }
                 $url='exercise.html?m='.$major.'&p';
             }else{
                 $where='';
@@ -29,13 +33,13 @@ class Questions extends ActiveRecord{
                 $str.=$v['id'].',';
             }
             $str=rtrim($str,',');
-            $where="where sourceId in ($str) and major='$major'";
+            $where="where tpId in ($str) and major='$major'";
             $url='exercise.html?m='.$major.'&c='.$cate.'&p';
         }
         $page = Yii::$app->request->get('p', 1);
         $pagesize=2;
         $offset = $pagesize * ($page - 1);
-        $data = Yii::$app->db->createCommand("select id,essay,content,pid from {{%questions}} $where limit $offset,$pagesize")->queryAll();
+        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId $where limit $offset,$pagesize")->queryAll();
         $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
         $count = $count['count(*)'];
         $page = new Pager("$url", $count, $page, $pagesize);

@@ -10,9 +10,9 @@
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li class="active"><a href="/exercise.html?m=math"> 数学</a></li>
-          <li><a href="/exercise.html?m=reading">阅读</a></li>
-          <li><a href="/exercise.html?m=writing">写作</a></li>
+          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
+          <li><a href="/exercise.html?m=Reading">阅读</a></li>
+          <li><a href="/exercise.html?m=Rriting">写作</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
@@ -26,12 +26,16 @@
           <ul>
             <?php foreach($data as $k=>$v){?>
             <li>
-              <h3><?php echo $v['id']?></h3>
+              <h3><?php echo $v['qid']?></h3>
               <p><?php
-                    echo $v['topic'];
+                if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
+                  echo $v['essay'];
+                }else{
+                  echo $v['content'];
+                }
                   ?>
               </p>
-              <a href="/exercise_details/<?php echo $v['id']?>.html">做题</a>
+              <a href="/exercise_details/<?php echo $v['qid']?>.html">做题</a>
             </li>
             <?php }?>
           </ul>
@@ -47,9 +51,14 @@
           <h2>最新题目</h2>
           <?php foreach($arr as $k=>$v){?>
           <li>
-            <h3><?php echo $v['id']?></h3>
-            <a href="/exercise_details/<?php echo $v['id']?>.html"><?php
-              echo $v['topic'];
+            <h3><?php echo $v['qid']?></h3>
+            <a href="/exercise_details/<?php echo $v['qid']?>.html">
+              <?php
+              if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
+                echo $v['essay'];
+              }else{
+                echo $v['content'];
+              }
               ?>
             </a>
           <li>

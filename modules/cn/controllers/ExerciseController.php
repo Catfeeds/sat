@@ -20,25 +20,24 @@ class ExerciseController extends Controller
         $data=$model->data();
         $str=$data['str'];
         unset($data['str']);
-        $arr = Yii::$app->db->createCommand("select * from {{%topic}} order by id desc limit 6")->queryAll();
+//        var_dump($data);die;
+        $arr = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 6")->queryAll();
         return $this->render('index',['data'=>$data,'page'=>$str,'arr'=>$arr]);
     }
 
     public function actionExercise()
     {
         $id=Yii::$app->request->get('id');
-        $data = Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryAll();
-        // 上下一题逻辑不太对
-
+        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryOne();
+        if($data['major']=='Math1'||$data['major']=='Math2') {
+            $major='Math';
+        }else{
+            $major=$data['major'];
+        }
 //        var_dump($data);die;
-        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
-        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
-
-//        var_dump($data);die;
-//        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
-//        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
-
-            return $this->render('exercise',['data'=>$data,'nextid'=>$nextid,'upid'=>$nextid]);
+        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= '$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id asc limit 1" )->queryOne();
+        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id<".$id." and major='$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id desc limit 1" )->queryOne();
+        return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id']]);
 
     }
 

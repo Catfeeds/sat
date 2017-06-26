@@ -17,7 +17,7 @@
 
           <h2 class="s-num"><?php echo $data['id']?></h2>
           <p class="s-title">
-            <?php echo $data['topic']?>
+            <?php echo $data['content']?>
           </p>
           <ul class="s-que-list">
             <li>
@@ -45,17 +45,16 @@
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li><a href="">上一题</a></li>
-              <li><a href="">下一题</a></li>
+              <li><a href="/exercise_details/<?php echo $upid?>.html">上一题</a></li>
+              <li><a href="/exercise_details/<?php echo $nextid?>.html">下一题</a></li>
             </ul>
           </div>
           <!--答案解析-->
           <div class="s-answer-show">
             <h3>题目解析:</h3>
             <div class="s-answer-cnt">
-              <p>正确答案:D</p>
-              <p>In virtually any industry, technological improvements increase labor productivity, which is the output of goods and services per person-hour worked. In Parland's industries, labor productivity is significantly higher than it is in Vergia's industries. Clearly, therefore, Parland's industries must, on the whole, be further advanced technologically than Vergia's are.
-                The argument is most vulnerable to which of the following criticisms?</p>
+              <p>正确答案:<?php echo $data['answer']?></p>
+              <p>解析：<?php echo isset($data['analysis'])?$data['analysis']:'无'?></p>
             </div>
           </div>
         </div>
