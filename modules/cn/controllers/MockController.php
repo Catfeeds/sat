@@ -13,9 +13,10 @@ use app\libs\KeepAnswer;
 
 class MockController extends Controller
 {
-    public $layout='cn.php';
+    public $layout=' ';
     public function actionIndex()
     {
+        $this->layout='cn.php';
         $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
         $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
         $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
@@ -28,6 +29,7 @@ class MockController extends Controller
 
     public function actionDetails()
     {
+        $this->layout='cn1.php';
         $major=Yii::$app->request->get('m','');
         $id=Yii::$app->request->get('id');
         if($major!=false){

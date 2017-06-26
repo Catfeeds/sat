@@ -9,14 +9,14 @@ namespace app\modules\cn\controllers;
 
 use yii;
 use yii\web\Controller;
-use app\modules\cn\models\Topic;
+use app\modules\cn\models\Questions;
 
 class ExerciseController extends Controller
 {
     public $layout='cn.php';
     public function actionIndex()
     {
-       $model=new Topic();
+       $model=new Questions();
         $data=$model->data();
         $str=$data['str'];
         unset($data['str']);
@@ -27,12 +27,12 @@ class ExerciseController extends Controller
     public function actionExercise()
     {
         $id=Yii::$app->request->get('id');
-        $data = Yii::$app->db->createCommand("select t.*,te.* from {{%topic}} t left join {{%topic_extend}} te on  t.id=te.topicId where t.id=".$id)->queryAll();
+        $data = Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryAll();
         // 上下一题逻辑不太对
 
 //        var_dump($data);die;
-        $nextid = Yii::$app->db->createCommand("select id from {{%topic}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
-        $upid = Yii::$app->db->createCommand("select id from {{%topic}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
+        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
 
 //        var_dump($data);die;
 //        $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= ".$data['major']." and section=".$data['section']." and tpId=".$data['tpId']." limit 1" )->queryOne();
