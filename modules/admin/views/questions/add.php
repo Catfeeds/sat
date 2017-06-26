@@ -7,19 +7,59 @@
         <span >&gt;</span>
         <span><a href="/admin/questions/index">题库管理</a></span>
         <span >&gt;</span>
-        <span>添加题目拓展数据</span>
+        <span>添加题目数据</span>
     </div>
-    先添加短文或数学题目<a  href="/admin/questions/topic">添加</a> </br>
+<!--    先添加短文或题目图片<a  href="/admin/questions/extend">添加</a> </br>-->
 <!--            添加短文小题及选项<a><span id="addquestion">添加题目</span></a></br></br>-->
         <div id="question" >
                 <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add"?>">
+                    <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷 &nbsp;:</span>
+                    <span>
+                        <select name="tpId">
+                            <option value ="">请选择试卷</option>
+                            <?php foreach($arr as $v){?>
+                                 <option value ="<?php echo $v['id']?>" <?php echo isset($data['tpId'])&& $data['tpId']==$v['id'] ?  'selected':''?>><?php echo $v['name'].$v['time']?></option>
+                            <?php }?>
+                        </select>
+                    </span>
+                    </br>
+
+                    <span>填 空 题:</span>
+                    <span>
+                        <input name="isFilling" type="radio" value="0" />否<input name="isFilling" type="radio" value="1" />是
+                    </span>
+                    </br>
+
+                    <span>所属小节:</span>
+                    <span>
+                        <input type="text"  name="section" value="<?php echo isset($data['section'])?$data['section']:''?>" placeholder="短文所属的小节" >
+                    </span>
+                    </br>
+
+                    <span>科&nbsp;&nbsp;&nbsp;&nbsp;目:</span>
+                    <span>
+                        <select name="major">
+                            <option value ="">请选择类型</option>
+                            <option value ="Math1" <?php echo isset($data['major'])&& $data['major']=="Math1" ?  'selected':''?>>数学1（带计算器）</option>
+                            <option value ="Math2" <?php echo isset($data['major'])&& $data['major']=="Math2" ?  'selected':''?>>数学2（不带计算器）</option>
+                            <option value ="Reading" <?php echo isset($data['major'])&& $data['major']=="Reading" ?  'selected':''?>>阅读</option>
+                            <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>写作</option>
+                            <option value ="Essay" <?php echo isset($data['major'])&& $data['major']=="Essay" ?  'selected':''?>>作文</option>
+                        </select>
+                    </span>
+                    </br>
+
                     <span width="80px">题 &nbsp;&nbsp;&nbsp;&nbsp;号 :</span>
                     <span>
                         <input type="text"  name="number" value="<?php echo isset($questions)?$questions['number']:''?>" placeholder="题号" >
                     </span>
                     </br>
 
-                    <span width="80px">短文小题或数学附加图片:</span>
+                    <span>短文、图片id:</span>
+                    <span><input type="text" name="essayId" value="<?php echo isset($questions)?$questions['topicId']:''?>" placeholder="题干的id" ></span>
+                    </br>
+
+                    <span width="80px">问 &nbsp;&nbsp;&nbsp;&nbsp;题 ：</span>
                     <span>
                          <textarea id="editor" type="text/plain" name="content"   style="width:600px;height:300px;" ><?php echo isset($questions)? $questions['content']:''?></textarea>
                     </span>
@@ -47,10 +87,6 @@
 
                     <span>答 &nbsp;&nbsp;&nbsp;&nbsp;案 :</span>
                     <span><input type="text" name="answer" value="<?php echo isset($questions)?$questions['answer']:''?>" placeholder="答案"></span>
-                    </br>
-
-                    <span>短文、题干id:</span>
-                    <span><input type="text" name="topicId" value="<?php echo isset($questions)?$questions['topicId']:''?>" placeholder="题干的id" ></span>
                     </br>
 
                     <span>subScores:</span>

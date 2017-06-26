@@ -9,8 +9,8 @@ namespace app\modules\admin\controllers;
 
 use yii;
 use app\libs\ApiControl;
-use app\modules\admin\models\TopicExtend;
-use app\modules\admin\models\Topic;
+use app\modules\admin\models\QuestionsExtend;
+use app\modules\admin\models\Questions;
 use app\modules\admin\models\TestPaper;
 use app\libs\GetData;
 
@@ -21,8 +21,8 @@ class QuestionsController extends ApiControl
     public function actionIndex()
     {
         // 从数据库获取数据
-        $data = Yii::$app->db->createCommand("select * from {{%topic_extend}} order by id desc")->queryAll();
-        $arr= Yii::$app->db->createCommand("select * from {{%topic}} order by id desc")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} order by id desc")->queryAll();
+        $arr= Yii::$app->db->createCommand("select * from {{%questions}} order by id desc")->queryAll();
         return $this->render('index', ['data' => $data,'arr'=>$arr]);
     }
 
@@ -37,18 +37,18 @@ class QuestionsController extends ApiControl
             if ($id == '') {
                 return $this->render('add', ['arr' => $arr]);
             } else {
-                $questions = Yii::$app->db->createCommand("select * from {{%topic_extend}} where id=" . $id)->queryOne();
+                $questions = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $id)->queryOne();
                 return $this->render('add', ['questions' => $questions, 'arr' => $arr]);
             }
         } else {
             // 添加数据到数据
-            $model = new TopicExtend();
+            $model = new Questions();
             $getdata = new GetData();
             $must = array('content' => '题目');
             $data = $getdata->PostData($must);
 //            var_dump($data);die;
             if ($data['id'] == '') {
-                $re = Yii::$app->db->createCommand()->insert("{{%topic_extend}}", $data)->execute();
+                $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
             } else {
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
@@ -66,7 +66,7 @@ class QuestionsController extends ApiControl
     public function actionDel()
     {
         $id = Yii::$app->request->get('id', '');
-        $re = TopicExtend::deleteAll("id=:id", array(':id' => $id));
+        $re = Questions::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             echo true;
         }
@@ -74,7 +74,7 @@ class QuestionsController extends ApiControl
     public function actionDel2()
     {
         $id = Yii::$app->request->get('id', '');
-        $re = Topic::deleteAll("id=:id", array(':id' => $id));
+        $re = QuestionsExtend::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             echo true;
         }
@@ -126,24 +126,24 @@ class QuestionsController extends ApiControl
         }
     }
 
-    public function actionTopic()
+    public function actionExtend()
     {
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
             $arr = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
             if ($id == '') {
-                return $this->render('topic',['arr'=>$arr]);
+                return $this->render('questions_extend',['arr'=>$arr]);
             } else {
-                $data = Yii::$app->db->createCommand("select * from {{%topic}} where id=" . $id)->queryOne();
-                return $this->render('topic', ['data' => $data,'arr'=>$arr]);
+                $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} where id=" . $id)->queryOne();
+                return $this->render('questions_extend', ['data' => $data,'arr'=>$arr]);
             }
         } else {
             $getdata = new GetData();
-            $model = new Topic();
-            $must = array('topic' => '题目','tpId'=>'试卷','section'=>'章节');
+            $model = new QuestionsExtend();
+            $must = array('essay' => '短文');
             $data = $getdata->PostData($must);
             if ($data['id'] == '') {
-                $re = Yii::$app->db->createCommand()->insert("{{%topic}}", $data)->execute();
+                $re = Yii::$app->db->createCommand()->insert("{{%questions_extend}}", $data)->execute();
             } else {
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }

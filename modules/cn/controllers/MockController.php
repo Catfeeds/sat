@@ -18,8 +18,8 @@ class MockController extends Controller
     {
         $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
         $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
-        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='普林斯顿'")->queryAll();
-        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='开普兰'")->queryAll();
+        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
+        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
         $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
 //        var_dump($data);die;
         return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
@@ -32,29 +32,23 @@ class MockController extends Controller
         $id=Yii::$app->request->get('id');
         if($major!=false){
             if($major=='math'){
-                $where="where tpId=".$id."and (major='math1' or major='math2')";
+                $where="where tpId=".$id." and (major='math1' or major='math2')";
+                $modle='mock_math';
             }else{
                 $where="where tpId=".$id." and major='$major'";
+                $modle='mock_read';
             }
         }else{
+            // 全科怎么显示模板 //一题一判断还是每个章节判断
             $where="where tpId=".$id;
+            $modle='mock_read';
         }
-        $id=Yii::$app->db->createCommand("select id from {{%topic}} $where order by id asc limit 1")->queryOne();
-        $data=Yii::$app->db->createCommand("select t.*,te.* from {{%topic}} t left join {{%topic_extend}} te on  t.id=te.topicId where te.topicId=".$id['id']." order by t.id ASC ")->queryAll();
-        var_dump($data);die;
-        return $this->render('mock_details');
+        $id=Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
+        $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id['id']." order by q.id asc ")->queryOne();
+        return $this->render($modle,['data'=>$data]);
     }
 
-//    public function actionMock()
-//    {
-//        $keyword=Yii::$app->request->post('keyword');
-//        $data=Yii::$app->db->createCommand("select name,time from {{%testpaper}} where name='$keyword'")->queryAll();
-//        $arr=array();
-//        foreach($data as $k=>$v){
-//            $arr[$k]=$v['name'].$v['time'];
-//        }
-//        die(json_encode($data));
-//    }
+
     // 模考报告的生成
     // 1、判断正确略
     // 2、得出报告分数（数学，reading。writing）
@@ -71,6 +65,13 @@ class MockController extends Controller
         if(re){
 
         }
+
+    }
+    // 前端点击传递id，和用户所选答案过来，
+    // 下一题
+    public function actionNext(){
+        $id=Yii::$app->request->post('id');
+        $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
     }
 
 }

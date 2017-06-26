@@ -63,20 +63,9 @@
     var num =  _this.parent().find('.s-apply-num').html();
     var userTel = $('#loginName').val();
     var classId = _this.next().attr('href').split('/')[2].split('.')[0];
-<<<<<<< HEAD
     var userId = sessionStorage.getItem('uid');
-=======
-    var userId = sessionStorage.getItem('userId');
-<<<<<<< HEAD
-//    var userId = <?php //session_start();echo $_SESSION['uid'];?>//;
-//    alert(userId);
-    if (userId) {
-      $.post('/cn/Pubclass/Apply',{userTel: userTel,num: num,classId: classId},function(data) {
-=======
->>>>>>> b331539dd0ce93467ba60344ea5a569e29a0c9a6
     if (userId) {
       $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
->>>>>>> master
         _this.parent().find('.s-apply-num').html(data.hits);
         _this.attr({
           'disabled': 'disabled'

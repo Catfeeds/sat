@@ -1,5 +1,4 @@
 
-  <title>模考</title>
   <link rel="stylesheet" href="/cn/css/mock.css">
   <section class="s-w1200 clearfix">
     <div class="s-mock-cnt pull-left">
