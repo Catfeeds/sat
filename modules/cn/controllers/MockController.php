@@ -45,9 +45,16 @@ class MockController extends Controller
             $where="where tpId=".$id;
             $modle='mock_read';
         }
+<<<<<<< Updated upstream
         $id=Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
         $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id['id']." order by q.id asc ")->queryOne();
         return $this->render($modle,['data'=>$data]);
+=======
+        $id=Yii::$app->db->createCommand("select id from {{%topic}} $where order by id asc limit 1")->queryOne();
+        $data=Yii::$app->db->createCommand("select t.*,te.* from {{%topic}} t left join {{%topic_extend}} te on  t.id=te.topicId where te.topicId=".$id['id']." order by t.id ASC ")->queryAll();
+//        var_dump($data);die;
+        return $this->render('mock_details');
+>>>>>>> Stashed changes
     }
 
 

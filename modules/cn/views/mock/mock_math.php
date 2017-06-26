@@ -1,8 +1,9 @@
 
-    <link rel="stylesheet" href="/cn/css/eval-details.css">
-    <script src="/cn/js/eval-details.js"></script>
+    <link rel="stylesheet" href="/cn/css/mock-details.css">
+    <script src="/cn/js/mock-details.js"></script>
 
 <div class="work-mk">
+    <!-- 头部-->
     <div class="work-mk-top container">
         <div class="work-top-cnt row">
             <p class="work-title-pos col-lg-3 col-md-3">第(1/5)题</p>
@@ -10,30 +11,30 @@
             <p class="work-collect col-lg-3 col-md-3"><i class="icon-star-empty">&nbsp;</i>收藏</p>
         </div>
     </div>
-    <!--数学-->
-    <!--<div class="work-mk-cnt work-mk-math">-->
-    <!--<div class="work-question-part">-->
-    <!--<h3>1.Over the course of the passage, the narrator’s attitude shifts from</h3>-->
-    <!--<ul class="work-que-list" data-id="2358636904440836">-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="A">A</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. </div>-->
-    <!--</li>-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="B">B</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. describe a boy's reactions to his irresponsible parents.</div>-->
-    <!--</li>-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="C">C</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. </div>-->
-    <!--</li>-->
-    <!--<li class="work-que-wrap clearfix">-->
-    <!--<div class="work-select" data-id="D">D</div>-->
-    <!--<div class="work-que">describe a boy's reactions to his irresponsible parents. </div>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
+    <!--数学选择-->
+    <div class="work-mk-cnt work-mk-math">
+        <div class="work-question-part">
+            <h3>1.Over the course of the passage, the narrator’s attitude shifts from</h3>
+            <ul class="work-que-list" data-id="2358636904440836">
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="A">A</div>
+                    <div class="work-que">describe a boy's reactions to his irresponsible parents. </div>
+                </li>
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="B">B</div>
+                    <div class="work-que">describe a boy's reactions to his irresponsible parents. describe a boy's reactions to his irresponsible parents.</div>
+                </li>
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="C">C</div>
+                    <div class="work-que">describe a boy's reactions to his irresponsible parents. </div>
+                </li>
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="D">D</div>
+                    <div class="work-que">describe a boy's reactions to his irresponsible parents. </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!--数学填空-->
     <!--<div class="work-mk-cnt work-math-gap">
@@ -93,6 +94,7 @@
     </div>
     <!--遮罩层-->
     <div class="work-shade">
+        <!--离开弹窗-->
         <div class="quit-wrap shade-wrap">
             <h3>小主,你忍心弃我而去吗?</h3>
             <div class="shade-select clearfix">
@@ -100,6 +102,7 @@
                 <span class="shade-in pull-right">逗你玩呢!</span>
             </div>
         </div>
+        <!--选择答案弹窗-->
         <div class="next-wrap shade-wrap">
             <h3>答案都木有</h3>
             <h4>(根据SAT考试规定,按照答对题目数得分)</h4>
@@ -108,6 +111,7 @@
                 <span class="shade-in pull-right">这么简单,我来答</span>
             </div>
         </div>
+        <!--自动提交弹窗-->
         <div class="auto-wrap shade-wrap">
             <h3>答题时间到,点击确定进入到下一小节</h3>
             <div class="shade-select">

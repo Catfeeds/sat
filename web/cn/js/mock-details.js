@@ -42,9 +42,9 @@ $(function () {
         $('.shade-wrap').hide();
     })
     //确认离开点击事件
-    $('.exit-out').click(function () {
-        window.location.href='../mock/index.html';
-    })
+    //$('.exit-out').click(function () {
+    //    window.location.href='/mock.html';
+    //})
 
     var result = $('.math-gap-result input');
     $('.math-btn').click(function () {
@@ -64,6 +64,11 @@ $(function () {
         });
         $('.math-btn').removeClass('math-btn');
     })
+    //开始做题点击事件
+    $('.notice-next-start').click(function(){
+        $('.work-shade').hide();
+        $('.notice-wrap').hide();
+    })
 })
 
 //做题区域高度自适应
@@ -76,14 +81,14 @@ function workHeight() {
 //收藏事件
 function collectEvent(obj) {
     var _this = $(obj);
-    if (_this.find('i').hasClass('icon-star-empty')) {
+    if (_this.find('i').hasClass('fa-star-o')) {
         _this.addClass('active');
-        _this.find('i').removeClass('icon-star-empty');
-        _this.find('i').addClass('icon-star');
+        _this.find('i').removeClass('fa-star-o');
+        _this.find('i').addClass('fa-star');
     } else {
         _this.removeClass('active');
-        _this.find('i').removeClass('icon-star');
-        _this.find('i').addClass('icon-star-empty');
+        _this.find('i').removeClass('fa-star');
+        _this.find('i').addClass('fa-star-o');
     }
 }
 //倒计时
