@@ -59,7 +59,8 @@ class MockController extends Controller
     // 2、得出报告分数（数学，reading。writing）
     // 选题逻辑
     // 将题目的ID，答案都传过来
-    public function actionAnswer(){
+    public function actionAnswer()
+    {
 
 //        $solution=Yii::$app->request->post('solution');// 用户提交的答案
         $solution='C';// 用户提交的答案
@@ -74,23 +75,24 @@ class MockController extends Controller
         $re=$a->addPro($id,$answer,$solution);
         var_dump($_SESSION['answer']);
 //        var_dump($a->addPro($id,$answer,$solution));die;
-        $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." order by q.id asc limit 1 ")->queryOne();
+        $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." order by q.id asc limit 1 ")->queryOne();
         var_dump($data);
     }
     // 前端点击传递id，和用户所选答案过来，
     // 下一题
-    public function actionNext(){
+    public function actionNext()
+    {
         $solution=Yii::$app->request->post('solution');// 用户提交的答案
         $answer=Yii::$app->request->post('answer');// 正确答案
         $id=Yii::$app->request->post('id');
-//        $id=5;
+//        $id=6;
         session_start();
         $a=KeepAnswer::getCat();
         $re=$a->addPro($id,$answer,$solution);
 //        var_dump($_SESSION['answer']);
-        $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
+        $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
 //        return $data;
-        die(json_encode($data));
+        echo die(json_encode($data));
     }
 
 }
