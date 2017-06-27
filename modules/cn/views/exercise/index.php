@@ -12,7 +12,7 @@
         <ul class="s-label-list">
           <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
           <li><a href="/exercise.html?m=Reading">阅读</a></li>
-          <li><a href="/exercise.html?m=Rriting">写作</a></li>
+          <li><a href="/exercise.html?m=Writing">写作</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>

@@ -27,7 +27,7 @@
         <div class="work-wrap-right pull-right">
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
-                    <h3><?php echo $data['content']?></h3>
+                    <h3><?php echo $data['number']?>.<?php echo $data['content']?></h3>
                     <ul class="work-que-list" data-id="2358636904440836">
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="A">A</div>

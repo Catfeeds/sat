@@ -20,36 +20,37 @@ class KeepAnswer {
         }
         return self::$ins;
     }
-    public function getCat(){
+    static public function getCat(){
         //  将对象放入session中
-        if(!($_SESSION['answer'])||!($_SESSION['answer'] instanceof self)){
+        if((!isset($_SESSION['answer']))||(!($_SESSION['answer'] instanceof self))){
             $_SESSION['answer']=self::getIns();
         }
         return $_SESSION['answer'];
     }
     // 判断是否在item里,@$n_id题目的id
-    public function inItem($n_id){
-        if($this->getType()==0){
-            return false;
-        }
-        if(!(array_key_exists($n_id,$this->item))){
-            return false;
-        }else{
-            return $this->item[$n_id][1];
-        }
-    }
+//    public function inItem($n_id){
+//        if($this->getType()==0){
+//            return false;
+//        }
+//        if(!(array_key_exists($n_id,$this->item))){
+//            return false;
+//        }else{
+//            return $this->item[$n_id][1];
+//        }
+//    }
     /*添加题目答案,
      *@$n_id题目的id
      *@$answer题目的答案
     */
-    public function addPro($n_id,$answer){
+    public function addPro($n_id,$answer,$solution){
         if (array_key_exists($n_id,$this->item)) {
-            $this->item[$n_id][1]=$answer;
+            $this->item[$n_id][2]=$solution;
             return;
         }
         $this->item[$n_id] = array();
         array_push( $this->item[$n_id], $n_id);
         array_push( $this->item[$n_id], $answer);
+        array_push( $this->item[$n_id], $solution);
         return true;
     }
 
@@ -87,14 +88,14 @@ class KeepAnswer {
     // 将session中存入的数据进一步处理的方法
     public function cartPublic()
     {
-//        $proIds = $_SESSION[cat]->item;
-//        $pro = D('Product');
-//        $brr = array();
-//        foreach ($proIds as $key => $val) {
-//            $brr[$val[0]] = $pro->where('pro_id=' . $val[0])->find();
-//            $brr[$val[0]][num] = $val[1];
-//        }
-////        dump($brr);
-//        return $brr;
+        $proIds = $_SESSION['answer']->item;
+        $pro = D('Product');
+        $brr = array();
+        foreach ($proIds as $key => $val) {
+            $brr[$val[0]] = $pro->where('pro_id=' . $val[0])->find();
+            $brr[$val[0]][num] = $val[1];
+        }
+//        dump($brr);
+        return $brr;
     }
 }
