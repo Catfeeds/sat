@@ -27,7 +27,7 @@ class MockController extends Controller
 
 
 
-//        $this->actionAnswer();
+//        $this->actionNext();
     }
 
     public function actionDetails()
@@ -83,12 +83,14 @@ class MockController extends Controller
         $solution=Yii::$app->request->post('solution');// 用户提交的答案
         $answer=Yii::$app->request->post('answer');// 正确答案
         $id=Yii::$app->request->post('id');
+//        $id=5;
         session_start();
         $a=KeepAnswer::getCat();
         $re=$a->addPro($id,$answer,$solution);
-        var_dump($_SESSION['answer']);
+//        var_dump($_SESSION['answer']);
         $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
-        return $data;
+//        return $data;
+        die(json_encode($data));
     }
 
 }
