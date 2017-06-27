@@ -16,18 +16,18 @@ class MockController extends Controller
     public $layout=' ';
     public function actionIndex()
     {
-//        $this->layout='cn.php';
-//        $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
-//        $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
-//        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
-//        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
-//        $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
-////        var_dump($data);die;
-//        return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
+        $this->layout='cn.php';
+        $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
+        $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
+        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
+        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
+        $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
+//        var_dump($data);die;
+        return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
 
 
 
-        $this->actionAnswer();
+//        $this->actionAnswer();
     }
 
     public function actionDetails()
@@ -66,20 +66,29 @@ class MockController extends Controller
 //        $answer=Yii::$app->request->post('answer');// 正确答案
         $answer='A';// 正确答案
 //        $id=Yii::$app->request->post('qid');
-        $id=5;
+        $id=6;
         // 调用方法
+//        $a=new KeepAnswer();
+        session_start();
         $a=KeepAnswer::getCat();
-        $re=$a->addPro($id,$answer);
-        var_dump($_SESSION);
-        var_dump($re);die;
-
-
+        $re=$a->addPro($id,$answer,$solution);
+        var_dump($_SESSION['answer']);
+//        var_dump($a->addPro($id,$answer,$solution));die;
+        $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." order by q.id asc limit 1 ")->queryOne();
+        var_dump($data);
     }
     // 前端点击传递id，和用户所选答案过来，
     // 下一题
     public function actionNext(){
+        $solution=Yii::$app->request->post('solution');// 用户提交的答案
+        $answer=Yii::$app->request->post('answer');// 正确答案
         $id=Yii::$app->request->post('id');
+        session_start();
+        $a=KeepAnswer::getCat();
+        $re=$a->addPro($id,$answer,$solution);
+        var_dump($_SESSION['answer']);
         $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
+        return $data;
     }
 
 }

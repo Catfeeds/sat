@@ -1,0 +1,65 @@
+.s-adv-cnt {
+    margin: 50px 0 40px 0;
+}
+.s-adv-cnt img {
+    width: 100%;
+    height: 250px;
+}
+.s-res .s-cnt {
+    width: 800px;
+    font-size: 14px;
+}
+.s-res .s-cnt h2,
+.s-res .s-cnt p {
+    margin-bottom: 5px;
+}
+.s-know,
+.s-example {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 0 0 3px #000;
+    -moz-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+}
+.s-res .s-side {
+    position: relative;
+    width: 270px;
+    padding: 20px;
+    -webkit-box-shadow: 0 0 3px #000;
+    -moz-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+    font-size: 14px;
+}
+.s-res .s-side dl {
+    margin-bottom: 0;
+}
+.s-res .s-side dt {
+    position: absolute;
+    padding: 5px 10px;
+    top: -15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: rgb(54,178,251);
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.s-res .s-side dd {
+    margin: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.s-res .s-side dd:hover {
+    color: rgb(54,178,251);
+}
+.s-res .s-side dd a {
+    padding-left: 10px;
+    font-size: 14px;
+}
