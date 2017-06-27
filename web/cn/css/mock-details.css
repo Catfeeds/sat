@@ -7,11 +7,14 @@
     margin: 0 auto;
     line-height: 60px;
     background-color: rgb(54,178,251);
-    color: #fff;
 }
 .work-mk-top .work-top-cnt {
     width: 100%;
     text-align: center;
+    color: #fff;
+}
+.work-mk-top .work-top-cnt p {
+    color: #fff;
 }
 .work-title-pos {
     text-align: left;
@@ -154,6 +157,8 @@
     height: 60px;
     line-height: 60px;
     background-color: rgb(54,178,251);
+}
+.work-mk-btm .work-btm-cnt div {
     color: #fff;
 }
 .work-mk-btm .work-btm-cnt a {
@@ -287,7 +292,7 @@
     background-color: rgb(54,178,251);
 }
 .notice-cnt .s-wrap {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .notice-cnt .s-tag {
     float: left;
@@ -320,6 +325,9 @@
 .notice-cnt .s-tag h3 {
     margin: 0;
     font-size: 40px;
+}
+.notice-cnt .s-tag p{
+    color: #fff;
 }
 .notice-cnt .s-list {
     margin-left: 130px;

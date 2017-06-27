@@ -8,7 +8,7 @@
         <div class="work-top-cnt row">
             <p class="work-title-pos col-lg-3 col-md-3">第(1/5)题</p>
             <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo substr($data['major'],0,4)?> Section<?php echo $data['section']?></span></h1>
-            <p class="work-collect col-lg-3 col-md-3"><i class="icon-star-empty">&nbsp;</i>收藏</p>
+            <p class="work-collect col-lg-3 col-md-3"><i class="fa fa-star-o">&nbsp;</i>收藏</p>
         </div>
     </div>
     <!--数学-->
@@ -152,7 +152,7 @@
         <div class="quit-wrap shade-wrap">
             <h3>小主,你忍心弃我而去吗?</h3>
             <div class="shade-select clearfix">
-                <span class="exit-out shade-out pull-left">忍心而去</span>
+                <span class="shade-out pull-left">忍心而去</span>
                 <span class="shade-in pull-right">逗你玩呢!</span>
             </div>
         </div>

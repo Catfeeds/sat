@@ -54,7 +54,7 @@
     <div class="work-mk-btm container">
         <div class="work-btm-cnt row">
             <div class="work-out col-lg-1 col-md-1">
-                <i class="work-out-off icon-off"></i>
+                <i class="work-out-off fa fa-sign-out"></i>
                 <span>离开</span>
             </div>
             <div class="work-time col-lg-3 col-md-3">
@@ -64,12 +64,12 @@
             <div class="work-sec-process col-lg-4 col-md-4">
                 本section进度:<span>3</span>/<span>55</span>
             </div>
-            <div class="work-all-process col-lg-3 col-md-3">
+            <div class="work-all-process col-lg-2 col-md-2">
                 做题总进度:<span>30</span>/<span>155</span>
             </div>
-            <div class="work-btm-next col-lg-1 col-md-1">
+            <div class="work-btm-next col-lg-2 col-md-2">
                 <a href="#">
-                    <i class="work-next-icon icon-caret-right"></i>NEXT</a>
+                    <i class="work-next-icon fa fa-hand-o-right"></i>NEXT</a>
             </div>
         </div>
     </div>
@@ -123,7 +123,7 @@
                 </div>
             </div>
             <div class="notice-next clearfix">
-                <button class="exit-out work-out pull-left">离开</button>
+                <button class="work-out pull-left">离开</button>
                 <button class="notice-next-start pull-right">开始做题</button>
             </div>
         </div>

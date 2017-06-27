@@ -14,7 +14,10 @@ $(function () {
     //做题区域高度自适应
     workHeight();
     //倒计时
-    countTime();
+    console.log($('.notice-wrap').css('display'));
+    if ($('.notice-wrap').css('display') != 'block') {
+        countTime();
+    }
     //收藏点击事件
     $('.work-collect').click(function () {
         collectEvent(this);
@@ -42,9 +45,9 @@ $(function () {
         $('.shade-wrap').hide();
     })
     //确认离开点击事件
-    //$('.exit-out').click(function () {
-    //    window.location.href='/mock.html';
-    //})
+    $('.exit-out').click(function () {
+        window.location.href='/mock.html';
+    })
 
     var result = $('.math-gap-result input');
     $('.math-btn').click(function () {
@@ -67,7 +70,7 @@ $(function () {
     //开始做题点击事件
     $('.notice-next-start').click(function(){
         $('.work-shade').hide();
-        $('.notice-wrap').hide();
+        $('.notice-wrap').remove();
     })
 })
 

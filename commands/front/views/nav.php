@@ -11,7 +11,7 @@
             <ul class="s-nav-showing">
                 <li><a href="/exercise.html" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
                 <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
-                <li><a href="#">测评</a></li>
+<!--                <li><a href="#">测评</a></li>-->
             </ul>
         </li>
         <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>

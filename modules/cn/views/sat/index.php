@@ -8,34 +8,33 @@
                 <?php use app\commands\front\BannerWidget;?>
                 <?php BannerWidget::begin();?>
                 <?php BannerWidget::end();?>
-            <div class="s-person clearfix">
-                <div class="s-person-logo border-radius pull-left"></div>
-                <div class="s-hi">
-                    <h3>hi</h3>
-                    <p>欢迎来到雷哥网</p>
-                </div>
-                <?php if($user){
-                    echo '<div class="s-btn">
-                    <button >欢迎您</button>
-                    <button onclick="Out()" >退出</button>
-                    </div>';
-                }else{
-                    echo '<div class="s-btn">
-                    <button class="s-login-in"><a  href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></button>
-                     <button class="s-sign-up"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></button>
-                    </div>';
-                }?>
-
-                <h3 class="s-adv">公告:</h3>
-                <div class="s-adv-wrap">
-                    <ul>
-                        <?php foreach($infoAd as $v){?>
-                        <li><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a></li>
-                        <?php }?>
-
-                    </ul>
-                </div>
-            </div>
+<!--            <div class="s-person clearfix">-->
+<!--                <div class="s-person-logo border-radius pull-left"></div>-->
+<!--                <div class="s-hi">-->
+<!--                    <h3>hi</h3>-->
+<!--                    <p>欢迎来到雷哥网</p>-->
+<!--                </div>-->
+<!--                --><?php //if($user){
+//                    echo '<div class="s-btn">
+//                    <button >欢迎您</button>
+//                    <button onclick="Out()" >退出</button>
+//                    </div>';
+//                }else{
+//                    echo '<div class="s-btn">
+//                    <button class="s-login-in"><a  href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">登录</a></button>
+<!--//                     <button class="s-sign-up"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=--><?php //echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">注册</a></button>-->
+<!--//                    </div>';-->
+<!--//                }?>-->
+<!--                <h3 class="s-adv">公告:</h3>-->
+<!--                <div class="s-adv-wrap">-->
+<!--                    <ul>-->
+<!--                        --><?php //foreach($infoAd as $v){?>
+<!--                        <li><a href="/info_details/--><?php //echo $v['id']?><!--.html">--><?php //echo $v['title']?><!--</a></li>-->
+<!--                        --><?php //}?>
+<!---->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
         <!--免费公开课-->
         <div class="s-pubclass">
@@ -59,6 +58,9 @@
                     <?php foreach($info1 as $v){?>
                     <li class="s-cnt">
                         <img src="<?php echo $v['pic']?>" alt="">
+                        <p>主题：名师带你走进高分殿堂</p>
+                        <p>时间：2017-8-5</p>
+                        <p>嘉宾：Amanda</p>
                         <a href="/info_details/<?php echo $v['id']?>.html">查看详情</a>
                     </li>
                     <?php }?>
