@@ -65,9 +65,9 @@
                         </div>
                         <a href="/info_details/<?php echo $v['id']?>.html">查看详情</a>
                         <div class="s-pubclass-info">
-                            <p>主题：名师带你走进高分殿堂</p>
-                            <p>时间：2017-8-5</p>
-                            <p>主讲人：Amanda</p>
+                            <p>主题：<?php echo $v['title']?></p>
+                            <p>时间：<?php echo $v['activeTime']?></p>
+                            <p>主讲人：<?php echo $v['name']?></p>
                         </div>
                     </li>
                     <?php }?>
