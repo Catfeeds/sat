@@ -1,3 +1,7 @@
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+
 <div class="span10">
     <div >
         <div >
@@ -52,11 +56,11 @@
             </tr>
             <tr>
                 <td>知识点解析：</td>
-                <td><input type="text" name="analysis" value="<?php echo isset($data)?$data['analysis']:''?>" style="width:500px;"></td>
+                <td><textarea id="editor" type="text" name="analysis" style="width: 600px;height: 300px;"><?php echo isset($data)?$data['analysis']:''?></textarea></td>
             </tr>
             <tr>
                 <td>相关题型：</td>
-                <td><input type="text" name="related" value="<?php echo isset($data)?$data['related']:''?>" style="width:500px;"></td>
+                <td><textarea id="ueditor" type="text" name="related" style="width: 600px;height: 300px;"><?php echo isset($data)?$data['related']:''?></textarea></td>
             </tr>
 
             <tr>
@@ -67,4 +71,7 @@
         </table>
     </form>
 </div>
-
+<script>
+    var ue = UE.getEditor('editor');
+    var related = UE.getEditor('ueditor');
+</script>

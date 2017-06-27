@@ -21,13 +21,13 @@
           <ul class="s-development">
             <h3>Development</h3>
             <?php foreach ($data as $v){if($v['cate']=='development'){?>
-            <li><a href="#"><?echo $v['name']?></a></li>
+            <li><a href="knowledge_details/<?php echo $v['id']?>.html"><?php echo $v['name']?></a></li>
             <?php }}?>
           </ul>
           <ul class="s-organization">
           <h3>Organization</h3>
             <?php foreach ($data as $v){if($v['cate']=='organization'){?>
-              <li><a href="#"><?echo $v['name']?></a></li>
+              <li><a href="knowledge_details/<?php echo $v['id']?>.html"><?echo $v['name']?></a></li>
             <?php }}?>
 <!--          <li><a href="#">precision</a></li>-->
 <!--          <li><a href="#">concision</a></li>-->
@@ -37,7 +37,7 @@
           <ul class="s-effective">
             <h3>Effective language use</h3>
             <?php foreach ($data as $v){if($v['cate']=='effective language use'){?>
-              <li><a href="#"><?echo $v['name']?></a></li>
+              <li><a href="knowledge_details/<?php echo $v['id']?>.html"><?echo $v['name']?></a></li>
             <?php }}?>
 <!--            <li><a href="#">proposition</a></li>-->
 <!--            <li><a href="#">support</a></li>-->
@@ -48,7 +48,7 @@
           <ul class="s-structure">
             <h3>Structure</h3>
             <?php foreach ($data as $v){if($v['cate']=='structure'){?>
-              <li><a href="#"><?echo $v['name']?></a></li>
+              <li><a href="knowledge_details/<?php echo $v['id']?>.html"><?echo $v['name']?></a></li>
             <?php }}?>
 <!--            <li><a href="#">sentence boundaries</a></li>-->
 <!--            <li><a href="#">parallet structure</a></li>-->
@@ -59,7 +59,7 @@
           <ul class="s-usage">
             <h3>Usage</h3>
             <?php foreach ($data as $v){if($v['cate']=='usage'){?>
-              <li><a href="#"><?echo $v['name']?></a></li>
+              <li><a href="knowledge_details/<?php echo $v['id']?>.html"><?echo $v['name']?></a></li>
             <?php }}?>
 <!--            <li><a href="#">possessive</a></li>-->
 <!--            <li><a href="#">pronoun</a></li>-->
@@ -71,7 +71,7 @@
           <ul class="s-punctutation">
             <h3>Punctutation</h3>
             <?php foreach ($data as $v){if($v['cate']=='punctutation'){?>
-              <li><a href="#"><?echo $v['name']?></a></li>
+              <li><a href="knowledge_details/<?php echo $v['id']?>.html"><?echo $v['name']?></a></li>
             <?php }}?>
 <!--            <li><a href="#">end-of-sentence</a></li>-->
 <!--            <li><a href="#">within-in</a></li>-->
