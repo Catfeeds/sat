@@ -10,7 +10,7 @@
       </ol>
       <!--背景图片-->
       <a href="#" class="s-pd-bg">
-        <img src="/cn/images/pubClass-dea_03.png" alt="背景图片">
+        <img src="/cn/images/info-bc.jpg" alt="背景图片">
       </a>
       <!--文章标题图片-->
       <div class="s-pd-title-bg">

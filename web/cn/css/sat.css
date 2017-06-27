@@ -191,6 +191,27 @@
   background-color: rgb(54,178,251);
   text-align: center;
 }
+.s-pubclass-info {
+  position: absolute;
+  bottom: -180px;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  background-color: rgba(0,0,0,.5);
+}
+.s-pubclass-info p {
+  color: #fff;
+}
+.s-pubcnt-cnt li:hover .s-pubclass-info {
+  bottom: 70px;
+}
 /*暑期班*/
 .s-course {
   width: 100%;

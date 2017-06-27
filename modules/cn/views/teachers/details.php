@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="/cn/css/teacher-detail.css">
   <section class="s-teacher-detail s-w1200">
     <a href="#" class="s-adv">
-      <img src="/cn/images/teacher-detail01.png" alt="">
+      <img src="/cn/images/teacher-bc.jpg" alt="">
     </a>
     <div class="s-introduce clearfix">
       <div class="s-head-img pull-left">
