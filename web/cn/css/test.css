@@ -79,8 +79,13 @@
   border-bottom: 1px solid rgb(238,238,238);
   font-size: 14px;
 }
+.s-test .s-subject-cnt div {
+  max-height: 100px;
+  margin: 10px 0;
+  overflow: hidden;
+}
 .s-test .s-subject-cnt p {
-  padding: 13px 0;
+  line-height: 24px;
 }
 .s-test .s-subject-cnt a {
   padding: 5px 30px;
@@ -111,7 +116,7 @@
   font-size: 14px;
 }
 .s-test .s-right-subject li {
-
+  border-bottom: 1px dashed #ccc;
 }
 .s-test .s-right-subject h2 {
   position: relative;
@@ -140,7 +145,13 @@
   font-size: 14px;
 }
 .s-test .s-right-subject a {
+  display: block;
+  max-height: 100px;
+  overflow: hidden;
   font-size: 14px;
+}
+.s-test .s-right-subject p {
+  margin: 0;
 }
 .s-test .s-right-code {
   margin-top: 40px;
@@ -150,4 +161,9 @@
 .s-test .s-right-code img {
   margin-bottom: 20px;
   width: 50%;
+}
+/*分页栏*/
+.pagination > .active > a {
+  background-color: rgb(54,178,251);
+  border-color: rgb(54,178,251);
 }

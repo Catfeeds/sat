@@ -1,3 +1,10 @@
+.breadcrumb {
+  background-color: #fff;
+}
+.breadcrumb li,
+.breadcrumb li a {
+  font-size: 14px;
+}
 .s-exercise .s-top-img {
   margin-bottom: 60px;
 }

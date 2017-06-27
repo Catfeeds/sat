@@ -158,6 +158,10 @@
         <input type="hidden" id="testId" value="4546888">
         <!-- 正确答案-->
         <input type="hidden" id="correctAns" value="B">
+        <!-- 科目-->
+        <input type="hidden" id="subject" value="major">
+        <!--题目类型-->
+        <input type="hidden" id="classify" value="jhi">
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="1">
         <!--本section总题目-->

@@ -14,12 +14,11 @@
       <div class="clearfix">
         <!--题目-->
         <div class="s-exam pull-left">
-
           <h2 class="s-num"><?php echo $data['id']?></h2>
           <p class="s-title">
             <?php echo $data['content']?>
           </p>
-          <ul class="s-que-list">
+          <ul class="s-que-list" id="subjectId" data-id="448644148445">
             <li>
               <div class="s-select" data-id="A">A</div>
               <div class="s-que"> <?php echo $data['keyA']?> </div>
@@ -39,7 +38,7 @@
           </ul>
 
           <div class="s-btn-list clearfix">
-            <div class="s-collect pull-left">
+            <div class="s-collect pull-left" data-value="1">
               <i class="fa fa-star-o"></i>
               收藏
             </div>
@@ -72,30 +71,61 @@
     </div>
   </section>
 <script>
-  $('.s-exam .s-que-list li').click(function () {
-    $('.s-exam .s-que-list li').find('.s-select').removeClass('active');
-    $(this).find('.s-select').addClass('active')
+  $(function () {
+    // 加载页面时判断是否收藏
+    if ($('.s-collect').data('value') == 1) {
+      $('.s-collect').addClass('active');
+      $('.s-collect').find('i').removeClass('fa-star-o');
+      $('.s-collect').find('i').addClass('fa-star');
+    }
+    //  选项事件
+    $('.s-exam .s-que-list li').click(function () {
+      $('.s-exam .s-que-list li').find('.s-select').removeClass('active');
+      $(this).find('.s-select').addClass('active')
+    })
   })
+  //查看答案
   $('.s-exam .s-answer li').click(function () {
     if ($(this).index() == 0) {
-      $('.s-exam .s-answer-show').fadeIn(1000)
+      if ($('.s-answer-show').css('display') == 'none') {
+        $(this).addClass('active');
+        $('.s-exam .s-answer-show').fadeIn(1000)
+      }else {
+        $(this).removeClass('active');
+        $('.s-exam .s-answer-show').fadeOut(300)
+      }
     }
-//    $('.s-exam .s-answer li').removeClass('active');
-    $(this).addClass('active');
-  })
-//  收藏
-  $('.s-exam .s-collect').click(function () {
-    var _this = $(this);
-    if (_this.find('i').hasClass('fa-star-o')) {
-      _this.addClass('active');
-      _this.find('i').removeClass('fa-star-o');
-      _this.find('i').addClass('fa-star');
-    } else {
-      console.log('none');
-      _this.removeClass('active');
-      _this.find('i').removeClass('fa-star');
-      _this.find('i').addClass('fa-star-o');
-    }
+    //  收藏
+    $('.s-exam .s-collect').click(function () {
+      var _this = $(this);
+      if (_this.find('i').hasClass('fa-star-o')) {
+        _this.addClass('active');
+        _this.find('i').removeClass('fa-star-o');
+        _this.find('i').addClass('fa-star');
+        _this.data('value',1);
+      } else {
+        _this.removeClass('active');
+        _this.find('i').removeClass('fa-star');
+        _this.find('i').addClass('fa-star-o');
+        _this.data('value',0);
+      }
+      var subjectId = $('#subjectId').data('id');
+      $.ajax({
+        type: 'POST',
+        url: '',
+        data: {
+          subID: subjectId,
+          val:  $('.s-collect').data('value')
+        },
+        dataType: 'json',
+        success: function(data) {
+          alert(data);
+        },
+        error: function (data) {
+          alert(data);
+        }
+      })
+    })
   })
 </script>
 </html>

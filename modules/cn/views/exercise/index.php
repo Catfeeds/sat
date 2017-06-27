@@ -12,7 +12,7 @@
         <ul class="s-label-list">
           <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
           <li><a href="/exercise.html?m=Reading">阅读</a></li>
-          <li><a href="/exercise.html?m=Rriting">写作</a></li>
+          <li><a href="/exercise.html?m=Writing">文法</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
@@ -27,19 +27,18 @@
             <?php foreach($data as $k=>$v){?>
             <li>
               <h3><?php echo $v['qid']?></h3>
-              <p><?php
+              <div><?php
                 if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
                   echo $v['essay'];
                 }else{
                   echo $v['content'];
                 }
                   ?>
-              </p>
+              </div>
               <a href="/exercise_details/<?php echo $v['qid']?>.html">做题</a>
             </li>
             <?php }?>
           </ul>
-
         </div>
         <?php echo $page?>
       </div>
@@ -75,23 +74,34 @@
 <!--底部-->
 <script>
   $(function () {
-    var search = location.search.split('&'),
-        m = search[0].substr(3);
+    //  选项卡切换效果
+    var search = location.search.split('m='),
+        m = search[1];
     $('.s-label-list li').removeClass('active');
     switch (m) {
-      case 'reading':
+      case 'Reading':
         $('.s-label-list li').eq(1).addClass('active');
         break;
-      case 'writing':
+      case 'Writing':
         $('.s-label-list li').eq(2).addClass('active');
         break;
       default:
         $('.s-label-list li').eq(0).addClass('active');
         break;
     }
-    if (search.length>1) {
-      var c = search[1].substr(2);
+    if (location.search.indexOf('c=') != -1) {
+      var search1 = location.search.split('m=')[1].split('&c=')[0];
+      search = location.search.split('c=');
+      var c = search[1];
+      $('.s-label-list li').removeClass('active');
       $('.s-subject-src dd').removeClass('active');
+      if (search1 == 'Writing') {
+        $('.s-label-list li').eq(2).addClass('active');
+      } else if (search1 == 'Reading') {
+        $('.s-label-list li').eq(1).addClass('active');
+      } else {
+        $('.s-label-list li').eq(0).addClass('active');
+      }
       switch (c) {
         case 'OG':
           $('.s-subject-src dd').eq(1).addClass('active');

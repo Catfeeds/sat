@@ -147,6 +147,8 @@ function checkBefore() {
                 subId = $('.work-que-list').data('id'),//题目ID
                 testId = $('#testId').val(),//试卷ID
                 correctAns = $('#correctAns').val(),//正确答案
+                subject = $('#subject').val(),//所属科目
+                classify = $('#classify').val(),//题目类型（跨学科）
                 readAllNum = $('#readAllNum').val(),
                 readNum = $('#readNum').val();
             $.ajax({
