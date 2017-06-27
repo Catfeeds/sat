@@ -143,6 +143,7 @@ function autoSubmit() {
 //进入下一题
 function checkBefore() {
     var done = true;
+
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
             done = false;
@@ -154,13 +155,19 @@ function checkBefore() {
                 classify = $('#classify').val(),//题目类型（跨学科）
                 readAllNum = $('#readAllNum').val(),
                 readNum = $('#readNum').val();
+
             $.ajax({
-                type: 'POST',
-                url: '/cn/mock/next',
+
+                type: 'post',
+                url: "/cn/mock/next",
                 data: {
-                    testId: testId,
-                    ans: ans,
-                    subId: subId
+                    //testId: testId,
+                    //ans: ans,
+                    //subId: subId
+                    id:subId,
+                    answer:correctAns,
+                    solution:ans
+
                 },
                 dataType: 'json',
                 success: function(data) {
