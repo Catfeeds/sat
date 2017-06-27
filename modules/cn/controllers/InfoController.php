@@ -23,10 +23,10 @@ class InfoController extends Controller
         $cate = Yii::$app->request->get('c', 'n');
         if ($cate == 'n') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='新闻资讯'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='新闻资讯' limit $offset,$pagesize")->queryAll();
+            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='新闻资讯' order by id desc limit $offset,$pagesize")->queryAll();
         } elseif ($cate == 't') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='备考资讯'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='备考资讯' limit $offset,$pagesize")->queryAll();
+            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='备考资讯' order by id desc limit $offset,$pagesize")->queryAll();
         }
         $count = $count['count'];
         if ($cate != false) {
@@ -37,7 +37,7 @@ class InfoController extends Controller
         $page = new Pager("$url", $count, $page, $pagesize);
         $str = $page->GetPager();
         $hot = Yii::$app->db->createCommand("select * from {{%info}} order by hits desc limit 5")->queryAll();
-        $student = Yii::$app->db->createCommand("select * from {{%student_case}} limit 5")->queryAll();
+        $student = Yii::$app->db->createCommand("select * from {{%student_case}} order by id desc limit 5")->queryAll();
         $newinfo = Yii::$app->db->createCommand("select * from {{%info}} order by id desc limit 6")->queryAll();
         $controller = Yii::$app->controller->id;
         $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
