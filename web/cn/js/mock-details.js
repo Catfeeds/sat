@@ -125,7 +125,6 @@ function checkBefore() {
                     //alert(data);
                 }
             })
-
         }
     });
     if (done) {
