@@ -1,0 +1,143 @@
+.s-evaluation {
+    height: 100%;
+}
+.s-top {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 3px 3px #ccc;
+}
+.s-top-cnt,
+.s-evaluation .s-cnt{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.s-top .s-top-logo {
+    text-align: left;
+}
+.s-top .s-top-logo img {
+    width: 107px;
+}
+.s-top h1 {
+    font-size: 24px;
+    color: rgb(54,178,251);
+}
+.s-top .s-top-out {
+    text-align: right;
+}
+.s-top .s-top-out span {
+    padding: 10px 23px;
+    background-color: rgb(54,178,251);
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.s-evaluation .s-cnt {
+    padding: 0 220px 0 170px;
+}
+.s-notice {
+    font-size: 14px;
+}
+.s-notice h1 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+.s-notice h1:after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: rgb(54,178,251);
+}
+.s-notice .s-wrap {
+    margin-bottom: 40px;
+}
+.s-notice .s-tag {
+    float: left;
+    width: 70px;
+    height: 78px;
+    padding-top: 6px;
+    text-align: center;
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.s-notice .s-tag .s-line {
+    position: relative;
+    width: 82px;
+    height: 3px;
+    margin-left: -6px;
+    background-color: rgb(54,178,251);
+}
+.s-notice .s-tag .s-line:before,
+.s-notice .s-tag .s-line:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: -10px;
+    border: 6px solid transparent;
+    border-bottom-color: rgb(54,178,251);
+}
+.s-notice .s-tag .s-line:after {
+    right: 0;
+}
+.s-notice .s-tag h3 {
+    margin: 0;
+    font-size: 40px;
+}
+.s-notice .s-list {
+    margin-left: 130px;
+    border-bottom: 1px dashed rgb(103,103,103);
+}
+.s-notice .s-wrap:last-child .s-list {
+    border: 0;
+}
+.s-notice .s-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+.s-notice .s-list li:before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 7px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgb(206,93,193);
+}
+.s-third .s-list li {
+    line-height: 70px;
+}
+.s-third .s-list li:before {
+    background-color: transparent;
+}
+/*开始做题*/
+.s-evaluation .s-start {
+    text-align: center;
+    font-size: 14px;
+}
+.s-evaluation .s-start button {
+    padding: 5px 20px;
+    border: 0;
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.s-top-out .s-hover:hover {
+    background-color: rgb(48,167,237);
+}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/cn/css/reset.css">
     <link rel="stylesheet" href="/cn/css/bootstrap.css">
     <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/cn/css/evaluation.css">
+    <link rel="stylesheet" href="/cn/css/mock-notice.css">
 
     <script src="/cn/js/jquery-2.1.3.js"></script>
     <script src="/cn/js/bootstrap.js"></script>
