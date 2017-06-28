@@ -29,7 +29,7 @@ class MockController extends Controller
 
 //        $this->actionNext();
     }
-
+    // 开始模考功能，只取每个模块的第一道题
     public function actionDetails()
     {
         $this->layout='cn1.php';
@@ -37,15 +37,15 @@ class MockController extends Controller
         $id=Yii::$app->request->get('id');
         if($major!=false){
             if($major=='math'){
-                $where="where tpId=".$id." and (major='math1' or major='math2')";
+                $where="where tpId=".$id." and (major='math1' or major='math2') and number='1' ";
                 $modle='mock_math';
             }else{
-                $where="where tpId=".$id." and major='$major'";
+                $where="where tpId=".$id." and major='$major' and number='1'";
                 $modle='mock_read';
             }
         }else{
             // 全科怎么显示模板 //一题一判断还是每个章节判断
-            $where="where tpId=".$id;
+            $where="where tpId=".$id ." and number='1'";
             $modle='mock_read';
         }
         $id=Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
@@ -85,11 +85,19 @@ class MockController extends Controller
         $solution=Yii::$app->request->get('solution');// 用户提交的答案
         $answer=Yii::$app->request->get('answer');// 正确答案
         $id=Yii::$app->request->get('id');
+        $uid=Yii::$app->request->get('uid');
         session_start();
         $a=KeepAnswer::getCat();
         $re=$a->addPro($id,$answer,$solution);
-        $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
-        echo die(json_encode($data));
+        $next['sectionNum']=$a->Gettype();
+        $ureport=Yii::$app->db->createCommand("select *  from {{%report}}  where uid=".$uid." order by id desc limit 1 ")->queryOne();
+        // 统计做了多少题
+        if($ureport){
+            // 怎么看看 存了多少值
+        }
+        $next['mkNum']= 5;// 所答第几题/总题数
+        $next=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
+        echo die(json_encode($next));
 
     }
 }

@@ -8,7 +8,7 @@
         <div class="work-top-cnt row">
             <p class="work-title-pos col-lg-3 col-md-3"></p>
             <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo $data['major']?> Section<?php echo $data['section']?></span></h1>
-            <p class="work-collect col-lg-3 col-md-3"><i class="fa fa-star-o">&nbsp;</i>收藏</p>
+            <p class="work-collect col-lg-3 col-md-3" data-value=""><i class="fa fa-star-o">&nbsp;</i>收藏</p>
         </div>
     </div>
     <!-- 内容区域-->
@@ -36,7 +36,7 @@
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="B">B</div>
                             <div class="work-que"><?php echo $data['keyB']?> </div>
-                </li>
+                        </li>
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="C">C</div>
                             <div class="work-que"><?php echo $data['keyC']?> </div>

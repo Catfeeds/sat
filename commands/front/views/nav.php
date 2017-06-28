@@ -38,7 +38,8 @@
 </nav>
 <script>
 //    存储uid
-    var userId ='<?php if(isset($uid)){echo $uid;}?>' ;
+//    var userId ='<?php //if(isset($uid)){echo $uid;}?>//' ;
+    var userId  = '222';
     $.cookie('uid',userId,  {path:'/'});
     // 获取手机验证码
     function leftCode(code){

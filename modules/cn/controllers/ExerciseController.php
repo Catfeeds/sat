@@ -34,9 +34,24 @@ class ExerciseController extends Controller
         }else{
             $major=$data['major'];
         }
-//        var_dump($data);die;
         $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= '$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id asc limit 1" )->queryOne();
         $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id<".$id." and major='$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id desc limit 1" )->queryOne();
+        // 查找题目是否收藏
+
+        $data['uid']=Yii::$app->session->get('uid','');
+        $data['uid']=444;
+        if($data['uid']){
+            $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
+            $collection=explode(',',$arr['qid']);
+//        var_dump($collection);die;
+            if(in_array($data['qid'],$collection)){
+                $data['collection']=1;
+            }else{
+                $data['collection']=0;
+            }
+        }
+
+//        var_dump($data['collection']);die;
         return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id']]);
 
     }

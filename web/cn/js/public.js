@@ -12,7 +12,6 @@ $(function () {
 
 //  模考收藏点击事件
   $('.work-collect').click(function () {
-    console.log(this);
     collectEvent(this);
   });
 //  练习、模考选择题点击事件
@@ -47,23 +46,12 @@ function collectEvent(obj) {
   if (uId == '') {
     alert('登陆后才可以收藏哦！')
   }else {
-    var _this = $(obj);
-    //if (_this.find('i').hasClass('fa-star-o')) {
-    //  _this.addClass('active');
-    //  _this.find('i').removeClass('fa-star-o');
-    //  _this.find('i').addClass('fa-star');
-    //  _this.data('value',1);
-    //} else {
-    //  _this.removeClass('active');
-    //  _this.find('i').removeClass('fa-star');
-    //  _this.find('i').addClass('fa-star-o');
-    //  _this.data('value',0);
-    //}
-    var subjectId = $('#subjectId').data('id'),
-        val = $('.work-collect').data('value')!=undefined? $('.work-collect').data('value'):'';
+    var _this = $(obj),
+        subjectId = $('#subjectId').data('id'),
+        val = $('.work-collect').data('value');
     $.ajax({
-      type: 'POST',
-      url: '',
+      type: 'get',
+      url: '/cn/collection/collection',
       data: {
         uid: uId,
         subID: subjectId,
@@ -71,18 +59,24 @@ function collectEvent(obj) {
       },
       dataType: 'json',
       success: function(data) {
-        _this.addClass('active');
-        _this.find('i').removeClass('fa-star-o');
-        _this.find('i').addClass('fa-star');
-        _this.data('value',1);
-        alert(data);
+        if (data.code == 1) {//收藏成功
+          _this.addClass('active');
+          _this.find('i').removeClass('fa-star-o');
+          _this.find('i').addClass('fa-star');
+          _this.data('value',1);
+          alert(data.message);
+        } else if(data.code == 2){//取消收藏
+          _this.removeClass('active');
+          _this.find('i').removeClass('fa-star');
+          _this.find('i').addClass('fa-star-o');
+          _this.data('value',0);
+          alert(data.message);
+        } else {
+          alert(data.message);
+        }
       },
       error: function (data) {
-        _this.removeClass('active');
-        _this.find('i').removeClass('fa-star');
-        _this.find('i').addClass('fa-star-o');
-        _this.data('value',0);
-        alert(data);
+        alert('操作失败！');
       }
     })
   }
