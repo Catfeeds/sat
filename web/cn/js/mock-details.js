@@ -11,8 +11,6 @@ $(window).load(function () {
     window.history.forward(1);
 })
 $(function () {
-    //获取uId
-    var uId = $.cookie('uid');
     //做题区域高度自适应
     workHeight();
     //倒计时待完善
@@ -42,7 +40,8 @@ $(function () {
         $('.notice-wrap').remove();
     })
 })
-
+//获取uId
+var uId = $.cookie('uid');
 //做题区域高度自适应
 function workHeight() {
     var h = $(window).height() - $('.work-mk-top').height() - $('.work-mk-btm').height();
@@ -111,6 +110,7 @@ function checkBefore() {
                 classify = $('#classify').val(),//题目类型（跨学科）
                 readAllNum = $('#readAllNum').val(),
                 readNum = $('#readNum').val();
+            console.log(uId);
             $.ajax({
                 type: 'get',
                 url: "/cn/mock/next",
@@ -120,12 +120,13 @@ function checkBefore() {
                     //subId: subId
                     'id':subId,
                     'answer':correctAns,
-                    'solution':ans
+                    'solution':ans,
+                    'uid':uId
                 },
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
-                    alert(data);
+                    //alert(data);
                 }
             })
 

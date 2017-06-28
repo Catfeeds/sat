@@ -28,7 +28,7 @@
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
                     <h3><?php echo $data['number']?>.<?php echo $data['content']?></h3>
-                    <ul class="work-que-list" id="subjectId" data-id="2358636904440836">
+                    <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="A">A</div>
                             <div class="work-que"><?php echo $data['keyA']?> </div>

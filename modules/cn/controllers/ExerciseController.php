@@ -39,7 +39,6 @@ class ExerciseController extends Controller
         // 查找题目是否收藏
 
         $data['uid']=Yii::$app->session->get('uid','');
-        $data['uid']=444;
         if($data['uid']){
             $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
             $collection=explode(',',$arr['qid']);
