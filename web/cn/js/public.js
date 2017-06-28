@@ -12,7 +12,6 @@ $(function () {
 
 //  模考收藏点击事件
   $('.work-collect').click(function () {
-    console.log(this);
     collectEvent(this);
   });
 //  练习、模考选择题点击事件
@@ -48,22 +47,22 @@ function collectEvent(obj) {
     alert('登陆后才可以收藏哦！')
   }else {
     var _this = $(obj);
-    if (_this.find('i').hasClass('fa-star-o')) {
-      _this.addClass('active');
-      _this.find('i').removeClass('fa-star-o');
-      _this.find('i').addClass('fa-star');
-      _this.data('value',1);
-    } else {
-      _this.removeClass('active');
-      _this.find('i').removeClass('fa-star');
-      _this.find('i').addClass('fa-star-o');
-      _this.data('value',0);
-    }
+    //if (_this.find('i').hasClass('fa-star-o')) {
+    //  _this.addClass('active');
+    //  _this.find('i').removeClass('fa-star-o');
+    //  _this.find('i').addClass('fa-star');
+    //  _this.data('value',0);
+    //} else {
+    //  _this.removeClass('active');
+    //  _this.find('i').removeClass('fa-star');
+    //  _this.find('i').addClass('fa-star-o');
+    //  _this.data('value',1);
+    //}
     var subjectId = $('#subjectId').data('id'),
         val = $('.work-collect').data('value')!=undefined? $('.work-collect').data('value'):'';
     $.ajax({
-      type: 'POST',
-      url: '',
+      type: 'get',
+      url: '/cn/collection/collection',
       data: {
         uid: uId,
         subID: subjectId,
@@ -71,10 +70,18 @@ function collectEvent(obj) {
       },
       dataType: 'json',
       success: function(data) {
-        alert(data);
+        _this.addClass('active');
+        _this.find('i').removeClass('fa-star-o');
+        _this.find('i').addClass('fa-star');
+        _this.data('value',1);
+        alert(data.message);
       },
       error: function (data) {
-        alert(data);
+        _this.removeClass('active');
+        _this.find('i').removeClass('fa-star');
+        _this.find('i').addClass('fa-star-o');
+        _this.data('value',0);
+        alert(data.message);
       }
     })
   }

@@ -78,6 +78,7 @@
           'borderColor': '#ccc',
           'color': '#ccc'
         });
+        alert(data.message);
       },'json')
     } else {
       alert ('请登录后报名');
