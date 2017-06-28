@@ -154,23 +154,23 @@ function checkBefore() {
                 readNum = $('#readNum').val();
 
             $.ajax({
-
-                type: 'post',
+                type: 'get',
                 url: "/cn/mock/next",
                 data: {
                     //testId: testId,
                     //ans: ans,
                     //subId: subId
-                    id:subId,
-                    answer:correctAns,
-                    solution:ans
-
+                    'id':subId,
+                    'answer':correctAns,
+                    'solution':ans
                 },
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
+                    alert(data);
                 }
             })
+
         }
     });
     if (done) {

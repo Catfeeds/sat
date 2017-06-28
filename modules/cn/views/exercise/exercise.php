@@ -18,7 +18,7 @@
           <p class="s-title">
             <?php echo $data['content']?>
           </p>
-          <ul class="s-que-list" id="subjectId" data-id="448644148445">
+          <ul class="s-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">
             <li>
               <div class="s-select" data-id="A">A</div>
               <div class="s-que"> <?php echo $data['keyA']?> </div>
@@ -95,6 +95,7 @@
         $('.s-exam .s-answer-show').fadeOut(300)
       }
     }
+  })
     //  收藏
     $('.s-exam .s-collect').click(function () {
       var _this = $(this);
@@ -109,13 +110,15 @@
         _this.find('i').addClass('fa-star-o');
         _this.data('value',0);
       }
-      var subjectId = $('#subjectId').data('id');
+      var subjectId = $('#subjectId').data('id');//题号
       $.ajax({
         type: 'POST',
-        url: '',
+        url: '/cn/collection/collection',
         data: {
-          subID: subjectId,
-          val:  $('.s-collect').data('value')
+          qid: subjectId,
+          val:  $('.s-collect').data('value')// 是否收藏
+          //  用户id uid
+
         },
         dataType: 'json',
         success: function(data) {
@@ -126,6 +129,6 @@
         }
       })
     })
-  })
+
 </script>
 </html>

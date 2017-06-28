@@ -28,7 +28,7 @@
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
                     <h3><?php echo $data['number']?>.<?php echo $data['content']?></h3>
-                    <ul class="work-que-list" data-id="2358636904440836">
+                    <ul class="work-que-list" data-id="<?php echo $data['qid']?>">
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="A">A</div>
                             <div class="work-que"><?php echo $data['keyA']?> </div>
@@ -155,11 +155,11 @@
     <!--隐藏数据-->
     <div class="worl-btm-hidden">
         <!--试卷ID-->
-        <input type="hidden" id="testId" value="4546888">
+        <input type="hidden" id="testId" value="<?php echo $data['tpId']?>">
         <!-- 正确答案-->
-        <input type="hidden" id="correctAns" value="B">
+        <input type="hidden" id="correctAns" value="<?php echo $data['answer']?>">
         <!-- 科目-->
-        <input type="hidden" id="subject" value="major">
+        <input type="hidden" id="subject" value="<?php echo $data['major']?>">
         <!--题目类型-->
         <input type="hidden" id="classify" value="jhi">
         <!--本section总时间-->
@@ -168,10 +168,6 @@
         <input type="hidden" id="sectionAllNum" value="67">
         <!--本section当前题目-->
         <input type="hidden" id="sectionNum" value="20">
-        <!--当前本篇阅读小题-->
-        <input type="hidden" id="readNum" value="2">
-        <!--本篇阅读总题数-->
-        <input type="hidden" id="readAllNum" value="5">
         <!--模考总题目数-->
         <input type="hidden" id="mkAllNum" value="155">
         <!--当前模考题目号-->
