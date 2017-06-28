@@ -106,9 +106,4 @@ class MockController extends Controller
         echo die(json_encode($next));
 
     }
-    public function actionSubmit()
-    {
-
-
-    }
 }

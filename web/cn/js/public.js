@@ -46,20 +46,9 @@ function collectEvent(obj) {
   if (uId == '') {
     alert('登陆后才可以收藏哦！')
   }else {
-    var _this = $(obj);
-    //if (_this.find('i').hasClass('fa-star-o')) {
-    //  _this.addClass('active');
-    //  _this.find('i').removeClass('fa-star-o');
-    //  _this.find('i').addClass('fa-star');
-    //  _this.data('value',0);
-    //} else {
-    //  _this.removeClass('active');
-    //  _this.find('i').removeClass('fa-star');
-    //  _this.find('i').addClass('fa-star-o');
-    //  _this.data('value',1);
-    //}
-    var subjectId = $('#subjectId').data('id'),
-        val = $('.work-collect').data('value')!=undefined? $('.work-collect').data('value'):'';
+    var _this = $(obj),
+        subjectId = $('#subjectId').data('id'),
+        val = $('.work-collect').data('value');
     $.ajax({
       type: 'get',
       url: '/cn/collection/collection',
@@ -70,13 +59,13 @@ function collectEvent(obj) {
       },
       dataType: 'json',
       success: function(data) {
-        if (data.code == 1) {
+        if (data.code == 1) {//收藏成功
           _this.addClass('active');
           _this.find('i').removeClass('fa-star-o');
           _this.find('i').addClass('fa-star');
           _this.data('value',1);
           alert(data.message);
-        } else if(data.code == 2){
+        } else if(data.code == 2){//取消收藏
           _this.removeClass('active');
           _this.find('i').removeClass('fa-star');
           _this.find('i').addClass('fa-star-o');

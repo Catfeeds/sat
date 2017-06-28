@@ -29,16 +29,6 @@ $(function () {
         $('.work-shade').hide();
         $('.shade-wrap').hide();
     })
-    //确认离开点击事件
-    $('.exit-out').click(function () {
-        window.location.href='/mock.html';
-    })
-
-    //开始做题点击事件
-    $('.notice-next-start').click(function(){
-        $('.work-shade').hide();
-        $('.notice-wrap').remove();
-    })
 })
 //获取uId
 var uId = $.cookie('uid');
@@ -110,14 +100,10 @@ function checkBefore() {
                 classify = $('#classify').val(),//题目类型（跨学科）
                 readAllNum = $('#readAllNum').val(),
                 readNum = $('#readNum').val();
-            console.log(uId);
             $.ajax({
                 type: 'get',
                 url: "/cn/mock/next",
                 data: {
-                    //testId: testId,
-                    //ans: ans,
-                    //subId: subId
                     'id':subId,
                     'answer':correctAns,
                     'solution':ans,
@@ -129,10 +115,9 @@ function checkBefore() {
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
-                    //alert(data);
+                    window.location.href = '/mock-details/'
                 }
             })
-
         }
     });
     if (done) {

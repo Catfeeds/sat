@@ -38,7 +38,7 @@
           </ul>
 
           <div class="s-btn-list clearfix">
-            <div class="s-collect work-collect pull-left" data-value="<?php echo isset($data['collection'])?$data['collection']:'0'?>">
+            <div class="s-collect work-collect pull-left" data-value="1">
               <i class="fa fa-star-o"></i>
               收藏
             </div>
@@ -75,9 +75,10 @@
     var uId = $.cookie('uid');
     // 加载页面时判断是否收藏
     if (($('.s-collect').data('value') == 1) && (uId != '')) {
-      $('.s-collect').addClass('active');
-      $('.s-collect').find('i').removeClass('fa-star-o');
-      $('.s-collect').find('i').addClass('fa-star');
+      var sCollect = $('.s-collect');
+      sCollect.addClass('active');
+      sCollect.find('i').removeClass('fa-star-o');
+      sCollect.find('i').addClass('fa-star');
     }
     //查看答案
     $('.s-exam .s-answer li').click(function () {
