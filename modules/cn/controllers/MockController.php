@@ -29,6 +29,13 @@ class MockController extends Controller
 
 //        $this->actionNext();
     }
+    public function actionNotice()
+    {
+        $this->layout='cn1.php';
+        $id=Yii::$app->request->get('id');
+
+        return $this->render('mock-notice');
+    }
     // 开始模考功能，只取每个模块的第一道题
     public function actionDetails()
     {
