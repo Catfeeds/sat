@@ -115,15 +115,20 @@ function checkBefore() {
                 type: 'get',
                 url: "/cn/mock/next",
                 data: {
-                    'id': subId,
-                    'answer': correctAns,
-                    'solution': ans
+                    //testId: testId,
+                    //ans: ans,
+                    //subId: subId
+                    'id':subId,
+                    'answer':correctAns,
+                    'solution':ans
                 },
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
+                    alert(data);
                 }
             })
+
         }
     });
     if (done) {

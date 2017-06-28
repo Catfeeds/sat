@@ -49,7 +49,7 @@ class MockController extends Controller
             $modle='mock_read';
         }
         $id=Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
-        $data=Yii::$app->db->createCommand("select q.*,qe.* from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id['id']." order by q.id asc ")->queryOne();
+        $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id['id']." order by q.id asc ")->queryOne();
         return $this->render($modle,['data'=>$data]);
     }
 
@@ -59,25 +59,25 @@ class MockController extends Controller
     // 2、得出报告分数（数学，reading。writing）
     // 选题逻辑
     // 将题目的ID，答案都传过来
-    public function actionAnswer()
-    {
-
-//        $solution=Yii::$app->request->post('solution');// 用户提交的答案
-        $solution='C';// 用户提交的答案
-//        $answer=Yii::$app->request->post('answer');// 正确答案
-        $answer='A';// 正确答案
-//        $id=Yii::$app->request->post('qid');
-        $id=6;
-        // 调用方法
-//        $a=new KeepAnswer();
-        session_start();
-        $a=KeepAnswer::getCat();
-        $re=$a->addPro($id,$answer,$solution);
-        var_dump($_SESSION['answer']);
-//        var_dump($a->addPro($id,$answer,$solution));die;
-        $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." order by q.id asc limit 1 ")->queryOne();
-        var_dump($data);
-    }
+//    public function actionAnswer()
+//    {
+//
+////        $solution=Yii::$app->request->post('solution');// 用户提交的答案
+//        $solution='C';// 用户提交的答案
+////        $answer=Yii::$app->request->post('answer');// 正确答案
+//        $answer='A';// 正确答案
+////        $id=Yii::$app->request->post('qid');
+//        $id=6;
+//        // 调用方法
+////        $a=new KeepAnswer();
+//        session_start();
+//        $a=KeepAnswer::getCat();
+//        $re=$a->addPro($id,$answer,$solution);
+//        var_dump($_SESSION['answer']);
+////        var_dump($a->addPro($id,$answer,$solution));die;
+//        $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." order by q.id asc limit 1 ")->queryOne();
+//        var_dump($data);
+//    }
     // 前端点击传递id，和用户所选答案过来，
     // 下一题
     public function actionNext()
@@ -85,14 +85,12 @@ class MockController extends Controller
         $solution=Yii::$app->request->get('solution');// 用户提交的答案
         $answer=Yii::$app->request->get('answer');// 正确答案
         $id=Yii::$app->request->get('id');
-//        $id=6;
         session_start();
         $a=KeepAnswer::getCat();
         $re=$a->addPro($id,$answer,$solution);
-//        var_dump($_SESSION['answer']);
         $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();
-//        return $data;
         echo die(json_encode($data));
+
     }
 
 }

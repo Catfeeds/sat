@@ -18,7 +18,7 @@
           <p class="s-title">
             <?php echo $data['content']?>
           </p>
-          <ul class="s-que-list" id="subjectId" data-id="448644148445">
+          <ul class="s-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">
             <li class="work-que-wrap">
               <div class="s-select work-select" data-id="A">A</div>
               <div class="s-que"> <?php echo $data['keyA']?> </div>
