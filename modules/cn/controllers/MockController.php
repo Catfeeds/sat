@@ -89,11 +89,15 @@ class MockController extends Controller
         session_start();
         $a=KeepAnswer::getCat();
         $re=$a->addPro($id,$answer,$solution);
-        $next['sectionNum']=$a->Gettype();
+        $next['sectionNum']=$a->Gettype();// 目前第几题
         $ureport=Yii::$app->db->createCommand("select *  from {{%report}}  where uid=".$uid." order by id desc limit 1 ")->queryOne();
         // 统计做了多少题
         if($ureport){
-            // 怎么看看 存了多少值
+//            // 怎么看看 存了多少值// 若$count不存在
+            $count['read']=count(explode(',',$ureport['Reading']));// 或许需要减1
+            $count['write']=count(explode(',',$ureport['Writing']));// 或许需要减1
+            $count['math']=count(explode(',',$ureport['Math']));// 或许需要减1
+            $$next['mkNum']=$count['read']+$count['write']+$count['math']+ $next['sectionNum'];
         }
         $next['mkNum']= 5;// 所答第几题/总题数
         $next=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$id." limit 1 ")->queryOne();

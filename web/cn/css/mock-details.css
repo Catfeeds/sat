@@ -204,7 +204,7 @@
 /*遮罩层*/
 .work-shade {
     position: absolute;
-    /*display: none;*/
+    display: none;
     top: 0;
     left: 0;
     z-index: 3;
@@ -256,123 +256,5 @@
     background-color: rgb(54,178,251);
 }
 .shade-wrap .shade-in:hover {
-    background-color: rgb(48,167,237);
-}
-/*注意事项遮罩层*/
-.notice-wrap {
-    width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 20px 50px;
-    background-color: #fff;
-}
-.notice-cnt {
-    font-size: 14px;
-}
-.notice-cnt h1 {
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 18px;
-}
-.notice-cnt h1:after {
-    position: absolute;
-    display: block;
-    content: '';
-    bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background-color: rgb(54,178,251);
-}
-.notice-cnt .s-wrap {
-    margin-bottom: 20px;
-}
-.notice-cnt .s-tag {
-    float: left;
-    width: 70px;
-    height: 78px;
-    padding-top: 6px;
-    text-align: center;
-    background-color: rgb(54,178,251);
-    color: #fff;
-}
-.notice-cnt .s-tag .s-line {
-    position: relative;
-    width: 82px;
-    height: 3px;
-    margin-left: -6px;
-    background-color: rgb(54,178,251);
-}
-.notice-cnt .s-tag .s-line:before,
-.notice-cnt .s-tag .s-line:after {
-    position: absolute;
-    display: block;
-    content: '';
-    top: -10px;
-    border: 6px solid transparent;
-    border-bottom-color: rgb(54,178,251);
-}
-.notice-cnt .s-tag .s-line:after {
-    right: 0;
-}
-.notice-cnt .s-tag h3 {
-    margin: 0;
-    font-size: 40px;
-}
-.notice-cnt .s-tag p{
-    color: #fff;
-}
-.notice-cnt .s-list {
-    margin-left: 130px;
-    border-bottom: 1px dashed rgb(103,103,103);
-}
-.notice-cnt .s-wrap:last-child .s-list {
-    border: 0;
-}
-.notice-cnt .s-list li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-.notice-cnt .s-list li:before {
-    position: absolute;
-    display: block;
-    content: '';
-    top: 7px;
-    left: 0;
-    width: 5px;
-    height: 5px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    background-color: rgb(206,93,193);
-}
-.s-third .s-list li {
-    line-height: 70px;
-}
-.s-third .s-list li:before {
-    background-color: transparent;
-}
-/*开始做题*/
-.notice-wrap .notice-next {
-    padding: 0 200px;
-}
-.notice-wrap .notice-next button {
-    padding: 15px 50px;
-    border: 0;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    background-color: rgb(54,178,251);
-    color: #fff;
-}
-.notice-wrap .notice-next button:hover {
     background-color: rgb(48,167,237);
 }

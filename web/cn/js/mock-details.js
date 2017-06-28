@@ -29,16 +29,6 @@ $(function () {
         $('.work-shade').hide();
         $('.shade-wrap').hide();
     })
-    //确认离开点击事件
-    $('.exit-out').click(function () {
-        window.location.href='/mock.html';
-    })
-
-    //开始做题点击事件
-    $('.notice-next-start').click(function(){
-        $('.work-shade').hide();
-        $('.notice-wrap').remove();
-    })
 })
 //获取uId
 var uId = $.cookie('uid');
@@ -117,12 +107,12 @@ function checkBefore() {
                     'id':subId,
                     'answer':correctAns,
                     'solution':ans,
-                    'uid': uId
+                    'uid':uId
                 },
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
-                    //alert(data);
+                    window.location.href = '/mock-details/'
                 }
             })
         }
