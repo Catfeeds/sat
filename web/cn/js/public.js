@@ -48,17 +48,17 @@ function collectEvent(obj) {
     alert('登陆后才可以收藏哦！')
   }else {
     var _this = $(obj);
-    if (_this.find('i').hasClass('fa-star-o')) {
-      _this.addClass('active');
-      _this.find('i').removeClass('fa-star-o');
-      _this.find('i').addClass('fa-star');
-      _this.data('value',1);
-    } else {
-      _this.removeClass('active');
-      _this.find('i').removeClass('fa-star');
-      _this.find('i').addClass('fa-star-o');
-      _this.data('value',0);
-    }
+    //if (_this.find('i').hasClass('fa-star-o')) {
+    //  _this.addClass('active');
+    //  _this.find('i').removeClass('fa-star-o');
+    //  _this.find('i').addClass('fa-star');
+    //  _this.data('value',1);
+    //} else {
+    //  _this.removeClass('active');
+    //  _this.find('i').removeClass('fa-star');
+    //  _this.find('i').addClass('fa-star-o');
+    //  _this.data('value',0);
+    //}
     var subjectId = $('#subjectId').data('id'),
         val = $('.work-collect').data('value')!=undefined? $('.work-collect').data('value'):'';
     $.ajax({
@@ -71,9 +71,17 @@ function collectEvent(obj) {
       },
       dataType: 'json',
       success: function(data) {
+        _this.addClass('active');
+        _this.find('i').removeClass('fa-star-o');
+        _this.find('i').addClass('fa-star');
+        _this.data('value',1);
         alert(data);
       },
       error: function (data) {
+        _this.removeClass('active');
+        _this.find('i').removeClass('fa-star');
+        _this.find('i').addClass('fa-star-o');
+        _this.data('value',0);
         alert(data);
       }
     })

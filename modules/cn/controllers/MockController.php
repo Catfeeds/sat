@@ -92,5 +92,4 @@ class MockController extends Controller
         echo die(json_encode($data));
 
     }
-
 }
