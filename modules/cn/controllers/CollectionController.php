@@ -16,19 +16,17 @@ class CollectionController extends Controller
     public function actionCollection()
     {
         $data['qid'] =(string)Yii::$app->request->get('subID', '');
-        $data['uid'] =(string)Yii::$app->request->get('uid', '');
-        $flag=(string)Yii::$app->request->get('val');
+        $data['uid'] =Yii::$app->request->get('uid', '');
+        $flag=Yii::$app->request->get('val');
         $model=new Collection();
         // 查找 uid 是否存在
         $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
-        if($flag=='0'){
+        if($flag==0){
             if(!$arr){
                 $re = Yii::$app->db->createCommand()->insert("{{%collection}}", $data)->execute();
             }else{
-                if(strpos($arr['qid'],$data['qid'])===false){
                     $data['qid']=$arr['qid'].','.$data['qid'];
                     $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
-                }
             }
             if($re){
                 $res['message']='收藏成功';
@@ -38,8 +36,8 @@ class CollectionController extends Controller
                 $res['code']=0;
             }
             die(json_encode($res));
-        }elseif($flag=='1'){
-                $data['qid']=str_replace(','.$data['qid'],' ',$arr['qid']);
+        }elseif($flag==1){
+                $data['qid']=str_replace($data['qid'],' ',$arr['qid']);
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
                 if($re){
                     $res['message']='取消成功';

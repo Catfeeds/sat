@@ -38,7 +38,7 @@
           </ul>
 
           <div class="s-btn-list clearfix">
-            <div class="s-collect work-collect pull-left" data-value="<?php echo $data['collection']?>">
+            <div class="s-collect work-collect pull-left" data-value="<?php echo isset($data['collection'])?$data['collection']:'0'?>">
               <i class="fa fa-star-o"></i>
               收藏
             </div>
