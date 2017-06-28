@@ -41,7 +41,7 @@ class CollectionController extends Controller
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
                 if($re){
                     $res['message']='取消成功';
-                    $res['code']=1;
+                    $res['code']=2;
                 }else{
                     $res['message']='取消失败';
                     $res['code']=0;

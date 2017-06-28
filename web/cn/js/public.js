@@ -70,18 +70,24 @@ function collectEvent(obj) {
       },
       dataType: 'json',
       success: function(data) {
-        _this.addClass('active');
-        _this.find('i').removeClass('fa-star-o');
-        _this.find('i').addClass('fa-star');
-        _this.data('value',1);
-        alert(data.message);
+        if (data.code == 1) {
+          _this.addClass('active');
+          _this.find('i').removeClass('fa-star-o');
+          _this.find('i').addClass('fa-star');
+          _this.data('value',1);
+          alert(data.message);
+        } else if(data.code == 2){
+          _this.removeClass('active');
+          _this.find('i').removeClass('fa-star');
+          _this.find('i').addClass('fa-star-o');
+          _this.data('value',0);
+          alert(data.message);
+        } else {
+          alert(data.message);
+        }
       },
       error: function (data) {
-        _this.removeClass('active');
-        _this.find('i').removeClass('fa-star');
-        _this.find('i').addClass('fa-star-o');
-        _this.data('value',0);
-        alert(data.message);
+        alert('操作失败！');
       }
     })
   }
