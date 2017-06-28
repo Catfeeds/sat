@@ -32,6 +32,8 @@ class MockController extends Controller
     // 开始模考功能，只取每个模块的第一道题
     public function actionDetails()
     {
+//        session_start();
+//        var_dump($_SESSION);die;
         $this->layout='cn1.php';
         $major=Yii::$app->request->get('m','');
         $id=Yii::$app->request->get('id');

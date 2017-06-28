@@ -121,7 +121,10 @@ function checkBefore() {
                     'id':subId,
                     'answer':correctAns,
                     'solution':ans,
-                    'uid':uId
+                    'uid':uId,
+                    'major':subject,
+                    'crossScore':classify,
+
                 },
                 dataType: 'json',
                 success: function(data) {
