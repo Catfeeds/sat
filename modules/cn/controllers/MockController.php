@@ -82,9 +82,9 @@ class MockController extends Controller
     // 下一题
     public function actionNext()
     {
-        $solution=Yii::$app->request->post('solution');// 用户提交的答案
-        $answer=Yii::$app->request->post('answer');// 正确答案
-        $id=Yii::$app->request->post('id');
+        $solution=Yii::$app->request->get('solution');// 用户提交的答案
+        $answer=Yii::$app->request->get('answer');// 正确答案
+        $id=Yii::$app->request->get('id');
 //        $id=6;
         session_start();
         $a=KeepAnswer::getCat();

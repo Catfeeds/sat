@@ -19,26 +19,26 @@
             <?php echo $data['content']?>
           </p>
           <ul class="s-que-list" id="subjectId" data-id="448644148445">
-            <li>
-              <div class="s-select" data-id="A">A</div>
+            <li class="work-que-wrap">
+              <div class="s-select work-select" data-id="A">A</div>
               <div class="s-que"> <?php echo $data['keyA']?> </div>
             </li>
-            <li>
-              <div class="s-select" data-id="B">B</div>
+            <li class="work-que-wrap">
+              <div class="s-select work-select" data-id="B">B</div>
               <div class="s-que"> <?php echo $data['keyB']?></div>
             </li>
-            <li>
-              <div class="s-select" data-id="C">C</div>
+            <li class="work-que-wrap">
+              <div class="s-select work-select" data-id="C">C</div>
               <div class="s-que"> <?php echo $data['keyC']?></div>
             </li>
-            <li>
-              <div class="s-select" data-id="D">D</div>
+            <li class="work-que-wrap">
+              <div class="s-select work-select" data-id="D">D</div>
               <div class="s-que"> <?php echo $data['keyD']?></div>
             </li>
           </ul>
 
           <div class="s-btn-list clearfix">
-            <div class="s-collect pull-left" data-value="1">
+            <div class="s-collect work-collect pull-left" data-value="1">
               <i class="fa fa-star-o"></i>
               收藏
             </div>
@@ -72,59 +72,24 @@
   </section>
 <script>
   $(function () {
+    var uId = $.cookie('uid');
     // 加载页面时判断是否收藏
-    if ($('.s-collect').data('value') == 1) {
+    if (($('.s-collect').data('value') == 1) && (uId != '')) {
       $('.s-collect').addClass('active');
       $('.s-collect').find('i').removeClass('fa-star-o');
       $('.s-collect').find('i').addClass('fa-star');
     }
-    //  选项事件
-    $('.s-exam .s-que-list li').click(function () {
-      $('.s-exam .s-que-list li').find('.s-select').removeClass('active');
-      $(this).find('.s-select').addClass('active')
-    })
-  })
-  //查看答案
-  $('.s-exam .s-answer li').click(function () {
-    if ($(this).index() == 0) {
-      if ($('.s-answer-show').css('display') == 'none') {
-        $(this).addClass('active');
-        $('.s-exam .s-answer-show').fadeIn(1000)
-      }else {
-        $(this).removeClass('active');
-        $('.s-exam .s-answer-show').fadeOut(300)
-      }
-    }
-    //  收藏
-    $('.s-exam .s-collect').click(function () {
-      var _this = $(this);
-      if (_this.find('i').hasClass('fa-star-o')) {
-        _this.addClass('active');
-        _this.find('i').removeClass('fa-star-o');
-        _this.find('i').addClass('fa-star');
-        _this.data('value',1);
-      } else {
-        _this.removeClass('active');
-        _this.find('i').removeClass('fa-star');
-        _this.find('i').addClass('fa-star-o');
-        _this.data('value',0);
-      }
-      var subjectId = $('#subjectId').data('id');
-      $.ajax({
-        type: 'POST',
-        url: '',
-        data: {
-          subID: subjectId,
-          val:  $('.s-collect').data('value')
-        },
-        dataType: 'json',
-        success: function(data) {
-          alert(data);
-        },
-        error: function (data) {
-          alert(data);
+    //查看答案
+    $('.s-exam .s-answer li').click(function () {
+      if ($(this).index() == 0) {
+        if ($('.s-answer-show').css('display') == 'none') {
+          $(this).addClass('active');
+          $('.s-exam .s-answer-show').fadeIn(1000)
+        } else {
+          $(this).removeClass('active');
+          $('.s-exam .s-answer-show').fadeOut(300)
         }
-      })
+      }
     })
   })
 </script>

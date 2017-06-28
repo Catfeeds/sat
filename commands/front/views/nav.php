@@ -37,8 +37,9 @@
 </div>
 </nav>
 <script>
-    var sess ='<?php if(isset($uid)){echo $uid;}?>' ;
-    sessionStorage.uid = sess;
+//    存储uid
+    var userId ='<?php if(isset($uid)){echo $uid;}?>' ;
+    $.cookie('uid',userId,  {path:'/'});
     // 获取手机验证码
     function leftCode(code){
         var phone = $('#'+code).val();
@@ -50,6 +51,7 @@
     function Out(){
         $.post('/user/api/login-out',function(re){
             alert('退出成功');
+            $.cookie('uid',null);
             history.go(0);
         },"json")
     }

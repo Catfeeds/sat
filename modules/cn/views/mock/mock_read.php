@@ -6,7 +6,7 @@
     <!-- 头部-->
     <div class="work-mk-top container">
         <div class="work-top-cnt row">
-            <p class="work-title-pos col-lg-3 col-md-3">第(1/5)题</p>
+            <p class="work-title-pos col-lg-3 col-md-3"></p>
             <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo $data['major']?> Section<?php echo $data['section']?></span></h1>
             <p class="work-collect col-lg-3 col-md-3"><i class="fa fa-star-o">&nbsp;</i>收藏</p>
         </div>
@@ -28,7 +28,7 @@
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
                     <h3><?php echo $data['number']?>.<?php echo $data['content']?></h3>
-                    <ul class="work-que-list" data-id="2358636904440836">
+                    <ul class="work-que-list" id="subjectId" data-id="2358636904440836">
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="A">A</div>
                             <div class="work-que"><?php echo $data['keyA']?> </div>

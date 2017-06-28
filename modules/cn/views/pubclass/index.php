@@ -58,13 +58,14 @@
     <ul class="pagination clearfix"></ul>
   </section>
 <script>
+//  报名功能
   function applyNum(ele) {
     var _this = ele;
     var num =  _this.parent().find('.s-apply-num').html();
     var userTel = $('#loginName').val();
     var classId = _this.next().attr('href').split('/')[2].split('.')[0];
-    var userId = sessionStorage.getItem('uid');
-    if (userId) {
+    var userId = $.cookie('uid');
+    if (userId != '') {
       $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
         _this.parent().find('.s-apply-num').html(data.hits);
         _this.attr({
@@ -83,6 +84,7 @@
       return false;
     }
   };
+//加载往期公开课及分页
   var curPage = 1; //当前页码
   function getData(p) {
     $.ajax({
@@ -130,9 +132,11 @@
   }
 
   $(function(){
+//    报名点击事件
     $('.s-apply').click(function() {
       applyNum($(this));
     });
+//    初始化加载往期公开课
     getData(1);
   });
 

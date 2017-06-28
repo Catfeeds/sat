@@ -5,33 +5,20 @@ $(window).load(function () {
     }
 //  禁止右键
     document.oncontextmenu = function () {
-        // return false;
+         //return false;
     }
 //  禁止后退
     window.history.forward(1);
 })
 $(function () {
+    //获取uId
+    var uId = $.cookie('uid');
     //做题区域高度自适应
     workHeight();
-    //倒计时
-    console.log($('.notice-wrap').css('display'));
+    //倒计时待完善
     if ($('.notice-wrap').css('display') != 'block') {
         countTime();
     }
-    //收藏点击事件
-    $('.work-collect').click(function () {
-        collectEvent(this);
-    });
-    //选择题点击事件
-    $('.work-que-wrap').click(function () {
-        var _this = $(this);
-        if (_this.parent().find('.active').length) {
-            _this.parent().find('.work-select').attr('class','work-select')
-        }
-        _this.find('.work-select').attr('class', 'work-select active');
-        var id = _this.parent().parent().parent().attr('id');
-        $('#a'+id).addClass('active');
-    })
     //下一题点击事件
     $('.work-btm-next').click(function () {
         checkBefore();
@@ -49,24 +36,6 @@ $(function () {
         window.location.href='/mock.html';
     })
 
-    var result = $('.math-gap-result input');
-    $('.math-btn').click(function () {
-        result.get(0).value += $(this).html();
-    })
-    $('.math-clear').click(function () {
-        result.val('');
-    })
-    $('.math-sure').click(function () {
-        $('.math-gap-table tr').addClass('sure');
-        $('.math-gap-table').addClass('sure');
-        $('.math-gap-table td').hover(function () {
-            $('.math-gap-table td').css({
-                'color': '#ccc',
-                'backgroundColor': '#f1f1f1'
-            })
-        });
-        $('.math-btn').removeClass('math-btn');
-    })
     //开始做题点击事件
     $('.notice-next-start').click(function(){
         $('.work-shade').hide();
@@ -81,19 +50,7 @@ function workHeight() {
     $('.work-wrap-left').height(h);
     $('.work-wrap-right').height(h);
 }
-//收藏事件
-function collectEvent(obj) {
-    var _this = $(obj);
-    if (_this.find('i').hasClass('fa-star-o')) {
-        _this.addClass('active');
-        _this.find('i').removeClass('fa-star-o');
-        _this.find('i').addClass('fa-star');
-    } else {
-        _this.removeClass('active');
-        _this.find('i').removeClass('fa-star');
-        _this.find('i').addClass('fa-star-o');
-    }
-}
+
 //倒计时
 function countTime() {
     var totalTime = $('#sectionTime').val(),
@@ -143,7 +100,6 @@ function autoSubmit() {
 //进入下一题
 function checkBefore() {
     var done = true;
-
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
             done = false;
@@ -155,19 +111,13 @@ function checkBefore() {
                 classify = $('#classify').val(),//题目类型（跨学科）
                 readAllNum = $('#readAllNum').val(),
                 readNum = $('#readNum').val();
-
             $.ajax({
-
-                type: 'post',
+                type: 'get',
                 url: "/cn/mock/next",
                 data: {
-                    //testId: testId,
-                    //ans: ans,
-                    //subId: subId
-                    id:subId,
-                    answer:correctAns,
-                    solution:ans
-
+                    'id': subId,
+                    'answer': correctAns,
+                    'solution': ans
                 },
                 dataType: 'json',
                 success: function(data) {

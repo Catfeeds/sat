@@ -58,11 +58,6 @@
                     <?php foreach($info1 as $v){?>
                     <li class="s-cnt">
                         <img src="<?php echo $v['pic']?>" alt="">
-                        <div class="s-pubclass-info">
-                            <p>主题：名师带你走进高分殿堂</p>
-                            <p>时间：2017-8-5</p>
-                            <p>嘉宾：Amanda</p>
-                        </div>
                         <a href="/info_details/<?php echo $v['id']?>.html">查看详情</a>
                         <div class="s-pubclass-info">
                             <p>主题：<?php echo $v['title']?></p>
