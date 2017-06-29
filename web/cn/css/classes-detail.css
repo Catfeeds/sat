@@ -165,53 +165,125 @@ span {
 .tab-content #plan div p {
   font-size: 14px;
 }
+/*课程特色*/
 .s-policy {
-  width: 800px;
-  margin: 0 auto;
-  padding: 60px 0;
-}
-.s-policy h2 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  margin-bottom: 30px;
+  padding: 70px 125px 100px;
   text-align: center;
 }
-.s-policy h2:before {
+.s-policy .s-policy-title {
+  position: relative;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+.s-policy .s-policy-title:after {
   position: absolute;
   display: block;
-  content: "";
-  width: 20px;
-  height: 1px;
-  background-color: #000;
-  top: 50%;
-  left: 40%;
-  -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  -o-transform: translate(0,-50%);
-  transform: translate(0,-50%);
+  content: '';
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background-color: rgb(54,178,251);
 }
-.s-policy h2:after {
+.s-policy h4 {
+  line-height: 25px;
+  font-size: 16px;
+}
+.s-policy-feature {
+  margin-top: 40px;
+}
+.s-policy-feature>div {
+  position: relative;
+  float: left;
+  width: 280px;
+  height: 280px;
+  margin: 0 18px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.s-policy-feature>div:after {
   position: absolute;
   display: block;
-  content: "";
-  width: 20px;
-  height: 1px;
-  background-color: #000;
-  top: 50%;
-  right: 40%;
-  -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  -o-transform: translate(0,-50%);
-  transform: translate(0,-50%);
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
 }
-.s-policy img {
-  width: 160px;
-  margin-right: 70px;
+.s-feature-before {
+  background: url('/cn/images/classes-details01.png') 0 0 no-repeat;
 }
-.s-policy li {
-  margin-bottom: 24px;
+.s-feature-middle {
+  background: url('/cn/images/classes-details02.png') 0 0 no-repeat;
+}
+.s-feature-after {
+  background: url('/cn/images/classes-details03.png') 0 0 no-repeat;
+}
+.s-feature-text {
+  position: absolute;
+  top: 45%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 5;
+  padding: 0 30px;
+}
+.s-feature-text h3,
+.s-feature-text p {
+  line-height: 24px;
   font-size: 14px;
+  color: #fff;
+}
+.s-feature-text h3 {
+  font-weight: bold;
+  font-size: 16px;
+}
+/*七个特色*/
+.s-seven {
+  width: 1200px;
+  margin: 0 auto;
+}
+.s-seven ul {
+  text-align: center;
+}
+.s-seven li {
+  float: left;
+  width: 151px;
+  margin: 0 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.s-seven .s-seven-img {
+  width: 48px;
+  height: 48px;
+  margin: 0 0 15px 50px;
+  background: url("/cn/images/classes-sprite.png") no-repeat;
+}
+.s-seven li:nth-child(2) .s-seven-img{
+  background-position: -48px 0;
+}
+.s-seven li:nth-child(3) .s-seven-img{
+  background-position: -96px 0;
+}
+.s-seven li:nth-child(4) .s-seven-img{
+  background-position: -144px 0;
+}
+.s-seven li:nth-child(5) .s-seven-img{
+  background-position: -192px 0;
+}
+.s-seven li:nth-child(6) .s-seven-img{
+  background-position: -240px 0;
+}
+.s-seven li:nth-child(7) .s-seven-img{
+  background-position: -288px 0;
 }

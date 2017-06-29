@@ -63,8 +63,8 @@
     var num =  _this.parent().find('.s-apply-num').html();
     var userTel = $('#loginName').val();
     var classId = _this.next().attr('href').split('/')[2].split('.')[0];
-    var userId = sessionStorage.getItem('uid');
-    if (userId) {
+    var userId = $.cookie('uid');
+    if (userId != '') {
       $.post('/cn/pubclass/apply',{userTel: userTel,num: num,classId: classId},function(data) {
         _this.parent().find('.s-apply-num').html(data.hits);
         _this.attr({
