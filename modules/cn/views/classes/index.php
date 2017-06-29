@@ -48,7 +48,6 @@
               <?php foreach($brr[1] as $v){
                 echo '<li>'.$v[0].'</li>';
               }?>
-
             </ul>
             <ul>
               <li>课时</li>
