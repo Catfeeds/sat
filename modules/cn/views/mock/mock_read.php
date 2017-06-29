@@ -109,7 +109,7 @@
         <!-- 科目-->
         <input type="hidden" id="subject" value="<?php echo $data['major']?>">
         <!--题目类型-->
-        <input type="hidden" id="classify" value="jhi">
+        <input type="hidden" id="classify" value="<?php echo $data['subScores']?>">
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="1">
         <!--本section总题目-->
