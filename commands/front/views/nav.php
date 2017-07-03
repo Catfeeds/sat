@@ -2,7 +2,7 @@
 <nav class="s-nav navbar-fixed-top">
     <div class="container clearfix">
     <a class="s-nav-logo pull-left" href="http://sat.thinkuedu.com/index.html">
-        <img src="/cn/images/logo.png" alt="企业logo">
+        <img src="/cn/images/logo.jpg" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
         <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
