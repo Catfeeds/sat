@@ -16,11 +16,11 @@
 <!--        </li>-->
 <!--        <li><a href="/mock.html" --><?php //if($path=='mock.html') echo 'class="on"';?><!-->模考</a></li>-->
 <!--        <li><a href="#">报告</a></li>-->
-        <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">课程</a></li>
+        <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">SAT课程</a></li>
         <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
-        <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
+        <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
     </ul>
     <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
          <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['username'];}else{echo '欢迎您';}?></a></li>

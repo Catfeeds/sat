@@ -203,7 +203,7 @@ body {
   margin-right: 27px;
 }
 .s-footer-bottom dl dd a {
-  color: #e568d7;
+  color: #fff;
   font-size: 14px;
   margin-right: 10px;
 }
@@ -212,9 +212,9 @@ body {
   font-size: 14px;
   color: #fff;
 }
-.s-footer-bottom p a:hover {
-  color:  #e568d7;
-}
+/*.s-footer-bottom p a:hover {*/
+  /*color:  #ccc;*/
+/*}*/
 /*--------------------登录注册-----------------*/
 .s-login{
   background-color: rgba(0,0,0,.35);

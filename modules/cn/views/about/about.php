@@ -25,7 +25,7 @@
         <div id="sRelation">
           <h3>联系我们</h3>
           <dl class="s-relation-nav clearfix">
-            <dt class="pull-left">全国免费咨询热线：400-600-1123</dt>
+            <dt class="pull-left">全国免费咨询热线：400-1816-180</dt>
             <?php foreach($contact as $k=>$v){?>
               <dd <?php if($k==0) echo 'class="co-black"'?>><?php echo $v['city']?></dd>
             <?php }?>
@@ -51,7 +51,6 @@
           <h3>加入我们</h3>
           <h4>人力资源部邮箱:<strong>hr@thinkwithu.cn</strong></h4>
           <ul class="s-join-nav">
-
             <li><p>教育类</p></li>
             <li><p>营销/市场类</p></li>
             <li><p>留学顾问类</p></li>
