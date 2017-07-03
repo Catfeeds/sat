@@ -16,14 +16,13 @@ class StudentController extends ApiControl
 {
     public $enableCsrfValidation = false;
 
-    // 所有资讯的显示
     public function actionIndex()
     {
         $data = Yii::$app->db->createCommand("select * from {{%student_case}}")->queryAll();
         return $this->render('index', ['data' => $data]);
     }
 
-    // 添加资讯
+    // 添加
     public function actionCase()
     {
         if (!$_POST) {
@@ -57,11 +56,11 @@ class StudentController extends ApiControl
         }
     }
 
-    // 删除课程
+    // 删除
     public function actionDel()
     {
         $id = Yii::$app->request->get('id', '');
-        $re = student::deleteAll("id=:id", array(':id' => $id));
+        $re = Student::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             echo true;
         }

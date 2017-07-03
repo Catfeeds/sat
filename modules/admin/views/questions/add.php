@@ -97,13 +97,13 @@
                     <span>
                         <select name="subScores">
                             <option value ="">请选择类型</option>
-                            <option value ="Heart of Algebra" <?php echo isset($data)&& $data['subScores']=="Heart of Algebra" ?  'selected':''?>>Heart of Algebra</option>
-                            <option value ="Problem Solving and Data Analysis" <?php echo isset($data)&& $data['subScores']=="Problem Solving and Data Analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
-                            <option value ="Passport to Advanced Math" <?php echo isset($data)&& $data['subScores']=="Passport to Advanced Math" ?  'selected':''?>>Passport to Advanced Math</option>
-                            <option value ="Expression of Ideas" <?php echo isset($data)&& $data['subScores']=="Expression of Ideas" ?  'selected':''?>>Expression of Ideas</option>
-                            <option value ="Standard English Conventions" <?php echo isset($data)&& $data['subScores']=="Standard English Conventions" ?  'selected':''?>>Standard English Conventions</option>
-                            <option value ="Words in Context" <?php echo isset($data)&& $data['subScores']=="Words in Context" ?  'selected':''?>>Words in Context</option>
-                            <option value ="Command of Evidence" <?php echo isset($data)&& $data['subScores']=="Command of Evidence" ?  'selected':''?>>Command of Evidence</option>
+                            <option value ="algebra" <?php echo isset($data)&& $data['subScores']=="algebra" ?  'selected':''?>>Heart of Algebra</option>
+                            <option value ="analysis" <?php echo isset($data)&& $data['subScores']=="analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
+                            <option value ="math" <?php echo isset($data)&& $data['subScores']=="math" ?  'selected':''?>>Passport to Advanced Math</option>
+                            <option value =expression" <?php echo isset($data)&& $data['subScores']=="expression" ?  'selected':''?>>Expression of Ideas</option>
+                            <option value ="english" <?php echo isset($data)&& $data['subScores']=="english" ?  'selected':''?>>Standard English Conventions</option>
+                            <option value ="words" <?php echo isset($data)&& $data['subScores']=="words" ?  'selected':''?>>Words in Context</option>
+                            <option value ="evidence" <?php echo isset($data)&& $data['subScores']=="evidence" ?  'selected':''?>>Command of Evidence</option>
                         </select>
                     </span>
                     </br>
@@ -112,7 +112,7 @@
                     <span>
                         <select name="crosstestScores">
                             <option value ="">请选择类型</option>
-                            <option value ="history/social" <?php echo isset($data)&& $data['crosstestScores']=="history/social" ?  'selected':''?>>history/social</option>
+                            <option value ="social" <?php echo isset($data)&& $data['crosstestScores']=="social" ?  'selected':''?>>history/social</option>
                             <option value ="science"  <?php echo isset($data)&& $data['crosstestScores']=="science" ?  'selected':''?>>science</option>
                         </select>
                     </span>

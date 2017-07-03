@@ -87,14 +87,18 @@ function autoSubmit() {
 // }
 
 //进入下一题
-var pos = location.search.indexOf('m=');
 function checkBefore() {
     var done = true;
+    var pos = location.search.indexOf('m=');
     if (pos == -1) {
     //    全套模考
-
+        var u = location.search.split('&')[0].substr(1);
     } else {
     //    单科模考
+        var arr = location.search.substr(1).split('&');
+        var str1 = arr[0],
+            str2 = arr[1],
+            u = str1+'&'+str2;
     }
     //var length = location.search.split('&').length;
     //console.log(location.search.split('&'));

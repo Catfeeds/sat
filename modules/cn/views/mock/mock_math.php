@@ -17,7 +17,7 @@
     <h3><?php echo $data['number']?> . <?php echo $data['content']?></h3>
         <?php
         if($data['isFilling']==='0'){
-            $ul='<ul class="work-que-list" id="subjectId" data-id="2358636904440836">
+            $ul='<ul class="work-que-list" id="subjectId" data-id="'.$data['qid'].'">
             <li class="work-que-wrap clearfix">
                 <div class="work-select" data-id="A">A</div>
                 <div class="work-que">'. $data['keyA'].'</div>
