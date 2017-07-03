@@ -87,8 +87,26 @@ function autoSubmit() {
 // }
 
 //进入下一题
+var pos = location.search.indexOf('m=');
 function checkBefore() {
     var done = true;
+    if (pos == -1) {
+    //    全套模考
+
+    } else {
+    //    单科模考
+    }
+    //var length = location.search.split('&').length;
+    //console.log(location.search.split('&'));
+    //if (length > 1) {
+    //    var arr = location.search.substr(1).split('&');
+    //    var str1 = arr[0],
+    //        str2 = arr[1],
+    //        u = str1+'&'+str2;
+    //}else {
+    //    var u = location.search.split('&')[0].substr(1);
+    //}
+    console.log(u);
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
             done = false;
@@ -104,15 +122,20 @@ function checkBefore() {
                 type: 'get',
                 url: "/cn/mock/next",
                 data: {
-                    'id':subId,
+                    'qid':subId,
                     'answer':correctAns,
                     'solution':ans,
-                    'uid':uId
+                    'uid':uId,
+                    'major':subject,
+                    'crossScore':classify,
+                    'tid':testId
                 },
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
-                    window.location.href = '/mock-details/'
+                    // 获取地址栏是否存在major
+                    // 存在则
+                    window.location.href = '/mock_test?'+u+'&qid='+data.qid;
                 }
             })
         }

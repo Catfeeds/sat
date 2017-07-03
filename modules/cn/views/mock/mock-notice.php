@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>测评</title>
-    <link rel="stylesheet" href="/cn/css/reset.css">
-    <link rel="stylesheet" href="/cn/css/bootstrap.css">
-    <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="/cn/css/mock-notice.css">
 
-    <script src="/cn/js/jquery-2.1.3.js"></script>
-    <script src="/cn/js/bootstrap.js"></script>
-    <script src="/cn/js/jquery.SuperSlide.2.1.js"></script>
-</head>
-<body>
 <section class="s-evaluation">
     <div class="s-top container">
         <div class="s-top-cnt row">
@@ -74,10 +62,12 @@
         </div>
     </div>
 </section>
-</body>
+
 <script>
+//    var u = location.search.split('&')[0].substr(1);
+    var u = location.search.substr(1);
+    console.log(u);
     $('.do-subject').click(function () {
-        window.location.href = '';
+        window.location.href = '/mock_test?'+u;
     })
 </script>
-</html>
