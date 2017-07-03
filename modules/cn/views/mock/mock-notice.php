@@ -8,7 +8,7 @@
                 <img src="/cn/images/logo.png" alt="">
             </div>
             <h1 class="col-lg-4 col-md-4">SAT基础测试</h1>
-            <p class="s-top-out col-lg-4 col-md-4"><span class="s-hover">离开</span></p>
+            <p class="s-top-out col-lg-4 col-md-4"><span class="s-hover get-out">离开</span></p>
         </div>
     </div>
     <div class="s-cnt">
@@ -60,14 +60,28 @@
         <div class="s-start">
             <button class="s-hover do-subject">开始做题</button>
         </div>
+        <!--遮罩层-->
+        <div class="s-shade">
+            <div class="shade-wrap">
+                <h3>小主,你忍心弃我而去吗?</h3>
+                <div class="shade-select clearfix">
+                    <span class="shade-out pull-left">忍心而去</span>
+                    <span class="shade-in do-subject pull-right">逗你玩呢!</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <script>
-//    var u = location.search.split('&')[0].substr(1);
     var u = location.search.substr(1);
-    console.log(u);
     $('.do-subject').click(function () {
         window.location.href = '/mock_test?'+u;
+    })
+    $('.get-out').click(function () {
+        $('.s-shade').show();
+    })
+    $('.shade-out').click(function () {
+        window.location.href = '/mock.html';
     })
 </script>

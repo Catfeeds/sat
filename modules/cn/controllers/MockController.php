@@ -89,8 +89,15 @@ class MockController extends Controller
         }else{
             $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$qid)->queryOne();
         }
+<<<<<<< Updated upstream
 
         return $this->render($modle,['data'=>$data]);
+=======
+        $id=Yii::$app->db->createCommand("select id from {{%topic}} $where order by id asc limit 1")->queryOne();
+        $data=Yii::$app->db->createCommand("select t.*,te.* from {{%topic}} t left join {{%topic_extend}} te on  t.id=te.topicId where te.topicId=".$id['id']." order by t.id ASC ")->queryAll();
+//        var_dump($data);die;
+        return $this->render('mock_details');
+>>>>>>> Stashed changes
     }
 
 

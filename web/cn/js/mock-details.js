@@ -106,7 +106,7 @@ function checkBefore() {
     //}else {
     //    var u = location.search.split('&')[0].substr(1);
     //}
-    console.log(u);
+    //console.log(u);
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
             done = false;

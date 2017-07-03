@@ -246,9 +246,6 @@
     cursor: pointer;
     color: #fff;
 }
-.shade-wrap .shade-out {
-
-}
 .shade-wrap .shade-out:hover {
     background-color: #333;
 }
