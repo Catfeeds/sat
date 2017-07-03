@@ -106,8 +106,9 @@
   display: block;
 }
 #sRelation .s-relation-cnt li img {
-  width: 240px;
   float: left;
+  width: 240px;
+  height: 260px;
 }
 #sRelation .s-relation-cnt li dl {
   margin-left: 270px;

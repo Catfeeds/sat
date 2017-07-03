@@ -279,10 +279,10 @@
   margin-top: 50px;
 }
 .s-article .s-information {
-  width: 30%;
+  width: 32%;
   padding: 1%;
   float: left;
-  margin-right: 4%;
+  margin-right: 2%;
 }
 .s-article .s-information:last-child {
   margin-right: 0;
@@ -308,7 +308,7 @@
   height: 200px;
 }
 .s-article .s-article-title {
-  width: 160px;
+  width: 190px;
   max-height: 200px;
   overflow: hidden;
   margin-left: 20px;
@@ -320,7 +320,7 @@
   line-height: 22px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp:6;
+  -webkit-line-clamp:8;
   -webkit-box-orient:vertical;
   font-size: 14px;
 }

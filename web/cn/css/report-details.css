@@ -1,0 +1,183 @@
+.report-banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    padding: 30px 0;
+    background: url("/cn/images/report02.png") 0 0 no-repeat;
+}
+.report-banner .report-bnr-cnt {
+    position: absolute;
+    padding: 0 10px;
+    bottom: 40px;
+    left: 32%;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-8deg);
+    text-align: center;
+    font-size: 24px;
+    background-color: #fff;
+}
+.report-banner .report-bnr-cnt span {
+    color: orangered;
+}
+.report-title {
+    margin-top: 70px;
+    padding-left: 10px;
+    border-left: 3px solid rgb(54,178,251);
+    font-size: 22px;
+}
+.report-wrap {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgb(221,221,221);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+}
+.report-score-table th,
+.report-score-table td {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid #000;
+}
+.report-score-table th {
+    background-color: rgb(54,178,251);
+    color: #fff;
+    border-color: rgb(54,178,251);
+}
+.report-score-other {
+    margin-top: 50px;
+}
+.report-score-other li {
+    margin-bottom: 2px;
+    font-size: 0;
+}
+.report-score-other li span {
+    display: inline-block;
+    width: 200px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.report-score-other li .other-title {
+    background-color: rgb(54,178,251);
+    color: #fff;
+}
+.report-score-other li .other-score {
+    background-color: #ccc;
+}
+/*正确率分析*/
+.report-subject .report-sub-title {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+.report-subject .report-sub-title:after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: rgb(54,178,251);
+}
+.report-sub-chart {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+.report-sub-list {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.report-sub-list span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #05bc02;
+}
+.report-sub-list span.sub-red {
+    background-color: #e9604e;
+}
+.report-sub-list span.sub-blue {
+    background-color: #2e9fd9;
+}
+/*复习策略建议*/
+.report-advice {
+    position: relative;
+}
+.report-advice .advice-img {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+.report-advice .advice-list {
+    width: 970px;
+}
+.report-advice .advice-cnt {
+    position: relative;
+    width: 100%;
+    height: 116px;
+    margin-bottom: 24px;
+    margin-left: 180px;
+    background-color: rgb(149,213,251);
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.report-advice .advice-cnt:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 36px;
+    height: 2px;
+    top: 50%;
+    left: -36px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: rgb(48,167,237);
+}
+.report-advice .advice-cnt2:before {
+    width: 2px;
+    height: 278px;
+    left: -36px;
+    top: 58px;
+}
+.report-advice .advice-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 116px;
+    height: 116px;
+    line-height: 116px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-box-shadow: 3px 0 5px #fff;
+    -moz-box-shadow: 3px 0 5px #fff;
+    box-shadow: 3px 0 5px #fff;
+    background-color: rgb(48,167,237);
+    color: #fff;
+}
+.report-advice .advice-cnt p {
+    width: 800px;
+    padding: 15px 0;
+    overflow: hidden;
+    margin-left: 135px;
+    font-size: 14px;
+}
