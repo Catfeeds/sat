@@ -14,62 +14,65 @@ use app\libs\GetScore;
 
 class MockController extends Controller
 {
-    public $layout=' ';
+    public $layout = ' ';
+
     public function actionIndex()
     {
-        $this->layout='cn.php';
-        $data=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
-        $og=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
-        $princeton=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
-        $kaplan=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
-        $barron=Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
+        $this->layout = 'cn.php';
+        $data = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
+        $og = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
+        $princeton = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
+        $kaplan = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
+        $barron = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
 //        var_dump($data);die;
-        return $this->render('index',['data'=>$data,'og'=>$og,'princeton'=>$princeton,'kaplan'=>$kaplan,'barron'=>$barron]);
-
+        return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron]);
 
 
 //        $this->actionNext();
     }
+
     public function actionNotice()
     {
-        $this->layout='cn1.php';
-        $tid=Yii::$app->request->get('tid');
-        $major=Yii::$app->request->get('m','');
-        return $this->render('mock-notice',['tid'=>$tid,'$major'=>$major]);
+        $this->layout = 'cn1.php';
+        $tid = Yii::$app->request->get('tid');
+        $major = Yii::$app->request->get('m', '');
+        return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 
 
     }
+
     // 开始模考功能，只取每个模块的第一道题
     public function actionDetails()
     {
         session_start();
 //        var_dump($_SESSION);
-        $this->actionReport();die;
-        $this->layout='cn1.php';
-        $major=Yii::$app->request->get('m','');
-        $id=Yii::$app->request->get('tid');
-        $qid=Yii::$app->request->get('qid','');
-        if($major!=false){
-            if($major=='Math'){
-                $where="where tpId=".$id." and (major='Math1' or major='Math2')";
-                $modle='mock_math';
-            }else{
-                $where="where tpId=".$id." and major='$major'";
-                $modle='mock_read';
+        $this->actionReport();
+        die;
+        $this->layout = 'cn1.php';
+        $major = Yii::$app->request->get('m', '');
+        $id = Yii::$app->request->get('tid');
+        $qid = Yii::$app->request->get('qid', '');
+        if ($major != false) {
+            if ($major == 'Math') {
+                $where = "where tpId=" . $id . " and (major='Math1' or major='Math2')";
+                $modle = 'mock_math';
+            } else {
+                $where = "where tpId=" . $id . " and major='$major'";
+                $modle = 'mock_read';
             }
-        }else{
-            $where="where tpId=$id ";
-            $modle='mock_read';
+        } else {
+            $where = "where tpId=$id ";
+            $modle = 'mock_read';
         }
-        if(!$qid){
-            $where.=" and number='1'";
-            $id=Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
-            $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id['id']." order by q.id asc limit 1")->queryOne();
-        }else{
-            $data=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$qid)->queryOne();
+        if (!$qid) {
+            $where .= " and number='1'";
+            $id = Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $id['id'] . " order by q.id asc limit 1")->queryOne();
+        } else {
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
         }
 
-        return $this->render($modle,['data'=>$data]);
+        return $this->render($modle, ['data' => $data]);
     }
 
 
@@ -83,112 +86,111 @@ class MockController extends Controller
     public function actionNext()
     {
         // 是只存id 和答案，还是报告所需数据都存
-        $solution=Yii::$app->request->get('solution');// 用户提交的答案
-        $answer=Yii::$app->request->get('answer');// 正确答案
-        $major=Yii::$app->request->get('major');// 学科
-        $crossScore=Yii::$app->request->get('crossScore');// 跨学科分类
+        $solution = Yii::$app->request->get('solution');// 用户提交的答案
+        $answer = Yii::$app->request->get('answer');// 正确答案
+        $major = Yii::$app->request->get('major');// 学科
+        $crossScore = Yii::$app->request->get('crossScore');// 跨学科分类
 //        $subScore=Yii::$app->request->get('subScore');// 正确答案
-        $tid=Yii::$app->request->get('tid');
-        $qid=Yii::$app->request->get('qid');
-        $uid=Yii::$app->request->get('uid');
+        $tid = Yii::$app->request->get('tid');
+        $qid = Yii::$app->request->get('qid');
+        $uid = Yii::$app->request->get('uid');
         session_start();
-        $a=KeepAnswer::getCat();
-        $_SESSION['tpId']=$tid;
-        $_SESSION['uid']=$uid;
+        $a = KeepAnswer::getCat();
+        $_SESSION['tpId'] = $tid;
+        $_SESSION['uid'] = $uid;
 
 //        $re=$a->addPro($qid,$answer,$solution,$major,$crossScore,$subScore);
-        $re=$a->addPro($qid,$solution);
-        $next['sectionNum']=$a->Gettype();// 目前第几题
-        $next['mkNum']= 5;// 所答第几题/总题数
+        $re = $a->addPro($qid, $solution);
+        $next['sectionNum'] = $a->Gettype();// 目前第几题
+        $next['mkNum'] = 5;// 所答第几题/总题数
 //        $next=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$qid." and tpId=".$tid." and major='$major' limit 1 ")->queryOne();
-        $next=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$qid." and tpId=".$tid." and major='$major' limit 1 ")->queryOne();
+        $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>" . $qid . " and tpId=" . $tid . " and major='$major' limit 1 ")->queryOne();
         echo die(json_encode($next));
 
     }
+
     // 做题中途离开
     public function actionLeave()
     {
-        $a=KeepAnswer::getCat();
-        $re=$a->Emptyitem();
+        $a = KeepAnswer::getCat();
+        $re = $a->Emptyitem();
     }
     // 小节提交数据，并显示下一小节第一道题
     // 存在用户uid 和不存在 uid
-    public function actionReport(){
-        // 将session 的数据存到数据库
-//        session_start();
-        // 现在生成的报告
-//        if(isset( $_SESSION['answer'])){
-//            $uid=$report['uid'] = $_SESSION['uid'];
-            $uid=$report['uid'] = 222;
-//            var_dump($uid);die;
-            $answerData = ((array)$_SESSION['answer']);
-            $answerData = $answerData['item'];// 获取用户的答题数据
-            $getscore=new GetScore();
-            $number=$getscore->Number($answerData);
-            $score=$getscore->Score($number);// 各科分数均有，按科目的分类
-            $subscore=$getscore->Subscore($number);
-
-//        var_dump($number);die;
-            $crosstest=$getscore->CrossTest($answerData);
-            $report['tpId'] = $_SESSION['tpId'];
-            $report['readnum']=$number['Reading'];
-            $report['mathnum']=$number['Math'];
-            $report['writenum']=$number['Writing'];
-            $report['jumpnum']=$number['kip'];
-            $report['subScore']=$subscore['total'];
-            $report['score']=$score['total'];
-            $report['crossScore']=$crosstest['total'];
-//            $report['time']=$_COOKIE['time'];// 可以在cookie中直接取
-            if($uid) {
-                // 将答案组合成字符串
-                static $temp=array();
-                foreach ($answerData as $v) {
-                    $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
-                    $temp[] = $v;
-                }
-                $t = "";
-                foreach ($temp as $v) {
-                    $t .= $v . ";";
-                }
-                $t = substr($t, 0, -1);
-                $report['answer'] = $t;
-                var_dump($number);echo"---------------------------";
-                var_dump($score);echo"---------------------------";
-//                var_dump($number);echo"---------------------------";
-//                echo"--------------------";
-                var_dump($_SESSION);
-//                die;
-                $re = Yii::$app->db->createCommand()->insert("{{%report}}", $report)->execute();
-                if($re){
-//                    $a=KeepAnswer::getCat();
-//                    $re=$a->Emptyitem();
-//                    $getscore->Assignment();
-                }
-            }
-            $suggest['Math']=Yii::$app->db->createCommand("select * from {{%tactics}} where max>".$score['Math']." and min<".$score['Math']." and major='Math'")->queryOne();
-            $suggest['Reading']=Yii::$app->db->createCommand("select * from {{%tactics}} where max>".$score['Reading']." and min<".$score['Reading']." and major='Reading'")->queryOne();
-            $suggest['Writing']=Yii::$app->db->createCommand("select * from {{%tactics}} where max>".$score['Writing']." and min<".$score['Writing']." and major='Writing'")->queryOne();
-//            var_dump($report);die;
-//        }else{
-//            // 登录之后才能查看历史报告
-//            $uid=Yii::$app->session->get('uid','0');
-//            $report=Yii::$app->db->createCommand("select * from {{%report}} where uid=".$uid)->queryAll();
-//            foreach($report as $k=> $v){
-//                static $arr=array(); static $brr=array();
-//                $arr=implode(';',$report[$k]['answer']);
-//                foreach($arr as $key=>$val){
-//                    $brr=implode(',',$arr[$key]);
+    public function actionReport()
+    {
+//        // 将session 的数据存到数据库
+////        session_start();
+//        // 现在生成的报告
+////        if(isset( $_SESSION['answer'])){
+////            $uid=$report['uid'] = $_SESSION['uid'];
+//            $uid=$report['uid'] = 222;
+////            var_dump($uid);die;
+//            $answerData = ((array)$_SESSION['answer']);
+//            $answerData = $answerData['item'];// 获取用户的答题数据
+//            $getscore=new GetScore();
+//            $number=$getscore->Number($answerData);
+//            $score=$getscore->Score($number);// 各科分数均有，按科目的分类
+//            $subscore=$getscore->Subscore($number);
+//
+////        var_dump($number);die;
+//            $crosstest=$getscore->CrossTest($number);
+//            $report['tpId'] = $_SESSION['tpId'];
+//            $report['readnum']=$number['Reading'];
+//            $report['mathnum']=$number['Math'];
+//            $report['writenum']=$number['Writing'];
+//            $report['jumpnum']=$number['kip'];
+//            $report['subScore']=$subscore['total'];
+//            $report['score']=$score['total'];
+//            $report['crossScore']=$crosstest['total'];
+//            $report['data']=time();
+////            $report['time']=$_COOKIE['time'];// 可以在cookie中直接取
+//            if($uid) {
+//                // 将答案组合成字符串
+//                static $temp=array();
+//                foreach ($answerData as $v) {
+//                    $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
+//                    $temp[] = $v;
 //                }
-            }
-         // 将答案渲染到报告的模板
+//                $t = "";
+//                foreach ($temp as $v) {
+//                    $t .= $v . ";";
+//                }
+//                $t = substr($t, 0, -1);
+//                $report['answer'] = $t;
+////                var_dump($subscore);die;
+//                $re = Yii::$app->db->createCommand()->insert("{{%report}}", $report)->execute();
+//                if($re){
+//                    $a=KeepAnswer::getCat();
+////                    $re=$a->Emptyitem();
+////                    $getscore->Assignment();
+//                }
+//            }
+//            $suggest['Math']=Yii::$app->db->createCommand("select * from {{%tactics}} where max>".$score['Math']." and min<".$score['Math']." and major='Math'")->queryOne();
+//            $suggest['Reading']=Yii::$app->db->createCommand("select * from {{%tactics}} where max>".$score['Reading']." and min<".$score['Reading']." and major='Reading'")->queryOne();
+//            $suggest['Writing']=Yii::$app->db->createCommand("select * from {{%tactics}} where max>".$score['Writing']." and min<".$score['Writing']." and major='Writing'")->queryOne();
+////            var_dump($report);die;
+////        }else{
+////            // 登录之后才能查看历史报告
+////            $uid=Yii::$app->session->get('uid','0');
+////            $report=Yii::$app->db->createCommand("select * from {{%report}} where uid=".$uid)->queryAll();
+////            foreach($report as $k=> $v){
+////                static $arr=array(); static $brr=array();
+////                $arr=implode(';',$report[$k]['answer']);
+////                foreach($arr as $key=>$val){
+////                    $brr=implode(',',$arr[$key]);
+////                }
+//            }
+//         // 将答案渲染到报告的模板
+//
+//            //根据作对的题数，取建议
+//            // 有几套试卷的话也取不过来的
+//
+////        return $this->render('report',['report'=>$report,'suggest'=>$suggest]);
+//        // 没有登录的时候直接生成一次性报告
+//
+////        var_dump($t);
 
-            //根据作对的题数，取建议
-            // 有几套试卷的话也取不过来的
 
-//        return $this->render('report',['report'=>$report,'suggest'=>$suggest]);
-        // 没有登录的时候直接生成一次性报告
-
-//        var_dump($t);
-
-
+    }
 }

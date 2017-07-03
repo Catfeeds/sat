@@ -131,7 +131,7 @@ class GetScore {
         $number['social']=$social;
         $number['science']=$science;
         $number['kip']=$kip;
-        var_dump($number);die;
+//        var_dump($number);die;
        return $number;
 
     }
@@ -486,9 +486,7 @@ class GetScore {
         $subScore['math']=$this->subMath($number);
         $subScore['words']=$this->Words($number);
         $subScore['evidence']=$this->Evidence($number);
-        $subScore['total']=$subScore['expression']+$subScore['english']+$subScore['algebra']+ $subScore['analysis']+$subScore['analysis']+ $subScore['math']+$subScore['words']+$subScore['evidence'];
-//        var_dump($this->number);die;
-//        var_dump($subScore);die;
+        $subScore['total']=$subScore['expression']+$subScore['english']+$subScore['algebra']+ $subScore['analysis']+ $subScore['math']+$subScore['words']+$subScore['evidence'];
         return $subScore;
       }
     public function Expression($number)
@@ -842,8 +840,6 @@ class GetScore {
     }
     public function Social($number)
     {
-
-
         if ($number['social'] == 0 || $number['social'] == 1) {
             $CrossTest['social'] = 10;
             return $CrossTest['social'];
