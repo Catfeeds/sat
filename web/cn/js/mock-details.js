@@ -18,9 +18,9 @@ $(function () {
         countTime();
     }
     //下一题点击事件
-    //$('.work-btm-next').click(function () {
-    //    checkBefore(this);
-    //})
+    $('.work-btm-next').click(function () {
+        ckBefore();
+    })
     //离开点击事件
     $('.work-out').click(function () {
         workShade('.quit-wrap');
@@ -89,6 +89,15 @@ function autoSubmit() {
 //     })
 //   })
 // }
+
+function ckBefore() {
+    var ans = $('.work-select.active').data('id');
+    if (ans == undefined) {
+        workShade('.next-wrap');
+    } else {
+        console.log('aaa');
+    }
+}
 
 //进入下一题
 function checkBefore() {

@@ -68,7 +68,7 @@
                 做题总进度:<span>30</span>/<span>155</span>
             </div>
             <div class="work-btm-next col-lg-2 col-md-2">
-                <a href="#" class='work-next-icon' onclick="checkBefore();"><i class="fa fa-hand-o-right"></i>NEXT</a>
+                <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>
                 <a href='#' class="work-submit"><i class="work-submit fa fa-upload"></i>提交</a>
             </div>
         </div>
