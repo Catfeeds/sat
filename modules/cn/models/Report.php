@@ -16,7 +16,7 @@ class Report extends ActiveRecord{
             foreach ($array as $key => $value) {
                 if (is_array($value)) {
                     // 递归遍历
-                    arrToStr($value);
+                    $this->arrToStr($value);
                 } else {
                     $r_arr[] = $value;
                 }

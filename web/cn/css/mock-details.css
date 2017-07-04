@@ -174,12 +174,11 @@
 .work-time-icon,
 .work-out-off {
     font-size: 30px;
-    margin-right: 10px;
 }
 .work-out {
     cursor: pointer;
 }
-.work-out:hover {
+.work-btm-cnt .work-out:hover {
     color: #ccc;
 }
 /*时间、进度*/

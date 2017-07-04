@@ -29,21 +29,21 @@
                             <th>总成绩</th>
                         </tr>
                         <tr>
-                            <td>400</td>
-                            <td>300</td>
-                            <td>600</td>
-                            <td>155</td>
-                            <td>1300</td>
+                            <td><?php echo $report['Reading']?></td>
+                            <td><?php echo $report['Writing']?></td>
+                            <td><?php echo $report['Math']?></td>
+                            <td>154</td>
+                            <td><?php echo $report['total']?></td>
                         </tr>
                     </table>
                     <ul class="report-score-other">
                         <li>
                             <span class="other-title">SubScores</span>
-                            <span class="other-score">40</span>
+                            <span class="other-score"><?php echo $report['subScore']?></span>
                         </li>
                         <li>
                             <span class="other-title">Cross-Test Scores</span>
-                            <span class="other-score">50</span>
+                            <span class="other-score"><?php echo $report['crossScore']?></span>
                         </li>
                     </ul>
                 </div>
@@ -127,18 +127,15 @@
                 <ul class="advice-list">
                     <li class="advice-cnt">
                         <div class="advice-title">阅读</div>
-                        <p>追求速度，做完题就了事，不求甚解，这样即使做很多遍也不会有成效，相反的，
-                            沉下心来。踏踏实实分析题目和文章，我相信不出几次就会有显著的提高。</p>
+                        <p><?php echo ($suggest['Reading']!=false) ? $suggest['Reading']['suggestion'] : '无'?></p>
                     </li>
                     <li class="advice-cnt advice-cnt2">
                         <div class="advice-title">文法</div>
-                        <p>追求速度，做完题就了事，不求甚解，这样即使做很多遍也不会有成效，相反的，
-                            沉下心来。踏踏实实分析题目和文章，我相信不出几次就会有显著的提高。</p>
+                        <p><?php echo ($suggest['Writing']!=false) ? $suggest['Writing']['suggestion'] : '无'?></p>
                     </li>
                     <li class="advice-cnt">
                         <div class="advice-title">数学</div>
-                        <p>追求速度，做完题就了事，不求甚解，这样即使做很多遍也不会有成效，相反的，
-                            沉下心来。踏踏实实分析题目和文章，我相信不出几次就会有显著的提高。</p>
+                        <p><?php echo ($suggest['Math']!=false) ? $suggest['Math']['suggestion'] : '无'?></p>
                     </li>
                 </ul>
                 <img class="advice-img" src="/cn/images/report01.png" alt="">
@@ -157,9 +154,9 @@
 <script>
     $(function () {
         barChart('reportTime',[[100,230]],["你的时间","标准时间"],["做题时间"],{xAxisColor:'#002D71', xRotation:0, title: "做题时间", subtitle:'', yAxisUnit: '(min)', color: ['#36B2FB'], min: 0, max: 230, tooltipUnit: 'min', showValue: true})
-        pieChart('repReading',[parseInt('9'),parseInt('20'),parseInt('126')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-        pieChart('repWriting',[parseInt('130'),parseInt('10'),parseInt('15')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-        pieChart('repMath',[parseInt('106'),parseInt('30'),parseInt('9')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+        pieChart('repReading',[parseInt('<?php echo $report['readnum']/52?>'),parseInt('<?php echo $report['readerror']/52?>'),parseInt('<?php echo (52-$report['readnum']-$report['readerror'])/52?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+        pieChart('repWriting',[parseInt('<?php echo $report['writenum']/44?>'),parseInt('<?php echo $report['writeerror']/44?>'),parseInt('<?php echo (44-$report['writenum']-$report['writeerror'])/44?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+        pieChart('repMath',[parseInt('<?php echo $report['mathnum']/58?>'),parseInt('<?php echo $report['matherror']/58?>'),parseInt('<?php echo (58-$report['mathnum']-$report['matherror'])/44?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
         lineChart('reportHistory',[[1200,1350,1400,1500]],['OG第一套','BARRON第二套','开普兰第一套','OG第四套'],['分数'],{title: '历史成绩曲线图',min: 0,max: 1600,tooltipUnit: '分',showValue: true});
     })
 </script>

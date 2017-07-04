@@ -33,24 +33,33 @@ class GetScore {
         static $social=0;
         static $science=0;
         static $kip=0;
+        static $matherror=0;
+        static $readerror=0;
+        static $writeerror=0;
 //        var_dump($data);die;
         foreach($data as $k=>$v) {
             $que = Yii::$app->db->createCommand("select * from {{%questions}}  where id=" . $k)->queryOne();
             if ($que['major'] == 'Math1' or $que['major'] == 'Math2') {
                 if ($v[1] == $que['answer']) {
                     $mathnum =$mathnum+ 1;
-                    continue;
+//                    continue;
+                }else{
+                    $matherror+=1;
                 }
             } elseif ($que['major'] == 'Reading') {
                 if ($v[1] == $que['answer']) {
                     $readnum =$readnum + 1;
-                    continue;
+//                    continue;
+                }else{
+                    $readerror+=1;
                 }
 
             } elseif ($que['major'] == 'Writing') {
                 if ($v[1] == $que['answer']) {
                     $writnum =$writnum + 1;
-                    continue;
+//                    continue;
+                }else{
+                    $writeerror+=1;
                 }
 
             }
@@ -60,43 +69,43 @@ class GetScore {
             if ($que['subScores'] == 'expression') {
                 if ($v[1] == $que['answer']) {
                     $expression =$expression+ 1;
-                    continue;
+//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'english') {
                 if ($v[1] == $que['answer']) {
                     $english =$english + 1;
-                    continue;
+//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'algebra') {
                 if ($v[1] == $que['answer']) {
                     $algebra =$algebra + 1;
-                    continue;
+//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'analysis') {
                 if ($v[1] == $que['answer']) {
                     $analysis =$analysis + 1;
-                    continue;
+//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'math') {
                 if ($v[1] == $que['answer']) {
                     $math =$math + 1;
-                    continue;
+//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'words') {
                 if ($v[1] == $que['answer']) {
                     $words = $words +1;
-                    continue;
+//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'evidence') {
                 if ($v[1] == $que['answer']) {
                     $evidence =$evidence + 1;
-                    continue;
+//                    continue;
                 }
 
             }
@@ -106,13 +115,13 @@ class GetScore {
             if($que['crosstestScores']=='social'){
                 if($v[1]==$que['answer']){
                     $social+=1;
-                    continue;
+//                    continue;
                 }
 
             }elseif($que['crosstestScores']=='science'){
                 if($v[1]==$que['answer']){
                     $science+=1;
-                    continue;
+//                    continue;
                 }
 
             }
@@ -121,6 +130,9 @@ class GetScore {
         $number['Math']=$mathnum;
         $number['Reading']=$readnum;
         $number['Writing']=$writnum;
+        $number['matherror']=$matherror;
+        $number['readerror']=$readerror;
+        $number['writeerror']=$writeerror;
         $number['expression']=$expression;
         $number['english']=$english;
         $number['algebra']=$algebra;
@@ -137,14 +149,10 @@ class GetScore {
     }
     public function Score($number)
     {
-//        $this->number=$this->Number($);
-//        var_dump($number);die;
         $score['Math']=$this->Math($number);
         $score['Reading']=$this->Reading($number);
         $score['Writing']=$this->Writing($number);
         $score['total']=$score['Math']+($score['Reading']+$score['Writing'])*10;
-//        var_dump($score);die;
-//        var_dump($this->number);die;
         return $score;
     }
     public function Math($number)
@@ -478,7 +486,6 @@ class GetScore {
     }
     public function Subscore($number)
     {
-//        $this->number=$this->Number($data);
         $subScore['expression']=$this->Expression($number);
         $subScore['english']=$this->English($number);
         $subScore['algebra']=$this->Algebra($number);
@@ -995,21 +1002,5 @@ class GetScore {
         }
 
     }
-    public function Assignment()
-    {
-         $mathnum=0;
-         $readnum=0;
-         $writnum=0;
-         $expression=0;
-         $english=0;
-         $algebra=0;
-         $analysis=0;
-         $math=0;
-         $words=0;
-         $evidence=0;
-         $social=0;
-         $science=0;
-         $kip=0;
-        return true;
-    }
+
 }
