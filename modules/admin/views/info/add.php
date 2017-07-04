@@ -17,7 +17,7 @@
                 <td>
                     <select name="cate" id="cate" >
                         <option value ="">请选择类型</option>
-                        <option value ="备考资讯" <?php echo isset($data)&& $data['cate']=="备考资讯" ?  'selected=selected':''?>>备考资讯</option>
+                        <option value ="学术报告" <?php echo isset($data)&& $data['cate']=="学术报告" ?  'selected=selected':''?>>学术报告</option>
                         <option value ="新闻资讯" <?php echo isset($data)&& $data['cate']== "新闻资讯" ?  'selected=selected':''?>>新闻资讯</option>
                         <option value ="公开课" <?php echo isset($data)&& $data['cate']== "公开课" ?  'selected=selected':''?>>公开课</option>
                         <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "开班信息" ?  'selected=selected':''?>>开班信息</option>
@@ -86,9 +86,17 @@
                 </td>
             </tr>
             <tr>
+                <td>是否置顶:</td>
+                <td>
+                    <input type="radio" name="isShow" value="0" <?php echo isset($data)&&($data['isShow']=='0') ? 'checked="checked"':''?> />置顶
+                    <input type="radio" name="isShow" value="1" <?php echo isset($data)&&($data['isShow']=='1') ? 'checked="checked"':''?> />不置顶
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2" align="right">
                     <input type="hidden" name='id' value="<?php echo isset($data)? $data['id']:''?>"/>
-                    <button type="submit" id="login-button">添加/修改</button></td>
+                    <button type="submit" id="login-button">添加/修改</button>
+                </td>
             </tr>
             <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
         </table>
