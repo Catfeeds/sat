@@ -1,40 +1,52 @@
 .s-evaluation {
+    width: 1200px;
     height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 .s-top {
     width: 100%;
     height: 60px;
     line-height: 60px;
+    background-color:rgb(54,178,251);
     box-shadow: 0 3px 3px #ccc;
 }
 .s-top-cnt,
 .s-evaluation .s-cnt{
-    width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     text-align: center;
 }
 .s-top .s-top-logo {
     text-align: left;
 }
 .s-top .s-top-logo img {
-    width: 107px;
+    width: 150px;
 }
 .s-top h1 {
     font-size: 24px;
-    color: rgb(54,178,251);
+    font-weight: bold;
+    color: #fff;
 }
 .s-top .s-top-out {
+    margin: 0;
     text-align: right;
 }
+.s-top .s-top-out i,
 .s-top .s-top-out span {
-    padding: 10px 23px;
-    background-color: rgb(54,178,251);
-    border-radius: 30px;
     color: #fff;
+    font-size: 20px;
     cursor: pointer;
 }
+.s-top .s-top-out:hover i,
+.s-top .s-top-out:hover span {
+    color: #ccc;
+}
+/*
+内容区域
+*/
 .s-evaluation .s-cnt {
-    padding: 0 220px 0 170px;
+    padding: 20px 220px 0 170px;
+    background-color: #f1f1f1;
 }
 .s-notice {
     font-size: 14px;
@@ -42,7 +54,7 @@
 .s-notice h1 {
     position: relative;
     padding-bottom: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 5%;
     text-align: center;
     font-size: 18px;
 }
@@ -62,7 +74,8 @@
     background-color: rgb(54,178,251);
 }
 .s-notice .s-wrap {
-    margin-bottom: 40px;
+    margin-bottom: 5%;
+    text-align: left;
 }
 .s-notice .s-tag {
     float: left;
@@ -136,12 +149,12 @@
     font-size: 14px;
 }
 .s-evaluation .s-start button {
-    padding: 5px 20px;
+    padding: 8px 20px;
     border: 0;
     background-color: rgb(54,178,251);
     color: #fff;
 }
-.s-top-out .s-hover:hover {
+.s-evaluation .s-start button:hover {
     background-color: rgb(48,167,237);
 }
 /*遮罩层*/

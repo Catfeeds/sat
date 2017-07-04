@@ -18,9 +18,14 @@ $(function () {
         countTime();
     }
     //下一题点击事件
-    //$('.work-btm-next').click(function () {
-    //    checkBefore(this);
-    //})
+    $('.work-btm-next').click(function () {
+        var flag = 0;
+        ckBefore(flag);
+    })
+    $('.do-next').click(function () {
+       var flag = 1;
+        ckBefore(flag);
+    })
     //离开点击事件
     $('.work-out').click(function () {
         workShade('.quit-wrap');
@@ -33,6 +38,7 @@ $(function () {
         exitOut();
     })
 })
+
 //获取uId
 var uId = $.cookie('uid');
 //做题区域高度自适应
@@ -53,7 +59,8 @@ function countTime() {
         if (time == 0) {
             clearInterval(intervalId);
             // autoSubmit();
-            //checkBefore();
+            //var flag = 2;
+            //ckBefore(flag);
         }
         var min = Math.floor(time/60),
             sec = time - min*60,
@@ -89,6 +96,52 @@ function autoSubmit() {
 //     })
 //   })
 // }
+function ckBefore(flag) {
+    var ans = $('.work-select.active').data('id');
+    if (flag == 1) {
+        ans = '';
+    } else if(ans == undefined && flag ==2) {
+        ans = ''
+    }
+    if (ans == undefined) {
+        workShade('.next-wrap');
+    } else {
+        var pos = location.search.indexOf('m=');
+        if (pos == -1) {
+            //    全套模考
+            var u = location.search.split('&')[0].substr(1);
+        } else {
+            //    单科模考
+            var arr = location.search.substr(1).split('&'),
+                u = arr[0]+'&'+arr[1];
+        }
+        var subId = $('.work-que-list').data('id'),//题目ID
+            testId = $('#testId').val(),//试卷ID
+            correctAns = $('#correctAns').val(),//正确答案
+            subject = $('#subject').val(),//所属科目
+            classify = $('#classify').val();//题目类型（跨学科）
+        $.ajax({
+            type: 'get',
+            url: "/cn/mock/next",
+            data: {
+                'qid':subId,
+                'answer':correctAns,
+                'solution':ans,
+                'uid':uId,
+                'major':subject,
+                'crossScore':classify,
+                'tid':testId
+            },
+            dataType: 'json',
+            success: function(data) {
+                // 获取地址栏是否存在major
+                // 存在则
+                window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                //$.cookie()
+            }
+        })
+    }
+}
 
 //进入下一题
 function checkBefore() {
@@ -148,6 +201,7 @@ function checkBefore() {
 //退出模考、测评
 function exitOut() {
     $.get('/cn/mock/leave',function(obj){
+        console.log(obj);
         if (obj) {
             window.location.href = '/mock.html';
         }

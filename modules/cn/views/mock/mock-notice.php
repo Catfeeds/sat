@@ -5,10 +5,13 @@
     <div class="s-top container">
         <div class="s-top-cnt row">
             <div class="s-top-logo col-lg-4 col-md-4">
-                <img src="/cn/images/logo.png" alt="">
+                <img src="/cn/images/logo1.png" alt="">
             </div>
             <h1 class="col-lg-4 col-md-4">SAT基础测试</h1>
-            <p class="s-top-out col-lg-4 col-md-4"><span class="s-hover get-out">离开</span></p>
+            <p class="s-top-out col-lg-4 col-md-4">
+                <i class="work-out-off fa fa-sign-out"></i>
+                <span class="get-out">离开</span>
+            </p>
         </div>
     </div>
     <div class="s-cnt">
@@ -58,7 +61,7 @@
             </div>
         </div>
         <div class="s-start">
-            <button class="s-hover do-subject">开始做题</button>
+            <button class="do-subject">开始做题</button>
         </div>
         <!--遮罩层-->
         <div class="s-shade">
@@ -84,4 +87,6 @@
     $('.shade-out').click(function () {
         window.location.href = '/mock.html';
     })
+    var h = $(window).height()-80;
+    $('.s-evaluation .s-cnt').height(h);
 </script>

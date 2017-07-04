@@ -68,7 +68,7 @@
                 做题总进度:<span>30</span>/<span>155</span>
             </div>
             <div class="work-btm-next col-lg-2 col-md-2">
-                <a href="#" class='work-next-icon' onclick="checkBefore();"><i class="fa fa-hand-o-right"></i>NEXT</a>
+                <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>
                 <a href='#' class="work-submit"><i class="work-submit fa fa-upload"></i>提交</a>
             </div>
         </div>
@@ -88,7 +88,7 @@
             <h3>答案都木有</h3>
             <h4>(根据SAT考试规定,按照答对题目数得分)</h4>
             <div class="shade-select clearfix">
-                <span class="shade-out pull-left" onclick="checkBefore();">我就是不做</span>
+                <span class="do-next shade-out pull-left">我就是不做</span>
                 <span class="shade-in pull-right">这么简单,我来答</span>
             </div>
         </div>
