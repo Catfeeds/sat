@@ -105,11 +105,15 @@
         <!--试卷ID-->
         <input type="hidden" id="testId" value="<?php echo $data['tpId']?>">
         <!-- 正确答案-->
-        <input type="hidden" id="correctAns" value="<?php echo $data['answer']?>">
+<!--        <input type="hidden" id="correctAns" value="--><?php //echo $data['answer']?><!--">-->
         <!-- 科目-->
         <input type="hidden" id="subject" value="<?php echo $data['major']?>">
+        <!-- 小节-->
+        <input type="hidden" id="section" value="<?php echo $data['section']?>">
         <!--题目类型-->
         <input type="hidden" id="classify" value="<?php echo $data['subScores']?>">
+        <!--题目号-->
+        <input type="hidden" id="number" value="<?php echo $data['number']?>">
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="1">
         <!--本section总题目-->

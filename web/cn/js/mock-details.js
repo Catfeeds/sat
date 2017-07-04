@@ -120,6 +120,9 @@ function ckBefore(flag) {
             correctAns = $('#correctAns').val(),//正确答案
             subject = $('#subject').val(),//所属科目
             classify = $('#classify').val();//题目类型（跨学科）
+            section = $('#section').val();//小节
+            number = $('#number').val();//题号
+        alert(number);
         $.ajax({
             type: 'get',
             url: "/cn/mock/next",
@@ -130,7 +133,9 @@ function ckBefore(flag) {
                 'uid':uId,
                 'major':subject,
                 'crossScore':classify,
-                'tid':testId
+                'tid':testId,
+                'section':section,
+                'number':number
             },
             dataType: 'json',
             success: function(data) {

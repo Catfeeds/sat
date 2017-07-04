@@ -51,8 +51,9 @@ class MockController extends Controller
         $this->layout = 'cn1.php';
         $major = Yii::$app->request->get('m', '');
         $id = Yii::$app->request->get('tid');
-        $section = Yii::$app->request->get('s');// 章节数，用于提取下一个小节
-        $number = Yii::$app->request->get('n','1');// 章节数，用于提取下一个小节
+//        $section = Yii::$app->request->get('s','1');// 章节数，用于提取下一个小节
+//
+//        $number = Yii::$app->request->get('n','1');// 题目号
         $qid = Yii::$app->request->get('qid', '');
         if ($major != false) {
             if ($major == 'Math') {
@@ -68,14 +69,17 @@ class MockController extends Controller
         }
         if (!$qid) {
 //            $where .= " and number='1'";
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=".$section."  and number='1'")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=".$section."  and q.number='1'")->queryOne();
 
 //            $id = Yii::$app->db->createCommand("select id from {{%questions}} $where order by id asc limit 1")->queryOne();
 //            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $id['id'] . " order by q.id asc limit 1")->queryOne();
         } else {
 //            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number. " limit 1")->queryOne(); // 这里是一维还是二唯数据
+//            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number. " and section=".$section." limit 1")->queryOne(); // 这里是一维还是二唯数据
+            // 有qid的时候直接根据qid取
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid )->queryOne(); // 这里是一维还是二唯数据
         }
+//        var_dump($data);
         return $this->render($modle, ['data' => $data]);
     }
 
@@ -97,7 +101,8 @@ class MockController extends Controller
         $tid = Yii::$app->request->get('tid');
         $qid = Yii::$app->request->get('qid');
         $uid = Yii::$app->request->get('uid');
-        $number= Yii::$app->request->get('n');
+        $number= Yii::$app->request->get('number');
+        $section= Yii::$app->request->get('section');
 //        session_start();
         $a = KeepAnswer::getCat();
          Yii::$app->session->set('uid',$uid);
@@ -108,7 +113,7 @@ class MockController extends Controller
         $next['sectionNum'] = $a->Gettype();// 目前第几题
         $next['mkNum'] = 5;// 所答第几题/总题数
 //        $next=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$qid." and tpId=".$tid." and major='$major' limit 1 ")->queryOne();
-        $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>" . $qid . " and tpId=" . $tid . " and major='$major' limit 1 ")->queryOne();
+        $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
         echo die(json_encode($next));
 
     }

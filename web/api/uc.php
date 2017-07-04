@@ -140,6 +140,7 @@ class uc_note {
         $phone = $get['phone'];
         $username = $get['username'];
         $password = $get['password'];
+        $nickname = $get['nickname'];
 		$str=substr($password, 1);
 		$str='_@5!'.$str."*a1";
         if(!API_SYNLOGIN) {
@@ -151,7 +152,7 @@ class uc_note {
         $u = $this->dbLink->fetch_first($sql);
         if (!$u) {
             $time = time();
-            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}')";
+            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid','nickname') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}''{$nickname}',)";
             $this->dbLink->query($sql);
             $userId = $this->dbLink->insert_id();
             $data = array(
