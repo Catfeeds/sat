@@ -56,7 +56,7 @@
                 <td><?php echo $v['content']?></td>
                 <td><?php echo $v['answer']?></td>
                 <td><?php echo $v['major']?></td>
-                <td><?php echo $v['essayId']?></td>
+                <td><?php echo $v['tpId']?></td>
                 <td><?php echo $v['subScores']?></td>
                 <td><?php echo $v['crosstestScores']?></td>
                 <td>

@@ -1,3 +1,8 @@
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+
 <div class="span10">
     <div >
         <a>首页</a>
@@ -10,7 +15,8 @@
         <table>
             <tr>
                 <td width="80px">适合学生:</td>
-                <td><input type="text" name="student" placeholder="入学要求" value="<?php echo isset($data)? $data["student"]:''?>" style="width: 600px;"></td>
+                <td>
+                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:400px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea></td>
             </tr>
 <!--            <tr>-->
 <!--                <td>图片:</td>-->
@@ -57,7 +63,10 @@
             </tr>
             <tr>
                 <td>学习计划：</td>
-                <td><input type="text" style="width: 600px;" name="plan" placeholder="学习计划" value="<?php echo isset($data)? $data['plan']:''?>"/></td>
+                <td>
+                    <textarea type="text/plain" id="plan"  name="plan" placeholder="学习计划" style="height:400px;width:70%"><?php echo isset($data)? $data['plan']:''?></textarea>
+<!--                    <input type="text"  name="plan" placeholder="学习计划" value="--><?php //echo isset($data)? $data['plan']:''?><!--"/>-->
+                </td>
             </tr>
             <tr>
                 <td>价格：</td>
@@ -89,13 +98,23 @@
 <!--            </tr>-->
             <tr>
                 <td>课程简介：</td>
-                <td><input type="text" name="introduction" style="width: 600px;" placeholder="课程简介" value="<?php echo isset($data)? $data['introduction']:''?>"></td>
+                <td>
+                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程简介" style="height:400px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
+<!--                    <input type="text" name="introduction" style="width: 600px;" placeholder="课程简介" value="--><?php //echo isset($data)? $data['introduction']:''?><!--">-->
+                </td>
             </tr>
             <tr>
-                <td colspan="2" align="right"> <button type="submit" id="login-button">添加课程</button></td>
+                <td colspan="2" align="center"> <button type="submit" id="login-button">添加课程</button></td>
             </tr>
             <input type="hidden" name='id' value="<?php echo isset($data)? $data['id']:''?>"/>
             <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
         </table>
     </form>
 </div>
+<script>
+    //实例化编辑器
+    var ue = UE.getEditor('editor');
+    var plan = UE.getEditor('plan');
+    var intro = UE.getEditor('intro');
+
+</script>
