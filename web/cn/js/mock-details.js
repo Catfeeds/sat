@@ -147,7 +147,7 @@ function checkBefore() {
 }
 //退出模考、测评
 function exitOut() {
-    $.get('',function(obj){
+    $.get('/cn/mock/leave',function(obj){
         if (obj) {
             window.location.href = '/mock.html';
         }
