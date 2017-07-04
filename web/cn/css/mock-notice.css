@@ -92,9 +92,12 @@
 .s-notice .s-tag .s-line:after {
     right: 0;
 }
-.s-notice .s-tag h3 {
+.s-notice .s-tag>h3 {
     margin: 0;
     font-size: 40px;
+}
+.s-notice .s-tag>p {
+    color: #fff;
 }
 .s-notice .s-list {
     margin-left: 130px;

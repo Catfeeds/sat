@@ -15,7 +15,7 @@
             </ul>
         </li>
         <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
-        <li><a href="#">报告</a></li>
+        <li><a href="/report.html" <?php if($path=='report.html') echo 'class="on"';?>>报告</a></li>
         <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">SAT课程</a></li>
         <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
@@ -37,15 +37,9 @@
 </div>
 </nav>
 <script>
-<<<<<<< HEAD
 //    存储uid
-//    var userId ='<?php //if(isset($uid)){echo $uid;}?>//' ;
-    var userId  = '222';
+    var userId ='<?php if(isset($uid)){echo $uid;}?>' ;
     $.cookie('uid',userId,  {path:'/'});
-=======
-    var uId ='<?php if(isset($uid)){echo $uid;}?>' ;
-    $.cookie('uid',uId);
->>>>>>> master
     // 获取手机验证码
     function leftCode(code){
         var phone = $('#'+code).val();
