@@ -18,10 +18,11 @@ class PubclassController extends Controller
     public $enableCsrfValidation = false;
     public function actionIndex()
     {
-        $pubclass = new Pubclass();
-        $pubclass->getTime();
-        $data = Yii::$app->db->createCommand("select * from {{%info}} where isShow=1 and cate='公开课'")->queryAll();
-        $arr = Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课'")->queryAll();
+//        $pubclass = new Pubclass();
+//        $pubclass->getTime();
+
+        $data = Yii::$app->db->createCommand("select * from {{%info}} where validTime>".time()."  and cate='公开课'")->queryAll();
+        $arr = Yii::$app->db->createCommand("select * from {{%info}} where validTime<".time()." and cate='公开课'")->queryAll();
         $controller = Yii::$app->controller->id;
         $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
         return $this->render('index', ['data' => $data, 'arr' => $arr,'pic'=>$pic]);
@@ -54,8 +55,8 @@ class PubclassController extends Controller
     {
         $p = Yii::$app->request->get('p','1');
         $pagesize=6;
-        $data= Yii::$app->db->createCommand("select * from {{%info}} where isShow=0 and cate='公开课' limit ".($p-1)*$pagesize.",".$pagesize)->queryAll();
-        $re= Yii::$app->db->createCommand("select count(id) from {{%info}} where isShow=0 and cate='公开课'")->queryAll();
+        $data= Yii::$app->db->createCommand("select * from {{%info}} where validTime<".time()." and cate='公开课' limit ".($p-1)*$pagesize.",".$pagesize)->queryAll();
+        $re= Yii::$app->db->createCommand("select count(id) from {{%info}} where validTime<".time()." and cate='公开课'")->queryAll();
         $total = $re[0]['count(id)'];//总记录数
         $totalPage = ceil($total/$pagesize);// 总页数
         $arr['total'] = $total;
