@@ -111,18 +111,15 @@
           </li>
           <li>
             <div class="s-seven-img"></div>
-            <p>科学的课前-课中-课后培训
-              系统</p>
+            <p>科学的课前-课中-课后培训系统</p>
           </li>
           <li>
             <div class="s-seven-img"></div>
-            <p>全国SAT高分基地，学员口碑
-              推荐</p>
+            <p>全国SAT高分基地，学员口碑推荐</p>
           </li>
           <li>
             <div class="s-seven-img"></div>
-            <p>GMAT/TOEFL/SAT十年培训
-              经验</p>
+            <p>GMAT/TOEFL/SAT十年培训经验</p>
           </li>
         </ul>
       </div>

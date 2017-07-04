@@ -41,7 +41,7 @@ span {
 }
 .s-course-details div a {
   padding: 11px 23px;
-  background-color: rgb(229,104,215);
+  background-color: rgb(54,178,251);
   color: #fff;
 }
 .s-introduce {
@@ -258,8 +258,8 @@ span {
 }
 .s-seven li {
   float: left;
-  width: 151px;
-  margin: 0 10px;
+  width: 141px;
+  margin: 0 15px;
   text-align: center;
   font-size: 14px;
 }

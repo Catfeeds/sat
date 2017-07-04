@@ -161,7 +161,7 @@
                     </div>
                     <div class="s-information s-exam">
                         <div class="s-title-wrapper clearfix">
-                            <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>备考资讯</span>
+                            <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
                             <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
                         </div>
                         <ul>
