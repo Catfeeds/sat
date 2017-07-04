@@ -26,7 +26,7 @@
             </div>
             <div class="s-tel">
                 <img src="/cn/images/tel_icon.png" alt="">
-                <p>400-600-1123</p>
+                <p>400-1816-180</p>
             </div>
         </div>
     </div>

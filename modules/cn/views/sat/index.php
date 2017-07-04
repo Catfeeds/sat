@@ -153,6 +153,7 @@
                         </li>
                         <?php foreach($infoNews as $k=>$v){if($k>=1){?>
                         <li class="s-more-title">
+<!--                            <i class="fa fa-file-text-o"></i>-->
                             <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                         </li>
                         <?php }}?>
@@ -175,6 +176,7 @@
                         </li>
                         <?php foreach($infoTest as $k=>$v){if($k>=1){?>
                             <li class="s-more-title">
+<!--                                <i class="fa fa-chain"></i>-->
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>
@@ -191,12 +193,13 @@
                                 <img src="/cn/images/sat-article03.png" alt="">
                             </a>
                             <div class="s-article-title pull-right">
-                                <h3><a href="#"><?php echo isset($info3[0]['title'])?$info3[0]['title']:''?></a></h3>
+                                <h3><a href="<?php echo isset($info3[0]['id'])?'/info_details/'.$info3[0]['id'].'.html':''?>"><?php echo isset($info3[0]['title'])?$info3[0]['title']:''?></a></h3>
                                 <p><?php echo isset($info3[0]['summary'])?$info3[0]['summary']:''?></p>
                             </div>
                         </li>
                         <?php foreach($info3 as $k=>$v){if($k>=1){?>
                             <li class="s-more-title">
+<!--                                <i class="fa fa-mortar-board"></i>-->
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>

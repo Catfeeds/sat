@@ -33,8 +33,8 @@
 </div>
 </nav>
 <script>
-    var sess ='<?php if(isset($uid)){echo $uid;}?>' ;
-    sessionStorage.uid = sess;
+    var uId ='<?php if(isset($uid)){echo $uid;}?>' ;
+    $.cookie('uid',uId);
     // 获取手机验证码
     function leftCode(code){
         var phone = $('#'+code).val();

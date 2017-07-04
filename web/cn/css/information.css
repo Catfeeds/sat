@@ -57,6 +57,7 @@
   margin-top: 30px;
 }
 .s-information .s-toggle {
+  display: inline-block;
   font-size: 0;
 }
 .s-information .s-toggle li {
