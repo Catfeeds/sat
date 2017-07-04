@@ -18,9 +18,9 @@ $(function () {
         countTime();
     }
     //下一题点击事件
-    $('.work-btm-next').click(function () {
-        checkBefore();
-    })
+    //$('.work-btm-next').click(function () {
+    //    checkBefore(this);
+    //})
     //离开点击事件
     $('.work-out').click(function () {
         workShade('.quit-wrap');
@@ -28,6 +28,9 @@ $(function () {
     $('.shade-in').click(function () {
         $('.work-shade').hide();
         $('.shade-wrap').hide();
+    })
+    $('.exit-out').click(function () {
+        exitOut();
     })
 })
 //获取uId
@@ -50,6 +53,7 @@ function countTime() {
         if (time == 0) {
             clearInterval(intervalId);
             // autoSubmit();
+            //checkBefore();
         }
         var min = Math.floor(time/60),
             sec = time - min*60,
@@ -88,54 +92,65 @@ function autoSubmit() {
 
 //进入下一题
 function checkBefore() {
-    var done = true;
+    var done = false,
+        ans = '',//用户答案
+        subId = $('.work-que-list').data('id'),//题目ID
+        testId = $('#testId').val(),//试卷ID
+        correctAns = $('#correctAns').val(),//正确答案
+        subject = $('#subject').val(),//所属科目
+        classify = $('#classify').val(),//题目类型（跨学科）
+        readAllNum = $('#readAllNum').val(),
+        readNum = $('#readNum').val();
     var pos = location.search.indexOf('m=');
     if (pos == -1) {
     //    全套模考
         var u = location.search.split('&')[0].substr(1);
     } else {
     //    单科模考
-        var arr = location.search.substr(1).split('&');
-        var str1 = arr[0],
-            str2 = arr[1],
-            u = str1+'&'+str2;
+        var arr = location.search.substr(1).split('&'),
+            u = arr[0]+'&'+arr[1];
     }
-    console.log(u);
     $('.work-select').each(function () {
         if ($(this).hasClass('active')) {
-            done = false;
-            var ans = $(this).data('id'),//用户答案
-                subId = $('.work-que-list').data('id'),//题目ID
-                testId = $('#testId').val(),//试卷ID
-                correctAns = $('#correctAns').val(),//正确答案
-                subject = $('#subject').val(),//所属科目
-                classify = $('#classify').val(),//题目类型（跨学科）
-                readAllNum = $('#readAllNum').val(),
-                readNum = $('#readNum').val();
-            $.ajax({
-                type: 'get',
-                url: "/cn/mock/next",
-                data: {
-                    'qid':subId,
-                    'answer':correctAns,
-                    'solution':ans,
-                    'uid':uId,
-                    'major':subject,
-                    'crossScore':classify,
-                    'tid':testId
-                },
-                dataType: 'json',
-                success: function(data) {
-                    console.log(data);
-                    // 获取地址栏是否存在major
-                    // 存在则
-                    window.location.href = '/mock_test?'+u+'&qid='+data.qid;
-                }
-            })
+            done = true;
+            ans = $(this).data('id');//用户答案
+            return false;
+        } else {
+            //done = true;
+            //ans = '';
         }
     });
-    if (done) {
+    if (!done) {
         workShade('.next-wrap');
+    } else {
+        $.ajax({
+            type: 'get',
+            url: "/cn/mock/next",
+            data: {
+                'qid':subId,
+                'answer':correctAns,
+                'solution':ans,
+                'uid':uId,
+                'major':subject,
+                'crossScore':classify,
+                'tid':testId
+            },
+            dataType: 'json',
+            success: function(data) {
+                // 获取地址栏是否存在major
+                // 存在则
+                window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                //$.cookie('mockTime')
+            }
+        })
     }
+}
+//退出模考、测评
+function exitOut() {
+    $.get('',function(obj){
+        if (obj) {
+            window.location.href = '/mock.html';
+        }
+    },'json')
 }
 

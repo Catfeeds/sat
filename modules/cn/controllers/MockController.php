@@ -71,10 +71,8 @@ class MockController extends Controller
         } else {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
         }
-
         return $this->render($modle, ['data' => $data]);
     }
-
 
     // 模考报告的生成
     // 1、判断正确略

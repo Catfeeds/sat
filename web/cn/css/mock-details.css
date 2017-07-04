@@ -145,7 +145,9 @@
     outline: 0;
     text-align: right;
 }
-/*底部*/
+/**
+    底部
+**/
 .work-mk-btm {
     position: fixed;
     bottom: 0;
@@ -158,9 +160,7 @@
     line-height: 60px;
     background-color: rgb(54,178,251);
 }
-.work-mk-btm .work-btm-cnt div {
-    color: #fff;
-}
+.work-mk-btm .work-btm-cnt div,
 .work-mk-btm .work-btm-cnt a {
     color: #fff;
 }
@@ -192,7 +192,7 @@
 .work-btm-next {
     text-align: right;
 }
-.work-btm-next .work-next-icon {
+.work-btm-next i {
     font-size: 30px;
     margin-right: 10px;
     vertical-align: middle;
@@ -200,6 +200,9 @@
 .work-btm-next:hover a {
     color: #ccc;
     text-decoration: none;
+}
+.work-submit {
+    display: none;
 }
 /*遮罩层*/
 .work-shade {
@@ -245,9 +248,6 @@
     border-radius: 10px;
     cursor: pointer;
     color: #fff;
-}
-.shade-wrap .shade-out {
-
 }
 .shade-wrap .shade-out:hover {
     background-color: #333;
