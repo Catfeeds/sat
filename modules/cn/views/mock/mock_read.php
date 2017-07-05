@@ -62,13 +62,13 @@
             </div>
             <div class="work-time col-lg-3 col-md-3">
                 <i class="work-time-icon icon-time"></i>
-                <span class="work-time-cnt"></span>
+                <span class="work-time-cnt">本section剩余时间:</span>
             </div>
             <div class="work-sec-process col-lg-4 col-md-4">
-                本section进度:<span>3</span>/<span>55</span>
+                本section进度:<span class="sec-position">0</span>/<span>3</span>
             </div>
             <div class="work-all-process col-lg-2 col-md-2">
-                做题总进度:<span>30</span>/<span>155</span>
+                做题总进度:<span class="all-position">0</span>/<span>155</span>
             </div>
             <div class="work-btm-next col-lg-2 col-md-2">
                 <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>
