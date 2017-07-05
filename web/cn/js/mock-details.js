@@ -44,6 +44,9 @@ $(function () {
 
 //获取uId
 var uId = $.cookie('uid');
+//时间
+var TOTALTIME = '',
+    TIME = '';
 //做题区域高度自适应
 function workHeight() {
     var h = $(window).height() - $('.work-mk-top').height() - $('.work-mk-btm').height();
@@ -54,22 +57,19 @@ function workHeight() {
 
 //倒计时
 function countTime() {
-    //var t = $.cookie('countTime');
-    //$('#sectionTime').val(t);
-    var totalTime = $('#sectionTime').val(),
-        time = Number(totalTime*60),
-        intervalId = setInterval(timer,1000);
+    TOTALTIME = $('#sectionTime').val();
+    TIME = Number(TOTALTIME*60);
+    var intervalId = setInterval(timer,1000);
     function timer() {
-        time--;
-        if (time == 0) {
+        TIME--;
+        if (TIME == 0) {
             clearInterval(intervalId);
             // autoSubmit();
             //var flag = 2;
             //ckBefore(flag);
         }
-        $.cookie('countTime',time);
-        var min = Math.floor(time/60),
-            sec = time - min*60,
+        var min = Math.floor(TIME/60),
+            sec = TIME - min*60,
             hour = Math.floor(min/60);
         min = min - hour*60;
         hour = checkTime(hour);
@@ -141,12 +141,12 @@ function ckBefore(flag) {
                 //'crossScore':classify,
                 'tid':testId,
                 'section':sec,
-                'number':num
+                'number':num,
+                'cTime': TIME
             },
             dataType: 'json',
             success: function(data) {
                 window.location.href = '/mock_test?'+u+'&qid='+data.qid;
-
             }
         })
     }

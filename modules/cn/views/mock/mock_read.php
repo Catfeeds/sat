@@ -116,7 +116,7 @@
         <!--题目号-->
         <input type="hidden" id="number" value="<?php echo $data['number']?>">
         <!--本section总时间-->
-        <input type="hidden" id="sectionTime" value="10">
+        <input type="hidden" id="sectionTime" value="">
         <!--本section总题目-->
         <input type="hidden" id="sectionAllNum" value="67">
         <!--本section当前题目-->

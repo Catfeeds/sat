@@ -49,12 +49,17 @@ class MockController extends Controller
         $major = Yii::$app->request->get('m', '');
         $id = Yii::$app->request->get('tid');
         $qid = Yii::$app->request->get('qid', '');
+        $a = KeepAnswer::getCat();
+        $count=$a->Gettype();
         if ($major != false) {
             if ($major == 'Math') {
                 $major='major="Math1" or major="Math2"';
                 $where="where tpId=" . $id . " and $major";
                 $modle = 'mock_math';
+                $time=80*60;
             } else {
+                if($major=='Reading'){$time=62*60;}
+                if($major=='Writing'){$time=35*60;}
                 $where = "where tpId=" . $id . " and major='$major'";
                 $modle = 'mock_read';
             }
@@ -72,7 +77,7 @@ class MockController extends Controller
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid )->queryOne(); // 这里是一维还是二唯数据
         }
 //        var_dump($data);
-        return $this->render($modle, ['data' => $data]);
+        return $this->render($modle, ['data' => $data,'time'=>$time,'count'=>$count]);
     }
 
     // 下一题
@@ -104,6 +109,12 @@ class MockController extends Controller
         $a = KeepAnswer::getCat();
         $re = $a->Emptyitem();
         echo die(json_encode($re));
+    }
+    public function actionSection(){
+        $number= Yii::$app->request->get('number');
+        $section= Yii::$app->request->get('section');
+        $tid = Yii::$app->request->get('tid');
+        // 还是取下一题的qid
     }
 
 }
