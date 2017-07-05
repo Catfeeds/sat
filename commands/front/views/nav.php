@@ -20,7 +20,15 @@
         <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
-        <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
+        <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
+    </ul>
+    <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
+         <li id="welcome"><a  href="#"><?php if($user){if($user['nickname']){echo "欢迎用户".$user['nickname'];}else{echo "欢迎用户".$user['username'];}}?></a></li>
+         <li id="out"><a><span onclick="Out()">退出登录</span></a></li>
+    </ul>
+   <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
+        <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
+        <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
     </ul>
     <form action="">
         <i class="fa fa-search"></i>

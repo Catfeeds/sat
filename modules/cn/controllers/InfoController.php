@@ -17,16 +17,17 @@ class InfoController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
+        $order="order by isShow asc,id desc";
         $pagesize = 6;
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $cate = Yii::$app->request->get('c', 'n');
         if ($cate == 'n') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='新闻资讯'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='新闻资讯' order by id desc limit $offset,$pagesize")->queryAll();
+            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='新闻资讯' $order limit $offset,$pagesize")->queryAll();
         } elseif ($cate == 't') {
-            $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='备考资讯'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='备考资讯' order by id desc limit $offset,$pagesize")->queryAll();
+            $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='学术报告'")->queryOne();
+            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='学术报告' $order limit $offset,$pagesize")->queryAll();
         }
         $count = $count['count'];
         if ($cate != false) {

@@ -140,7 +140,7 @@ class uc_note {
         $phone = $get['phone'];
         $username = $get['username'];
         $password = $get['password'];
-        $nickname = $get['nickname'];
+		$nickname = $get['nickname'];
 		$str=substr($password, 1);
 		$str='_@5!'.$str."*a1";
         if(!API_SYNLOGIN) {
@@ -152,15 +152,15 @@ class uc_note {
         $u = $this->dbLink->fetch_first($sql);
         if (!$u) {
             $time = time();
-            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid','nickname') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}''{$nickname}',)";
+            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid','nickname') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}','{$nickname}')";
             $this->dbLink->query($sql);
             $userId = $this->dbLink->insert_id();
             $data = array(
                 'username' => $username,
                 'email' => $email,
                 'phone' => $phone,
+                'nickname' => $nickname,
                 'image' => '',
-                'nickname' => '',
                 'id' => $userId
             );
         } else {
@@ -176,7 +176,10 @@ class uc_note {
                 $sql = "UPDATE sat_user SET username = '$username' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
-
+			if($username != $u['nickname']){
+				$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE uid = $uid";
+				$this->dbLink->query($sql);
+			}
             if(md5($str) != $u['password']){
 				$password=md5($str);
                 $sql = "UPDATE sat_user SET password = '$password' WHERE uid = $uid";

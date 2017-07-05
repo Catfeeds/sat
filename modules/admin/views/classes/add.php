@@ -1,8 +1,6 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
-
-
 <div class="span10">
     <div >
         <a>首页</a>
@@ -16,7 +14,8 @@
             <tr>
                 <td width="80px">适合学生:</td>
                 <td>
-                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:400px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea></td>
+                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:300px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea>
+                </td>
             </tr>
 <!--            <tr>-->
 <!--                <td>图片:</td>-->
@@ -64,43 +63,19 @@
             <tr>
                 <td>学习计划：</td>
                 <td>
-                    <textarea type="text/plain" id="plan"  name="plan" placeholder="学习计划" style="height:400px;width:70%"><?php echo isset($data)? $data['plan']:''?></textarea>
-<!--                    <input type="text"  name="plan" placeholder="学习计划" value="--><?php //echo isset($data)? $data['plan']:''?><!--"/>-->
+
+                    <textarea type="text/plain" id="plan"  name="plan" placeholder="学习计划" style="height:300px;width:70%"><?php echo isset($data)? $data['plan']:''?></textarea>
+
                 </td>
             </tr>
             <tr>
                 <td>价格：</td>
                 <td><input type="text"  style="width: 600px;" name="price" placeholder="课程价格" value="<?php echo isset($data)? $data['price']:''?>"/></td>
             </tr>
-<!--            <tr>-->
-<!--                <td>阅读课时：</td>-->
-<!--                <td><input type="text" name="read" placeholder="阅读的课时" value="--><?php //echo isset($data)? $data['read']:''?><!--"/></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td>文法课时：</td>-->
-<!--                <td><input type="text" name="grammar" placeholder="文法课时" value="--><?php //echo isset($data)? $data['grammar']:''?><!--" ></br></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td>词汇课时：</td>-->
-<!--                <td><input type="text" name="vocabulary" placeholder="词汇课时" value="--><?php //echo isset($data)? $data['vocabulary']:''?><!--" ></br></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td>数学课时：</td>-->
-<!--                <td><input type="text" name="math" placeholder="数学课时" value="--><?php //echo isset($data)? $data['math']:''?><!--" ></br></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td>写作课时：</td>-->
-<!--                <td><input type="text" name="write" placeholder="写作课时" value="--><?php //echo isset($data)? $data['write']:''?><!--" ></br></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td>模考点评：</td>-->
-<!--                <td><input type="text" name="comments" placeholder="模考点评" value="--><?php //echo isset($data)? $data['comments']:''?><!--" ></br></td>-->
-<!--            </tr>-->
             <tr>
                 <td>课程简介：</td>
                 <td>
-                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程简介" style="height:400px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
-<!--                    <input type="text" name="introduction" style="width: 600px;" placeholder="课程简介" value="--><?php //echo isset($data)? $data['introduction']:''?><!--">-->
+                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程简介" style="height:300px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
                 </td>
             </tr>
             <tr>
@@ -116,5 +91,4 @@
     var ue = UE.getEditor('editor');
     var plan = UE.getEditor('plan');
     var intro = UE.getEditor('intro');
-
 </script>
