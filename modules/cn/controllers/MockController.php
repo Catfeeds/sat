@@ -41,21 +41,16 @@ class MockController extends Controller
 
     }
 
-    // 开始模考功能，只取每个模块的第一道题
+    // 开始模考功能，无qid取第一道题，有qid取题目详情
     public function actionDetails()
     {
         session_start();
-//        var_dump($_SESSION);
-//        $this->actionReport();
-//        die;
         $this->layout = 'cn1.php';
         $major = Yii::$app->request->get('m', '');
         $id = Yii::$app->request->get('tid');
         $qid = Yii::$app->request->get('qid', '');
         if ($major != false) {
-
             if ($major == 'Math') {
-
                 $major='major="Math1" or major="Math2"';
                 $where="where tpId=" . $id . " and $major";
                 $modle = 'mock_math';
@@ -66,12 +61,11 @@ class MockController extends Controller
             $section = Yii::$app->db->createCommand("select DISTINCT section from {{%questions}} $where order by section asc limit 1")->queryOne();
         } else {
             $where = "where section=1";
-            $section = Yii::$app->db->createCommand("select major from {{%questions}} $where")->queryOne();
+            $section = Yii::$app->db->createCommand("select section from {{%questions}} $where")->queryOne();
             $modle = 'mock_read';
         }
         if (!$qid) {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=".$section['section']."  and q.number='1'")->queryOne();
-
         } else {
 
             // 有qid的时候直接根据qid取
@@ -81,12 +75,6 @@ class MockController extends Controller
         return $this->render($modle, ['data' => $data]);
     }
 
-    // 模考报告的生成
-    // 1、判断正确略
-    // 2、得出报告分数（数学，reading。writing）
-    // 选题逻辑
-    // 将题目的ID，答案都传过来
-    // 前端点击传递id，和用户所选答案过来，
     // 下一题
     public function actionNext()
     {
@@ -117,84 +105,5 @@ class MockController extends Controller
         $re = $a->Emptyitem();
         echo die(json_encode($re));
     }
-    // 小节提交数据，并显示下一小节第一道题
-    // 存在用户uid 和不存在 uid
-//    public function actionReport()
-//    {
-//        // 将session 的数据存到数据库
-////        session_start();
-//        // 现在生成的报告
-////        if(isset( $_SESSION['answer'])){
-////            $uid=$report['uid'] = $_SESSION['uid'];
-//        $uid = $report['uid'] = 222;
-////            var_dump($uid);die;
-//        $answerData = ((array)$_SESSION['answer']);
-//        $answerData = $answerData['item'];// 获取用户的答题数据
-//        $getscore = new GetScore();
-//        $number = $getscore->Number($answerData);
-//        $score = $getscore->Score($number);// 各科分数均有，按科目的分类
-//        $subscore = $getscore->Subscore($number);
-//
-////        var_dump($number);die;
-//        $crosstest = $getscore->CrossTest($number);
-//        $report['tpId'] = $_SESSION['tpId'];
-//        $report['readnum'] = $number['Reading'];
-//        $report['mathnum'] = $number['Math'];
-//        $report['writenum'] = $number['Writing'];
-//        $report['matherror'] = $number['matherror'];
-//        $report['readerror'] = $number['readerror'];
-//        $report['writeerror'] = $number['writeerror'];
-//        $report['jumpnum'] = $number['kip'];
-//        $report['subScore'] = $subscore['total'];
-//        $report['score'] = $score['total'];
-//        $report['crossScore'] = $crosstest['total'];
-//        $report['data'] = time();
-////            $report['time']=$_COOKIE['time'];// 可以在cookie中直接取
-//        if ($uid) {
-//            // 将答案组合成字符串
-//            static $temp = array();
-//            foreach ($answerData as $v) {
-//                $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
-//                $temp[] = $v;
-//            }
-//            $t = "";
-//            foreach ($temp as $v) {
-//                $t .= $v . ";";
-//            }
-//            $t = substr($t, 0, -1);
-//            $report['answer'] = $t;
-////                var_dump($subscore);die;
-//            $re = Yii::$app->db->createCommand()->insert("{{%report}}", $report)->execute();
-//            if ($re) {
-//                $a = KeepAnswer::getCat();
-////                    $re=$a->Emptyitem();
-////                    $getscore->Assignment();
-//            }
-//        }
-//        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Math'] . " and min<" . $score['Math'] . " and major='Math'")->queryOne();
-//        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Reading'] . " and min<" . $score['Reading'] . " and major='Reading'")->queryOne();
-//        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Writing'] . " and min<" . $score['Writing'] . " and major='Writing'")->queryOne();
-////            var_dump($report);die;
-////        }else{
-////            // 登录之后才能查看历史报告
-////            $uid=Yii::$app->session->get('uid','0');
-////            $report=Yii::$app->db->createCommand("select * from {{%report}} where uid=".$uid)->queryAll();
-////            foreach($report as $k=> $v){
-////                static $arr=array(); static $brr=array();
-////                $arr=implode(';',$report[$k]['answer']);
-////                foreach($arr as $key=>$val){
-////                    $brr=implode(',',$arr[$key]);
-////                }
-//    }
-    // 将答案渲染到报告的模板
-
-    //根据作对的题数，取建议
-    // 有几套试卷的话也取不过来的
-
-//        return $this->render('report',['report'=>$report,'suggest'=>$suggest]);
-    // 没有登录的时候直接生成一次性报告
-
-//        var_dump($t);
-
 
 }

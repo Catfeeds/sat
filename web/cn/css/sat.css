@@ -1,9 +1,7 @@
 .s-sat .s-banner {
   height: 420px;
-  margin-top: 30px;
 }
 .s-sat .s-banner .carousel {
-  /*width: 910px;*/
   width: 100%;
 }
 .s-sat .s-banner .carousel img {

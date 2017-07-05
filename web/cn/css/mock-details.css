@@ -71,10 +71,12 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.work-question-part h3 {
-    margin-bottom: 20px;
+.work-question-part>div {
+    margin-top: 20px;
+}
+.work-question-part>div h1 {
+    display: inline;
     font-size: 22px;
-    font-weight: normal;
 }
 .work-question-part .work-que-wrap {
     margin-bottom: 20px;

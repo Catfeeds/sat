@@ -63,9 +63,13 @@
             <tr>
                 <td>学习计划：</td>
                 <td>
+<<<<<<< HEAD
 
                     <textarea type="text/plain" id="plan"  name="plan" placeholder="学习计划" style="height:300px;width:70%"><?php echo isset($data)? $data['plan']:''?></textarea>
 
+=======
+                    <textarea type="text/plain" id="plan"  name="plan" placeholder="学习计划" style="height:300px;width:70%"><?php echo isset($data)? $data['plan']:''?></textarea>
+>>>>>>> 314c123b3b33c51409913b81c5fe7780bbd04f3f
                 </td>
             </tr>
             <tr>

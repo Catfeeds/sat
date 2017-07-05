@@ -48,11 +48,11 @@
 }
 .s-new-cnt .s-new-list img {
   float: left;
-  width: 222px;
-  height: 166px;
+  width: 180px;
+  height: 230px;
 }
 .s-new-cnt .s-new-list div {
-  margin-left: 250px;
+  margin-left: 210px;
 }
 .s-new-cnt .s-new-list div  h2 {
   font-size: 16px;
@@ -77,7 +77,7 @@
 .s-new-list div  p {
   font-size: 14px;
   text-indent: 28px;
-  height: 55px;
+  height: 110px;
   overflow: hidden;
 }
 .s-new-list div a,

@@ -27,7 +27,10 @@
         <div class="work-wrap-right pull-right">
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
-                    <h3><?php echo $data['number']?>.<?php echo $data['content']?></h3>
+                    <div>
+                        <h1><?php echo $data['number']?>.</h1>
+                        <?php echo $data['content']?>
+                    </div>
                     <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="A">A</div>
@@ -113,7 +116,7 @@
         <!--题目号-->
         <input type="hidden" id="number" value="<?php echo $data['number']?>">
         <!--本section总时间-->
-        <input type="hidden" id="sectionTime" value="1">
+        <input type="hidden" id="sectionTime" value="10">
         <!--本section总题目-->
         <input type="hidden" id="sectionAllNum" value="67">
         <!--本section当前题目-->

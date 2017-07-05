@@ -34,11 +34,11 @@
 <!--    让360双核浏览器用webkit内核渲染页面-->
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="/cn/css/reset.css">
-    <link rel="stylesheet" href="/cn/css/bootstrap.css">
+    <link rel="stylesheet" href="/cn/css/bootstrap.min.css">
     <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
     <link rel="stylesheet" href="/cn/css/public.css">
-    <script src="/cn/js/jquery-2.1.3.js"></script>
-    <script src="/cn/js/bootstrap.js"></script>
+    <script src="/cn/js/jquery-2.1.1.min.js"></script>
+    <script src="/cn/js/bootstrap.min.js"></script>
     <script src="/cn/js/jquery.cookie.js"></script>
     <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
     <script src="/cn/js/public.js"></script>
@@ -49,9 +49,7 @@
 <?php use app\commands\front\NavWidget;?>
 <?php NavWidget::begin();?>
 <?php NavWidget::end();?>
-
 <?= $content ?>
-
 <!--底部-->
 <?php use app\commands\front\FootWidget;?>
 <?php FootWidget::begin();?>
