@@ -33,7 +33,7 @@
 
                     <span>所属小节:</span>
                     <span>
-                        <input type="text"  name="section" value="<?php echo isset($data['section'])?$data['section']:''?>" placeholder="短文所属的小节" >
+                        <input type="text"  name="section" value="<?php echo isset($data['section'])?$data['section']:''?>" placeholder="短文所属的小节" >*只写数字
                     </span>
                     </br>
 
@@ -88,14 +88,14 @@
                     <span><textarea id="keyD"  type="text/plain" name="keyD" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyD']:''?></textarea></span>
                     </br>
 
-                    <span>选 &nbsp;项&nbsp; E:</span>
-                    <span>
-                        <textarea id="keyE"  type="text/plain" name="keyD" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyD']:''?></textarea>
-                    </span>
-                    </br>
+<!--                    <span>选 &nbsp;项&nbsp; E:</span>-->
+<!--                    <span>-->
+<!--                        <textarea id="keyE"  type="text/plain" name="keyD" style="width:80%;height: 80px;">--><?php //echo isset($data)?$data['keyD']:''?><!--</textarea>-->
+<!--                    </span>-->
+<!--                    </br>-->
 
                     <span>答 &nbsp;&nbsp;&nbsp;&nbsp;案 :</span>
-                    <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案"></span>
+                    <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案">*区分大小写</span>
                     </br>
                     <span>解 &nbsp;&nbsp;&nbsp;&nbsp;析 :</span>
                     <span><textarea type="text" name="analysis" style="width:500px;height: 100px;"><?php echo isset($data)?$data['analysis']:''?></textarea></span>

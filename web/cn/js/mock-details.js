@@ -119,23 +119,23 @@ function ckBefore(flag) {
             testId = $('#testId').val(),//试卷ID
             correctAns = $('#correctAns').val(),//正确答案
             subject = $('#subject').val(),//所属科目
-            classify = $('#classify').val();//题目类型（跨学科）
-            section = $('#section').val();//小节
-            number = $('#number').val();//题号
-        alert(number);
+            classify = $('#classify').val(),//题目类型（跨学科）
+            sec = $('#section').val(),//小节
+            num = $('#number').val();//题号
+        //alert(number);
         $.ajax({
             type: 'get',
             url: "/cn/mock/next",
             data: {
                 'qid':subId,
-                'answer':correctAns,
+                //'answer':correctAns,
                 'solution':ans,
                 'uid':uId,
                 'major':subject,
-                'crossScore':classify,
+                //'crossScore':classify,
                 'tid':testId,
-                'section':section,
-                'number':number
+                'section':sec,
+                'number':num
             },
             dataType: 'json',
             success: function(data) {

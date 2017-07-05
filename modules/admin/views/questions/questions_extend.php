@@ -27,7 +27,7 @@
 
             <span>描&nbsp;&nbsp;&nbsp;&nbsp;述:</span>
             <span>
-                <textarea  type="text/plain" name="essay"   style="width:500px;height:300px;" ><?php echo isset($data['essay'])? $data['essay']:''?></textarea>
+                <textarea  type="text/plain" name="details"   style="width:500px;height:300px;" ><?php echo isset($data['details'])? $data['details']:''?></textarea>
             </span>
             </br>
 

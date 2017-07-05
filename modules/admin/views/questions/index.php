@@ -43,6 +43,7 @@
                 <th>题目</th>
                 <th>答案</th>
                 <th>科目</th>
+                <th>短文id</th>
                 <th>题目来源</th>
                 <th>subScores</th>
                 <th>cross-testScores</th>
@@ -56,6 +57,7 @@
                 <td><?php echo $v['content']?></td>
                 <td><?php echo $v['answer']?></td>
                 <td><?php echo $v['major']?></td>
+                <td><?php echo $v['essayId']?></td>
                 <td><?php echo $v['tpId']?></td>
                 <td><?php echo $v['subScores']?></td>
                 <td><?php echo $v['crosstestScores']?></td>

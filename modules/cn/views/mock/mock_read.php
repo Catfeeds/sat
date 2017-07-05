@@ -104,8 +104,6 @@
     <div class="worl-btm-hidden">
         <!--试卷ID-->
         <input type="hidden" id="testId" value="<?php echo $data['tpId']?>">
-        <!-- 正确答案-->
-<!--        <input type="hidden" id="correctAns" value="--><?php //echo $data['answer']?><!--">-->
         <!-- 科目-->
         <input type="hidden" id="subject" value="<?php echo $data['major']?>">
         <!-- 小节-->
