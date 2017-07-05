@@ -23,7 +23,7 @@
             foreach($data as $v){?>
                 <tr>
                     <td><?php echo $v['id']?></td>
-                    <td><?php echo $v['number']?></td>
+                    <td><?php echo $v['num']?></td>
                     <td><?php echo $v['essay']?></td>
                     <td>
                         <a class="link-update" href="<?php echo baseUrl.'/admin/questions/extend'.'?'.'id='.$v['id']?>">修改</a>
