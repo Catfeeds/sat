@@ -2,12 +2,12 @@
     <link rel="stylesheet" href="/cn/css/sat.css">
     <script src="/cn/js/carousel.js"></script>
 <section>
-    <div class="s-w1200 s-sat">
+    <div class="s-sat s-w1200">
         <!--轮播图-->
         <div class="bnr-wrap clearfix s-banner">
-                <?php use app\commands\front\BannerWidget;?>
-                <?php BannerWidget::begin();?>
-                <?php BannerWidget::end();?>
+            <?php use app\commands\front\BannerWidget;?>
+            <?php BannerWidget::begin();?>
+            <?php BannerWidget::end();?>
 <!--            <div class="s-person clearfix">-->
 <!--                <div class="s-person-logo border-radius pull-left"></div>-->
 <!--                <div class="s-hi">-->
@@ -153,7 +153,6 @@
                         </li>
                         <?php foreach($infoNews as $k=>$v){if($k>=1){?>
                         <li class="s-more-title">
-<!--                            <i class="fa fa-file-text-o"></i>-->
                             <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                         </li>
                         <?php }}?>
@@ -161,7 +160,7 @@
                 </div>
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
-                        <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>备考资讯</span>
+                        <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
                         <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
@@ -176,7 +175,6 @@
                         </li>
                         <?php foreach($infoTest as $k=>$v){if($k>=1){?>
                             <li class="s-more-title">
-<!--                                <i class="fa fa-chain"></i>-->
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>
@@ -199,7 +197,6 @@
                         </li>
                         <?php foreach($info3 as $k=>$v){if($k>=1){?>
                             <li class="s-more-title">
-<!--                                <i class="fa fa-mortar-board"></i>-->
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>

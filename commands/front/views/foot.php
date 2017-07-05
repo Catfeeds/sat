@@ -42,7 +42,7 @@
                 <dd><a href="http://quliuxue.net.cn/" target="_blank">去留学网</a></dd>
                 </dd>
             </dl>
-            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17017179号-1</a> 京公网安备 11010802018491 免责声明
+            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17017179号-1</a>
             </p>
         </div>
     </div>
