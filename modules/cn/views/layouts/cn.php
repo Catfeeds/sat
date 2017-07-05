@@ -49,9 +49,7 @@
 <?php use app\commands\front\NavWidget;?>
 <?php NavWidget::begin();?>
 <?php NavWidget::end();?>
-
 <?= $content ?>
-
 <!--底部-->
 <?php use app\commands\front\FootWidget;?>
 <?php FootWidget::begin();?>
