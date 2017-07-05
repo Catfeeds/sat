@@ -1,7 +1,6 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
-
 <div class="span10">
     <div >
         <a>首页</a>
@@ -15,7 +14,8 @@
             <tr>
                 <td width="80px">适合学生:</td>
                 <td>
-                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:300px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea></td>
+                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:300px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea>
+                </td>
             </tr>
 <!--            <tr>-->
 <!--                <td>图片:</td>-->

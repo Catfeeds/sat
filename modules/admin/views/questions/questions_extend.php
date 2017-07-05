@@ -16,7 +16,7 @@
 
             <span width="80px">题 &nbsp;&nbsp;&nbsp;&nbsp;号 :</span>
             <span>
-                <input type="text"  name="number" value="<?php echo isset($data['number'])?$data['number']:''?>" placeholder="题号" >
+                <input type="text"  name="num" value="<?php echo isset($data['num'])?$data['num']:''?>" placeholder="题号" >
             </span>
             </br>
 
@@ -25,9 +25,9 @@
                 <input type="text" name="topic"  style="width:500px;" value="<?php echo isset($data['topic'])? $data['topic']:''?>" >
             </br>
 
-            <span>题&nbsp;&nbsp;&nbsp;&nbsp;目:</span>
+            <span>描&nbsp;&nbsp;&nbsp;&nbsp;述:</span>
             <span>
-                <textarea  type="text/plain" name="essay"   style="width:500px;height:300px;" ><?php echo isset($data['essay'])? $data['essay']:''?></textarea>
+                <textarea  type="text/plain" name="details"   style="width:500px;height:300px;" ><?php echo isset($data['details'])? $data['details']:''?></textarea>
             </span>
             </br>
 

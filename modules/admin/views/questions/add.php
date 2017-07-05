@@ -62,35 +62,43 @@
 
                     <span width="80px">问 &nbsp;&nbsp;&nbsp;&nbsp;题：</span>
                     <span>
-                         <textarea  type="text/plain" name="content"   style="width:500px;height:100px;" ><?php echo isset($data)? $data['content']:''?></textarea>
+                         <textarea id="content" type="text/plain" name="content"   style="width:80%;height:200px;" ><?php echo isset($data)? $data['content']:''?></textarea>
                     </span>
                     </br>
 
                     <span>选 &nbsp;项 &nbsp;A:</span>
-                    <span><input type="text" name="keyA" value="<?php echo isset($data)?$data['keyA']:''?>" placeholder="A选项" style="width:80%;"></span>
+                    <span>
+                         <textarea id="keyA"  type="text/plain" name="keyA" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyA']:''?></textarea>
+                    </span>
                     </br>
 
                     <span>选 &nbsp;项&nbsp; B:</span>
-                    <span><input type="text" name="keyB" value="<?php echo isset($data)?$data['keyB']:''?>" placeholder="B选项" style="width:80%;"></span>
+                    <span>
+                       <textarea id="keyB"  type="text/plain" name="keyB" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyB']:''?></textarea>
+                    </span>
                     </br>
 
                     <span>选 &nbsp;项 &nbsp;C:</span>
-                    <span><input type="text" name="keyC" value="<?php echo isset($data)?$data['keyC']:''?>" placeholder="C选项" style="width:80%;"></span>
+                    <span>
+                        <textarea id="keyC"  type="text/plain" name="keyC" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyC']:''?></textarea>
+                    </span>
                     </br>
 
                     <span>选 &nbsp;项&nbsp; D:</span>
-                    <span><input type="text" name="keyD" value="<?php echo isset($data)?$data['keyD']:''?>" placeholder="D选项" style="width:80%;"></span>
+                    <span><textarea id="keyD"  type="text/plain" name="keyD" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyD']:''?></textarea></span>
                     </br>
 
-                    <span>选 &nbsp;项&nbsp; E:</span>
-                    <span><input type="text" name="keyE" value="<?php echo isset($data)?$data['keyE']:''?>" placeholder="E选项" style="width:80%;"></span>
-                    </br>
+<!--                    <span>选 &nbsp;项&nbsp; E:</span>-->
+<!--                    <span>-->
+<!--                        <textarea id="keyE"  type="text/plain" name="keyD" style="width:80%;height: 80px;">--><?php //echo isset($data)?$data['keyD']:''?><!--</textarea>-->
+<!--                    </span>-->
+<!--                    </br>-->
 
                     <span>答 &nbsp;&nbsp;&nbsp;&nbsp;案 :</span>
                     <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案"></span>
                     </br>
                     <span>解 &nbsp;&nbsp;&nbsp;&nbsp;析 :</span>
-                    <span><textarea type="text" name="analysis" style="width:500px;height: 100px;"><?php echo isset($data)?$data['analysis']:''?></textarea>限400字</span>
+                    <span><textarea type="text" name="analysis" style="width:500px;height: 100px;"><?php echo isset($data)?$data['analysis']:''?></textarea></span>
                     </br>
 
                     <span>subScores:</span>
@@ -127,4 +135,10 @@
 <script>
     //实例化编辑器
     var ue = UE.getEditor('editor');
+    var content = UE.getEditor('content');
+    var keyA= UE.getEditor('keyA');
+    var keyB = UE.getEditor('keyB');
+    var keyC= UE.getEditor('keyC');
+    var keyD = UE.getEditor('keyD');
+    var keyE = UE.getEditor('keyE');
 </script>

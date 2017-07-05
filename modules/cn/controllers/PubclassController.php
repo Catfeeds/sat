@@ -32,7 +32,14 @@ class PubclassController extends Controller
     public function actionApply()
     {
         $arr['pubclass_id']= Yii::$app->request->post('classId', '');
-        $arr['phone']= Yii::$app->request->post('userTel', '');
+//        $arr['phone']= Yii::$app->request->post('userTel', '');
+        session_start();
+        if(isset($_SESSION['userData']['phone'])){
+            $arr['phone']=$_SESSION['userData']['phone'];
+        }elseif(isset($_SESSION['userData']['email'])){
+            $arr['phone']=$_SESSION['userData']['email'];
+        }
+
         $id=$arr['pubclass_id'] ;
         $add_re = Yii::$app->db->createCommand()->insert("{{%class_apply}}", $arr)->execute();
         $data = Yii::$app->db->createCommand("select hits,id from {{%info}} where id=$id ")->queryOne();
