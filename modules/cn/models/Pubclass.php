@@ -10,17 +10,17 @@ use yii\db\ActiveRecord;
 use app\modules\admin\models\Info;
 use yii;
 class Pubclass extends ActiveRecord{
-    public function getTime()
-    {
-        $data = Yii::$app->db->createCommand("select * from {{%info}} where isShow=1")->queryAll();
-        $info = new Info();
-        $time=time();
-        foreach ($data as $v) {
-            if($v['validTime']<$time){
-                $v['isShow']=0;
-                $re = $info->updateAll($v,'id=:id',array(':id'=>$v['id']));
-            }
-
-        }
-    }
+//    public function getTime()
+//    {
+//        $data = Yii::$app->db->createCommand("select * from {{%info}} where isShow=1")->queryAll();
+//        $info = new Info();
+//        $time=time();
+//        foreach ($data as $v) {
+//            if($v['validTime']<$time){
+//                $v['isShow']=0;
+//                $re = $info->updateAll($v,'id=:id',array(':id'=>$v['id']));
+//            }
+//
+//        }
+//    }
 }

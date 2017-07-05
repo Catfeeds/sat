@@ -53,7 +53,7 @@
             <a href="/info.html?c=n" >新闻资讯</a></li>
           </li >
           <li>
-            <a href="/info.html?c=t" >备考资讯</a></li>
+            <a href="/info.html?c=t" >学术报告</a></li>
           </li>
         </ul>
         <div >
