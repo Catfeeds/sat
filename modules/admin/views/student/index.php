@@ -13,7 +13,7 @@
             <th>教师</th>
             <th>GPA</th>
             <th>TOFEL</th>
-            <th>GMAT</th>
+            <th>SAT</th>
             <th>录取学校</th>
             <th>内容</th>
             <th>操作</th>
@@ -32,7 +32,7 @@
             <td><?php echo $v['teacher']?></td>
             <td><?php echo $v['GPA']?></td>
             <td><?php echo $v['TOFEL']?></td>
-            <td><?php echo $v['GMAT']?></td>
+            <td><?php echo $v['SAT']?></td>
             <td><?php echo $v['matriculate']?></td>
             <td title="<?php echo $v['content']?>"><? echo $v['content']?></td>
 

@@ -23,7 +23,7 @@
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">资讯</a></li>
     </ul>
     <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
-         <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['username'];}else{echo '欢迎您';}?></a></li>
+         <li id="welcome"><a  href="#"><?php if($user){if($user['nickname']){echo "欢迎用户".$user['nickname'];}else{echo "欢迎用户".$user['username'];}}?></a></li>
          <li id="out"><a><span onclick="Out()">退出登录</span></a></li>
     </ul>
    <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>

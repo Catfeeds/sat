@@ -45,6 +45,16 @@
                 <td><input type="text" name="seniority" value="<?php echo isset($data)?$data['seniority']:''?>" placeholder="资历" ></td>
             </tr>
             <tr>
+                <td>教师等级:</td>
+
+                <td>
+                    <input type="radio" name="flag" value="0" <?php echo isset($data)&&($data['flag']=='0') ? 'checked="checked"':''?> />特级
+                    <input type="radio" name="flag" value="1" <?php echo isset($data)&&($data['flag']=='1') ? 'checked="checked"':''?> />高级
+                    <input type="radio" name="flag" value="2" <?php echo isset($data)&&($data['flag']=='2') ? 'checked="checked"':''?> />中级
+                </td>
+<!--                <td><input type="text" name="seniority" value="--><?php //echo isset($data)?$data['seniority']:''?><!--" placeholder="资历" ></td>-->
+            </tr>
+            <tr>
                 <td colspan="2" align="right">
                     <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>
                     <button type="submit" id="login-button">添加/修改</button></td>
