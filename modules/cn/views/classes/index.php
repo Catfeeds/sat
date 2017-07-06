@@ -10,7 +10,6 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade in active" id="allAround">
-        <div class="s-desc"><?php echo isset($data[0]['student'])?$data[0]['student']:''?></div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
@@ -39,7 +38,6 @@
         </div>
       </div>
       <div class="tab-pane fade" id="sprint">
-        <div class="s-desc"><?php echo isset($data[1]['student'])?$data[1]['student']:''?></div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
@@ -68,7 +66,6 @@
         </div>
       </div>
       <div class="tab-pane fade" id="weekend">
-        <div class="s-desc"><?php echo isset($data[2]['student'])?$data[2]['student']:''?></div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
@@ -97,9 +94,6 @@
         </div>
       </div>
       <div class="tab-pane fade" id="online">
-        <div class="s-desc">
-          <?php echo isset($data[3]['student'])?$data[3]['student']:''?>
-        </div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
