@@ -101,6 +101,13 @@
                     <span><textarea type="text" name="analysis" style="width:500px;height: 100px;"><?php echo isset($data)?$data['analysis']:''?></textarea></span>
                     </br>
 
+                    <span>难 &nbsp;&nbsp;&nbsp;&nbsp;度 :</span>
+                    <span><input type="text" name="level"  value="<?php echo isset($data)?$data['level']:''?>"></span>
+                    </br>
+                    <span>考 &nbsp;&nbsp;&nbsp;&nbsp;点 :</span>
+                    <span><input type="text" name="testCenter"  value="<?php echo isset($data)?$data['testCenter']:''?>"></span>
+                    </br>
+
                     <span>subScores:</span>
                     <span>
                         <select name="subScores">

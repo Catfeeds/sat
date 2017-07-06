@@ -184,7 +184,7 @@ function ckBefore(flag,tag) {
                 'qid':subId,
                 'solution':ans
             },function(data){
-                window.location.href = '';
+                window.location.href = '/mock_test?'+u+'&qid='+data.qid;
             },'json')
         } else {
             $.ajax({
