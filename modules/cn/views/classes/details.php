@@ -11,10 +11,8 @@
         <img class="pull-left" src="<?php if($data['pic']!=false){echo $data['pic'];}else{echo '/cn/images/cou-details01.png';}?>" alt="">
         <div>
           <h2>SAT<?php echo $data['cate']?>课程</h2>
-<!--          <span class="s-now">￥--><?php //echo$data['price']?><!--</span>-->
-<!--          <span class="s-before">￥--><?php //echo $data['price']*1.2 ?><!--</span>-->
           <p>课时:<?php echo  $data['duration']?></p>
-          <p class="s-object">课程对象：<span><?php echo $data['student']?></span></p>
+          <div class="s-object">课程对象：<?php echo $data['student']?></div>
           <a href="#">立即预约</a>
         </div>
       </div>
@@ -27,8 +25,7 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="course">
             <h2><?php echo $data['cate']?>课程</h2>
-            <p><?php echo $data['introduction']?>
-            </p>
+            <div><?php echo $data['introduction']?></div>
           </div>
           <div role="tabpanel" class="tab-pane" id="teacher">
             <div class="s-introduce-img">

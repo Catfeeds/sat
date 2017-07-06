@@ -162,6 +162,7 @@ body {
   width: 1200px;
   height: 50px;
   line-height: 50px;
+  overflow: hidden;
 }
 .s-nav .container .s-nav-logo {
   margin-right: 2%;
