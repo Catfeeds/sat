@@ -173,7 +173,7 @@ function ckBefore(flag,tag) {
                 'qid':subId,// 题目ID
                 'solution':ans//答案
             },function(data){
-                window.location.href = '';
+                window.location.href = '/mock_test?'+u+'&qid='+data.qid;
             },'json')
         } else {
             $.ajax({

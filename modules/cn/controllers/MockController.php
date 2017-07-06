@@ -79,7 +79,7 @@ class MockController extends Controller
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid )->queryOne(); // 这里是一维还是二唯数据
         }
-//        var_dump($data);
+//        var_dump($data);DIE;
         return $this->render($modle, ['data' => $data,'time'=>$time,'count'=>$count,'amount'=>$amount]);
 //        $this->actionSection();
     }
@@ -95,9 +95,11 @@ class MockController extends Controller
         $uid = Yii::$app->request->get('uid');
         $number= Yii::$app->request->get('number');
         $section= Yii::$app->request->get('section');
+        session_start();
         $a = KeepAnswer::getCat();
-         Yii::$app->session->set('uid',$uid);
-         Yii::$app->session->set('tpId',$tid);
+        $re = $a->addPro($qid, $solution);
+        $_SESSION['uid']=$uid;
+        $_SESSION['tid']=$tid;
         $re = $a->addPro($qid, $solution);
         $next['sectionNum'] = $a->Gettype();// 目前第几题
         $next['mkNum'] = 5;// 所答第几题/总题数
@@ -118,14 +120,16 @@ class MockController extends Controller
     {
         $number= Yii::$app->request->get('number');
         $section= Yii::$app->request->get('section');
-        $section=$section+2;
-        $tid = Yii::$app->request->get('tid');
+        $section=$section+1;
+        $tid = Yii::$app->request->get('tpId');
         $qid = Yii::$app->request->get('qid');
         $solution = Yii::$app->request->get('solution');// 用户提交的答案
+        session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution);// 将答案保存到session里
         // 还是取下一题的qid
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
+//        var_dump($data);die;
         echo die(json_encode($data));
     }
 
