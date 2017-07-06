@@ -51,7 +51,7 @@ class InfoController extends Controller
         $data = Yii::$app->db->createCommand("select * from {{%info}} where id=$id")->queryOne();
         $cate = $data['cate'];
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where cate='$cate' order by hits desc ")->queryAll();
-        $brr = Yii::$app->db->createCommand('select * from {{%info}} where isShow=1 order by hits desc limit 5 ')->queryAll();
+        $brr = Yii::$app->db->createCommand('select * from {{%info}} where isShow=0 order by hits desc limit 5 ')->queryAll();
         return $this->render('details', ['data' => $data, 'arr' => $arr, 'brr' => $brr]);
     }
 }

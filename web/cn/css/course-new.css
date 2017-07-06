@@ -1,9 +1,8 @@
 .s-course .s-title-list {
   font-size: 0;
-  width: 610px;
+  width: 860px;
   text-align: center;
   margin: 0 auto;
-  /*padding-top: 50px;*/
   border-bottom: 1px solid #000;
 }
 .s-course .s-title {
@@ -44,20 +43,22 @@
 .s-course .s-title-list a:focus {
   text-decoration: none;
 }
-.s-course .s-desc {
-  width: 780px;
-  margin: 15px auto 0;
-  text-align: center;
-  font-size: 14px;
-  line-height: 20px;
-}
 .s-course .s-detail {
   padding: 0 20px;
+  margin-top: 30px;
 }
 .s-course .s-text {
   width: 530px;
-  margin-top: 100px;
+  margin-top: 60px;
   font-size: 14px;
+}
+.s-course .s-text .s-text-cnt {
+  height: 95px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.s-course .s-text-cnt p {
+  line-height: 24px;
 }
 .s-course .s-text h2 {
   font-size: 16px;

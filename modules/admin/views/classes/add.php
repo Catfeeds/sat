@@ -49,6 +49,7 @@
                         <option value ="暑期全能小班" <?php echo isset($data)&& $data['cate']=="暑期全能小班" ?  'selected':''?>>暑期全能小班</option>
                         <option value ="暑期冲刺小班" <?php echo isset($data)&& $data['cate']=="暑期冲刺小班" ?  'selected':''?>>暑期冲刺小班</option>
                         <option value ="全能周末班" <?php echo isset($data)&& $data['cate']=="全能周末班" ?  'selected':''?>>全能周末班</option>
+                        <option value ="在线强化班" <?php echo isset($data)&& $data['cate']=="在线强化班" ?  'selected':''?>>在线强化班</option>
                     </select>
                 </td>
             </tr>

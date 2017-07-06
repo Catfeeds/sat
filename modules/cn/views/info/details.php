@@ -69,7 +69,7 @@
               <?php foreach ($brr as $k=>$v){?>
               <li class="clearfix">
                 <h4><span><?php echo $k+1;?></span><?php echo $v['title']?></h4>
-                <img class="pull-left" src="/cn/images/pubClass-dea_15.png" alt="">
+                <img class="pull-left" src="<?php echo isset($v['pic'])?$v['pic']:''?>" alt="">
                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['summary']?></a>
               </li>
               <?php }?>

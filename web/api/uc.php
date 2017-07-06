@@ -159,8 +159,8 @@ class uc_note {
                 'username' => $username,
                 'email' => $email,
                 'phone' => $phone,
+                'nickname' => $nickname,
                 'image' => '',
-                'nickname' => '',
                 'id' => $userId
             );
         } else {
@@ -176,7 +176,10 @@ class uc_note {
                 $sql = "UPDATE sat_user SET username = '$username' WHERE uid = $uid";
                 $this->dbLink->query($sql);
             }
-
+			if($username != $u['nickname']){
+				$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE uid = $uid";
+				$this->dbLink->query($sql);
+			}
             if(md5($str) != $u['password']){
 				$password=md5($str);
                 $sql = "UPDATE sat_user SET password = '$password' WHERE uid = $uid";

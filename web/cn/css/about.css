@@ -199,7 +199,7 @@
 }
 /*您的建议*/
 #sAdvice div {
-  padding: 30px 45px;
+  padding-top: 30px;
 }
 #sAdvice textarea {
   width: 100%;
@@ -208,4 +208,9 @@
 #sAdvice .btn-lg {
   padding: 10px 30px;
   margin-top: 15px;
+}
+/*使用声明*/
+#sStatement p {
+  line-height: 24px;
+  text-indent: 24px;
 }
