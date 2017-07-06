@@ -22,8 +22,15 @@
         </div>
         <div class="right-login pull-right">
             <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
-                <li id="welcome"><a  href="#"><?php if($user){echo "欢迎用户".$user['username'];}else{echo '欢迎您';}?></a></li>
-                <li id="out"><a><span onclick="Out()">退出登录</span></a></li>
+                <li id="welcome"><a  href="#"><?php
+                        if($user){
+                            if($user['nickname']!=false){
+                                echo "欢迎:".$user['nickname'];
+                            }else{
+                                echo "欢迎:".$user['username'];
+                            }
+                        }?></a></li>
+                <li id="out"><a><span onclick="Out()">退出</span></a></li>
             </ul>
             <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
                 <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>

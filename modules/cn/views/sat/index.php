@@ -84,23 +84,11 @@
                 </div>
             </div>
             <div class="s-cnt">
-<!--                --><?php //foreach($info3 as $k=>$v){
-//                    if($k=='0'){
-//                        echo '<ul class="s-detail">
-//                                <li class="s-img"><img src="/cn/images/sat-course01.png" alt=""></li>
-//                    <li class="s-font">';
-//                    }else{
-//                        echo '<ul class="s-detail">';
-//                        if($k=1){
-//                            echo '<li class="s-font">';
-//                        }else{}
-//                    }
-//                }?>
                 <ul class="s-detail">
                     <li class="s-img"><img src="/cn/images/sat-course01.png" alt=""></li>
                     <li class="s-font">
                         <h2><?php echo isset($classes[0]['cate'])?$classes[0]['cate']:''?></h2>
-                        <p><?php echo isset($classes[0]['introduction'])?$classes[0]['introduction']:''?></p>
+                        <div class="s-font-cnt"><?php echo isset($classes[0]['introduction'])?$classes[0]['introduction']:''?></div>
                         <a href="/class_details/<?php echo isset($classes[0]['id'])?$classes[0]['id']:''?>.html">查看更多</a>
                     </li>
                     <li class="s-img"><img src="/cn/images/sat-course02.png" alt=""></li>
@@ -108,13 +96,13 @@
                 <ul class="s-detail">
                     <li class="s-font">
                         <h2><?php echo isset($classes[1]['cate'])?$classes[1]['cate']:''?></h2>
-                        <p><?php echo isset($classes[1]['introduction'])?$classes[1]['introduction']:''?></p>
+                        <div class="s-font-cnt"><?php echo isset($classes[1]['introduction'])?$classes[1]['introduction']:''?></div>
                         <a href="/class_details/<?php echo isset($classes[1]['id'])?$classes[1]['id']:''?>.html">查看更多</a>
                     </li>
                     <li class="s-img"><img src="/cn/images/sat-course03.png" alt=""></li>
                     <li class="s-font">
                         <h2><?php echo isset($classes[2]['cate'])?$classes[2]['cate']:''?></h2>
-                        <p><?php echo isset($classes[2]['introduction'])?$classes[2]['introduction']:''?></p>
+                        <div class="s-font-cnt"><?php echo isset($classes[2]['introduction'])?$classes[2]['introduction']:''?></div>
                         <a href="/class_details/<?php echo isset($classes[2]['id'])?$classes[2]['id']:''?>.html">查看更多</a>
                     </li>
                 </ul>
