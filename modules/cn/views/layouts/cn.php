@@ -21,9 +21,9 @@
 //var_dump($data);die;
 
 ?>
-    <title><?php echo isset($data['title'])?$data['title']:''?></title>
-    <meta name="keywords" content="<?php echo isset($data['keywords'])?$data['keywords']:'SAT课程 SAT培训 申友SAT'?>">
-    <meta name="description" content="<?php echo isset($data['description'])?$data['description']:'SAT课程 SAT培训 申友SAT'?>">
+    <title><?php echo isset($data['title'])?$data['title']:'【官方】雷哥网SAT培训_SAT课程_SAT考试培训_SAT官网_SAT模考_SAT培训班_SAT培训机构_雷哥SAT_ACT培训_美国本科留学'?></title>
+    <meta name="keywords" content="<?php echo isset($data['keywords'])?$data['keywords']:'【雷哥SAT官网】专业提供SAT考试培训，SAT小班，SAT VIP班，SAT模考，SAT在线题库，SAT公开课，SAT学习资料，ACT培训，美国本科留学，定制SAT VIP培训班。雷哥SAT培训课程欢迎咨询：400-1816-180'?>">
+    <meta name="description" content="<?php echo isset($data['description'])?$data['description']:'雷哥网,雷哥SAT,雷哥SAT课程,SAT培训,SAT时间,SAT备考,SAT培训,SAT考试培训,SAT培训机构,SAT网络课程,SAT网课,SAT课程,SAT是什么,SAT资料,SAT视频课程,SAT考试真题,SAT在线课程,SAT暑期班,申友SAT,备考SAT,SAT备考资料,SAT考试资料,考SAT,SAT,SAT模考软件,SAT论坛,雷哥网培训。'?>">
     <!--阻止浏览器缓存-->
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">

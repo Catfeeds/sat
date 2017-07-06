@@ -22,7 +22,7 @@ class SatController extends Controller
         $teachers = Yii::$app->db->createCommand("select pic,name,subject,introduction from {{%teachers}} ")->queryAll();
         $info1 = Yii::$app->db->createCommand("select * from {{%info}} where cate='公开课' order by id desc limit 5")->queryAll();
         $infoNews = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='新闻资讯'order by id desc limit 6")->queryAll();
-        $infoTest = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='备考资讯' order by id desc limit 6")->queryAll();
+        $infoTest = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='学术报告' order by id desc limit 6")->queryAll();
         $info3 = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='高分经验' order by id desc limit 6")->queryAll();
         $infoAd = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='公告' order by id desc limit 6")->queryAll();
         $controller = Yii::$app->controller->id;

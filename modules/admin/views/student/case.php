@@ -78,8 +78,8 @@
                 <td><input type="text" name="TOFEL" value="<?php echo isset($data)?$data['TOFEL']:''?>" style="width:500px;"></td>
             </tr>
             <tr>
-                <td>GMAT：</td>
-                <td><input type="text" name="GMAT" value="<?php echo isset($data)?$data['GMAT']:''?>" style="width:500px;"></td>
+                <td>SAT：</td>
+                <td><input type="text" name="GMAT" value="<?php echo isset($data)?$data['SAT']:''?>" style="width:500px;"></td>
             </tr>
             <tr>
                 <td>录取学校：</td>
