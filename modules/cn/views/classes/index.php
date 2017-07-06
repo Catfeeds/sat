@@ -10,24 +10,24 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade in active" id="allAround">
-        <div class="s-desc"><?php echo $data[0]['student']?></div>
+        <div class="s-desc"><?php echo isset($data[0]['student'])?$data[0]['student']:''?></div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
-            <div class="s-text-cnt"><?php echo $data[0]['introduction']?></div>
+            <div class="s-text-cnt"><?php echo isset($data[0]['introduction'])?$data[0]['introduction']:''?></div>
             <ul>
               <li>模块</li>
-              <?php foreach($brr[0] as $v){
-                echo '<li>'.$v[0].'</li>';
+              <?php if(isset($brr[0])){foreach($brr[0] as $v){
+                echo '<li>'.$v[0].'</li>';}
               }?>
             </ul>
             <ul>
               <li>课时</li>
-              <?php foreach($brr[0] as $v){
-                echo '<li>'.$v[1].'</li>';
+              <?php if(isset($brr[0])){foreach($brr[0] as $v){
+                echo '<li>'.$v[1].'</li>';}
               }?>
             </ul>
-            <a class="s-consult" href="/class_details/<?php echo $data[0]['id']?>.html">查看详情</a>
+            <a class="s-consult" href="<?php echo isset($data[0]['id'])?'/class_details/'.$data[0]['id'].'.html':'#'?>">查看详情</a>
           </div>
           <div class="s-img">
             <div class="s-img-bg01">
@@ -39,24 +39,24 @@
         </div>
       </div>
       <div class="tab-pane fade" id="sprint">
-        <div class="s-desc"><?php echo $data[1]['student']?></div>
+        <div class="s-desc"><?php echo isset($data[1]['student'])?$data[1]['student']:''?></div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
-            <div class="s-text-cnt"><?php echo $data[1]['introduction']?></div>
+            <div class="s-text-cnt"><?php echo isset($data[1]['introduction'])?$data[1]['introduction']:''?></div>
             <ul>
               <li>模块</li>
-              <?php foreach($brr[1] as $v){
-                echo '<li>'.$v[0].'</li>';
+              <?php if(isset($brr[1])){foreach($brr[1] as $v){
+                echo '<li>'.$v[0].'</li>';}
               }?>
             </ul>
             <ul>
               <li>课时</li>
-              <?php foreach($brr[1] as $v){
-                echo '<li>'.$v[1].'</li>';
+              <?php if(isset($brr[1])){foreach($brr[1] as $v){
+                echo '<li>'.$v[1].'</li>';}
               }?>
             </ul>
-            <a class="s-consult" href="/class_details/<?php echo $data[1]['id']?>.html">查看详情</a>
+            <a class="s-consult" href="<?php echo isset($data[1]['id'])?'/class_details/'.$data[1]['id'].'.html':'#'?>">查看详情</a>
           </div>
           <div class="s-img">
             <div class="s-img-bg01">
@@ -68,24 +68,24 @@
         </div>
       </div>
       <div class="tab-pane fade" id="weekend">
-        <div class="s-desc"><?php echo $data[2]['student']?></div>
+        <div class="s-desc"><?php echo isset($data[2]['student'])?$data[2]['student']:''?></div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
-            <div class="s-text-cnt"><?php echo $data[2]['introduction']?></div>
+            <div class="s-text-cnt"><?php echo isset($data[2]['introduction'])?$data[2]['introduction']:''?></div>
             <ul>
               <li>模块</li>
-              <?php foreach($brr[2] as $v){
-                echo '<li>'.$v[0].'</li>';
+              <?php if(isset($brr[2])){foreach($brr[2] as $v){
+                echo '<li>'.$v[0].'</li>';}
               }?>
             </ul>
             <ul>
               <li>课时</li>
-              <?php foreach($brr[2] as $v){
-                echo '<li>'.$v[1].'</li>';
+              <?php if(isset($brr[2])){foreach($brr[2] as $v){
+                echo '<li>'.$v[1].'</li>';}
               }?>
             </ul>
-            <a class="s-consult" href="/class_details/<?php echo $data[2]['id']?>.html">查看详情</a>
+            <a class="s-consult" href="<?php echo isset($data[2]['id'])?'/class_details/'.$data[2]['id'].'.html':'#'?>">查看详情</a>
           </div>
           <div class="s-img">
             <div class="s-img-bg01">
@@ -98,30 +98,27 @@
       </div>
       <div class="tab-pane fade" id="online">
         <div class="s-desc">
-          <p>1.有一定的语言能力且自控能力强的学员，需全科系统加强的学员;
-            2.没有考过新SAT考试，经雷哥团队内部标准测试符合以上标准。
-          </p>
+          <?php echo isset($data[3]['student'])?$data[3]['student']:''?>
         </div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
             <div class="s-text-cnt">
-              <p>足不出户，在家有网就可以高效备考SAT！雷哥SAT名师团队依据新SAT官方指南，讲解各种文章类型的阅读技巧，解题思路和常见词汇偏僻意义，帮助学员快速提高阅读速度和逻辑思维能力；通过系统讲解，让学员语法知识结构准确且系统化；依据官方指南整理考点和词汇术语，提高学员快速掌握数学专业词汇的能力和技巧；讲授写作的论证策略，帮助学员短期内积累大量的写作高分单词，熟练并精确运用单词和句型，拿到写作高分。
-              </p>
+              <?php echo isset($data[3]['introduction'])?$data[3]['introduction']:''?>
             </div>
             <ul>
               <li>模块</li>
-              <?php foreach($brr[2] as $v){
-                echo '<li>'.$v[0].'</li>';
+              <?php if(isset($brr[3])){foreach($brr[3] as $v){
+                echo '<li>'.$v[0].'</li>';}
               }?>
             </ul>
             <ul>
               <li>课时</li>
-              <?php foreach($brr[2] as $v){
-                echo '<li>'.$v[1].'</li>';
+              <?php if(isset($brr[3])){foreach($brr[3] as $v){
+                echo '<li>'.$v[1].'</li>';}
               }?>
             </ul>
-            <a class="s-consult" href="/class_details/<?php echo $data[2]['id']?>.html">查看详情</a>
+            <a class="s-consult" href="<?php echo isset($data[3]['id'])?'/class_details/'.$data[3]['id'].'.html':'#'?>">查看详情</a>
           </div>
           <div class="s-img">
             <div class="s-img-bg01">
