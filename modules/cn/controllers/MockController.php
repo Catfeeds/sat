@@ -56,10 +56,9 @@ class MockController extends Controller
                 $modle = 'mock_math';
                 $time=80*60;
                 $amount=58;
-                $amount=3;
             } else {
-                if($major=='Reading'){$time=62*60;$amount=52;$amount=2;}
-                if($major=='Writing'){$time=35*60;$amount=44;$amount=3;}
+                if($major=='Reading'){$time=62*60;$amount=6;}
+                if($major=='Writing'){$time=35*60;$amount=5;}
                 $where = "where tpId=" . $id . " and major='$major'";
                 $modle = 'mock_read';
             }
@@ -70,7 +69,6 @@ class MockController extends Controller
             $modle = 'mock_read';
             $time=62*60;
             $amount=52;
-            $amount=2;
         }
         if (!$qid) {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=".$section['section']."  and q.number='1'")->queryOne();

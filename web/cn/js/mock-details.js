@@ -142,10 +142,12 @@ function process() {
     $.cookie('allPosition',allNum);
 }
 //清空cookie
-function clearCookie() {
-    $.cookie('allPosition','',-1);
+function clearCookie(tag) {
     $.cookie('secPosition','',-1);
     $.cookie('countTime','',-1);
+    if (tag != 'submit') {
+        $.cookie('allPosition','',-1);
+    }
 }
 //下一题、提交
 function ckBefore(flag,tag) {
@@ -177,7 +179,7 @@ function ckBefore(flag,tag) {
             sec = $('#section').val(),//小节
             num = $('#number').val();//题号
         if (tag == 'submit') {//提交进入下一小节
-            clearCookie();
+            clearCookie(tag);
             $.get('/cn/mock/section',{
                 'tpId':testId,
                 'section':sec,

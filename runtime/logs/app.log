@@ -27684,3 +27684,1322 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1499331474.7376
     'REQUEST_TIME' => 1499331474
 ]
+2017-07-06 17:00:42 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-06 17:00:42 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'countTime' => '-2'
+    'secPosition' => '2'
+    'allPosition' => '2'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '60160'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; countTime=-2; secPosition=2; allPosition=2; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331642.2676
+    'REQUEST_TIME' => 1499331642
+]
+2017-07-06 17:00:48 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-06 17:00:48 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'allPosition' => ''
+    'secPosition' => ''
+    'countTime' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '60173'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; allPosition=; secPosition=; countTime='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331648.0916
+    'REQUEST_TIME' => 1499331648
+]
+2017-07-06 17:00:53 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'
+The SQL being executed was: select q.*,qe.*,q.id as qid from `sat_questions` q left join `sat_questions_extend` qe on  qe.id=q.essayId where q.id=undefined' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select q.*,qe.*...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'undefined' in 'where clause'
+)
+
+2017-07-06 17:00:53 [127.0.0.1][-][-][info][application] $_GET = [
+    'tid' => '1'
+    'qid' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'B'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'B'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/mock_test?tid=1&qid=undefined'
+    'QUERY_STRING' => 'tid=1&qid=undefined'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/mock_test'
+    'REDIRECT_QUERY_STRING' => 'tid=1&qid=undefined'
+    'REMOTE_PORT' => '60188'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock_test?tid=1&qid=9'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=1'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331653.3346
+    'REQUEST_TIME' => 1499331653
+]
+2017-07-06 17:01:00 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-06 17:01:00 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '60212'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=1'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331660.5266
+    'REQUEST_TIME' => 1499331660
+]
+2017-07-06 17:01:05 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-06 17:01:05 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-2'
+    'secPosition' => '2'
+    'allPosition' => '2'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '60225'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-2; secPosition=2; allPosition=2'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331665.5886
+    'REQUEST_TIME' => 1499331665
+]
+2017-07-06 17:01:14 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-06 17:01:14 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'allPosition' => ''
+    'secPosition' => ''
+    'countTime' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '436'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '60247'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; allPosition=; secPosition=; countTime='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331674.5406
+    'REQUEST_TIME' => 1499331674
+]
+2017-07-06 17:01:27 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'
+The SQL being executed was: select q.*,qe.*,q.id as qid from `sat_questions` q left join `sat_questions_extend` qe on  qe.id=q.essayId where q.id=undefined' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select q.*,qe.*...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'undefined' in 'where clause'
+)
+
+2017-07-06 17:01:27 [127.0.0.1][-][-][info][application] $_GET = [
+    'tid' => '1'
+    'qid' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'B'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'B'
+            ]
+            3 => [
+                0 => '3'
+                1 => 'B'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '436'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/mock_test?tid=1&qid=undefined'
+    'QUERY_STRING' => 'tid=1&qid=undefined'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/mock_test'
+    'REDIRECT_QUERY_STRING' => 'tid=1&qid=undefined'
+    'REMOTE_PORT' => '60275'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock_test?tid=1&qid=9'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=1'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331687.3116
+    'REQUEST_TIME' => 1499331687
+]
+2017-07-06 17:01:31 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-06 17:01:31 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '436'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '60292'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=1'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331691.3536
+    'REQUEST_TIME' => 1499331691
+]
+2017-07-06 17:06:11 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'
+The SQL being executed was: select q.*,qe.*,q.id as qid from `sat_questions` q left join `sat_questions_extend` qe on  qe.id=q.essayId where q.id=undefined' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select q.*,qe.*...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'undefined' in 'where clause'
+)
+
+2017-07-06 17:06:11 [127.0.0.1][-][-][info][application] $_GET = [
+    'tid' => '1'
+    'qid' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '5'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'A'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'B'
+            ]
+            3 => [
+                0 => '3'
+                1 => 'B'
+            ]
+            4 => [
+                0 => '4'
+                1 => 'B'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1844'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/mock_test?tid=1&qid=undefined'
+    'QUERY_STRING' => 'tid=1&qid=undefined'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/mock_test'
+    'REDIRECT_QUERY_STRING' => 'tid=1&qid=undefined'
+    'REMOTE_PORT' => '60939'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock_test?tid=1&qid=9'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=5'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499331971.4816
+    'REQUEST_TIME' => 1499331971
+]
+2017-07-06 17:14:01 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'level' in 'field list'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:771
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(771): PDOStatement->execute()
+#1 D:\WWW\sat\modules\admin\controllers\QuestionsController.php(51): yii\db\Command->execute()
+#2 [internal function]: app\modules\admin\controllers\QuestionsController->actionAdd()
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/questions...', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'level' in 'field list'
+The SQL being executed was: INSERT INTO `sat_questions` (`tpId`, `isFilling`, `section`, `major`, `number`, `essayId`, `content`, `keyA`, `keyB`, `keyC`, `keyD`, `answer`, `analysis`, `level`, `testCenter`, `subScores`, `crosstestScores`, `id`) VALUES (1, 0, 1, 'Reading', '4', 10, '<h1 style=\"padding: 0px 0px 5px; margin: 0px; font-size: 22px; font-weight: normal; color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; white-space: normal; background-color: rgb(241, 241, 241);\">The primary purpose of the passage is to</h1><p><br/></p>', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>', 'A', 'The narrator is recounting what the tutor Pemberton, who is not related to the Moreens and is therefore an outsider to the family, has told him about his impressions of an odd family.', '100', '', 'expression\"', 'social', NULL)' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(779): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `sa...')
+#1 D:\WWW\sat\modules\admin\controllers\QuestionsController.php(51): yii\db\Command->execute()
+#2 [internal function]: app\modules\admin\controllers\QuestionsController->actionAdd()
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/questions...', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'level' in 'field list'
+)
+
+2017-07-06 17:14:01 [127.0.0.1][-][-][info][application] $_POST = [
+    'tpId' => '1'
+    'isFilling' => '0'
+    'section' => '1'
+    'major' => 'Reading'
+    'number' => '4'
+    'essayId' => '10'
+    'content' => '<h1 style=\"padding: 0px 0px 5px; margin: 0px; font-size: 22px; font-weight: normal; color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; white-space: normal; background-color: rgb(241, 241, 241);\">The primary purpose of the passage is to</h1><p><br/></p>'
+    'keyA' => '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>'
+    'keyB' => '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>'
+    'keyC' => '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>'
+    'keyD' => '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Times New Roman&quot;; font-size: 22px; background-color: rgb(241, 241, 241);\">denounce the ill treatment of an exceptional child.</span></p>'
+    'answer' => 'A'
+    'analysis' => 'The narrator is recounting what the tutor Pemberton, who is not related to the Moreens and is therefore an outsider to the family, has told him about his impressions of an odd family.'
+    'level' => '100'
+    'testCenter' => ''
+    'subScores' => 'expression\"'
+    'crosstestScores' => 'social'
+    'id' => ''
+    '_csrf' => 'SC4yMzA2MUovXEdyeH16A397VkNxb2ApOB4DV0lndw4vFkppU3tzOw=='
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '5'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'A'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'B'
+            ]
+            3 => [
+                0 => '3'
+                1 => 'B'
+            ]
+            4 => [
+                0 => '4'
+                1 => 'B'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1964'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/admin/questions/add'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/admin/questions/add'
+    'REMOTE_PORT' => '62063'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/admin/questions/add'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_ORIGIN' => 'http://sat.com'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=5'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'CONTENT_LENGTH' => '1860'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499332441.8716
+    'REQUEST_TIME' => 1499332441
+]
+2017-07-06 17:20:28 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'
+The SQL being executed was: select q.*,qe.*,q.id as qid from `sat_questions` q left join `sat_questions_extend` qe on  qe.id=q.essayId where q.id=undefined' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select q.*,qe.*...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(80): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'undefined' in 'where clause'
+)
+
+2017-07-06 17:20:28 [127.0.0.1][-][-][info][application] $_GET = [
+    'tid' => '1'
+    'qid' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '4'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'A'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'C'
+            ]
+            3 => [
+                0 => '3'
+                1 => 'C'
+            ]
+            4 => [
+                0 => '4'
+                1 => 'B'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1844'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/mock_test?tid=1&qid=undefined'
+    'QUERY_STRING' => 'tid=1&qid=undefined'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/mock_test'
+    'REDIRECT_QUERY_STRING' => 'tid=1&qid=undefined'
+    'REMOTE_PORT' => '62824'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock_test?tid=1&qid=9'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=4'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499332828.1606
+    'REQUEST_TIME' => 1499332828
+]
+2017-07-06 17:23:29 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(78): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'
+The SQL being executed was: select q.*,qe.*,q.id as qid from `sat_questions` q left join `sat_questions_extend` qe on  qe.id=q.essayId where q.id=undefined' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select q.*,qe.*...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(78): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'undefined' in 'where clause'
+)
+
+2017-07-06 17:23:29 [127.0.0.1][-][-][info][application] $_GET = [
+    'tid' => '1'
+    'qid' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '9'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'B'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'B'
+            ]
+            3 => [
+                0 => '3'
+                1 => 'B'
+            ]
+            4 => [
+                0 => '4'
+                1 => 'C'
+            ]
+            5 => [
+                0 => '5'
+                1 => 'B'
+            ]
+            6 => [
+                0 => '6'
+                1 => 'C'
+            ]
+            8 => [
+                0 => '8'
+                1 => 'C'
+            ]
+            15 => [
+                0 => '15'
+                1 => 'C'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1924'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/mock_test?tid=1&qid=undefined'
+    'QUERY_STRING' => 'tid=1&qid=undefined'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/mock_test'
+    'REDIRECT_QUERY_STRING' => 'tid=1&qid=undefined'
+    'REMOTE_PORT' => '63170'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock_test?tid=1&qid=9'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=9'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499333009.2706
+    'REQUEST_TIME' => 1499333009
+]
+2017-07-06 17:23:35 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'' in D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php:825
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(825): PDOStatement->execute()
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(78): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause'
+The SQL being executed was: select q.*,qe.*,q.id as qid from `sat_questions` q left join `sat_questions_extend` qe on  qe.id=q.essayId where q.id=undefined' in D:\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'select q.*,qe.*...')
+#1 D:\WWW\sat\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 D:\WWW\sat\modules\cn\controllers\MockController.php(78): yii\db\Command->queryOne()
+#3 [internal function]: app\modules\cn\controllers\MockController->actionDetails()
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('details', Array)
+#7 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/mock/details', Array)
+#8 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'undefined' in 'where clause'
+)
+
+2017-07-06 17:23:35 [127.0.0.1][-][-][info][application] $_GET = [
+    'tid' => '1'
+    'qid' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '9rok6hs05u6vmunrr30jq10vn4'
+    '_csrf' => 'b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq\";}'
+    'uid' => ''
+    'countTime' => '-1'
+    'secPosition' => '1'
+    'allPosition' => '9'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminId' => 30
+    'userName' => 'admin'
+    'rid' => '7'
+    'uid' => ''
+    'tpId' => '1'
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => [
+            1 => [
+                0 => '1'
+                1 => 'B'
+            ]
+            9 => [
+                0 => '9'
+                1 => 'B'
+            ]
+            3 => [
+                0 => '3'
+                1 => 'B'
+            ]
+            4 => [
+                0 => '4'
+                1 => 'C'
+            ]
+            5 => [
+                0 => '5'
+                1 => 'B'
+            ]
+            6 => [
+                0 => '6'
+                1 => 'C'
+            ]
+            8 => [
+                0 => '8'
+                1 => 'C'
+            ]
+            15 => [
+                0 => '15'
+                1 => 'C'
+            ]
+        ]
+    )
+    'tid' => '1'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1844'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/mock_test?tid=1&qid=undefined'
+    'QUERY_STRING' => 'tid=1&qid=undefined'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/mock_test'
+    'REDIRECT_QUERY_STRING' => 'tid=1&qid=undefined'
+    'REMOTE_PORT' => '63187'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock_test?tid=1&qid=9'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=9rok6hs05u6vmunrr30jq10vn4; _csrf=b8e6bcfde757d9fd22aa7e9f3aa4cb38bf7fd995fdda1393bd7e68ce5b0e1ddaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22gruAHKKI7UdpAYQcp01dyQFDg8xZcMBq%22%3B%7D; uid=; countTime=-1; secPosition=1; allPosition=9'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1499333015.4226
+    'REQUEST_TIME' => 1499333015
+]
