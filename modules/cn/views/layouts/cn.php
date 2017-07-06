@@ -13,6 +13,7 @@
     }
     if($url!='info_details'){
     $data = Yii::$app->db->createCommand("select * from {{%seo}} where url='$url'")->queryOne();
+//        var_dump($url);die;
     }else{
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select id,title,summary,keywords from {{%info}} where id=" . $id)->queryOne();

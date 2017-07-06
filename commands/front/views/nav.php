@@ -95,6 +95,7 @@
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
     </ul>
+    </ul>
     <form action="">
         <i class="fa fa-search"></i>
         <input type="text">

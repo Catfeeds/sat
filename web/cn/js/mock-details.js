@@ -36,6 +36,7 @@ $(function () {
         $('.shade-wrap').hide();
     })
     $('.exit-out').click(function () {
+        clearCookie();
         exitOut();
     })
     //做题进度
@@ -43,13 +44,14 @@ $(function () {
         var secNum = $('.secPosition').html();
     } else {
         secNum = $.cookie('secPosition');
+        //显示下一题或提交按钮
         if (secNum >= $('.sec-all-num').html()) {
             $('.work-next-icon').hide();
             $('.work-submit').show();
         }
     }
     $('.sec-position').html(secNum);
-    if($.cookie('allPosition') == undefined) {
+    if($.cookie('allPosition') == undefined || $.cookie('allPosition') == '') {
         allNum = $('.all-position').html();
     }else {
         allNum = $.cookie('allPosition');
@@ -82,7 +84,7 @@ function countTime() {
     var intervalId = setInterval(timer,1000);
     function timer() {
         TIME--;
-        if (TIME == 0) {
+        if (TIME <= 0) {
             clearInterval(intervalId);
             // autoSubmit();
             //ckBefore(2);
@@ -131,7 +133,7 @@ function process() {
     }
     secNum++;
     $.cookie('secPosition',secNum);
-    if($.cookie('allPosition') == undefined) {
+    if($.cookie('allPosition') == undefined || $.cookie('allPosition') == '') {
         allNum = $('.all-position').html();
     }else {
         allNum = $.cookie('allPosition');
@@ -139,12 +141,20 @@ function process() {
     allNum++;
     $.cookie('allPosition',allNum);
 }
+//清空cookie
+function clearCookie() {
+    $.cookie('allPosition','',-1);
+    $.cookie('secPosition','',-1);
+    $.cookie('countTime','',-1);
+}
 //下一题、提交
 function ckBefore(flag,tag) {
     var ans = $('.work-select.active').data('id');
     if (flag == 1) {
+        //无选项下一题答案
         ans = '';
     } else if(ans == undefined && flag ==2) {
+        //自动提交下一题答案
         ans = ''
     }
     if (ans == undefined) {
@@ -166,11 +176,13 @@ function ckBefore(flag,tag) {
             classify = $('#classify').val(),//题目类型（跨学科）
             sec = $('#section').val(),//小节
             num = $('#number').val();//题号
-        if (tag == 'submit') {
-            $.get('/cn/mock/next',{
-                'tpId':testId,//试卷ID
-                'section':sec,//小节
-                'solution':ans//答案
+        if (tag == 'submit') {//提交进入下一小节
+            clearCookie();
+            $.get('/cn/mock/section',{
+                'tpId':testId,
+                'section':sec,
+                'qid':subId,
+                'solution':ans
             },function(data){
                 window.location.href = '';
             },'json')
@@ -195,12 +207,6 @@ function ckBefore(flag,tag) {
             })
         }
     }
-}
-//提交
-function subBefore() {
-    var tpId = $('#testId').val(),//试卷ID
-        sec = $('#section').val();//小节
-
 }
 
 //退出模考、测评
