@@ -65,10 +65,10 @@
                 <span class="work-time-cnt">本section剩余时间:</span>
             </div>
             <div class="work-sec-process col-lg-4 col-md-4">
-                本section进度:<span class="sec-position">0</span>/<span>3</span>
+                本section进度:<span class="sec-position">0</span>/<span class="sec-all-num">8</span>
             </div>
             <div class="work-all-process col-lg-2 col-md-2">
-                做题总进度:<span class="all-position">0</span>/<span>155</span>
+                做题总进度:<span class="all-position">0</span>/<span class="all-num">155</span>
             </div>
             <div class="work-btm-next col-lg-2 col-md-2">
                 <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>
@@ -118,12 +118,12 @@
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="10">
         <!--本section总题目-->
-        <input type="hidden" id="sectionAllNum" value="67">
+<!--        <input type="hidden" id="sectionAllNum" value="67">-->
         <!--本section当前题目-->
-        <input type="hidden" id="sectionNum" value="20">
+<!--        <input type="hidden" id="sectionNum" value="20">-->
         <!--模考总题目数-->
-        <input type="hidden" id="mkAllNum" value="155">
+<!--        <input type="hidden" id="mkAllNum" value="155">-->
         <!--当前模考题目号-->
-        <input type="hidden" id="mkNum" value="55">
+<!--        <input type="hidden" id="mkNum" value="55">-->
     </div>
 </div>

@@ -43,7 +43,7 @@ $(function () {
         var secNum = $('.secPosition').html();
     } else {
         secNum = $.cookie('secPosition');
-        if (secNum>=3) {
+        if (secNum >= $('.sec-all-num').html()) {
             $('.work-next-icon').hide();
             $('.work-submit').show();
         }
