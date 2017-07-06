@@ -27,8 +27,6 @@ class MockController extends Controller
 //        var_dump($data);die;
         return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron]);
 
-
-//        $this->actionNext();
     }
 
     public function actionNotice()
@@ -57,9 +55,11 @@ class MockController extends Controller
                 $where="where tpId=" . $id . " and $major";
                 $modle = 'mock_math';
                 $time=80*60;
+                $amount=58;
+                $amount=3;
             } else {
-                if($major=='Reading'){$time=62*60;}
-                if($major=='Writing'){$time=35*60;}
+                if($major=='Reading'){$time=62*60;$amount=52;$amount=2;}
+                if($major=='Writing'){$time=35*60;$amount=44;$amount=3;}
                 $where = "where tpId=" . $id . " and major='$major'";
                 $modle = 'mock_read';
             }
@@ -68,6 +68,9 @@ class MockController extends Controller
             $where = "where section=1";
             $section = Yii::$app->db->createCommand("select section from {{%questions}} $where")->queryOne();
             $modle = 'mock_read';
+            $time=62*60;
+            $amount=52;
+            $amount=2;
         }
         if (!$qid) {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=".$section['section']."  and q.number='1'")->queryOne();
@@ -77,7 +80,8 @@ class MockController extends Controller
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid )->queryOne(); // 这里是一维还是二唯数据
         }
 //        var_dump($data);
-        return $this->render($modle, ['data' => $data,'time'=>$time,'count'=>$count]);
+        return $this->render($modle, ['data' => $data,'time'=>$time,'count'=>$count,'amount'=>$amount]);
+//        $this->actionSection();
     }
 
     // 下一题
@@ -110,11 +114,19 @@ class MockController extends Controller
         $re = $a->Emptyitem();
         echo die(json_encode($re));
     }
-    public function actionSection(){
+    public function actionSection()
+    {
         $number= Yii::$app->request->get('number');
         $section= Yii::$app->request->get('section');
+        $section=$section+2;
         $tid = Yii::$app->request->get('tid');
+        $qid = Yii::$app->request->get('qid');
+        $solution = Yii::$app->request->get('solution');// 用户提交的答案
+        $a = KeepAnswer::getCat();
+        $re = $a->addPro($qid, $solution);// 将答案保存到session里
         // 还是取下一题的qid
+        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
+        echo die(json_encode($data));
     }
 
 }
