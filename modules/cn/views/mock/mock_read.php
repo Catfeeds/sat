@@ -102,6 +102,14 @@
                 <span class="make-sure shade-in">确定</span>
             </div>
         </div>
+        <!-- 休息弹窗-->
+        <div class="relax-wrap shade-wrap">
+            <h3>根据规定，您将有五分钟休息时间，休息时间到自动进入到下一小节</h3>
+            <h5>当然您可以点击继续按钮进入到下一小节</h5>
+            <div class="shade-select">
+                <span>继续</span>
+            </div>
+        </div>
     </div>
     <!--隐藏数据-->
     <div class="worl-btm-hidden">
@@ -116,7 +124,7 @@
         <!--题目号-->
         <input type="hidden" id="number" value="<?php echo $data['number']?>">
         <!--本section总时间-->
-<!--        <input type="hidden" id="sectionTime" value="">-->
+        <input type="hidden" id="sectionTime" value="<?php echo $time?>">
         <!--本section当前题目-->
 <!--        <input type="hidden" id="sectionNum" value="20">-->
         <!--模考总题目数-->

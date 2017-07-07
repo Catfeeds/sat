@@ -13,9 +13,11 @@ $(function () {
     //做题区域高度自适应
     workHeight();
     //倒计时待完善
-    if ($('.notice-wrap').css('display') != 'block') {
-        countTime();
-    }
+    //if ($('.notice-wrap').css('display') != 'block') {
+    //    countTime();
+    //}
+    countTime();
+    upTime();
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);
@@ -41,18 +43,20 @@ $(function () {
     })
     //做题进度
     if ($.cookie('secPosition') == undefined || $.cookie('secPosition') == '') {
-        var secNum = $('.secPosition').html();
+        var secNum = $('.sec-position').html();
     } else {
         secNum = $.cookie('secPosition');
         //显示下一题或提交按钮
-        if (secNum >= $('.sec-all-num').html()) {
+        console.log(secNum);
+        console.log($('.sec-all-num').html()-1);
+        if (secNum >= $('.sec-all-num').html()-1) {
             $('.work-next-icon').hide();
             $('.work-submit').show();
         }
     }
     $('.sec-position').html(secNum);
     if($.cookie('allPosition') == undefined || $.cookie('allPosition') == '') {
-        allNum = $('.all-position').html();
+        var allNum = $('.all-position').html();
     }else {
         allNum = $.cookie('allPosition');
     }
@@ -90,13 +94,29 @@ function countTime() {
             //ckBefore(2);
         }
         var min = Math.floor(TIME/60),
-            sec = TIME - min*60,
+            sec = TIME % 60,
             hour = Math.floor(min/60);
-        min = min - hour*60;
+        min = min % 60;
         hour = checkTime(hour);
         min = checkTime(min);
         sec = checkTime(sec);
         $('.work-time-cnt').text("本section剩余时间: "+hour+ ":" +min+ ":" +sec);
+    }
+}
+//正计时
+function upTime() {
+    var usedTime = 0;
+    var intervalId = setInterval(timer, 1000);
+    function timer() {
+        usedTime = usedTime + 1;
+        $.cookie("upTime", usedTime, {expires: 1, path:"/"});
+        var mins = Math.floor(usedTime / 60);
+        var secs = usedTime % 60;
+        var hrs = Math.floor(usedTime / 3600);
+        mins = checkTime(mins);
+        secs = checkTime(secs);
+        hrs = checkTime(hrs);
+        console.log("已用时间："+ hrs +":" + mins + ":" + secs);
     }
 }
 function checkTime(i) {
@@ -143,10 +163,11 @@ function process() {
 }
 //清空cookie
 function clearCookie(tag) {
-    $.cookie('secPosition','',-1);
-    $.cookie('countTime','',-1);
+    $.cookie('secPosition','',{expires:-1});
+    $.cookie('countTime','',{expires:-1});
     if (tag != 'submit') {
-        $.cookie('allPosition','',-1);
+        console.log('sa');
+        $.cookie('allPosition','',{expires:-1});
     }
 }
 //下一题、提交
