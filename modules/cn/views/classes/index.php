@@ -6,7 +6,7 @@
       <li class="active s-title"><a href="#allAround" data-toggle="tab">暑期全能小班</a></li>
       <li class="s-title"><a href="#sprint" data-toggle="tab">暑期冲刺小班</a></li>
       <li class="s-title"><a href="#weekend" data-toggle="tab">全能周末班</a></li>
-      <li class="s-title"><a href="#online" data-toggle="tab">在线强化班</a></li>
+      <li class="s-title"><a href="#online" data-toggle="tab">直播/录播课程</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade in active" id="allAround">

@@ -101,8 +101,8 @@
             <?php }?>
           </ul>
         </div>
-        <a class="s-middle-adv" href="#">
-          <img src="/cn/images/pubClass-dea_11.png" alt="">
+        <a class="s-middle-adv" href="/class.html">
+          <img src="/cn/images/information1.png" alt="图片">
         </a>
 <!--        <div class="s-case">-->
 <!--          <h2>学员案例</h2>-->

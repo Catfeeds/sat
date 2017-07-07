@@ -59,8 +59,8 @@
           </div>
         </div>
         <div class="s-pd-right pull-right">
-          <a class="s-pd-ad s-adver">
-            <img src="/cn/images/pubClass-dea_11.png" alt="广告位">
+          <a href="/class.html" class="s-pd-ad s-adver">
+            <img src="/cn/images/information1.png" alt="图片">
             <p></p>
           </a>
           <div class="s-pd-list">

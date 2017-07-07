@@ -79,7 +79,7 @@
                         <span style="color: rgb(229,104,215)">course</span>
                     </p>
                     <p>
-                        <span style="color: #000;font-weight: bold;">课程</span>
+                        <span style="color: #000;font-weight: bold;">精品课</span>
                     </p>
                 </div>
             </div>
