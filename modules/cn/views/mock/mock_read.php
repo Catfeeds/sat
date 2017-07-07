@@ -68,7 +68,7 @@
                 本section进度:<span class="sec-position">0</span>/<span class="sec-all-num"><?php echo $amount?></span>
             </div>
             <div class="work-all-process col-lg-2 col-md-2">
-                做题总进度:<span class="all-position">0</span>/<span class="all-num">154</span>
+                做题总进度:<span class="all-position"><?php echo $count?></span>/<span class="all-num">154</span>
             </div>
             <div class="work-btm-next col-lg-2 col-md-2">
                 <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>

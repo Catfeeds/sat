@@ -19,7 +19,7 @@ class ReportController extends Controller
     public function actionDetails()
     {
         // 将session 的数据存到数据库
-       $uid=Yii::$app->session->get('uid', '222');
+       $uid=Yii::$app->session->get('uid', '');
        // 历史报告
         if(isset($_SESSION['answer'])) {
             $answerData = ((array)$_SESSION['answer']);
@@ -102,5 +102,29 @@ class ReportController extends Controller
 //        var_dump( $suggest);die;
         return $this->render('details', ['report' => $re, 'suggest' => $suggest,'tp' => $tp]);
     }
+    Public function actionIndex(){
+        $uid=Yii::$app->session->get('uid', '');
+        if ($uid) {
+            $report = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
+            $number['Reading']=$report['readnum'];
+            $number['Writing']=$report['writenum'];
+            $number['Math']=$report['mathnum'];
+            $getscore = new GetScore();
+            $score = $getscore->Score($number);
+            $re=array_merge($report,$score);
+            $tpId=Yii::$app->db->createCommand("select tpId from {{%report}} where uid=".$uid)->queryAll();
+            $report=new Report();
+            $ids=$report->arrToStr($tpId);
+            $tp=Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
+        }else{
+            echo "<script>alert('请先登录')</script>";die;
+        }
 
+        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Math']  . "  and min<" . $score['Math'] . " and major='Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Reading']  . "  and min<" . $score['Reading'] . " and major='Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Writing']  . "  and min<" . $score['Writing']." and major='Writing'")->queryOne();
+        //        var_dump( $score);die;
+        //        var_dump( $suggest);die;
+        return $this->render('details', ['report' => $re, 'suggest' => $suggest,'tp' => $tp]);
+    }
 }

@@ -83,10 +83,10 @@
                 <span class="work-time-cnt"></span>
             </div>
             <div class="work-sec-process col-lg-4 col-md-4">
-                本section进度:<span>3</span>/<span>55</span>
+                本section进度:<span>3</span>/<span><?php echo $amount?></span>
             </div>
             <div class="work-all-process col-lg-3 col-md-3">
-                做题总进度:<span>30</span>/<span>155</span>
+                做题总进度:<span><?php echo $count?></span>/<span>155</span>
             </div>
             <div class="work-btm-next col-lg-1 col-md-1">
                 <a href="#">
