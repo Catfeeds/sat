@@ -97,17 +97,23 @@
         </div>
         <!--自动提交弹窗-->
         <div class="auto-wrap shade-wrap">
-            <h3>答题时间到,点击确定进入到下一小节</h3>
+            <h3>答题时间到,将在5秒后自动提交</h3>
+            <h4>点击确定按钮提交</h4>
             <div class="shade-select">
+                <p class="auto-time">5</p>
                 <span class="make-sure shade-in">确定</span>
             </div>
         </div>
         <!-- 休息弹窗-->
         <div class="relax-wrap shade-wrap">
             <h3>根据规定，您将有五分钟休息时间，休息时间到自动进入到下一小节</h3>
-            <h5>当然您可以点击继续按钮进入到下一小节</h5>
-            <div class="shade-select">
-                <span>继续</span>
+            <h4>(当然您可以点击继续按钮进入到下一小节)</h4>
+            <div class="shade-select clearfix">
+                <span class="skip-relax shade-in pull-left">继续</span>
+                <p class="five-count">
+                    <i class="fa fa-hourglass-start"></i>
+                    <span>00:30</span>
+                </p>
             </div>
         </div>
     </div>

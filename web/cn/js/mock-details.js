@@ -41,14 +41,16 @@ $(function () {
         clearCookie();
         exitOut();
     })
+    //跳过休息点击事件
+    $('.skip-relax').click(function () {
+        relaxEvent();
+    })
     //做题进度
     if ($.cookie('secPosition') == undefined || $.cookie('secPosition') == '') {
         var secNum = $('.sec-position').html();
     } else {
         secNum = $.cookie('secPosition');
         //显示下一题或提交按钮
-        console.log(secNum);
-        console.log($('.sec-all-num').html()-1);
         if (secNum >= $('.sec-all-num').html()-1) {
             $('.work-next-icon').hide();
             $('.work-submit').show();
@@ -63,11 +65,10 @@ $(function () {
     $('.all-position').html(allNum);
 })
 
-//获取uId
-var uId = $.cookie('uid');
-//时间
-var TOTALTIME = '',
-    TIME = '';
+var uId = $.cookie('uid'),//获取uId
+    TOTALTIME = '',//section总时间
+    TIME = '',//cookie存储时间
+    relaxEvent = '';//跳过休息函数
 
 //做题区域高度自适应
 function workHeight() {
@@ -90,6 +91,8 @@ function countTime() {
         TIME--;
         if (TIME <= 0) {
             clearInterval(intervalId);
+            workShade('.auto-wrap');
+            autoTime();
             // autoSubmit();
             //ckBefore(2);
         }
@@ -110,6 +113,7 @@ function upTime() {
     function timer() {
         usedTime = usedTime + 1;
         $.cookie("upTime", usedTime, {expires: 1, path:"/"});
+
         var mins = Math.floor(usedTime / 60);
         var secs = usedTime % 60;
         var hrs = Math.floor(usedTime / 3600);
@@ -118,6 +122,35 @@ function upTime() {
         hrs = checkTime(hrs);
         console.log("已用时间："+ hrs +":" + mins + ":" + secs);
     }
+}
+//休息倒计时
+function relaxTime () {
+    var relTime = 300;
+    var relaxId = setInterval(timer,1000);
+    function timer() {
+        relTime--;
+        var min = Math.floor(relTime/60),
+            sec = relTime % 60;
+        if (relTime <= 0) {
+            clearInterval(relaxId);
+            relaxEvent();
+        }
+        sec = checkTime(sec);
+        min = checkTime(min);
+        $('.five-count span').html(min+':'+sec);
+    }
+}
+//自动提交倒计时
+function autoTime() {
+    var aTime = 5;
+    var autoId = setInterval(function () {
+        aTime--;
+        if (aTime <=0 ){
+            clearInterval(autoId);
+            ckBefore(2,'submit');
+        }
+        $('.auto-time').html(aTime);
+    },1000)
 }
 function checkTime(i) {
     return i<10? "0"+i: i;
@@ -143,7 +176,7 @@ function autoSubmit() {
 //     })
 //   })
 // }
-//进度、倒计时等
+//下一题、提交时进入进度、倒计时函数
 function process() {
     $.cookie('countTime',TIME);
     if ($.cookie('secPosition') == undefined || $.cookie('secPosition') == '') {
@@ -161,6 +194,7 @@ function process() {
     allNum++;
     $.cookie('allPosition',allNum);
 }
+
 //清空cookie
 function clearCookie(tag) {
     $.cookie('secPosition','',{expires:-1});
@@ -207,7 +241,17 @@ function ckBefore(flag,tag) {
                 'qid':subId,
                 'solution':ans
             },function(data){
-                window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                if (data.section == 2 || data.section == 4) {
+                    workShade('.relax-wrap');
+                    relaxTime();
+                    relaxEvent = function () {
+                        $('.work-shade').hide();
+                        $('.relax-wrap').hide();
+                        window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                    }
+                } else {
+                    window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                }
             },'json')
         } else {
             $.ajax({
