@@ -148,69 +148,69 @@ class MockController extends Controller
         echo die(json_encode($data));
     }
 
-    public function actionReport()
-    {
-        // 将session 的数据存到数据库
-        $uid = Yii::$app->session->get('uid', '222');
-        // 历史报告
-        if (isset($_SESSION['answer'])) {
-            $answerData = ((array)$_SESSION['answer']);
-            $item = $answerData['item'];
-            // 现在生成的报告
-            if (!empty($item)) {
-                $answerData = ((array)$_SESSION['answer']);
-                $answerData = $answerData['item'];// 获取用户的答题数据
-                $getscore = new GetScore();
-                $number = $getscore->Number($answerData);
-                $score = $getscore->Score($number);// 各科分数均有，按科目的分类
-                $subscore = $getscore->Subscore($number);
-                $crosstest = $getscore->CrossTest($number);
-//                $re['tpId'] = $_SESSION['tpId'];
-                $re['tpId'] = $_SESSION['tid'];
-                $re['readnum'] = $number['Reading'];
-                $re['mathnum'] = $number['Math'];
-                $re['writenum'] = $number['Writing'];
-                $re['matherror'] = $number['matherror'];
-                $re['readerror'] = $number['readerror'];
-                $re['writeerror'] = $number['writeerror'];
-//            $re['jumpnum'] = $number['kip'];
-                $re['subScore'] = $subscore['total'];
-                $re['score'] = $score['total'];
-                $re['crossScore'] = $crosstest['total'];
-                $re['data'] = time();
-//            $report['time']=$_COOKIE['time'];// 可以在cookie中直接取
-                if ($uid) {
-                    // 将答案组合成字符串
-                    static $temp = array();
-                    foreach ($answerData as $v) {
-                        $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
-                        $temp[] = $v;
-                    }
-                    $t = "";
-                    foreach ($temp as $v) {
-                        $t .= $v . ";";
-                    }
-                    $t = substr($t, 0, -1);
-                    $re['answer'] = $t;
-                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-                    if ($res) {
-                        $a = KeepAnswer::getCat();
-                        $a->Emptyitem();
-                    }
-                    // 历史报告
-
-                    $tpId = Yii::$app->db->createCommand("select tpId from {{%report}} where uid=" . $uid)->queryAll();
-                    $report = new Report();
-                    $ids = $report->arrToStr($tpId);
-                    $tp = Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
-                } else {
-                    $tp = '';
-                }
-                $re = array_merge($re, $score);
-
-                var_dump( $re);die;
-            }
-        }
-
-    }
+//    public function actionReport()
+//    {
+//        // 将session 的数据存到数据库
+//        $uid = Yii::$app->session->get('uid', '222');
+//        // 历史报告
+//        if (isset($_SESSION['answer'])) {
+//            $answerData = ((array)$_SESSION['answer']);
+//            $item = $answerData['item'];
+//            // 现在生成的报告
+//            if (!empty($item)) {
+//                $answerData = ((array)$_SESSION['answer']);
+//                $answerData = $answerData['item'];// 获取用户的答题数据
+//                $getscore = new GetScore();
+//                $number = $getscore->Number($answerData);
+//                $score = $getscore->Score($number);// 各科分数均有，按科目的分类
+//                $subscore = $getscore->Subscore($number);
+//                $crosstest = $getscore->CrossTest($number);
+////                $re['tpId'] = $_SESSION['tpId'];
+//                $re['tpId'] = $_SESSION['tid'];
+//                $re['readnum'] = $number['Reading'];
+//                $re['mathnum'] = $number['Math'];
+//                $re['writenum'] = $number['Writing'];
+//                $re['matherror'] = $number['matherror'];
+//                $re['readerror'] = $number['readerror'];
+//                $re['writeerror'] = $number['writeerror'];
+////            $re['jumpnum'] = $number['kip'];
+//                $re['subScore'] = $subscore['total'];
+//                $re['score'] = $score['total'];
+//                $re['crossScore'] = $crosstest['total'];
+//                $re['data'] = time();
+////            $report['time']=$_COOKIE['time'];// 可以在cookie中直接取
+//                if ($uid) {
+//                    // 将答案组合成字符串
+//                    static $temp = array();
+//                    foreach ($answerData as $v) {
+//                        $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
+//                        $temp[] = $v;
+//                    }
+//                    $t = "";
+//                    foreach ($temp as $v) {
+//                        $t .= $v . ";";
+//                    }
+//                    $t = substr($t, 0, -1);
+//                    $re['answer'] = $t;
+//                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+//                    if ($res) {
+//                        $a = KeepAnswer::getCat();
+//                        $a->Emptyitem();
+//                    }
+//                    // 历史报告
+//
+//                    $tpId = Yii::$app->db->createCommand("select tpId from {{%report}} where uid=" . $uid)->queryAll();
+//                    $report = new Report();
+//                    $ids = $report->arrToStr($tpId);
+//                    $tp = Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
+//                } else {
+//                    $tp = '';
+//                }
+//                $re = array_merge($re, $score);
+//
+//                var_dump( $re);die;
+//            }
+//        }
+//
+//    }
 }
