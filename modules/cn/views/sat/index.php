@@ -44,7 +44,7 @@
                 <div>
                     <p>
                         <span style="color: #000;font-weight: bold;">免费</span>
-                        <span style="color: rgb(229,104,215)">class</span>
+                        <span style="color: rgb(229,104,215)">courses</span>
                     </p>
                     <p>
                         <span style="color: rgb(54,178,251);">ree open</span>
@@ -76,7 +76,7 @@
                 <p class="pull-left">SAT</p>
                 <div style="margin-left: 80px;">
                     <p>
-                        <span style="color: rgb(229,104,215)">course</span>
+                        <span style="color: rgb(229,104,215)">courses</span>
                     </p>
                     <p>
                         <span style="color: #000;font-weight: bold;">精品课</span>
@@ -118,7 +118,7 @@
                         <span style="color: rgb(229,104,215)">information</span>
                     </p>
                     <p>
-                        <span style="color: rgb(54,178,251);">ticle</span>
+                        <span style="color: rgb(54,178,251);">rticle</span>
                         <span style="color: #000;font-weight: bold;">资讯</span>
                     </p>
                 </div>
