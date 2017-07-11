@@ -112,8 +112,7 @@ function upTime() {
     var intervalId = setInterval(timer, 1000);
     function timer() {
         usedTime = usedTime + 1;
-        $.cookie("upTime", usedTime, {expires: 1, path:"/"});
-
+        $.cookie("uptime", usedTime, {expires: 1, path:"/"});
         var mins = Math.floor(usedTime / 60);
         var secs = usedTime % 60;
         var hrs = Math.floor(usedTime / 3600);
@@ -185,14 +184,15 @@ function process() {
         secNum = $.cookie('secPosition');
     }
     secNum++;
-    $.cookie('secPosition',secNum);
+    $.cookie('secPosition',secNum);//小节进度
     if($.cookie('allPosition') == undefined || $.cookie('allPosition') == '') {
         allNum = $('.all-position').html();
     }else {
         allNum = $.cookie('allPosition');
     }
     allNum++;
-    $.cookie('allPosition',allNum);
+    $.cookie('allPosition',allNum);//全部进度
+
 }
 
 //清空cookie
@@ -200,12 +200,12 @@ function clearCookie(tag) {
     $.cookie('secPosition','',{expires:-1});
     $.cookie('countTime','',{expires:-1});
     if (tag != 'submit') {
-        console.log('sa');
         $.cookie('allPosition','',{expires:-1});
     }
 }
 //下一题、提交
 function ckBefore(flag,tag) {
+    console.log($.cookie('uptime'));
     var ans = $('.work-select.active').data('id');
     if (flag == 1) {
         //无选项下一题答案
@@ -231,6 +231,7 @@ function ckBefore(flag,tag) {
             testId = $('#testId').val(),//试卷ID
             subject = $('#subject').val(),//所属科目
             classify = $('#classify').val(),//题目类型（跨学科）
+            utime = $.cookie('uptime'),//单题计时
             sec = $('#section').val(),//小节
             num = $('#number').val();//题号
         if (tag == 'submit') {//提交进入下一小节
@@ -239,7 +240,8 @@ function ckBefore(flag,tag) {
                 'tpId':testId,
                 'section':sec,
                 'qid':subId,
-                'solution':ans
+                'solution':ans,
+                'utime': utime
             },function(data){
                 if (data.section == 2 || data.section == 4) {
                     workShade('.relax-wrap');
@@ -265,7 +267,8 @@ function ckBefore(flag,tag) {
                     'crossScore':classify,
                     'tid':testId,
                     'section':sec,
-                    'number':num
+                    'number':num,
+                    'utime': utime
                 },
                 dataType: 'json',
                 success: function(data) {

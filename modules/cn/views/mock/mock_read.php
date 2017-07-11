@@ -112,7 +112,7 @@
                 <span class="skip-relax shade-in pull-left">继续</span>
                 <p class="five-count">
                     <i class="fa fa-hourglass-start"></i>
-                    <span>00:30</span>
+                    <span>05:00</span>
                 </p>
             </div>
         </div>
