@@ -17,6 +17,7 @@ class InfoController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
+        // isShow 为0即推荐，1不推荐
         $order="order by isShow asc,id desc";
         $pagesize = 6;
         $page = Yii::$app->request->get('p', 1);

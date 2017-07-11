@@ -1,35 +1,44 @@
 <div class="span10">
-    用户管理>公开课报名信息
+    用户管理>用户留言信息
         <table border="1"  width="800px">
             <tr align="center">
                 <th>id</th>
-                <th>课程id</th>
-                <th>课程名称</th>
-                <th>用户电话号码</th>
-                <th>公开课地址</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>申请国家</th>
+                <th>sat的目标分数</th>
+                <th>sat考试时间</th>
+                <th>留言时间</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
         <?php
         foreach($data as $v){?>
             <tr>
                 <td><?php echo $v['id']?></td>
-                <td><?php echo $v['pubclass_id']?></td>
-                <td id="title<?php echo $v['id']?>"><?php echo $v['title']?></td>
-                <td id="vip<?php echo $v['id']?>"><?php echo $v['phone']?></td>
-                <td id="addr<?php echo $v['id']?>"><?php echo $v['address']?></td>
-                <td><a><span onclick="leftCode('<?php echo $v['id']?>')">发送公开课地址</span></a>
-                    <a href="<?php echo baseUrl.'/admin/user/apply_edit'.'?'.'id='.$v['id']?>">添加公开课地址</a>
+                <td><?php echo $v['name']?></td>
+                <td><?php echo $v['phone']?></td>
+                <td><?php echo $v['email']?></td>
+                <td><?php echo $v['country']?></td>
+                <td><?php echo $v['goal']?></td>
+                <td><?php echo $v['examinationTime']?></td>
+                <td><?php echo $v['time']?></td>
+                <td>
+                    <input name="flag" type="radio" <?php echo $v['flag']=='0'?'checked=checked':''?>>未处理
+                    <input name="flag" type="radio" <?php echo $v['flag']=='1'?'checked=checked':''?>>已处理
+                </td>
+                <td><a><span onclick="check('<?php echo $v['id']?>','1')">已处理</span></a>
+                    <a><span onclick="check('<?php echo $v['id']?>','0')">未处理</span></a>
                 </td>
             </tr>
         <?php }?>
 </div>
 <script>
-    function leftCode(code){
-        var phone = $('#vip'+code).html();
-        var title = $('#title'+code).html();
-        var address = $('#addr'+code).html();
-        $.post('/user/api/class-address',{phone:phone,title:title,address:address},function(re){
+    function check(id,flag){
+        $.post('/admin/user/check',{id:id,flag:flag},function(re){
             alert(re.message);
+            window.location.href='/admin/user/message';
         },"json")
     }
 </script>

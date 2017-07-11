@@ -8,6 +8,7 @@
 namespace app\modules\admin\controllers;
 
 use app\modules\admin\models\Apply;
+use app\modules\admin\models\Message;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\User;
@@ -44,6 +45,29 @@ class UserController extends ApiControl
             }
         }
 
+
+    }
+    public function actionMessage()
+    {
+        // 公开课的ID，报名者电话，的取到title
+        $data = Yii::$app->db->createCommand("select * from {{%message}}")->queryALL();
+        return $this->render('message',['data'=>$data]);
+    }
+    public function actionCheck()
+    {
+        $data['flag']= Yii::$app->request->post('flag', '');
+        $data['id'] = Yii::$app->request->post('id', '');
+//        $data['address'] = Yii::$app->request->post('address', '');
+        $model = new Message();
+        $re = $model->updateAll($data,'id=:id', array(':id'=> $data['id']));
+        if($re){
+            $res['code'] = 1;
+            $res['message'] = '修改成功';
+        } else {
+            $res['code'] = 0;
+            $res['message'] = '修改失败';
+        }
+        die(json_encode($res));
 
     }
 }

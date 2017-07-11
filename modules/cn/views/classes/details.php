@@ -13,7 +13,7 @@
           <h2>SAT<?php echo $data['cate']?>课程</h2>
           <p>课时:<?php echo  $data['duration']?></p>
           <div class="s-object">课程对象：<?php echo $data['student']?></div>
-          <a href="#">立即预约</a>
+          <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">立即预约</a>
         </div>
       </div>
       <div class="s-introduce">

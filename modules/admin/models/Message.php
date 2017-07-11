@@ -9,20 +9,12 @@ namespace app\modules\admin\models;
 
 use yii\db\ActiveRecord;
 
-class Apply extends ActiveRecord
+class Message extends ActiveRecord
 {
     public static function tableName()
     {
-        return '{{%class_apply}}';
+        return '{{%message}}';
     }
 
-    public function rules()
-    {
-        return [
-            // username and password are both required
-            [['id','adress'], 'required'],
-
-        ];
-    }
 
 }
