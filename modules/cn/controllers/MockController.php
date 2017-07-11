@@ -142,10 +142,16 @@ class MockController extends Controller
         session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution);// 将答案保存到session里
+        $count= $a->Gettype();// 统计答题总数
         // 还是取下一题的qid
-        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
+        if($count<2){
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
 //        var_dump($data);die;
-        echo die(json_encode($data));
+            echo die(json_encode($data));
+        }else{
+            echo die(json_encode(rep));
+        }
+
     }
 
 //    public function actionReport()
