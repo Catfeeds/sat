@@ -205,7 +205,9 @@
 .work-submit {
     display: none;
 }
-/*遮罩层*/
+/**
+    遮罩层*
+*/
 .work-shade {
     position: absolute;
     display: none;
@@ -228,10 +230,7 @@
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
     border-radius: 20px;
     text-align: center;
 }
@@ -239,7 +238,7 @@
     padding: 0 10px;
     margin-top: 16%;
 }
-.shade-wrap span {
+.shade-wrap .shade-select>span {
     display: block;
     width: 190px;
     line-height: 42px;
@@ -250,12 +249,41 @@
     cursor: pointer;
     color: #fff;
 }
-.shade-wrap .shade-out:hover {
+.shade-wrap .shade-select .shade-out:hover {
     background-color: #333;
 }
-.shade-wrap .shade-in {
+.shade-wrap .shade-select .shade-in {
     background-color: rgb(54,178,251);
 }
-.shade-wrap .shade-in:hover {
+.shade-wrap .shade-select .shade-in:hover {
     background-color: rgb(48,167,237);
+}
+/*休息弹窗*/
+.relax-wrap>h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.relax-wrap>h4 {
+    padding: 5px 0;
+}
+.relax-wrap .shade-select {
+    margin-top: 10%;
+}
+.relax-wrap .five-count {
+    font-size: 30px;
+    color: rgb(54,178,251);
+}
+/*自动提交弹窗*/
+.auto-wrap {
+    /*display: block;*/
+}
+.auto-wrap .shade-select {
+    margin-top: 5%;
+}
+.auto-wrap .shade-select .auto-time {
+    font-size: 50px;
+    color: rgb(54,178,251);
+}
+.auto-wrap .shade-select>span {
+    margin: 0 auto;
 }

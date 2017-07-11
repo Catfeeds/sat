@@ -6,9 +6,9 @@
     <!-- 头部-->
     <div class="work-mk-top container">
         <div class="work-top-cnt row">
-            <p class="work-title-pos col-lg-3 col-md-3">第(1/5)题</p>
-            <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo substr($data['major'],0,4)?> Section<?php echo $data['section']?></span></h1>
-            <p class="work-collect col-lg-3 col-md-3"><i class="fa fa-star-o">&nbsp;</i>收藏</p>
+            <p class="work-title-pos col-lg-3 col-md-3"></p>
+            <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo $data['major']?> Section<?php echo $data['section']?></span></h1>
+            <p class="work-collect col-lg-3 col-md-3" data-value=""><i class="fa fa-star-o">&nbsp;</i>收藏</p>
         </div>
     </div>
     <!--数学-->
@@ -71,26 +71,26 @@
         ?>
       </div>
     </div>
-
     <div class="work-mk-btm container">
         <div class="work-btm-cnt row">
             <div class="work-out col-lg-1 col-md-1">
-                <i class="work-out-off icon-off"></i>
+                <i class="work-out-off fa fa-sign-out"></i>
                 <span>离开</span>
             </div>
             <div class="work-time col-lg-3 col-md-3">
                 <i class="work-time-icon icon-time"></i>
-                <span class="work-time-cnt"></span>
+                <span class="work-time-cnt">本section剩余时间:</span>
             </div>
             <div class="work-sec-process col-lg-4 col-md-4">
-                本section进度:<span>3</span>/<span><?php echo $amount?></span>
+
+                本section进度:<span class="sec-position">0</span>/<span class="sec-all-num"><?php echo $amount?></span>
             </div>
-            <div class="work-all-process col-lg-3 col-md-3">
-                做题总进度:<span><?php echo $count?></span>/<span>155</span>
+            <div class="work-all-process col-lg-2 col-md-2">
+                做题总进度:<span class="all-position"><?php echo $count?></span>/<span class="all-num">154</span>
             </div>
-            <div class="work-btm-next col-lg-1 col-md-1">
-                <a href="#">
-                    <i class="work-next-icon icon-caret-right"></i>NEXT</a>
+            <div class="work-btm-next col-lg-2 col-md-2">
+                <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>
+                <a href='#' class="work-submit"><i class="work-submit fa fa-upload"></i>提交</a>
             </div>
         </div>
     </div>

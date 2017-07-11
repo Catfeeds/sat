@@ -59,10 +59,10 @@ class MockController extends Controller
             if ($major == 'Math') {
                 $major = 'major="Math1" or major="Math2"';
                 $where = "where tpId=" . $id . " and $major";
-
+                $modle = 'mock_math';
             } else {
                 $where = "where tpId=" . $id . " and major='$major'";
-
+                $modle = 'mock_read';
             }
             $section = Yii::$app->db->createCommand("select DISTINCT section from {{%questions}} $where order by section asc limit 1")->queryOne();
         } else {
@@ -77,21 +77,15 @@ class MockController extends Controller
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne(); // 这里是一维还是二唯数据
         }
-        if ($data['major'] == 'Math1' || $data['major'] == 'Math2') {
-            $time = 80 * 60;
-            $amount = 58;
-            $amount = 1;
-            $modle = 'mock_math';
-        } elseif ($data['major'] == 'Reading') {
-            $time = 62 * 60;
-            $amount = 52;
-            $amount = 1;
-            $modle = 'mock_read';
-        } else {
-            $time = 35 * 60;
-            $amount = 44;
-            $amount = 1;
-            $modle = 'mock_read';
+        if($data['major']='Math1'||$data['major']='Math2'){
+            $time=80;
+            $amount=58;
+            $amount=2; $modle = 'mock_math';
+        }elseif($data['major']='Reading'){
+            $time=62;$amount=52;$amount=2; $modle = 'mock_read';
+        }else{
+            $time=35;$amount=44;$amount=3; $modle = 'mock_read';
+
         }
 //        var_dump($data);DIE;
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);
@@ -149,7 +143,7 @@ class MockController extends Controller
 //        var_dump($data);die;
             echo die(json_encode($data));
         }else{
-            echo die(json_encode(rep));
+            echo die(json_encode('rep'));
         }
 
     }
