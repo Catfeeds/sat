@@ -14,14 +14,14 @@ use app\modules\user\models\Login;
 class MessageController extends Controller
 {
     public function actionIndex(){
-        $data['name'] = Yii::$app->request->get('name');
-        $data['country'] = Yii::$app->request->get('country');
-        $data['goal'] = Yii::$app->request->get('score');
-        $data['examinationTime'] = Yii::$app->request->get('time');
+        $data['name'] = Yii::$app->request->post('name');
+        $data['country'] = Yii::$app->request->post('country');
+        $data['goal'] = Yii::$app->request->post('score');
+        $data['examinationTime'] = Yii::$app->request->post('time');
         $data['time'] = time();
-        $data['email'] = Yii::$app->request->get('email');
-        $data['phone'] = Yii::$app->request->get('tel');
-        $data['code'] = Yii::$app->request->get('code', '');
+        $data['email'] = Yii::$app->request->post('email');
+        $data['phone'] = Yii::$app->request->post('tel');
+        $data['code'] = Yii::$app->request->post('code', '');
         $model=new Login();
         $code=$model->checkCode($data['phone'],$data['code']);// 验证码是否正确
         if($code){
@@ -46,8 +46,6 @@ class MessageController extends Controller
             $re['message'] = '验证码不正确';
             die(json_encode($re));
         }
-
         die(json_encode($res));
     }
-
 }

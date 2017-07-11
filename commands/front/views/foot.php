@@ -91,7 +91,7 @@
                 <li>
                     <label for="">邮箱:</label>
                     <br/>
-                    <input class="apply-email" type="text" placeholder="请输入您的邮箱">
+                    <input class="apply-email" onblur="ckEmail(this)" type="text" placeholder="请输入您的邮箱">
                 </li>
                 <li>
                     <label for="">电话:</label>

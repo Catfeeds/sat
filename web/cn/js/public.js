@@ -38,11 +38,11 @@ $(function () {
   $('.side-bar li').mouseout(function () {
     $(this).children('div').hide();
   })
-  //小火箭
+  //小火箭置顶
   $('.side-arrow').click(function () {
    $('html,body').animate({scrollTop:0},'slow');
   })
-  //  底部课程报名
+  //SAT课程报名提交用户信息
   $('.apply-submit').click(function () {
     var name = $('.apply-name').val(),
         country = $('.apply-country').val(),
@@ -51,12 +51,6 @@ $(function () {
         email = $('.apply-email').val(),
         tel = $('.apply-tel').val(),
         code = $('.apply-cde').val();
-    //alert(name);
-    //alert(country);
-    //alert(score);
-    //alert(time);
-    //alert(email);
-    //alert(tel);
     if (name == '') {
       alert('请填写姓名哦！')
     } else if(time == '') {
@@ -68,27 +62,42 @@ $(function () {
     } else if(code == '') {
       alert('验证码怎么能为空呢！')
     }else {
-      $.get('/cn/message/index',{
-        'name':name,
-        'country':country,
-        'score':score,
-        'time':time,
-        'email':email,
-        'tel':tel,
-        'code':code
-      }, function (data) {
-        alert(data.message);
-      },"json")
+      $.ajax({
+        type: 'POST',
+        url: '/cn/message/index',
+        data: {
+          'name':name,
+          'country':country,
+          'score':score,
+          'time':time,
+          'email':email,
+          'tel':tel,
+          'code':code
+        },
+        dataType: 'json',
+        success: function (data) {
+          alert(data.message);
+        },
+        error: function(XMLHttpRequest){
+          alert( "Error:" + XMLHttpRequest.responseText);
+        }
+      })
     }
   })
   $('.apply-close').click(function () {
     $('.apply-fix').hide();
   })
-
 })
+//  邮箱验证
+function ckEmail(obj) {
+  var objValue = $(obj).val(),
+      rules = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+\.){1,63}[a-z0-9]+$/;
+  if (objValue.match(rules) == null) {
+    alert('请输入正确的邮箱！')
+  }
+}
 // 发送手机验证码
 function leftCode(){
-  //var phone = $('#tel').val();
   var tel = $('.apply-tel').val();
   $.post('/user/api/phone-code',{type:2,phoneNum:tel},function(re){
     alert(re.message);

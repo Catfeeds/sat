@@ -87,7 +87,7 @@
   var curPage = 1; //当前页码
   function getData(p) {
     $.ajax({
-      type: 'GET',
+      type: 'post',
       url: "/cn/pubclass/page",
       data: {
         'p': p
