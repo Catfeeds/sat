@@ -3,14 +3,13 @@
 <section>
   <div class="s-course s-w1200">
     <ul class="s-title-list">
-      <li class="active s-title"><a href="#allAround" data-toggle="tab">暑期全能小班</a></li>
-      <li class="s-title"><a href="#sprint" data-toggle="tab">暑期冲刺小班</a></li>
+      <li class="active s-title"><a href="#allAround" data-toggle="tab">全能小班</a></li>
+      <li class="s-title"><a href="#sprint" data-toggle="tab">冲刺小班</a></li>
       <li class="s-title"><a href="#weekend" data-toggle="tab">全能周末班</a></li>
-      <li class="s-title"><a href="#online" data-toggle="tab">在线强化班</a></li>
+      <li class="s-title"><a href="#online" data-toggle="tab">直播/录播课程</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade in active" id="allAround">
-<!--        <div class="s-desc">--><?php //echo isset($data[0]['student'])?$data[0]['student']:''?><!--</div>-->
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
@@ -39,7 +38,6 @@
         </div>
       </div>
       <div class="tab-pane fade" id="sprint">
-<!--        <div class="s-desc">--><?php //echo isset($data[1]['student'])?$data[1]['student']:''?><!--</div>-->
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
@@ -68,7 +66,6 @@
         </div>
       </div>
       <div class="tab-pane fade" id="weekend">
-<!--        <div class="s-desc">--><?php //echo isset($data[2]['student'])?$data[2]['student']:''?><!--</div>-->
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
@@ -97,9 +94,6 @@
         </div>
       </div>
       <div class="tab-pane fade" id="online">
-        <div class="s-desc">
-<!--          --><?php //echo isset($data[3]['student'])?$data[3]['student']:''?>
-        </div>
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
