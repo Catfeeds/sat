@@ -9,10 +9,13 @@
       <li class="s-title"><a href="#online" data-toggle="tab">直播/录播课程</a></li>
     </ul>
     <div class="tab-content">
+<!--      --><?php //foreach($data as $k=>$v){?>
+<!--          --><?php //if ($v['cate']=='VIP精品班')?>
       <div class="tab-pane fade in active" id="allAround">
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
+
             <div class="s-text-cnt"><?php echo isset($data[0]['introduction'])?$data[0]['introduction']:''?></div>
             <ul>
               <li>模块</li>
@@ -117,7 +120,7 @@
             </ul>
             <ul>
               <li>课时</li>
-              <?php if(isset($brr[3])){foreach($brr[3] as $v){
+              <?php if(($brr[3][0][0])!=false){foreach($brr[3] as $v){
                 echo '<li>'.$v[1].'</li>';}
               }?>
             </ul>
@@ -135,6 +138,7 @@
           </div>
         </div>
       </div>
+<!--      --><?php //}?>
     </div>
   </div>
 </section>

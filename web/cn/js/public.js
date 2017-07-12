@@ -99,7 +99,7 @@ function ckEmail(obj) {
 // 发送手机验证码
 function leftCode(){
   var tel = $('.apply-tel').val();
-  $.post('/user/api/phone-code',{type:2,phoneNum:tel},function(re){
+  $.post('/user/api/phone-code',{type:12,phoneNum:tel},function(re){
     alert(re.message);
   },"json")
 }

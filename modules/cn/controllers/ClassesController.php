@@ -18,7 +18,10 @@ class ClassesController extends Controller
     public $brr;
     public function actionIndex()
     {
-        $data = Yii::$app->db->createCommand("select * from {{%classes}} ")->queryAll();
+        $data[0] = Yii::$app->db->createCommand("select * from {{%classes}} where cate='VIP精品班'")->queryOne();
+        $data[1] = Yii::$app->db->createCommand("select * from {{%classes}} where cate='全能小班'")->queryOne();
+        $data[2] = Yii::$app->db->createCommand("select * from {{%classes}} where cate='冲刺小班'")->queryOne();
+        $data[3]= Yii::$app->db->createCommand("select * from {{%classes}} where cate='直播/录播课'")->queryOne();
         $arr=$this->brr=array();
         foreach($data as $k=>$v){
             array_push($arr,$v['duration']);
@@ -29,6 +32,8 @@ class ClassesController extends Controller
                 $this->brr[$i][$j]=explode(':',$this->brr[$i][$j]);
             }
         }
+//        var_dump($arr);die;
+//        var_dump($this->brr);die;
         return $this->render('index', ['data' => $data,'brr'=>$this->brr]);
     }
 
