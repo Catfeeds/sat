@@ -219,7 +219,7 @@
                                 <h4>主讲：<?php echo $v['subject']?></h4>
                                 <p><?php echo $v['introduction']?></p>
                             </div>
-                            <a href="#">立即预约</a>
+                            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">立即预约</a>
                         </li>
                         <?php }?>
                     </ul>

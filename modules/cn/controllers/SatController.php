@@ -31,4 +31,10 @@ class SatController extends Controller
         $user=$session->get('userData');
         return $this->render('index', ['classes' => $classes, 'infoNews' => $infoNews, 'infoAd' => $infoAd,'infoTest' => $infoTest,'user'=>$user, 'banner' => $banner, 'teachers' => $teachers, 'info1' => $info1, 'info3' => $info3,'pic'=>$pic]);
     }
+    public function actionSurprise()
+    {
+
+        return $this->render('surprise');
+    }
+
 }

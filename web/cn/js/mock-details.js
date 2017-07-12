@@ -16,6 +16,7 @@ $(function () {
     countTimeFun();
     //正计时
     upTime();
+    upTime('b');
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);
@@ -37,7 +38,7 @@ $(function () {
         $('.shade-wrap').hide();
     })
     $('.exit-out').click(function () {
-        clearSession();
+        clearSession('submit');
         exitOut();
     })
     //跳过休息点击事件
@@ -76,7 +77,6 @@ function workHeight() {
     $('.work-wrap-left').height(h);
     $('.work-wrap-right').height(h);
 }
-
 //倒计时
 function countTimeFun() {
     if (sessionStorage.countTime == undefined) {
@@ -107,19 +107,27 @@ function countTimeFun() {
     }
 }
 //正计时
-function upTime() {
-    var usedTime = 0;
+function upTime(flag) {
+    if (flag == 'b') {
+        if (sessionStorage.reltime == undefined) {
+            var usedTime = 0;
+        } else {
+            var usedTime = Number(sessionStorage.reltime);
+            console.log(usedTime);
+        }
+    } else {
+       var usedTime = 0;
+    }
+    //var usedTime = 0;
     var intervalId = setInterval(timer, 1000);
     function timer() {
         usedTime = usedTime + 1;
-        sessionStorage.uptime = usedTime;
-        //var mins = Math.floor(usedTime / 60);
-        //var secs = usedTime % 60;
-        //var hrs = Math.floor(usedTime / 3600);
-        //mins = checkTime(mins);
-        //secs = checkTime(secs);
-        //hrs = checkTime(hrs);
-        //console.log("已用时间："+ hrs +":" + mins + ":" + secs);
+        if (flag == 'b') {
+            sessionStorage.reltime = usedTime;
+        } else {
+            sessionStorage.uptime = usedTime;
+        }
+
     }
 }
 //休息倒计时
@@ -198,12 +206,14 @@ function process() {
 function clearSession(tag) {
     sessionStorage.removeItem('secPosition');
     sessionStorage.removeItem('countTime');
-    if (tag != 'submit') {
-        sessionStorage.removeItem('allPosition');
+    if (tag == 'submit') {
+        //sessionStorage.removeItem('allPosition');
+        sessionStorage.clear();
     }
 }
 //下一题、提交
 function ckBefore(flag,tag) {
+    console.log(sessionStorage.reltime);
     var ans = $('.work-select.active').data('id');//获取答案
     if (flag == 1) {
         //无选项下一题答案
@@ -229,28 +239,37 @@ function ckBefore(flag,tag) {
             testId = $('#testId').val(),//试卷ID
             subject = $('#subject').val(),//所属科目
             classify = $('#classify').val(),//题目类型（跨学科）
-            utime = $.cookie('uptime'),//单题计时
+            utime = sessionStorage.uptime,//单题计时,
+            allPos = sessionStorage.allPosition,//总进度,
+            allTime = sessionStorage.reltime,//做题总时间
             sec = $('#section').val(),//小节
             num = $('#number').val();//题号
         if (tag == 'submit') {//提交进入下一小节
-            clearSession(tag);
+            clearSession();
             $.get('/cn/mock/section',{
                 'tpId':testId,
                 'section':sec,
                 'qid':subId,
                 'solution':ans,
-                'utime': utime
+                'utime': utime,
+                'allPos': allPos,
+                'allTime': allTime
             },function(data){
-                if (data.section == 2 || data.section == 4) {
-                    workShade('.relax-wrap');
-                    relaxTime();
-                    relaxEvent = function () {
-                        $('.work-shade').hide();
-                        $('.relax-wrap').hide();
+                if (data == 'rep') {
+                    clearSession('submit');
+                    window.location.href = '/re.html';
+                }else{
+                    if (data.section == 2 || data.section == 4) {
+                        workShade('.relax-wrap');
+                        relaxTime();
+                        relaxEvent = function () {
+                            $('.work-shade').hide();
+                            $('.relax-wrap').hide();
+                            window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                        }
+                    } else {
                         window.location.href = '/mock_test?'+u+'&qid='+data.qid;
                     }
-                } else {
-                    window.location.href = '/mock_test?'+u+'&qid='+data.qid;
                 }
             },'json')
         } else {//下一题
