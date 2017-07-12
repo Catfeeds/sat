@@ -244,8 +244,9 @@ function ckBefore(flag,tag) {
                 'utime': utime
             },function(data){
                 if (data == 'rep') {
-                    alert('hahah');
-                } else {
+                    //alert('hahah');
+                    window.location.href = '/re.html';
+                }else{
                     if (data.section == 2 || data.section == 4) {
                         workShade('.relax-wrap');
                         relaxTime();

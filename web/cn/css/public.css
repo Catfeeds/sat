@@ -160,9 +160,9 @@ body {
 }
 .s-nav  .container {
   width: 1200px;
-  height: 50px;
-  line-height: 50px;
-  overflow: hidden;
+  /*height: 50px;*/
+  /*line-height: 50px;*/
+  /*overflow: hidden;*/
 }
 .s-nav .container .s-nav-logo {
   margin-right: 2%;
@@ -171,26 +171,25 @@ body {
  width: 170px;
  height: 50px;
 }
-.s-nav .s-nav-cnt {
-  line-height: 60px;
+.s-nav-cnt {
+  /*line-height: 60px;*/
+  padding-top: 20px;
   font-size: 0;
   margin-bottom: 0;
 }
-.s-nav .s-nav-cnt li {
+.s-nav-cnt li {
   display: inline-block;
 }
-.s-nav .s-nav-cnt li a {
+.s-nav-cnt li a {
   padding: 15px;
 }
-.s-nav .s-nav-cnt li a:hover,
-.s-nav .s-nav-cnt li a:focus {
+.s-nav-cnt li a:hover,
+.s-nav-cnt li a:focus {
   color: rgb(44,158,225);
   text-decoration: none;
-  /*background-color: #30A7ED;*/
 }
-.s-nav .s-nav-cnt li a.on {
+.s-nav-cnt li a.on {
   color: rgb(54,178,251);
-  /*background-color: #30A7ED;*/
 }
 .s-nav .s-nav-cnt li.s-nav-work {
   position: relative;
@@ -201,34 +200,38 @@ body {
   left: 10px;
   bottom: 3px;
 }
-.s-nav .s-nav-cnt li.s-nav-work ul {
+.s-nav-cnt li.s-nav-work ul {
   position: absolute;
-  top: 54px;
-  background-color: rgb(48, 167, 237);
+  top: 40px;
+  border-top: 2px solid rgb(54,178,251);
+  -webkit-box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+  background-color: #fff;
   z-index: 9;
 }
-.s-nav .s-nav-cnt li.s-nav-work ul.s-nav-showing {
+.s-nav-cnt li.s-nav-work ul.s-nav-showing {
   display: none;
 }
-.s-nav .s-nav-cnt li.s-nav-work ul li {
+.s-nav-cnt li.s-nav-work ul li {
   width: 100%;
+  line-height: 40px;
+  border-bottom: 1px dashed #ccc;
   text-align: center;
 }
-.s-nav .s-nav-cnt li.s-nav-work ul:hover {
-  background-color: rgb(44,158,225);
+.s-nav-cnt li.s-nav-work ul li:hover,
+.s-nav-cnt li.s-nav-work ul li:focus {
+  color: rgb(44,158,225);
 }
-.s-nav .s-nav-cnt li.s-nav-work ul li a {
-  color: #fff;
-}
-.s-nav .s-nav-cnt li.s-nav-work ul li:hover,
-.s-nav .s-nav-cnt li.s-nav-work ul li:focus {
-  background-color: rgb(44,158,225);
+.s-nav-cnt li.s-nav-work li a {
+  padding: 10px;
 }
 .s-nav form {
   position: relative;
   float: left;
   width: 150px;
-  height: 60px;
+  /*height: 60px;*/
+  padding-top: 15px;
   margin-left: 5%;
 }
 .s-nav form i{
@@ -251,7 +254,6 @@ body {
   padding: 3px 25px 3px 15px;
   font-size: 14px;
 }
-
 
 /*--------------------底部----------------------*/
 .s-footer-top {
@@ -316,188 +318,6 @@ body {
 /*.s-footer-bottom p a:hover {*/
   /*color:  #ccc;*/
 /*}*/
-/*--------------------登录注册-----------------*/
-.s-login{
-  background-color: rgba(0,0,0,.35);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  z-index: 99;
-}
-.s-login .s-login-cnt,
-.s-login .s-sign-cnt,
-.s-login .s-forget-cnt {
-  position: fixed;
-  width: 670px;
-  height: 425px;
-  padding: 55px 130px 45px;
-  background-color: rgb(251,251,251);
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  display: none;
-}
-.s-login .s-title {
-  position: relative;
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.s-login .s-title:before,
-.s-login .s-title:after {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 140px;
-  height: 2px;
-  background-color: #ccc;
-}
-.s-login .s-title:before {
-  left: 0;
-  top: 10px;
-}
-.s-login .s-title:after {
-  right: 0;
-  top: 10px;
-}
-.s-login button,
-.s-login .form-control{
-  width: 100%;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  outline: none;
-  border: none;
-}
-.s-login .form-control,
-.s-login .form-control {
-  -webkit-box-shadow:  3px 3px 3px #ccc;
-  -moz-box-shadow:  3px 3px 3px #ccc;
-  box-shadow:  3px 3px 3px #ccc;
-  margin-bottom: 33px;
-  padding: 5px 20px;
-  font-size: 14px;
-}
-.s-login .s-btn {
-  font-size: 16px;
-  letter-spacing: 20px;
-  background-color: rgb(54,178,251);
-  margin-bottom: 15px;
-}
-.s-login .s-btn:hover {
-  background-color: rgb(48,167,237);
-}
-/*关闭*/
-.s-login .icon-remove {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  color: #ccc;
-  font-size: 25px;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-}
-.s-login .icon-remove:hover {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-/*登录*/
-.s-login .s-login-cnt label {
-  font-size: 14px;
-  font-weight: 400;
-}
-.s-login .s-login-cnt form a{
-  font-size: 14px;
-  color: rgb(54,178,251);
-}
-.s-login .s-login-bottom,
-.s-login .s-sign-bottom {
-  margin-top: 30px;
-}
-.s-login .s-login-bottom a,
-.s-login .s-sign-bottom a {
-  font-size: 14px;
-  color: rgb(54,178,251);
-}
-/*注册*/
-.s-login .s-sign-code,
-.s-login .s-btn-code {
-  width: 40%;
-  display:  inline-block;
-}
-.s-login .s-btn-code {
-  font-size: 16px;
-  background-color: rgb(54,178,251);
-  color: #fff;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  margin-left: 10%;
-  padding: 5px;
-}
-.s-login .s-btn-code:hover {
-  background-color: rgb(48, 167, 237);
-}
-.s-login .s-sign-cnt .form-control,
-.s-login .s-forget-cnt .form-control{
-  margin-bottom: 20px;
-}
-.s-login .s-sign-bottom {
-  margin-top: 20px;
-}
-/*提示*/
-.s-tooltip {
-  position: relative;
-}
-.s-tooltip div {
-  position: absolute;
-  display: inline-block;
-  padding: 0 10px;
-  background-color: #FFCFCF;
-  border: 1px solid #FF1F1F;
-  font-size: 14px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  top: 0;
-  display: none;
-}
-.s-tooltip div:before,
-.s-tooltip div:after {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 0;
-  height: 0;
-}
-.s-tooltip div:before {
-  border: 8px solid transparent;
-  border-top-color: #FF1F1F;
-  bottom: -16px;
-  left: 50px
-}
-.s-tooltip div:after {
-  border: 7px solid transparent;
-  border-top-color: #FFCFCF;
-  bottom: -14px;
-  left: 51px;
-}
 /**
   侧边栏
 **/

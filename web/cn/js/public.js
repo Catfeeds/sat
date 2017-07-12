@@ -8,27 +8,29 @@ $(function () {
     } else {
       $('.s-nav-showing').hide();
     }
-    //APP下载
-    $('.appDownload').mouseenter(function () {
-      var _this=  $(this);
-      _this.css({'backgroundColor':'#f3f7f7'});
-      _this.children('span').css('color','#000');
-      $('.app-down').show();
-    })
-    $('.app-down li').mouseenter(function () {
-      var _this = $(this);
-      $('.app-box').hide();
-      $('.app-down li').removeClass('on');
-      _this.addClass('on');
-      _this.children('.app-box').show();
-    })
-    $('.appDownload').mouseleave(function () {
-      var _this = $(this);
-      $('.app-down').hide();
-      $('.app-box').hide();
-      _this.css({'backgroundColor':'#3d3d3d'});
-      _this.children('span').css('color','#f0f0f0');
-    })
+  })
+  //APP下载
+  $('.appDownload').on({
+    mouseenter: function () {
+    var _this=  $(this);
+    _this.css({'backgroundColor':'#f3f7f7'});
+    _this.children('span').css('color','#000');
+    $('.app-down').show();
+  },
+    mouseleave: function() {
+    var _this = $(this);
+    $('.app-down').hide();
+    $('.app-box').hide();
+    _this.css({'backgroundColor':'#3d3d3d'});
+    _this.children('span').css('color','#f0f0f0');
+  }
+  })
+  $('.app-down li').mouseenter(function () {
+    var _this = $(this);
+    $('.app-box').hide();
+    $('.app-down li').removeClass('on');
+    _this.addClass('on');
+    _this.children('.app-box').show();
   })
 //  模考收藏点击事件
   $('.work-collect').click(function () {
