@@ -48,8 +48,9 @@ class ReportController extends Controller
     public function actionReport()
     {
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
-        $uid=Yii::$app->session->get('uid',22);
-//        $uid= '222';
+        $uid=Yii::$app->session->get('uid');
+        $uid=222;
+        $user=Yii::$app->session->get('userData');
         $major=Yii::$app->request->get('major', 'All'); // 从前台得到还是从地址栏得到
         $answerData = ((array)$_SESSION['answer']);
         $answerData = $answerData['item'];// 获取用户的答题数据
@@ -58,9 +59,11 @@ class ReportController extends Controller
         $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
         $subscore   = $getscore->Subscore($number);
         $crosstest  = $getscore->CrossTest($number);
+        // 需要存到数据库里的数据
         $re['tpId']       = $_SESSION['tid'];
         $re['readnum']    = $number['Reading'];
         $re['part']       = $major;
+        $re['uid']        = $uid;
         $re['mathnum']    = $number['Math'];
         $re['writenum']   = $number['Writing'];
         $re['matherror']  = $number['matherror'];
@@ -70,8 +73,8 @@ class ReportController extends Controller
         $re['score']      = $score['total'];
         $re['crossScore'] = $crosstest['total'];
         $re['date']       = time();
-        $report['time']=500;// 可以在cookie中直接取
-        if ($uid) {
+        $re['time']=Yii::$app->session->get('time');// 做题总时间
+        if ($uid && $answerData!=false) { // 可能存在问题
             // 将答案组合成字符串
             static $temp = array();
             foreach ($answerData as $v) {
@@ -95,17 +98,20 @@ class ReportController extends Controller
             $ids = $report->arrToStr($tpId);
             $tp = Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
         } else {
-            // 临时报告怎么处理
-//            var_dump(111);die;
             $tp = '';
         }
-        $re = array_merge($re, $score);
-        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Math']  . "  and min<" . $score['Math'] . " and major='Math'")->queryOne();
-        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Reading']  . "  and min<" . $score['Reading'] . " and major='Reading'")->queryOne();
-        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $score['Writing']  . "  and min<" . $score['Writing']." and major='Writing'")->queryOne();
+        if($uid){
+            $re=$this->actionShow($uid);
+        }else{
+            $re = array_merge($re, $score);
+        }
+//
+        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
 //        var_dump( $re);die;
-//        var_dump( $suggest);die;
-        return $this->render('details', ['report' => $re, 'suggest' => $suggest,'tp' => $tp]);
+//        var_dump( $_SESSION);die;
+        return $this->render('details', ['report' => $re, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
     }
     // 根据二级页面的点击进入详情页面
     public function actionDetails()
@@ -212,5 +218,21 @@ class ReportController extends Controller
 //        var_dump( $suggest);die;
         return $this->render('details', ['report' => $re, 'suggest' => $suggest,'tp' => $tp]);
     }
+    public function actionShow($uid)
+    {
+        // 将session 的数据存到数据库
+//         根据试卷ID来取相关的数据
+        $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
+        $getscore   = new GetScore();
+//        $number     = $getscore->Number($answerData);
 
+        $number['Math']      =$data['mathnum'];
+        $number['Writing']   =$data['writenum'];
+        $number['Reading']   =$data['mathnum'];
+        $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
+        $subscore   = $data['subScore'];
+        $crosstest  = $data['crossScore'];
+        $re = array_merge($data, $score);
+        return $re;
+    }
 }
