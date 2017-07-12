@@ -79,6 +79,12 @@
 .s-course .s-text li:last-child {
   width: 80px;
 }
+/*开班时间*/
+.open-time {
+  margin-top: 40px;
+  font-weight: bold;
+}
+/*查看详情*/
 .s-course .s-consult {
   display: inline-block;
   padding: 5px 20px;

@@ -63,7 +63,7 @@ $(function () {
       alert('验证码怎么能为空呢！')
     }else {
       $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: '/cn/message/index',
         data: {
           'name':name,
