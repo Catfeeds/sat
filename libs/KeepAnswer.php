@@ -32,16 +32,18 @@ class KeepAnswer {
      *@$answer题目的答案
     */
 //    public function addPro($n_id,$answer,$solution,$major,$crossScore='',$subScore=''){
-    public function addPro($n_id,$solution){
+    public function addPro($n_id,$solution,$utime){
         if (array_key_exists($n_id,$this->item)) {
 //            $this->item[$n_id][2]=$solution;
             $this->item[$n_id][1]=$solution;
+            $this->item[$n_id][2]=$utime;
             return;
         }
         $this->item[$n_id] = array();
         array_push( $this->item[$n_id], $n_id);
 //        array_push( $this->item[$n_id], $answer);
         array_push( $this->item[$n_id], $solution);
+        array_push( $this->item[$n_id], $utime);
 //        array_push( $this->item[$n_id], $major);
 //        array_push( $this->item[$n_id], $crossScore);
 //        array_push( $this->item[$n_id], $subScore);

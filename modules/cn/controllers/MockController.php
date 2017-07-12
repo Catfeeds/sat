@@ -36,6 +36,10 @@ class MockController extends Controller
         $this->layout = 'cn1.php';
         $tid = Yii::$app->request->get('tid');
         $major = Yii::$app->request->get('m', '');
+        session_start();
+        if($_SESSION['answer']!=false){
+            $_SESSION['answer']='';
+        }
         return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 
 
@@ -84,7 +88,7 @@ class MockController extends Controller
         }elseif($data['major']=='Reading'){
             $time=62;$amount=52;$amount=2; $modle = 'mock_read';
         }else{
-            $time=35;$amount=44;$amount=3; $modle = 'mock_read';
+            $time=35;$amount=44;$amount=0; $modle = 'mock_read';
 
         }
 //        var_dump($data);DIE;
@@ -101,14 +105,15 @@ class MockController extends Controller
         $tid = Yii::$app->request->get('tid');
         $qid = Yii::$app->request->get('qid');
         $uid = Yii::$app->request->get('uid');
+        $utime = Yii::$app->request->get('utime');
         $number = Yii::$app->request->get('number');
         $section = Yii::$app->request->get('section');
         session_start();
         $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $solution);
+        $re = $a->addPro($qid, $solution,$utime);
         $_SESSION['uid'] = $uid;
         $_SESSION['tid'] = $tid;
-        $re = $a->addPro($qid, $solution);
+//        $re = $a->addPro($qid, $solution,$utime);
         $next['sectionNum'] = $a->Gettype();// 目前第几题
         $next['mkNum'] = 5;// 所答第几题/总题数
 //        $next=Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id>".$qid." and tpId=".$tid." and major='$major' limit 1 ")->queryOne();
@@ -127,19 +132,21 @@ class MockController extends Controller
 
     public function actionSection()
     {
-        $number = Yii::$app->request->get('number');
+//        $number = Yii::$app->request->get('number');
         $section = Yii::$app->request->get('section');
+        $count = Yii::$app->request->get('count',8);
         $section = $section + 1;
         $tid = Yii::$app->request->get('tpId');
         $qid = Yii::$app->request->get('qid');
+        $utime = Yii::$app->request->get('utime');
         $solution = Yii::$app->request->get('solution');// 用户提交的答案
         session_start();
         $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $solution);// 将答案保存到session里
-        $count= $a->Gettype();// 统计答题总数
-        // 还是取下一题的qid
-        if($count<2){
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
+        $re = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
+        // 统计答题总数
+
+        if($count<8){
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
 //        var_dump($data);die;
             echo die(json_encode($data));
         }else{
