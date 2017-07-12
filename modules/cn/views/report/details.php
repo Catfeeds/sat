@@ -10,7 +10,7 @@
     <!--头部banner区-->
     <div class="report-banner">
         <div class="report-bnr-cnt">
-            <span>lala</span>
+            <span><?php echo ($user['nickname']!=false)?$user['nickname']:''?></span>
             同学你好,以下是你的考试分析报告
         </div>
     </div>
@@ -153,7 +153,7 @@
 <!--底部-->
 <script>
     $(function () {
-        barChart('reportTime',[[100,230]],["你的时间","标准时间"],["做题时间"],{xAxisColor:'#002D71', xRotation:0, title: "做题时间", subtitle:'', yAxisUnit: '(min)', color: ['#36B2FB'], min: 0, max: 230, tooltipUnit: 'min', showValue: true})
+        barChart('reportTime',[[parseInt(<?php echo Yii::$app->session->get('time')/60?>),230]],["你的时间","标准时间"],["做题时间"],{xAxisColor:'#002D71', xRotation:0, title: "做题时间", subtitle:'', yAxisUnit: '(min)', color: ['#36B2FB'], min: 0, max: 230, tooltipUnit: 'min', showValue: true})
         // 阅读
         pieChart('repReading',[parseInt('<?php echo $report['readnum']/52*100?>'),parseInt('<?php echo $report['readerror']/52*100?>'),parseInt('<?php echo (52-$report['readnum']-$report['readerror'])/52*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
         pieChart('repWriting',[parseInt('<?php echo $report['writenum']/44*100?>'),parseInt('<?php echo $report['writeerror']/44*100?>'),parseInt('<?php echo (44-$report['writenum']-$report['writeerror'])/44*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});

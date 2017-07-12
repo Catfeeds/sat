@@ -37,9 +37,10 @@ class MockController extends Controller
         $tid = Yii::$app->request->get('tid');
         $major = Yii::$app->request->get('m', '');
         session_start();
-        if($_SESSION['answer']!=false){
+        if(isset($_SESSION['answer'])){
             $_SESSION['answer']='';
         }
+//        var_dump($_SESSION);die;
         return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 
 
@@ -134,13 +135,15 @@ class MockController extends Controller
     {
 //        $number = Yii::$app->request->get('number');
         $section = Yii::$app->request->get('section');
-        $count = Yii::$app->request->get('count',8);
+        $count = Yii::$app->request->get('allPos');
         $section = $section + 1;
         $tid = Yii::$app->request->get('tpId');
         $qid = Yii::$app->request->get('qid');
         $utime = Yii::$app->request->get('utime');
+        $time = Yii::$app->request->get('allTime');
+        Yii::$app->session->set('time',$time);
         $solution = Yii::$app->request->get('solution');// 用户提交的答案
-        session_start();
+//        session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
         // 统计答题总数
