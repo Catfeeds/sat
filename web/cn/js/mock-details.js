@@ -12,18 +12,17 @@ $(function () {
 
     //做题区域高度自适应
     workHeight();
-    //倒计时待完善
-    //if ($('.notice-wrap').css('display') != 'block') {
-    //    countTime();
-    //}
-    countTime();
+    //倒计时
+    countTimeFun();
+    //正计时
     upTime();
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);
     })
     $('.do-next').click(function () {
-        ckBefore(1);
+        //ckBefore(1);
+        ckBefore(0,'submit');
     })
     //提交点击事件
     $('.work-submit').click(function () {
@@ -38,7 +37,7 @@ $(function () {
         $('.shade-wrap').hide();
     })
     $('.exit-out').click(function () {
-        clearCookie();
+        clearSession();
         exitOut();
     })
     //跳过休息点击事件
@@ -46,10 +45,10 @@ $(function () {
         relaxEvent();
     })
     //做题进度
-    if ($.cookie('secPosition') == undefined || $.cookie('secPosition') == '') {
+    if (sessionStorage.secPosition == undefined) {
         var secNum = $('.sec-position').html();
     } else {
-        secNum = $.cookie('secPosition');
+        secNum = sessionStorage.secPosition;
         //显示下一题或提交按钮
         if (secNum >= $('.sec-all-num').html()-1) {
             $('.work-next-icon').hide();
@@ -57,10 +56,10 @@ $(function () {
         }
     }
     $('.sec-position').html(secNum);
-    if($.cookie('allPosition') == undefined || $.cookie('allPosition') == '') {
+    if (sessionStorage.allPosition == undefined) {
         var allNum = $('.all-position').html();
     }else {
-        allNum = $.cookie('allPosition');
+        allNum = sessionStorage.allPosition;
     }
     $('.all-position').html(allNum);
 })
@@ -79,13 +78,14 @@ function workHeight() {
 }
 
 //倒计时
-function countTime() {
-    if ($.cookie('countTime') == undefined) {
+function countTimeFun() {
+    if (sessionStorage.countTime == undefined) {
         TOTALTIME = $('#sectionTime').val();
     } else {
-        TOTALTIME = $.cookie('countTime')/60;
+        TOTALTIME = sessionStorage.countTime / 60;
     }
     TIME = Number(TOTALTIME*60);
+    timer();
     var intervalId = setInterval(timer,1000);
     function timer() {
         TIME--;
@@ -112,14 +112,14 @@ function upTime() {
     var intervalId = setInterval(timer, 1000);
     function timer() {
         usedTime = usedTime + 1;
-        $.cookie("uptime", usedTime, {expires: 1, path:"/"});
-        var mins = Math.floor(usedTime / 60);
-        var secs = usedTime % 60;
-        var hrs = Math.floor(usedTime / 3600);
-        mins = checkTime(mins);
-        secs = checkTime(secs);
-        hrs = checkTime(hrs);
-        console.log("已用时间："+ hrs +":" + mins + ":" + secs);
+        sessionStorage.uptime = usedTime;
+        //var mins = Math.floor(usedTime / 60);
+        //var secs = usedTime % 60;
+        //var hrs = Math.floor(usedTime / 3600);
+        //mins = checkTime(mins);
+        //secs = checkTime(secs);
+        //hrs = checkTime(hrs);
+        //console.log("已用时间："+ hrs +":" + mins + ":" + secs);
     }
 }
 //休息倒计时
@@ -177,36 +177,34 @@ function autoSubmit() {
 // }
 //下一题、提交时进入进度、倒计时函数
 function process() {
-    $.cookie('countTime',TIME);
-    if ($.cookie('secPosition') == undefined || $.cookie('secPosition') == '') {
+    sessionStorage.countTime = TIME;
+    if (sessionStorage.secPosition == undefined) {
         secNum = $('.sec-position').html();
     } else {
-        secNum = $.cookie('secPosition');
+        secNum = sessionStorage.secPosition;
     }
     secNum++;
-    $.cookie('secPosition',secNum);//小节进度
-    if($.cookie('allPosition') == undefined || $.cookie('allPosition') == '') {
+    sessionStorage.secPosition = secNum;
+    if (sessionStorage.allPosition == undefined) {
         allNum = $('.all-position').html();
-    }else {
-        allNum = $.cookie('allPosition');
+    } else {
+        allNum = sessionStorage.allPosition;
     }
     allNum++;
-    $.cookie('allPosition',allNum);//全部进度
-
+    sessionStorage.allPosition = allNum;
 }
 
-//清空cookie
-function clearCookie(tag) {
-    $.cookie('secPosition','',{expires:-1});
-    $.cookie('countTime','',{expires:-1});
+//清空sessionStorage
+function clearSession(tag) {
+    sessionStorage.removeItem('secPosition');
+    sessionStorage.removeItem('countTime');
     if (tag != 'submit') {
-        $.cookie('allPosition','',{expires:-1});
+        sessionStorage.removeItem('allPosition');
     }
 }
 //下一题、提交
 function ckBefore(flag,tag) {
-    console.log($.cookie('uptime'));
-    var ans = $('.work-select.active').data('id');
+    var ans = $('.work-select.active').data('id');//获取答案
     if (flag == 1) {
         //无选项下一题答案
         ans = '';
@@ -235,7 +233,7 @@ function ckBefore(flag,tag) {
             sec = $('#section').val(),//小节
             num = $('#number').val();//题号
         if (tag == 'submit') {//提交进入下一小节
-            clearCookie(tag);
+            clearSession(tag);
             $.get('/cn/mock/section',{
                 'tpId':testId,
                 'section':sec,
@@ -255,7 +253,7 @@ function ckBefore(flag,tag) {
                     window.location.href = '/mock_test?'+u+'&qid='+data.qid;
                 }
             },'json')
-        } else {
+        } else {//下一题
             $.ajax({
                 type: 'get',
                 url: "/cn/mock/next",

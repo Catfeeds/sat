@@ -71,11 +71,11 @@ class MockController extends Controller
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid )->queryOne(); // 这里是一维还是二唯数据
         }
-        if($data['major']='Math1'||$data['major']='Math2'){
+        if($data['major']=='Math1'||$data['major']=='Math2'){
             $time=80;
             $amount=58;
             $amount=2;
-        }elseif($data['major']='Reading'){
+        }elseif($data['major']=='Reading'){
             $time=62;$amount=52;$amount=2;
         }else{
             $time=35;$amount=44;$amount=3;
