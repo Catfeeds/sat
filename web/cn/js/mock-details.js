@@ -23,7 +23,7 @@ $(function () {
     })
     $('.do-next').click(function () {
         //ckBefore(1);
-        ckBefore(0,'submit');
+        ckBefore(2,'submit');
     })
     //提交点击事件
     $('.work-submit').click(function () {
@@ -93,8 +93,6 @@ function countTimeFun() {
             clearInterval(intervalId);
             workShade('.auto-wrap');
             autoTime();
-            // autoSubmit();
-            //ckBefore(2);
         }
         var min = Math.floor(TIME/60),
             sec = TIME % 60,
@@ -118,7 +116,6 @@ function upTime(flag) {
     } else {
        var usedTime = 0;
     }
-    //var usedTime = 0;
     var intervalId = setInterval(timer, 1000);
     function timer() {
         usedTime = usedTime + 1;
@@ -207,7 +204,6 @@ function clearSession(tag) {
     sessionStorage.removeItem('secPosition');
     sessionStorage.removeItem('countTime');
     if (tag == 'submit') {
-        //sessionStorage.removeItem('allPosition');
         sessionStorage.clear();
     }
 }

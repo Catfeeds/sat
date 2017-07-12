@@ -134,7 +134,7 @@ class MockController extends Controller
     {
 //        $number = Yii::$app->request->get('number');
         $section = Yii::$app->request->get('section');
-        $count = Yii::$app->request->get('count',8);
+        $count = Yii::$app->request->get('allPos');
         $section = $section + 1;
         $tid = Yii::$app->request->get('tpId');
         $qid = Yii::$app->request->get('qid');
