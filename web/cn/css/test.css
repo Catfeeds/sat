@@ -116,6 +116,7 @@
   font-size: 14px;
 }
 .s-test .s-right-subject li {
+  padding: 10px 0;
   border-bottom: 1px dashed #ccc;
 }
 .s-test .s-right-subject h2 {
@@ -142,13 +143,23 @@
   right: 0;
 }
 .s-test .s-right-subject h3 {
-  font-size: 14px;
+  float: left;
+  padding: 5px;
+  margin: 0;
+  font-size: 16px;
 }
 .s-test .s-right-subject a {
   display: block;
   max-height: 100px;
   overflow: hidden;
   font-size: 14px;
+}
+.s-test .s-right-subject a:hover {
+  text-decoration: none;
+}
+.s-test .s-right-subject a:hover p,
+.s-test .s-right-subject a:hover span{
+  color: rgb(54,178,251);
 }
 .s-test .s-right-subject p {
   margin: 0;
