@@ -134,14 +134,12 @@ function collectEvent(obj) {
           _this.find('i').removeClass('fa-star-o');
           _this.find('i').addClass('fa-star');
           _this.data('value',1);
-          _this.children('span').html('已收藏');
           alert(data.message);
         } else if(data.code == 2){//取消收藏
           _this.removeClass('active');
           _this.find('i').removeClass('fa-star');
           _this.find('i').addClass('fa-star-o');
           _this.data('value',0);
-          _this.children('span').html('收藏');
           alert(data.message);
         } else {
           alert(data.message);

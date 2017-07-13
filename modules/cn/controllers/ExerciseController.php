@@ -28,16 +28,18 @@ class ExerciseController extends Controller
     public function actionExercise()
     {
         $id=Yii::$app->request->get('id');
+//        var_dump($id);die;
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryOne();
-        if($data['major']=='Math1'||$data['major']=='Math2') {
-            $major='Math';
-        }else{
+//        var_dump($data);die;
+//        if($data['major']=='Math1'||$data['major']=='Math2') {
+//            $major='Math';
+//        }else{
             $major=$data['major'];
-        }
+//        }
         $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= '$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id asc limit 1" )->queryOne();
         $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id<".$id." and major='$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id desc limit 1" )->queryOne();
         // 查找题目是否收藏
-        $data['uid']=Yii::$app->session->get('uid','444');
+        $data['uid']=Yii::$app->session->get('uid',444);
         if($data['uid']){
             $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
             $collection=explode(',',$arr['qid']);

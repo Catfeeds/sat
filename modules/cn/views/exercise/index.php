@@ -28,11 +28,11 @@
             <li>
               <h3><?php echo $v['qid']?></h3>
               <div><?php
-                if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
-                  echo $v['essay'];
-                }else{
+//                if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
+//                  echo $v['essay'];
+//                }else{
                   echo $v['content'];
-                }
+//                }
                   ?>
               </div>
               <a href="/exercise_details/<?php echo $v['qid']?>.html">做题</a>
@@ -53,11 +53,11 @@
             <h3><?php echo $v['qid']?></h3>
             <a href="/exercise_details/<?php echo $v['qid']?>.html">
               <?php
-              if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
-                echo $v['essay'];
-              }else{
+//              if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
+//                echo $v['essay'];
+//              }else{
                 echo $v['content'];
-              }
+//              }
               ?>
             </a>
           <li>
