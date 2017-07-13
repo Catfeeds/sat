@@ -16,11 +16,10 @@ class ExerciseController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
-       $model=new Questions();
+        $model=new Questions();
         $data=$model->data();
         $str=$data['str'];
         unset($data['str']);
-//        var_dump($data);die;
         $arr = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 6")->queryAll();
         return $this->render('index',['data'=>$data,'page'=>$str,'arr'=>$arr]);
     }

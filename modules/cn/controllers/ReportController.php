@@ -49,69 +49,74 @@ class ReportController extends Controller
     {
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
         $uid=Yii::$app->session->get('uid');
-        $uid=222;
+//        $uid=222;
         $user=Yii::$app->session->get('userData');
         $major=Yii::$app->request->get('major', 'All'); // 从前台得到还是从地址栏得到
-        $answerData = ((array)$_SESSION['answer']);
-        $answerData = $answerData['item'];// 获取用户的答题数据
-        $getscore   = new GetScore();
-        $number     = $getscore->Number($answerData);
-        $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
-        $subscore   = $getscore->Subscore($number);
-        $crosstest  = $getscore->CrossTest($number);
-        // 需要存到数据库里的数据
-        $re['tpId']       = $_SESSION['tid'];
-        $re['readnum']    = $number['Reading'];
-        $re['part']       = $major;
-        $re['uid']        = $uid;
-        $re['mathnum']    = $number['Math'];
-        $re['writenum']   = $number['Writing'];
-        $re['matherror']  = $number['matherror'];
-        $re['readerror']  = $number['readerror'];
-        $re['writeerror'] = $number['writeerror'];
-        $re['subScore']   = $subscore['total'];
-        $re['score']      = $score['total'];
-        $re['crossScore'] = $crosstest['total'];
-        $re['date']       = time();
-        $re['time']=Yii::$app->session->get('time');// 做题总时间
-        if ($uid && $answerData!=false) { // 可能存在问题
-            // 将答案组合成字符串
-            static $temp = array();
-            foreach ($answerData as $v) {
-                $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
-                $temp[] = $v;
+        if(isset($_SESSION['answer'])) {
+            $answerData = ((array)$_SESSION['answer']);
+            $answerData = $answerData['item'];// 获取用户的答题数据
+            $getscore = new GetScore();
+            $number = $getscore->Number($answerData);
+            $score = $getscore->Score($number);// 各科分数均有，按科目的分类
+            $subscore = $getscore->Subscore($number);
+            $crosstest = $getscore->CrossTest($number);
+            // 需要存到数据库里的数据
+            $re['tpId'] = $_SESSION['tid'];
+            $re['readnum'] = $number['Reading'];
+            $re['part'] = $major;
+            $re['uid'] = $uid;
+            $re['mathnum'] = $number['Math'];
+            $re['writenum'] = $number['Writing'];
+            $re['matherror'] = $number['matherror'];
+            $re['readerror'] = $number['readerror'];
+            $re['writeerror'] = $number['writeerror'];
+            $re['subScore'] = $subscore['total'];
+            $re['score'] = $score['total'];
+            $re['crossScore'] = $crosstest['total'];
+            $re['date'] = time();
+            $re['time'] = Yii::$app->session->get('time');// 做题总时间
+            if ($uid) { // 可能存在问题
+                // 将答案组合成字符串
+                static $temp = array();
+                foreach ($answerData as $v) {
+                    $v = join(",", $v); //可以用implode将一维数组转换为用逗号连接的字符串
+                    $temp[] = $v;
+                }
+                $t = "";
+                foreach ($temp as $v) {
+                    $t .= $v . ";";
+                }
+                $t = substr($t, 0, -1);
+                $re['answer'] = $t;
+                $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+                if ($res) {
+                    $a = KeepAnswer::getCat();
+                    $a->Emptyitem();
+                }//入库完成
+                // 历史报告
+                $tpId = Yii::$app->db->createCommand("select tpId from {{%report}} where uid=" . $uid)->queryAll();
+                $report = new Report();
+                $ids = $report->arrToStr($tpId);
+                $tp = Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
+                // 取出最新的一次报告
+                $res = $this->actionShow($uid);
+            } else {
+                $res = array_merge($re, $score);
+                $tp = '';
             }
-            $t = "";
-            foreach ($temp as $v) {
-                $t .= $v . ";";
-            }
-            $t = substr($t, 0, -1);
-            $re['answer'] = $t;
-            $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-            if ($res) {
-                $a = KeepAnswer::getCat();
-                $a->Emptyitem();
-            }
-            // 历史报告
-            $tpId = Yii::$app->db->createCommand("select tpId from {{%report}} where uid=" . $uid)->queryAll();
-            $report = new Report();
-            $ids = $report->arrToStr($tpId);
-            $tp = Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
-        } else {
-            $tp = '';
-        }
-        if($uid){
-            $re=$this->actionShow($uid);
+
         }else{
-            $re = array_merge($re, $score);
+            if($uid){
+                $res = $this->actionShow($uid);
+            }else{
+                echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+                die;
+            }
         }
-//
-        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
-        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
-        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
-//        var_dump( $re);die;
-//        var_dump( $_SESSION);die;
-        return $this->render('details', ['report' => $re, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
+        return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
     }
     // 根据二级页面的点击进入详情页面
     public function actionDetails()

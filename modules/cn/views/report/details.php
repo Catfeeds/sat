@@ -145,7 +145,24 @@
         <div class="report-details">
             <h3 class="report-title">答题情况</h3>
             <div class="report-wrap">
-
+                <ul class="rep-subject">
+                    <li>阅读section1</li>
+                    <li>文法sesction2</li>
+                    <li>数学section3</li>
+                    <li>数学section4</li>
+                </ul>
+                <div class="ans-cnt">
+                    <ul>
+                        <li>全部题目</li>
+                        <li>查看错题</li>
+                        <li>耗时较长题目</li>
+                    </ul>
+                    <ol>
+                        <li>
+                            
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>

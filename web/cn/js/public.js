@@ -61,11 +61,12 @@ $(function () {
     $('.math-gap-table tr').addClass('sure');
     $('.math-gap-table').addClass('sure');
     $('.math-gap-table td').hover(function () {
-      $('.math-gap-table td').css({
+      $(".math-gap-table td:not('.math-gap-result')").css({
         'color': '#ccc',
         'backgroundColor': '#f1f1f1'
       })
     });
+    $('.math-gap-table .math-gap-result').css('color','rgb(54,178,251)');
   })
   //  侧边栏
   $('.side-bar li').mousemove(function () {
@@ -130,12 +131,14 @@ function collectEvent(obj) {
           _this.find('i').removeClass('fa-star-o');
           _this.find('i').addClass('fa-star');
           _this.data('value',1);
+          _this.children('span').html('已收藏');
           alert(data.message);
         } else if(data.code == 2){//取消收藏
           _this.removeClass('active');
           _this.find('i').removeClass('fa-star');
           _this.find('i').addClass('fa-star-o');
           _this.data('value',0);
+          _this.children('span').html('收藏');
           alert(data.message);
         } else {
           alert(data.message);
