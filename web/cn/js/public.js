@@ -44,10 +44,18 @@ $(function () {
 //  练习、模考数学填空点击事件
   var result = $('.math-gap-result input');
   $('.math-btn').click(function () {
-    result.get(0).value += $(this).html();
+    if ($('.math-gap-table').hasClass('sure')) {
+      return false;
+    }else {
+      result.get(0).value += $(this).html();
+    }
   })
   $('.math-clear').click(function () {
-    result.val('');
+    if ($('.math-gap-table').hasClass('sure')) {
+      return false;
+    }else {
+      result.val('');
+    }
   })
   $('.math-sure').click(function () {
     $('.math-gap-table tr').addClass('sure');
@@ -58,7 +66,6 @@ $(function () {
         'backgroundColor': '#f1f1f1'
       })
     });
-    $('.math-btn').removeClass('math-btn');
   })
   //  侧边栏
   $('.side-bar li').mousemove(function () {
@@ -92,17 +99,6 @@ $(function () {
     } else if(code == '') {
       alert('验证码怎么能为空呢！')
     }
-    //$.post('',{
-    //  'name':name,
-    //  'country':country,
-    //  'score':score,
-    //  'time':time,
-    //  'email':email,
-    //  'tel':tel,
-    //  'code':code
-    //}, function (data) {
-    //  alert(data);
-    //})
   })
   $('.apply-close').click(function () {
     $('.apply-fix').hide();

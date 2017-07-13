@@ -40,7 +40,7 @@
                 <div class="work-que"> <?php echo $data['keyD']?></div>
               </li>
             </ul>
-             <!--  数学填空-->-->
+             <!--  数学填空-->
             <table class="math-gap-table" border="1" align="center">
               <tr>
                 <td class="math-gap-result" colspan="4"><input type="text"></td>
@@ -197,15 +197,15 @@
         $('.correct-ans-hide').fadeIn();
       }
     })
-    $('.math-sure').click(function () {
-      var v = eval($('.math-gap-result input').val());
-      v = Math.floor(v*1000)/1000;
-      var r = eval($('.correct-answer').html());
-      r = Math.floor(r*1000)/1000;
-      if (v != r) {
-        $('.correct-ans-hide').fadeIn();
-      }
-    })
+//    $('.math-sure').click(function () {
+//      var v = eval($('.math-gap-result input').val());
+//      v = Math.floor(v*1000)/1000;
+//      var r = eval($('.correct-answer').html());
+//      r = Math.floor(r*1000)/1000;
+//      if (v != r) {
+//        $('.correct-ans-hide').fadeIn();
+//      }
+//    })
   })
 //  判断是否最后一道题
   function noQuestion(obj) {
