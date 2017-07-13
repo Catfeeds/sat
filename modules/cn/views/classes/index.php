@@ -6,7 +6,7 @@
       <li class="active s-title"><a href="#allAround" data-toggle="tab">VIP精品班</a></li>
       <li class="s-title"><a href="#sprint" data-toggle="tab">全能小班</a></li>
       <li class="s-title"><a href="#weekend" data-toggle="tab">冲刺小班</a></li>
-      <li class="s-title"><a href="#online" data-toggle="tab">直播/录播课程</a></li>
+      <li class="s-title"><a href="#online" data-toggle="tab">直播|视频课程</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade in active" id="allAround">
@@ -27,7 +27,8 @@
               }?>
             </ul>
             <div class="open-time">
-              开班时间：<span>报名10课时起开班</span>
+              <span class="pull-left">开班时间：</span>
+              <p><span>随报随学，10课时起</span></p>
             </div>
             <a class="s-consult" href="<?php echo isset($data[0]['id'])?'/class_details/'.$data[0]['id'].'.html':'#'?>">查看详情</a>
           </div>
@@ -58,7 +59,9 @@
               }?>
             </ul>
             <div class="open-time">
-              开班时间：<span>寒暑假班</span>
+              <span class="pull-left">开班时间：</span>
+              <p><span>寒暑假班</span><br/>
+                <span>周末班</span></p>
             </div>
             <a class="s-consult" href="<?php echo isset($data[1]['id'])?'/class_details/'.$data[1]['id'].'.html':'#'?>">查看详情</a>
           </div>
@@ -89,7 +92,9 @@
               }?>
             </ul>
             <div class="open-time">
-              开班时间：<span>寒暑假班</span>
+              <span class="pull-left">开班时间：</span>
+              <p><span>寒暑假班</span><br/>
+                <span>周末班</span></p>
             </div>
             <a class="s-consult" href="<?php echo isset($data[2]['id'])?'/class_details/'.$data[2]['id'].'.html':'#'?>">查看详情</a>
           </div>
@@ -122,7 +127,9 @@
               }?>
             </ul>
             <div class="open-time">
-              开班时间：<span>在线互动</span>
+              <span class="pull-left">开班时间：</span>
+              <p><span>直播|寒暑假班、周末班</span><br/>
+                <span>视频|随时开班</span></p>
             </div>
             <a class="s-consult" href="<?php echo isset($data[3]['id'])?'/class_details/'.$data[3]['id'].'.html':'#'?>">查看详情</a>
           </div>
