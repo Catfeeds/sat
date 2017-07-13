@@ -246,37 +246,39 @@ class ApiController extends Controller
     public function actionLoginOut()
 
     {
-
-        $session = Yii::$app->session;
-
-        $startListening = $session->get('startListening');
-
-        $userId = $session->get('userId');
-
-        if ($startListening) {
-
-            $testId = Yii::$app->session->get('testId');
-
-            $deltaTime = time() - $startListening;
-
-            $sign = HistoryRecord::find()->where("userId=$userId AND testId=$testId AND recordType=2")->one();
-
-            HistoryRecord::updateAll(['deltaTime' => $sign->deltaTime + $deltaTime], "userId=$userId AND testId=$testId AND recordType=2");
-
-            Yii::$app->session->remove('startListening');
-
-            Yii::$app->session->remove('testId');
-
-        }
-
-        $session->remove('userData');
-
-        $session->remove('userId');;
-
-        @unlink("html\cn\heard.html");
-
-        die(json_encode(['code' => 1]));
-
+        include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
+//        $uid=Yii::$app->session->get('uid');
+        $loginOut=uc_user_synlogin();
+//        $session = Yii::$app->session;
+//
+//        $startListening = $session->get('startListening');
+//
+//        $userId = $session->get('userId');
+//
+//        if ($startListening) {
+//
+//            $testId = Yii::$app->session->get('testId');
+//
+//            $deltaTime = time() - $startListening;
+//
+//            $sign = HistoryRecord::find()->where("userId=$userId AND testId=$testId AND recordType=2")->one();
+//
+//            HistoryRecord::updateAll(['deltaTime' => $sign->deltaTime + $deltaTime], "userId=$userId AND testId=$testId AND recordType=2");
+//
+//            Yii::$app->session->remove('startListening');
+//
+//            Yii::$app->session->remove('testId');
+//
+//        }
+//
+//        $session->remove('userData');
+//
+//        $session->remove('userId');;
+//
+//        @unlink("html\cn\heard.html");
+//
+//        die(json_encode(['code' => 1]));
+        echo $loginOut;
     }
 
 

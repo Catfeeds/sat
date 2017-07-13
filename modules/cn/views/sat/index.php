@@ -127,7 +127,7 @@
                 <div class="s-information s-news">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
-                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.thinkuedu.com/info.html?c=n"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -149,7 +149,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
-                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.thinkuedu.com/info.html?c=t"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -220,7 +220,7 @@
                                 <h4>主讲：<?php echo $v['subject']?></h4>
                                 <p><?php echo $v['introduction']?></p>
                             </div>
-                            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">立即预约</a>
+                            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">立即预约</a>
                         </li>
                         <?php }?>
                     </ul>
