@@ -16,13 +16,13 @@ class CollectionController extends Controller
     public function actionCollection()
     {
         $data['qid'] =(string)Yii::$app->request->get('subID', '');
-        $data['qid'] =','.$data['qid'];
         $data['uid'] =Yii::$app->request->get('uid', '');
         $flag=Yii::$app->request->get('val');
         $model=new Collection();
         // 查找 uid 是否存在
         $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
         if($flag==0){
+            $data['qid'] =','.$data['qid'];
             if(!$arr){
                 $re = Yii::$app->db->createCommand()->insert("{{%collection}}", $data)->execute();
             }else{
@@ -38,7 +38,15 @@ class CollectionController extends Controller
             }
             die(json_encode($res));
         }elseif($flag==1){
-            $data['qid']=str_replace($data['qid'],'',$arr['qid']);
+            // 查找',qid,'存在再替换
+            $qids=explode(',',$arr['qid']);
+            foreach($qids as $k=>$v){
+                if($v==$data['qid']){
+                    unset($qids[$k]);
+                    break;
+                }
+            }
+            $data['qid']=implode(',',$qids);
             $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
             if($re){
                 $res['message']='取消成功';
@@ -50,31 +58,29 @@ class CollectionController extends Controller
             die(json_encode($res));
 //          }
         }
-
-
     }
 
-    public function actionDetails()
-    {
-        $data['qid'] = (string)Yii::$app->request->post('qid', '');
-        $data['uid']=Yii::$app->session->get('userId');
-        $model=new Collection();
-        $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
-        if(!$arr){
-            $res['message']='您并未收藏该题';
-            $res['code']=0;
-            die(json_encode($res));
-        }else{
-            $data['qid']=str_replace($data['qid'],'',$arr['qid']);
-            $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
-            if($re){
-                $res['message']='取消成功';
-                $res['code']=1;
-            }else{
-                $res['message']='取消失败';
-                $res['code']=0;
-            }
-            die(json_encode($res));
-        }
-    }
+//    public function actionDetails()
+//    {
+//        $data['qid'] = (string)Yii::$app->request->post('qid', '');
+//        $data['uid']=Yii::$app->session->get('userId');
+//        $model=new Collection();
+//        $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
+//        if(!$arr){
+//            $res['message']='您并未收藏该题';
+//            $res['code']=0;
+//            die(json_encode($res));
+//        }else{
+//            $data['qid']=str_replace($data['qid'],'',$arr['qid']);
+//            $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
+//            if($re){
+//                $res['message']='取消成功';
+//                $res['code']=1;
+//            }else{
+//                $res['message']='取消失败';
+//                $res['code']=0;
+//            }
+//            die(json_encode($res));
+//        }
+//    }
 }

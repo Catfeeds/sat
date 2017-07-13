@@ -16,13 +16,13 @@
         <!--题目-->
         <div class="s-exam pull-left">
         <!-- 数学-->
-          <div class="math-exam work-question-part">
+          <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
             <h2 class="s-num"><?php echo $data['qid']?></h2>
             <p class="s-title">
               <?php echo $data['content']?>
             </p>
             <!-- 数学选择-->
-            <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">
+            <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>" <?php if($data['isFilling']==1){echo 'style="display:none;"';}?>>
               <li class="work-que-wrap">
                 <div class="work-select work-select" data-id="A">A</div>
                 <div class="work-que"> <?php echo $data['keyA']?> </div>
@@ -40,8 +40,8 @@
                 <div class="work-que"> <?php echo $data['keyD']?></div>
               </li>
             </ul>
-             <!--  数学填空-->-->
-            <table class="math-gap-table" border="1" align="center">
+            <!--数学填空-->
+            <table class="math-gap-table" border="1" align="center" <?php if($data['isFilling']==0){echo 'style="display:none;"';}?>>
               <tr>
                 <td class="math-gap-result" colspan="4"><input type="text"></td>
               </tr>
@@ -70,30 +70,14 @@
             </table>
           </div>
         <!-- 阅读-->
-          <div class="read-exam clearfix">
+          <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
             <div class="work-wrap-left pull-left">
-              <h3>Questions l-3 are based on the following passage.</h3>
-              <h5>The following passage is an excerpt from Henry James's short story "The Pupil." In this section, Pemberton,the young British tutor, describes some of the hasty trips around Europe during which he came to know his pupil, Morgan Moreen,and Morgan's family. A year after he had come to live with them Mr. and Mrs. Moreen suddenly gave up the villa at Nice. Pemberton had got used to suddenness, having seen it practiced on a considerable scale during two jerky little tours-one in Switzerland the</h5>
+              <h3><?php echo isset($data['topic'])?$data['topic']:''?></h3>
+              <h5><?php echo isset($data['details'])?$data['details']:''?></h5>
               <div class="work-box">
                 <div class="read-text">
                   <p>
-                    A year after he had come to live with them Mr. and Mrs. Moreen suddenly gave up the villa at Nice. Pemberton had got used to suddenness, having seen it practiced on a considerable scale during two jerky little tours-one in Switzerland the first summer, and the other late in the winter, when they all ran down to Florence and then, at the end of ten days, liking it much less than they had intended, straggled back in mysterious depression. They had returned to Nice "for ever," as they said; but this didn't prevent their squeezing, one rainy muggy May night, into a second-class railway-carriage—you could never tell by which class they would travel-where Pemberton helped them to stow away a wonderful collection of bundles and bags. The explanation of this maneuver was that they had determined to spend the summer "in some bracing place"; but in Paris they dropped into a small furnished apartment-a fourth floor in a third-rate avenue, where there was a smell on the staircase and the portier(1) was hateful— and passed the next four months in blank indigence.
-                    The better part of this forced temporary stay belonged to the tutor and his pupil, who, visiting the Invalides(2) and Notre Dame, the Conciergerie and all the museums, took a hundred rewarding rambles. They learned to know their Paris, which was useful, for they came back another year for a longer stay, the
-                    general character of which in Pemberton's memory today mixes pitiably and confusedly with that of the first. He sees Morgan's shabby knickerbockers-the everlasting pair that didn't match his blouse and that as he grew longer could only grow faded. He remembers the particular holes in his three or four pairs
-                    of colored stockings.
-                    Morgan was dear to his mother, but he never was better dressed than was absolutely necessary-partly, no doubt, by his own fault,
-                    for he was as indifferent to his appearance as a German philosopher. "My dear fellow, so are you! I don't want to cast you in the shade." Pemberton could have no rejoinder for this—the assertion so closely represented the fact. If however the deficiencies of his own wardrobe were a chapter by themselves
-                    he didn't like his little charge to look too poor. Later he used to say "Well, if we're poor, why, after all, shouldn't we look it?" and he consoled himself with thinking there was something rather elderly and gentlemanly in Morgan's disrepair-it differed from the untidiness of the urchin who plays and poils his things. He could trace perfectly the degrees by which, in proportion as her little son confined himself to his tutor for society, Mrs. Moreen shrewdly forbore to renew his garments. She did nothing that didn't show, neglected him because he escaped notice, and then, as he illustrated this clever policy, discouraged at home his public appearances. Her position was logical enough—thosemembers of her family who did show had to be showy.
-                    During this period and several others Pemberton was quite aware of how he and his comrade might strike people; wandering
-                    languidly through the Jardin des Plantes(3) as if they had nowhere to go, sitting on the winter days in the galleries of the Louvre, so
-                    splendidly ironical to the homeless, as if for the advantage of the steam radiators. They joked about it sometimes: it was the sort
-                    of joke that was perfectly within the boy's compass. They figured themselves as part of the vast vague hand-to-mouth multitude of
-                    the enormous city and pretended they were roud of their position in it-it showed them "such a lot of life" and made them conscious
-                    of a democratic brotherhood. If Pemberton couldn't feel a sympathy in destitution with his small companion-for after all Morgan's ond parents would never have let him really suffer-the boy would at least feel it with him, so it came to the same thing. He used sometimes to wonder what people would think they were-to fancy they were looked askance at, as if it might be a suspected case of kidnapping. Morgan wouldn't be taken for a young patrician with a tutor—he wasn't smart enough—though he might pass for his companion's sickly little brother.
-                    (1) Hall porter or custodian.
-                    (2) Famous Paris monument; site of the tomb of
-                    Napoleon.
-                    (3) Botanical garden.
+                    <?php echo isset($data['essay'])?$data['essay']:''?>
                   </p>
                 </div>
               </div>
