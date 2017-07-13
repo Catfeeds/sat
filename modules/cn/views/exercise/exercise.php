@@ -119,8 +119,8 @@
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li><a class="last-que" onclick="noQuestion(this)" href="/exercise_details/<?php echo $upid?>.html" data-id="">上一题</a></li><a>
-              <li><a class="next-que" onclick="noQuestion(this)" href="/exercise_details/<?php echo $nextid?>.html" data-id="">下一题</a></li>
+              <li><a class="last-que" onclick="noQuestion(this)" href="/exercise_details/<?php echo $upid?>.html" data-id="<?php echo $upid?>">上一题</a></li><a>
+              <li><a class="next-que" onclick="noQuestion(this)" href="/exercise_details/<?php echo $nextid?>.html" data-id="<?php echo $nextid?>">下一题</a></li>
             </ul>
           </div>
           <!--答案解析-->
