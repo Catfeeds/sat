@@ -16,6 +16,7 @@ class CollectionController extends Controller
     public function actionCollection()
     {
         $data['qid'] =(string)Yii::$app->request->get('subID', '');
+        $data['qid'] =','.$data['qid'];
         $data['uid'] =Yii::$app->request->get('uid', '');
         $flag=Yii::$app->request->get('val');
         $model=new Collection();
@@ -25,7 +26,7 @@ class CollectionController extends Controller
             if(!$arr){
                 $re = Yii::$app->db->createCommand()->insert("{{%collection}}", $data)->execute();
             }else{
-                    $data['qid']=$arr['qid'].','.$data['qid'];
+                    $data['qid']=$arr['qid'].$data['qid'];
                     $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
             }
             if($re){
@@ -37,17 +38,17 @@ class CollectionController extends Controller
             }
             die(json_encode($res));
         }elseif($flag==1){
-                $data['qid']=str_replace($data['qid'],' ',$arr['qid']);
-                $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
-                if($re){
-                    $res['message']='取消成功';
-                    $res['code']=2;
-                }else{
-                    $res['message']='取消失败';
-                    $res['code']=0;
-                }
-                die(json_encode($res));
-//            }
+            $data['qid']=str_replace($data['qid'],'',$arr['qid']);
+            $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
+            if($re){
+                $res['message']='取消成功';
+                $res['code']=2;
+            }else{
+                $res['message']='取消失败';
+                $res['code']=0;
+            }
+            die(json_encode($res));
+//          }
         }
 
 

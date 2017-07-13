@@ -14,7 +14,7 @@
       <div class="clearfix">
         <!--题目-->
         <div class="s-exam pull-left">
-          <h2 class="s-num"><?php echo $data['id']?></h2>
+          <h2 class="s-num"><?php echo $data['qid']?></h2>
           <p class="s-title">
             <?php echo $data['content']?>
           </p>
@@ -38,14 +38,14 @@
           </ul>
 
           <div class="s-btn-list clearfix">
-            <div class="s-collect work-collect pull-left" data-value="1">
+            <div class="s-collect work-collect pull-left" data-value="<?php echo isset($data['collection'])?$data['collection']:'0'?>">
               <i class="fa fa-star-o"></i>
               收藏
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li><a href="/exercise_details/<?php echo $upid?>.html">上一题</a></li>
-              <li><a href="/exercise_details/<?php echo $nextid?>.html">下一题</a></li>
+              <li><a href="/exercise_details/<?php echo $upid?>.html" data-id="">上一题</a></li>
+              <li><a href="/exercise_details/<?php echo $nextid?>.html" data-id="">下一题</a></li>
             </ul>
           </div>
           <!--答案解析-->

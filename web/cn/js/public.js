@@ -110,7 +110,7 @@ $(function () {
 })
 //获取uid
 var uId = $.cookie('uid');
-//var uId = 444;
+var uId = 444;
 //收藏函数
 function collectEvent(obj) {
   if (uId == '') {
