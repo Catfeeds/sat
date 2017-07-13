@@ -38,21 +38,21 @@
           </ul>
 
           <div class="s-btn-list clearfix">
-            <div class="s-collect work-collect pull-left" data-value="1">
+            <div class="s-collect work-collect pull-left" data-value="<?php echo $data['collection']!=false?$data['collection']:'0'?>">
               <i class="fa fa-star-o"></i>
-              收藏
+              <span>收藏</span>
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li><a href="/exercise_details/<?php echo $upid?>.html">上一题</a></li>
-              <li><a href="/exercise_details/<?php echo $nextid?>.html">下一题</a></li>
+              <li><a class="last-que" onclick="noQuestion(this)" href="/exercise_details/<?php echo $upid?>.html" data-id="">上一题</a></li><a>
+              <li><a class="next-que" href="/exercise_details/<?php echo $nextid?>.html" data-id="">下一题</a></li>
             </ul>
           </div>
           <!--答案解析-->
           <div class="s-answer-show">
             <h3>题目解析:</h3>
             <div class="s-answer-cnt">
-              <p>正确答案:<?php echo $data['answer']?></p>
+              <p>正确答案:<span class="correct-answer"><?php echo $data['answer']?></span></p>
               <p>解析：<?php echo isset($data['analysis'])?$data['analysis']:'无'?></p>
             </div>
           </div>
@@ -73,12 +73,14 @@
 <script>
   $(function () {
     var uId = $.cookie('uid');
+    uId = 444;
     // 加载页面时判断是否收藏
     if (($('.s-collect').data('value') == 1) && (uId != '')) {
       var sCollect = $('.s-collect');
       sCollect.addClass('active');
       sCollect.find('i').removeClass('fa-star-o');
       sCollect.find('i').addClass('fa-star');
+      sCollect.children('span').html('已收藏');
     }
     //查看答案
     $('.s-exam .s-answer li').click(function () {
@@ -92,6 +94,23 @@
         }
       }
     })
+    $('.work-que-wrap').click(function() {
+      var ans = $('.work-select.active').data('id');
+      if (ans != $('.correct-answer').html()) {
+        $(this).find('.work-select').css({
+          backgroundColor: 'red',
+          borderColor: 'red',
+          color: '#fff'
+        })
+      }
+    })
+
   })
+  //  判断是否最后一题或第一题
+  function noQuestion() {
+    if ($(this).data('id') == '') {
+      alert('这是最后一题哦!');
+    }
+  }
 </script>
 </html>
