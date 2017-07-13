@@ -121,7 +121,7 @@
         <ul>
             <li class="side-service">
                 <p></p>
-                <div><i class="fa fa-user-circle"></i><a href="#">在线咨询</a></div>
+                <div><i class="fa fa-user-circle"></i><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">在线咨询</a></div>
             </li>
             <li class="side-wechat">
                 <p></p>
