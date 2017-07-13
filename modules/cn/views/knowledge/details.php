@@ -24,16 +24,9 @@
             <div class="s-side pull-right">
                 <dl>
                     <dt>相关知识点</dt>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
-                    <dd><i class="icon-lightbulb"></i><a href="#">增强题型及例题分析</a></dd>
+                    <?php foreach($brr as $k=>$v){?>
+                    <dd><i class="icon-lightbulb"></i><a href="/knowledge_details/<?php echo $v['id']?>.html"><?php echo $v['name']?></a></dd>
+                    <?php }?>
                 </dl>
             </div>
         </div>
