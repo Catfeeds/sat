@@ -85,6 +85,7 @@
             </div>
             <div class="s-cnt">
                 <ul class="s-detail clearfix">
+                    <?php foreach ($classes as $k=>$v){?>
                     <li>
                         <ol class="white-circle">
                             <li></li>
@@ -95,88 +96,83 @@
                         <div class="course-img">
                             <img src="/cn/images/sat-course01.png" alt="">
                         </div>
-                        <h2 class="course-title">SAT VIP课程</h2>
-                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
-                            指南，针对学员基础，科学配课，通过
-                            名师一对一VIP授课，有针对性地讲解
-                            SAT知识体系，词汇的多维度释义，语
-                            法的系统强化，各类文章的阅读技巧和
-                            解题思路，高分写作的论证策略，全方
-                            位快速提升SAT语言运用能力、知识运
-                            用能力、逻辑思维能力、应变能力，帮
-                            助学员SAT成绩精准、快速提分！
-                        </p>
-                        <a class="course-more" href="#">查看更多</a>
-                    </li>
-                    <li>
-                        <ol class="white-circle">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-                        <div class="course-img">
-                            <img src="/cn/images/sat-course02.png" alt="">
+                        <h2 class="course-title">SAT <?php echo $v['cate']?></h2>
+                        <div class="course-text">
+                            <?php echo $v['introduction']?>
                         </div>
-                        <h2 class="course-title">SAT全能小班</h2>
-                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
-                            指南，针对学员基础，科学配课，通过
-                            名师一对一VIP授课，有针对性地讲解
-                            SAT知识体系，词汇的多维度释义，语
-                            法的系统强化，各类文章的阅读技巧和
-                            解题思路，高分写作的论证策略，全方
-                            位快速提升SAT语言运用能力、知识运
-                            用能力、逻辑思维能力、应变能力，帮
-                            助学员SAT成绩精准、快速提分！
-                        </p>
-                        <a class="course-more" href="#">查看更多</a>
+                        <a class="course-more" href="/class_details/<?php echo $v['id']?>.html">查看更多</a>
                     </li>
-                    <li>
-                        <ol class="white-circle">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-                        <div class="course-img">
-                            <img src="/cn/images/sat-course03.png" alt="">
-                        </div>
-                        <h2 class="course-title">SAT 冲刺小班</h2>
-                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
-                            指南，针对学员基础，科学配课，通过
-                            名师一对一VIP授课，有针对性地讲解
-                            SAT知识体系，词汇的多维度释义，语
-                            法的系统强化，各类文章的阅读技巧和
-                            解题思路，高分写作的论证策略，全方
-                            位快速提升SAT语言运用能力、知识运
-                            用能力、逻辑思维能力、应变能力，帮
-                            助学员SAT成绩精准、快速提分！
-                        </p>
-                        <a class="course-more" href="#">查看更多</a>
-                    </li>
-                    <li>
-                        <ol class="white-circle">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-                        <div class="course-img">
-                            <img src="/cn/images/sat-course04.png" alt="">
-                        </div>
-                        <h2 class="course-title">直播|视频课程</h2>
-                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
-                            指南，针对学员基础，科学配课，通过
-                            名师一对一VIP授课，有针对性地讲解
-                            SAT知识体系，词汇的多维度释义，语
-                            法的系统强化，各类文章的阅读技巧和
-                            解题思路，高分写作的论证策略，全方
-                            位快速提升SAT语言运用能力、知识运
-                            用能力、逻辑思维能力、应变能力，帮
-                            助学员SAT成绩精准、快速提分！
-                        </p>
-                        <a class="course-more" href="#">查看更多</a>
-                    </li>
+                    <?php }?>
+
+<!--                    <li>-->
+<!--                        <ol class="white-circle">-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                        </ol>-->
+<!--                        <div class="course-img">-->
+<!--                            <img src="/cn/images/sat-course02.png" alt="">-->
+<!--                        </div>-->
+<!--                        <h2 class="course-title">SAT全能小班</h2>-->
+<!--                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方-->
+<!--                            指南，针对学员基础，科学配课，通过-->
+<!--                            名师一对一VIP授课，有针对性地讲解-->
+<!--                            SAT知识体系，词汇的多维度释义，语-->
+<!--                            法的系统强化，各类文章的阅读技巧和-->
+<!--                            解题思路，高分写作的论证策略，全方-->
+<!--                            位快速提升SAT语言运用能力、知识运-->
+<!--                            用能力、逻辑思维能力、应变能力，帮-->
+<!--                            助学员SAT成绩精准、快速提分！-->
+<!--                        </p>-->
+<!--                        <a class="course-more" href="#">查看更多</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <ol class="white-circle">-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                        </ol>-->
+<!--                        <div class="course-img">-->
+<!--                            <img src="/cn/images/sat-course03.png" alt="">-->
+<!--                        </div>-->
+<!--                        <h2 class="course-title">SAT 冲刺小班</h2>-->
+<!--                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方-->
+<!--                            指南，针对学员基础，科学配课，通过-->
+<!--                            名师一对一VIP授课，有针对性地讲解-->
+<!--                            SAT知识体系，词汇的多维度释义，语-->
+<!--                            法的系统强化，各类文章的阅读技巧和-->
+<!--                            解题思路，高分写作的论证策略，全方-->
+<!--                            位快速提升SAT语言运用能力、知识运-->
+<!--                            用能力、逻辑思维能力、应变能力，帮-->
+<!--                            助学员SAT成绩精准、快速提分！-->
+<!--                        </p>-->
+<!--                        <a class="course-more" href="#">查看更多</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <ol class="white-circle">-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                            <li></li>-->
+<!--                        </ol>-->
+<!--                        <div class="course-img">-->
+<!--                            <img src="/cn/images/sat-course04.png" alt="">-->
+<!--                        </div>-->
+<!--                        <h2 class="course-title">直播|视频课程</h2>-->
+<!--                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方-->
+<!--                            指南，针对学员基础，科学配课，通过-->
+<!--                            名师一对一VIP授课，有针对性地讲解-->
+<!--                            SAT知识体系，词汇的多维度释义，语-->
+<!--                            法的系统强化，各类文章的阅读技巧和-->
+<!--                            解题思路，高分写作的论证策略，全方-->
+<!--                            位快速提升SAT语言运用能力、知识运-->
+<!--                            用能力、逻辑思维能力、应变能力，帮-->
+<!--                            助学员SAT成绩精准、快速提分！-->
+<!--                        </p>-->
+<!--                        <a class="course-more" href="#">查看更多</a>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>

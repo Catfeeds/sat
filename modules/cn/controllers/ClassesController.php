@@ -41,8 +41,11 @@ class ClassesController extends Controller
     {
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%classes}} where id=$id ")->queryOne();
-        $teacher=$data['teacher'];
-        $teacher = Yii::$app->db->createCommand("select * from {{%teachers}} where name='$teacher'" )->queryOne();
+        $t=explode(',',$data['teacher']);
+        foreach($t as $k =>$v){
+            $teacher[$k] = Yii::$app->db->createCommand("select * from {{%teachers}} where name='$v' ")->queryOne();
+        }
+//        var_dump($teacher);die;
         return $this->render('details', ["data" => $data,'brr'=>$this->brr,'teacher'=>$teacher]);
     }
 }
