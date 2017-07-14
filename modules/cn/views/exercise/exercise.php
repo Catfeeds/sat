@@ -92,7 +92,6 @@
       _this.find('i').removeClass('fa-star-o');
       _this.find('i').addClass('fa-star');
     } else {
-      console.log('none');
       _this.removeClass('active');
       _this.find('i').removeClass('fa-star');
       _this.find('i').addClass('fa-star-o');

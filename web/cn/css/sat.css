@@ -198,59 +198,19 @@
   margin: 0;
   font-size: 0;
 }
-.s-course .s-detail li {
-  width: 380px;
-  height: 330px;
-  display: inline-block;
-  overflow: hidden;
-}
-.s-course .s-font {
-  padding: 55px 20px 20px;
-}
-.s-course .s-cnt h2 {
+.s-course .s-detail>li {
   position: relative;
-  width: 30%;
-  font-size: 14px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #ccc;
-}
-.s-course .s-cnt h2:after {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 30px;
-  height: 3px;
-  bottom: -2px;
-  left: 0;
-  background-color: rgb(54,178,251);
-}
-.s-course .s-cnt .s-font-cnt {
-  font-size: 14px;
-  height: 120px;
-  margin: 30px 0 10px 0;
-  line-height: 24px;
-  overflow: auto;
-}
-.s-course .s-cnt a {
-  padding: 5px 20px;
-  background-color: rgb(54,178,251);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  width: 275px;
+  height: 617px;
+  display: inline-block;
+  margin-right: 19px;
+  background-color: #7ecef4;
   color: #fff;
-  font-size: 14px;
 }
-.s-course .s-cnt a:hover {
-  background-color: rgb(48,167,237);
+.s-course .s-detail>li:last-child {
+  margin-right: 0;
 }
-.s-course .s-detail img {
-  width: 100%;
-}
-.s-course .s-cnt .s-img {
-  -webkit-box-shadow:  3px 3px 3px #ccc;
-  -moz-box-shadow:  3px 3px 3px #ccc;
-  box-shadow:  3px 3px 3px #ccc;
-}
+
   /*文章资讯*/
 .s-article {
   margin-top: 50px;

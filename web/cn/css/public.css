@@ -503,7 +503,7 @@ body {
 **/
 .side-bar {
   position: fixed;
-  z-index: 111;
+  z-index: 99;
   top: 30%;
   right: 0;
 }
