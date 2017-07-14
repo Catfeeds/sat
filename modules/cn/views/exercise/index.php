@@ -77,6 +77,9 @@
     //  选项卡切换效果
     var search = location.search.split('m='),
         m = search[1];
+    if (location.search.split('&').length==2 && location.search.indexOf('p=') != -1) {
+      m = m.split('&')[0];
+    }
     $('.s-label-list li').removeClass('active');
     switch (m) {
       case 'Reading':
@@ -93,6 +96,9 @@
       var search1 = location.search.split('m=')[1].split('&c=')[0];
       search = location.search.split('c=');
       var c = search[1];
+      if (location.search.split('&').length==3 && location.search.indexOf('p=') != -1) {
+        c = c.split('&')[0];
+      }
       $('.s-label-list li').removeClass('active');
       $('.s-subject-src dd').removeClass('active');
       if (search1 == 'Writing') {

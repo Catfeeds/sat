@@ -79,6 +79,18 @@
 .s-course .s-text li:last-child {
   width: 80px;
 }
+/*开班时间*/
+.open-time {
+  margin-top: 40px;
+  font-weight: bold;
+}
+.open-time>span {
+  font-weight: bold;
+}
+.open-time>p {
+  margin-left: 80px;
+}
+/*查看详情*/
 .s-course .s-consult {
   display: inline-block;
   padding: 5px 20px;
@@ -98,26 +110,10 @@
 .s-course .s-img div {
   position: absolute;
 }
-.s-course .s-img .s-img-bg {
-  width: 577px;
-  height: 480px;
-  background-color: #fff;
-  box-shadow: 3px 3px 3px 2px #c0c0c0;
-}
 .s-course .s-img-bg01 {
   box-shadow: 0 0 3px 2px #c0c0c0;
 }
 .s-course .s-img-bg01 img {
   width: 574px;
   height: 479px;
-}
-.s-course .s-img-bg02 {
-  top: 15px;
-  left: 15px;
-  z-index: -1;
-}
-.s-course .s-img-bg03 {
-  top: 30px;
-  left: 30px;
-  z-index: -2;
 }

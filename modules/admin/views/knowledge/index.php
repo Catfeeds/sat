@@ -1,6 +1,6 @@
 <div>
     <div >
-        <a>首页</a>
+        <a href="/index/index">首页</a>
         <span >&gt;</span>
         <span>知识点管理</span>
     </div>

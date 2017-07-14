@@ -10,7 +10,7 @@
 </style>
 <div class="span10">
     <div >
-        <a href="">首页</a><span >&gt;</span><span>资讯管理</span>
+        <a href="/index/index">首页</a><span >&gt;</span><span>资讯管理</span>
     </div>
 
     <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</a>

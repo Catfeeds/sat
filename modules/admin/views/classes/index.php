@@ -1,7 +1,7 @@
 
 <div class="span10">
     <div >
-        <a>首页</a>
+        <a href="/index/index">首页</a>
         <span >&gt;</span>
         <span>课程管理</span>
     </div>

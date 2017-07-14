@@ -72,6 +72,8 @@
         </div>
     </div>
 </div>
+<div id="outjs" style="display: none;">
+</div>
 <nav class="s-nav">
     <div class="container clearfix">
     <a class="s-nav-logo pull-left" href="http://sat.thinkuedu.com/index.html">
@@ -112,7 +114,7 @@
             alert('退出成功');
             $.cookie('uid',null);
             history.go(0);
-        },"json")
+        },"text")
     }
 
 </script>

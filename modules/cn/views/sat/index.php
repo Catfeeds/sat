@@ -83,26 +83,98 @@
                 </div>
             </div>
             <div class="s-cnt">
-                <ul class="s-detail">
-                    <li class="s-img"><img src="/cn/images/sat-course01.png" alt=""></li>
-                    <li class="s-font">
-                        <h2><?php echo isset($classes[0]['cate'])?$classes[0]['cate']:''?></h2>
-                        <div class="s-font-cnt"><?php echo isset($classes[0]['introduction'])?$classes[0]['introduction']:''?></div>
-                        <a href="/class_details/<?php echo isset($classes[0]['id'])?$classes[0]['id']:''?>.html">查看更多</a>
+                <ul class="s-detail clearfix">
+                    <li>
+                        <ol class="white-circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                        <div class="course-img">
+                            <img src="/cn/images/sat-course01.png" alt="">
+                        </div>
+                        <h2 class="course-title">SAT VIP课程</h2>
+                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
+                            指南，针对学员基础，科学配课，通过
+                            名师一对一VIP授课，有针对性地讲解
+                            SAT知识体系，词汇的多维度释义，语
+                            法的系统强化，各类文章的阅读技巧和
+                            解题思路，高分写作的论证策略，全方
+                            位快速提升SAT语言运用能力、知识运
+                            用能力、逻辑思维能力、应变能力，帮
+                            助学员SAT成绩精准、快速提分！
+                        </p>
+                        <a class="course-more" href="#">查看更多</a>
                     </li>
-                    <li class="s-img"><img src="/cn/images/sat-course02.png" alt=""></li>
-                </ul>
-                <ul class="s-detail">
-                    <li class="s-font">
-                        <h2><?php echo isset($classes[1]['cate'])?$classes[1]['cate']:''?></h2>
-                        <div class="s-font-cnt"><?php echo isset($classes[1]['introduction'])?$classes[1]['introduction']:''?></div>
-                        <a href="/class_details/<?php echo isset($classes[1]['id'])?$classes[1]['id']:''?>.html">查看更多</a>
+                    <li>
+                        <ol class="white-circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                        <div class="course-img">
+                            <img src="/cn/images/sat-course02.png" alt="">
+                        </div>
+                        <h2 class="course-title">SAT全能小班</h2>
+                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
+                            指南，针对学员基础，科学配课，通过
+                            名师一对一VIP授课，有针对性地讲解
+                            SAT知识体系，词汇的多维度释义，语
+                            法的系统强化，各类文章的阅读技巧和
+                            解题思路，高分写作的论证策略，全方
+                            位快速提升SAT语言运用能力、知识运
+                            用能力、逻辑思维能力、应变能力，帮
+                            助学员SAT成绩精准、快速提分！
+                        </p>
+                        <a class="course-more" href="#">查看更多</a>
                     </li>
-                    <li class="s-img"><img src="/cn/images/sat-course03.png" alt=""></li>
-                    <li class="s-font">
-                        <h2><?php echo isset($classes[2]['cate'])?$classes[2]['cate']:''?></h2>
-                        <div class="s-font-cnt"><?php echo isset($classes[2]['introduction'])?$classes[2]['introduction']:''?></div>
-                        <a href="/class_details/<?php echo isset($classes[2]['id'])?$classes[2]['id']:''?>.html">查看更多</a>
+                    <li>
+                        <ol class="white-circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                        <div class="course-img">
+                            <img src="/cn/images/sat-course03.png" alt="">
+                        </div>
+                        <h2 class="course-title">SAT 冲刺小班</h2>
+                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
+                            指南，针对学员基础，科学配课，通过
+                            名师一对一VIP授课，有针对性地讲解
+                            SAT知识体系，词汇的多维度释义，语
+                            法的系统强化，各类文章的阅读技巧和
+                            解题思路，高分写作的论证策略，全方
+                            位快速提升SAT语言运用能力、知识运
+                            用能力、逻辑思维能力、应变能力，帮
+                            助学员SAT成绩精准、快速提分！
+                        </p>
+                        <a class="course-more" href="#">查看更多</a>
+                    </li>
+                    <li>
+                        <ol class="white-circle">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                        <div class="course-img">
+                            <img src="/cn/images/sat-course04.png" alt="">
+                        </div>
+                        <h2 class="course-title">直播|视频课程</h2>
+                        <p class="course-text">雷哥SAT名师菁英团队依据新SAT官方
+                            指南，针对学员基础，科学配课，通过
+                            名师一对一VIP授课，有针对性地讲解
+                            SAT知识体系，词汇的多维度释义，语
+                            法的系统强化，各类文章的阅读技巧和
+                            解题思路，高分写作的论证策略，全方
+                            位快速提升SAT语言运用能力、知识运
+                            用能力、逻辑思维能力、应变能力，帮
+                            助学员SAT成绩精准、快速提分！
+                        </p>
+                        <a class="course-more" href="#">查看更多</a>
                     </li>
                 </ul>
             </div>
@@ -126,7 +198,7 @@
                 <div class="s-information s-news">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
-                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.thinkuedu.com/info.html?c=n"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -148,7 +220,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
-                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.thinkuedu.com/info.html?c=t"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -219,7 +291,11 @@
                                 <h4>主讲：<?php echo $v['subject']?></h4>
                                 <p><?php echo $v['introduction']?></p>
                             </div>
+<<<<<<< HEAD
                             <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">立即预约</a>
+=======
+                            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">立即预约</a>
+>>>>>>> master
                         </li>
                         <?php }?>
                     </ul>
