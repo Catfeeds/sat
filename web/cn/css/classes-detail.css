@@ -136,12 +136,39 @@
   top: -95px;
   left: 30px;
 }
-.s-introduce-img .s-down-img img {
+.s-introduce-img .s-down-img .teacher-img {
+  position: relative;
+  float: left;
   width: 230px;
   height: 190px;
   margin: 20px 0 0 10px;
   padding: 5px;
+  overflow: hidden;
   background-color: #fff;
+}
+.s-introduce-img .teacher-img>img {
+  width: 100%;
+  height: 100%;
+}
+.s-introduce-img .teacher-img>div {
+  position: absolute;
+  display: block;
+  content: '';
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  line-height: 190px;
+  text-align: center;
+  -webkit-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+  color: #fff;
+  font-size: 20px;
+  background-color: rgba(0,0,0,.5);
+}
+.s-introduce-img .teacher-img:hover div{
+  top: 0;
 }
 .tab-content #plan div {
   padding: 15px 30px;

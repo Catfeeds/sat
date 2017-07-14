@@ -32,9 +32,15 @@
               <span class="s-top-left"></span>
               <img class="s-big-img" src="<?php if(isset($teacher['pic'])){echo $teacher['pic'];}else{echo '/cn/images/course-basis01.png';}?>" alt="">
               <span class="s-bottom-right"></span>
-              <div class="s-down-img">
-                <img src="/cn/images/course-basis02.png" alt="">
-                <img src="/cn/images/course-basis03.png" alt="">
+              <div class="s-down-img clearfix">
+                <div class="teacher-img">
+                  <img src="/cn/images/course-basis02.png" alt="">
+                  <div>SAT讲师</div>
+                </div>
+                <div class="teacher-img">
+                  <img src="/cn/images/course-basis03.png" alt="">
+                  <div></div>
+                </div>
               </div>
             </div>
             <div class="s-introduce-font">
