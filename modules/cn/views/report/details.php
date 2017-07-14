@@ -281,13 +281,14 @@
             var s = $(this).data('val'),
                 c = 'all';
            $('.ans-classify li').data('sub',s);
+            reportData(s,c);
         })
         $('.ans-classify li').click(function () {
             $('.ans-classify li').removeClass('on');
             $(this).addClass('on');
             var c = $(this).data('val'),
                 s = $('.ans-classify li').data('sub');
-            console.log(s);
+            reportData(s,c);
         })
 //        function reportData(s,c) {
 //            var sub = s,
