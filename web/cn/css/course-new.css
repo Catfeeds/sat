@@ -84,6 +84,12 @@
   margin-top: 40px;
   font-weight: bold;
 }
+.open-time>span {
+  font-weight: bold;
+}
+.open-time>p {
+  margin-left: 80px;
+}
 /*查看详情*/
 .s-course .s-consult {
   display: inline-block;
