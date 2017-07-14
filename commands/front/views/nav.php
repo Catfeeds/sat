@@ -72,6 +72,8 @@
         </div>
     </div>
 </div>
+<div id="outjs" style="display: none;">
+</div>
 <nav class="s-nav">
     <div class="container clearfix">
     <a class="s-nav-logo pull-left" href="http://sat.thinkuedu.com/index.html">
@@ -93,9 +95,9 @@
     // 用户登出
     function Out(){
         $.post('/user/api/login-out',function(re){
-            alert('退出成功');
+            $('#outjs').html(re);
             history.go(0);
-        },"json")
+        },"text")
     }
 
 </script>

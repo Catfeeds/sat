@@ -247,8 +247,7 @@ class ApiController extends Controller
 
     {
         include_once($_SERVER['DOCUMENT_ROOT'].'/../libs/ucenter/ucenter.php');
-//        $uid=Yii::$app->session->get('uid');
-        $loginOut=uc_user_synlogin();
+        $loginOut=uc_user_synlogout();
 //        $session = Yii::$app->session;
 //
 //        $startListening = $session->get('startListening');
@@ -278,6 +277,7 @@ class ApiController extends Controller
 //        @unlink("html\cn\heard.html");
 //
 //        die(json_encode(['code' => 1]));
+//        die(json_encode($loginOut));
         echo $loginOut;
     }
 
