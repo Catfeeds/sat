@@ -146,20 +146,119 @@
             <h3 class="report-title">答题情况</h3>
             <div class="report-wrap">
                 <ul class="rep-subject">
-                    <li>阅读section1</li>
-                    <li>文法sesction2</li>
-                    <li>数学section3</li>
-                    <li>数学section4</li>
+                    <li class="on" data-val="read">阅读section1</li>
+                    <li data-val="language">文法sesction2</li>
+                    <li data-val="math1">数学section3</li>
+                    <li data-val="math2">数学section4</li>
                 </ul>
                 <div class="ans-cnt">
-                    <ul>
-                        <li>全部题目</li>
-                        <li>查看错题</li>
-                        <li>耗时较长题目</li>
+                    <ul class="ans-classify">
+                        <li class="on" data-val="all" data-sub="read">全部题目</li>
+                        <li data-val="wrong" data-sub="read">查看错题</li>
+                        <li data-val="long" data-sub="read">耗时较长题目</li>
                     </ul>
                     <ol>
-                        <li>
-                            
+                        <li class="clearfix">
+                           <div class="lost-time pull-left">
+                               <span>耗时</span>
+                               <p>0.2</p>
+                               <span>秒</span>
+                           </div>
+                            <div class="show-correct-ans pull-right">
+                                <strong>2/3</strong>
+                                <i>/</i>
+                                <b>2/3</b>
+                            </div>
+                            <div class="question-stem">
+                                <p>
+                                    <a href="#" target="_blank">The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="lost-time pull-left">
+                                <span>耗时</span>
+                                <p>0.2</p>
+                                <span>秒</span>
+                            </div>
+                            <div class="show-correct-ans pull-right">
+                                <strong>A</strong>
+                                <i>/</i>
+                                <b>C</b>
+                            </div>
+                            <div class="question-stem">
+                                <p>
+                                    <a href="#" target="_blank">The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="lost-time pull-left">
+                                <span>耗时</span>
+                                <p>0.2</p>
+                                <span>秒</span>
+                            </div>
+                            <div class="show-correct-ans pull-right">
+                                <strong>B</strong>
+                                <i>/</i>
+                                <b>A</b>
+                            </div>
+                            <div class="question-stem">
+                                <p>
+                                    <a href="#" target="_blank">The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="lost-time pull-left">
+                                <span>耗时</span>
+                                <p>0.2</p>
+                                <span>秒</span>
+                            </div>
+                            <div class="show-correct-ans pull-right">
+                                <strong>D</strong>
+                                <i>/</i>
+                                <b>A</b>
+                            </div>
+                            <div class="question-stem">
+                                <p>
+                                    <a href="#" target="_blank">The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="lost-time pull-left">
+                                <span>耗时</span>
+                                <p>0.2</p>
+                                <span>秒</span>
+                            </div>
+                            <div class="show-correct-ans pull-right">
+                                <strong>A</strong>
+                                <i>/</i>
+                                <b>A</b>
+                            </div>
+                            <div class="question-stem">
+                                <p>
+                                    <a href="#" target="_blank">The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="lost-time pull-left">
+                                <span>耗时</span>
+                                <p>0.2</p>
+                                <span>秒</span>
+                            </div>
+                            <div class="show-correct-ans pull-right">
+                                <strong>A</strong>
+                                <i>/</i>
+                                <b>A</b>
+                            </div>
+                            <div class="question-stem">
+                                <p>
+                                    <a href="#" target="_blank">The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...</a>
+                                </p>
+                            </div>
                         </li>
                     </ol>
                 </div>
@@ -176,5 +275,62 @@
         pieChart('repWriting',[parseInt('<?php echo $report['writenum']/44*100?>'),parseInt('<?php echo $report['writeerror']/44*100?>'),parseInt('<?php echo (44-$report['writenum']-$report['writeerror'])/44*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
         pieChart('repMath',[parseInt('<?php echo $report['mathnum']/58*100?>'),parseInt('<?php echo $report['matherror']/58*100?>'),parseInt('<?php echo ((58-$report['mathnum']-$report['matherror'])/58)*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
         lineChart('reportHistory',[[1200,1350,1400,1500]],['OG第一套','BARRON第二套','开普兰第一套','OG第四套'],['分数'],{title: '历史成绩曲线图',min: 0,max: 1600,tooltipUnit: '分',showValue: true});
+        $('.rep-subject li').click(function () {
+            $('.rep-subject li').removeClass('on');
+            $(this).addClass('on');
+            var s = $(this).data('val'),
+                c = 'all';
+           $('.ans-classify li').data('sub',s);
+        })
+        $('.ans-classify li').click(function () {
+            $('.ans-classify li').removeClass('on');
+            $(this).addClass('on');
+            var c = $(this).data('val'),
+                s = $('.ans-classify li').data('sub');
+            console.log(s);
+        })
+//        function reportData(s,c) {
+//            var sub = s,
+//                classify = c;;
+//            $.ajax({
+//                type: 'post',
+//                url: '',
+//                data: {
+//                    'sub': sub,
+//                    'classify', c
+//                },
+//                dataType: 'json',
+//                success: function(data) {
+//                    $('.ans-cnt ol').empty();
+//                    var li = '';
+//                    $.each(data.list,function(index,array) {
+//                        li+=" <li class='clearfix'>"+
+//                        "<div class='lost-time pull-left'>"+
+//                            "<span>耗时</span>"+
+//                            "<p>"+0.2+"</p>"+
+//                            "<span>秒</span>"+
+//                            "</div>"+
+//                            "<div class='show-correct-ans pull-right'>"+
+//                            "<strong>"+A+"</strong>"+
+//                            "<i>/</i>"+
+//                            "<b>"+A+"</b>"+
+//                            "</div>"+
+//                            " <div class='question-stem'>"+
+//                        "<p>"+
+//                        "<a href="+#+" target='_blank'>"+The globalization of financial-services companies has been a boon to money launderers, because of allowing money placed in a bank in a ...+"</a>"+
+//                        "</p>"+
+//                        "</div>"+
+//                        "</li>"
+//                    });
+//                    $('.ans-cnt ol').append(li);
+//                }
+//            })
+//        }
+        $('.ans-cnt ol li').each(function (i) {
+            console.log($('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').html());
+            if ($('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').html() == $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('b').html()) {
+                $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').css('color','green');
+            }
+        })
     })
 </script>
