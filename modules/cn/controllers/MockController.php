@@ -148,7 +148,7 @@ class MockController extends Controller
         $re = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
         // 统计答题总数
         if($count<8){
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section'  limit 1 ")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
 //        var_dump($data);die;
             echo die(json_encode($data));
         }else{

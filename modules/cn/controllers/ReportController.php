@@ -47,6 +47,7 @@ class ReportController extends Controller
     // 做完题后生成报告
     public function actionReport()
     {
+        $this->actionQue();die;
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
         $uid=Yii::$app->session->get('uid');
 //        $uid=222;
@@ -100,8 +101,9 @@ class ReportController extends Controller
                 $tp = Yii::$app->db->createCommand("select name,time,id from {{%testpaper}} where id in ('$ids')")->queryAll();
                 // 取出最新的一次报告
                 $res = $this->actionShow($uid);
+                var_dump($res);die;
             } else {
-                $res = array_merge($re, $score);
+                $res = array_merge($re, $score);var_dump($res);die;
                 $tp = '';
             }
 
@@ -239,5 +241,58 @@ class ReportController extends Controller
         $crosstest  = $data['crossScore'];
         $re = array_merge($data, $score);
         return $re;
+    }
+    public function actionQue(){
+        // 接受的试卷的id
+        $uid=Yii::$app->session->get('uid');
+        $uid=222;
+        $tpId=Yii::$app->session->get('tid');
+        $section=Yii::$app->request->get('section',1);
+        // 存在uid的情况
+        if($uid){
+            $data=Yii::$app->db->createCommand("select * from {{%report}} where uid=$uid and tpId=$tpId order by id desc limit 1")->queryOne();
+            $arr=explode(';',$data['answer']);
+//            var_dump($arr);
+            static $brr=array();
+            foreach($arr as $k =>$v){
+               array_push($brr,explode(',',$v));
+            }// 获取做题的数据
+//            var_dump($brr);
+            static $que=array();
+            if( '每小节全部题目'){
+                foreach($brr as $k=>$v){
+                    $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and section =$section")->queryOne();
+                    array_push($data,$v[1]);
+                    array_push($data,$v[2]);
+                    if($data){
+                        array_push($que,$data);// 查看全部的题目
+                    }
+                }
+            }
+            if( '每小节全部题目'){
+                foreach($brr as $k=>$v){
+                    $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and section =$section and avgTime<$v[2]")->queryOne();
+                    array_push($data,$v[1]);
+                    array_push($data,$v[2]);
+                    if($data){
+                        array_push($que,$data);// 查看耗时较长的题目
+                    }
+                }
+
+            }
+            if( '每小节错题'){
+                foreach($brr as $k=>$v){
+                    $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and section =$section and answer!= '$v[1]'")->queryOne();
+                    array_push($data,$v[1]);
+                    array_push($data,$v[2]);
+                }
+                if($data){
+                    array_push($que,$data);// 查看错题目
+                }
+            }
+            echo die(json_encode($que));
+
+        }
+
     }
 }
