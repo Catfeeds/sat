@@ -44,7 +44,17 @@ class Questions extends ActiveRecord{
         return $data;
     }
     // 做题正确率 时间的更新
-    public function avg(){
-
+    public function avg($answer,$time,$data){
+        if($answer==$data['answer']){
+            $data['correctRate']=($data['peopleNum']*$data['correctRate']+1)/($data['peopleNum']+1);
+        }else{
+            $data['correctRate']=$data['peopleNum']*$data['correctRate']/($data['peopleNum']+1);
+        }
+        // 答题时间的计算
+        $data['avgTime']=($data['avgTime']*$data['peopleNum']+$time)/($data['peopleNum']+1);
+        $data['correctRate']=$data['peopleNum']*$data['correctRate']/($data['peopleNum']+1);
+        $data['peopleNum']+=1;
+        $re = $this->updateAll($data, 'id=:id', array(':id' => $data['id']));
+        return $re;
     }
 }

@@ -302,7 +302,7 @@ function ckBefore(flag,tag) {
                         window.location.href = '/mock_test?'+u+'&qid='+data.qid;
                     } else {
                         clearSession('submit');
-                        window.location.href = '/re.html';
+                        window.location.href = '/re_single.html';
                     }
                 },'json')
             }else {

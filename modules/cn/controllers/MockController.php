@@ -40,6 +40,7 @@ class MockController extends Controller
         if(isset($_SESSION['answer'])){
             $_SESSION['answer']='';
         }
+        $_SESSION['part']= Yii::$app->session->set('part',$major);
 //        var_dump($_SESSION);die;
         return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 
@@ -49,6 +50,7 @@ class MockController extends Controller
     // 开始模考功能，无qid取第一道题，有qid取题目详情
     public function actionDetails()
     {
+//        var_dump( $_SERVER["QUERY_STRING"]);die;
         session_start();
 
 //        $this->actionReport();
@@ -90,7 +92,6 @@ class MockController extends Controller
             $time=62;$amount=52;$amount=2; $modle = 'mock_read';
         }else{
             $time=35;$amount=44;$amount=0; $modle = 'mock_read';
-
         }
 //        var_dump($data);DIE;
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);

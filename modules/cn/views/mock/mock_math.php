@@ -85,7 +85,11 @@
                 本section进度:<span class="sec-position">0</span>/<span class="sec-all-num"><?php echo $amount?></span>
             </div>
             <div class="work-all-process col-lg-2 col-md-2">
-                做题总进度:<span class="all-position">0</span>/<span class="all-num">154</span>
+                做题总进度:<span class="all-position">0</span>/<span class="all-num"><?php
+                    if(strpos($_SERVER["QUERY_STRING"],'Math')){echo 58;}
+                    if(strpos($_SERVER["QUERY_STRING"],'Reading')){echo 52;}
+                    if(strpos($_SERVER["QUERY_STRING"],'Writing')){echo 44;}
+                    if(strpos($_SERVER["QUERY_STRING"],'m')===false){echo 154;}?></span>
             </div>
             <div class="work-btm-next col-lg-2 col-md-2">
                 <a href="#" class='work-next-icon'><i class="fa fa-hand-o-right"></i>NEXT</a>

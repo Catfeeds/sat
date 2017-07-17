@@ -52,7 +52,7 @@ class ReportController extends Controller
         $uid=Yii::$app->session->get('uid');
 //        $uid=222;
         $user=Yii::$app->session->get('userData');
-        $major=Yii::$app->request->get('major', 'All'); // 从前台得到还是从地址栏得到
+        $major=Yii::$app->session->get('part', 'All'); // 从前台得到还是从地址栏得到
         if(isset($_SESSION['answer'])) {
             $answerData = ((array)$_SESSION['answer']);
             $answerData = $answerData['item'];// 获取用户的答题数据
@@ -119,7 +119,12 @@ class ReportController extends Controller
         $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
-        return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+        if($major=='all'){
+            return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+        }else{
+            return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+        }
+
     }
     // 根据二级页面的点击进入详情页面
     public function actionDetails()
