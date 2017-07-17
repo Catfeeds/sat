@@ -122,9 +122,11 @@ class ReportController extends Controller
         $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
+//        var_dump($res);die;
         if($major==''){
             return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
         }else{
+
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
         }
 
@@ -253,7 +255,7 @@ class ReportController extends Controller
     public function actionQue(){
         // 接受的试卷的id
         $uid=Yii::$app->session->get('uid');
-        $uid=222;
+//        $uid=222;
         $tpId=Yii::$app->session->get('tid');
         $major=Yii::$app->request->get('sub');
         $classify=Yii::$app->request->get('classify');
@@ -266,15 +268,18 @@ class ReportController extends Controller
             foreach($arr as $k =>$v){
                array_push($brr,explode(',',$v));
             }// 获取做题的数据
+//            var_dump($brr);die;
             $report=new Report();
             $que=$report->queDetails($brr,$classify,$major);
         }else{
+
+//            var_dump($_SESSION['answer']);die;
             if(isset($_SESSION['answer'])){
                 $arr=(array)$_SESSION['answer'];
                 $brr=$arr['item'];
                 $report=new Report();
                 $que=$report->queDetails($brr,$classify,$major);
-//                var_dump(111);die;
+//                var_dump($que);die;
             }else{
                 die;
             }
