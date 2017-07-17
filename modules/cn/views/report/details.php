@@ -217,7 +217,7 @@
                         "</div>"+
                         " <div class='question-stem'>"+
                         "<p>"+
-                        "<a href=/exercise_details/data."+array['id']+".html target='_blank'>"+array['content']+"</a>"+
+                        "<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>"+
                         "</p>"+
                         "</div>"+
                     "</li>"
