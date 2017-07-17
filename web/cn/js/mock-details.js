@@ -209,7 +209,6 @@ function clearSession(tag) {
 }
 //下一题、提交
 function ckBefore(flag,tag) {
-    console.log(sessionStorage.reltime);
     var ans = $('.work-select.active').data('id');//获取答案
     if (flag == 1) {
         //无选项下一题答案
@@ -288,6 +287,45 @@ function ckBefore(flag,tag) {
             //    单科模考
             var arr = location.search.substr(1).split('&'),
                 u = arr[0]+'&'+arr[1];
+            if (tag == 'submit') {
+                $.get('/cn/mock/section',{
+                    'tpId':testId,
+                    'section':sec,
+                    'qid':subId,
+                    'solution':ans,
+                    'utime': utime,
+                    'allPos': allPos,
+                    'allTime': allTime
+                },function(data){
+                    if (data.section == 4) {
+                        clearSession();
+                        window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                    } else {
+                        clearSession('submit');
+                        window.location.href = '/re.html';
+                    }
+                },'json')
+            }else {
+                $.ajax({
+                    type: 'get',
+                    url: "/cn/mock/next",
+                    data: {
+                        'qid':subId,
+                        'solution':ans,
+                        'uid':uId,
+                        'major':subject,
+                        'crossScore':classify,
+                        'tid':testId,
+                        'section':sec,
+                        'number':num,
+                        'utime': utime
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                    }
+                })
+            }
         }
 
 

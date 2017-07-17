@@ -193,8 +193,12 @@
     reportData('Reading','all');
     function reportData(s,c) {
         $.ajax({
-            type: 'get',
             url: '/cn/report/que',
+            type: 'get',
+//            headers: {
+//                "Accept" : "application/json; charset=utf-8",
+//                "Content-Type": "application/json; charset=utf-8"
+//            },
             data: {
                 'sub': s,
                 'classify': c
@@ -217,7 +221,7 @@
                         "</div>"+
                         " <div class='question-stem'>"+
                         "<p>"+
-                        "<a href=/exercise_details/data."+array['id']+".html target='_blank'>"+array['content']+"</a>"+
+                        "<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>"+
                         "</p>"+
                         "</div>"+
                     "</li>"
