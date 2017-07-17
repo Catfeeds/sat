@@ -6,7 +6,7 @@
   <div class="report-banner">
     <div class="report-bnr-cnt">
       <span>lala</span>
-      同学你好,以下是你的考试分析报告
+      同学你好,以下是你的<span class="class-hid" data-class="Reading">Reading</span>分析报告
     </div>
   </div>
   <div class="report-wrap clearfix">
@@ -94,12 +94,12 @@
     <div class="report-side pull-right">
     <!-- 热门课程-->
       <h3 class="report-title">热门课程</h3>
-      <div id="myCarousel" class="carousel slide">
+      <div id="hot" class="hot-course carousel slide">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#hot" data-slide-to="0" class="active"></li>
+          <li data-target="#hot" data-slide-to="1"></li>
+          <li data-target="#hot" data-slide-to="2"></li>
         </ol>
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
@@ -114,13 +114,44 @@
           </div>
         </div>
       </div>
+      <!-- 热门公开课-->
+      <h3 class="report-title">最新公开课</h3>
+      <div id="new" class="new-classes carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+          <li data-target="#new" data-slide-to="0" class="active"></li>
+          <li data-target="#new" data-slide-to="1"></li>
+          <li data-target="#new" data-slide-to="2"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="#" target="_blank"><img src="/cn/images/sat-course01.png" alt="First slide"></a>
+          </div>
+          <div class="item">
+            <a href="#" target="_blank"><img src="/cn/images/sat-course02.png" alt="Second slide"></a>
+          </div>
+          <div class="item">
+            <a href="#" target="_blank"><img src="/cn/images/sat-course03.png" alt="Third slide"></a>
+          </div>
+        </div>
+      </div>
+      <!-- 二维码-->
+      <div class="two-code">
+        <img src="/cn/images/qr-code01.png" alt="二维码">
+        <p>跟我们的老师聊一聊</p>
+      </div>
     </div>
   </div>
-
-  <input class="class-hid" type="hidden" data-class="Reading">
 </section>
 <script>
   $(function() {
+    $('#hot').carousel({
+      interval: 3000
+    });
+    $('#new').carousel({
+      interval: 3000
+    });
     pieChart('accuChart',[parseInt(12),parseInt(30),parseInt(58)],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
     $('.ans-classify li').click(function () {
       $('.ans-classify li').removeClass('on');
