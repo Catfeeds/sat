@@ -47462,3 +47462,1877 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1500284882.3546
     'REQUEST_TIME' => 1500284882
 ]
+2017-07-17 18:05:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/5955ff5b8e17a.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/5955ff5b8e17a.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/5955ff5b8e17a.jpg'
+    'REMOTE_PORT' => '61574'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285923.0566
+    'REQUEST_TIME' => 1500285923
+]
+2017-07-17 18:05:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/594cc926d5868.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/594cc926d5868.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/594cc926d5868.jpg'
+    'REMOTE_PORT' => '61572'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285923.1416
+    'REQUEST_TIME' => 1500285923
+]
+2017-07-17 18:05:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/594b30bae0448.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/594b30bae0448.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/594b30bae0448.jpg'
+    'REMOTE_PORT' => '61574'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285923.2806
+    'REQUEST_TIME' => 1500285923
+]
+2017-07-17 18:05:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '61572'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285923.3976
+    'REQUEST_TIME' => 1500285923
+]
+2017-07-17 18:05:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/58f4558228bfd.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/58f4558228bfd.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/58f4558228bfd.jpg'
+    'REMOTE_PORT' => '61572'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285923.4296
+    'REQUEST_TIME' => 1500285923
+]
+2017-07-17 18:05:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "111111".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('111111', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:23 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/111111'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/111111'
+    'REMOTE_PORT' => '61572'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285923.5556
+    'REQUEST_TIME' => 1500285923
+]
+2017-07-17 18:05:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/594cc943f2558.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:24 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/594cc943f2558.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/594cc943f2558.jpg'
+    'REMOTE_PORT' => '61579'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285924.1966
+    'REQUEST_TIME' => 1500285924
+]
+2017-07-17 18:05:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/5952149250d8c.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:24 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/5952149250d8c.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/5952149250d8c.jpg'
+    'REMOTE_PORT' => '61580'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285924.2526
+    'REQUEST_TIME' => 1500285924
+]
+2017-07-17 18:05:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cbc9b94807.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:24 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cbc9b94807.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cbc9b94807.jpg'
+    'REMOTE_PORT' => '61581'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285924.2666
+    'REQUEST_TIME' => 1500285924
+]
+2017-07-17 18:05:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/5910064ac900b.png".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:24 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/5910064ac900b.png'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/5910064ac900b.png'
+    'REMOTE_PORT' => '61578'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285924.2886
+    'REQUEST_TIME' => 1500285924
+]
+2017-07-17 18:05:24 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/590fdaf5ecea2.png".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:24 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/590fdaf5ecea2.png'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/590fdaf5ecea2.png'
+    'REMOTE_PORT' => '61578'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285924.5876
+    'REQUEST_TIME' => 1500285924
+]
+2017-07-17 18:05:25 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/591954e9ae7ff.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:25 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/591954e9ae7ff.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/591954e9ae7ff.jpg'
+    'REMOTE_PORT' => '61578'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285925.3136
+    'REQUEST_TIME' => 1500285925
+]
+2017-07-17 18:05:25 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/594b3068b8790.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:25 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/594b3068b8790.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/594b3068b8790.jpg'
+    'REMOTE_PORT' => '61572'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285925.3226
+    'REQUEST_TIME' => 1500285925
+]
+2017-07-17 18:05:26 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "11111".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('11111', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:05:26 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/11111'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/11111'
+    'REMOTE_PORT' => '61595'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_REFERER' => 'http://sat.com/'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285926.3176
+    'REQUEST_TIME' => 1500285926
+]
+2017-07-17 18:05:56 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: item' in D:\WWW\sat\modules\cn\controllers\ReportController.php:58
+Stack trace:
+#0 D:\WWW\sat\modules\cn\controllers\ReportController.php(58): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\WWW\\sat\\modu...', 58, Array)
+#1 [internal function]: app\modules\cn\controllers\ReportController->actionReport()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('report', Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/report/repor...', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#8 {main}
+2017-07-17 18:05:56 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SESSION = [
+    '__flash' => []
+    'part' => ''
+    'answer' => ''
+    'uid' => ''
+    'tid' => '1'
+    'time' => '24'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/re.html'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/re.html'
+    'REMOTE_PORT' => '61609'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_REFERER' => 'http://sat.com/mock.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285956.9466
+    'REQUEST_TIME' => 1500285956
+]
+2017-07-17 18:06:06 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/5910064ac900b.png".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:06 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/5910064ac900b.png'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/5910064ac900b.png'
+    'REMOTE_PORT' => '61630'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/teachers.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285966.3136
+    'REQUEST_TIME' => 1500285966
+]
+2017-07-17 18:06:06 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/teachers/594b30bae0448.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/t...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:06 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/teachers/594b30bae0448.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/teachers/594b30bae0448.jpg'
+    'REMOTE_PORT' => '61627'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/teachers.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285966.3256
+    'REQUEST_TIME' => 1500285966
+]
+2017-07-17 18:06:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/592525f568bc8.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/592525f568bc8.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/592525f568bc8.jpg'
+    'REMOTE_PORT' => '61643'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/pubclass.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285977.1136
+    'REQUEST_TIME' => 1500285977
+]
+2017-07-17 18:06:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/59252621c0620.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/59252621c0620.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/59252621c0620.jpg'
+    'REMOTE_PORT' => '61640'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/pubclass.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285977.1426
+    'REQUEST_TIME' => 1500285977
+]
+2017-07-17 18:06:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cbc9b94807.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cbc9b94807.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cbc9b94807.jpg'
+    'REMOTE_PORT' => '61648'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_REFERER' => 'http://sat.com/pubclass.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285977.1506
+    'REQUEST_TIME' => 1500285977
+]
+2017-07-17 18:06:18 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/5952149250d8c.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:18 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/5952149250d8c.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/5952149250d8c.jpg'
+    'REMOTE_PORT' => '61647'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_REQUESTED_WITH' => 'ShockwaveFlash/26.0.0.137'
+    'HTTP_REFERER' => 'http://sat.com/pubclass.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285978.0316
+    'REQUEST_TIME' => 1500285978
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594a4274bb718.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594a4274bb718.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594a4274bb718.jpg'
+    'REMOTE_PORT' => '61649'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.7956
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/590bda324a380.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/590bda324a380.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/590bda324a380.jpg'
+    'REMOTE_PORT' => '61647'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.7886
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cd58433094.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cd58433094.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cd58433094.jpg'
+    'REMOTE_PORT' => '61640'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.7936
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/banner/590bda548f110.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/b...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/banner/590bda548f110.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/banner/590bda548f110.jpg'
+    'REMOTE_PORT' => '61643'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.8256
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cd66f2862c.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cd66f2862c.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cd66f2862c.jpg'
+    'REMOTE_PORT' => '61661'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.3'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.8306
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594b95c43a011.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594b95c43a011.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594b95c43a011.jpg'
+    'REMOTE_PORT' => '61648'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.8586
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cd698733f7.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1732'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cd698733f7.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cd698733f7.jpg'
+    'REMOTE_PORT' => '61647'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.9096
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cd534c881d.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cd534c881d.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cd534c881d.jpg'
+    'REMOTE_PORT' => '61649'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285979.9116
+    'REQUEST_TIME' => 1500285979
+]
+2017-07-17 18:06:20 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Upload/images/info/594cd4403445d.jpg".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Upload/images/i...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-07-17 18:06:20 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'e7hqijh5flqvg3vetii0q49q66'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/Upload/images/info/594cd4403445d.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/Upload/images/info/594cd4403445d.jpg'
+    'REMOTE_PORT' => '61640'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_REFERER' => 'http://sat.com/info.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=e7hqijh5flqvg3vetii0q49q66; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1500285980.9266
+    'REQUEST_TIME' => 1500285980
+]
