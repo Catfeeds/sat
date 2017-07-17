@@ -40,7 +40,7 @@ class MockController extends Controller
         if(isset($_SESSION['answer'])){
             $_SESSION['answer']='';
         }
-        $_SESSION['part']= Yii::$app->session->set('part',$major);
+        $_SESSION['part']=$major;
 //        var_dump($_SESSION);die;
         return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 

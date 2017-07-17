@@ -1,0 +1,186 @@
+.report-banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  padding: 30px 0;
+  background: url("/cn/images/report02.png") 0 0 no-repeat;
+}
+.report-banner .report-bnr-cnt {
+  position: absolute;
+  padding: 0 10px;
+  bottom: 40px;
+  left: 32%;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-8deg);
+  text-align: center;
+  font-size: 24px;
+  background-color: #fff;
+}
+.report-banner .report-bnr-cnt span {
+  color: orangered;
+}
+/**
+  左侧栏
+**/
+.report-wrap {
+  margin-top: 30px;
+}
+.report-wrap .report-cnt {
+  width: 900px;
+}
+.report-wrap .report-cnt .report-title {
+  margin-top: 20px;
+  padding-left: 10px;
+  border-left: 3px solid rgb(54,178,251);
+  font-size: 22px;
+}
+.report-wrap .report-cnt>div {
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(221,221,221);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+.report-score h5 {
+  padding-left: 10px;
+  border-left: 2px solid rgb(54,178,251);
+  font-size: 18px;
+}
+.report-score>.score {
+  width: 60%;
+}
+.report-score>.score p {
+  font-size: 16px;
+}
+.report-score>.score p span {
+  color: orangered;
+}
+.report-score .accuracy {
+  position: relative;
+}
+.report-score .accuracy-chart {
+  width: 150px;
+  height: 150px;
+}
+.report-score .accuracy-list {
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  font-size: 14px;
+}
+.report-score .accuracy-list span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #05bc02;
+}
+.report-score .accuracy-list span.sub-red {
+  background-color: #e9604e;
+}
+.report-score .accuracy-list span.sub-blue {
+  background-color: #2e9fd9;
+}
+/*复习建议*/
+.report-review {
+  position: relative;
+  height: 200px;
+}
+.report-review img {
+  position: absolute;
+  width: 120px;
+  left: 20px;
+  top: 20px;
+}
+.report-review .review-text {
+  position: absolute;
+  left: 160px;
+  top: 20px;
+  width: 80%;
+  height: 150px;
+  background-color: rgb(54,178,251);
+  padding: 20px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+/*做题详情*/
+.report-details .ans-cnt {
+  position: relative;
+  padding-top: 35px;
+  background-color: #fff;
+}
+.report-details .ans-classify {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  font-size: 14px;
+  cursor: pointer;
+}
+.report-details .ans-classify>li {
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 10px;
+  background-color: #f5f5f5;
+}
+.report-details .ans-classify>li.on,
+.report-details .ans-classify>li:hover {
+  background-color: rgb(54,178,251);
+  color: #fff;
+}
+.report-details ol {
+  max-height: 600px;
+  overflow-y: auto;
+}
+.report-details ol>li {
+  height: 100px;
+  margin: 5px 0;
+  border-bottom: 1px dashed #ccc;
+  overflow: hidden;
+}
+.report-details ol>li:last-child {
+  border-bottom: 0;
+}
+/*耗时*/
+.report-details .lost-time {
+  width: 100px;
+  text-align: center;
+}
+.report-details .lost-time>span {
+  font-size: 14px;
+  color: #999;
+}
+.report-details .lost-time>p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+/*题干*/
+.report-details .question-stem {
+  padding: 0 10px;
+}
+/*正确答案*/
+.report-details .show-correct-ans {
+  padding: 0 10px;
+  line-height: 100px;
+}
+.report-details .show-correct-ans>strong {
+  font-size: 30px;
+  color: red;
+}
+
+/**
+  右侧栏
+**/
+.report-side {
+  width: 280px;
+  border: 1px solid rgb(221,221,221);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}

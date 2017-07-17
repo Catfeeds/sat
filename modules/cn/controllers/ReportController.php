@@ -119,7 +119,7 @@ class ReportController extends Controller
         $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
-        if($major=='all'){
+        if($major==''){
             return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
         }else{
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
