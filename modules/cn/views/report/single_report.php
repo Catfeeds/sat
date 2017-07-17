@@ -93,6 +93,7 @@
     </div>
     <div class="report-side pull-right">
     <!-- 热门课程-->
+      <h3 class="report-title">热门课程</h3>
       <div id="myCarousel" class="carousel slide">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
@@ -103,22 +104,15 @@
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
           <div class="item active">
-            <img src="/cn/images/sat-course01.png" alt="First slide">
+            <a href="#" target="_blank"><img src="/cn/images/sat-course01.png" alt="First slide"></a>
           </div>
           <div class="item">
-            <img src="/cn/images/sat-course02.png" alt="Second slide">
+            <a href="#" target="_blank"><img src="/cn/images/sat-course02.png" alt="Second slide"></a>
           </div>
           <div class="item">
-            <img src="/cn/images/sat-course03.png" alt="Third slide">
+            <a href="#" target="_blank"><img src="/cn/images/sat-course03.png" alt="Third slide"></a>
           </div>
         </div>
-        <!-- 轮播（Carousel）导航 -->
-        <a class="carousel-control left" href="#myCarousel"
-           data-slide="prev">&lsaquo;
-        </a>
-        <a class="carousel-control right" href="#myCarousel"
-           data-slide="next">&rsaquo;
-        </a>
       </div>
     </div>
   </div>
