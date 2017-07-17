@@ -1,5 +1,5 @@
 <div class="span10">
-    用户管理>添加上课地址
+    <a href="/admin/user/index">用户管理</a>>添加上课地址
     <form class="form" method="post" action="<?php echo baseUrl."/admin/user/apply_edit"?>">
         <table>
             <tr>

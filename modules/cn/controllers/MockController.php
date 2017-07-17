@@ -13,6 +13,7 @@ use app\libs\KeepAnswer;
 use app\libs\GetScore;
 use app\modules\cn\controllers\ReportController;
 use app\modules\cn\models\Report;
+use app\modules\cn\models\Questions;
 
 class MockController extends Controller
 {
@@ -40,7 +41,8 @@ class MockController extends Controller
         if(isset($_SESSION['answer'])){
             $_SESSION['answer']='';
         }
-        $_SESSION['part']= Yii::$app->session->set('part',$major);
+        $_SESSION['part']=$major;
+//        var_dump($major);
 //        var_dump($_SESSION);die;
         return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 
@@ -66,21 +68,17 @@ class MockController extends Controller
             if ($major == 'Math') {
                 $major = 'major="Math1" or major="Math2"';
                 $where = "where tpId=" . $id . " and $major";
-//                $modle = 'mock_math';
             } else {
                 $where = "where tpId=" . $id . " and major='$major'";
-//                $modle = 'mock_read';
             }
             $section = Yii::$app->db->createCommand("select DISTINCT section from {{%questions}} $where order by section asc limit 1")->queryOne();
         } else {
             $where = "where section=1";
             $section = Yii::$app->db->createCommand("select section from {{%questions}} $where")->queryOne();
-//            $modle = 'mock_read';
         }
         if (!$qid) {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=" . $section['section'] . "  and q.number='1'")->queryOne();
         } else {
-
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne(); // 这里是一维还是二唯数据
         }
@@ -113,6 +111,11 @@ class MockController extends Controller
         session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution,$utime);
+
+//        正确率等的计算，勿删
+//        $model=new Questions();
+//        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
+//        $re=$model->avg($solution,$utime,$data);
         $_SESSION['uid'] = $uid;
         $_SESSION['tid'] = $tid;
 //        $re = $a->addPro($qid, $solution,$utime);
@@ -147,6 +150,12 @@ class MockController extends Controller
 //        session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
+
+//        正确率等的计算，勿删
+//        $model=new Questions();
+//        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
+//        $re=$model->avg($solution,$utime,$data);
+
         // 统计答题总数
         if($count<8){
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();

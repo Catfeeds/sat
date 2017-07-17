@@ -49,6 +49,12 @@ class UserController extends ApiControl
 
 
     }
+    public function actionMessage()
+    {
+        // 公开课的ID，报名者电话，的取到title
+       $data = Yii::$app->db->createCommand("select * from {{%message}}")->queryALL();
+        return $this->render('message',['data'=>$data]);
+    }
     public function actionSuggest_edit()
     {
         if (!$_POST) {
@@ -112,4 +118,5 @@ class UserController extends ApiControl
         }
         die(json_encode($res));
     }
+
 }
