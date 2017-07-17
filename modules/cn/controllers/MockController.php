@@ -28,7 +28,13 @@ class MockController extends Controller
         $kaplan = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
         $barron = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
 //        var_dump($data);die;
-        return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron]);
+        $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,r.uid  from {{%report}} r left join {{%testpaper}} t on  r.tpId=t.id order by r.score limit 10")->queryAll();
+        $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid order by r.score limit 10")->queryAll();
+//          select t.name,t.time,r.score,u.nickname,u.username from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid
+//        foreach($score as $k=>$v){
+//            Yii::$app->db->createCommand("select nickname,username  from {{%user}} where uid=".$v['uid'])->queryOne();
+//        }
+        return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron,'score'=>$score]);
 
     }
 

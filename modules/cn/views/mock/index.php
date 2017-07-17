@@ -123,15 +123,9 @@
       <div class="s-score">
         <h2>全套模考</h2>
         <ul>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
-          <li><span>这是名字,显示名字</span><span>这是做的第几套考试题</span><span>1340分</span></li>
+          <?php foreach($score as $v){?>
+          <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['nickname'].$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+          <?php }?>
         </ul>
       </div>
     </div>

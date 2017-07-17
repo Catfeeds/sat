@@ -92,27 +92,32 @@
       </div>
     </div>
     <div class="report-side pull-right">
-    <!-- 热门课程-->
-      <h3 class="report-title">热门课程</h3>
-      <div id="myCarousel" class="carousel slide">
+      <!-- 热门公开课-->
+      <h3 class="report-title">最新公开课</h3>
+      <div id="new" class="new-classes carousel slide">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#new" data-slide-to="0" class="active"></li>
+          <li data-target="#new" data-slide-to="1"></li>
+          <li data-target="#new" data-slide-to="2"></li>
         </ol>
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
           <div class="item active">
-            <a href="#" target="_blank"><img src="/cn/images/sat-course01.png" alt="First slide"></a>
+            <a href="<?php echo isset($info[0]['pic'])?'/info_details/$info[0][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[0]['pic'])?$info[0]['pic']:''?>" alt="First slide"></a>
           </div>
           <div class="item">
-            <a href="#" target="_blank"><img src="/cn/images/sat-course02.png" alt="Second slide"></a>
+            <a href="<?php echo isset($info[1]['pic'])?'/info_details/$info[1][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[1]['pic'])?$info[1]['pic']:''?>" alt="Second slide"></a>
           </div>
           <div class="item">
-            <a href="#" target="_blank"><img src="/cn/images/sat-course03.png" alt="Third slide"></a>
+            <a href="<?php echo isset($info[1]['pic'])?'/info_details/$info[0][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[2]['pic'])?$info[2]['pic']:''?>" alt="Third slide"></a>
           </div>
         </div>
+      </div>
+      <!-- 二维码-->
+      <div class="two-code">
+        <img src="/cn/images/qr-code01.png" alt="二维码">
+        <p>跟我们的老师聊一聊</p>
       </div>
     </div>
   </div>
@@ -129,9 +134,6 @@
 //    pieChart('repMath',[parseInt('<?php //echo $report['mathnum']/58*100?>//'),parseInt('<?php //echo $report['matherror']/58*100?>//'),parseInt('<?php //echo ((58-$report['mathnum']-$report['matherror'])/58)*100?>//')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
 
 
-
-
-
     $('.ans-classify li').click(function () {
       $('.ans-classify li').removeClass('on');
       $(this).addClass('on');
@@ -140,6 +142,7 @@
       reportData(s,c);
     })
   })
+  reportData($('.class-hid').data('class'),'all');
   function reportData(s,c) {
     $.ajax({
       url: '/cn/report/que',

@@ -124,7 +124,8 @@ class ReportController extends Controller
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
 //        var_dump($res);die;
         if($major==''){
-            return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by DESC limit 3")->queryAll();
+            return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user,'info'=>$info]);
         }else{
 
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
