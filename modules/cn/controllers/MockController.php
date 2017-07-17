@@ -42,8 +42,6 @@ class MockController extends Controller
             $_SESSION['answer']='';
         }
         $_SESSION['part']=$major;
-//        var_dump($major);
-//        var_dump($_SESSION);die;
         return $this->render('mock-notice', ['tid' => $tid, '$major' => $major]);
 
 
