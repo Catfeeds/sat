@@ -223,72 +223,74 @@ function ckBefore(flag,tag) {
     } else {
         process();
         var pos = location.search.indexOf('m=');
+        var subId = $('.work-que-list').data('id'),//题目ID
+          testId = $('#testId').val(),//试卷ID
+          subject = $('#subject').val(),//所属科目
+          classify = $('#classify').val(),//题目类型（跨学科）
+          utime = sessionStorage.uptime,//单题计时,
+          allPos = sessionStorage.allPosition,//总进度,
+          allTime = sessionStorage.reltime,//做题总时间
+          sec = $('#section').val(),//小节
+          num = $('#number').val();//题号
         if (pos == -1) {
             //    全套模考
             var u = location.search.split('&')[0].substr(1);
+            if (tag == 'submit') {//提交进入下一小节
+                clearSession();
+                $.get('/cn/mock/section',{
+                    'tpId':testId,
+                    'section':sec,
+                    'qid':subId,
+                    'solution':ans,
+                    'utime': utime,
+                    'allPos': allPos,
+                    'allTime': allTime
+                },function(data){
+                    if (data == 'rep') {
+                        clearSession('submit');
+                        window.location.href = '/re.html';
+                    }else{
+                        if (data.section == 2 || data.section == 4) {
+                            workShade('.relax-wrap');
+                            relaxTime();
+                            relaxEvent = function () {
+                                $('.work-shade').hide();
+                                $('.relax-wrap').hide();
+                                window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                            }
+                        } else {
+                            window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                        }
+                    }
+                },'json')
+            } else {//下一题
+                $.ajax({
+                    type: 'get',
+                    url: "/cn/mock/next",
+                    data: {
+                        'qid':subId,
+                        'solution':ans,
+                        'uid':uId,
+                        'major':subject,
+                        'crossScore':classify,
+                        'tid':testId,
+                        'section':sec,
+                        'number':num,
+                        'utime': utime
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        window.location.href = '/mock_test?'+u+'&qid='+data.qid;
+                    }
+                })
+            }
         } else {
             //    单科模考
             var arr = location.search.substr(1).split('&'),
                 u = arr[0]+'&'+arr[1];
         }
-        var subId = $('.work-que-list').data('id'),//题目ID
-            testId = $('#testId').val(),//试卷ID
-            subject = $('#subject').val(),//所属科目
-            classify = $('#classify').val(),//题目类型（跨学科）
-            utime = sessionStorage.uptime,//单题计时,
-            allPos = sessionStorage.allPosition,//总进度,
-            allTime = sessionStorage.reltime,//做题总时间
-            sec = $('#section').val(),//小节
-            num = $('#number').val();//题号
-        if (tag == 'submit') {//提交进入下一小节
-            clearSession();
-            $.get('/cn/mock/section',{
-                'tpId':testId,
-                'section':sec,
-                'qid':subId,
-                'solution':ans,
-                'utime': utime,
-                'allPos': allPos,
-                'allTime': allTime
-            },function(data){
-                if (data == 'rep') {
-                    clearSession('submit');
-                    window.location.href = '/re.html';
-                }else{
-                    if (data.section == 2 || data.section == 4) {
-                        workShade('.relax-wrap');
-                        relaxTime();
-                        relaxEvent = function () {
-                            $('.work-shade').hide();
-                            $('.relax-wrap').hide();
-                            window.location.href = '/mock_test?'+u+'&qid='+data.qid;
-                        }
-                    } else {
-                        window.location.href = '/mock_test?'+u+'&qid='+data.qid;
-                    }
-                }
-            },'json')
-        } else {//下一题
-            $.ajax({
-                type: 'get',
-                url: "/cn/mock/next",
-                data: {
-                    'qid':subId,
-                    'solution':ans,
-                    'uid':uId,
-                    'major':subject,
-                    'crossScore':classify,
-                    'tid':testId,
-                    'section':sec,
-                    'number':num,
-                    'utime': utime
-                },
-                dataType: 'json',
-                success: function(data) {
-                    window.location.href = '/mock_test?'+u+'&qid='+data.qid;
-                }
-            })
-        }
+
+
     }
 }
 
