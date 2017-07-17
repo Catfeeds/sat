@@ -1,5 +1,5 @@
 <div class="span10">
-    用户管理>用户留言信息
+    <a href="/admin/user/index">用户管理</a>>用户留言信息
         <table border="1"  width="800px">
             <tr align="center">
                 <th>id</th>

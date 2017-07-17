@@ -1,5 +1,5 @@
 <div class="span10">
-    用户管理>给出复习建议
+    <a href="/admin/user/index">用户管理</a>>给出复习建议
     <form class="form" method="post" action="<?php echo baseUrl."/admin/user/suggest_edit"?>">
         <table>
         <tr>

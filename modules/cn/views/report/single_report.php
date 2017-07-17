@@ -1,12 +1,13 @@
+
 <link rel="stylesheet" href="/cn/css/single-report.css">
 <script src="/cn/js/highcharts.js"></script>
-<script src="/cn/js/report-details.js"></script>
+<!--<script src="/cn/js/report-details.js"></script>-->
 
 <section class="s-w1200">
   <div class="report-banner">
     <div class="report-bnr-cnt">
       <span>lala</span>
-      同学你好,以下是你的<span class="class-hid" data-class="Reading">Reading</span>分析报告
+      同学你好,以下是你的<span class="class-hid" data-class="<?php echo $report['part']?>"><?php echo $report['part']?></span>分析报告
     </div>
   </div>
   <div class="report-wrap clearfix">
@@ -15,10 +16,10 @@
       <h3 class="report-title">成绩</h3>
       <div class="report-score clearfix">
         <div class="score pull-left">
-          <h5>成绩</h5>
-          <p>本次得分<span>222</span>分</p>
-          <p>答对<span>14</span>题</p>
-          <p>答题所用时间<span>12.5</span>min</p>
+          <h5><?php echo $report['part']?>成绩</h5>
+          <p>本次得分<span><?php $major=$report["part"];echo $report["$major"];?></span>分</p>
+          <p>答对<span><?php if($report['part']=='Math'){echo $report['mathnum'];}elseif($report['part']=='Reading'){echo $report['readnum'];}else{echo $report['writenum'];}?></span>题</p>
+          <p>答题所用时间<span><?php echo sprintf("%.2f",$report['time']/60)?></span>min</p>
         </div>
         <div class="accuracy pull-left">
           <h5>正确率</h5>
@@ -44,7 +45,7 @@
       <div class="report-review">
         <img src="/cn/images/report01.png" alt="">
         <div class="review-text">
-          RC 的正确率达到 60% ，并不是说就万事大吉了，一定多去关注自己错题有没有集合在同一篇文章下，对于这种文章，要多注意总结 分析结构。一般来说，只要阅读可以保证每篇错不超过一半，就可以保证不掉库。每天的练习量需要以文章类型或者题型为主。如果是文 章类型的问题，那么要多注意分析文章结构；如果是题型问题，则需要多总结相关的题型技巧。资料的话：自己的错题库 +prep （建议 08- 12-07 ）
+            <?php echo $suggest["$major"]?>
         </div>
       </div>
       <!--做题详情-->
@@ -94,36 +95,34 @@
     <div class="report-side pull-right">
       <ul class="ranking-list">
         <h4>单科排行榜</h4>
-        <li>
-          <span>lalala</span>
-          <span>OG2017</span>
-          <span>232分</span>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+<!--        <li>-->
+<!--          <span>lalala</span>-->
+<!--          <span>OG2017</span>-->
+<!--          <span>232分</span>-->
+<!--        </li>-->
+        <?php foreach($score as $v){?>
+          <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+        <?php }?>
       </ul>
-      <!-- 最新公开课-->
+      <!-- 热门公开课-->
       <h3 class="report-title">最新公开课</h3>
-      <div id="myCarousel" class="new-classes carousel slide">
+      <div id="new" class="new-classes carousel slide">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#new" data-slide-to="0" class="active"></li>
+          <li data-target="#new" data-slide-to="1"></li>
+          <li data-target="#new" data-slide-to="2"></li>
         </ol>
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
           <div class="item active">
-            <a href="#" target="_blank"><img src="/cn/images/sat-course01.png" alt="First slide"></a>
+            <a href="<?php echo isset($info[0]['pic'])?'/info_details/$info[0][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[0]['pic'])?$info[0]['pic']:''?>" alt="First slide"></a>
           </div>
           <div class="item">
-            <a href="#" target="_blank"><img src="/cn/images/sat-course02.png" alt="Second slide"></a>
+            <a href="<?php echo isset($info[1]['pic'])?'/info_details/$info[1][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[1]['pic'])?$info[1]['pic']:''?>" alt="Second slide"></a>
           </div>
           <div class="item">
-            <a href="#" target="_blank"><img src="/cn/images/sat-course03.png" alt="Third slide"></a>
+            <a href="<?php echo isset($info[1]['pic'])?'/info_details/$info[0][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[2]['pic'])?$info[2]['pic']:''?>" alt="Third slide"></a>
           </div>
         </div>
       </div>
@@ -134,13 +133,15 @@
       </div>
     </div>
   </div>
+
 </section>
 <script>
   $(function() {
-    $('#myCarousel').carousel({
-      interval: 3000
-    });
-    pieChart('accuChart',[parseInt(12),parseInt(30),parseInt(58)],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+    pieChart('accuChart',[parseInt(<?php if($report['readnum']!=0){$a=$report['readnum']/52*100;$b=$report['readerror']/52*100;$c=(52-$report['readnum']-$report['readerror'])/52*100;echo $a;}
+    if($report['writenum']!=0){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
+    if($report['mathnum']!=0){$a=$report['mathnum']/58*10;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
+    ?>),parseInt(<?php echo $b?>),parseInt(<?php echo $c?>)],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+
     $('.ans-classify li').click(function () {
       $('.ans-classify li').removeClass('on');
       $(this).addClass('on');
@@ -149,9 +150,10 @@
       reportData(s,c);
     })
   })
+  reportData($('.class-hid').data('class'),'all');
   function reportData(s,c) {
     $.ajax({
-      url: '',
+      url: '/cn/report/que',
       type: 'get',
       data: {
         'sub': s,

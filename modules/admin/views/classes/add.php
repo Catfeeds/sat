@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>授课教师：</td>
-                <td><input type="text" style="width: 600px;" name="teacher" placeholder="老师" value="<?php echo isset($data)? $data['teacher']:''?>"/></td>
+                <td><input type="text" style="width: 600px;" name="teacher" placeholder="格式：kevin,amanda,kevin 符号为英文" value="<?php echo isset($data)? $data['teacher']:''?>"/></td>
             </tr>
             <tr>
                 <td>学习计划：</td>

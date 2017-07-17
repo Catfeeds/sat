@@ -30,16 +30,28 @@
           <div role="tabpanel" class="tab-pane" id="teacher">
             <div class="s-introduce-img">
               <span class="s-top-left"></span>
-              <img class="s-big-img" src="<?php if(isset($teacher['pic'])){echo $teacher['pic'];}else{echo '/cn/images/course-basis01.png';}?>" alt="">
+              <img class="s-big-img" src="<?php if(isset($teacher[0]['pic'])){echo $teacher[0]['pic'];}else{echo '/cn/images/course-basis01.png';}?>" alt="">
               <span class="s-bottom-right"></span>
-              <div class="s-down-img">
-                <img src="/cn/images/course-basis02.png" alt="">
-                <img src="/cn/images/course-basis03.png" alt="">
+              <div class="s-down-img clearfix">
+                <div class="teacher-img">
+                  <img src="<?php echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?>" alt="">
+                  <div>
+                    <?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?>
+                    <?php echo isset($teacher[1]['honorary'])?$teacher[1]['honorary']:''?>
+                  </div>
+                </div>
+                <div class="teacher-img">
+                  <img src="<?php echo isset($teacher[2]['pic'])?$teacher[2]['pic']:''?>" alt="">
+                  <div>
+                    <?php echo isset($teacher[2]['name'])?$teacher[2]['name']:''?>
+                    <?php echo isset($teacher[2]['honorary'])?$teacher[2]['honorary']:''?>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="s-introduce-font">
-              <h2><?php echo $teacher['name']?></h2>
-              <p><?php echo $teacher['introduction']?>
+              <h2><?php echo $teacher[0]['name']?></h2>
+              <p><?php echo $teacher[0]['introduction']?>
               </p>
             </div>
           </div>

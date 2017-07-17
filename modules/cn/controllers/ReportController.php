@@ -53,6 +53,7 @@ class ReportController extends Controller
 //        $uid=222;
         $user=Yii::$app->session->get('userData');
         $major=Yii::$app->session->get('part', 'All'); // 从前台得到还是从地址栏得到
+//        var_dump($major);die;
         if(isset($_SESSION['answer'])) {
             $answerData = ((array)$_SESSION['answer']);
             $answerData = $answerData['item'];// 获取用户的答题数据
@@ -89,11 +90,13 @@ class ReportController extends Controller
                 }
                 $t = substr($t, 0, -1);
                 $re['answer'] = $t;
-                $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-                if ($res) {
-                    $a = KeepAnswer::getCat();
-                    $a->Emptyitem();
-                }//入库完成
+                if($re['answer']!=false){
+                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+                    if ($res) {
+                        $a = KeepAnswer::getCat();
+                        $a->Emptyitem();
+                    }//入库完成
+                }
                 // 历史报告
                 $tpId = Yii::$app->db->createCommand("select tpId from {{%report}} where uid=" . $uid)->queryAll();
                 $report = new Report();
@@ -119,10 +122,17 @@ class ReportController extends Controller
         $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
+//        var_dump($res);die;
         if($major==''){
+//            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by DESC limit 3")->queryAll();
+//            $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part!='all' order by r.score limit 10")->queryAll();
+
+
             return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
         }else{
-            return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
+            $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part!='all' order by r.score limit 10")->queryAll();
+            return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user,'info'=>$info,'score'=>$score]);
         }
 
     }
@@ -263,15 +273,18 @@ class ReportController extends Controller
             foreach($arr as $k =>$v){
                array_push($brr,explode(',',$v));
             }// 获取做题的数据
+//            var_dump($brr);die;
             $report=new Report();
             $que=$report->queDetails($brr,$classify,$major);
         }else{
+
+//            var_dump($_SESSION['answer']);die;
             if(isset($_SESSION['answer'])){
                 $arr=(array)$_SESSION['answer'];
                 $brr=$arr['item'];
                 $report=new Report();
                 $que=$report->queDetails($brr,$classify,$major);
-//                var_dump(111);die;
+//                var_dump($que);die;
             }else{
                 die;
             }
