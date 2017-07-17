@@ -8,6 +8,7 @@ class Questions extends ActiveRecord{
     {
         return '{{%questions}}';
     }
+    // 练习二级页面分页逻辑
     public function data(){
         $major=Yii::$app->request->get('m','Math');
         if($major=='Math'){
@@ -41,5 +42,9 @@ class Questions extends ActiveRecord{
         $page = new Pager("$url", $count, $page, $pagesize);
         $data['str'] = $page->GetPager();
         return $data;
+    }
+    // 做题正确率 时间的更新
+    public function avg(){
+
     }
 }

@@ -32,6 +32,7 @@ class Report extends ActiveRecord{
     }
     function queDetails($brr,$classify,$major){
         static $que=array();
+        // 全部题目
         if($classify=='all'){
             foreach($brr as $k=>$v){
                 $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and major ='$major'")->queryOne();
@@ -42,9 +43,10 @@ class Report extends ActiveRecord{
                 }
             }
         }
+        // 错题
         if($classify=='wrong'){
             foreach($brr as $k=>$v){
-                $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and major ='$major' and avgTime<$v[2]")->queryOne();
+                $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and major ='$major' and answer!= '$v[1]' ")->queryOne();
                 if($data){
                     array_push($data,$v[1]);
                     array_push($data,$v[2]);
@@ -54,7 +56,7 @@ class Report extends ActiveRecord{
         }
         if($classify=='long'){
             foreach($brr as $k=>$v){
-                $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and major ='$major' and answer!= '$v[1]'")->queryOne();
+                $data=Yii::$app->db->createCommand("select id,content,answer from {{%questions}} where id=$v[0] and major ='$major' and avgTime<$v[2]")->queryOne();
                 if($data){
                     array_push($data,$v[1]);
                     array_push($data,$v[2]);
