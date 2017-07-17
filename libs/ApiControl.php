@@ -50,7 +50,10 @@
             $path= Yii::$app->db->createCommand("select path from {{%role}} where id='$rid'")->queryOne();
             $path=$path['path'];
             if(strpos(rtrim($path,','),$now_path)===false){
-                echo '<script>alert("无权限，如有需要请联系管理员");history.go(-1);</script>';
+                $session = Yii::$app->session;
+                $session->remove('adminData');
+                $session->remove('adminId');
+                echo '<script>alert("无权限，如有需要请联系管理员");window.location.href="/admin/login/index";</script>';
                 die;
             }
         }

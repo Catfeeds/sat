@@ -4,7 +4,7 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 
 <div class="span10">
-    <a href="">首页</a><span >&gt;</span><span>banner管理</span><span >&gt;</span><span>添加/修改</span>
+    <a href="/index/index">首页</a><span >&gt;</span><span>banner管理</span><span >&gt;</span><span>添加/修改</span>
     <form name="form" method="post" action="<?php echo baseUrl."/admin/banner/add"?>" enctype="multipart/form-data">
         <table>
 

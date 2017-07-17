@@ -78,7 +78,7 @@
           'borderColor': '#ccc',
           'color': '#ccc'
         });
-        alert(data.message);
+        alert (data.message);
       },'json')
     } else {
       alert ('请登录后报名');
@@ -89,8 +89,8 @@
   var curPage = 1; //当前页码
   function getData(p) {
     $.ajax({
-      type: 'GET',
-      url: "/cn/Pubclass/Page",
+      type: 'post',
+      url: "/cn/pubclass/page",
       data: {
         'p': p
       },

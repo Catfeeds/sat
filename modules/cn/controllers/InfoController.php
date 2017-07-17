@@ -9,7 +9,7 @@ namespace app\modules\cn\controllers;
 
 use yii;
 use yii\web\Controller;
-use app\modules\cn\models\Info;
+use app\modules\admin\models\Info;
 use app\libs\Pager;
 
 class InfoController extends Controller
@@ -17,6 +17,7 @@ class InfoController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
+        // isShow 为0即推荐，1不推荐
         $order="order by isShow asc,id desc";
         $pagesize = 6;
         $page = Yii::$app->request->get('p', 1);
@@ -49,6 +50,9 @@ class InfoController extends Controller
     {
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%info}} where id=$id")->queryOne();
+        $data['hits']+=1;
+        $model=new Info;
+        $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
         $cate = $data['cate'];
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where cate='$cate' order by hits desc ")->queryAll();
         $brr = Yii::$app->db->createCommand('select * from {{%info}} where isShow=0 order by hits desc limit 5 ')->queryAll();

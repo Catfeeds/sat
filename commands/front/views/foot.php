@@ -91,7 +91,7 @@
                 <li>
                     <label for="">邮箱:</label>
                     <br/>
-                    <input class="apply-email" type="text" placeholder="请输入您的邮箱">
+                    <input class="apply-email" onblur="ckEmail(this)" type="text" placeholder="请输入您的邮箱">
                 </li>
                 <li>
                     <label for="">电话:</label>
@@ -101,8 +101,8 @@
                 <li class="apply-code">
                     <label for="">验证码:</label>
                     <br/>
-                    <input class="apply-code" type="text" placeholder="请输入验证码">
-                    <span>获取验证码</span>
+                    <input class="apply-cde" type="text" placeholder="请输入验证码">
+                    <span onclick="leftCode()">获取验证码</span>
                 </li>
                 <li class="apply-submit">
                     <br/>
@@ -122,7 +122,7 @@
         <ul>
             <li class="side-service">
                 <p></p>
-                <div><i class="fa fa-user-circle"></i><a href="#">在线咨询</a></div>
+                <div><i class="fa fa-user-circle"></i><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">在线咨询</a></div>
             </li>
             <li class="side-wechat">
                 <p></p>

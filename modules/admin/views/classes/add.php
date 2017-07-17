@@ -3,7 +3,7 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 <div class="span10">
     <div >
-        <a>首页</a>
+        <a href="/index/index">首页</a>
         <span >&gt;</span>
         <span>课程管理</span>
         <span >&gt;</span>
@@ -46,10 +46,10 @@
                 <td>
                     <select name="cate">
                         <option value ="">请选择班级</option>
-                        <option value ="暑期全能小班" <?php echo isset($data)&& $data['cate']=="暑期全能小班" ?  'selected':''?>>暑期全能小班</option>
-                        <option value ="暑期冲刺小班" <?php echo isset($data)&& $data['cate']=="暑期冲刺小班" ?  'selected':''?>>暑期冲刺小班</option>
-                        <option value ="全能周末班" <?php echo isset($data)&& $data['cate']=="全能周末班" ?  'selected':''?>>全能周末班</option>
-                        <option value ="在线强化班" <?php echo isset($data)&& $data['cate']=="在线强化班" ?  'selected':''?>>在线强化班</option>
+                        <option value ="VIP精品班" <?php echo isset($data)&& $data['cate']=="VIP精品班" ?  'selected':''?>>VIP精品班</option>
+                        <option value ="冲刺小班" <?php echo isset($data)&& $data['cate']=="冲刺小班" ?  'selected':''?>>冲刺小班</option>
+                        <option value ="全能小班" <?php echo isset($data)&& $data['cate']=="全能小班" ?  'selected':''?>>全能小班</option>
+                        <option value ="直播/录播课" <?php echo isset($data)&& $data['cate']=="直播/录播课" ?  'selected':''?>>直播/录播课</option>
                     </select>
                 </td>
             </tr>

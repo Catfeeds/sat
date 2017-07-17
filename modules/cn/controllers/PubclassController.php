@@ -33,9 +33,9 @@ class PubclassController extends Controller
     {
         $arr['pubclass_id']= Yii::$app->request->post('classId', '');
         session_start();
-        if(isset($_SESSION['userData']['phone'])){
+        if($_SESSION['userData']['phone']!=false){
             $arr['phone']=$_SESSION['userData']['phone'];
-        }elseif(isset($_SESSION['userData']['email'])){
+        }else{
             $arr['phone']=$_SESSION['userData']['email'];
         }
         $id=$arr['pubclass_id'] ;

@@ -190,6 +190,19 @@
         $('.correct-ans-hide').fadeIn();
       }
     })
+    //  收藏
+    $('.s-exam .s-collect').click(function () {
+      var _this = $(this);
+      if (_this.find('i').hasClass('fa-star-o')) {
+        _this.addClass('active');
+        _this.find('i').removeClass('fa-star-o');
+        _this.find('i').addClass('fa-star');
+      } else {
+        _this.removeClass('active');
+        _this.find('i').removeClass('fa-star');
+        _this.find('i').addClass('fa-star-o');
+      }
+    }
   })
 //  判断是否最后一道题
   function noQuestion(obj) {

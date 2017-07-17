@@ -37,8 +37,8 @@
           </div>
           <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
           <!-- 分享插件 END -->
-          <a href="#" class="s-ad-bottom s-adver">
-            <img src="/cn/images/pubClass-dea_14.png" alt="">
+          <a href="/index.html" class="s-ad-bottom s-adver">
+            <img src="/cn/images/information2.jpg" alt="广告">
             <p></p>
           </a>
           <div class="s-left-about clearfix">

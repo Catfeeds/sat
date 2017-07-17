@@ -13,7 +13,7 @@
           <h2>SAT<?php echo $data['cate']?>课程</h2>
           <p>课时:<?php echo  $data['duration']?></p>
           <div class="s-object">课程对象：<?php echo $data['student']?></div>
-          <a href="#">立即预约</a>
+          <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">立即预约</a>
         </div>
       </div>
       <div class="s-introduce">
@@ -32,10 +32,10 @@
               <span class="s-top-left"></span>
               <img class="s-big-img" src="<?php if(isset($teacher['pic'])){echo $teacher['pic'];}else{echo '/cn/images/course-basis01.png';}?>" alt="">
               <span class="s-bottom-right"></span>
-<!--              <div class="s-down-img">-->
-<!--                <img src="/cn/images/course-basis02.png" alt="">-->
-<!--                <img src="/cn/images/course-basis03.png" alt="">-->
-<!--              </div>-->
+              <div class="s-down-img">
+                <img src="/cn/images/course-basis02.png" alt="">
+                <img src="/cn/images/course-basis03.png" alt="">
+              </div>
             </div>
             <div class="s-introduce-font">
               <h2><?php echo $teacher['name']?></h2>
