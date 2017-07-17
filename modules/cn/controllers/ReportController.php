@@ -124,11 +124,15 @@ class ReportController extends Controller
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
 //        var_dump($res);die;
         if($major==''){
-            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by DESC limit 3")->queryAll();
-            return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user,'info'=>$info]);
-        }else{
+//            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by DESC limit 3")->queryAll();
+//            $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part!='all' order by r.score limit 10")->queryAll();
 
-            return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+
+            return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
+        }else{
+            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
+            $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part!='all' order by r.score limit 10")->queryAll();
+            return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user,'info'=>$info,'score'=>$score]);
         }
 
     }

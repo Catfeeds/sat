@@ -116,16 +116,23 @@ function upTime(flag) {
     } else {
        var usedTime = 0;
     }
-    var intervalId = setInterval(timer, 1000);
-    function timer() {
+    setInterval(function() {
         usedTime = usedTime + 1;
         if (flag == 'b') {
             sessionStorage.reltime = usedTime;
         } else {
             sessionStorage.uptime = usedTime;
         }
-
-    }
+    },1000)
+    //var intervalId = setInterval(timer, 1000);
+    //function timer() {
+    //    usedTime = usedTime + 1;
+    //    if (flag == 'b') {
+    //        sessionStorage.reltime = usedTime;
+    //    } else {
+    //        sessionStorage.uptime = usedTime;
+    //    }
+    //}
 }
 //休息倒计时
 function relaxTime () {

@@ -124,7 +124,7 @@
         <h2>全套模考</h2>
         <ul>
           <?php foreach($score as $v){?>
-          <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['nickname'].$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+          <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
           <?php }?>
         </ul>
       </div>

@@ -1,6 +1,7 @@
+
 <link rel="stylesheet" href="/cn/css/single-report.css">
 <script src="/cn/js/highcharts.js"></script>
-<script src="/cn/js/report-details.js"></script>
+<!--<script src="/cn/js/report-details.js"></script>-->
 
 <section class="s-w1200">
   <div class="report-banner">
@@ -92,6 +93,17 @@
       </div>
     </div>
     <div class="report-side pull-right">
+      <ul class="ranking-list">
+        <h4>单科排行榜</h4>
+<!--        <li>-->
+<!--          <span>lalala</span>-->
+<!--          <span>OG2017</span>-->
+<!--          <span>232分</span>-->
+<!--        </li>-->
+        <?php foreach($score as $v){?>
+          <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+        <?php }?>
+      </ul>
       <!-- 热门公开课-->
       <h3 class="report-title">最新公开课</h3>
       <div id="new" class="new-classes carousel slide">
@@ -129,10 +141,6 @@
     if($report['writenum']!=0){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
     if($report['mathnum']!=0){$a=$report['mathnum']/58*10;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
     ?>),parseInt(<?php echo $b?>),parseInt(<?php echo $c?>)],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-//    pieChart('repReading',[parseInt('<?php //echo $report['readnum']/52*100?>//'),parseInt('<?php //echo $report['readerror']/52*100?>//'),parseInt('<?php //echo (52-$report['readnum']-$report['readerror'])/52*100?>//')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-//    pieChart('repWriting',[parseInt('<?php //echo $report['writenum']/44*100?>//'),parseInt('<?php //echo $report['writeerror']/44*100?>//'),parseInt('<?php //echo (44-$report['writenum']-$report['writeerror'])/44*100?>//')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-//    pieChart('repMath',[parseInt('<?php //echo $report['mathnum']/58*100?>//'),parseInt('<?php //echo $report['matherror']/58*100?>//'),parseInt('<?php //echo ((58-$report['mathnum']-$report['matherror'])/58)*100?>//')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-
 
     $('.ans-classify li').click(function () {
       $('.ans-classify li').removeClass('on');
