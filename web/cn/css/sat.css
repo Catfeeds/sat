@@ -136,7 +136,7 @@
 .s-pubclass .s-pubcnt-cnt ul {
   position: absolute;
   width: 100%;
-  height: 435px;
+  /*height: 435px;*/
 }
 .s-pubclass .s-pubcnt-cnt li {
   position: absolute;
@@ -148,14 +148,35 @@
   color: #fff;
   top: 50px;
   left: 60px;
+  text-align: center;
   padding-bottom: 70px;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
+  font-size: 14px;
 }
 .s-pubclass .s-pubcnt-cnt li img {
   width: 100%;
   height: 100%;
+}
+.s-pubclass .s-pubclass-info {
+  position: absolute;
+  width: 100%;
+  bottom: -180px;
+  left: 0;
+  padding: 30px 0;
+  background-color: rgba(0,0,0,.5);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.s-pubclass .s-pubclass-info p {
+  color: #fff;
+}
+.s-pubcnt-cnt li:hover .s-pubclass-info{
+  bottom: 70px;
 }
 .s-pubclass .s-pubcnt-cnt li a {
   display: block;
@@ -287,9 +308,11 @@
   margin-bottom: 40px;
   padding: 0 15px;
   line-height: 24px;
+  text-align: left;
   font-size: 14px;
 }
-.s-course .course-text p {
+.s-course .course-text p,
+.s-course .course-text p span {
   color: #fff;
 }
 .s-course .course-text:hover {
