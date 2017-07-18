@@ -8,7 +8,7 @@
                 </li>
                 <li><a href="http://www.smartapply.cn/" target="_blank">留学</a></li>
                 <li><a href="http://www.gmatonline.cn/" target="_blank">GMAT</a></li>
-                <li><a class="on" href="http://sat.thinkuedu.com/" target="_blank">SAT</a></li>
+                <li><a class="on" href="http://sat.viplgw.cn/" target="_blank">SAT</a></li>
                 <li><a href="http://www.toeflonline.cn/" target="_blank">托福</a></li>
                 <li><a href="http://ielts.viplgw.cn/" target="_blank">雅思</a></li>
                 <li class="xian">|</li>
@@ -76,7 +76,7 @@
 </div>
 <nav class="s-nav">
     <div class="container clearfix">
-    <a class="s-nav-logo pull-left" href="http://sat.thinkuedu.com/index.html">
+    <a class="s-nav-logo pull-left" href="http://sat.viplgw.cn/index.html">
         <img src="/cn/images/logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
