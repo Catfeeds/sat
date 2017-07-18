@@ -75,13 +75,14 @@ function upTime() {
 }
 
 function ajaxEvent(obj,u) {
+  console.log('aaa');
   var _this = $(obj),
     ans = $('.work-select.active').data('id');
   if (ans == undefined) {
     $('.work-shade').fadeIn();
   }else {
     $.ajax({
-      url: '',
+      url: '/cn/exercise/',
       type: 'get',
       data: {
         'time': upTime(),
