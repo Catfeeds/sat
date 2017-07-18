@@ -7,7 +7,7 @@
       <!--路径导航-->
       <ol class="breadcrumb">
         <li><a href="/index.html">首页</a></li>
-        <li><a href="#">数学</a></li>
+        <li><a href="/exercise.html?m=Math"><?php echo $data['major']?></a></li>
         <li class="active">SAT-1904</li>
       </ol>
       <div class="s-top-img">
@@ -120,8 +120,8 @@
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li class="last-que" onclick="ajaxEvent(this)" data-id="<?php echo $upid?>">上一题</li>
-             <li class="next-que" onclick="ajaxEvent(this)" data-id="<?php echo $nextid?>">下一题</li>
+              <li class="last-que" onclick="ajaxEvent(this,'last')" data-id="<?php echo $upid?>">上一题</li>
+             <li class="next-que" onclick="ajaxEvent(this,'next')" data-id="<?php echo $nextid?>">下一题</li>
             </ul>
           </div>
           <!--答案解析-->

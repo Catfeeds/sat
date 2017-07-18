@@ -46,10 +46,6 @@ $(function() {
       _this.find('i').addClass('fa-star-o');
     }
   })
-
-  $(document).click(function () {
-    ajaxEvent();
-  })
 })
 var uId = $.cookie('uid');
 uId = 444;
@@ -61,14 +57,6 @@ if (($('.s-collect').data('value') == 1) && (uId != '')) {
   sCollect.find('i').addClass('fa-star');
   sCollect.children('span').html('已收藏');
 }
-//  判断是否最后一道题
-//function noQuestion(obj) {
-//  var _this = $(obj);
-//  if (_this.data('id') == '') {
-//    _this.get(0).href = 'javascript:void(0)';
-//    alert('你真棒，已经把题做完了');
-//  }
-//}
 //正计时
 function upTime() {
   var usedTime = 0;
@@ -77,23 +65,26 @@ function upTime() {
   },1000);
 }
 
-function ajaxEvent(obj) {
+function ajaxEvent(obj,u) {
   var _this = $(obj);
-  if (_this.data('id') == ''){
-    _this.get(0).href = 'javascript:void(0)';
-    alert('你真棒，已经把题做完了');
-  } else {
-    $.ajax({
-      url: '',
-      type: 'get',
-      data: {
-        'time':upTime(),
-        'ans':$('.work-select.active').data('id')
-      },
-      dataType: 'json',
-      success: function (data) {
-        location.href = '/exercise_details/<?php echo $upid?>.html';
+  $.ajax({
+    url: '/cn/exercise/notes',
+    type: 'get',
+    data: {
+      'time':upTime(),
+      'ans':$('.work-select.active').data('id'),
+      'qid': $('#subjectId').data('id'),
+      'up': u
+    },
+    dataType: 'json',
+    success: function (data) {
+      //alert(data);
+      if (data ==false){
+        //_this.get(0).href = 'javascript:void(0)';
+        alert('你真棒，已经把题做完了');
+      } else {
+        location.href = '/exercise_details/'+data.id+'.html';
       }
-    })
-  }
+    }
+  })
 }

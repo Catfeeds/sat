@@ -43,18 +43,24 @@ class Questions extends ActiveRecord{
         $data['str'] = $page->GetPager();
         return $data;
     }
-    // 做题正确率 时间的更新
+    /* 做题正确率 时间的更新
+     *@time每题做题时间
+     * @answer做题答案
+     * @data题目数据
+    */
     public function avg($answer,$time,$data){
         if($answer==$data['answer']){
-            $data['correctRate']=($data['peopleNum']*$data['correctRate']+1)/($data['peopleNum']+1);
+            $data['correctRate']=($data['peopleNum']*$data['correctRate']/100+1)/($data['peopleNum']+1)*100;
         }else{
-            $data['correctRate']=$data['peopleNum']*$data['correctRate']/($data['peopleNum']+1);
+            $data['correctRate']=($data['peopleNum']*$data['correctRate']/100)/($data['peopleNum']+1)*100;
         }
         // 答题时间的计算
         $data['avgTime']=($data['avgTime']*$data['peopleNum']+$time)/($data['peopleNum']+1);
         $data['correctRate']=$data['peopleNum']*$data['correctRate']/($data['peopleNum']+1);
         $data['peopleNum']+=1;
+//        var_dump($data);die;
         $re = $this->updateAll($data, 'id=:id', array(':id' => $data['id']));
         return $re;
     }
+
 }

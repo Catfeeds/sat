@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="/cn/css/single-report.css">
 <script src="/cn/js/highcharts.js"></script>
-<!--<script src="/cn/js/report-details.js"></script>-->
+<script src="/cn/js/report-details.js"></script>
 
 <section class="s-w1200">
   <div class="report-banner">

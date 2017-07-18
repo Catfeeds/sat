@@ -50,7 +50,7 @@ class ReportController extends Controller
 //        $this->actionQue();die;
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
         $uid=Yii::$app->session->get('uid');
-//        $uid=222;
+        $uid=222;
         $user=Yii::$app->session->get('userData');
         $major=Yii::$app->session->get('part', 'All'); // 从前台得到还是从地址栏得到
 //        var_dump($major);die;
@@ -122,12 +122,7 @@ class ReportController extends Controller
         $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
-//        var_dump($res);die;
         if($major==''){
-//            $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by DESC limit 3")->queryAll();
-//            $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part!='all' order by r.score limit 10")->queryAll();
-
-
             return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
         }else{
             $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
@@ -260,7 +255,7 @@ class ReportController extends Controller
     public function actionQue(){
         // 接受的试卷的id
         $uid=Yii::$app->session->get('uid');
-//        $uid=222;
+        $uid=222;
         $tpId=Yii::$app->session->get('tid');
         $major=Yii::$app->request->get('sub');
         $classify=Yii::$app->request->get('classify');
@@ -270,10 +265,12 @@ class ReportController extends Controller
             $arr=explode(';',$data['answer']);
 //            var_dump($arr);
             static $brr=array();
+            // 获取做题的数据
             foreach($arr as $k =>$v){
-               array_push($brr,explode(',',$v));
-            }// 获取做题的数据
-//            var_dump($brr);die;
+//                $brr[$v[0]]=explode(',',$v);
+                array_push($brr,explode(',',$v));
+            }
+//            var_dump($arr);die;
             $report=new Report();
             $que=$report->queDetails($brr,$classify,$major);
         }else{
