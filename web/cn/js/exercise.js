@@ -1,14 +1,23 @@
 $(function() {
+  //console.log();
+  $('.work-shade').height($(document).outerHeight())
   upTime();
+  $('.now-do').click(function () {
+    $('.work-shade').hide();
+  })
   //查看答案
   $('.s-exam .s-answer li').click(function () {
-    if ($(this).index() == 0) {
-      if ($('.s-answer-show').css('display') == 'none') {
-        $(this).addClass('active');
-        $('.s-exam .s-answer-show').fadeIn(1000)
-      } else {
-        $(this).removeClass('active');
-        $('.s-exam .s-answer-show').fadeOut(300)
+    if ($('.work-select.active').data('id') == undefined) {
+      $('.work-shade').fadeIn();
+    }else {
+      if ($(this).index() == 0) {
+        if ($('.s-answer-show').css('display') == 'none') {
+          $(this).addClass('active');
+          $('.s-exam .s-answer-show').fadeIn(1000)
+        } else {
+          $(this).removeClass('active');
+          $('.s-exam .s-answer-show').fadeOut(300)
+        }
       }
     }
   })
@@ -21,7 +30,7 @@ $(function() {
         borderColor: 'red',
         color: '#fff'
       })
-      $('.correct-ans-hide').fadeIn();
+      $('.correct-ans-hide').show();
     }
   })
   $('.math-sure').click(function () {
@@ -66,25 +75,29 @@ function upTime() {
 }
 
 function ajaxEvent(obj,u) {
-  var _this = $(obj);
-  $.ajax({
-    url: '/cn/exercise/notes',
-    type: 'get',
-    data: {
-      'time':upTime(),
-      'ans':$('.work-select.active').data('id'),
-      'qid': $('#subjectId').data('id'),
-      'up': u
-    },
-    dataType: 'json',
-    success: function (data) {
-      //alert(data);
-      if (data ==false){
-        //_this.get(0).href = 'javascript:void(0)';
-        alert('你真棒，已经把题做完了');
-      } else {
-        location.href = '/exercise_details/'+data.id+'.html';
+  var _this = $(obj),
+    ans = $('.work-select.active').data('id');
+  if (ans == undefined) {
+    $('.work-shade').fadeIn();
+  }else {
+    $.ajax({
+      url: '',
+      type: 'get',
+      data: {
+        'time': upTime(),
+        'ans': $('.work-select.active').data('id'),
+        'uid': $('#subjectId').data('id'),
+        'up': u
+      },
+      dataType: 'json',
+      success: function (data) {
+        if (data == '') {
+          _this.get(0).href = 'javascript:void(0)';
+          alert('你真棒，已经把题做完了');
+        } else {
+          location.href = '/exercise_details/' + data.id + '.html';
+        }
       }
-    }
-  })
+    })
+  }
 }

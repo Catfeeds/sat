@@ -88,6 +88,7 @@ body {
 }
 
 .s-nav-login {
+  display: none;
   font-size: 0;
   margin-bottom: 0;
 }
@@ -107,6 +108,56 @@ body {
   color: #f0f0f0;
 }
 .s-nav-login li a:hover {
+  color: #fff;
+}
+.login-after {
+  position: relative;
+  height: 100%;
+  padding: 0 8px;
+  background-color: rgb(54,178,251);
+
+  font-size: 12px;
+}
+.login-after .login-after-show>img {
+  float: left;
+  margin: 8px 8px 0 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.login-after .login-after-show p {
+  float: left;
+  margin: 0;
+  color: #fff;
+}
+.login-after-list {
+  position: absolute;
+  width: 100%;
+  top: 42px;
+  left: 0;
+  z-index: 99;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: none;
+}
+.login-after-list>ul {
+  margin-bottom: 0;
+}
+.login-after-list li {
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.login-after-list li:last-child {
+  border-bottom: 0;
+}
+.login-after-list li:hover {
+  background-color: rgb(54,178,251);
+}
+.login-after-list li a {
+  font-size: 14px;
+}
+.login-after-list li:hover a {
   color: #fff;
 }
 /*APP下载*/
@@ -494,9 +545,7 @@ body {
 }
 .a-close:hover {
   -webkit-transform: rotateZ(90deg);
-  -moz-transform: rotateZ(90deg);
   -ms-transform: rotateZ(90deg);
-  -o-transform: rotateZ(90deg);
   transform: rotateZ(90deg);
 }
 /*apply-small*/
