@@ -32,6 +32,21 @@ $(function () {
     _this.addClass('on');
     _this.children('.app-box').show();
   })
+//  个人中心下拉菜单
+  $('.login-after-show').bind({
+    mouseover: function () {
+      $('.login-after-list').show();
+    },mouseout: function () {
+      $('.login-after-list').hide();
+    }
+  })
+  $('.login-after-list').bind({
+    mouseover: function () {
+      $(this).show();
+    },mouseout: function () {
+      $(this).hide();
+    }
+  })
 //  模考收藏点击事件
   $('.work-collect').click(function () {
     collectEvent(this);

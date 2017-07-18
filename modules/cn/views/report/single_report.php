@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="/cn/css/single-report.css">
 <script src="/cn/js/highcharts.js"></script>
-<!--<script src="/cn/js/report-details.js"></script>-->
+<script src="/cn/js/report-details.js"></script>
 
 <section class="s-w1200">
   <div class="report-banner">
@@ -93,17 +93,60 @@
       </div>
     </div>
     <div class="report-side pull-right">
-      <ul class="ranking-list">
-        <h4>单科排行榜</h4>
-<!--        <li>-->
-<!--          <span>lalala</span>-->
-<!--          <span>OG2017</span>-->
-<!--          <span>232分</span>-->
-<!--        </li>-->
-        <?php foreach($score as $v){?>
-          <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
-        <?php }?>
-      </ul>
+      <h4 class="ranking-title">单科排行榜</h4>
+      <div class="ranking-wrap">
+        <ul class="ranking-list ranking-list1">
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <li>
+            <span>lalala</span>
+            <span>OG2017</span>
+            <span>1602分</span>
+          </li>
+          <?php foreach($score as $v){?>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+          <?php }?>
+        </ul>
+        <ul class="ranking-list ranking-list2"></ul>
+      </div>
       <!-- 热门公开课-->
       <h3 class="report-title">最新公开课</h3>
       <div id="new" class="new-classes carousel slide">
@@ -196,4 +239,25 @@
       }
     })
   }
+
+  var speed = 50,
+    rl1 = $('.ranking-list1'),
+    rl2 = $('.ranking-list2'),
+    rw = $('.ranking-wrap');
+  function rankInfo() {
+    rl2.html(rl1.html());
+    if (rw.scrollTop() >= rl1.outerHeight()) {
+      rw.scrollTop(0);
+    } else {
+     rw.get(0).scrollTop+=1;
+    }
+  }
+  var rankTime = setInterval(rankInfo,speed);
+  rw.bind({
+    mouseover:function(){
+      clearInterval(rankTime);
+  }, mouseout:function() {
+      rankTime = setInterval(rankInfo, speed);
+    }
+  })
 </script>

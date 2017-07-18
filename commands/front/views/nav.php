@@ -21,21 +21,39 @@
             </ul>
         </div>
         <div class="right-login pull-right">
-            <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
-                <li id="welcome"><a  href="#"><?php
-                        if($user){
-                            if($user['nickname']!=false){
-                                echo "欢迎:".$user['nickname'];
-                            }else{
-                                echo "欢迎:".$user['username'];
-                            }
-                        }?></a></li>
-                <li id="out"><a><span onclick="Out()">退出</span></a></li>
-            </ul>
+<!--            <ul class="s-nav-login pull-right" id="outul" --><?php //if(!$user)echo 'style="display:none"';?><!-->
+<!--                <li id="welcome"><a  href="#">--><?php
+//                        if($user){
+//                            if($user['nickname']!=false){
+//                                echo "欢迎:".$user['nickname'];
+//                            }else{
+//                                echo "欢迎:".$user['username'];
+//                            }
+//                        }?><!--</a></li>-->
+<!--                <li id="out"><a><span onclick="Out()">退出</span></a></li>-->
+<!--            </ul>-->
             <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
                 <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
                 <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
             </ul>
+            <div class="login-after pull-right">
+                <div class="login-after-show">
+                    <img src="/cn/images/login.png" alt="头像">
+                    <p>
+                        <span>lalala</span>
+                        <span>(初出茅庐)</span>
+                        <i class="fa fa-angle-down"></i>
+                    </p>
+                </div>
+                <div class="login-after-list">
+                    <ul>
+                        <li><a href="#">收藏题目</a></li>
+                        <li><a href="#">做题记录</a></li>
+                        <li><a href="#">模考记录</a></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="appDownload pull-right">
             <span class="app-tit">APP
@@ -116,5 +134,4 @@
             history.go(0);
         },"text")
     }
-
 </script>

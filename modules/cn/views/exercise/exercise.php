@@ -120,8 +120,8 @@
             </div>
             <ul class="s-answer pull-right">
               <li>查看答案</li>
-              <li class="last-que" onclick="ajaxEvent(this)" data-id="<?php echo $upid?>">上一题</li>
-             <li class="next-que" onclick="ajaxEvent(this)" data-id="<?php echo $nextid?>">下一题</li>
+              <li class="last-que" onclick="ajaxEvent(this,'last')" data-id="<?php echo $upid?>">上一题</li>
+             <li class="next-que" onclick="ajaxEvent(this,'next')" data-id="<?php echo $nextid?>">下一题</li>
             </ul>
           </div>
           <!--答案解析-->
@@ -143,6 +143,13 @@
             <p>扫描关注</p>
           </div>
         </div>
+      </div>
+    </div>
+    <!--遮罩-->
+    <div class="work-shade">
+      <div class="shade-wrap">
+        <h3>答案忘写咯</h3>
+        <p class="now-do">这就去做！</p>
       </div>
     </div>
   </section>
