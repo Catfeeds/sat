@@ -5,7 +5,7 @@
       <ul>
         <li class="person-title">
           <div class="person-name">
-            <img src="/cn/images/person.png" alt="头像">
+            <img src="/cn/images/login.png" alt="头像">
             <p>
               <span>lallal</span>
               <span>(初出茅庐)</span>
@@ -17,16 +17,17 @@
           </ul>
         </li>
         <li class="on">
-          <i class="icon-info-sign"></i>
-          <span>收藏题目</span>
+          <i class="fa fa-bookmark"></i>收藏题目
         </li>
         <li>
-          <i class="icon-info-sign"></i>
-          <span>模考记录</span>
+          <a href="/person_mock.html">
+            <i class="fa fa-clipboard"></i>模考记录
+          </a>
         </li>
         <li>
-          <i class="icon-info-sign"></i>
-          <span>做题记录</span>
+          <a href="/person_exercise.html">
+            <i class="fa fa-file-text-o"></i>做题记录
+          </a>
         </li>
       </ul>
     </div>
@@ -51,7 +52,7 @@
         <li class="clearfix">
           <div class="collect-del pull-right">
             <div>
-              <i class="icon-bookmark"></i>
+              <i class="fa fa-star"></i>
             </div>
             <p>取消收藏</p>
           </div>
@@ -65,7 +66,7 @@
         <li class="clearfix">
           <div class="collect-del pull-right">
             <div>
-              <i class="icon-bookmark"></i>
+              <i class="fa fa-star"></i>
             </div>
             <p>取消收藏</p>
           </div>
@@ -79,7 +80,7 @@
         <li class="clearfix">
           <div class="collect-del pull-right">
             <div>
-              <i class="icon-bookmark"></i>
+              <i class="fa fa-star"></i>
             </div>
             <p>取消收藏</p>
           </div>

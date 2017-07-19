@@ -5,7 +5,7 @@
       <ul>
         <li class="person-title">
           <div class="person-name">
-            <img src="/cn/images/person.png" alt="头像">
+            <img src="/cn/images/login.png" alt="头像">
             <p>
               <span>lallal</span>
               <span>(初出茅庐)</span>
@@ -16,17 +16,18 @@
             <li>正确率:<span>23%</span></li>
           </ul>
         </li>
+        <li>
+          <a href="/person_collect.html">
+            <i class="fa fa-bookmark"></i>收藏题目
+          </a>
+        </li>
+        <li>
+          <a href="/person_mock.html">
+            <i class="fa fa-clipboard"></i>模考记录
+          </a>
+        </li>
         <li class="on">
-          <i class="icon-info-sign"></i>
-          <span>收藏题目</span>
-        </li>
-        <li>
-          <i class="icon-info-sign"></i>
-          <span>模考记录</span>
-        </li>
-        <li>
-          <i class="icon-info-sign"></i>
-          <span>做题记录</span>
+          <i class="fa fa-file-text-o"></i>做题记录
         </li>
       </ul>
     </div>
@@ -61,7 +62,7 @@
             <p>重新做</p>
           </div>
           <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
+            <h4><i class="fa fa-times-circle"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
             <p>
               <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
             </p>
@@ -75,7 +76,7 @@
             <p>重新做</p>
           </div>
           <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
+            <h4><i class="fa fa-times-circle"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
             <p>
               <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
             </p>
@@ -89,7 +90,7 @@
             <p>重新做</p>
           </div>
           <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
+            <h4><i class="fa fa-times-circle"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
             <p>
               <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
             </p>

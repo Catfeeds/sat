@@ -5,7 +5,7 @@
       <ul>
         <li class="person-title">
           <div class="person-name">
-            <img src="/cn/images/person.png" alt="头像">
+            <img src="/cn/images/login.png" alt="头像">
             <p>
               <span>lallal</span>
               <span>(初出茅庐)</span>
@@ -16,17 +16,18 @@
             <li>正确率:<span>23%</span></li>
           </ul>
         </li>
+        <li>
+          <a href="/person_collect.html">
+            <i class="fa fa-bookmark"></i>收藏题目
+          </a>
+        </li>
         <li class="on">
-          <i class="icon-info-sign"></i>
-          <span>收藏题目</span>
+          <i class="fa fa-clipboard"></i>模考记录
         </li>
         <li>
-          <i class="icon-info-sign"></i>
-          <span>模考记录</span>
-        </li>
-        <li>
-          <i class="icon-info-sign"></i>
-          <span>做题记录</span>
+          <a href="/person_exercise.html">
+            <i class="fa fa-file-text-o"></i>做题记录
+          </a>
         </li>
       </ul>
     </div>
@@ -53,9 +54,20 @@
         <dd>全套模考</dd>
         <dd>单科模考</dd>
       </dl>
-      <ul>
+      <ul class="person-mock">
         <li class="clearfix">
-
+          <div class="collect-del pull-right">
+            <div>
+              重新模考
+            </div>
+            <p>查看报告</p>
+          </div>
+          <h3>OG-2017模考试题</h3>
+          <div class="mock-details">
+            <p>耗时：<span>01h22m33s</span></p>
+            <p>正确率: <span>47%</span></p>
+            <p>完成时间: <span>2017-5-8 20:08:24</span></p>
+          </div>
         </li>
       </ul>
     </div>

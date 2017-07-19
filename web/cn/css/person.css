@@ -1,10 +1,10 @@
 .person-wrap {
-  /*margin-top: 30px;*/
+  margin-top: 70px;
 }
 .person-wrap .person-side {
   width: 230px;
 }
-.person-wrap .person-side>ul>li:not(.person-title) {
+.person-side>ul>li:not(.person-title) {
   line-height: 50px;
   border: 1px solid #ccc;
   border-top: 0;
@@ -17,6 +17,9 @@
 .person-wrap .person-side>ul>li:not(.person-title):hover {
   background-color: rgb(230,230,230);
   color: rgb(54,178,251);
+}
+.person-side>ul>li:not(.person-title) i {
+  padding-right: 20px;
 }
 
 .person-wrap .person-side .person-title {
@@ -34,6 +37,7 @@
 .person-wrap .person-name>p {
   display: inline-block;
   vertical-align: top;
+  margin-top: 6px;
   font-size: 16px;
   color: #fff;
 }
@@ -86,6 +90,7 @@
 }
 .person-cnt>ul li {
   margin: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px dashed #ccc;
 }
 .person-cnt>ul li .collect-time {
@@ -119,7 +124,15 @@
 .person-cnt>ul .collect-del>p {
   line-height: 40px;
   margin-bottom: 0;
+  color: #fff;
 }
+.person-cnt>ul .collect-del:hover {
+  background-color: #999;
+}
+.person-cnt>ul .collect-del:hover div{
+  color: #999;
+}
+
 .person-cnt>ul .collect-sub {
   max-height: 70px;
   padding-right: 5px;
@@ -141,3 +154,23 @@
 /**
   模考记录
 **/
+.person-mock>li {
+  background-color: #e6e6e6;
+}
+.person-mock>li>h3 {
+  float: left;
+  margin: 0;
+  line-height: 70px;
+}
+.person-mock>li .mock-details {
+  font-size: 0;
+}
+.person-mock>li .mock-details>p {
+  display: inline-block;
+  margin-right: 20px;
+  line-height: 70px;
+  font-size: 14px;
+}
+.person-mock>li .mock-details>p:last-child {
+  margin-right: 0;
+}

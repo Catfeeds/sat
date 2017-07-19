@@ -139,8 +139,10 @@
    if (!toggle){
      $('.s-toggle li').eq(0).addClass('active')
    }else {
-     if (toggle.indexOf('n') == -1) {
+     if (toggle.indexOf('t') >= 0) {
        $('.s-toggle li').eq(1).addClass('active')
+     } else if(toggle.indexOf('s') >= 0) {
+       $('.s-toggle li').eq(2).addClass('active');
      }else {
        $('.s-toggle li').eq(0).addClass('active')
      }
