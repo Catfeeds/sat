@@ -26,12 +26,12 @@
 <!--                <td>数学小节</td>-->
 <!--                <td>-->
 <!--                    <input type="text" name="math" value="--><?php //echo isset($data)?$data['math']:''?><!--" placeholder="如：section1,section2" style="width:80%;">-->
-<!--<!--                    <select name="major">-->-->
-<!--<!--                        <option value ="">请选择类型</option>-->-->
-<!--<!--                        <option value ="数学" -->--><?php ////echo isset($data)&& $data['major']=="数学" ?  'selected':''?><!--</option>-->
-<!--<!--                        <option value ="阅读" -->--><?php ////echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--<!--></option>-->
-<!--<!--                        <option value ="作文" -->--><?php ////echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--<!--></option>-->
-<!--<!--                    </select>-->-->
+<!--<!--                    <select name="major">-->
+<!--<!--                        <option value ="">请选择类型</option>-->
+<!--<!--                        <option value ="数学" --><?php ////echo isset($data)&& $data['major']=="数学" ?  'selected':''?><!--</option>-->
+<!--<!--                        <option value ="阅读" --><?php ////echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--<!--></option>-->
+<!--<!--                        <option value ="作文" --><?php ////echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--<!--></option>-->
+<!--<!--                    </select>-->
 <!--                </td>-->
 <!--            </tr>-->
 <!--            <tr>-->

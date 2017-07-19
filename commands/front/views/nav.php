@@ -47,9 +47,9 @@
                 </div>
                 <div class="login-after-list">
                     <ul>
-                        <li><a href="#">收藏题目</a></li>
-                        <li><a href="#">做题记录</a></li>
-                        <li><a href="#">模考记录</a></li>
+                        <li><a href="/person_collect.html">收藏题目</a></li>
+                        <li><a href="/person_exercise.html">做题记录</a></li>
+                        <li><a href="/person_mock.html">模考记录</a></li>
                         <li><a href="#">退出登录</a></li>
                     </ul>
                 </div>
