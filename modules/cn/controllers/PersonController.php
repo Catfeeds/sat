@@ -42,12 +42,20 @@ class PersonController extends Controller
             }
         }
         $qid=rtrim($s,',');
-        $data= Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
-
+        $data= Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+        static $n=0;
+        foreach($data as $k=>$v){
+            if($v['answer']==$crr[$v['qid']][1]){
+                $n+=1;
+            }
+        }
 //        var_dump($data);die;
-        return $this->render('person_exercise',['data'=>$data,'crr'=>$crr]);
+        return $this->render('person_exercise',['data'=>$data,'crr'=>$crr,'n'=>$n]);
     }
     public function actionMock(){
-        return $this->render('person_mock');
+        $uid=Yii::$app->session->get('uid');
+        $uid=222;
+        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid)->queryAll();
+        return $this->render('person_mock',['arr'=>$arr]);
     }
 }

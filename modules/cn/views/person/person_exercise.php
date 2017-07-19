@@ -1,56 +1,58 @@
 <link rel="stylesheet" href="/cn/css/person.css">
+<script src="/cn/js/person.js"></script>
 <section class="s-w1200 s-information">
   <div class="person-wrap clearfix">
     <div class="person-side pull-left">
       <ul>
         <li class="person-title">
           <div class="person-name">
-            <img src="/cn/images/person.png" alt="头像">
+            <img src="/cn/images/login.png" alt="头像">
             <p>
               <span>lallal</span>
               <span>(初出茅庐)</span>
             </p>
           </div>
           <ul>
-            <li>做题数:<span>34</span></li>
-            <li>正确率:<span>23%</span></li>
+            <li>做题数:<span><?php echo count($crr);?></span></li>
+            <li>正确率:<span><?php echo $n/count($crr)*100?>%</span></li>
           </ul>
         </li>
+        <li>
+          <a href="/person_collect.html">
+            <i class="fa fa-bookmark"></i>收藏题目
+          </a>
+        </li>
+        <li>
+          <a href="/person_mock.html">
+            <i class="fa fa-clipboard"></i>模考记录
+          </a>
+        </li>
         <li class="on">
-          <i class="icon-info-sign"></i>
-          <span>收藏题目</span>
-        </li>
-        <li>
-          <i class="icon-info-sign"></i>
-          <span>模考记录</span>
-        </li>
-        <li>
-          <i class="icon-info-sign"></i>
-          <span>做题记录</span>
+          <i class="fa fa-file-text-o"></i>做题记录
         </li>
       </ul>
     </div>
     <div class="person-cnt pull-left">
-      <dl>
+      <dl class="per-src">
         <dt>题目来源</dt>
-        <dd class="on">全部</dd>
-        <dd>OG2017</dd>
-        <dd>princeton2016</dd>
-        <dd>kaplan2017</dd>
-        <dd>barron2017</dd>
+        <dd class="on" data-val="all">全部</dd>
+        <dd data-val="og">OG2017</dd>
+        <dd data-val="pr">princeton2016</dd>
+        <dd data-val="ka">kaplan2017</dd>
+        <dd data-val="ba">barron2017</dd>
       </dl>
-      <dl>
+      <dl class="per-classify">
         <dt>科目分类</dt>
-        <dd class="on">全部</dd>
-        <dd>Reading</dd>
-        <dd>Writing</dd>
-        <dd>Math1</dd>
-        <dd>Math2</dd>
+        <dd class="on" data-val="all">全部</dd>
+        <dd data-val="read">Reading</dd>
+        <dd data-val="write">Writing</dd>
+        <dd data-val="math1">Math1</dd>
+        <dd data-val="math2">Math2</dd>
       </dl>
-      <dl>
+      <dl class="per-case">
         <dt>做题情况</dt>
-        <dd class="on">全部</dd>
-        <dd>错误</dd>
+        <dd class="on" data-val="all">全部</dd>
+        <dd data-val="wrong">错误</dd>
       </dl>
       <ul>
         <?php foreach ($data as $k=>$v){?>
@@ -59,12 +61,12 @@
             <div>
               耗时: <span><?php echo $crr[$v['qid']][0]?></span>秒
             </div>
-            <p>重新做</p>
+            <a href="#">重新做</a>
           </div>
           <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>
+            <h4><i class="exer-delete fa fa-times-circle"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>
             <p>
-              <a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a>
+              <a href="#"><?php echo $v['content']?></a>
             </p>
           </div>
         </li>

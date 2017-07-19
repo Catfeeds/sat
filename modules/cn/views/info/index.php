@@ -1,6 +1,5 @@
 
   <link rel="stylesheet" href="/cn/css/information.css">
-
   <section class="s-w1200 s-information">
     <a class="s-adv" href="#">
       <img src="/cn/images/info-bc.jpg" alt="背景图片">
@@ -50,10 +49,13 @@
         <h1><strong>IN</strong>FORMATION</h1>
         <ul class="s-toggle" >
           <li>
-            <a href="/info.html?c=n" >新闻资讯</a></li>
+            <a href="/info.html?c=n" >新闻资讯</a>
           </li >
           <li>
-            <a href="/info.html?c=t" >学术报告</a></li>
+            <a href="/info.html?c=t" >学术报告</a>
+          </li>
+          <li>
+            <a href="/info.html?c=s">高分经验</a>
           </li>
         </ul>
         <div >
@@ -67,8 +69,8 @@
                 <div>
                   <h3><a href="/info_details/<?php echo $v['id']?>.html"> <?php echo $v['title']?></a></h3>
                   <ul>
-                    <li><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['cate']?></a></li>
-                    <li><a href="#">SAT资料</a></li>
+                    <li><a href="/info.html"><?php echo $v['cate']?></a></li>
+<!--                    <li><a href="#">SAT资料</a></li>-->
                     <li class="pull-right"><?php echo date("Y-m-d",$v['publishTime'])?></li>
                   </ul>
                   <p><?php echo $v['summary']?>
@@ -139,8 +141,10 @@
    if (!toggle){
      $('.s-toggle li').eq(0).addClass('active')
    }else {
-     if (toggle.indexOf('n') == -1) {
+     if (toggle.indexOf('t') >= 0) {
        $('.s-toggle li').eq(1).addClass('active')
+     } else if(toggle.indexOf('s') >= 0) {
+       $('.s-toggle li').eq(2).addClass('active');
      }else {
        $('.s-toggle li').eq(0).addClass('active')
      }
