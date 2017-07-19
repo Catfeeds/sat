@@ -11,6 +11,7 @@ use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\Info;
 use app\libs\GetData;
+use app\libs\Pager;
 
 class InfoController extends ApiControl
 {
@@ -18,8 +19,18 @@ class InfoController extends ApiControl
 
     public function actionIndex()
     {
-        $data = Yii::$app->db->createCommand("select * from {{%info}} order by id desc")->queryAll();
-        return $this->render('index', ['data' => $data]);
+        $pagesize = 6;
+        $page = Yii::$app->request->get('p', 1);
+        $offset = $pagesize * ($page - 1);
+        $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} ")->queryOne();
+        $data = Yii::$app->db->createCommand("select * from {{%info}} order by id desc limit $offset,$pagesize")->queryAll();
+        $url='/admin/info/index?p';
+        $count = $count['count'];
+        $page = new Pager("$url", $count, $page, $pagesize);
+        $str = $page->GetPager();
+
+//        $data = Yii::$app->db->createCommand("select * from {{%info}} order by id desc")->queryAll();
+        return $this->render('index', ['data' => $data,'str'=>$str]);
     }
 
     // 修改和添加资讯，判断依据是$_POST['id']是否提交
