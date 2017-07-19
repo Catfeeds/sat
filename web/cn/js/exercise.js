@@ -86,7 +86,7 @@ function ajaxEvent(obj,u) {
       data: {
         'time': upTime(),
         'ans': $('.work-select.active').data('id'),
-        'uid': $('#subjectId').data('id'),
+        'qid': $('#subjectId').data('id'),
         'up': u
       },
       dataType: 'json',
