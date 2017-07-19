@@ -50,13 +50,13 @@
         <h1><strong>IN</strong>FORMATION</h1>
         <ul class="s-toggle" >
           <li>
-            <a href="/info.html?c=n" >新闻资讯</a></li>
+            <a href="/info.html?c=n" >新闻资讯</a>
           </li >
           <li>
-            <a href="/info.html?c=t" >学术报告</a></li>
+            <a href="/info.html?c=t" >学术报告</a>
           </li>
           <li>
-            <a href="#">高分经验</a>
+            <a href="/info.html?c=s">高分经验</a>
           </li>
         </ul>
         <div >
@@ -70,7 +70,7 @@
                 <div>
                   <h3><a href="/info_details/<?php echo $v['id']?>.html"> <?php echo $v['title']?></a></h3>
                   <ul>
-                    <li><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['cate']?></a></li>
+                    <li><a href="/info.html"><?php echo $v['cate']?></a></li>
 <!--                    <li><a href="#">SAT资料</a></li>-->
                     <li class="pull-right"><?php echo date("Y-m-d",$v['publishTime'])?></li>
                   </ul>
