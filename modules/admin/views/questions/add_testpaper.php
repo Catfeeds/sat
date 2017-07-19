@@ -22,39 +22,39 @@
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td>数学小节</td>
-                <td>
-                    <input type="text" name="math" value="<?php echo isset($data)?$data['math']:''?>" placeholder="如：section1,section2" style="width:80%;">
-<!--                    <select name="major">-->
-<!--                        <option value ="">请选择类型</option>-->
-<!--                        <option value ="数学" --><?php //echo isset($data)&& $data['major']=="数学" ?  'selected':''?></option>
-<!--                        <option value ="阅读" --><?php //echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--></option>
-<!--                        <option value ="作文" --><?php //echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--></option>
-<!--                    </select>-->
-                </td>
-            </tr>
-            <tr>
-                <td>阅读小节</td>
-                <td>
-                    <input type="text" name="read" value="<?php echo isset($data)?$data['read']:''?>" placeholder="如：section1,section2" style="width:80%;">
-                </td>
-            </tr>
-            <tr>
-                <td>写与语言</td>
-                <td>
-                    <input type="text" name="language" value="<?php echo isset($data)?$data['language']:''?>" placeholder="如：section1,section2" style="width:80%;">
-                </td>
-            </tr>
-            <tr>
-                <td>写做</td>
-                <td>
-                    <input type="text" name="write" value="<?php echo isset($data)?$data['write']:''?>" placeholder="如：section1,section2" style="width:80%;">
-                </td>
-            </tr>
+<!--            <tr>-->
+<!--                <td>数学小节</td>-->
+<!--                <td>-->
+<!--                    <input type="text" name="math" value="--><?php //echo isset($data)?$data['math']:''?><!--" placeholder="如：section1,section2" style="width:80%;">-->
+<!--<!--                    <select name="major">-->-->
+<!--<!--                        <option value ="">请选择类型</option>-->-->
+<!--<!--                        <option value ="数学" -->--><?php ////echo isset($data)&& $data['major']=="数学" ?  'selected':''?><!--</option>-->
+<!--<!--                        <option value ="阅读" -->--><?php ////echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--<!--></option>-->
+<!--<!--                        <option value ="作文" -->--><?php ////echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--<!--></option>-->
+<!--<!--                    </select>-->-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>阅读小节</td>-->
+<!--                <td>-->
+<!--                    <input type="text" name="read" value="--><?php //echo isset($data)?$data['read']:''?><!--" placeholder="如：section1,section2" style="width:80%;">-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>写与语言</td>-->
+<!--                <td>-->
+<!--                    <input type="text" name="language" value="--><?php //echo isset($data)?$data['language']:''?><!--" placeholder="如：section1,section2" style="width:80%;">-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>写做</td>-->
+<!--                <td>-->
+<!--                    <input type="text" name="write" value="--><?php //echo isset($data)?$data['write']:''?><!--" placeholder="如：section1,section2" style="width:80%;">-->
+<!--                </td>-->
+<!--            </tr>-->
             <tr>
                 <td>年份</td>
-                <td><input type="text" name="time" value="<?php echo isset($data)?$data['time']:''?>" placeholder="如：2017" style="width:80%;"></td>
+                <td><input type="text" name="time" value="<?php echo isset($data)?$data['time']:''?>" placeholder="具体名称，如：年份或者名称" style="width:80%;"></td>
             </tr>
 <!--            <tr>-->
 <!--                <td>来源</td>-->

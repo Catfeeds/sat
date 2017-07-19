@@ -81,12 +81,12 @@ function ajaxEvent(obj,u) {
     $('.work-shade').fadeIn();
   }else {
     $.ajax({
-      url: '',
+      url: '/cn/exercise/notes',
       type: 'get',
       data: {
         'time': upTime(),
         'ans': $('.work-select.active').data('id'),
-        'uid': $('#subjectId').data('id'),
+        'qid': $('#subjectId').data('id'),
         'up': u
       },
       dataType: 'json',

@@ -96,53 +96,8 @@
       <h4 class="ranking-title">单科排行榜</h4>
       <div class="ranking-wrap">
         <ul class="ranking-list ranking-list1">
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
-          <li>
-            <span>lalala</span>
-            <span>OG2017</span>
-            <span>1602分</span>
-          </li>
           <?php foreach($score as $v){?>
-            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score'].'分':''?></span></li>
           <?php }?>
         </ul>
         <ul class="ranking-list ranking-list2"></ul>
