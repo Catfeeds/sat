@@ -308,9 +308,11 @@
   margin-bottom: 40px;
   padding: 0 15px;
   line-height: 24px;
+  text-align: left;
   font-size: 14px;
 }
-.s-course .course-text p {
+.s-course .course-text p,
+.s-course .course-text p span {
   color: #fff;
 }
 .s-course .course-text:hover {

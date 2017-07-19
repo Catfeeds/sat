@@ -124,7 +124,7 @@
                 <div class="s-information s-news">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
-                        <a class="s-more pull-right" href="http://sat.thinkuedu.com/info.html?c=n"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=n"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -146,7 +146,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
-                        <a class="s-more pull-right" href="http://sat.thinkuedu.com/info.html?c=t"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=t"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
