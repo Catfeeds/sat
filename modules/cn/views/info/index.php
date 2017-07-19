@@ -55,6 +55,9 @@
           <li>
             <a href="/info.html?c=t" >学术报告</a></li>
           </li>
+          <li>
+            <a href="#">高分经验</a>
+          </li>
         </ul>
         <div >
           <div class="tab-content">
@@ -68,7 +71,7 @@
                   <h3><a href="/info_details/<?php echo $v['id']?>.html"> <?php echo $v['title']?></a></h3>
                   <ul>
                     <li><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['cate']?></a></li>
-                    <li><a href="#">SAT资料</a></li>
+<!--                    <li><a href="#">SAT资料</a></li>-->
                     <li class="pull-right"><?php echo date("Y-m-d",$v['publishTime'])?></li>
                   </ul>
                   <p><?php echo $v['summary']?>

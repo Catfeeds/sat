@@ -88,7 +88,7 @@ body {
 }
 
 .s-nav-login {
-  display: none;
+  /*display: none;*/
   font-size: 0;
   margin-bottom: 0;
 }
@@ -478,7 +478,7 @@ body {
   width: 100%;
   background-color: #1e638a;
   color: #fff;
-  display: none;
+  /*display: none;*/
 }
 .apply-wrap>h1 {
   width: 160px;
