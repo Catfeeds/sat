@@ -181,7 +181,7 @@ class QuestionsController extends ApiControl
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $count = Yii::$app->db->createCommand("select count(*) as count from {{%questions_extend}} ")->queryOne();
-        $data = Yii::$app->db->createCommand("select qe.*,t.name,t.time from {{%questions_extend}} qe left join {{%testpaper}} t on t.id=qe.tpId order by id desc limit $offset,$pagesize")->queryAll();
+        $data = Yii::$app->db->createCommand("select qe.*,t.name,t.time from {{%questions_extend}} qe left join {{%testpaper}} t on t.id=qe.tid order by id desc limit $offset,$pagesize")->queryAll();
         $url='/admin/questions/topic?p';
         $count = $count['count'];
         $page = new Pager("$url", $count, $page, $pagesize);

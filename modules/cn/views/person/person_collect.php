@@ -48,6 +48,7 @@
         <dd>Math2</dd>
       </dl>
       <ul>
+        <?php foreach($data as $k=>$v){?>
         <li class="clearfix">
           <div class="collect-del pull-right">
             <div>
@@ -56,40 +57,13 @@
             <p>取消收藏</p>
           </div>
           <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12</h4>
+            <h4><i class="icon-bookmark"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?></h4>
             <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
+              <a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a>
             </p>
           </div>
         </li>
-        <li class="clearfix">
-          <div class="collect-del pull-right">
-            <div>
-              <i class="icon-bookmark"></i>
-            </div>
-            <p>取消收藏</p>
-          </div>
-          <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12</h4>
-            <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
-            </p>
-          </div>
-        </li>
-        <li class="clearfix">
-          <div class="collect-del pull-right">
-            <div>
-              <i class="icon-bookmark"></i>
-            </div>
-            <p>取消收藏</p>
-          </div>
-          <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12</h4>
-            <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
-            </p>
-          </div>
-        </li>
+        <?php }?>
       </ul>
     </div>
   </div>

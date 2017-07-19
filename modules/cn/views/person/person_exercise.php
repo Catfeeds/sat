@@ -53,48 +53,23 @@
         <dd>错误</dd>
       </dl>
       <ul>
+        <?php foreach ($data as $k=>$v){?>
         <li class="clearfix">
           <div class="collect-del pull-right">
             <div>
-              耗时: <span>2.3</span>秒
+              耗时: <span><?php echo $crr[$v['qid']][0]?></span>秒
             </div>
             <p>重新做</p>
           </div>
           <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
+            <h4><i class="icon-bookmark"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>
             <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
+              <a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a>
             </p>
           </div>
         </li>
-        <li class="clearfix">
-          <div class="collect-del pull-right">
-            <div>
-              耗时: <span>2.3</span>秒
-            </div>
-            <p>重新做</p>
-          </div>
-          <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
-            <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
-            </p>
-          </div>
-        </li>
-        <li class="clearfix">
-          <div class="collect-del pull-right">
-            <div>
-              耗时: <span>2.3</span>秒
-            </div>
-            <p>重新做</p>
-          </div>
-          <div class="collect-sub">
-            <h4><i class="icon-bookmark"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
-            <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
-            </p>
-          </div>
-        </li>
+      <?php }?>
+
       </ul>
     </div>
   </div>

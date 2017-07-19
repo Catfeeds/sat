@@ -119,7 +119,7 @@
               <span>收藏</span>
             </div>
             <ul class="s-answer pull-right">
-              <li>查看答案</li>
+              <li>查看解析</li>
               <li class="last-que" onclick="ajaxEvent(this,'last')" data-id="<?php echo $upid?>">上一题</li>
              <li class="next-que" onclick="ajaxEvent(this,'next')" data-id="<?php echo $nextid?>">下一题</li>
             </ul>
