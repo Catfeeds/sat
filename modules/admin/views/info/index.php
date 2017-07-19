@@ -95,7 +95,9 @@
             </tr>
         <?php }?>
     </table>
+    <div style="align-content: center;"><?php echo $str?></div>
 </div>
+
 <script>
     function del(id){
         if(confirm("确定删除内容吗")) {

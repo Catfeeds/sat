@@ -29,8 +29,8 @@
 <!--<!--                    <select name="major">-->
 <!--<!--                        <option value ="">请选择类型</option>-->
 <!--<!--                        <option value ="数学" --><?php ////echo isset($data)&& $data['major']=="数学" ?  'selected':''?><!--</option>-->
-<!--<!--                        <option value ="阅读" --><?php ////echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--<!--></option>-->
-<!--<!--                        <option value ="作文" --><?php ////echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--<!--></option>-->
+<!--<!--                        <option value ="阅读" --><?php ////echo isset($data)&& $data['major']=="阅读" ?  'selected':''?><!--<!--></option>
+<!--                        <option value ="作文" --><?php //echo isset($data)&& $data['major']=="作文" ?  'selected':''?><!--></option>
 <!--<!--                    </select>-->
 <!--                </td>-->
 <!--            </tr>-->
@@ -53,13 +53,17 @@
 <!--                </td>-->
 <!--            </tr>-->
             <tr>
-                <td>年份</td>
-                <td><input type="text" name="time" value="<?php echo isset($data)?$data['time']:''?>" placeholder="具体名称，如：年份或者名称" style="width:80%;"></td>
+                <td>试卷名</td>
+                <td><input type="text" name="time" value="<?php echo isset($data)?$data['time']:''?>" placeholder="具体名称，如：年份或者名称" ></td>
             </tr>
 <!--            <tr>-->
 <!--                <td>来源</td>-->
 <!--                <td><input type="text" name="source" value="--><?php //echo isset($data)?$data['source']:''?><!--" placeholder="" style="width:80%;"></td>-->
 <!--            </tr>-->
+            <tr>
+                <td>总分</td>
+                <td><input type="text" name="score" value="<?php echo isset($data)?$data['score']:''?>" placeholder="具体名称，如：年份或者名称" ></td>
+            </tr>
 
             <tr>
                 <td colspan="2" align="center">

@@ -13,6 +13,7 @@ use app\modules\admin\models\QuestionsExtend;
 use app\modules\admin\models\Questions;
 use app\modules\admin\models\TestPaper;
 use app\libs\GetData;
+use app\libs\Pager;
 
 class QuestionsController extends ApiControl
 {
@@ -156,5 +157,35 @@ class QuestionsController extends ApiControl
             }
 
         }
+    }
+    public function actionContent()
+    {
+        $pagesize = 10;
+        $page = Yii::$app->request->get('p', 1);
+        $offset = $pagesize * ($page - 1);
+        $count = Yii::$app->db->createCommand("select count(*) as count from {{%questions}} ")->queryOne();
+        $arr= Yii::$app->db->createCommand("select * from {{%questions}} order by id desc limit $offset,$pagesize")->queryAll();
+        $url='/admin/questions/content?p';
+        $count = $count['count'];
+        $page = new Pager("$url", $count, $page, $pagesize);
+        $str = $page->GetPager();
+
+
+        return $this->render('content', ['str' => $str,'arr'=>$arr]);
+    }
+    public function actionTopic()
+    {
+//        $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} order by id desc")->queryAll();
+
+        $pagesize = 5;
+        $page = Yii::$app->request->get('p', 1);
+        $offset = $pagesize * ($page - 1);
+        $count = Yii::$app->db->createCommand("select count(*) as count from {{%questions_extend}} ")->queryOne();
+        $data = Yii::$app->db->createCommand("select qe.*,t.name,t.time from {{%questions_extend}} qe left join {{%testpaper}} t on t.id=qe.tpId order by id desc limit $offset,$pagesize")->queryAll();
+        $url='/admin/questions/topic?p';
+        $count = $count['count'];
+        $page = new Pager("$url", $count, $page, $pagesize);
+        $str = $page->GetPager();
+        return $this->render('topic', ['data' => $data,'str'=>$str]);
     }
 }

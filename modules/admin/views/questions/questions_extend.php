@@ -13,6 +13,16 @@
 <!--        添加题目及选项<a href="/admin/questions/add">添加题目</a></br></br>-->
     <div id="essay" >
         <form method="post" action="<?php echo baseUrl."/admin/questions/extend"?>">
+            <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷:</span>
+            <span>
+                <select name="tpId">
+                    <option value ="">请选择试卷</option>
+                    <?php foreach($arr as $v){?>
+                        <option value ="<?php echo $v['id']?>" <?php echo isset($data['tpId'])&& $data['tpId']==$v['id'] ?  'selected':''?>><?php echo $v['name'].$v['time']?></option>
+                    <?php }?>
+                </select>
+            </span>
+            </br>
 
             <span width="80px">题 &nbsp;&nbsp;&nbsp;&nbsp;号 :</span>
             <span>

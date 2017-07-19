@@ -12,7 +12,7 @@
 <!--    先添加短文或题目图片<a  href="/admin/questions/extend">添加</a> </br>-->
 <!--            添加短文小题及选项<a><span id="addquestion">添加题目</span></a></br></br>-->
         <div id="question" >
-                <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add"?>">
+            <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add"?>">
                     <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷 &nbsp;:</span>
                     <span>
                         <select name="tpId">
@@ -132,12 +132,13 @@
                         </select>
                     </span>
                     </br>
-              <span colspan="2" style=“align：center">
+                <span colspan="2" style=“align：center">
                     <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>
-                    <button type="submit" id="login-button">添加/修改</button></span>
-            <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                    <button type="submit" id="login-button">添加/修改</button>
+                </span>
+                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
             </form>
-            </div>
+        </div>
 </div>
 <script>
     //实例化编辑器
