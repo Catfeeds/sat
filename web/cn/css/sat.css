@@ -206,7 +206,11 @@
 .s-pubcnt-cnt li:hover .s-pubclass-info {
   bottom: 70px;
 }
-/*暑期班*/
+/*答题系统*/
+.s-system {
+  margin: 70px 0 30px 0;
+}
+/*精品课*/
 .s-course {
   width: 100%;
   margin-top: 30px;
@@ -415,23 +419,25 @@
 .s-daily-cnt .s-daily-title h3>i {
   padding-left: 10px;
 }
-.s-daily-cnt>ul {
+.s-daily-cnt>.daily-question {
   width: 600px;
+  height: 330px;
+  overflow: hidden;
   float: left;
   padding: 0 40px;
 }
-.s-daily-cnt>ul li {
-  /*line-height: 35px;*/
+.s-daily-cnt>.daily-question li {
+  box-sizing: content-box;
   padding: 5px 0;
   margin-bottom: 10px;
   border-bottom: 1px dashed #ccc;
 }
-.s-daily-cnt>ul li>h4 {
+.s-daily-cnt>.daily-question li>h4 {
   margin: 0;
   font-size: 16px;
   color: rgb(54,178,251);
 }
-.s-daily-cnt>ul li>p {
+.s-daily-cnt>.daily-question li>p {
   margin: 0;
   overflow: hidden;
   -ms-text-overflow: ellipsis;

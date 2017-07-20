@@ -53,7 +53,10 @@
         <dt>模考类型</dt>
         <dd class="on" data-val="all">全部</dd>
         <dd data-val="whole">全套模考</dd>
-        <dd data-val="single">单科模考</dd>
+        <dd data-val="read">Reading</dd>
+        <dd data-val="write">Writing</dd>
+        <dd data-val="math">Math</dd>
+<!--        <dd data-val="single">单科模考</dd>-->
       </dl>
       <ul class="person-mock">
         <?php foreach($arr as $k=>$v){?>
