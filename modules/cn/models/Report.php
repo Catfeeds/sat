@@ -88,12 +88,10 @@ class Report extends ActiveRecord{
         $subscore   = $data['subScore'];
         $crosstest  = $data['crossScore'];
         $re = array_merge($data, $score);
-
-
         $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
-        $re=array_push($re,$suggest);
+        array_push($re,$suggest);
 //        var_dump($re);die;
         return $re;
     }

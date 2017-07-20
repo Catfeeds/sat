@@ -45,7 +45,7 @@
       <div class="report-review">
         <img src="/cn/images/report01.png" alt="">
         <div class="review-text">
-            <?php echo $suggest["$major"]?>
+            <?php if($suggest["$major"]!=false){echo $suggest["$major"];}else{echo '无';}?>
         </div>
       </div>
       <!--做题详情-->
