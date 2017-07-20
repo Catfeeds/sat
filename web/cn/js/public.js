@@ -25,7 +25,7 @@ $(function () {
     _this.children('span').css('color','#f0f0f0');
   }
   })
-  $('.app-down li').mouseenter(function () {
+  $('.app-down').on('mouseover','li', function () {
     var _this = $(this);
     $('.app-box').hide();
     $('.app-down li').removeClass('on');
@@ -46,6 +46,27 @@ $(function () {
     },mouseout: function () {
       $(this).hide();
     }
+  })
+//  搜索框事件
+  $('.nav-search').bind({
+    focus: function () {
+      $(this).css('width','200px')
+    }, blur: function () {
+      $(this).css('width','150px')
+    }
+  })
+  $('.nav-search-sure').click(function () {
+    //var content = $('.nav-search').val();
+    //$.ajax({
+    //  url:'',
+    //  type: 'post',
+    //  data: {
+    //    'cnt': content
+    //  },
+    //  success: function (data) {
+    //
+    //  }
+    //})
   })
 //  模考收藏点击事件
   $('.work-collect').click(function () {

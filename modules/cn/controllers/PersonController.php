@@ -10,6 +10,7 @@ namespace app\modules\cn\controllers;
 use app\libs\Format;
 use yii;
 use yii\web\Controller;
+use app\modules\cn\models\Notes;
 
 
 class PersonController extends Controller
@@ -56,10 +57,31 @@ class PersonController extends Controller
     public function actionMock(){
         $uid=Yii::$app->session->get('uid');
         $uid=222;
-        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid." order by r.id desc")->queryAll();
+        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid)->queryAll();
 //        var_dump($arr);die;
 //        $format=new Format();
 //        $format->FormatTime($arr['rtime']);
         return $this->render('person_mock',['arr'=>$arr]);
+    }
+    public function actionColl()
+    {
+
+    }
+    public function actionExer()
+    {
+        $uid=Yii::$app->session->get('uid');
+        $uid=222;
+        $name=Yii::$app->request->get('src');
+        $major=Yii::$app->request->get('classify');
+        $error=Yii::$app->request->get('case');
+//        var_dump($error);die;
+        $notes=new Notes();
+        $data=$notes->Ex($uid,$name,$major,$error);
+        echo die(json_encode($data));
+//        return $this->render('person_exercise',['data'=>$data,'crr'=>$crr,'n'=>$n]);
+    }
+    public function actionMo()
+    {
+
     }
 }

@@ -13,35 +13,69 @@
   height: 247px;
 }
 .s-exam {
-  width: 680px;
+  min-height: 600px;
   font-size: 14px;
 }
 .s-exam .s-num {
   font-size: 16px;
 }
-/*阅读、文法*/
-.s-exam .read-exam,
-.s-exam .read-exam .work-wrap-left,
-.s-exam .read-exam .work-wrap-right {
+/*数学*/
+.math-exam {
+  width: 680px;
+  margin-right: 100px;
+}
+.math-exam .math-title {
   width: 100%;
-  overflow: hidden;
+  height: 35px;
+  padding: 0 20px;
+  margin-top: 0;
+  background-color: rgb(54,178,251);
+}
+.math-exam .math-title>h3 {
+  line-height: 35px;
+  font-size: 20px;
+  color: #fff;
+}
+/*阅读、文法*/
+.s-exam .read-exam .read-title {
+  width: 100%;
+  height: 35px;
+  padding: 0 20px;
+  background-color: rgb(54,178,251);
+}
+.s-exam .read-exam .read-title>h3,
+.s-exam .read-exam .read-title>p {
+  line-height: 35px;
+  font-size: 20px;
+  color: #fff;
 }
 .s-exam .read-exam .work-wrap-left {
-  height: 400px;
-  overflow-y: auto;
+  height: 500px;
+  padding-right: 10px;
+  border-right: 1px dashed #ccc;
 }
-.read-exam .work-wrap-left .read-text {
-  width: 100%;
-}
+/*.s-exam .read-exam,*/
+/*.s-exam .read-exam .work-wrap-left,*/
+/*.s-exam .read-exam .work-wrap-right {*/
+  /*width: 100%;*/
+  /*overflow: hidden;*/
+/*}*/
+/*.s-exam .read-exam .work-wrap-left {*/
+  /*height: 400px;*/
+  /*overflow-y: auto;*/
+/*}*/
+/*.read-exam .work-wrap-left .read-text {*/
+  /*width: 100%;*/
+/*}*/
 .correct-ans-hide {
-  padding: 20px 20px 0;
+  padding: 20px 0;
   color: rgb(54,178,251);
   display: none;
 }
 /*收藏、查看答案、上下题*/
 .s-exam .s-btn-list {
-  margin: 60px 0;
-  padding: 0 20px;
+  margin: 40px 0;
+  padding-right: 100px;
 }
 .s-exam .s-collect {
   padding: 5px 15px;
@@ -78,21 +112,50 @@
   border: 1px solid #000;
 }
 /*右侧栏*/
-.s-exercise .s-adv .s-adv-img {
+.exer-side {
+  font-size: 0;
+}
+.exer-side>div {
+  display: inline-block;
+  width: 380px;
+  margin: 0 10px 30px;
+  font-size: 14px;
+}
+.exer-side>div>h3 {
   width: 100%;
-  height: 145px;
-  -webkit-box-shadow: 0 0 3px #000;
-  -moz-box-shadow: 0 0 3px #000;
-  box-shadow: 0 0 3px #000;
-}
-.s-exercise .s-adv .s-code {
-  margin: 30px 0;
+  height: 35px;
+  background-color: #ccc;
+  line-height: 35px;
   text-align: center;
+  color: #fff;
+  font-size: 20px;
 }
-.s-exercise .s-adv .s-code img {
-  width: 70%;
-  font-size: 16px;
+.exer-side>div li {
+  padding: 0 10px;
+  line-height: 30px;
+  border-bottom: 1px dashed #ccc;
 }
+.exer-side>div li a {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*.s-exercise .s-adv .s-adv-img {*/
+  /*width: 100%;*/
+  /*height: 145px;*/
+  /*-webkit-box-shadow: 0 0 3px #000;*/
+  /*-moz-box-shadow: 0 0 3px #000;*/
+  /*box-shadow: 0 0 3px #000;*/
+/*}*/
+/*.s-exercise .s-adv .s-code {*/
+  /*margin: 30px 0;*/
+  /*text-align: center;*/
+/*}*/
+/*.s-exercise .s-adv .s-code img {*/
+  /*width: 70%;*/
+  /*font-size: 16px;*/
+/*}*/
 /**
   遮罩
 **/

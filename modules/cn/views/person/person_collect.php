@@ -60,9 +60,9 @@
           </div>
           <div class="collect-sub">
             <h4><i class="icon-bookmark"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?></h4>
-            <p>
-              <a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a>
-            </p>
+            <div>
+              <a href="/exercise_details/<?php echo $v['qid']?>.html" target="_blank"><?php echo $v['content']?></a>
+            </div>
           </div>
         </li>
 <!--        <li class="clearfix">-->

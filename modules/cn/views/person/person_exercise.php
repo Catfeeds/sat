@@ -36,18 +36,18 @@
       <dl class="per-src">
         <dt>题目来源</dt>
         <dd class="on" data-val="all">全部</dd>
-        <dd data-val="og">OG2017</dd>
-        <dd data-val="pr">princeton2016</dd>
-        <dd data-val="ka">kaplan2017</dd>
-        <dd data-val="ba">barron2017</dd>
+        <dd data-val="OG">OG</dd>
+        <dd data-val="princeton">princeton</dd>
+        <dd data-val="kaplan">kaplan</dd>
+        <dd data-val="BARRON">barron</dd>
       </dl>
       <dl class="per-classify">
         <dt>科目分类</dt>
         <dd class="on" data-val="all">全部</dd>
-        <dd data-val="read">Reading</dd>
-        <dd data-val="write">Writing</dd>
-        <dd data-val="math1">Math1</dd>
-        <dd data-val="math2">Math2</dd>
+        <dd data-val="Reading">Reading</dd>
+        <dd data-val="Writing">Writing</dd>
+        <dd data-val="Math1">Math1</dd>
+        <dd data-val="Math2">Math2</dd>
       </dl>
       <dl class="per-case">
         <dt>做题情况</dt>

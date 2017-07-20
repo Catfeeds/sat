@@ -50,4 +50,59 @@ class Notes extends ActiveRecord
 
 //
 //    }
+    // 根据条件取数据
+    public function Ex($uid,$name,$major,$error){
+        $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
+        if ($arr['notes'] != false) {
+            $brr = explode(';', $arr['notes']);
+            static $crr = array();
+            static $s ='';
+            foreach ($brr as $k => $v) {
+                if ($v !='') {
+                    $key=explode(',', $v)[0];
+                    $crr[$key]=explode(',', $v);
+                    $s.=$key.',';
+                }
+
+            }
+        }
+        $qid=rtrim($s,',');
+
+        if($major=='Math'){
+            $major="(major='Math1' or major='Math2')";
+        }else{
+            $major="major='$major'";
+        }
+        $where=(($name!=false)?"t.name='$name'":'').(($name!=false)?'and':'').(($major!=false)?" $major ":'');
+//        var_dump($error);die;
+        $qe = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) and $where")->queryAll();
+        if($error=='all'){
+////            static $data = array();
+//            $qe = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) and $where")->queryAll();
+//            var_dump($qe);die;
+//            foreach($qe as $k=>$v) {
+//            if($v['id']==$crr[$k]){
+//                    array_push($qe,$v[1]);
+//                    array_push($qe,$v[2]);
+//                    array_push($qe,$v[3]);
+//                    array_push($data,$qe);
+//                }
+
+//            }
+        }else{
+//            static $data = array();
+//            foreach($crr as $k=>$v){
+//                $qe=Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) and $where and answer!= '$v[1]' ")->queryOne();
+//                if($qe){
+//                    array_push($qe,$v[1]);
+//                    array_push($qe,$v[2]);
+//                    array_push($qe,$v[3]);
+//                    array_push($data,$qe);// 查看耗时较长的题目
+//                }
+//            }
+        }
+        var_dump($qe);
+//        return $data;
+
+    }
 }

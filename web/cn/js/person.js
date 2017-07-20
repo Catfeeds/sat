@@ -1,6 +1,7 @@
 $(function () {
   console.log($('.per-src dd').filter('.on').data('val'));
   $('.person-cnt dl').on('click','dd',function() {
+    $('.person-cnt ul').html('');
     var _this=  $(this);
     _this.siblings().removeClass('on');
     _this.addClass('on');
@@ -17,8 +18,8 @@ $(function () {
     }
     if (pos == 'exercise') {
       $.ajax({
-        url: '',
-        type: 'post',
+        url: '/cn/person/exer',
+        type: 'get',
         data: {
           'src': src,
           'classify': classify,
