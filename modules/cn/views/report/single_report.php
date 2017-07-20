@@ -132,6 +132,7 @@
     </div>
   </div>
   <input type="hidden" id="tpId" data-val="<?php echo $report['tpId']?>">
+  <input type="hidden" id="rid" data-val="<?php echo isset($report['id'])?$report['id']:''?>">
 </section>
 <script>
   $(function() {
@@ -156,7 +157,8 @@
       data: {
         'sub': s,
         'classify': c,
-        'tid': $('#tpId').data('val')
+        'tid': $('#tpId').data('val'),
+        'rid': $('#rid').data('val')
       },
       dataType: 'json',
       success: function (data) {
