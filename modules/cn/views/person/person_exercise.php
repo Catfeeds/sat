@@ -61,7 +61,7 @@
             <div>
               耗时: <span><?php echo $crr[$v['qid']][0]?></span>秒
             </div>
-            <a href="#">重新做</a>
+            <a href="/exercise_details/<?php echo $v['qid']?>.html">重新做</a>
           </div>
           <div class="collect-sub">
             <h4><i class="exer-delete fa fa-times-circle"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>

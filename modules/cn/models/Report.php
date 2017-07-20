@@ -1,7 +1,7 @@
 <?php
 namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
-
+use app\libs\GetScore;
 use yii;
 class Report extends ActiveRecord{
     public static function tableName()
@@ -30,7 +30,8 @@ class Report extends ActiveRecord{
         $string = implode(",", $r_arr);
         return $string;
     }
-    function queDetails($brr,$classify,$major){
+    function queDetails($brr,$classify,$major)
+    {
         static $que=array();
         // 全部题目
         if($classify=='all'){
@@ -66,4 +67,30 @@ class Report extends ActiveRecord{
         }
         return $que;
     }
+    function Show($uid,$id)
+    {
+        if($id==false){
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
+        }else{
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
+        }
+        $getscore   = new GetScore();
+//        $number     = $getscore->Number($answerData);
+        $number['Math']      =$data['mathnum'];
+        $number['Writing']   =$data['writenum'];
+        $number['Reading']   =$data['readnum'];
+        $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
+        $subscore   = $data['subScore'];
+        $crosstest  = $data['crossScore'];
+        $re = array_merge($data, $score);
+
+
+        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
+        array_push($re,$suggest);
+//        var_dump($re);die;
+        return $re;
+    }
+
 }

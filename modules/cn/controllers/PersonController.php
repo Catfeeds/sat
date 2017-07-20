@@ -7,6 +7,7 @@
  */
 namespace app\modules\cn\controllers;
 
+use app\libs\Format;
 use yii;
 use yii\web\Controller;
 
@@ -55,7 +56,10 @@ class PersonController extends Controller
     public function actionMock(){
         $uid=Yii::$app->session->get('uid');
         $uid=222;
-        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid)->queryAll();
+        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid." order by r.id desc")->queryAll();
+//        var_dump($arr);die;
+//        $format=new Format();
+//        $format->FormatTime($arr['rtime']);
         return $this->render('person_mock',['arr'=>$arr]);
     }
 }

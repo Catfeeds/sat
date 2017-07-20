@@ -131,7 +131,7 @@
       </div>
     </div>
   </div>
-
+  <input type="hidden" id="tpId" data-val="<?php echo $report['tpId']?>">
 </section>
 <script>
   $(function() {
@@ -155,7 +155,8 @@
       type: 'get',
       data: {
         'sub': s,
-        'classify': c
+        'classify': c,
+        'tid': $('#tpId').data('val')
       },
       dataType: 'json',
       success: function (data) {
