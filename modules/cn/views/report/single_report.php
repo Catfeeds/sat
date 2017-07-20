@@ -45,7 +45,7 @@
       <div class="report-review">
         <img src="/cn/images/report01.png" alt="">
         <div class="review-text">
-            <?php echo $suggest["$major"]?>
+            <?php if($suggest["$major"]!=false){echo $suggest["$major"];}else{echo '无';}?>
         </div>
       </div>
       <!--做题详情-->
@@ -131,7 +131,8 @@
       </div>
     </div>
   </div>
-
+  <input type="hidden" id="tpId" data-val="<?php echo $report['tpId']?>">
+  <input type="hidden" id="rid" data-val="<?php echo isset($report['id'])?$report['id']:''?>">
 </section>
 <script>
   $(function() {
@@ -155,7 +156,9 @@
       type: 'get',
       data: {
         'sub': s,
-        'classify': c
+        'classify': c,
+        'tid': $('#tpId').data('val'),
+        'rid': $('#rid').data('val')
       },
       dataType: 'json',
       success: function (data) {

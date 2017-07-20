@@ -18,7 +18,7 @@
           </ul>
         </li>
         <li class="on">
-          <i class="fa fa-bookmark"></i>收藏题目
+            <i class="fa fa-bookmark"></i>收藏题目
         </li>
         <li>
           <a href="/person_mock.html">

@@ -9,8 +9,6 @@
         <span >&gt;</span>
         <span>添加短文、图片</span>
     </div>
-<!--        先添加短文或数学图片<a ><span id="addessay">添加\修改</span></a> </br>-->
-<!--        添加题目及选项<a href="/admin/questions/add">添加题目</a></br></br>-->
     <div id="essay" >
         <form method="post" action="<?php echo baseUrl."/admin/questions/extend"?>">
             <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷:</span>
