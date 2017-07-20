@@ -13,8 +13,8 @@
             </p>
           </div>
           <ul>
-            <li>做题数:<span>34</span></li>
-            <li>正确率:<span>23%</span></li>
+            <li>做题数:<span><?php echo count($crr);?></span></li>
+            <li>正确率:<span><?php echo $n/count($crr)*100?>%</span></li>
           </ul>
         </li>
         <li>
@@ -55,48 +55,23 @@
         <dd data-val="wrong">错误</dd>
       </dl>
       <ul>
+        <?php foreach ($data as $k=>$v){?>
         <li class="clearfix">
           <div class="collect-del pull-right">
             <div>
-              耗时: <span>2.3</span>秒
+              耗时: <span><?php echo $crr[$v['qid']][0]?></span>秒
             </div>
             <a href="#">重新做</a>
           </div>
           <div class="collect-sub">
-            <h4><i class="exer-delete fa fa-times-circle"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
+            <h4><i class="exer-delete fa fa-times-circle"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>
             <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
+              <a href="#"><?php echo $v['content']?></a>
             </p>
           </div>
         </li>
-        <li class="clearfix">
-          <div class="collect-del pull-right">
-            <div>
-              耗时: <span>2.3</span>秒
-            </div>
-            <a href="#">重新做</a>
-          </div>
-          <div class="collect-sub">
-            <h4><i class="exer-delete fa fa-times-circle"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
-            <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
-            </p>
-          </div>
-        </li>
-        <li class="clearfix">
-          <div class="collect-del pull-right">
-            <div>
-              耗时: <span>2.3</span>秒
-            </div>
-            <a href="#">重新做</a>
-          </div>
-          <div class="collect-sub">
-            <h4><i class="exer-delete fa fa-times-circle"></i>OG2017-阅读-12<span>2017-3-12 08:12:09</span></h4>
-            <p>
-              <a href="#">ajhkfaio faui fnai fnaj najl anfjk fndai fnak faj naj fjak jak fjak fajk fanjk nfajk nafjk jak nask fnjsa fnsjak fankj?</a>
-            </p>
-          </div>
-        </li>
+      <?php }?>
+
       </ul>
     </div>
   </div>

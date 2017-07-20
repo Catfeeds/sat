@@ -91,7 +91,7 @@ class MockController extends Controller
             $amount=0;
             $modle = 'mock_read';
         }
-
+//        var_dump($data);
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);
     }
 

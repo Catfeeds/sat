@@ -11,7 +11,7 @@
     <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add_testpaper"?>">
         <table width="100%">
             <tr>
-                <td width="80px">试卷名称:</td>
+                <td width="80px">试卷类型:</td>
                 <td>
                     <select name="name">
                         <option value ="">请选择类型</option>

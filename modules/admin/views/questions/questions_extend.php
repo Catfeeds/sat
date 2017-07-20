@@ -15,7 +15,7 @@
         <form method="post" action="<?php echo baseUrl."/admin/questions/extend"?>">
             <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷:</span>
             <span>
-                <select name="tpId">
+                <select name="tid">
                     <option value ="">请选择试卷</option>
                     <?php foreach($arr as $v){?>
                         <option value ="<?php echo $v['id']?>" <?php echo isset($data['tpId'])&& $data['tpId']==$v['id'] ?  'selected':''?>><?php echo $v['name'].$v['time']?></option>

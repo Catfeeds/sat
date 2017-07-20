@@ -56,42 +56,44 @@
         <dd data-val="single">单科模考</dd>
       </dl>
       <ul class="person-mock">
+        <?php foreach($arr as $k=>$v){?>
         <li class="clearfix">
           <div class="mock-look pull-right">
             <a href="#" class="mock-again">重新模考</a>
             <a href="#" class="mock-record">查看报告</a>
           </div>
-          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>
+          <h3><i class="mock-delete fa fa-trash"></i><?php echo $v['name'].$v['time']?></h3>
           <div class="mock-details">
-            <p>耗时：<span>01h22m33s</span></p>
-            <p>正确率: <span>47%</span></p>
-            <p>完成时间: <span>2017-5-8 20:08:24</span></p>
+            <p>耗时：<span><?php echo $v['time']?></span></p>
+            <p>正确率: <span><?php echo sprintf("%.2f",($v['mathnum']+$v['readnum']+$v['writenum'])/154*100)?>%</span></p>
+            <p>完成时间: <span><?php echo date('Y-m-d H:i:s',$v['date'])?></span></p>
           </div>
         </li>
-        <li class="clearfix">
-          <div class="mock-look pull-right">
-            <a href="#" class="mock-again">重新模考</a>
-            <a href="#" class="mock-record">查看报告</a>
-          </div>
-          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>
-          <div class="mock-details">
-            <p>耗时：<span>01h22m33s</span></p>
-            <p>正确率: <span>47%</span></p>
-            <p>完成时间: <span>2017-5-8 20:08:24</span></p>
-          </div>
-        </li>
-        <li class="clearfix">
-          <div class="mock-look pull-right">
-            <a href="#" class="mock-again">重新模考</a>
-            <a href="#" class="mock-record">查看报告</a>
-          </div>
-          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>
-          <div class="mock-details">
-            <p>耗时：<span>01h22m33s</span></p>
-            <p>正确率: <span>47%</span></p>
-            <p>完成时间: <span>2017-5-8 20:08:24</span></p>
-          </div>
-        </li>
+        <?php }?>
+<!--        <li class="clearfix">-->
+<!--          <div class="mock-look pull-right">-->
+<!--            <a href="#" class="mock-again">重新模考</a>-->
+<!--            <a href="#" class="mock-record">查看报告</a>-->
+<!--          </div>-->
+<!--          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>-->
+<!--          <div class="mock-details">-->
+<!--            <p>耗时：<span>01h22m33s</span></p>-->
+<!--            <p>正确率: <span>47%</span></p>-->
+<!--            <p>完成时间: <span>2017-5-8 20:08:24</span></p>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="clearfix">-->
+<!--          <div class="mock-look pull-right">-->
+<!--            <a href="#" class="mock-again">重新模考</a>-->
+<!--            <a href="#" class="mock-record">查看报告</a>-->
+<!--          </div>-->
+<!--          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>-->
+<!--          <div class="mock-details">-->
+<!--            <p>耗时：<span>01h22m33s</span></p>-->
+<!--            <p>正确率: <span>47%</span></p>-->
+<!--            <p>完成时间: <span>2017-5-8 20:08:24</span></p>-->
+<!--          </div>-->
+<!--        </li>-->
       </ul>
     </div>
   </div>
