@@ -230,50 +230,54 @@
                     <div class="s-daily-title clearfix">
                         <a class="pull-right" href="#"><h3>MORE<i class="fa fa-angle-right"></i></h3></a>
                     </div>
-                    <ul>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                        <li>
-                            <h4>OG-1774</h4>
-                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                        </li>
-                    </ul>
+                    <div class="daily-question daily-question1">
+                        <ul>
+                            <li>
+                                <h4>OG-1774</h4>
+                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                            </li>
+                            <li>
+                                <h4>OG-1774</h4>
+                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                            </li>
+                            <li>
+                                <h4>OG-1774</h4>
+                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                            </li>
+                            <li>
+                                <h4>OG-1774</h4>
+                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                            </li>
+                            <li>
+                                <h4>OG-1774</h4>
+                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                   <div class="daily-question daily-question2">
+                       <ul>
+                           <li>
+                               <h4>OG-1774</h4>
+                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                           </li>
+                           <li>
+                               <h4>OG-1774</h4>
+                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                           </li>
+                           <li>
+                               <h4>OG-1774</h4>
+                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                           </li>
+                           <li>
+                               <h4>OG-1774</h4>
+                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                           </li>
+                           <li>
+                               <h4>OG-1774</h4>
+                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                           </li>
+                       </ul>
+                   </div>
                 </div>
             </div>
         </div>
@@ -320,18 +324,24 @@
     jQuery(".s-person").slide({mainCell:".s-adv-wrap ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
     //  名师团队
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
+    // 每日一题
+    jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+    jQuery(".s-daily-cnt").slide({mainCell:".daily-question2 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+//    function daily(){
+//        $('.daily-left1').html( $('.daily-left').html());
+//        if ($('.daily-question').scrollTop() >= $('.daily-left').outerHeight()) {
+//            $('.daily-question').scrollTop(0);
+//        }else {
+//            $('.daily-question').get(0).scrollTop+=1;
+//        }
+//    }
+//   var daInter = setInterval(daily,50);
+//    $('.daily-question').bind({
+//        mouseover: function () {
+//            clearInterval(daInter);
+//        },mouseout: function () {
+//            daInter = setInterval(daily,50);
+//        }
+//    })
 
-    $(function () {
-        $('.s-article .s-text ul').parent().css({
-            'margin-left': '300px',
-            'height': '400px',
-            'top': '-400px',
-            'left': '100px'
-        });
-        $('.s-article .s-text ul li').css({
-            'margin-bottom-width': '1px',
-            'margin-bottom-color': '#000',
-            'margin-bottom-type': 'solid'
-        })
-    })
 </script>

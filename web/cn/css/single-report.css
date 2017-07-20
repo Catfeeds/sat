@@ -208,6 +208,7 @@
 .ranking-list li>span {
   width: 30%;
   display: inline-block;
+  margin-right: 3px;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
@@ -215,10 +216,12 @@
   font-size: 14px;
 }
 .ranking-list li>span:nth-child(2) {
-  width: 36%;
+  width: 42%;
 }
 .ranking-list li>span:last-child {
-  width: 29%;
+  float: right;
+  width: 20%;
+  margin-right: 0;
 }
 .new-classes .carousel-inner>.item>a>img {
   width: 100%;

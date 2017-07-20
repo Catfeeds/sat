@@ -97,7 +97,7 @@
       <div class="ranking-wrap">
         <ul class="ranking-list ranking-list1">
           <?php foreach($score as $v){?>
-            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score'].'分':''?></span></li>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
           <?php }?>
         </ul>
         <ul class="ranking-list ranking-list2"></ul>

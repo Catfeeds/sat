@@ -70,6 +70,8 @@ class Notes extends ActiveRecord
 
         if($major=='Math'){
             $major="(major='Math1' or major='Math2')";
+        }elseif($major='all'){
+            $major="";
         }else{
             $major="major='$major'";
         }
