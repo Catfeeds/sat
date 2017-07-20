@@ -279,11 +279,9 @@ body {
 }
 .s-nav form {
   position: relative;
-  float: left;
-  width: 150px;
-  /*height: 60px;*/
+  float: right;
+  /*width: 150px;*/
   padding-top: 15px;
-  margin-left: 5%;
 }
 .s-nav form i{
   position: absolute;
@@ -293,7 +291,7 @@ body {
   color: gray;
 }
 .s-nav form input {
-  width: 100%;
+  width: 150px;
   height: 24px;
   vertical-align: middle;
   border: none;
@@ -302,7 +300,7 @@ body {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  padding: 3px 25px 3px 15px;
+  padding: 5px 25px 5px 15px;
   font-size: 14px;
 }
 

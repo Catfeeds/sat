@@ -90,7 +90,7 @@
         </div>
     </div>
 </div>
-<div id="outjs" style="display: none;">
+<!--<div id="outjs" style="display: none;">-->
 </div>
 <nav class="s-nav">
     <div class="container clearfix">
@@ -117,8 +117,8 @@
     </ul>
     </ul>
     <form action="">
-        <i class="fa fa-search"></i>
-        <input type="text">
+        <i class="nav-search-sure fa fa-search"></i>
+        <input class="nav-search" type="text">
     </form>
 </div>
 </nav>

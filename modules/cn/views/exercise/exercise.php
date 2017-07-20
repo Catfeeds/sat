@@ -18,6 +18,9 @@
         <div class="s-exam pull-left">
         <!-- 数学-->
           <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
+            <div class="math-title">
+              <h3>OG-2514</h3>
+            </div>
             <h2 class="s-num"><?php echo $data['qid']?></h2>
             <p class="s-title">
               <?php echo $data['content']?>
@@ -72,6 +75,10 @@
           </div>
         <!-- 阅读-->
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
+            <div class="read-title">
+              <p class="pull-right">1/5</p>
+              <h3>OG-4258</h3>
+            </div>
             <div class="work-wrap-left pull-left">
               <h3><?php echo isset($data['topic'])?$data['topic']:''?></h3>
               <h5><?php echo isset($data['details'])?$data['details']:''?></h5>
@@ -134,16 +141,54 @@
           </div>
         </div>
         <!--右侧栏-->
-        <div class="s-adv pull-right">
-          <a href="#">
-            <img class="s-adv-img" src="/cn/images/pubClass-dea_11.png" alt="">
-          </a>
-          <div class="s-code">
-            <img src="/cn/images/qr-code01.png" alt="">
-            <p>扫描关注</p>
+        <div class="exer-side">
+          <!-- 相关知识点-->
+          <div class="side-know">
+            <h3>相关知识点</h3>
+              <ul>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+            </ul>
+          </div>
+          <!-- 最新题目-->
+          <div class="side-new">
+            <h3>最新题目</h3>
+            <ul>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+            </ul>
+          </div>
+          <!-- 模考试题-->
+          <div class="side-mock">
+            <h3>模考试题</h3>
+            <ul>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+              <li><a href="#">fhnunhauiaso</a></li>
+              <li><a href="#">fdangnakmgdkl</a></li>
+            </ul>
           </div>
         </div>
-      </div>
+<!--        <div class="s-adv pull-right">-->
+<!--          <a href="#">-->
+<!--            <img class="s-adv-img" src="/cn/images/pubClass-dea_11.png" alt="">-->
+<!--          </a>-->
+<!--          <div class="s-code">-->
+<!--            <img src="/cn/images/qr-code01.png" alt="">-->
+<!--            <p>扫描关注</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
     <!--遮罩-->
     <div class="work-shade">

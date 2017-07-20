@@ -69,6 +69,27 @@
                 </ul>
             </div>
         </div>
+        <!-- 答题系统-->
+        <div class="s-system">
+            <div class="s-w1200">
+                <div class="s-sat-title clearfix">
+                    <p class="pull-left">A</p>
+                    <div>
+                        <p>
+                            <span style="color: #000;font-weight: bold;">答题</span>
+                            <span style="color: rgb(229,104,215)">system</span>
+                        </p>
+                        <p>
+                            <span style="color: rgb(54,178,251);">nswer</span>
+                            <span style="color: #000;font-weight: bold;">系统</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="s-system-cnt">
+
+                </div>
+            </div>
+        </div>
         <!--SAT课程-->
         <div class="s-course">
             <div class="s-sat-title clearfix" style="width: 180px;">
@@ -185,6 +206,73 @@
                                 <a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a>
                             </li>
                         <?php }}?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--每日一题-->
+        <div class="s-daily">
+            <div class="s-w1200">
+                <div class="s-sat-title clearfix">
+                    <p class="pull-left">D</p>
+                    <div>
+                        <p>
+                            <span style="color: #000;font-weight: bold;">每日</span>
+                            <span style="color: rgb(229,104,215)">question</span>
+                        </p>
+                        <p>
+                            <span style="color: rgb(54,178,251);">aily</span>
+                            <span style="color: #000;font-weight: bold;">一题</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="s-daily-cnt clearfix">
+                    <div class="s-daily-title clearfix">
+                        <a class="pull-right" href="#"><h3>MORE<i class="fa fa-angle-right"></i></h3></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
+                        <li>
+                            <h4>OG-1774</h4>
+                            <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                        </li>
                     </ul>
                 </div>
             </div>

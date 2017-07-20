@@ -389,6 +389,55 @@
 .s-article a:hover {
   color: rgb(54,178,251);
 }
+/*每日一题*/
+.s-daily {
+  padding: 30px 0;
+}
+.s-daily-cnt .s-daily-title {
+  width: 100%;
+  height: 30px;
+  padding: 0 40px;
+  margin-bottom: 20px;
+  background-color: rgb(54,178,251);
+}
+.s-daily-cnt .s-daily-title a {
+  color: #fff;
+}
+.s-daily-cnt .s-daily-title a:hover {
+  text-decoration: none;
+  color: #ccc;
+}
+.s-daily-cnt .s-daily-title h3 {
+  line-height: 30px;
+  margin: 0;
+  font-size: 18px;
+}
+.s-daily-cnt .s-daily-title h3>i {
+  padding-left: 10px;
+}
+.s-daily-cnt>ul {
+  width: 600px;
+  float: left;
+  padding: 0 40px;
+}
+.s-daily-cnt>ul li {
+  /*line-height: 35px;*/
+  padding: 5px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+.s-daily-cnt>ul li>h4 {
+  margin: 0;
+  font-size: 16px;
+  color: rgb(54,178,251);
+}
+.s-daily-cnt>ul li>p {
+  margin: 0;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /*名师团队*/
 .s-teacher {
   padding: 30px 0;
