@@ -146,36 +146,27 @@
           <div class="side-know">
             <h3>相关知识点</h3>
               <ul>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
+                <?php foreach($knowledge as $k=>$v){?>
+                  <li><a href="/knowledge_details/<?php echo $v['id']?>.html"><?php echo $v['name']?></a></li>
+                <?php }?>
             </ul>
           </div>
           <!-- 最新题目-->
           <div class="side-new">
             <h3>最新题目</h3>
             <ul>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
+              <?php foreach($question as $k=>$v){?>
+                <li><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></li>
+              <?php }?>
             </ul>
           </div>
           <!-- 模考试题-->
           <div class="side-mock">
             <h3>模考试题</h3>
             <ul>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
-              <li><a href="#">fhnunhauiaso</a></li>
-              <li><a href="#">fdangnakmgdkl</a></li>
+              <?php foreach($mock as $k=>$v){?>
+                <li><a href="/mock_details?<?php echo "tid=".$v['id'];?>"><?php echo $v['name'].$v['time']?></a></li>
+              <?php }?>
             </ul>
           </div>
         </div>

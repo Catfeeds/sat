@@ -28,8 +28,12 @@ class ExerciseController extends Controller
     public function actionExercise()
     {
         $id=Yii::$app->request->get('id');
-//        var_dump($id);die;
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryOne();
+        $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
+        $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
+        $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
+
+
 //        var_dump($data);die;
         // 统计做题的时间 和正确率
         $major=$data['major'];
@@ -46,7 +50,8 @@ class ExerciseController extends Controller
                 $data['collection']=0;
             }
         }
-        return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id']]);
+//        var_dump($mock);die;
+        return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id'],'knowledge'=>$knowledge,'question'=>$question,'mock'=>$mock]);
 
     }
     public function actionNotes(){
