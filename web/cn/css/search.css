@@ -1,5 +1,68 @@
 .search-bc {
   width: 100%;
   height: 460px;
-  background: url("../images/search.jpg") 0 0 no-repeat;
+  background: url("/cn/images/search.jpg") 0 0 no-repeat;
+}
+.search-bc form {
+  position: relative;
+  width: 500px;
+  top: 200px;
+  left: 30%;
+  font-size: 16px;
+}
+.search-bc .search-input {
+  width: 500px;
+  height: 50px;
+  padding: 10px 50px 10px 20px;
+  outline: none;
+  border: 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.search-bc .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  padding-left: 10px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  line-height: 50px;
+  border-left: 1px solid #ccc;
+  color: #000;
+}
+/*搜索结果*/
+.search-cnt {
+  width: 1200px;
+  margin: 30px auto;
+}
+.search-cnt p {
+  margin: 0;
+}
+.search-cnt .search-list {
+  width: 680px;
+  margin-bottom: 20px;
+}
+.search-list>h2 a{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: bold;
+}
+.search-list>h2 a:hover {
+  color: rgb(54,178,251);
+}
+.search-list>div{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 16px;
 }
