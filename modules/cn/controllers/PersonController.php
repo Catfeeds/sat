@@ -78,10 +78,25 @@ class PersonController extends Controller
         $notes=new Notes();
         $data=$notes->Ex($uid,$name,$major,$error);
         echo die(json_encode($data));
-//        return $this->render('person_exercise',['data'=>$data,'crr'=>$crr,'n'=>$n]);
     }
     public function actionMo()
     {
+        $uid=Yii::$app->session->get('uid');
+        $uid=222;
+        $src=Yii::$app->request->get('src');
+        $type=Yii::$app->request->get('type');
+        if($src !='all'){
+            $name="and name='$src'";
+        }else{
+            $name='';
+        }
+        if($type=='whole'){
+            $part='';
+        }else{
+            $part="and part ='$type'";
+        }
 
+        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part")->queryAll();
+       echo die(json_encode($arr));
     }
 }
