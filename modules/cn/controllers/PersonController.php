@@ -11,6 +11,7 @@ use app\libs\Format;
 use yii;
 use yii\web\Controller;
 use app\modules\cn\models\Notes;
+use app\modules\cn\models\Collection;
 
 
 class PersonController extends Controller
@@ -65,7 +66,16 @@ class PersonController extends Controller
     }
     public function actionColl()
     {
-
+        $uid=Yii::$app->session->get('uid');
+        $uid=444;
+        $name=Yii::$app->request->get('src');
+        $major=Yii::$app->request->get('classify');
+        $model=new collection();
+        $data=$model->CollectionDate($name,$uid,$major);
+//        $arr= Yii::$app->db->createCommand("select * from {{%collection}} where uid=".$uid)->queryOne();
+//        $qid=ltrim($arr['qid'],',');
+//        $data= Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+        echo die(json_encode($data));
     }
     public function actionExer()
     {

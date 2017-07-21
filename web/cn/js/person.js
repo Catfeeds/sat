@@ -86,8 +86,8 @@ $(function () {
       })
     } else if (pos == 'collect') {
       $.ajax({
-        url: '',
-        type: 'post',
+        url: '/cn/person/coll',
+        type: 'get',
         data: {
           'src': src,
           'classify': classify
