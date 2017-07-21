@@ -87,7 +87,7 @@ $(function () {
             "</div>"+
             "<h3><i class='mock-delete fa fa-trash' data-id='"+array['id']+"'></i>"+array['name']+"</h3>"+
             "<div class='mock-details'>"+
-            "<p>耗时：<span>"+parseInt(Number(array['rtime'])/3600)+"h"+parseInt(parseInt(Number(array['rtime'])/60)%60)+"m"+parseInt(Number(array['rtime'])%60)+"s</span></p>"+
+            "<p>耗时：<span>"+array['rtime']+"s</span></p>"+
             "<p>正确率: <span>"+Math.round((Number(array['mathnum'])+Number(array['readnum'])+Number(array['writenum']))/154*10000)/100+"%</span></p>"+
             "<p>完成时间: <span>"+new Date(parseInt(array['date'])*1000).toLocaleString()+"</span></p>"+
             "</div>"+
