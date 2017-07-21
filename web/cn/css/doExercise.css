@@ -68,7 +68,7 @@
   /*width: 100%;*/
 /*}*/
 .correct-ans-hide {
-  padding: 20px 0;
+  padding-top: 20px;
   color: rgb(54,178,251);
   display: none;
 }

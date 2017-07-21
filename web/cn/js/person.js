@@ -1,4 +1,17 @@
 $(function () {
+  var pos = location.href.split('_')[1].split('.')[0];
+  var src = $('.per-src dd').filter('.on').data('val'),
+    classify = $('.per-classify dd').filter('.on').data('val');
+  if (pos == 'exercise') {
+    var cas = $('.per-case dd').filter('.on').data('val');
+  } else if(pos == 'mock') {
+    var type = $('.per-type dd').filter('.on').data('val');
+  }
+  //console.log('位置'+pos);
+  //console.log('来源'+src);
+  //console.log('分类'+classify);
+  //console.log('情况'+cas);
+
   console.log($('.per-src dd').filter('.on').data('val'));
   var pos = location.href.split('_')[1].split('.')[0];
   var src = $('.per-src dd').filter('.on').data('val'),
