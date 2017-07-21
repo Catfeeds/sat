@@ -1,5 +1,6 @@
 $(function() {
-  //console.log();
+  $(window).scrollTop(327);
+
   $('.work-shade').height($(document).outerHeight())
   upTime();
   $('.now-do').click(function () {
@@ -96,8 +97,11 @@ function ajaxEvent(obj,u) {
           alert('你真棒，已经把题做完了');
         } else {
           location.href = '/exercise_details/' + data.id + '.html';
+
         }
       }
     })
   }
 }
+
+
