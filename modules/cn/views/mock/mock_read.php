@@ -31,7 +31,7 @@
                         <h1><?php echo $data['number']?>.</h1>
                         <?php echo $data['content']?>
                     </div>
-                    <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">
+                    <ul class="work-que-list common-id" id="subjectId" data-id="<?php echo $data['qid']?>">
                         <li class="work-que-wrap clearfix">
                             <div class="work-select" data-id="A">A</div>
                             <div class="work-que"><?php echo $data['keyA']?> </div>

@@ -17,7 +17,7 @@
     <h3><?php echo $data['number']?> . <?php echo $data['content']?></h3>
         <?php
         if($data['isFilling']==='0'){
-            $ul='<ul class="work-que-list" id="subjectId" data-id="'.$data['qid'].'">
+            $ul='<ul class="work-que-list common-id" id="subjectId" data-id="'.$data['qid'].'">
             <li class="work-que-wrap clearfix">
                 <div class="work-select" data-id="A">A</div>
                 <div class="work-que">'. $data['keyA'].'</div>
@@ -39,7 +39,7 @@
         }
        if($data['isFilling']==='1'){
         $str='
-        <table class="math-gap-table" border="1" align="center">
+        <table class="math-gap-table common-id" data-id="'.$data['qid'].'" border="1" align="center">
             <tr>
                 <td class="math-gap-result" colspan="4"><input type="text"></td>
             </tr>

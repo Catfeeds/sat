@@ -214,9 +214,18 @@ function clearSession(tag) {
         sessionStorage.clear();
     }
 }
+
 //下一题、提交
 function ckBefore(flag,tag) {
-    var ans = $('.work-select.active').data('id');//获取答案
+    //判断是否选择题
+    if ($('.math-gap-table').css('display') == undefined) {
+        var ans = $('.work-select.active').data('id');//获取答案
+    } else {
+        ans = $('.math-gap-result input').val();
+        if (ans == ''){
+            ans = 'undefined';
+        }
+    }
     if (flag == 1) {
         //无选项下一题答案
         ans = '';
@@ -229,7 +238,7 @@ function ckBefore(flag,tag) {
     } else {
         process();
         var pos = location.search.indexOf('m=');
-        var subId = $('.work-que-list').data('id'),//题目ID
+        var subId = $('.common-id').data('id'),//题目ID
           testId = $('#testId').val(),//试卷ID
           subject = $('#subject').val(),//所属科目
           classify = $('#classify').val(),//题目类型（跨学科）

@@ -46,15 +46,20 @@ class PersonController extends Controller
                 }
 
             }
-        }
-        $qid=rtrim($s,',');
-        $data= Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
-        static $n=0;
-        foreach($data as $k=>$v){
-            if($v['answer']==$crr[$v['qid']][1]){
-                $n+=1;
+            $qid=rtrim($s,',');
+            $data= Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+            static $n=0;
+            foreach($data as $k=>$v){
+                if($v['answer']==$crr[$v['qid']][1]){
+                    $n+=1;
+                }
             }
+        }else{
+            $crr=array();
+            $data=array();
+            $n=0;
         }
+
 //        var_dump($data);die;
         return $this->render('person_exercise',['data'=>$data,'crr'=>$crr,'n'=>$n]);
     }
@@ -119,7 +124,7 @@ class PersonController extends Controller
     }
     public function actionDel()
     {
-        $id=Yii::$app->session->get('id');
+        $id=Yii::$app->request->get('id');
         $re =Report::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             $res['code']=1;
@@ -128,6 +133,39 @@ class PersonController extends Controller
             $res['code']=0;
             $res['message']='删除失败';
         }
+        echo die(json_encode($res));
+    }
+    public function actionRemoved()
+    {
+        $uid=Yii::$app->session->get('uid');
+        $uid=222;
+        $id=Yii::$app->request->get('id');
+        $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
+        if ($arr['notes'] != false) {
+            $brr = explode(';', $arr['notes']);
+            static $crr = array();
+            foreach ($brr as $k => $v) {
+                if ($v !='') {
+                    $key=explode(',', $v)[0];
+                    $crr[$key]=explode(',', $v);
+                }
+
+            }
+            unset($crr[$id]);
+        }
+        $model=new Format();
+        $data['notes']=$model->arrToStr($crr);
+//        var_dump($data['notes']);
+        $notes=new Notes();
+        $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
+        if($re){
+            $res['code']=1;
+            $res['message']='删除成功';
+        }else{
+            $res['code']=0;
+            $res['message']='删除失败';
+        }
+
         echo die(json_encode($res));
     }
 }

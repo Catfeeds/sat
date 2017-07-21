@@ -23,7 +23,7 @@
 }
 
 .person-wrap .person-side .person-title {
-  padding: 20px;
+  padding: 20px 10px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   text-align: center;

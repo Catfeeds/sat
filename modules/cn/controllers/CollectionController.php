@@ -15,10 +15,14 @@ class CollectionController extends Controller
 {
     public function actionCollection()
     {
-        $data['qid'] =(string)Yii::$app->request->get('subID', '');
+        $data['qid'] =(string)Yii::$app->request->get('subId', '');
         $data['uid'] =Yii::$app->request->get('uid', '');
+//        $data['uid'] =222;
         $flag=Yii::$app->request->get('val');
         $model=new Collection();
+//        var_dump($data['qid']);
+//        var_dump($data['uid']);
+//        var_dump($flag);
         // 查找 uid 是否存在
         $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
         if($flag==0){
