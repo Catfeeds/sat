@@ -12,12 +12,14 @@ use yii;
 use yii\web\Controller;
 use app\modules\cn\models\Notes;
 use app\modules\cn\models\Collection;
+use app\modules\cn\models\Report;
 
 
 class PersonController extends Controller
 {
     public $layout='cn.php';
-    public function actionCollect(){
+    public function actionCollect()
+    {
         $uid=Yii::$app->session->get('uid');
         $uid=444;
         $arr= Yii::$app->db->createCommand("select * from {{%collection}} where uid=".$uid)->queryOne();
@@ -27,7 +29,8 @@ class PersonController extends Controller
 
         return $this->render('person_collect',['data'=>$data]);
     }
-    public function actionExercise(){
+    public function actionExercise()
+    {
         $uid=Yii::$app->session->get('uid');
         $uid=222;
         $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
@@ -59,9 +62,10 @@ class PersonController extends Controller
         $uid=Yii::$app->session->get('uid');
         $uid=222;
         $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid)->queryAll();
-//        var_dump($arr);die;
-//        $format=new Format();
-//        $format->FormatTime($arr['rtime']);
+        $model=new Format();
+        foreach($arr as $k=>$v){
+            $arr[$k]['rtime']=$model->FormatTime($v['rtime']);
+        }
         return $this->render('person_mock',['arr'=>$arr]);
     }
     public function actionColl()
@@ -107,6 +111,23 @@ class PersonController extends Controller
         }
 
         $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part")->queryAll();
-       echo die(json_encode($arr));
+        $model=new Format();
+        foreach($arr as $k=>$v){
+           $arr[$k]['rtime']=$model->FormatTime($v['rtime']);
+        }
+        echo die(json_encode($arr));
+    }
+    public function actionDel()
+    {
+        $id=Yii::$app->session->get('id');
+        $re =Report::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
+            $res['code']=1;
+            $res['message']='删除成功';
+        }else{
+            $res['code']=0;
+            $res['message']='删除失败';
+        }
+        echo die(json_encode($res));
     }
 }

@@ -66,7 +66,7 @@
           </div>
           <h3><i class="mock-delete fa fa-trash"></i><?php echo $v['name'].$v['time']?></h3>
           <div class="mock-details">
-            <p>耗时：<span><?php echo sprintf("%.2f",($v['rtime']/60))?>min</span></p>
+            <p>耗时：<span><?php echo $v['rtime']?></span></p>
             <p>正确率: <span><?php echo sprintf("%.2f",($v['mathnum']+$v['readnum']+$v['writenum'])/154*100)?>%</span></p>
             <p>完成时间: <span><?php echo date('Y-m-d H:i:s',$v['date'])?></span></p>
           </div>
