@@ -1,6 +1,6 @@
 $(function() {
-  $(window).scrollTop(327);
-
+  $(window).scrollTop(350);
+  //console.log($('.work-que-list').css('display'));
   $('.work-shade').height($(document).outerHeight())
   upTime();
   $('.now-do').click(function () {
@@ -8,7 +8,12 @@ $(function() {
   })
   //查看答案
   $('.s-exam .s-answer li').click(function () {
-    if ($('.work-select.active').data('id') == undefined) {
+    if($('.work-que-list').css('display') == 'none') {
+      var ans = $('.math-gap-result input').val();
+    } else {
+      ans = $('.work-select.active').html();
+    }
+    if (ans == undefined || ans == '') {
       $('.work-shade').fadeIn();
     }else {
       if ($(this).index() == 0) {
@@ -76,9 +81,13 @@ function upTime() {
 }
 
 function ajaxEvent(obj,u) {
-  var _this = $(obj),
+  var _this = $(obj);
+  if($('.work-que-list').css('display') == 'none') {
+    var ans = $('.math-gap-result input').val();
+  } else {
     ans = $('.work-select.active').data('id');
-  if (ans == undefined) {
+  }
+  if (ans == undefined || ans == '') {
     $('.work-shade').fadeIn();
   }else {
     $.ajax({
@@ -86,7 +95,7 @@ function ajaxEvent(obj,u) {
       type: 'get',
       data: {
         'time': upTime(),
-        'ans': $('.work-select.active').data('id'),
+        'ans': ans,
         'qid': $('#subjectId').data('id'),
         'up': u
       },
@@ -97,7 +106,6 @@ function ajaxEvent(obj,u) {
           alert('你真棒，已经把题做完了');
         } else {
           location.href = '/exercise_details/' + data.id + '.html';
-
         }
       }
     })
