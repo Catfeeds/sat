@@ -64,7 +64,7 @@
             <a href="/exercise_details/<?php echo $v['qid']?>.html">重新做</a>
           </div>
           <div class="collect-sub">
-            <h4><i class="exer-delete fa fa-times-circle"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>
+            <h4><i class="exer-delete fa fa-times-circle" data-id="<?php echo $v['qid']?>"></i><?php echo $v['name'].$v['time']?>-<?php echo $v['major']?>-<?php echo $v['number']?><span><?php echo date('Y-m-d H:i:s',$crr[$v['qid']][3])?></span></h4>
             <p>
               <a href="#"><?php echo $v['content']?></a>
             </p>

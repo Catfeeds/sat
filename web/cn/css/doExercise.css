@@ -118,6 +118,8 @@
 .exer-side>div {
   display: inline-block;
   width: 380px;
+  height: 225px;
+  overflow: hidden;
   margin: 0 10px 30px;
   font-size: 14px;
 }
@@ -136,6 +138,8 @@
   border-bottom: 1px dashed #ccc;
 }
 .exer-side>div li a {
+  display: block;
+  width: 100%;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;

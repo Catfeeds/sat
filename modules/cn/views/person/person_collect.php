@@ -52,7 +52,7 @@
       <ul>
         <?php foreach($data as $k=>$v){?>
         <li class="clearfix">
-          <div class="collect-del pull-right">
+          <div class="collect-del pull-right" data-id="<?php echo $v['qid']?>">
             <div>
               <i class="fa fa-star"></i>
             </div>
