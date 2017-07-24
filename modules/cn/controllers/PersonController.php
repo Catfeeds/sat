@@ -78,12 +78,13 @@ class PersonController extends Controller
         $uid=Yii::$app->session->get('uid');
         $uid=444;
         $name=Yii::$app->request->get('src');
+        $p =Yii::$app->request->get('p','1');
         $major=Yii::$app->request->get('classify');
         $model=new collection();
-        $data=$model->CollectionDate($name,$uid,$major);
-//        $arr= Yii::$app->db->createCommand("select * from {{%collection}} where uid=".$uid)->queryOne();
-//        $qid=ltrim($arr['qid'],',');
-//        $data= Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+        $pagesize=2;
+        $offset = $pagesize * ($p - 1);
+        $data=$model->CollectionDate($name,$uid,$major,$offset,$pagesize);
+        $data['curPage'] =$p;
         echo die(json_encode($data));
     }
     public function actionExer()
@@ -93,10 +94,18 @@ class PersonController extends Controller
         $name=Yii::$app->request->get('src');
         $major=Yii::$app->request->get('classify');
         $error=Yii::$app->request->get('case');
-//        var_dump($error);die;
+        $p =Yii::$app->request->get('p','1');
+        $pagesize=6;
+        $offset = $pagesize * ($p - 1);
+
         $notes=new Notes();
-        $data=$notes->Ex($uid,$name,$major,$error);
-        echo die(json_encode($data));
+        $arr=$notes->Ex($uid,$name,$major,$error,$offset,$pagesize,$p);
+
+
+        $arr['totalPage'] = ceil($arr['total']/$pagesize);// 总页数
+        $arr['curPage'] =$p;
+        $arr['pageSize']=$pagesize;
+        echo die(json_encode($arr));
     }
     public function actionMo()
     {
@@ -104,6 +113,8 @@ class PersonController extends Controller
         $uid=222;
         $src=Yii::$app->request->get('src');
         $type=Yii::$app->request->get('type');
+        $arr['curPage'] =$p = Yii::$app->request->get('p','1');
+        $arr['pageSize']=$pagesize=6;
         if($src !='all'){
             $name="and name='$src'";
         }else{
@@ -114,12 +125,27 @@ class PersonController extends Controller
         }else{
             $part="and part ='$type'";
         }
-
-        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part")->queryAll();
+        $offset = $pagesize * ($p - 1);
+        $data= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part limit $offset,$pagesize")->queryAll();
+        $arr['total']= count(Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part ")->queryAll());
+        $arr['totalPage'] = ceil($arr['total']/$pagesize);// 总页数
         $model=new Format();
-        foreach($arr as $k=>$v){
-           $arr[$k]['rtime']=$model->FormatTime($v['rtime']);
+//        var_dump($arr);
+        foreach($data as $k=>$v){
+            $arr['list'][]= array(
+                'part' => $v['part'],
+                'id' => $v['id'],
+                'tpId' => $v['tpId'],
+                'name' => $v['name'],
+                'time' => $v['time'],
+                'mathnum' => $v['mathnum'],
+                'readnum' => $v['readnum'],
+                'writenum' => $v['writenum'],
+                'date' => $v['date'],
+                'rtime'=>$model->FormatTime($v['rtime']),
+            );
         }
+
         echo die(json_encode($arr));
     }
     public function actionDel()

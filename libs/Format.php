@@ -39,7 +39,7 @@ class Format {
         $t = substr($t, 0, -1);
         return $t;
     }
-    // 特定字符转化成数组
+    // 特定字符转化成二唯数组
     public function strToArray($str)
     {
         $arr=explode(';',$str);
