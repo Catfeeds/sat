@@ -99,6 +99,8 @@
                         <h2 class="course-title">SAT <?php echo $v['cate']?></h2>
                         <div class="course-text">
                             <?php echo $v['introduction']?>
+                            <p>nfdgn</p>
+                            <h2>mnfgdkjsngfk</h2>
                         </div>
                         <a class="course-more" href="/class_details/<?php echo $v['id']?>.html">查看更多</a>
                     </li>
@@ -235,16 +237,6 @@
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
 
     $(function () {
-        $('.s-article .s-text ul').parent().css({
-            'margin-left': '300px',
-            'height': '400px',
-            'top': '-400px',
-            'left': '100px'
-        });
-        $('.s-article .s-text ul li').css({
-            'margin-bottom-width': '1px',
-            'margin-bottom-color': '#000',
-            'margin-bottom-type': 'solid'
-        })
+        $('.course-text p:eq(0)').nextAll().remove();
     })
 </script>
