@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/cn/css/person.css">
+<script src="/cn/js/jqPage.js"></script>
+<script src="/cn/js/jqPaginator.js"></script>
 <script src="/cn/js/person.js"></script>
 <section class="s-w1200 s-information">
   <div class="person-wrap clearfix">
@@ -81,6 +83,8 @@
 <!--        </li>-->
         <?php }?>
       </ul>
+      <!--分页-->
+      <ol class="pagination clearfix"></ol>
     </div>
   </div>
 </section>
