@@ -140,12 +140,13 @@
 }
 
 .person-cnt>ul .collect-sub {
-  max-height: 70px;
-  padding-right: 5px;
+  max-height: 75px;
+  padding-left: 10px;
   overflow: hidden;
 }
 .person-cnt>ul .collect-sub>h4 {
   margin: 0;
+  padding-top: 10px;
   font-size: 18px;
   color: rgb(54,178,251);
 }

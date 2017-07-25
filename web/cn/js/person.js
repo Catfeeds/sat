@@ -4,13 +4,14 @@ $(function () {
     classify = $('.per-classify dd').filter('.on').data('val');
   if (pos == 'exercise') {
     var cas = $('.per-case dd').filter('.on').data('val');
+    exer('all','all','all',1);
   } else if(pos == 'mock') {
     var type = $('.per-type dd').filter('.on').data('val');
+    mock('all','all',1);
+  } else if(pos == 'collect') {
+    collect('all','all',1);
   }
 
-  exer('all','all','all',1);
-  mock('all','all',1);
-  collect('all','all',1);
 //练习
   function exer(src,classify,cas,p){
     $.ajax({
@@ -25,7 +26,11 @@ $(function () {
       dataType: 'json',
       success: function (data) {
         var li = '';
-        totalPages = data.totalPage;
+        tp = data.totalPage;
+        if (data.list == undefined) {
+          data.list = 0;
+          tp = 1;
+        }
         $.each(data.list,function (i,array) {
           li+="<li class='clearfix'>"+
             "<div class='collect-del pull-right'>"+
@@ -46,37 +51,36 @@ $(function () {
       },
       complete: function () {
         $.jqPaginator('.pagination', {
-          totalPages: totalPages,
+          totalPages: tp,
           visiblePages: 6,
           currentPage: p,
-          onPageChange: function () {
-            $(".pagination li a").on('click',function(){
-              var p = parseInt($(this).parent().attr("jp-data"));
-              if(p){
-                src = $('.per-src dd').filter('.on').data('val');
-                classify = $('.per-classify dd').filter('.on').data('val');
-                exer(src,classify,cas,p);
-              }
-            });
+          onPageChange: function (num,type) {
+            if(type == 'change'){
+              exer(src,classify,cas,num);
+            }
           }
         });
       }
     })
   }
 //模考
-  function mock(src,type,p){
+  function mock(src,t,p){
     $.ajax({
       url: '/cn/person/mo',
       type: 'get',
       data: {
         'src': src,
-        'type': type,
+        'type': t,
         'p': p
       },
       dataType: 'json',
       success: function (data) {
         var li = '';
-        totalPages = data.totalPage;
+        tp = data.totalPage;
+        if (data.list == undefined) {
+          data.list = 0;
+          tp = 1;
+        }
         $.each(data.list, function (i,array) {
           li+="<li class='clearfix'>"+
             "<div class='mock-look pull-right'>";
@@ -99,16 +103,13 @@ $(function () {
       },
       complete: function () {
         $.jqPaginator('.pagination', {
-          totalPages: totalPages,
+          totalPages: tp,
           visiblePages: 6,
           currentPage: p,
-          onPageChange: function () {
-            $(".pagination li a").on('click',function(){
-              var p = parseInt($(this).parent().attr("jp-data"));
-              if(p){
-                mock(src,type,p);
-              }
-            });
+          onPageChange: function (num,type) {
+            if(type == 'change'){
+              mock(src,t,num);
+            }
           }
         });
       }
@@ -128,38 +129,38 @@ $(function () {
       success: function (data) {
         var li = '';
         tp = data.totalPage;
-        if (data.list != undefined) {
-          $.each(data.list, function (i,array) {
-            li+="<li class='clearfix'>"+
-              "<div class='collect-del pull-right' data-id='"+array['qid']+"'>"+
-              "<div>"+
-              "<i class='fa fa-star'></i>"+
-              "</div>"+
-              "<p>取消收藏</p>"+
-              "</div>"+
-              "<div class='collect-sub'>"+
-              "<h4><i class='icon-bookmark'></i>"+array['name']+"-"+array['major']+"-"+array['number']+"</h4>"+
-              "<p>"+
-              "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>"+
-              "</p>"+
-              "</div>"+
-              "</li>"
-          })
+        if (data.list == undefined) {
+          data.list = 0;
+          tp = 1;
         }
+        $.each(data.list, function (i,array) {
+          li+="<li class='clearfix'>"+
+            "<div class='collect-del pull-right' data-id='"+array['qid']+"'>"+
+            "<div>"+
+            "<i class='fa fa-star'></i>"+
+            "</div>"+
+            "<p>取消收藏</p>"+
+            "</div>"+
+            "<div class='collect-sub'>"+
+            "<h4><i class='icon-bookmark'></i>"+array['name']+"-"+array['major']+"-"+array['number']+"</h4>"+
+            "<p>"+
+            "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>"+
+            "</p>"+
+            "</div>"+
+            "</li>"
+        })
         $('.person-cnt ul').html(li);
       },
       complete: function () {
+        console.log(tp);
         $.jqPaginator('.pagination', {
           totalPages: tp,
           visiblePages: 6,
           currentPage: p,
-          onPageChange: function () {
-            $(".pagination li a").on('click',function(){
-              var p = parseInt($(this).parent().attr("jp-data"));
-              if(p){
-                collect(src,classify,p);
-              }
-            });
+          onPageChange: function (num,type) {
+            if(type == 'change'){
+              collect(src,classify,num);
+            }
           }
         });
       }
@@ -203,6 +204,7 @@ $(function () {
   })
   $('.exer-delete').click(function () {
     var _this = $(this);
+    console.log('aaa');
     $.get('/cn/person/removed',{id:$(this).data('id')},function(data){
       if (data.code == 1) {
         _this.parent().parent().parent().remove();

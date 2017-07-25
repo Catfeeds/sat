@@ -560,3 +560,17 @@ body {
 .apply-small>h3 {
   margin: 5px 0;
 }
+/*分页*/
+.pagination {
+  width: 560px;
+  display: block;
+  margin: 20px auto 0;
+}
+.pagination>li>a {
+  margin: 5px;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+}
