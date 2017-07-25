@@ -31,7 +31,7 @@ class MockController extends Controller
         return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron,'score'=>$score]);
 
     }
-
+    // 注意事项的页面
     public function actionNotice()
     {
         $this->layout = 'cn1.php';
@@ -131,7 +131,7 @@ class MockController extends Controller
         $re = $a->Emptyitem();
         echo die(json_encode($re));
     }
-
+    // 提交当前小节，进入下一小节
     public function actionSection()
     {
 //        $number = Yii::$app->request->get('number');
@@ -147,12 +147,10 @@ class MockController extends Controller
 //        session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
-
-        // 正确率等的计算，勿删
+        // 正确率等的计算
         $model=new Questions();
         $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
         $re=$model->avg($solution,$utime,$data);
-
         // 统计答题总数
         if($count<8){
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();

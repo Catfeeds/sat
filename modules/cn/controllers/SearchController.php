@@ -25,13 +25,12 @@ class SearchController extends Controller
         $offset = $pagesize * ($page - 1);
         $cate = Yii::$app->request->get('c', 'i');
         if ($cate == 'i') {
-            $data = Yii::$app->db->createCommand("select id,title,summay from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
-            $count = count(Yii::$app->db->createCommand("select id,title,summay from {{%info}} where title like '%$keyword%'")->queryAll());
+            $data = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
+            $count = count(Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%'")->queryAll());
         } elseif ($cate == 'q') {
             $data = Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'  order by q.id desc limit $offset,$pagesize")->queryAll();
             $count = count(Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
         }
-//        $count=count($data);
         if ($cate != false) {
             $url = 'search.html?' . "c=" . $cate . "&p";
         } else {
@@ -39,5 +38,6 @@ class SearchController extends Controller
         }
         $page = new Pager("$url", $count, $page, $pagesize);
         $str = $page->GetPager();
+        return $this->render('index');
     }
 }

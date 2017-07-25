@@ -13,6 +13,7 @@ use yii\web\Controller;
 
 class CollectionController extends Controller
 {
+    // 收藏与取消收藏
     public function actionCollection()
     {
         $data['qid'] =(string)Yii::$app->request->get('subId', '');
@@ -57,31 +58,7 @@ class CollectionController extends Controller
                 $res['code']=0;
             }
             die(json_encode($res));
-//          }
         }
     }
 
-//    public function actionDetails()
-//    {
-//        $data['qid'] = (string)Yii::$app->request->post('qid', '');
-//        $data['uid']=Yii::$app->session->get('userId');
-//        $model=new Collection();
-//        $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();
-//        if(!$arr){
-//            $res['message']='您并未收藏该题';
-//            $res['code']=0;
-//            die(json_encode($res));
-//        }else{
-//            $data['qid']=str_replace($data['qid'],'',$arr['qid']);
-//            $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
-//            if($re){
-//                $res['message']='取消成功';
-//                $res['code']=1;
-//            }else{
-//                $res['message']='取消失败';
-//                $res['code']=0;
-//            }
-//            die(json_encode($res));
-//        }
-//    }
 }
