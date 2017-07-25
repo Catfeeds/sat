@@ -25,8 +25,7 @@
                 <td><?php echo $v['examinationTime']?></td>
                 <td><?php echo $v['time']?></td>
                 <td>
-                    <input name="flag" type="radio" <?php echo $v['flag']=='0'?'checked=checked':''?>>未处理
-                    <input name="flag" type="radio" <?php echo $v['flag']=='1'?'checked=checked':''?>>已处理
+                    <?php echo $v['flag']=='0'?'未处理':'已处理'?>
                 </td>
                 <td><a><span onclick="check('<?php echo $v['id']?>','1')">已处理</span></a>
                     <a><span onclick="check('<?php echo $v['id']?>','0')">未处理</span></a>
