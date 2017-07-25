@@ -56,7 +56,7 @@ $(function () {
           currentPage: p,
           onPageChange: function (num,type) {
             if(type == 'change'){
-              collect(src,classify,num);
+              exer(src,classify,cas,num);
             }
           }
         });
@@ -64,13 +64,13 @@ $(function () {
     })
   }
 //模考
-  function mock(src,type,p){
+  function mock(src,t,p){
     $.ajax({
       url: '/cn/person/mo',
       type: 'get',
       data: {
         'src': src,
-        'type': type,
+        'type': t,
         'p': p
       },
       dataType: 'json',
@@ -108,7 +108,7 @@ $(function () {
           currentPage: p,
           onPageChange: function (num,type) {
             if(type == 'change'){
-              collect(src,classify,num);
+              mock(src,t,num);
             }
           }
         });
