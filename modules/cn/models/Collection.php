@@ -13,7 +13,7 @@ class Collection extends ActiveRecord{
     {
         return '{{%collection}}';
     }
-    public function CollectionDate($name,$uid,$major){
+    public function CollectionDate($name,$uid,$major,$offset,$pagesize){
         if($name=='all'){
             $name='';
         }else{
@@ -26,7 +26,21 @@ class Collection extends ActiveRecord{
         }
         $arr= Yii::$app->db->createCommand("select * from {{%collection}} where uid=".$uid)->queryOne();
         $qid=ltrim($arr['qid'],',');
-        $data= Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $name $major")->queryAll();
-        return $data;
+        $data= Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $name $major limit $offset,$pagesize")->queryAll();
+        $brr['total']= count(Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $name $major")->queryAll());
+        foreach($data as $k=>$v){
+            $brr['list'][]= array(
+                'qid'      => $v['qid'],
+//                'tpId'     => $v['tpId'],
+                'name'     => $v['name'],
+                'time'     => $v['time'],
+                'major'    => $v['major'],
+                'number'   => $v['number'],
+                'content'  => $v['content'],
+            );
+        }
+        $brr['totalPage'] = ceil($brr['total']/$pagesize);// 总页数
+
+        return $brr;
     }
 }

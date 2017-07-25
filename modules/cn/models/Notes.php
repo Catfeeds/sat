@@ -51,7 +51,8 @@ class Notes extends ActiveRecord
 //
 //    }
     // 根据条件取数据
-    public function Ex($uid,$name,$major,$error){
+    public function Ex($uid,$name,$major,$error,$offset,$pagesize,$p)
+    {
         $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
@@ -67,7 +68,6 @@ class Notes extends ActiveRecord
             }
         }
         $qid=rtrim($s,',');
-
         if($major=='Math'){
             $major="and (major='Math1' or major='Math2')";
         }elseif($major=='all'){
@@ -77,12 +77,10 @@ class Notes extends ActiveRecord
         }
         if($name=='all'){$name='';}
         $where=(($name!=false)?"and t.name='$name'":'').(($major!=false)?" $major ":'');
-//        var_dump($crr);die;
-//        $qe = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $where")->queryAll();
         if($error=='all'){
             static $data = array();
-            $qe = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $where")->queryAll();
-
+            $qe = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $where limit $offset,$pagesize")->queryAll();
+            $total= count(Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $where")->queryAll());
                 foreach($qe as $k=>$v) {
                     if($crr[$v['qid']][0]==$v['qid']){
                         array_push($v,$crr[$v['qid']][1]);
@@ -90,23 +88,48 @@ class Notes extends ActiveRecord
                         array_push($v,$crr[$v['qid']][3]);
                         array_push($data,$v);
                     }
-
                 }
-//            }
 
         }else{
-            static $data = array();
+            static $a = array();
             foreach($crr as $k=>$v){
                 $qe=Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid) $where and answer!= '$v[1]' ")->queryOne();
                 if($qe){
                     array_push($qe,$v[1]);
                     array_push($qe,$v[2]);
                     array_push($qe,$v[3]);
-                    array_push($data,$qe);// 查看耗时较长的题目
+                    array_push($a,$qe);
                 }
             }
+            $total=count($a);
+            static $data = array();
+            foreach($a as $k=>$v){
+                if($k>=$offset && $k<=$offset+$pagesize){
+                    array_push($data,$v);
+                }
+            }
+
         }
-        return $data;
+        if($data){
+            foreach($data as $k=>$v){
+                $question['list'][]= array(
+                    'qid'     => $v['qid'],
+                    'name'    => $v['name'],
+                    'time'    => $v['time'],
+                    'major'   => $v['major'],
+                    'number'  => $v['number'],
+                    'content' => $v['content'],
+                    0         =>$v[0],
+                    1         =>$v[1],
+                    2         =>$v[2],
+                );
+            }
+        }else{
+            $question='';
+        }
+
+        $question['total']=$total;
+        return $question;
 
     }
 }

@@ -178,7 +178,7 @@ function collectEvent(obj) {
       url: '/cn/collection/collection',
       data: {
         uid: uId,
-        subID: subjectId,
+        subId: subjectId,
         val:  val
       },
       dataType: 'json',

@@ -18,9 +18,6 @@ class PubclassController extends Controller
     public $enableCsrfValidation = false;
     public function actionIndex()
     {
-//        $pubclass = new Pubclass();
-//        $pubclass->getTime();
-
         $data = Yii::$app->db->createCommand("select * from {{%info}} where validTime>".time()."  and cate='公开课'")->queryAll();
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where validTime<".time()." and cate='公开课'")->queryAll();
         $controller = Yii::$app->controller->id;

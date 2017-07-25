@@ -15,8 +15,9 @@ class CollectionController extends Controller
 {
     public function actionCollection()
     {
-        $data['qid'] =(string)Yii::$app->request->get('subID', '');
+        $data['qid'] =(string)Yii::$app->request->get('subId', '');
         $data['uid'] =Yii::$app->request->get('uid', '');
+//        $data['uid'] =222;
         $flag=Yii::$app->request->get('val');
         $model=new Collection();
         // 查找 uid 是否存在
