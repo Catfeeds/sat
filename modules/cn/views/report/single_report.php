@@ -6,7 +6,7 @@
 <section class="s-w1200">
   <div class="report-banner">
     <div class="report-bnr-cnt">
-      <span>lala</span>
+      <span><?php echo ($user['nickname']!=false)?$user['nickname']:''?></span>
       同学你好,以下是你的<span class="class-hid" data-class="<?php echo $report['part']?>"><?php echo $report['part']?></span>分析报告
     </div>
   </div>
@@ -138,7 +138,7 @@
   $(function() {
     pieChart('accuChart',[parseInt(<?php if($report['readnum']!=0){$a=$report['readnum']/52*100;$b=$report['readerror']/52*100;$c=(52-$report['readnum']-$report['readerror'])/52*100;echo $a;}
     if($report['writenum']!=0){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
-    if($report['mathnum']!=0){$a=$report['mathnum']/58*10;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
+    if($report['mathnum']!=0){$a=$report['mathnum']/58*100;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
     ?>),parseInt(<?php echo $b?>),parseInt(<?php echo $c?>)],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
 
     $('.ans-classify li').click(function () {

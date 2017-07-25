@@ -50,9 +50,9 @@ class Questions extends ActiveRecord{
     */
     public function avg($answer,$time,$data){
         if($answer==$data['answer']){
-            $data['correctRate']=($data['peopleNum']*$data['correctRate']/100+1)/($data['peopleNum']+1)*100;
+            $data['correctRate']=(($data['peopleNum']*$data['correctRate']/100+1)/($data['peopleNum']+1))*100;
         }else{
-            $data['correctRate']=($data['peopleNum']*$data['correctRate']/100)/($data['peopleNum']+1)*100;
+            $data['correctRate']=(($data['peopleNum']*$data['correctRate']/100)/($data['peopleNum']+1))*100;
         }
         // 答题时间的计算
         $data['avgTime']=($data['avgTime']*$data['peopleNum']+$time)/($data['peopleNum']+1);

@@ -110,7 +110,6 @@ class MockController extends Controller
         session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $solution,$utime);
-
         // 正确率等的计算，勿删
         $model=new Questions();
         $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();

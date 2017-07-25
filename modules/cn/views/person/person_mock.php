@@ -2,36 +2,9 @@
 <script src="/cn/js/person.js"></script>
 <section class="s-w1200 s-information">
   <div class="person-wrap clearfix">
-    <div class="person-side pull-left">
-      <ul>
-        <li class="person-title">
-          <div class="person-name">
-            <img src="/cn/images/login.png" alt="头像">
-            <p>
-              <span>lallal</span>
-              <span>(初出茅庐)</span>
-            </p>
-          </div>
-          <ul>
-            <li>做题数:<span>34</span></li>
-            <li>正确率:<span>23%</span></li>
-          </ul>
-        </li>
-        <li>
-          <a href="/person_collect.html">
-            <i class="fa fa-bookmark"></i>收藏题目
-          </a>
-        </li>
-        <li class="on">
-          <i class="fa fa-clipboard"></i>模考记录
-        </li>
-        <li>
-          <a href="/person_exercise.html">
-            <i class="fa fa-file-text-o"></i>做题记录
-          </a>
-        </li>
-      </ul>
-    </div>
+    <?php use app\commands\front\PersonWidget;?>
+    <?php PersonWidget::begin();?>
+    <?php PersonWidget::end();?>
     <div class="person-cnt pull-left">
       <dl class="per-src">
         <dt>题目来源</dt>

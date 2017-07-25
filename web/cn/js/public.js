@@ -161,6 +161,7 @@ $(function () {
   $('.apply-close').click(function () {
     $('.apply-fix').hide();
   })
+
 })
 //获取uid
 var uId = $.cookie('uid');
