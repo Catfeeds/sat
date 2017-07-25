@@ -30,6 +30,7 @@
             $this->session = Yii::$app->session;
             $this->uid=$this->session->get('uid');
             $this->user=$this->session->get('userData');
+            $this->user=222;
 	    }
         public function url(){
             $this->now_path=ltrim($_SERVER['REQUEST_URI'],'/');
