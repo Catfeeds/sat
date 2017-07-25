@@ -129,6 +129,7 @@
 //退出登录
     function Out(){
         $.post('/user/api/login-out',function(re){
+            $('#outjs').html(re);
             alert('退出成功');
             $.cookie('uid',null);
             history.go(0);
