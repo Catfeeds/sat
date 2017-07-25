@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/cn/css/person.css">
+<script src="/cn/js/jqPage.js"></script>
+<script src="/cn/js/jqPaginator.js"></script>
 <script src="/cn/js/person.js"></script>
 <section class="s-w1200 s-information">
   <div class="person-wrap clearfix">
@@ -31,45 +33,23 @@
         <dd data-val="Math">Math</dd>
       </dl>
       <ul class="person-mock">
-        <?php foreach($arr as $k=>$v){?>
-        <li class="clearfix">
-          <div class="mock-look pull-right">
-            <a href="mock_details?<?php if($v['part']=='all'){echo "tid=".$v['tpId'];}else{echo "m=".$v['part']."&"."tid=".$v['tpId'];}?>" class="mock-again">重新模考</a>
-            <a href="report/<?php echo $v['id']?>.html" class="mock-record">查看报告</a>
-          </div>
-          <h3><i class="mock-delete fa fa-trash" data-id="<?php echo $v['id']?>"></i><?php echo $v['name'].$v['time']?></h3>
-          <div class="mock-details">
-            <p>耗时：<span><?php echo $v['rtime']?></span></p>
-            <p>正确率: <span><?php echo sprintf("%.2f",($v['mathnum']+$v['readnum']+$v['writenum'])/154*100)?>%</span></p>
-            <p>完成时间: <span><?php echo date('Y-m-d H:i:s',$v['date'])?></span></p>
-          </div>
-        </li>
-        <?php }?>
+<!--        --><?php //foreach($arr as $k=>$v){?>
 <!--        <li class="clearfix">-->
 <!--          <div class="mock-look pull-right">-->
-<!--            <a href="#" class="mock-again">重新模考</a>-->
-<!--            <a href="#" class="mock-record">查看报告</a>-->
+<!--            <a href="mock_details?--><?php //if($v['part']=='all'){echo "tid=".$v['tpId'];}else{echo "m=".$v['part']."&"."tid=".$v['tpId'];}?><!--" class="mock-again">重新模考</a>-->
+<!--            <a href="report/--><?php //echo $v['id']?><!--.html" class="mock-record">查看报告</a>-->
 <!--          </div>-->
-<!--          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>-->
+<!--          <h3><i class="mock-delete fa fa-trash" data-id="--><?php //echo $v['id']?><!--"></i>--><?php //echo $v['name'].$v['time']?><!--</h3>-->
 <!--          <div class="mock-details">-->
-<!--            <p>耗时：<span>01h22m33s</span></p>-->
-<!--            <p>正确率: <span>47%</span></p>-->
-<!--            <p>完成时间: <span>2017-5-8 20:08:24</span></p>-->
+<!--            <p>耗时：<span>--><?php //echo $v['rtime']?><!--</span></p>-->
+<!--            <p>正确率: <span>--><?php //echo sprintf("%.2f",($v['mathnum']+$v['readnum']+$v['writenum'])/154*100)?><!--%</span></p>-->
+<!--            <p>完成时间: <span>--><?php //echo date('Y-m-d H:i:s',$v['date'])?><!--</span></p>-->
 <!--          </div>-->
 <!--        </li>-->
-<!--        <li class="clearfix">-->
-<!--          <div class="mock-look pull-right">-->
-<!--            <a href="#" class="mock-again">重新模考</a>-->
-<!--            <a href="#" class="mock-record">查看报告</a>-->
-<!--          </div>-->
-<!--          <h3><i class="mock-delete fa fa-trash"></i>OG-2017模考试题</h3>-->
-<!--          <div class="mock-details">-->
-<!--            <p>耗时：<span>01h22m33s</span></p>-->
-<!--            <p>正确率: <span>47%</span></p>-->
-<!--            <p>完成时间: <span>2017-5-8 20:08:24</span></p>-->
-<!--          </div>-->
-<!--        </li>-->
+<!--        --><?php //}?>
       </ul>
+      <!--分页-->
+      <ol class="pagination clearfix"></ol>
     </div>
   </div>
 </section>
