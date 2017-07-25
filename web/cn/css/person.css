@@ -140,7 +140,7 @@
 }
 
 .person-cnt>ul .collect-sub {
-  max-height: 75px;
+  max-height: 70px;
   padding-left: 10px;
   overflow: hidden;
 }
@@ -226,4 +226,3 @@
   background-color: #999;
   color: #fff;
 }
-/*做题记录*/

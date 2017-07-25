@@ -55,5 +55,7 @@
       </ul>
       <!--<img class="oImag" src="" data-src="http://kingofwallpapers.com/picture/picture-007.jpg" alt="">-->
     </div>
-    <ul class="pagination clearfix"></ul>
+    <div class="s-page">
+      <ul class="pagination clearfix"></ul>
+    </div>
   </section>

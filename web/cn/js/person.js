@@ -201,7 +201,6 @@ function collect(src,classify,p){
 //删除事件
 function mockDel(a) {
   var _this = $(a);
-  console.log(_this.data('id'));
   $.get('/cn/person/del',{id:_this.data('id')},function(data){
     if (data.code == 1) {
       _this.parent().parent().remove();
@@ -210,9 +209,8 @@ function mockDel(a) {
   },'json')
 }
 function exerDel(a) {
-  var _this = $(this);
-  console.log('练习');
-  $.get('/cn/person/removed',{id:$(this).data('id')},function(data){
+  var _this = $(a);
+  $.get('/cn/person/removed',{id:_this.data('id')},function(data){
     if (data.code == 1) {
       _this.parent().parent().parent().remove();
       alert(data.message);
@@ -220,9 +218,8 @@ function exerDel(a) {
   },'json')
 }
 function collDel(a){
-  var _this = $(this);
-  console.log('收藏');
-  $.get('/cn/collection/collection',{subId:$(this).data('id'),val:1, uid: 444
+  var _this = $(a);
+  $.get('/cn/collection/collection',{subId:_this.data('id'),val:1, uid: 444
   },function(data){
     if (data.code == 2) {
       _this.parent().remove();

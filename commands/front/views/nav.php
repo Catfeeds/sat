@@ -118,7 +118,7 @@
     </ul>
     <form action="">
         <i class="nav-search-sure fa fa-search"></i>
-        <input class="nav-search" type="text">
+        <input class="nav-search input-cnt" type="text">
     </form>
 </div>
 </nav>

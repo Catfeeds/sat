@@ -28,6 +28,9 @@
             </li>
             <?php }?>
         </ul>
+        <div class="s-page">
+            <ul class="pagination clearfix"></ul>
+        </div>
         <ol>
             <?php for($i=1;$i<=$maxpage;$i++){?>
             <a href="<?php echo '/teachers.html'.'?'.'p='.$i?>"><li <?php if($i==Yii::$app->request->get('p',1)) echo 'class="on" '?> ><?php echo $i?></li></a><?php }?>
