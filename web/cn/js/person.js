@@ -128,32 +128,35 @@ $(function () {
       success: function (data) {
         var li = '';
         tp = data.totalPage;
-        if (data.list != undefined) {
-          $.each(data.list, function (i,array) {
-            li+="<li class='clearfix'>"+
-              "<div class='collect-del pull-right' data-id='"+array['qid']+"'>"+
-              "<div>"+
-              "<i class='fa fa-star'></i>"+
-              "</div>"+
-              "<p>取消收藏</p>"+
-              "</div>"+
-              "<div class='collect-sub'>"+
-              "<h4><i class='icon-bookmark'></i>"+array['name']+"-"+array['major']+"-"+array['number']+"</h4>"+
-              "<p>"+
-              "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>"+
-              "</p>"+
-              "</div>"+
-              "</li>"
-          })
+        if (data.list == undefined) {
+          data.list = 0;
+          tp = 1;
         }
+        $.each(data.list, function (i,array) {
+          li+="<li class='clearfix'>"+
+            "<div class='collect-del pull-right' data-id='"+array['qid']+"'>"+
+            "<div>"+
+            "<i class='fa fa-star'></i>"+
+            "</div>"+
+            "<p>取消收藏</p>"+
+            "</div>"+
+            "<div class='collect-sub'>"+
+            "<h4><i class='icon-bookmark'></i>"+array['name']+"-"+array['major']+"-"+array['number']+"</h4>"+
+            "<p>"+
+            "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>"+
+            "</p>"+
+            "</div>"+
+            "</li>"
+        })
         $('.person-cnt ul').html(li);
       },
       complete: function () {
+        console.log(tp);
         $.jqPaginator('.pagination', {
           totalPages: tp,
           visiblePages: 6,
           currentPage: p,
-          onPageChange: function () {
+          onPageChange: function (num,type) {
             $(".pagination li a").on('click',function(){
               var p = parseInt($(this).parent().attr("jp-data"));
               if(p){
@@ -165,6 +168,8 @@ $(function () {
       }
     })
   }
+
+
 
   //条件筛选
   $('.person-cnt dl').on('click','dd',function() {
