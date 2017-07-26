@@ -87,3 +87,7 @@
   -webkit-box-orient: vertical;
   font-size: 16px;
 }
+
+.search-info {
+  display: none;
+}

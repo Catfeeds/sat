@@ -32,15 +32,15 @@
 //                        }?><!--</a></li>-->
 <!--                <li id="out"><a><span onclick="Out()">退出</span></a></li>-->
 <!--            </ul>-->
-            <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
+            <ul class="s-nav-login pull-right" id="loginul" <?php if(isset($user)){echo 'style="display:none"';}else{echo 'style="display:block"';}?>>
                 <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
                 <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
             </ul>
-            <div class="login-after pull-right">
+            <div class="login-after pull-right" <?php if(isset($user)){echo 'style="display:block"';}else{echo'style="display:none"';}?>>
                 <div class="login-after-show">
                     <img src="/cn/images/login.png" alt="头像">
                     <p>
-                        <span>lalala</span>
+                        <span><?php echo isset($user)?($user['nickname']!=false?$user['nickname']:$user['username']):''?></span>
                         <span>(初出茅庐)</span>
                         <i class="fa fa-angle-down"></i>
                     </p>
@@ -50,7 +50,7 @@
                         <li><a href="/person_collect.html">收藏题目</a></li>
                         <li><a href="/person_exercise.html">做题记录</a></li>
                         <li><a href="/person_mock.html">模考记录</a></li>
-                        <li><a href="#">退出登录</a></li>
+                        <li id="out"><a href="#"><span onclick="Out()">退出登录</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -90,7 +90,7 @@
         </div>
     </div>
 </div>
-<!--<div id="outjs" style="display: none;">-->
+<div id="outjs" style="display: none;">
 </div>
 <nav class="s-nav">
     <div class="container clearfix">
@@ -116,9 +116,10 @@
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
     </ul>
     </ul>
-    <form action="">
+        <form action="/cn/search/index" method="post">
         <i class="nav-search-sure fa fa-search"></i>
-        <input class="nav-search input-cnt" type="text">
+        <input class="nav-search input-cnt" name="keyword" type="text">
+        <input type="submit" value="搜索">
     </form>
 </div>
 </nav>
@@ -129,6 +130,7 @@
 //退出登录
     function Out(){
         $.post('/user/api/login-out',function(re){
+            $('#outjs').html(re);
             alert('退出成功');
             $.cookie('uid',null);
             history.go(0);

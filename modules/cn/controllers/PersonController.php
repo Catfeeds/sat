@@ -95,7 +95,7 @@ class PersonController extends Controller
         $major=Yii::$app->request->get('classify');
         $error=Yii::$app->request->get('case');
         $p =Yii::$app->request->get('p','1');
-        $pagesize=6;
+        $pagesize=2;
         $offset = $pagesize * ($p - 1);
 
         $notes=new Notes();
@@ -114,7 +114,7 @@ class PersonController extends Controller
         $src=Yii::$app->request->get('src');
         $type=Yii::$app->request->get('type');
         $arr['curPage'] =$p = Yii::$app->request->get('p','1');
-        $arr['pageSize']=$pagesize=6;
+        $arr['pageSize']=$pagesize=2;
         if($src !='all'){
             $name="and name='$src'";
         }else{

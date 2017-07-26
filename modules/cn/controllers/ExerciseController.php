@@ -15,6 +15,7 @@ use app\modules\cn\models\Notes;
 class ExerciseController extends Controller
 {
     public $layout='cn.php';
+
     public function actionIndex()
     {
         $model=new Questions();
@@ -32,8 +33,6 @@ class ExerciseController extends Controller
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
-
-
 //        var_dump($data);die;
         // 统计做题的时间 和正确率
         $major=$data['major'];
@@ -54,6 +53,7 @@ class ExerciseController extends Controller
         return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id'],'knowledge'=>$knowledge,'question'=>$question,'mock'=>$mock]);
 
     }
+    // 将登陆用户的做题数据存入数据库
     public function actionNotes(){
         $answer=Yii::$app->request->get('ans');
         $time=Yii::$app->request->get('time');
