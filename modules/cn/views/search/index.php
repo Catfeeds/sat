@@ -9,13 +9,21 @@
 <body>
     <section>
         <div class="search-bc">
-            <form class="search-form" action="">
-                <select name="cate" class="search-select select2" onclick="cat(this)">
-                    <option value="q">题目</option>
-                    <option value="i">资讯</option>
-                </select>
+            <form class="search-form clearfix" action="">
+<!--                <select name="cate" class="search-select select2" onclick="cat(this)">-->
+<!--                    <option value="q">题目</option>-->
+<!--                    <option value="i">资讯</option>-->
+<!--                </select>-->
+                <div class="search-select select2 pull-left">
+                    <p>题目</p>
+                    <ul>
+                        <li>题目</li>
+                        <li>资讯</li>
+                    </ul>
+                </div>
+                <input type="button" class="search-btn pull-right" value="搜索" onclick="keySearch(this)">
                 <input class="search-text text2" name="keyword" onkeyup="enterKey(event,this)" type="text" x-webkit-speech="">
-                <input type="button" class="search-btn" value="搜索" onclick="keySearch(this)">
+
             </form>
         </div>
         <div class="search-cnt search-subject">

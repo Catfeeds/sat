@@ -116,16 +116,32 @@
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
     </ul>
     <form class="search-form" action="">
-        <select name="cate" class="search-select select1" onclick="cat(this)">
-            <option value="q">题目</option>
-            <option value="i">资讯</option>
-        </select>
+<!--        <select name="cate" class="search-select select1" onclick="cat(this)">-->
+<!--            <option value="q">题目</option>-->
+<!--            <option value="i">资讯</option>-->
+<!--        </select>-->
+        <div class="search-select">
+            <p>题目</p>
+            <ul>
+                <li>题目</li>
+                <li>资讯</li>
+            </ul>
+        </div>
         <input class="search-text text1" name="keyword" onkeyup="javascript:enterKey(event,this)" type="text">
         <input type="button" class="search-btn" value="搜索" onclick="keySearch(this)">
     </form>
 </div>
 </nav>
 <script>
+    $(function () {
+        $('.search-select p').click(function () {
+            $('.search-select ul').show();
+        })
+        $('.search-select ul li').click(function () {
+            $('.search-select p').html($(this).html());
+            $('.search-select ul').hide();
+        })
+    })
 //    存储uid
     var userId ='<?php if(isset($uid)){echo $uid;}?>' ;
     $.cookie('uid',userId,  {path:'/'});
@@ -152,24 +168,13 @@
         }
     }
     function keySearch() {
-        var k = $('.search-text').val(),
-          cate=$(".search-select option:selected").eq(1).val();
-        location.href = "/search.html?c="+cate+"&keyword="+encodeURIComponent(k);
-    }
-    function cat(obj){
-        var name = $(obj).prop('className');
-        console.log(name);
-        console.log($(obj).children('option').not('option:selected'));
-        if(name.indexOf('select2') != -1){
-            $('.select1').children('option').not('option:selected').val($('.select1 option:selected').val());
-            $('.select1').children('option').not('option:selected').text($('.select1 option:selected').text());
-            $('.select1 option:selected').val($('.select2 option:selected').val());
-            $('.select1 option:selected').text($('.select2 option:selected').text());
-        } else if(name.indexOf('select1') != -1){
-            $('.select2').children('option').not('option:selected').val($('.select2 option:selected').val());
-            $('.select2').children('option').not('option:selected').text($('.select2 option:selected').text());
-            $('.select2 option:selected').val($('.select1 option:selected').val());
-            $('.select2 option:selected').text($('.select1 option:selected').text());
+        if ($('.search-select p').html() == '题目') {
+            var cate = 'q';
+        } else {
+            var cate = 'i';
         }
+        var k = $('.search-text').val();
+        location.href = "/search.html?c=" + cate + "&keyword=" + encodeURIComponent(k);
     }
+
 </script>
