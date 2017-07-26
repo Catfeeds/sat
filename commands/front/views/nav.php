@@ -116,11 +116,16 @@
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
     </ul>
     </ul>
-        <form action="/cn/search/index" method="post">
-        <i class="nav-search-sure fa fa-search"></i>
-        <input class="nav-search input-cnt" name="keyword" type="text">
-        <input type="submit" value="搜索">
-    </form>
+
+        <form action="/search.html" method="post">
+<!--            <i class="nav-search-sure fa fa-search"></i>-->
+            <select name="cate" id="">
+                <option value="题目">题目</option>
+                <option value="资讯">资讯</option>
+            </select>
+            <input class="nav-search input-cnt" name="keyword" type="text">
+            <input type="submit" value="搜索">
+        </form>
 </div>
 </nav>
 <script>

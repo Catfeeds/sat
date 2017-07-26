@@ -15,44 +15,20 @@
                 <input type="submit">
             </form>
         </div>
-        <ul class="search-toggle">
-            <li class="on">资讯</li>
-            <li>题目</li>
-        </ul>
         <div class="search-cnt search-subject">
             <ul>
-                <?php foreach ($info as $k=>$v){?>
+                <?php foreach ($data as $k=>$v){?>
                 <li class="search-list">
-                    <h2><a href="/info_details/<?php echo $v['id']?>.html"><?php echo $v['title']?></a></h2>
+                    <h2>
+                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'. $v['title']:'<a href="/exercise_details/'.$v['id'].'.html">'.$v['essay']?>
+                        </a></h2>
                     <div>
-                        <p><?php echo $v['summary']?> </p>
+                        <p><?php echo isset($v['summary'])?$v['summary']:$v['content']?> </p>
                     </div>
                 </li>
                 <?php }?>
-
-<!--                <li class="search-list">-->
-<!--                    <h2><a href="#">ndjknakj ndfjakj dnsak</a></h2>-->
-<!--                    <div>-->
-<!--                        <p>ndjknakj ndfjakj dnsakndjknakj ndfjakj dnsakndjknakj ndfjakj dnsakndjknakj ndfjakj dnsak</p>-->
-<!--                    </div>-->
-<!--                </li>-->
-            </ul>
-            <?php echo $strinfo?>
+            <?php echo $str?>
         </div>
-        <div class="search-cnt search-info">
-            <ul>
-            <?php foreach ($que as $k=>$v){?>
-                <li class="search-list">
-                    <h2><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['essay']?></a></h2>
-                    <div>
-                        <p><?php echo $v['content']?> </p>
-                    </div>
-                </li>
-            <?php }?>
-            </ul>
-            <?php echo $strque?>
-        </div>
-
     </section>
 </body>
 </html>

@@ -19,35 +19,71 @@ class SearchController extends Controller
     public function actionIndex()
     {
 
-        $keyword = Yii::$app->request->post('keyword', '');
-        $cate = Yii::$app->request->get('c', 'i');
-//        var_dump($keyword);die;
-        $pagesize = 6;
-        $p = Yii::$app->request->get('p', 1);
-        $offseti = $pagesize * ($p - 1);
-        $info = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offseti,$pagesize")->queryAll();
-        $countinfo = count(Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%'")->queryAll());
+        $keyword = Yii::$app->request->get('keyword', '');
+        $cate = Yii::$app->request->get('cate', 'q');
+        $page = Yii::$app->request->get('p', '1');
 
+        if($keyword){
+            $pagesize = 6;
+            $p = Yii::$app->request->get('p', 1);
+            $offset= $pagesize * ($p - 1);
+            if($cate=='i'){
+                $data = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
+                $count= count(Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%'")->queryAll());
+                $page= new Pager("/search.html?c=i&keyword=$keyword&p", $count,$page, $pagesize);
+            }elseif($cate=='q'){
+                $data= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'  order by q.id desc limit $offset,$pagesize")->queryAll();
+                $count= count(Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
+                $page= new Pager("/search.html?c=q&keyword=$keyword&p", $count,$page, $pagesize);
+            }
+            else{
+                $data=array();
+                $count=0;
+                $page=new Pager("/search.html?keyword=$keyword&p", $count,$page, $pagesize);
+            }
+            $str = $page->GetPager();
 
-        $page = Yii::$app->request->get('page', 1);
-        $offsetq = $pagesize * ($page - 1);
-        $que = Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'  order by q.id desc limit $offsetq,$pagesize")->queryAll();
-        $countque = count(Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
-        if ($cate != false) {
-//                $url = '/search.html?c=q&page';
-            $pageque = new Pager("/search.html?c=q&page", $countque, $page, $pagesize);
-            $pageinfo = new Pager("/search.html?c=i&p", $countinfo, $p, $pagesize);
-        } else {
-            $pageque = new Pager("/search.html?page", $countque, $page, $pagesize);
-            $pageinfo = new Pager("/search.html?p", $countinfo, $p, $pagesize);
-//            $url = '/search.html?p';
+        }else{
+            $data=array();
+            $str='';
         }
 
+        return $this->render('index',['data'=>$data,'str'=>$str]);
+    }
 
-        $strinfo = $pageinfo->GetPager();
-        $strque = $pageque->GetPager();
-//        echo die(json_encode($data));
-//        var_dump($data);die;
-        return $this->render('index',['info'=>$info,'que'=>$que,'strinfo'=>$strinfo,'strque'=>$strque]);
+
+    public function actionAjax()
+    {
+
+        $keyword = Yii::$app->request->post('keyword', '');
+        $arr['info']['curPage'] =$p = Yii::$app->request->get('p','1');
+        $arr['que']['curPage'] =$page = Yii::$app->request->get('page','1');
+        $arr['que']['pageSize']=$pagesize=6;
+        $arr['info']['pageSize']=$pagesize=6;
+        $offseti = $pagesize * ($p - 1);
+        $info= Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offseti,$pagesize")->queryAll();
+        $arr['info']['total']= count(Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%'")->queryAll());
+        $arr['info']['totalPage'] = ceil( $arr['info']['total']/$pagesize);// 总页数
+        $offsetq = $pagesize * ($page - 1);
+        $que = Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'  order by q.id desc limit $offsetq,$pagesize")->queryAll();
+        $arr['que']['total'] = count(Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
+        $arr['que']['totalPage'] = ceil($arr['que']['total']/$pagesize);// 总页数
+
+        foreach($info as $k=>$v){
+            $arr['info']['list'][]= array(
+                'title' => $v['title'],
+                'id' => $v['id'],
+                'summary' => $v['summary'],
+            );
+        }
+        foreach($que as $k=>$v){
+            $arr['que']['list'][]= array(
+                'content' => $v['content'],
+                'essay' => $v['essay'],
+                'qid' => $v['qid'],
+            );
+        }
+
+        echo die(json_encode($arr));
     }
 }

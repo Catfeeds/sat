@@ -58,20 +58,20 @@ $(function () {
   function search(){
     var content = $('.input-cnt').val();
     $.ajax({
-      url:'/cn/search/index',
+      url:'/cn/search/ajax',
       type: 'post',
       data: {
         'keyword': content
       },
       success: function (data) {
-        location.href='/search.html';
-
+        //location.href='/search.html';
+        console.log(data);
       }
     })
   }
-  //$('.nav-search-sure').click(function () {
-  //    search();
-  //})
+  $('.nav-search-sure').click(function () {
+      search();
+  })
 //  模考收藏点击事件
   $('.work-collect').click(function () {
     collectEvent(this);
