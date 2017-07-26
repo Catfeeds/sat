@@ -32,19 +32,27 @@ class Questions extends ActiveRecord{
             $str=rtrim($str,',');
             $where="where tpId in ($str) and ($m)";
             $url='exercise.html?m='.$major.'&c='.$cate.'&p';
+//            var_dump($str);die;
         }
         $page = Yii::$app->request->get('p', 1);
         $pagesize=2;
         $offset = $pagesize * ($page - 1);
-        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId $where limit $offset,$pagesize")->queryAll();
-        $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
-        $count = $count['count(*)'];
+        if(isset($str) && $str==false){
+            $data='';
+            $count=0;
+        }else{
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId $where limit $offset,$pagesize")->queryAll();
+            $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
+            $count = $count['count(*)'];
+        }
+
         $page = new Pager("$url", $count, $page, $pagesize);
         $data['str'] = $page->GetPager();
         return $data;
     }
-    /* 做题正确率 时间的更新
-     *@time每题做题时间
+
+    /* 做题正确率,做题时间的更新
+     * @time每题做题时间
      * @answer做题答案
      * @data题目数据
     */

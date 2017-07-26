@@ -24,7 +24,7 @@
                     </span>
                     </br>
 
-                    <span>填 空 题:</span>
+                    <span>填 空 题 : </span>
                     <span>
                         <input name="isFilling" type="radio" value="0"  <?php echo isset($data['isFilling']) && $data['isFilling']==='0' ?  'checked="checked"':''?>/>否
                         <input name="isFilling" type="radio" value="1" <?php echo isset($data['isFilling']) && $data['isFilling']==='1' ?  'checked="checked"':''?>/>是
@@ -44,7 +44,7 @@
                             <option value ="Math1" <?php echo isset($data['major'])&& $data['major']=="Math1" ?  'selected':''?>>数学1（带计算器）</option>
                             <option value ="Math2" <?php echo isset($data['major'])&& $data['major']=="Math2" ?  'selected':''?>>数学2（不带计算器）</option>
                             <option value ="Reading" <?php echo isset($data['major'])&& $data['major']=="Reading" ?  'selected':''?>>阅读</option>
-                            <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>写作</option>
+                            <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>文法</option>
                             <option value ="Essay" <?php echo isset($data['major'])&& $data['major']=="Essay" ?  'selected':''?>>作文</option>
                         </select>
                     </span>
@@ -106,6 +106,17 @@
                     </br>
                     <span>考 &nbsp;&nbsp;&nbsp;&nbsp;点 :</span>
                     <span><input type="text" name="testCenter"  value="<?php echo isset($data)?$data['testCenter']:''?>"></span>
+                    </br>
+
+                    <span>类 &nbsp;&nbsp;&nbsp;&nbsp;型 :</span>
+                    <span>
+                        <select name="cate">
+                            <option value ="">请选择类型</option>
+                            <option value ="每日一题" <?php echo isset($data['cate'])&& $data['cate']=="每日一题" ?  'selected':''?>>每日一题</option>
+                            <option value ="模考" <?php echo isset($data['cate'])&& $data['cate']=="模考" ?  'selected':''?>>模考</option>
+                            <option value ="评测" <?php echo isset($data['cate'])&& $data['cate']=="评测" ?  'selected':''?>>评测</option>
+                        </select>
+                    </span>
                     </br>
 
                     <span>subScores:</span>

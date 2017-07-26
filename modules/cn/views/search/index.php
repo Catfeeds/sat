@@ -28,16 +28,16 @@
         </div>
         <div class="search-cnt search-subject">
             <ul>
-                <?php foreach ($data as $k=>$v){?>
+                <?php if($data==false){echo '无搜索结果';}else{foreach ($data as $k=>$v){?>
                 <li class="search-list">
                     <h2>
-                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'. $v['title']:'<a href="/exercise_details/'.$v['id'].'.html">'.$v['essay']?>
+                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'. $v['title']:'<a href="/exercise_details/'.$v['qid'].'.html">'.$v['essay']?>
                         </a></h2>
                     <div>
                         <p><?php echo isset($v['summary'])?$v['summary']:$v['content']?> </p>
                     </div>
                 </li>
-                <?php }?>
+                <?php }}?>
             <?php echo $str?>
         </div>
     </section>
