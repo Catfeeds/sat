@@ -169,7 +169,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-leaf"></i>高分经验</span>
-                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=s"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
