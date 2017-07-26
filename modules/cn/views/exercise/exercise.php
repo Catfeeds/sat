@@ -19,6 +19,7 @@
         <!-- 数学-->
           <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
             <div class="math-title">
+              <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
               <h3>OG-2514</h3>
             </div>
             <h2 class="s-num"><?php echo $data['qid']?></h2>
@@ -76,7 +77,7 @@
         <!-- 阅读-->
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
             <div class="read-title">
-              <p class="pull-right">1/5</p>
+              <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
               <h3>OG-4258</h3>
             </div>
             <div class="work-wrap-left pull-left">

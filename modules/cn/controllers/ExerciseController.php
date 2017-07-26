@@ -33,11 +33,18 @@ class ExerciseController extends Controller
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
-//        var_dump($data);die;
         // 统计做题的时间 和正确率
         $major=$data['major'];
         $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$id." and major= '$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id asc limit 1" )->queryOne();
-        $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id<".$id." and major='$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id desc limit 1" )->queryOne();
+        if($major=='Math1'||$major=="Math2"){
+            $a=1;
+            $n=1;
+        }else{
+            $a=count(Yii::$app->db->createCommand("select id from {{%questions}} where id<".$id." and major= '$major' and section=".$data['section']." and tpId=".$data['tpId']." and essayId=".$data['essayId'] )->queryAll())+1;
+            $n=count(Yii::$app->db->createCommand("select id from {{%questions}} where major= '$major' and section=".$data['section']." and tpId=".$data['tpId']." and essayId=".$data['essayId'] )->queryAll());
+        }
+
+       $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id<".$id." and major='$major' and section=".$data['section']." and tpId=".$data['tpId']." order by id desc limit 1" )->queryOne();
         // 查找题目是否收藏
         $data['uid']=Yii::$app->session->get('uid');
         if($data['uid']){
@@ -49,8 +56,8 @@ class ExerciseController extends Controller
                 $data['collection']=0;
             }
         }
-//        var_dump($mock);die;
-        return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id'],'knowledge'=>$knowledge,'question'=>$question,'mock'=>$mock]);
+//        var_dump($n);die;
+        return $this->render('exercise',['data'=>$data,'nextid'=>$nextid['id'],'upid'=>$upid['id'],'knowledge'=>$knowledge,'question'=>$question,'mock'=>$mock,'a'=>$a,'n'=>$n]);
 
     }
     // 将登陆用户的做题数据存入数据库
