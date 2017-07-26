@@ -9,6 +9,7 @@
       <span><?php echo ($user['nickname']!=false)?$user['nickname']:''?></span>
       同学你好,以下是你的<span class="class-hid" data-class="<?php echo $report['part']?>"><?php echo $report['part']?></span>分析报告
     </div>
+    <a href="/person_mock.html">历史报告</a>
   </div>
   <div class="report-wrap clearfix">
     <div class="report-cnt pull-left">

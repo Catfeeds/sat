@@ -115,17 +115,14 @@
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
     </ul>
-    </ul>
-
-        <form action="/search.html" method="post">
-<!--            <i class="nav-search-sure fa fa-search"></i>-->
-            <select name="cate" id="">
-                <option value="题目">题目</option>
-                <option value="资讯">资讯</option>
-            </select>
-            <input class="nav-search input-cnt" name="keyword" type="text">
-            <input type="submit" value="搜索">
-        </form>
+    <form class="search-form" action="">
+        <select name="cate" class="search-select select1" onclick="cat(this)">
+            <option value="q">题目</option>
+            <option value="i">资讯</option>
+        </select>
+        <input class="search-text text1" name="keyword" onkeyup="javascript:enterKey(event,this)" type="text">
+        <input type="button" class="search-btn" value="搜索" onclick="keySearch(this)">
+    </form>
 </div>
 </nav>
 <script>
@@ -140,5 +137,39 @@
             $.cookie('uid',null);
             history.go(0);
         },"text")
+    }
+//搜索框事件
+    function enterKey(event,obj){
+        console.log($(obj).prop('className'));
+        if ($(obj).prop('className').indexOf('text1') != -1){
+            console.log($(obj).val());
+            $('.text2').val($('.text1').val());
+        } else if($(obj).prop('className').indexOf('text2') != -1){
+            $('.text1').val($('.text2').val());
+        }
+        if(event.keyCode == 13){
+            keySearch();
+        }
+    }
+    function keySearch() {
+        var k = $('.search-text').val(),
+          cate=$(".search-select option:selected").eq(1).val();
+        location.href = "/search.html?c="+cate+"&keyword="+encodeURIComponent(k);
+    }
+    function cat(obj){
+        var name = $(obj).prop('className');
+        console.log(name);
+        console.log($(obj).children('option').not('option:selected'));
+        if(name.indexOf('select2') != -1){
+            $('.select1').children('option').not('option:selected').val($('.select1 option:selected').val());
+            $('.select1').children('option').not('option:selected').text($('.select1 option:selected').text());
+            $('.select1 option:selected').val($('.select2 option:selected').val());
+            $('.select1 option:selected').text($('.select2 option:selected').text());
+        } else if(name.indexOf('select1') != -1){
+            $('.select2').children('option').not('option:selected').val($('.select2 option:selected').val());
+            $('.select2').children('option').not('option:selected').text($('.select2 option:selected').text());
+            $('.select2 option:selected').val($('.select1 option:selected').val());
+            $('.select2 option:selected').text($('.select1 option:selected').text());
+        }
     }
 </script>

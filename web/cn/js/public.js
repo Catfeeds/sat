@@ -47,31 +47,6 @@ $(function () {
       $(this).hide();
     }
   })
-//  搜索框事件
-  $('.nav-search').bind({
-    focus: function () {
-      $(this).css('width','200px')
-    }, blur: function () {
-      $(this).css('width','150px')
-    }
-  })
-  function search(){
-    var content = $('.input-cnt').val();
-    $.ajax({
-      url:'/cn/search/ajax',
-      type: 'post',
-      data: {
-        'keyword': content
-      },
-      success: function (data) {
-        //location.href='/search.html';
-        console.log(data);
-      }
-    })
-  }
-  $('.nav-search-sure').click(function () {
-      search();
-  })
 //  模考收藏点击事件
   $('.work-collect').click(function () {
     collectEvent(this);

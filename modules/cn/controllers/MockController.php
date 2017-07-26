@@ -100,25 +100,23 @@ class MockController extends Controller
     {
         // 是只存id 和答案，还是报告所需数据都存
         $solution = Yii::$app->request->get('solution');// 用户提交的答案
-        $major = Yii::$app->request->get('major');// 学科
-        $tid = Yii::$app->request->get('tid');
-        $qid = Yii::$app->request->get('qid');
-        $uid = Yii::$app->request->get('uid');
-        $utime = Yii::$app->request->get('utime');
-        $number = Yii::$app->request->get('number');
-        $section = Yii::$app->request->get('section');
+        $major    = Yii::$app->request->get('major');// 学科
+        $tid      = Yii::$app->request->get('tid');
+        $qid      = Yii::$app->request->get('qid');
+        $uid      = Yii::$app->request->get('uid');
+        $utime    = Yii::$app->request->get('utime');
+        $number   = Yii::$app->request->get('number');
+        $section  = Yii::$app->request->get('section');
         session_start();
-        $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $solution,$utime);
-        // 正确率等的计算，勿删
-        $model=new Questions();
-        $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
-        $re=$model->avg($solution,$utime,$data);
+        $a        = KeepAnswer::getCat();
+        $re       = $a->addPro($qid, $solution,$utime);
+        // 正确率等的计算
+        $model    =new Questions();
+        $data     = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
+        $re       =$model->avg($solution,$utime,$data);
 
         $_SESSION['uid'] = $uid;
         $_SESSION['tid'] = $tid;
-//        $re = $a->addPro($qid, $solution,$utime);
-        $next['sectionNum'] = $a->Gettype();// 目前第几题
         $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
         echo die(json_encode($next));
 
@@ -134,27 +132,25 @@ class MockController extends Controller
     // 提交当前小节，进入下一小节
     public function actionSection()
     {
-//        $number = Yii::$app->request->get('number');
         $section = Yii::$app->request->get('section');
-        $count = Yii::$app->request->get('allPos');
+        $count   = Yii::$app->request->get('allPos');// 做题总数
         $section = $section + 1;
-        $tid = Yii::$app->request->get('tpId');
-        $qid = Yii::$app->request->get('qid');
-        $utime = Yii::$app->request->get('utime');
-        $time = Yii::$app->request->get('allTime');
+        $tid     = Yii::$app->request->get('tpId');
+        $qid     = Yii::$app->request->get('qid');
+        $utime   = Yii::$app->request->get('utime');// 每题的做题时间
+        $time    = Yii::$app->request->get('allTime');// 做题总时间
         Yii::$app->session->set('time',$time);
-        $solution = Yii::$app->request->get('solution');// 用户提交的答案
+        $solution= Yii::$app->request->get('solution');// 用户提交的答案
 //        session_start();
-        $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
+        $a       = KeepAnswer::getCat();
+        $re      = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
         // 正确率等的计算
-        $model=new Questions();
-        $data = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
-        $re=$model->avg($solution,$utime,$data);
-        // 统计答题总数
+        $model   =new Questions();
+        $data    = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
+        $re      =$model->avg($solution,$utime,$data);
+        // 统计答题总数，根据答题总数，返回数据
         if($count<8){
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
-//        var_dump($data);die;
+            $data= Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
             echo die(json_encode($data));
         }else{
             echo die(json_encode('rep'));

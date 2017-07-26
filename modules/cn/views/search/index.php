@@ -9,24 +9,27 @@
 <body>
     <section>
         <div class="search-bc">
-            <form action="/cn/search/index" method="post">
-                <i class="nav-search-sure search-icon fa fa-search"></i>
-                <input class="input-cnt search-input" name="keyword" type="text">
-                <input type="submit">
+            <form class="search-form" action="">
+                <select name="cate" class="search-select select2" onclick="cat(this)">
+                    <option value="q">题目</option>
+                    <option value="i">资讯</option>
+                </select>
+                <input class="search-text text2" name="keyword" onkeyup="enterKey(event,this)" type="text" x-webkit-speech="">
+                <input type="button" class="search-btn" value="搜索" onclick="keySearch(this)">
             </form>
         </div>
         <div class="search-cnt search-subject">
             <ul>
-                <?php foreach ($data as $k=>$v){?>
+                <?php if($data==false){echo '无搜索结果';}else{foreach ($data as $k=>$v){?>
                 <li class="search-list">
                     <h2>
-                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'. $v['title']:'<a href="/exercise_details/'.$v['id'].'.html">'.$v['essay']?>
+                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'. $v['title']:'<a href="/exercise_details/'.$v['qid'].'.html">'.$v['essay']?>
                         </a></h2>
                     <div>
                         <p><?php echo isset($v['summary'])?$v['summary']:$v['content']?> </p>
                     </div>
                 </li>
-                <?php }?>
+                <?php }}?>
             <?php echo $str?>
         </div>
     </section>

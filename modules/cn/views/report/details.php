@@ -13,6 +13,7 @@
             <span><?php echo ($user['nickname']!=false)?$user['nickname']:''?></span>
             同学你好,以下是你的考试分析报告
         </div>
+        <a href="/person_mock.html">历史报告</a>
     </div>
     <div class="report-cnt">
         <!--总成绩、时间-->

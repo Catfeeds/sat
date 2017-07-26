@@ -228,7 +228,7 @@
                 </div>
                 <div class="s-daily-cnt clearfix">
                     <div class="s-daily-title clearfix">
-                        <a class="pull-right" href="#"><h3>MORE<i class="fa fa-angle-right"></i></h3></a>
+                        <a class="pull-right" href="/exercise.html?m=Math"><h3>MORE<i class="fa fa-angle-right"></i></h3></a>
                     </div>
                     <div class="daily-question daily-question1">
                         <ul>

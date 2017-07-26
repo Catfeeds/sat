@@ -6,7 +6,7 @@ $(function() {
   $('.now-do').click(function () {
     $('.work-shade').hide();
   })
-  //查看答案
+  //查看解析
   $('.s-exam .s-answer li').click(function () {
     if($('.work-que-list').css('display') == 'none') {
       var ans = $('.math-gap-result input').val();
@@ -36,7 +36,7 @@ $(function() {
         borderColor: 'red',
         color: '#fff'
       })
-      $('.correct-ans-hide').show();
+      //$('.correct-ans-hide').show();
     }
   })
   $('.math-sure').click(function () {
