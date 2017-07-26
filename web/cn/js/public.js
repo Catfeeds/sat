@@ -48,30 +48,51 @@ $(function () {
     }
   })
 //  搜索框事件
-  $('.nav-search').bind({
-    focus: function () {
-      $(this).css('width','200px')
-    }, blur: function () {
-      $(this).css('width','150px')
-    }
-  })
-  function search(){
-    var content = $('.input-cnt').val();
-    $.ajax({
-      url:'/cn/search/index',
-      type: 'post',
-      data: {
-        'keyword': content
-      },
-      success: function (data) {
-        location.href='/search.html';
+//  function enterKey(event){
+//    if(event.keyCode == 13){
+//      keySearch();
+//    }
+//  }
+//  function keySearch() {
+//    var k = $('.search-text').val(),
+//      cate=$(".search-select option:selected").eq(1).val();
+//    location.href = "/search.html?c="+cate+"&keyword="+encodeURIComponent(k);
+//  }
+//  function cat(obj){
+//    var name = $(obj).prop('className');
+//    console.log(name);
+//    if(name.indexOf('select2') != -1){
+//      $('.select1 option:selected').val($('.select2 option:selected').val());
+//      $('.select1 option:selected').text($('.select2 option:selected').text());
+//    } else if(name.indexOf('select1') != -1){
+//      $('.select2 option:selected').val($('.select1 option:selected').val());
+//      $('.select2 option:selected').text($('.select1 option:selected').text());
+//    }
+//  }
 
-      }
-    })
-  }
-  //$('.nav-search-sure').click(function () {
-  //    search();
-  //})
+//  $('.nav-search').bind({
+//    focus: function () {
+//      $(this).css('width','200px')
+//    }, blur: function () {
+//      $(this).css('width','150px')
+//    }
+//  })
+//  function search(){
+//    var content = $('.input-cnt').val();
+//    $.ajax({
+//      url:'/cn/search/index',
+//      type: 'post',
+//      data: {
+//        'keyword': content
+//      },
+//      success: function (data) {
+//        console.log('aa');
+//      }
+//    })
+//  }
+//  $('.nav-search-sure').click(function () {
+//      search();
+//  })
 //  模考收藏点击事件
   $('.work-collect').click(function () {
     collectEvent(this);
