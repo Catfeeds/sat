@@ -12,18 +12,18 @@ $(function () {
   //APP下载
   $('.appDownload').on({
     mouseenter: function () {
-    var _this=  $(this);
-    _this.css({'backgroundColor':'#f3f7f7'});
-    _this.children('span').css('color','#000');
-    $('.app-down').show();
-  },
+      var _this=  $(this);
+      _this.css({'backgroundColor':'#f3f7f7'});
+      _this.children('span').css('color','#000');
+      $('.app-down').show();
+    },
     mouseleave: function() {
-    var _this = $(this);
-    $('.app-down').hide();
-    $('.app-box').hide();
-    _this.css({'backgroundColor':'#3d3d3d'});
-    _this.children('span').css('color','#f0f0f0');
-  }
+      var _this = $(this);
+      $('.app-down').hide();
+      $('.app-box').hide();
+      _this.css({'backgroundColor':'#3d3d3d'});
+      _this.children('span').css('color','#f0f0f0');
+    }
   })
   $('.app-down').on('mouseover','li', function () {
     var _this = $(this);
@@ -55,19 +55,23 @@ $(function () {
       $(this).css('width','150px')
     }
   })
-  $('.nav-search-sure').click(function () {
-    //var content = $('.nav-search').val();
-    //$.ajax({
-    //  url:'',
-    //  type: 'post',
-    //  data: {
-    //    'cnt': content
-    //  },
-    //  success: function (data) {
-    //
-    //  }
-    //})
-  })
+  function search(){
+    var content = $('.input-cnt').val();
+    $.ajax({
+      url:'/cn/search/index',
+      type: 'post',
+      data: {
+        'keyword': content
+      },
+      success: function (data) {
+        location.href='/search.html';
+
+      }
+    })
+  }
+  //$('.nav-search-sure').click(function () {
+  //    search();
+  //})
 //  模考收藏点击事件
   $('.work-collect').click(function () {
     collectEvent(this);
@@ -114,17 +118,17 @@ $(function () {
   })
   //小火箭置顶
   $('.side-arrow').click(function () {
-   $('html,body').animate({scrollTop:0},'slow');
+    $('html,body').animate({scrollTop:0},'slow');
   })
   //SAT课程报名提交用户信息
   $('.apply-submit').click(function () {
     var name = $('.apply-name').val(),
-        country = $('.apply-country').val(),
-        score = $('.apply-score').val(),
-        time = $('.apply-time').val(),
-        email = $('.apply-email').val(),
-        tel = $('.apply-tel').val(),
-        code = $('.apply-cde').val();
+      country = $('.apply-country').val(),
+      score = $('.apply-score').val(),
+      time = $('.apply-time').val(),
+      email = $('.apply-email').val(),
+      tel = $('.apply-tel').val(),
+      code = $('.apply-cde').val();
     if (name == '') {
       alert('请填写姓名哦！')
     } else if(time == '') {
@@ -161,7 +165,6 @@ $(function () {
   $('.apply-close').click(function () {
     $('.apply-fix').hide();
   })
-
 })
 //获取uid
 var uId = $.cookie('uid');
@@ -172,8 +175,8 @@ function collectEvent(obj) {
     alert('登陆后才可以收藏哦！')
   }else {
     var _this = $(obj),
-        subjectId = $('#subjectId').data('id'),
-        val = $('.work-collect').data('value');
+      subjectId = $('#subjectId').data('id'),
+      val = $('.work-collect').data('value');
     $.ajax({
       type: 'get',
       url: '/cn/collection/collection',
@@ -212,7 +215,7 @@ function collectEvent(obj) {
 //  邮箱验证
 function ckEmail(obj) {
   var objValue = $(obj).val(),
-      rules = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+\.){1,63}[a-z0-9]+$/;
+    rules = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+\.){1,63}[a-z0-9]+$/;
   if (objValue.match(rules) == null) {
     alert('请输入正确的邮箱！')
   }
