@@ -102,9 +102,14 @@
         total = data.total;//总记录数
         totalPage = data.totalPage;//总页数
         curPage = p;
+        console.log(data);
         $.each(data.list,function(index,array){
-          li+="<li><embed src='"+array['pic']+"'type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'></embed>"+
-              "<div class='s-cnt'>"+
+          if (array['videoAddress'] != ''){
+            li+="<li><embed src='"+array['videoAddress']+"'type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' wmode='opaque'></embed>";
+          }else {
+            li+="<li><img src="+array['pic']+">";
+          }
+          li+="<div class='s-cnt'>"+
               "<h2 class='center-block'>"+array['title']+"</h2>"+
               "<p>"+array['summary']+"</p>"+
               "<p><span>"+array['activeDate']+"</span><span>"+array['activeTime']+"</span></p>"+

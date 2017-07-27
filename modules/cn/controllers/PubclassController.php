@@ -75,7 +75,8 @@ class PubclassController extends Controller
                 'summary' => $v['summary'],
                 'title' => $v['title'],
                 'pic' => $v['pic'],
-                'publishTime' => date('Y-m-d',$v['publishTime']),
+              'videoAddress' => $v['videoAddress'],
+              'publishTime' => date('Y-m-d',$v['publishTime']),
                 'activeDate' =>$time[0],
                 'activeTime' =>$time[1]
             );

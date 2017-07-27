@@ -136,10 +136,15 @@
 .s-history-cnt li:nth-child(2n+1) {
   margin-right: 2%;
 }
-.s-history-cnt li embed {
+.s-history-cnt li>embed,
+.s-history-cnt li>img {
   float: left;
   width: 300px;
   height: 360px;
+}
+.s-history-cnt li>img {
+  padding: 0 25px;
+  background-color: #fff;
 }
 .s-history-cnt li .s-cnt {
   margin-left: 300px;
