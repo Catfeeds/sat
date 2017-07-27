@@ -22,11 +22,11 @@ class MockController extends Controller
     public function actionIndex()
     {
         $this->layout = 'cn.php';
-        $data = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}}")->queryAll();
-        $og = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='OG'")->queryAll();
-        $princeton = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='princeton'")->queryAll();
-        $kaplan = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='kaplan'")->queryAll();
-        $barron = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='BARRON'")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
+        $og = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='OG'")->queryAll();
+        $princeton = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='princeton'")->queryAll();
+        $kaplan = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='kaplan'")->queryAll();
+        $barron = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='BARRON'")->queryAll();
         $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid order by r.score limit 10")->queryAll();
         return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron,'score'=>$score]);
 
@@ -36,15 +36,20 @@ class MockController extends Controller
     {
         $this->layout = 'cn1.php';
         $tid = Yii::$app->request->get('tid');
+        $uid = Yii::$app->session->get('uid','');
+        $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
+        $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
+        if($uid==false && $isLogin['isLogin']==1){
+            echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+            die;
+        }
         $major = Yii::$app->request->get('m', '');
-        session_start();
+//        session_start();
         if(isset($_SESSION['answer'])){
             $_SESSION['answer']='';
         }
         $_SESSION['part']=$major;
         return $this->render('mock_notice', ['tid' => $tid, 'major' => $major]);
-
-
     }
 
     // 开始模考功能，无qid取第一道题，有qid取题目详情
@@ -64,16 +69,18 @@ class MockController extends Controller
             } else {
                 $where = "where tpId=" . $id . " and major='$major'";
             }
-            $section = Yii::$app->db->createCommand("select DISTINCT section from {{%questions}} $where order by section asc limit 1")->queryOne();
+            $section = Yii::$app->db->createCommand("select section from {{%questions}} $where order by section asc limit 1")->queryOne();
         } else {
-            $where = "where section=1";
-            $section = Yii::$app->db->createCommand("select section from {{%questions}} $where")->queryOne();
+             $section['section'] = 1;
         }
         if (!$qid) {
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=" . $section['section'] . "  and q.number='1'")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
         } else {
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne(); // 这里是一维还是二唯数据
+        }
+        if($data==false){
+           echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
         }
         if($data['major']=='Math1'||$data['major']=='Math2'){
             $time  =80;

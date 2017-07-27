@@ -29,7 +29,15 @@ class ExerciseController extends Controller
     public function actionExercise()
     {
         $id=Yii::$app->request->get('id');
+        $uid=Yii::$app->session->get('uid');
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryOne();
+        $isLogin=Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$data['tpId'])->queryOne();
+//        var_dump($data);die;
+        if($isLogin['isLogin']==1&&$uid==false){
+            $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
+            echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+            die;
+        }
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
@@ -74,7 +82,6 @@ class ExerciseController extends Controller
         $model=new Questions();
         $re=$model->avg($answer,$time,$que);
         // 将做题的数据存入数据库
-
         $data['notes']=$qid.','.$answer.','.$time.','.$date.';';
         if($data['uid']){
             $arr= Yii::$app->db->createCommand("select notes,id from {{%notes}} where uid=".$data['uid'])->queryOne();
