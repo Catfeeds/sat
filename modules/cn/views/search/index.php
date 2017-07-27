@@ -10,10 +10,6 @@
     <section>
         <div class="search-bc">
             <form class="search-form clearfix" action="">
-<!--                <select name="cate" class="search-select select2" onclick="cat(this)">-->
-<!--                    <option value="q">题目</option>-->
-<!--                    <option value="i">资讯</option>-->
-<!--                </select>-->
                 <div class="search-select select2 pull-left">
                     <p>题目</p>
                     <ul>
@@ -23,7 +19,6 @@
                 </div>
                 <input type="button" class="search-btn pull-right" value="搜索" onclick="keySearch(this)">
                 <input class="search-text text2" name="keyword" onkeyup="enterKey(event,this)" type="text" x-webkit-speech="">
-
             </form>
         </div>
         <div class="search-cnt search-subject">
