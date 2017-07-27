@@ -8,6 +8,8 @@
     }
 
 </style>
+<link rel="stylesheet" href="/cn/css/bootstrap.min.css">
+<script src="/cn/js/bootstrap.min.js"></script>
 <div class="span10">
     <div >
         <a href="/index/index">首页</a><span >&gt;</span><span>资讯管理</span>
