@@ -14,7 +14,10 @@
     <!--数学-->
     <div class="work-mk-cnt <?php echo $data['isFilling']=="1"?'work-math-gap':'work-mk-math'?>">
     <div class="work-question-part">
-    <h3><?php echo $data['number']?> . <?php echo $data['content']?></h3>
+        <div class="clearfix">
+            <h1 class="pull-left"><?php echo $data['number']?>.</h1>
+            <?php echo $data['content']?>
+        </div>
         <?php
         if($data['isFilling']==='0'){
             $ul='<ul class="work-que-list common-id" id="subjectId" data-id="'.$data['qid'].'">

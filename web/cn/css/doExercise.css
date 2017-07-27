@@ -17,9 +17,13 @@
   font-size: 14px;
 }
 .s-exam .s-num {
+  margin-right: 10px;
   font-size: 16px;
 }
-/*数学*/
+.s-exam .math-exam .s-title{
+  margin-bottom: 20px;
+}
+  /*数学*/
 .math-exam {
   width: 680px;
   margin-right: 100px;

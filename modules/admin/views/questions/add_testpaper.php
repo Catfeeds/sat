@@ -64,7 +64,12 @@
                 <td>总分</td>
                 <td><input type="text" name="score" value="<?php echo isset($data)?$data['score']:''?>" placeholder="具体名称，如：年份或者名称" ></td>
             </tr>
-
+            <tr>
+                <td>登录做题</td>
+                <td> <input name="isLogin" type="radio" value="0"  <?php echo isset($data['isLogin']) && $data['isLogin']==='0' ?  'checked="checked"':''?>/>不需登录
+                    <input name="isLogin" type="radio" value="1" <?php echo isset($data['isLogin']) && $data['isLogin']==='1' ?  'checked="checked"':''?>/>需登录
+                </td>
+            </tr>
             <tr>
                 <td colspan="2" align="center">
                     <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>

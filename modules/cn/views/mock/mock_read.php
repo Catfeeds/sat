@@ -27,8 +27,8 @@
         <div class="work-wrap-right pull-right">
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
-                    <div>
-                        <h1><?php echo $data['number']?>.</h1>
+                    <div class="clearfix">
+                        <h1 class="pull-left"><?php echo $data['number']?>.</h1>
                         <?php echo $data['content']?>
                     </div>
                     <ul class="work-que-list common-id" id="subjectId" data-id="<?php echo $data['qid']?>">

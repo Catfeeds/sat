@@ -206,8 +206,9 @@ body {
   导航栏
 **/
 .s-nav {
-  background-color: #fff;
+  margin-bottom: 10px;
   padding-top: 10px;
+  background-color: #fff;
 }
 .s-nav  .container {
   width: 1200px;
@@ -298,6 +299,7 @@ body {
 }
 .search-form .search-select>p {
   text-align: center;
+  color: #999;
 }
 .search-form .search-select>ul {
   position: absolute;
