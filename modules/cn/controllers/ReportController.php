@@ -24,6 +24,7 @@ class ReportController extends Controller
         $uid=222;
         $user=Yii::$app->session->get('userData');
         $major=Yii::$app->session->get('part'); // 从前台得到还是从地址栏得到
+//        var_dump($_SESSION);die;
         if(isset($_SESSION['answer'])) {
             $answerData = ((array)$_SESSION['answer']);
             $answerData = $answerData['item'];// 获取用户的答题数据
@@ -54,8 +55,7 @@ class ReportController extends Controller
                 if($re['answer']!=false){
                     $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
                     if ($res) {
-                        $a = KeepAnswer::getCat();
-                        $a->Emptyitem();
+                        unset($_SESSION['answer']);
                     }//入库完成
                 }
                 // 历史报告
@@ -86,9 +86,11 @@ class ReportController extends Controller
                 die;
             }
         }
-        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Math']  . "  and min<" . $res['Math'] . " and major='Math'")->queryOne();
-        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Reading']  . "  and min<" . $res['Reading'] . " and major='Reading'")->queryOne();
-        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $res['Writing']  . "  and min<" . $res['Writing']." and major='Writing'")->queryOne();
+        $suggest['Math'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Math']  . " and min<=".$res['Math']." and major='Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Reading']  . "  and min<=" . $res['Reading'] . " and major='Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Writing']  . "  and min<=" . $res['Writing']." and major='Writing'")->queryOne();
+//        var_dump("select * from {{%tactics}} where max>" . $res['Math']  . " and min<".$res['Math']." and major='Math'");
+//        var_dump($suggest);die;
         if($major==''){
             return $this->render('details', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user]);
         }else{

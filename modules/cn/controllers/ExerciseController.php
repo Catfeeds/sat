@@ -30,9 +30,8 @@ class ExerciseController extends Controller
     {
         $id=Yii::$app->request->get('id');
         $uid=Yii::$app->session->get('uid');
-        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=".$id)->queryOne();
+        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=".$id)->queryOne();
         $isLogin=Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$data['tpId'])->queryOne();
-//        var_dump($data);die;
         if($isLogin['isLogin']==1&&$uid==false){
             $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
             echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
@@ -88,7 +87,6 @@ class ExerciseController extends Controller
             if(!$arr){
                 $re = Yii::$app->db->createCommand()->insert("{{%notes}}", $data)->execute();
             }else {
-
                 $model = new Notes();
                 $data['notes']=$arr['notes'].$qid.','.$answer.','.$time.','.$date.';';
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
@@ -99,7 +97,6 @@ class ExerciseController extends Controller
             $res = Yii::$app->db->createCommand("select id from {{%questions}} where id>".$qid." and major='".$que['major']."' and section=".$que['section']." and tpId=".$que['tpId']." order by id asc limit 1" )->queryOne();
         }else{
             $res = Yii::$app->db->createCommand("select id from {{%questions}} where id<".$qid." and major='".$que['major']."' and section=".$que['section']." and tpId=".$que['tpId']." order by id desc limit 1" )->queryOne();
-
         }
 //        var_dump($res);
         echo die(json_encode($res));

@@ -9,7 +9,7 @@
                     <option value ="">请选择类型</option>
                     <option value ="Math" <?php echo isset($data['major'])&& $data['major']=="Math" ?  'selected':''?>>数学</option>
                     <option value ="Reading" <?php echo isset($data['major'])&& $data['major']=="Reading" ?  'selected':''?>>阅读</option>
-                    <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>写作</option>
+                    <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>文法</option>
                     <option value ="Essay" <?php echo isset($data['major'])&& $data['major']=="Essay" ?  'selected':''?>>作文</option>
                 </select>
 

@@ -28,20 +28,25 @@ class SearchController extends Controller
                 $data = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
                 $count= count(Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%'")->queryAll());
                 $page= new Pager("/search.html?c=i&keyword=$keyword&p", $count,$page, $pagesize);
+                $str = $page->GetPager();
             }elseif($cate=='q'){
                 $data= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'  order by q.id desc limit $offset,$pagesize")->queryAll();
                 $count= count(Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
                 $page= new Pager("/search.html?c=q&keyword=$keyword&p", $count,$page, $pagesize);
+                $str = $page->GetPager();
             }else{
                 $data=array();
                 $count=0;
             }
-            $str = $page->GetPager();
         }else{
             $data=array();
             $count='';
         }
         if($count==0)$str='';
+//        foreach($data as $v){
+//            str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',isset($v['title'])?$v['title']:$v['content']);
+//        }
+//        var_dump($data);die;
         return $this->render('index',['data'=>$data,'str'=>$str]);
     }
 }

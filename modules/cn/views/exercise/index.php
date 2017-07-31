@@ -26,7 +26,7 @@
           <ul>
             <?php foreach($data as $k=>$v){?>
             <li>
-              <h3><?php echo $v['qid']?></h3>
+              <h3><?php echo $v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number']?></h3>
               <div><?php
 //                if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
 //                  echo $v['essay'];

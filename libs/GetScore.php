@@ -40,6 +40,15 @@ class GetScore {
         foreach($data as $k=>$v) {
             $que = Yii::$app->db->createCommand("select * from {{%questions}}  where id=" . $k)->queryOne();
             if ($que['major'] == 'Math1' or $que['major'] == 'Math2') {
+                if(strlen($que['answer'])>1){
+                    $modle=new Format();
+                    if(strpos('/',$que['answer'])!==false){
+                        $que['answer']=$modle->FractionToFloat($que['answer']);
+                    }
+                    if(strpos('/',$v[1]!==false)){
+                        $v[1]=$modle->FractionToFloat($v[1]);
+                    }
+                }
                 if ($v[1] == $que['answer']) {
                     $mathnum =$mathnum+ 1;
 //                    continue;
@@ -69,43 +78,36 @@ class GetScore {
             if ($que['subScores'] == 'expression') {
                 if ($v[1] == $que['answer']) {
                     $expression =$expression+ 1;
-//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'english') {
                 if ($v[1] == $que['answer']) {
                     $english =$english + 1;
-//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'algebra') {
                 if ($v[1] == $que['answer']) {
                     $algebra =$algebra + 1;
-//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'analysis') {
                 if ($v[1] == $que['answer']) {
                     $analysis =$analysis + 1;
-//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'math') {
                 if ($v[1] == $que['answer']) {
                     $math =$math + 1;
-//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'words') {
                 if ($v[1] == $que['answer']) {
                     $words = $words +1;
-//                    continue;
                 }
 
             } elseif ($que['subScores'] == 'evidence') {
                 if ($v[1] == $que['answer']) {
                     $evidence =$evidence + 1;
-//                    continue;
                 }
 
             }
@@ -115,13 +117,11 @@ class GetScore {
             if($que['crosstestScores']=='social'){
                 if($v[1]==$que['answer']){
                     $social+=1;
-//                    continue;
                 }
 
             }elseif($que['crosstestScores']=='science'){
                 if($v[1]==$que['answer']){
                     $science+=1;
-//                    continue;
                 }
 
             }
@@ -143,7 +143,6 @@ class GetScore {
         $number['social']=$social;
         $number['science']=$science;
         $number['kip']=$kip;
-//        var_dump($number);die;
        return $number;
 
     }
@@ -481,8 +480,6 @@ class GetScore {
         }elseif($number['Writing']==44){
             $score['Writing']=40;return $score['Writing'];
         }
-//         $score['total']= $score['Math']+($score['Writing']+$score['Reading'])*10;
-//        return $score;
     }
     public function Subscore($number)
     {

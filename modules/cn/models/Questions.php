@@ -41,7 +41,7 @@ class Questions extends ActiveRecord{
             $data='';
             $count=0;
         }else{
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId $where limit $offset,$pagesize")->queryAll();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
             $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
             $count = $count['count(*)'];
         }

@@ -33,7 +33,7 @@
 
                     <span>所属小节:</span>
                     <span>
-                        <input type="text"  name="section" value="<?php echo isset($data['section'])?$data['section']:''?>" placeholder="短文所属的小节" >*只写数字
+                        <input type="text"  name="section" value="<?php echo isset($data['section'])?$data['section']:''?>" placeholder="题目所在第几部分" >*只写数字
                     </span>
                     </br>
 
@@ -98,7 +98,7 @@
                     <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案">*区分大小写</span>
                     </br>
                     <span>解 &nbsp;&nbsp;&nbsp;&nbsp;析 :</span>
-                    <span><textarea type="text" name="analysis" style="width:500px;height: 100px;"><?php echo isset($data)?$data['analysis']:''?></textarea></span>
+                    <span><textarea type="text" id="analysis" name="analysis" style="width:80%;height: 80px;"><?php echo isset($data)?$data['analysis']:''?></textarea></span>
                     </br>
 
                     <span>难 &nbsp;&nbsp;&nbsp;&nbsp;度 :</span>
@@ -153,11 +153,18 @@
 </div>
 <script>
     //实例化编辑器
+//    config={window.UEDITOR_CONFIG = {
+//        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
+//        'fontsize':[16]
+//    }}
     var ue = UE.getEditor('editor');
-    var content = UE.getEditor('content');
+    var content = UE.getEditor('content',{
+        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
+        'fontsize':[16]
+    });
     var keyA= UE.getEditor('keyA');
     var keyB = UE.getEditor('keyB');
     var keyC= UE.getEditor('keyC');
     var keyD = UE.getEditor('keyD');
-    var keyE = UE.getEditor('keyE');
+    var keyE = UE.getEditor('analysis');
 </script>

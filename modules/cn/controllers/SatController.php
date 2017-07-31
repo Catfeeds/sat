@@ -25,15 +25,15 @@ class SatController extends Controller
         $infoTest = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='学术报告' order by id desc limit 6")->queryAll();
         $info3 = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='高分经验' order by id desc limit 6")->queryAll();
         $infoAd = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where cate='公告' order by id desc limit 6")->queryAll();
+        $que = Yii::$app->db->createCommand("select q.id as qid,content,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id order by q.id limit 20")->queryAll();
         $controller = Yii::$app->controller->id;
         $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
         $session = Yii::$app->session;
         $user=$session->get('userData');
-        return $this->render('index', ['classes' => $classes, 'infoNews' => $infoNews, 'infoAd' => $infoAd,'infoTest' => $infoTest,'user'=>$user, 'banner' => $banner, 'teachers' => $teachers, 'info1' => $info1, 'info3' => $info3,'pic'=>$pic]);
+        return $this->render('index', ['classes' => $classes, 'infoNews' => $infoNews, 'infoAd' => $infoAd,'infoTest' => $infoTest,'user'=>$user, 'banner' => $banner, 'teachers' => $teachers, 'que' => $que, 'info1' => $info1, 'info3' => $info3,'pic'=>$pic]);
     }
     public function actionSurprise()
     {
-
         return $this->render('surprise');
     }
 

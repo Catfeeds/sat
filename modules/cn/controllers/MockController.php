@@ -10,9 +10,6 @@ namespace app\modules\cn\controllers;
 use yii;
 use yii\web\Controller;
 use app\libs\KeepAnswer;
-use app\libs\GetScore;
-use app\modules\cn\controllers\ReportController;
-use app\modules\cn\models\Report;
 use app\modules\cn\models\Questions;
 
 class MockController extends Controller
@@ -40,13 +37,12 @@ class MockController extends Controller
         $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
         $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
         if($uid==false && $isLogin['isLogin']==1){
-            echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+            echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
             die;
         }
         $major = Yii::$app->request->get('m', '');
-//        session_start();
         if(isset($_SESSION['answer'])){
-            $_SESSION['answer']='';
+           unset($_SESSION['answer']);
         }
         $_SESSION['part']=$major;
         return $this->render('mock_notice', ['tid' => $tid, 'major' => $major]);
@@ -70,24 +66,37 @@ class MockController extends Controller
                 $where = "where tpId=" . $id . " and major='$major'";
             }
             $section = Yii::$app->db->createCommand("select section from {{%questions}} $where order by section asc limit 1")->queryOne();
+          if($section['section'] ==false) {
+              echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
+              die;
+          }
         } else {
              $section['section'] = 1;
         }
         if (!$qid) {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
-        } else {
+        } elseif($qid=='undefined') {
+            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
+            die;
+        }else{
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne(); // 这里是一维还是二唯数据
         }
         if($data==false){
            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
         }
-        if($data['major']=='Math1'||$data['major']=='Math2'){
-            $time  =80;
-            $amount=58;
+        if($data['major']=='Math1'){
+            $time  =55;
+            $amount=38;
+            $amount=1;
+            $modle = 'mock_math';
+        }elseif($data['major']=='Math2') {
+            $time  =25;
+            $amount=20;
             $amount=2;
             $modle = 'mock_math';
-        }elseif($data['major']=='Reading'){
+        }elseif
+        ($data['major']=='Reading'){
             $time  =62;
             $amount=52;
             $amount=2;
@@ -95,10 +104,9 @@ class MockController extends Controller
         }else{
             $time  =35;
             $amount=44;
-            $amount=0;
+            $amount=2;
             $modle = 'mock_read';
         }
-//        var_dump($data);
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);
     }
 
@@ -139,15 +147,14 @@ class MockController extends Controller
     // 提交当前小节，进入下一小节
     public function actionSection()
     {
-        $section = Yii::$app->request->get('section');
+        $section = Yii::$app->request->get('section')+1;
         $count   = Yii::$app->request->get('allPos');// 做题总数
-        $section = $section + 1;
         $tid     = Yii::$app->request->get('tpId');
         $qid     = Yii::$app->request->get('qid');
         $utime   = Yii::$app->request->get('utime');// 每题的做题时间
         $time    = Yii::$app->request->get('allTime');// 做题总时间
-        Yii::$app->session->set('time',$time);
         $solution= Yii::$app->request->get('solution');// 用户提交的答案
+        Yii::$app->session->set('time',$time);
 //        session_start();
         $a       = KeepAnswer::getCat();
         $re      = $a->addPro($qid, $solution,$utime);// 将答案保存到session里

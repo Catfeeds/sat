@@ -20,10 +20,10 @@
         </div>
         <div class="search-cnt search-subject">
             <ul>
-                <?php if($data==false){echo '无搜索结果';}else{foreach ($data as $k=>$v){?>
+                <?php if($data==false){echo '无搜索结果';}else{ $keyword = Yii::$app->request->get('keyword', '');foreach ($data as $k=>$v){?>
                 <li class="search-list">
                     <h2>
-                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'. $v['title']:'<a href="/exercise_details/'.$v['qid'].'.html">'.$v['essay']?>
+                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'.(str_replace($keyword,"<div style='color:red;'>".$keyword.'</div>',$v['title'])):'<a href="/exercise_details/'.$v['qid'].'.html">'.str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',$v['content']);?>
                         </a></h2>
                     <div>
                         <p><?php echo isset($v['summary'])?$v['summary']:$v['content']?> </p>

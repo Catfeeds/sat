@@ -8,7 +8,7 @@
       <ol class="breadcrumb">
         <li><a href="/index.html">首页</a></li>
         <li><a href="/exercise.html?m=Math"><?php echo $data['major']?></a></li>
-        <li class="active">SAT-1904</li>
+        <li class="active"><?php echo $data['name'].'-'.$data['time']?></li>
       </ol>
       <div class="s-top-img">
         <img src="/cn/images/pubClass-dea_03.png" alt="">
@@ -20,9 +20,9 @@
           <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
             <div class="math-title">
               <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
-              <h3>OG-2514</h3>
+              <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
-            <h2 class="s-num"><?php echo $data['qid']?></h2>
+            <h2 class="s-num"><?php echo $data['number']?></h2>
             <p class="s-title">
               <?php echo $data['content']?>
             </p>

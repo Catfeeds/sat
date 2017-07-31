@@ -145,7 +145,7 @@
                 <div class="s-information s-news">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
-                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=n"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html?c=n"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -167,7 +167,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
-                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=t"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html?c=t"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -189,7 +189,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-leaf"></i>高分经验</span>
-                        <a class="s-more pull-right" href="/info.html"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html?c=s"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -232,50 +232,22 @@
                     </div>
                     <div class="daily-question daily-question1">
                         <ul>
+                            <?php foreach($que as $k=>$v){if($k<10){?>
                             <li>
-                                <h4>OG-1774</h4>
-                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
+                                <h4><?php echo $v['name'].'-'.$v['time']?></h4>
+                                <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
                             </li>
-                            <li>
-                                <h4>OG-1774</h4>
-                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                            </li>
-                            <li>
-                                <h4>OG-1774</h4>
-                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                            </li>
-                            <li>
-                                <h4>OG-1774</h4>
-                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                            </li>
-                            <li>
-                                <h4>OG-1774</h4>
-                                <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                            </li>
+                            <?php }}?>
                         </ul>
                     </div>
                    <div class="daily-question daily-question2">
                        <ul>
-                           <li>
-                               <h4>OG-1774</h4>
-                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                           </li>
-                           <li>
-                               <h4>OG-1774</h4>
-                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                           </li>
-                           <li>
-                               <h4>OG-1774</h4>
-                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                           </li>
-                           <li>
-                               <h4>OG-1774</h4>
-                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                           </li>
-                           <li>
-                               <h4>OG-1774</h4>
-                               <p><a href="#">nfjdnsj nfdjsakngjk ndsakgnk nakngk nadkjngkj nadkjdgn</a></p>
-                           </li>
+                           <?php foreach($que as $k=>$v){if($k>=10){?>
+                               <li>
+                                   <h4><?php echo $v['name'].'-'.$v['time']?></h4>
+                                   <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
+                               </li>
+                           <?php }}?>
                        </ul>
                    </div>
                 </div>

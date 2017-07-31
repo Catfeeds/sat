@@ -8,6 +8,7 @@
 namespace app\libs;
 use yii;
 class Format {
+    // 将秒的格式转换成 0h:0m:0s的格式，参数$secs表示多少秒
     public function FormatTime($secs){
         $r='';
             $h=floor($secs/3600);
@@ -24,7 +25,7 @@ class Format {
         return $r;
 
     }
-    // 将二维数组转换成字符串
+    // 将二维数组转换成字符串，$data所需转换的数组
     public function arrToStr($data)
     {
         static $temp = array();
@@ -50,5 +51,12 @@ class Format {
             $brr[$key]=explode(',', $v);
         }
         return $brr;
+    }
+    // 将分数转换成小数
+    public function FractionToFloat($str)
+    {
+        $s = str_replace(array('[',']','mod'),array('(',')','%'),$str);//将原三字符串中的只有在数学中才会用到的中括号[]、mod等改为程序可识别的()和%
+        $str=sprintf("%.2f", $s);
+        return $str;
     }
 }
