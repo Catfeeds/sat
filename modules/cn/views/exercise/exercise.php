@@ -171,16 +171,6 @@
             </ul>
           </div>
         </div>
-<!--        <div class="s-adv pull-right">-->
-<!--          <a href="#">-->
-<!--            <img class="s-adv-img" src="/cn/images/pubClass-dea_11.png" alt="">-->
-<!--          </a>-->
-<!--          <div class="s-code">-->
-<!--            <img src="/cn/images/qr-code01.png" alt="">-->
-<!--            <p>扫描关注</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
     <!--遮罩-->
     <div class="work-shade">

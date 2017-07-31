@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/cn/css/search.css">
-    <script src="/cn/js/search.js"></script>
 </head>
 <body>
     <section>

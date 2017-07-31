@@ -1,17 +1,20 @@
 $(function() {
   $(window).scrollTop(350);
-  //console.log($('.work-que-list').css('display'));
-  $('.work-shade').height($(document).outerHeight())
+  $('.work-shade').height($(document).outerHeight());
   upTime();
   $('.now-do').click(function () {
     $('.work-shade').hide();
   })
   //查看解析
-  $('.s-exam .s-answer li').click(function () {
-    if($('.work-que-list').css('display') == 'none') {
-      var ans = $('.math-gap-result input').val();
-    } else {
-      ans = $('.work-select.active').html();
+  $('.s-exam .s-answer li').eq(0).click(function () {
+    if($('.read-exam').css('display') == 'none') {
+      if($('.math-exam .work-que-list').css('display') == 'none') {
+        var ans = $('.math-gap-result input').val();
+      } else {
+        ans = $('.math-exam .work-select.active').data('id');
+      }
+    }else {
+      ans = $('.read-exam .work-select.active').data('id');
     }
     if (ans == undefined || ans == '') {
       $('.work-shade').fadeIn();
@@ -82,10 +85,14 @@ function upTime() {
 
 function ajaxEvent(obj,u) {
   var _this = $(obj);
-  if($('.work-que-list').css('display') == 'none') {
-    var ans = $('.math-gap-result input').val();
-  } else {
-    ans = $('.work-select.active').data('id');
+  if($('.read-exam').css('display') == 'none') {
+    if($('.math-exam .work-que-list').css('display') == 'none') {
+      var ans = $('.math-gap-result input').val();
+    } else {
+      ans = $('.math-exam .work-select.active').data('id');
+    }
+  }else {
+    ans = $('.read-exam .work-select.active').data('id');
   }
   if (ans == undefined || ans == '') {
     $('.work-shade').fadeIn();

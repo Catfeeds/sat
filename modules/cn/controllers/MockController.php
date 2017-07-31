@@ -58,13 +58,15 @@ class MockController extends Controller
         $qid = Yii::$app->request->get('qid', '');
         $a = KeepAnswer::getCat();
         $count = $a->Gettype();
+//        var_dump($major);die;
         if ($major != false) {
             if ($major == 'Math') {
-                $major = 'major="Math1" or major="Math2"';
+                $major = '(major="Math1" or major="Math2")';
                 $where = "where tpId=" . $id . " and $major";
             } else {
                 $where = "where tpId=" . $id . " and major='$major'";
             }
+//            var_dump($where);die;
             $section = Yii::$app->db->createCommand("select section from {{%questions}} $where order by section asc limit 1")->queryOne();
           if($section['section'] ==false) {
               echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
@@ -81,7 +83,9 @@ class MockController extends Controller
         }else{
             // 有qid的时候直接根据qid取
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne(); // 这里是一维还是二唯数据
+
         }
+//        var_dump($section);die;
         if($data==false){
            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
         }
@@ -95,8 +99,7 @@ class MockController extends Controller
             $amount=20;
             $amount=2;
             $modle = 'mock_math';
-        }elseif
-        ($data['major']=='Reading'){
+        }elseif ($data['major']=='Reading'){
             $time  =62;
             $amount=52;
             $amount=2;

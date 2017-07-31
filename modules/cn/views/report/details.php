@@ -171,9 +171,9 @@
     $(function () {
         barChart('reportTime',[[parseInt(<?php echo Yii::$app->session->get('time')/60?>),230]],["你的时间","标准时间"],["做题时间"],{xAxisColor:'#002D71', xRotation:0, title: "做题时间", subtitle:'', yAxisUnit: '(min)', color: ['#36B2FB'], min: 0, max: 230, tooltipUnit: 'min', showValue: true})
         // 阅读
-        pieChart('repReading',[parseInt('<?php echo $report['readnum']/52*100?>'),parseInt('<?php echo $report['readerror']/52*100?>'),parseInt('<?php echo (52-$report['readnum']-$report['readerror'])/52*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-        pieChart('repWriting',[parseInt('<?php echo $report['writenum']/44*100?>'),parseInt('<?php echo $report['writeerror']/44*100?>'),parseInt('<?php echo (44-$report['writenum']-$report['writeerror'])/44*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-        pieChart('repMath',[parseInt('<?php echo $report['mathnum']/58*100?>'),parseInt('<?php echo $report['matherror']/58*100?>'),parseInt('<?php echo ((58-$report['mathnum']-$report['matherror'])/58)*100?>')],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+        pieChart('repReading',[parseFloat(Number('<?php echo $report['readnum']/52*100?>').toFixed(1)),parseFloat(Number('<?php echo $report['readerror']/52*100?>').toFixed(1)),parseFloat(Number('<?php echo (52-$report['readnum']-$report['readerror'])/52*100?>').toFixed(1))],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+        pieChart('repWriting',[parseFloat(Number('<?php echo $report['writenum']/44*100?>').toFixed(1)),parseFloat(Number('<?php echo $report['writeerror']/44*100?>').toFixed(1)),parseFloat(Number('<?php echo (44-$report['writenum']-$report['writeerror'])/44*100?>').toFixed(1))],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
+        pieChart('repMath',[parseFloat(Number('<?php echo $report['mathnum']/58*100?>').toFixed(1)),parseFloat(Number('<?php echo $report['matherror']/58*100?>').toFixed(1)),parseFloat(Number('<?php echo ((58-$report['mathnum']-$report['matherror'])/58)*100?>').toFixed(1))],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
         lineChart('reportHistory',[[<?php echo isset($tp[0]['score'])?$tp[0]['score']:''?>,<?php echo isset($tp[1]['score'])?$tp[1]['score']:''?>,<?php echo isset($tp[2]['score'])?$tp[2]['score']:''?>,<?php echo isset($tp[3]['score'])?$tp[3]['score']:''?>,<?php echo isset($tp[4]['score'])?$tp[4]['score']:''?>]],["<?php echo isset($tp[0]['score'])?$tp[0]['name'].$tp[0]['time']:''?>","<?php echo isset($tp[1]['score'])?$tp[1]['name'].$tp[1]['time']:''?>","<?php echo isset($tp[2]['score'])?$tp[2]['name'].$tp[2]['time']:''?>","<?php echo isset($tp[3]['score'])?$tp[3]['name'].$tp[3]['time']:''?>","<?php echo isset($tp[4]['score'])?$tp[4]['name'].$tp[4]['time']:''?>"],['分数'],{title: '历史成绩曲线图',min: 0,max: 1600,tooltipUnit: '分',showValue: true});
         $('.rep-subject li').click(function () {
             $('.rep-subject li').removeClass('on');
@@ -198,10 +198,6 @@
         $.ajax({
             url: '/cn/report/que',
             type: 'get',
-//            headers: {
-//                "Accept" : "application/json; charset=utf-8",
-//                "Content-Type": "application/json; charset=utf-8"
-//            },
             data: {
                 'sub': s,
                 'classify': c,
