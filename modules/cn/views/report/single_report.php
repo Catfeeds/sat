@@ -7,7 +7,8 @@
   <div class="report-banner">
     <div class="report-bnr-cnt">
       <span><?php echo ($user['nickname']!=false)?$user['nickname']:''?></span>
-      同学你好,以下是你的<span class="class-hid" data-class="<?php echo $report['part']?>"><?php echo $report['part']?></span>分析报告
+      同学你好,以下是你的<span class="class-hid" data-class="<?php echo $report['part']?>"><?php if($report['part']=='Reading'){echo '阅读';}elseif($report['part']=='Math'){
+          echo '数学';}elseif($report['part']=='Writing'){echo '文法';}?></span>分析报告
     </div>
     <a href="/person_mock.html">历史报告</a>
   </div>

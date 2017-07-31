@@ -6,22 +6,31 @@
 .search-bc .search-form {
   position: relative;
   float: none;
-  width: 500px;
+  width: 600px;
   top: 200px;
   left: 30%;
+  border: 3px solid rgb(54,178,251);
   background-color: #fff;
   font-size: 16px;
 }
 .search-bc .search-select {
-  padding: 20px;
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
+}
+.search-form .select2>ul {
+  top: 62px;
 }
 .search-bc .search-text {
-  width: 342px;
-  height: 62px;
+  width: 388px;
+  height: 58px;
+  padding-left: 10px;
   font-size: 18px;
 }
-.search-bc .search-sub {
-  padding: 20px;
+.search-bc .search-btn {
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
 }
 /*搜索结果*/
 .search-cnt {
@@ -38,6 +47,7 @@
 .search-list>h2 a{
   display: block;
   width: 100%;
+  height: 22px;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;

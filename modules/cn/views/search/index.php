@@ -9,13 +9,16 @@
 <body>
     <section>
         <div class="search-bc">
-            <form class="search-form" action="">
-                <select name="cate" class="search-select select2" onclick="cat(this)">
-                    <option value="q">题目</option>
-                    <option value="i">资讯</option>
-                </select>
+            <form class="search-form clearfix" action="">
+                <div class="search-select select2 pull-left">
+                    <p>题目</p>
+                    <ul>
+                        <li>题目</li>
+                        <li>资讯</li>
+                    </ul>
+                </div>
+                <input type="button" class="search-btn pull-right" value="搜索" onclick="keySearch(this)">
                 <input class="search-text text2" name="keyword" onkeyup="enterKey(event,this)" type="text" x-webkit-speech="">
-                <input type="button" class="search-btn" value="搜索" onclick="keySearch(this)">
             </form>
         </div>
         <div class="search-cnt search-subject">
@@ -23,10 +26,11 @@
                 <?php if($data==false){echo '无搜索结果';}else{ $keyword = Yii::$app->request->get('keyword', '');foreach ($data as $k=>$v){?>
                 <li class="search-list">
                     <h2>
-                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'.(str_replace($keyword,"<div style='color:red;'>".$keyword.'</div>',$v['title'])):'<a href="/exercise_details/'.$v['qid'].'.html">'.str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',$v['content']);?>
-                        </a></h2>
+                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'.(str_replace($keyword,"<span style='color:red;'>".$keyword.'</span>',$v['title'])):'<a href="/exercise_details/'.$v['qid'].'.html">'.$v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number'];?>
+                        </a>
+                    </h2>
                     <div>
-                        <p><?php echo isset($v['summary'])?$v['summary']:$v['content']?> </p>
+                        <?php echo isset($v['summary'])?$v['summary']:str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',$v['content'])?>
                     </div>
                 </li>
                 <?php }}?>

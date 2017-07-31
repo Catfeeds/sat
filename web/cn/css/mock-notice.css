@@ -114,6 +114,7 @@
 }
 .s-notice .s-list {
     margin-left: 130px;
+    min-height: 100px;
     border-bottom: 1px dashed rgb(103,103,103);
 }
 .s-notice .s-wrap:last-child .s-list {

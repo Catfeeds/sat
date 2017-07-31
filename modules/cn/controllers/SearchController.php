@@ -30,7 +30,7 @@ class SearchController extends Controller
                 $page= new Pager("/search.html?c=i&keyword=$keyword&p", $count,$page, $pagesize);
                 $str = $page->GetPager();
             }elseif($cate=='q'){
-                $data= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'  order by q.id desc limit $offset,$pagesize")->queryAll();
+                $data= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid,t.name,t.time,q.number,q.major from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on q.tpId=t.id where content like '%$keyword%' order by q.id desc limit $offset,$pagesize")->queryAll();
                 $count= count(Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
                 $page= new Pager("/search.html?c=q&keyword=$keyword&p", $count,$page, $pagesize);
                 $str = $page->GetPager();

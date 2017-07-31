@@ -74,12 +74,19 @@
 .work-question-part>div {
     margin-top: 20px;
 }
+.work-question-part>.clearfix {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
 .work-question-part>div h1 {
-    display: inline;
-    font-size: 22px;
+    margin: 0 10px 0 0;
+    font-size: 20px;
 }
 .work-question-part .work-que-wrap {
     margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
     cursor: pointer;
 }
 .work-question-part .work-select {
@@ -103,7 +110,8 @@
 .work-question-part .work-que {
     margin-left: 40px;
     padding: 3px 0;
-    font-size: 18px;
+    line-height: 24px;
+    font-size: 16px;
 }
 /*数学*/
 .work-mk-math,

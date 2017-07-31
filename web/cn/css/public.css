@@ -206,8 +206,9 @@ body {
   导航栏
 **/
 .s-nav {
-  background-color: #fff;
+  margin-bottom: 10px;
   padding-top: 10px;
+  background-color: #fff;
 }
 .s-nav  .container {
   width: 1200px;
@@ -286,16 +287,48 @@ body {
   font-size: 16px;
 }
 .search-form .search-select{
-  padding: 5px 10px;
-  border: 0;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 35px;
+  line-height: 35px;
+  border-right: 1px solid #ddd;
+  text-align: center;
   background-color: #f5f5f5;
+  cursor: default;
+}
+.search-form .search-select>p {
+  text-align: center;
+  color: #999;
+}
+.search-form .search-select>ul {
+  position: absolute;
+  width: 100%;
+  top: 37px;
+  left: 0;
+  background-color: #f5f5f5;
+  display: none;
+}
+.search-form .search-select>ul li{
+  text-align: center;
+  border-bottom: 1px dashed #000;
+}
+.search-form .search-select>ul li:last-child{
+  border-bottom: 0;
+}
+.search-form .search-select>ul li:hover {
+  background-color: rgb(54,178,251);
+  color: #fff;
 }
 .search-form .search-text {
   border: 0;
+  outline: none;
   background-color: #fff;
 }
 .search-form .search-btn {
-  padding: 5px 10px;
+  width: 60px;
+  height: 35px;
+  line-height: 35px;
   border: 0;
   background-color: rgb(54,178,251);
   color: #fff;
@@ -378,8 +411,8 @@ body {
   width: 64px;
   height: 72px;
   padding-top: 20px;
-  margin-bottom: 1px solid #fff;
-  background-color: #1e638a;
+  margin-bottom: 2px;
+  background-color: #bababa;
 }
 .side-bar li:first-child {
   border-top-left-radius: 5px;
@@ -390,7 +423,7 @@ body {
   border-bottom-right-radius: 5px;
 }
 .side-bar li:hover {
-  background-color: #2185bf;
+  background-color: rgb(54,178,251);
 }
 .side-bar li>p {
   width: 32px;
@@ -417,7 +450,7 @@ body {
   display: none;
   padding: 12px 0;
   text-align: center;
-  background: #2185bf;
+  background: rgb(54,178,251);
   font-size: 12px;
   color: #fff;
 }
@@ -428,7 +461,7 @@ body {
   top: 25px;
   right: -20px;
   border: 10px solid transparent;
-  border-left-color: #2185bf;
+  border-left-color: rgb(54,178,251);
 }
 .side-bar .side-service>div {
   width: 125px;
@@ -440,11 +473,11 @@ body {
   color: #fff;
 }
 .side-bar .side-wechat>div {
-  width: 105px;
+  width: 150px;
 }
 .side-bar .side-wechat img {
-  width: 70px;
-  height: 70px;
+  width: 130px;
+  height: 130px;
 }
 .side-bar .side-wechat>div p {
   margin: 10px 0 0 0;

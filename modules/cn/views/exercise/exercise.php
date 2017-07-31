@@ -22,10 +22,10 @@
               <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
               <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
-            <h2 class="s-num"><?php echo $data['number']?></h2>
-            <p class="s-title">
+            <h2 class="s-num pull-left"><?php echo $data['qid']?>.</h2>
+            <div class="s-title">
               <?php echo $data['content']?>
-            </p>
+            </div>
             <!-- 数学选择-->
             <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>" <?php if($data['isFilling']==1){echo 'style="display:none;"';}?>>
               <li class="work-que-wrap">
@@ -78,7 +78,7 @@
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
             <div class="read-title">
               <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
-              <h3>OG-4258</h3>
+              <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
             <div class="work-wrap-left pull-left">
               <h3><?php echo isset($data['topic'])?$data['topic']:''?></h3>
@@ -94,8 +94,8 @@
             <div class="work-wrap-right pull-right">
               <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
-                  <div>
-                    <h1><?php echo $data['number']?>.</h1>
+                  <div class="clearfix">
+                    <h1 class="pull-left"><?php echo $data['number']?>.</h1>
                     <?php echo $data['content']?>
                   </div>
                   <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>">

@@ -85,8 +85,46 @@
                         </p>
                     </div>
                 </div>
-                <div class="s-system-cnt">
-
+                <div class="s-system-cnt clearfix">
+                    <ul class="system-list pull-left">
+                        <li class="on">
+                            <p>
+                                模考<br>
+                                MOCK
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                练习<br>
+                                EXERCISE
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                知识库<br>
+                                REPOSITORY
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="system-wrap system-wrap1 clearfix">
+                        <div>
+                            <a href="/mock.html">全套模考</a>
+                        </div>
+                        <div><a href="/mock.html">单科模考</a></div>
+                    </div>
+                    <div class="system-wrap system-wrap2">
+                        <div>
+                            <a href="/exercise.html?m=Math">题目分类</a>
+                        </div>
+                        <div><a href="/exercise.html?m=Math">题目来源</a></div>
+                    </div>
+                    <div class="system-wrap system-wrap3">
+                        <div>
+                            <a href="/knowledge.html">表达</a>
+                        </div>
+                        <div><a href="/knowledge.html">语法</a></div>
+                        <div><a href="/knowledge.html">数学</a></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -299,21 +337,15 @@
     // 每日一题
     jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
     jQuery(".s-daily-cnt").slide({mainCell:".daily-question2 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
-//    function daily(){
-//        $('.daily-left1').html( $('.daily-left').html());
-//        if ($('.daily-question').scrollTop() >= $('.daily-left').outerHeight()) {
-//            $('.daily-question').scrollTop(0);
-//        }else {
-//            $('.daily-question').get(0).scrollTop+=1;
-//        }
-//    }
-//   var daInter = setInterval(daily,50);
-//    $('.daily-question').bind({
-//        mouseover: function () {
-//            clearInterval(daInter);
-//        },mouseout: function () {
-//            daInter = setInterval(daily,50);
-//        }
-//    })
+
+    $(function () {
+        $('.system-list>li').click(function () {
+            var index = $(this).index();
+            $('.system-list>li').removeClass('on');
+            $(this).addClass('on');
+            $('.system-wrap').hide();
+            $('.system-wrap').eq(index).show();
+        })
+    })
 
 </script>

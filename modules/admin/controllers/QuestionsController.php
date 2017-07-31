@@ -45,7 +45,7 @@ class QuestionsController extends ApiControl
             // 添加数据到数据
             $model = new Questions();
             $getdata = new GetData();
-            $must = array('content' => '题目');
+            $must = array('content' => '题目','tpId'=>'试卷','section'=>'所属的小节');
             $data = $getdata->PostData($must);
 //            var_dump($data);die;
             if ($data['id'] == '') {
