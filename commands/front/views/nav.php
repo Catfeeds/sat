@@ -114,12 +114,10 @@
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
+        <li><a href="#">美国留学</a></li>
+        <li><a href="#">ACT</a></li>
     </ul>
     <form class="search-form" action="">
-<!--        <select name="cate" class="search-select select1" onclick="cat(this)">-->
-<!--            <option value="q">题目</option>-->
-<!--            <option value="i">资讯</option>-->
-<!--        </select>-->
         <div class="search-select">
             <p>题目</p>
             <ul>
