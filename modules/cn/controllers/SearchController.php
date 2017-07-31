@@ -18,6 +18,8 @@ class SearchController extends Controller
     public function actionIndex()
     {
         $keyword = Yii::$app->request->get('keyword', '');
+        $keyword  =addslashes($keyword);
+        $keyword  =strip_tags($keyword);
         $cate = Yii::$app->request->get('c');
         $page = Yii::$app->request->get('p', '1');
         if($keyword){
