@@ -1,7 +1,5 @@
-
-    <link rel="stylesheet" href="/cn/css/mock-details.css">
-    <script src="/cn/js/mock-details.js"></script>
-
+<link rel="stylesheet" href="/cn/css/mock-details.css">
+<script src="/cn/js/mock-details.js"></script>
 <div class="work-mk">
     <!-- 头部-->
     <div class="work-mk-top container">

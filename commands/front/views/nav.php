@@ -101,11 +101,13 @@
         <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
         <li class="s-nav-work">
             <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>
-            <ul class="s-nav-showing">
-                <li><a href="/exercise.html?m=Math" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
-                <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
-<!--                <li><a href="#">测评</a></li>-->
-            </ul>
+            <div class="s-nav-showing">
+                <ul>
+                    <li><a href="/exercise.html?m=Math" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
+                    <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
+                    <!--                <li><a href="#">测评</a></li>-->
+                </ul>
+            </div>
         </li>
         <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
         <li><a href="/re.html" <?php if($path=='re.html') echo 'class="on"';?>>报告</a></li>
@@ -115,25 +117,27 @@
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
         <li><a href="/US_abroad.html">美国留学</a></li>
-        <li><a href="/act.html">ACT</a></li>
+<!--        <li><a href="/act.html">ACT</a></li>-->
     </ul>
     <form class="search-form" action="">
         <div class="search-select">
             <p>题目</p>
+            <i class="search-icon fa fa-angle-down"></i>
             <ul>
                 <li>题目</li>
                 <li>资讯</li>
             </ul>
         </div>
-        <input class="search-text text1" name="keyword" onkeyup="javascript:enterKey(event,this)" type="text">
-        <input type="button" class="search-btn" value="搜索" onclick="keySearch(this)">
+        <input type="button" class="search-btn pull-right" value="搜索" onclick="keySearch(this)">
+        <input class="search-text text1" name="keyword" onkeyup="javascript:enterKey(event,this)" type="value">
+
     </form>
 </div>
 </nav>
 <script>
     $(function () {
         $('.search-select p').click(function () {
-            $('.search-select ul').show();
+            $('.search-select ul').toggle();
         })
         $('.search-select ul li').click(function () {
             $('.search-select p').html($(this).html());
@@ -154,9 +158,7 @@
     }
 //搜索框事件
     function enterKey(event,obj){
-        console.log($(obj).prop('className'));
         if ($(obj).prop('className').indexOf('text1') != -1){
-            console.log($(obj).val());
             $('.text2').val($('.text1').val());
         } else if($(obj).prop('className').indexOf('text2') != -1){
             $('.text1').val($('.text2').val());

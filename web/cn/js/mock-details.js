@@ -22,8 +22,11 @@ $(function () {
         ckBefore(0);
     })
     $('.do-next').click(function () {
-        //ckBefore(1);
-        ckBefore(2,'submit');
+        if($('.sec-position').html() == $('.sec-all-num').html()-1){
+            ckBefore(2,'submit');
+        }else {
+            ckBefore(1);
+        }
     })
     //提交点击事件
     $('.work-submit').click(function () {

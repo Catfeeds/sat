@@ -19,7 +19,6 @@
         <!-- 数学-->
           <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
             <div class="math-title">
-              <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
               <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
             <h2 class="s-num pull-left"><?php echo $data['qid']?>.</h2>

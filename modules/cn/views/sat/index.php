@@ -347,5 +347,4 @@
             $('.system-wrap').eq(index).show();
         })
     })
-
 </script>

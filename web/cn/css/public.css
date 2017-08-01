@@ -249,16 +249,16 @@ body {
   bottom: 3px;
 }
 .s-nav-cnt li.s-nav-work ul {
-  position: absolute;
-  top: 40px;
   border-top: 2px solid rgb(54,178,251);
   -webkit-box-shadow: 0 0 3px #ccc;
   -moz-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 3px #ccc;
   background-color: #fff;
-  z-index: 9;
 }
-.s-nav-cnt li.s-nav-work ul.s-nav-showing {
+.s-nav-cnt li.s-nav-work .s-nav-showing {
+  position: absolute;
+  padding-top: 10px;
+  z-index: 9;
   display: none;
 }
 .s-nav-cnt li.s-nav-work ul li {
@@ -280,7 +280,7 @@ body {
   top: 10px;
   float: right;
   border: 1px solid rgb(54,178,251);
-  font-size: 16px;
+  font-size: 14px;
 }
 .search-form .search-select{
   position: relative;
@@ -296,6 +296,21 @@ body {
 .search-form .search-select>p {
   text-align: center;
   color: #999;
+}
+.search-form .search-select i{
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #999;
+}
+.search-form .select2 {
+  font-size: 16px;
+}
+.search-form .select2 i{
+  right: 10%;
+  font-size: 16px;
 }
 .search-form .search-select>ul {
   position: absolute;

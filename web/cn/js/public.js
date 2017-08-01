@@ -1,13 +1,14 @@
 $(function () {
   //导航栏下拉菜单
-  $(document).click(function (e) {
-    e.stopPropagation();
-    var $t = $(e.target);
-    if (($t.attr('id') == 'showA') || ($t.attr('class') == 'fa fa-sort-desc')) {
+  $('.s-nav-work').on({
+    mouseover: function () {
       $('.s-nav-showing').show();
-    } else {
+    },mouseout: function () {
       $('.s-nav-showing').hide();
     }
+  })
+  $('.s-nav-showing li').mouseover(function () {
+    $('.s-nav-showing').show();
   })
   //APP下载
   $('.appDownload').on({

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>雷哥SAT官网</title>
     <link rel="stylesheet" href="/cn/css/search.css">
 </head>
 <body>
@@ -15,9 +15,10 @@
                         <li>题目</li>
                         <li>资讯</li>
                     </ul>
+                    <i class="search-icon fa fa-angle-down"></i>
                 </div>
                 <input type="button" class="search-btn pull-right" value="搜索" onclick="keySearch(this)">
-                <input class="search-text text2" name="keyword" onkeyup="enterKey(event,this)" type="text" x-webkit-speech="">
+                <input class="search-text text2" name="keyword" onkeyup="enterKey(event,this)" type="search" x-webkit-speech="">
             </form>
         </div>
         <div class="search-cnt search-subject">
@@ -37,4 +38,9 @@
         </div>
     </section>
 </body>
+<script>
+    $(function () {
+        $('.search-text').val("<?php echo Yii::$app->request->get('keyword', '');?>");
+    })
+</script>
 </html>
