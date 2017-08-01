@@ -43,26 +43,73 @@
         <?php echo $page?>
       </div>
       <div class="s-right pull-right">
-        <div class="s-right-adv">
-          <img src="/cn/images/pubClass-dea_11.png" alt="">
+        <div class="s-right-subject s-right1">
+          <h2>做题排行榜</h2>
+          <div class="s-rank-list">
+            <div class="s-rank-img"></div>
+            <div class="s-rank-name">
+              <h4>你小贱</h4>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </div>
+          </div>
+          <div class="s-rank-list">
+            <div class="s-rank-img"></div>
+            <div class="s-rank-name">
+              <h4>里小贱</h4>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </div>
+          </div>
+          <div class="s-rank-list">
+            <div class="s-rank-img"></div>
+            <div class="s-rank-name">
+              <h4>好小贱</h4>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </div>
+          </div>
+          <ul>
+           <li class="s-rank-box">
+             <p>nfjdangjai</p>
+             <p><span>2548题</span><span>97%正确率</span></p>
+           </li>
+            <li class="s-rank-box">
+              <p>nfjdangjai</p>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </li>
+            <li class="s-rank-box">
+              <p>nfjdangjai</p>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </li>
+            <li class="s-rank-box">
+              <p>nfjdangjai</p>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </li>
+            <li class="s-rank-box">
+            <p>nfjdangjai</p>
+            <p><span>2548题</span><span>97%正确率</span></p>
+          </li>
+            <li class="s-rank-box">
+              <p>nfjdangjai</p>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </li>
+            <li class="s-rank-box">
+              <p>nfjdangjai</p>
+              <p><span>2548题</span><span>97%正确率</span></p>
+            </li>
+          </ul>
         </div>
-        <ul class="s-right-subject">
+        <div class="s-right-subject s-right2">
           <h2>最新题目</h2>
-          <?php foreach($arr as $k=>$v){?>
-          <li>
-            <h3><?php echo $v['qid']?></h3>
-            <a href="/exercise_details/<?php echo $v['qid']?>.html">
-              <?php
-//              if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
-//                echo $v['essay'];
-//              }else{
-                echo $v['content'];
-//              }
-              ?>
-            </a>
-          <li>
-          <?php }?>
-        </ul>
+          <ul>
+            <?php foreach($arr as $k=>$v){?>
+            <li>
+              <h3><?php echo $v['qid']?></h3>
+              <a href="/exercise_details/<?php echo $v['qid']?>.html">
+                <?php echo $v['content']; ?>
+              </a>
+            <li>
+              <?php }?>
+          </ul>
+        </div>
         <div class="s-right-code">
           <img src="/cn/images/qr-code01.png" alt="">
           <p>扫码关注</p>
@@ -74,6 +121,8 @@
 <!--底部-->
 <script>
   $(function () {
+    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
+    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:6,interTime:100});
     //  选项卡切换效果
     var search = location.search.split('m='),
         m = search[1];
@@ -140,9 +189,8 @@
         window.location.href = url;
       }
     } else {
-      console.log(url+'/exercise.html?path=math'+'&c='+cate);
-//      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
+//      console.log(url+'/exercise.html?path=math'+'&c='+cate);
+      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
     }
-
   }
 </script>

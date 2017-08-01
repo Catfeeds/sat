@@ -153,14 +153,6 @@
         <input type="hidden" id="number" value="<?php echo $data['number']?>">
         <!--本section总时间-->
         <input type="hidden" id="sectionTime" value="<?php echo $time?>">
-            <!--本section总题目-->
-<!--            <input type="hidden" id="sectionAllNum" value="67">-->
-            <!--本section当前题目-->
-<!--            <input type="hidden" id="sectionNum" value="20">-->
-            <!--模考总题目数-->
-<!--            <input type="hidden" id="mkAllNum" value="155">-->
-            <!--当前模考题目号-->
-<!--            <input type="hidden" id="mkNum" value="55">-->
         </div>
     </div>
 </div>

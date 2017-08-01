@@ -1,6 +1,3 @@
-.s-test {
-
-}
 .s-test .s-top-adv {
   margin: 40px 0 100px 0;
 }
@@ -100,29 +97,70 @@
 .s-test .s-right {
   width: 360px;
 }
-.s-test .s-right-adv {
-  width: 100%;
-  -webkit-box-shadow: 0 0 3px #000;
-  -moz-box-shadow: 0 0 3px #000;
-  box-shadow: 0 0 3px #000;
-}
-.s-test .s-right-adv img {
-  width: 100%
-}
+/*做题排行榜*/
 .s-test .s-right-subject {
   margin-top: 85px;
-  padding: 34px 30px;
+  padding: 24px 30px;
   border: 1px solid #000;
   font-size: 14px;
 }
-.s-test .s-right-subject li {
+.s-rank-list {
   padding: 10px 0;
+  border-bottom: 1px dashed #999;
+}
+.s-rank-list .s-rank-img {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 40px;
+  background: url("/cn/images/no-icon.png") 0 0 no-repeat;
+}
+.s-rank-list:nth-of-type(2) .s-rank-img {
+  background-position: -32px 0;
+}
+.s-rank-list:nth-of-type(3) .s-rank-img {
+  background-position: -64px 0;
+}
+.s-rank-list .s-rank-name>h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: rgb(54,178,251);
+}
+.s-rank-list .s-rank-name>p {
+  font-size: 14px;
+}
+.s-rank-list .s-rank-name span:nth-child(1) {
+  padding-right: 20px;
+}
+.s-rank-box {
+  font-size: 0;
+}
+.s-rank-box>p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.s-rank-box>p:nth-child(1){
+  width: 150px;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(54,178,251);
+}
+.s-rank-box>p:nth-child(2) span:nth-child(1){
+  padding-right: 20px;
+}
+/*最新题目*/
+.s-test .s-right-subject li {
+  /*padding: 10px 0;*/
+  line-height: 35px;
   border-bottom: 1px dashed #ccc;
 }
 .s-test .s-right-subject h2 {
   position: relative;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
 }
 .s-test .s-right-subject h2:before,
 .s-test .s-right-subject h2:after {
