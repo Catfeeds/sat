@@ -28,32 +28,76 @@
             <div><?php echo $data['introduction']?></div>
           </div>
           <div role="tabpanel" class="tab-pane" id="teacher">
-            <div class="s-introduce-img">
-              <span class="s-top-left"></span>
-              <img class="s-big-img" src="<?php if(isset($teacher[0]['pic'])){echo $teacher[0]['pic'];}else{echo '/cn/images/course-basis01.png';}?>" alt="">
-              <span class="s-bottom-right"></span>
-              <div class="s-down-img clearfix">
-                <div class="teacher-img">
-                  <img src="<?php echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?>" alt="">
-                  <div>
-                    <?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?>
+<!--            <div class="s-introduce-img">-->
+<!--              <span class="s-top-left"></span>-->
+<!--              <img class="s-big-img" src="--><?php //if(isset($teacher[0]['pic'])){echo $teacher[0]['pic'];}else{echo '/cn/images/course-basis01.png';}?><!--" alt="">-->
+<!--              <span class="s-bottom-right"></span>-->
+<!--              <div class="s-down-img clearfix">-->
+<!--                <div class="teacher-img">-->
+<!--                  <img src="--><?php //echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?><!--" alt="">-->
+<!--                  <div>-->
+<!--                    --><?php //echo isset($teacher[1]['name'])?$teacher[1]['name']:''?>
+<!--                    --><?php //echo isset($teacher[1]['honorary'])?$teacher[1]['honorary']:''?>
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="teacher-img">-->
+<!--                  <img src="--><?php //echo isset($teacher[2]['pic'])?$teacher[2]['pic']:''?><!--" alt="">-->
+<!--                  <div>-->
+<!--                    --><?php //echo isset($teacher[2]['name'])?$teacher[2]['name']:''?>
+<!--                    --><?php //echo isset($teacher[2]['honorary'])?$teacher[2]['honorary']:''?>
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+            <ul class="s-int-img">
+              <li class="on">
+                <img src="<?php echo isset($teacher[0]['pic'])?$teacher[0]['pic']:''?>" alt="">
+                <div>
+                  <p><?php echo isset($teacher[0]['name'])?$teacher[0]['name']:''?><br>
+                    <?php echo isset($teacher[0]['honorary'])?$teacher[0]['honorary']:''?>
+                  </p>
+                </div>
+              </li>
+              <?php if(isset($teacher[1])){?>
+              <li>
+                <img src="<?php echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?>" alt="">
+                <div>
+                  <p><?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?><br>
                     <?php echo isset($teacher[1]['honorary'])?$teacher[1]['honorary']:''?>
-                  </div>
+                  </p>
                 </div>
-                <div class="teacher-img">
-                  <img src="<?php echo isset($teacher[2]['pic'])?$teacher[2]['pic']:''?>" alt="">
-                  <div>
-                    <?php echo isset($teacher[2]['name'])?$teacher[2]['name']:''?>
+              </li>
+              <?php }?>
+              <?php if(isset($teacher[2])){?>
+              <li>
+                <img src="<?php echo isset($teacher[2]['pic'])?$teacher[2]['pic']:''?>" alt="">
+                <div>
+                  <p><?php echo isset($teacher[2]['name'])?$teacher[2]['name']:''?><br>
                     <?php echo isset($teacher[2]['honorary'])?$teacher[2]['honorary']:''?>
-                  </div>
+                  </p>
                 </div>
-              </div>
+              </li>
+              <?php }?>
+            </ul>
+            <div class="s-introduce-font on">
+              <h2><?php echo isset($teacher[0]['name'])?$teacher[0]['name']:''?></h2>
+              <p><?php echo isset($teacher[0]['introduction'])?$teacher[0]['introduction']:''?></p>
+              <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">预约名师</a>
             </div>
+            <?php if(isset($teacher[1])){?>
             <div class="s-introduce-font">
-              <h2><?php echo $teacher[0]['name']?></h2>
-              <p><?php echo $teacher[0]['introduction']?>
-              </p>
+              <h2><?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?></h2>
+              <p><?php echo isset($teacher[1]['introduction'])?$teacher[1]['introduction']:''?></p>
+              <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">预约名师</a>
             </div>
+            <?php }?>
+            <?php if(isset($teacher[2])){?>
+            <div class="s-introduce-font">
+              <h2><?php echo isset($teacher[2]['name'])?$teacher[2]['name']:''?></h2>
+              <p><?php echo isset($teacher[2]['introduction'])?$teacher[2]['introduction']:''?></p>
+              <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">预约名师</a>
+            </div>
+            <?php }?>
           </div>
           <div role="tabpanel" class="tab-pane" id="plan">
             <div>
@@ -134,3 +178,12 @@
       </div>
     </div>
   </section>
+  <script>
+    $('.s-int-img>li').mouseover(function () {
+      var index = $(this).index();
+      $('.s-int-img>li').removeClass('on');
+      $(this).addClass('on');
+      $('.s-introduce-font').removeClass('on');
+      $('.s-introduce-font').eq(index).addClass('on');
+    })
+  </script>

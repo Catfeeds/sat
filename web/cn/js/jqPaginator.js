@@ -240,14 +240,8 @@
 
     $.jqPaginator.defaultOptions = {
         wrapper: '',
-        //first: '<li class="first"><a href="javascript:;" class="fa fa-angle-double-left"></a></li>',
-        //prev: '<li class="prev"><a href="javascript:;" class="fa fa-angle-left"></a></li>',
-        //next: '<li class="next"><a href="javascript:;" class="fa fa-angle-right"></a></li>',
-        //last: '<li class="last"><a href="javascript:;" class="fa fa-angle-double-right"></a></li>',
-        //first: '<li class="first"><a href="javascript:;">«</a></li>',
         prev: '<li class="prev"><a href="javascript:;">«</a></li>',
         next: '<li class="next"><a href="javascript:;">»</a></li>',
-        //last: '<li class="last"><a href="javascript:;">»</a></li>',
         page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
         totalPages: 0,
         totalCounts: 0,

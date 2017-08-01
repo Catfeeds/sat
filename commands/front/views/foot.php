@@ -18,7 +18,7 @@
             </dl>
             <div class="s-qr">
                 <img src="/cn/images/qr-code01.png" alt="">
-                <p>雷哥SAT备考</p>
+                <p>雷哥SAT微助手</p>
             </div>
             <div class="s-qr">
                 <img src="/cn/images/qr-code02.png" alt="">

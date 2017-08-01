@@ -407,7 +407,8 @@
 }
 .s-course .course-text p,
 .s-course .course-text p span {
-  color: #fff;
+  font-size: 14px!important;
+  color: #fff!important;
 }
 .s-course .course-text:hover {
   overflow-y: auto;
