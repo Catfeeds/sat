@@ -51,13 +51,14 @@
 <!--            </div>-->
             <ul class="s-int-img">
               <li class="on">
-                <img src="<?php echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?>" alt="">
+                <img src="<?php echo isset($teacher[0]['pic'])?$teacher[0]['pic']:''?>" alt="">
                 <div>
-                  <p><?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?><br>
-                    <?php echo isset($teacher[1]['honorary'])?$teacher[1]['honorary']:''?>
+                  <p><?php echo isset($teacher[0]['name'])?$teacher[0]['name']:''?><br>
+                    <?php echo isset($teacher[0]['honorary'])?$teacher[0]['honorary']:''?>
                   </p>
                 </div>
               </li>
+              <?php if(isset($teacher[1])){?>
               <li>
                 <img src="<?php echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?>" alt="">
                 <div>
@@ -66,30 +67,37 @@
                   </p>
                 </div>
               </li>
+              <?php }?>
+              <?php if(isset($teacher[2])){?>
               <li>
-                <img src="<?php echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?>" alt="">
+                <img src="<?php echo isset($teacher[2]['pic'])?$teacher[2]['pic']:''?>" alt="">
                 <div>
-                  <p><?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?><br>
-                    <?php echo isset($teacher[1]['honorary'])?$teacher[1]['honorary']:''?>
+                  <p><?php echo isset($teacher[2]['name'])?$teacher[2]['name']:''?><br>
+                    <?php echo isset($teacher[2]['honorary'])?$teacher[2]['honorary']:''?>
                   </p>
                 </div>
               </li>
+              <?php }?>
             </ul>
             <div class="s-introduce-font on">
-              <h2><?php echo $teacher[0]['name']?></h2>
-              <p><?php echo $teacher[0]['introduction']?></p>
+              <h2><?php echo isset($teacher[0]['name'])?$teacher[0]['name']:''?></h2>
+              <p><?php echo isset($teacher[0]['introduction'])?$teacher[0]['introduction']:''?></p>
               <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">预约名师</a>
             </div>
+            <?php if(isset($teacher[1])){?>
             <div class="s-introduce-font">
-              <h2><?php echo $teacher[0]['name']?></h2>
-              <p><?php echo $teacher[0]['introduction']?></p>
+              <h2><?php echo isset($teacher[1]['name'])?$teacher[1]['name']:''?></h2>
+              <p><?php echo isset($teacher[1]['introduction'])?$teacher[1]['introduction']:''?></p>
               <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">预约名师</a>
             </div>
+            <?php }?>
+            <?php if(isset($teacher[2])){?>
             <div class="s-introduce-font">
-              <h2><?php echo $teacher[1]['name']?></h2>
-              <p><?php echo $teacher[1]['introduction']?></p>
+              <h2><?php echo isset($teacher[2]['name'])?$teacher[2]['name']:''?></h2>
+              <p><?php echo isset($teacher[2]['introduction'])?$teacher[2]['introduction']:''?></p>
               <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">预约名师</a>
             </div>
+            <?php }?>
           </div>
           <div role="tabpanel" class="tab-pane" id="plan">
             <div>
