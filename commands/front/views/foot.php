@@ -18,11 +18,11 @@
             </dl>
             <div class="s-qr">
                 <img src="/cn/images/qr-code01.png" alt="">
-                <p>雷哥SAT微助手</p>
+                <p>本科留学与考试</p>
             </div>
             <div class="s-qr">
                 <img src="/cn/images/qr-code02.png" alt="">
-                <p>本科留学与考试</p>
+                <p>雷哥SAT微助手</p>
             </div>
             <div class="s-tel">
                 <img src="/cn/images/tel_icon.png" alt="">
@@ -112,10 +112,6 @@
         </div>
         <i class="apply-close a-close fa fa-times"></i>
     </div>
-<!--    <div class="apply-small">-->
-<!--        <h3>SAT课程报名</h3>-->
-<!--        <i class="small-close a-close fa fa-times"></i>-->
-<!--    </div>-->
     <!--侧边栏-->
     <div class="side-bar">
         <ul>
@@ -126,7 +122,7 @@
             <li class="side-wechat">
                 <p></p>
                 <div>
-                    <img src="/cn/images/sidebar02.jpg" alt="微信二维码">
+                    <img src="/cn/images/qr-code02.png" alt="微信二维码">
                     <p>请扫描二维码</p>
                 </div>
             </li>
