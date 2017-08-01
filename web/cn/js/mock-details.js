@@ -114,7 +114,6 @@ function upTime(flag) {
             var usedTime = 0;
         } else {
             var usedTime = Number(sessionStorage.reltime);
-            console.log(usedTime);
         }
     } else {
        var usedTime = 0;
@@ -127,15 +126,6 @@ function upTime(flag) {
             sessionStorage.uptime = usedTime;
         }
     },1000)
-    //var intervalId = setInterval(timer, 1000);
-    //function timer() {
-    //    usedTime = usedTime + 1;
-    //    if (flag == 'b') {
-    //        sessionStorage.reltime = usedTime;
-    //    } else {
-    //        sessionStorage.uptime = usedTime;
-    //    }
-    //}
 }
 //休息倒计时
 function relaxTime () {

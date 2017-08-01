@@ -1,5 +1,4 @@
-
-    <link rel="stylesheet" href="/cn/css/mock-notice.css">
+ <link rel="stylesheet" href="/cn/css/mock-notice.css">
 <section class="s-evaluation">
     <div class="s-top container">
         <div class="s-top-cnt row">
@@ -85,16 +84,19 @@
 </section>
 
 <script>
-    var u = location.search.substr(1);
-    $('.do-subject').click(function () {
-        window.location.href = '/mock_test?'+u;
+    $(function(){
+        sessionStorage.clear();
+        var u = location.search.substr(1);
+        $('.do-subject').click(function () {
+            window.location.href = '/mock_test?'+u;
+        })
+        $('.get-out').click(function () {
+            $('.s-shade').show();
+        })
+        $('.shade-out').click(function () {
+            window.location.href = '/mock.html';
+        })
+        var h = $(window).height()-80;
+        $('.s-evaluation .s-cnt').height(h);
     })
-    $('.get-out').click(function () {
-        $('.s-shade').show();
-    })
-    $('.shade-out').click(function () {
-        window.location.href = '/mock.html';
-    })
-    var h = $(window).height()-80;
-    $('.s-evaluation .s-cnt').height(h);
 </script>
