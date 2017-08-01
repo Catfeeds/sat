@@ -19,7 +19,7 @@
       <div class="report-score clearfix">
         <div class="score pull-left">
           <h5><?php echo $report['part']?>成绩</h5>
-          <p>本次得分<span><?php $major=$report["part"];echo $report["$major"];?></span>分</p>
+          <p>本次得分<span><?php $major=$report["part"];if($major=='Math'){echo $report["$major"];}else{echo $report["$major"]*10;}?></span>分</p>
           <p>答对<span><?php if($report['part']=='Math'){echo $report['mathnum'];}elseif($report['part']=='Reading'){echo $report['readnum'];}else{echo $report['writenum'];}?></span>题</p>
           <p>答题所用时间<span><?php echo sprintf("%.2f",$report['time']/60)?></span>min</p>
         </div>
@@ -99,7 +99,7 @@
       <div class="ranking-wrap">
         <ul class="ranking-list ranking-list1">
           <?php foreach($score as $v){?>
-            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php if(isset($v['score'])&&isset($v['part'])){if ($v['part']!='Math'){ echo $v['score']*10;}else{echo $v['score'];}}?></span></li>
           <?php }?>
         </ul>
         <ul class="ranking-list ranking-list2"></ul>
@@ -138,9 +138,9 @@
 </section>
 <script>
   $(function() {
-    pieChart('accuChart',[parseFloat(Number(<?php if($report['readnum']!=0){$a=$report['readnum']/52*100;$b=$report['readerror']/52*100;$c=(52-$report['readnum']-$report['readerror'])/52*100;echo $a;}
-    if($report['writenum']!=0){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
-    if($report['mathnum']!=0){$a=$report['mathnum']/58*100;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
+    pieChart('accuChart',[parseFloat(Number(<?php if($report['part']=='Reading'){$a=$report['readnum']/52*100;$b=$report['readerror']/52*100;$c=(52-$report['readnum']-$report['readerror'])/52*100;echo $a;}
+    if($report['part']=='Writing'){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
+    if($report['part']=='Math'){$a=$report['mathnum']/58*100;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
     ?>).toFixed(1)),parseFloat(Number(<?php echo $b?>).toFixed(1)),parseFloat(Number(<?php echo $c?>).toFixed(1))],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
 
     $('.ans-classify li').click(function () {

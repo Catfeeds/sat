@@ -25,11 +25,11 @@
                 <?php if($data==false){echo '无搜索结果';}else{ $keyword = Yii::$app->request->get('keyword', '');foreach ($data as $k=>$v){?>
                 <li class="search-list">
                     <h2>
-                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'.(str_replace($keyword,"<span style='color:red;'>".$keyword.'</span>',$v['title'])):'<a href="/exercise_details/'.$v['qid'].'.html">'.$v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number'];?>
+                        <?php echo isset($v['title'])?'<a href="/info_details/'.$v['id'].'.html">'.(str_replace($keyword,"<span style='color:red;'>".$keyword.'</span>',strip_tags($v['title']))):'<a href="/exercise_details/'.$v['qid'].'.html">'.$v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number'];?>
                         </a>
                     </h2>
                     <div>
-                        <?php echo isset($v['summary'])?$v['summary']:str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',$v['content'])?>
+                        <?php echo isset($v['summary'])?strip_tags($v['summary']):str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',strip_tags($v['content']))?>
                     </div>
                 </li>
                 <?php }}?>

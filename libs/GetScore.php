@@ -49,6 +49,8 @@ class GetScore {
                         $v[1]=$modle->FractionToFloat($v[1]);
                     }
                 }
+                $que['answer']= rtrim($que['answer'], 0);
+                $v[1] = rtrim($v[1], 0);
                 if ($v[1] == $que['answer']) {
                     $mathnum =$mathnum+ 1;
 //                    continue;

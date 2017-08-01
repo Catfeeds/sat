@@ -30,8 +30,8 @@
                             <th>总成绩</th>
                         </tr>
                         <tr>
-                            <td><?php echo $report['Reading']?></td>
-                            <td><?php echo $report['Writing']?></td>
+                            <td><?php echo $report['Reading']*10?></td>
+                            <td><?php echo $report['Writing']*10?></td>
                             <td><?php echo $report['Math']?></td>
                             <td>154</td>
                             <td><?php echo $report['total']?></td>

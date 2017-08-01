@@ -44,10 +44,10 @@ class ReportController extends Controller
             $re['readerror'] = $number['readerror'];
             $re['writeerror'] = $number['writeerror'];
             $re['subScore'] = $subscore['total'];
-            $re['score'] = $score['total'];
             $re['crossScore'] = $crosstest['total'];
             $re['date'] = time();
             $re['time'] = Yii::$app->session->get('time');// 做题总时间
+            ($re['part'] =='all')?($re['score'] = $score['total']):($re['score'] = $score["$major"]);
             if ($uid) {
                 // 将答案组合成字符串
                 $format=new Format();
@@ -96,6 +96,7 @@ class ReportController extends Controller
         }else{
             $info= Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
             $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part!='all' order by r.score limit 10")->queryAll();
+//            var_dump($res);die;
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest,'tp' => $tp,'user'=>$user,'info'=>$info,'score'=>$score]);
         }
 
@@ -148,6 +149,7 @@ class ReportController extends Controller
             foreach($arr as $k =>$v){
                 $key=explode(',', $v)[0];
                 $brr[$key]=explode(',', $v);
+                // $v[1] = rtrim($v[1], 0);
             }
             $report=new Report();
             $que=$report->queDetails($brr,$classify,$major);
