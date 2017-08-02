@@ -64,7 +64,41 @@ $(function() {
       _this.find('i').addClass('fa-star-o');
     }
   })
+  //题目讨论回复
+  //回复/收回回复切换
+  $('.dis-usr-list>ul').on('click','.dis-reply-btn', function () {
+    console.log('aa');
+    var _this = $(this);
+    if(_this.html() == '回复'){
+      _this.html('收起回复');
+      _this.css({
+        'backgroundColor':'#CDE4EE'
+      })
+      _this.parent().siblings('.reply-wrap').show('slow');
+    } else {
+      _this.html('回复');
+      _this.css({
+        'backgroundColor':'#fff'
+      })
+      _this.parent().siblings('.reply-wrap').hide('slow');
+    }
+  })
+  //最下面提交按钮
+  $('.dis-commit>div').click(function () {
+    comment(this,0);
+  })
+  //中间发表按钮
+  $('.dis-usr-list>ul').on('click','.reply-wrap input', function () {
+    comment(this,1);
+  })
+  //中间回复按钮
+  $('.dis-usr-list>ul').on('click','.reply-wrap .reply-wrap-btn', function () {
+    var _this = $(this);
+    var name = _this.parent().siblings('span').html();
+    _this.parent().parent().parent().siblings('textarea').val('回复'+name);
+  })
 })
+
 var uId = $.cookie('uid');
 uId = 444;
 // 加载页面时判断是否收藏
@@ -82,7 +116,7 @@ function upTime() {
     usedTime+=1;
   },1000);
 }
-
+//提交题目
 function ajaxEvent(obj,u) {
   var _this = $(obj);
   if($('.read-exam').css('display') == 'none') {
@@ -118,5 +152,70 @@ function ajaxEvent(obj,u) {
     })
   }
 }
-
-
+//讨论回复
+function comment(obj,flag){
+  var tId = $('#subjectId').data('id'),
+      _this = $(obj),
+  //uId = $.cookie('uid');
+    uId = 32;
+  if (uId == ''){
+    var pos = location.href;
+    location.href = 'http://login.gmatonline.cn/cn/index?source=20&url='+location.href;
+  }else{
+      $.ajax({
+        url: '',
+        type: 'post',
+        data: {
+          tId: tId,
+          uId: uId,
+          cnt: $('#dis-input-cnt').val(),
+          pID: flag
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.num == 3){
+            alert('请输入内容');
+          }
+          if (data.num == 1){
+            var liObj = '';
+            liObj+="<li><div class='dis-usr-avatar pull-left'><img src='/cn/images/login.png' alt='用户头像'></div>"+
+              "<div class='dis-usr-cnt pull-left'>"+
+              "<p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>"+
+              "<p>"+$('#dis-input-cnt').val()+"</p>"+
+              "</div>"+
+              "<div class='dis-usr-reply pull-right'>"+
+              "<span>1楼</span>"+
+              "<span class='dis-reply-btn'>回复</span>"+
+              "</div>"+
+              "<div style='clear: both;'></div>"+
+              "<div class='reply-wrap clearfix'>"+
+              "<ul>"+
+              "<li class='clearfix'>"+
+              "<img src='/cn/images/login.png' alt='用户头像'>"+
+              "<span>lsls:</span>"+
+              "<p class='reply-wrap-cnt'>fnkdnkmkdmaldl;g;</p>"+
+              "<p class='pull-right'><span>2017-10-22 08:30:20</span><span class='reply-wrap-btn'>回复</span></p>"+
+              "</li>"+
+              "</ul>"+
+              "<textarea name='' id='reply-input-cnt' cols='80' rows='4'></textarea>"+
+              "<input class='pull-right'' type='button' value='发表'>"+
+              "</div></li>";
+            $('.dis-usr-list>ul').prepend(liObj);
+          } else if(data.num == 2){
+              var liObj = '';
+              liObj+="<li class='clearfix'>"+
+                "<img src='/cn/images/login.png' alt='用户头像'>"+
+                "<span>lsls:</span>"+
+                "<p class='reply-wrap-cnt'>"+_this.siblings('textarea').val()+"</p>"+
+                "<p class='pull-right'><span>2017-10-22 08:30:20</span><span class='reply-wrap-btn'>回复</span></p>"+
+                "</li>";
+              _this.parent().children('ul').prepend(liObj);
+          }
+        },
+        complete: function () {
+          $('#dis-input-cnt').val('');
+          $('.reply-wrap textarea').val('');
+        }
+      })
+  }
+}

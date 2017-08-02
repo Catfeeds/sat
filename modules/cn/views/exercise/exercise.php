@@ -119,7 +119,6 @@
               </div>
             </div>
           </div>
-<!--          <div class="correct-ans-hide">正确答案：<span>--><?php //echo $data['answer']?><!--</span></div>-->
           <div class="s-btn-list clearfix">
             <div class="s-collect work-collect pull-left" data-value="<?php echo isset($data['collection'])?$data['collection']:'0'?>">
               <i class="fa fa-star-o"></i>
@@ -133,10 +132,79 @@
           </div>
           <!--答案解析-->
           <div class="s-answer-show">
-            <h3>题目解析:</h3>
+            <h3>网友解析:</h3>
             <div class="s-answer-cnt">
               <p>正确答案:<span class="correct-answer"><?php echo $data['answer']?></span></p>
               <p>解析：<?php echo isset($data['analysis'])?$data['analysis']:'无'?></p>
+            </div>
+          </div>
+          <!--讨论区-->
+          <div class="discuss-wrap">
+            <h3>题目讨论</h3>
+            <div class="dis-usr-list">
+              <ul>
+                <li>
+                  <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>
+                  <div class="dis-usr-cnt pull-left">
+                    <p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>
+                    <p>take shape的主语应该是principles，rallies不能做take shape的主语，A错 a practice做rallies的同位语，不合适，B错 C选项应该是as once WAS prohitibed by Communist Chinese leaders, 选项里漏掉了was，C错 D里面最后的“they are”中的they指代不明，到底是中共的领导们呢，还是rallies？</p>
+                  </div>
+                  <div class="dis-usr-reply pull-right">
+                    <span>1楼</span>
+                    <span class="dis-reply-btn">回复</span>
+                  </div>
+                  <div style="clear: both;"></div>
+                  <div class="reply-wrap clearfix">
+                    <ul>
+                      <li class="clearfix">
+                        <img src="/cn/images/login.png" alt="用户头像">
+                        <span>lsls:</span>
+                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>
+                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>
+                      </li>
+                      <li class="clearfix">
+                        <img src="/cn/images/login.png" alt="用户头像">
+                        <span>lsls:</span>
+                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>
+                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>
+                      </li>
+                    </ul>
+                    <textarea cols="80" rows="4"></textarea>
+                    <input class="pull-right" type="button" value="发表">
+                  </div>
+                </li>
+                <li>
+                  <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>
+                  <div class="dis-usr-cnt pull-left">
+                    <p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>
+                    <p>take shape的主语应该是principles，rallies不能做take shape的主语，A错 a practice做rallies的同位语，不合适，B错 C选项应该是as once WAS prohitibed by Communist Chinese leaders, 选项里漏掉了was，C错 D里面最后的“they are”中的they指代不明，到底是中共的领导们呢，还是rallies？</p>
+                  </div>
+                  <div class="dis-usr-reply pull-right">
+                    <span>1楼</span>
+                    <span class="dis-reply-btn">回复</span>
+                  </div>
+                  <div style="clear: both;"></div>
+                  <div class="reply-wrap clearfix">
+                    <ul>
+                      <li class="clearfix">
+                        <img src="/cn/images/login.png" alt="用户头像">
+                        <span>lsls:</span>
+                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>
+                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>
+                      </li>
+                    </ul>
+                    <textarea cols="80" rows="4"></textarea>
+                    <input class="pull-right" type="button" value="发表">
+                    <div style="clear: both;"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="dis-input">
+              <textarea name="" id="dis-input-cnt" cols="89" rows="6" placeholder="我来说两句……"></textarea>
+            </div>
+            <div class="dis-commit clearfix">
+              <div class="pull-right"><i class="fa fa-upload"></i>提交</div>
             </div>
           </div>
         </div>
