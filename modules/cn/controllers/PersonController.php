@@ -17,122 +17,129 @@ use app\modules\cn\models\Report;
 
 class PersonController extends Controller
 {
-    public $layout='cn.php';
+    public $layout = 'cn.php';
+
     public function actionCollect()
     {
-        $uid=Yii::$app->session->get('uid');
-        $uid=444;
-        $arr= Yii::$app->db->createCommand("select * from {{%collection}} where uid=".$uid)->queryOne();
-        $qid=ltrim($arr['qid'],',');
-        $data= Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+        $uid = Yii::$app->session->get('uid');
+        $uid = 444;
+        $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
+        $qid = ltrim($arr['qid'], ',');
+        $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
 //        var_dump($data);die;
 
-        return $this->render('person_collect',['data'=>$data]);
+        return $this->render('person_collect', ['data' => $data]);
     }
+
     public function actionExercise()
     {
-        $uid=Yii::$app->session->get('uid');
-        $uid=222;
-        $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
+        $uid = Yii::$app->session->get('uid');
+        $uid = 222;
+        $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
             static $crr = array();
-            static $s ='';
+            static $s = '';
             foreach ($brr as $k => $v) {
-                if ($v !='') {
-                    $key=explode(',', $v)[0];
-                    $crr[$key]=explode(',', $v);
-                    $s.=$key.',';
+                if ($v != '') {
+                    $key = explode(',', $v)[0];
+                    $crr[$key] = explode(',', $v);
+                    $s .= $key . ',';
                 }
 
             }
-            $qid=rtrim($s,',');
-            $data= Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
-            static $n=0;
-            foreach($data as $k=>$v){
-                if($v['answer']==$crr[$v['qid']][1]){
-                    $n+=1;
+            $qid = rtrim($s, ',');
+            $data = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+            static $n = 0;
+            foreach ($data as $k => $v) {
+                if ($v['answer'] == $crr[$v['qid']][1]) {
+                    $n += 1;
                 }
             }
-        }else{
-            $crr=array();
-            $data=array();
-            $n=0;
+        } else {
+            $crr = array();
+            $data = array();
+            $n = 0;
         }
 
 //        var_dump($data);die;
-        return $this->render('person_exercise',['data'=>$data,'crr'=>$crr,'n'=>$n]);
+        return $this->render('person_exercise', ['data' => $data, 'crr' => $crr, 'n' => $n]);
     }
-    public function actionMock(){
-        $uid=Yii::$app->session->get('uid');
-        $uid=222;
-        $arr= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=".$uid)->queryAll();
-        $model=new Format();
-        foreach($arr as $k=>$v){
-            $arr[$k]['rtime']=$model->FormatTime($v['rtime']);
+
+    public function actionMock()
+    {
+        $uid = Yii::$app->session->get('uid');
+        $uid = 222;
+        $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
+        $model = new Format();
+        foreach ($arr as $k => $v) {
+            $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
         }
-        return $this->render('person_mock',['arr'=>$arr]);
+        return $this->render('person_mock', ['arr' => $arr]);
     }
+
     public function actionColl()
     {
-        $uid=Yii::$app->session->get('uid');
-        $uid=444;
-        $name=Yii::$app->request->get('src');
-        $p =Yii::$app->request->get('p','1');
-        $major=Yii::$app->request->get('classify');
-        $model=new collection();
-        $pagesize=2;
+        $uid = Yii::$app->session->get('uid');
+        $uid = 444;
+        $name = Yii::$app->request->get('src');
+        $p = Yii::$app->request->get('p', '1');
+        $major = Yii::$app->request->get('classify');
+        $model = new collection();
+        $pagesize = 2;
         $offset = $pagesize * ($p - 1);
-        $data=$model->CollectionDate($name,$uid,$major,$offset,$pagesize);
-        $data['curPage'] =$p;
+        $data = $model->CollectionDate($name, $uid, $major, $offset, $pagesize);
+        $data['curPage'] = $p;
         echo die(json_encode($data));
     }
+
     public function actionExer()
     {
-        $uid=Yii::$app->session->get('uid');
-        $uid=222;
-        $name=Yii::$app->request->get('src');
-        $major=Yii::$app->request->get('classify');
-        $error=Yii::$app->request->get('case');
-        $p =Yii::$app->request->get('p','1');
-        $pagesize=2;
+        $uid = Yii::$app->session->get('uid');
+        $uid = 222;
+        $name = Yii::$app->request->get('src');
+        $major = Yii::$app->request->get('classify');
+        $error = Yii::$app->request->get('case');
+        $p = Yii::$app->request->get('p', '1');
+        $pagesize = 2;
         $offset = $pagesize * ($p - 1);
 
-        $notes=new Notes();
-        $arr=$notes->Ex($uid,$name,$major,$error,$offset,$pagesize,$p);
+        $notes = new Notes();
+        $arr = $notes->Ex($uid, $name, $major, $error, $offset, $pagesize, $p);
 
 
-        $arr['totalPage'] = ceil($arr['total']/$pagesize);// 总页数
-        $arr['curPage'] =$p;
-        $arr['pageSize']=$pagesize;
+        $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $arr['curPage'] = $p;
+        $arr['pageSize'] = $pagesize;
         echo die(json_encode($arr));
     }
+
     public function actionMo()
     {
-        $uid=Yii::$app->session->get('uid');
-        $uid=222;
-        $src=Yii::$app->request->get('src');
-        $type=Yii::$app->request->get('type');
-        $arr['curPage'] =$p = Yii::$app->request->get('p','1');
-        $arr['pageSize']=$pagesize=2;
-        if($src !='all'){
-            $name="and name='$src'";
-        }else{
-            $name='';
+        $uid = Yii::$app->session->get('uid');
+        $uid = 222;
+        $src = Yii::$app->request->get('src');
+        $type = Yii::$app->request->get('type');
+        $arr['curPage'] = $p = Yii::$app->request->get('p', '1');
+        $arr['pageSize'] = $pagesize = 2;
+        if ($src != 'all') {
+            $name = "and name='$src'";
+        } else {
+            $name = '';
         }
-        if($type=='whole'){
-            $part='';
-        }else{
-            $part="and part ='$type'";
+        if ($type == 'whole') {
+            $part = '';
+        } else {
+            $part = "and part ='$type'";
         }
         $offset = $pagesize * ($p - 1);
-        $data= Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part limit $offset,$pagesize")->queryAll();
-        $arr['total']= count(Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part ")->queryAll());
-        $arr['totalPage'] = ceil($arr['total']/$pagesize);// 总页数
-        $model=new Format();
+        $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part limit $offset,$pagesize")->queryAll();
+        $arr['total'] = count(Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part ")->queryAll());
+        $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $model = new Format();
 //        var_dump($arr);
-        foreach($data as $k=>$v){
-            $arr['list'][]= array(
+        foreach ($data as $k => $v) {
+            $arr['list'][] = array(
                 'part' => $v['part'],
                 'id' => $v['id'],
                 'tpId' => $v['tpId'],
@@ -142,54 +149,56 @@ class PersonController extends Controller
                 'readnum' => $v['readnum'],
                 'writenum' => $v['writenum'],
                 'date' => $v['date'],
-                'rtime'=>$model->FormatTime($v['rtime']),
+                'rtime' => $model->FormatTime($v['rtime']),
             );
         }
 
         echo die(json_encode($arr));
     }
+
     public function actionDel()
     {
-        $id=Yii::$app->request->get('id');
-        $re =Report::deleteAll("id=:id", array(':id' => $id));
+        $id = Yii::$app->request->get('id');
+        $re = Report::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
-            $res['code']=1;
-            $res['message']='删除成功';
-        }else{
-            $res['code']=0;
-            $res['message']='删除失败';
+            $res['code'] = 1;
+            $res['message'] = '删除成功';
+        } else {
+            $res['code'] = 0;
+            $res['message'] = '删除失败';
         }
         echo die(json_encode($res));
     }
+
     public function actionRemoved()
     {
-        $uid=Yii::$app->session->get('uid');
-        $uid=222;
-        $id=Yii::$app->request->get('id');
-        $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
+        $uid = Yii::$app->session->get('uid');
+        $uid = 222;
+        $id = Yii::$app->request->get('id');
+        $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
             static $crr = array();
             foreach ($brr as $k => $v) {
-                if ($v !='') {
-                    $key=explode(',', $v)[0];
-                    $crr[$key]=explode(',', $v);
+                if ($v != '') {
+                    $key = explode(',', $v)[0];
+                    $crr[$key] = explode(',', $v);
                 }
 
             }
             unset($crr[$id]);
         }
-        $model=new Format();
-        $data['notes']=$model->arrToStr($crr);
+        $model = new Format();
+        $data['notes'] = $model->arrToStr($crr);
 //        var_dump($data['notes']);
-        $notes=new Notes();
+        $notes = new Notes();
         $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
-        if($re){
-            $res['code']=1;
-            $res['message']='删除成功';
-        }else{
-            $res['code']=0;
-            $res['message']='删除失败';
+        if ($re) {
+            $res['code'] = 1;
+            $res['message'] = '删除成功';
+        } else {
+            $res['code'] = 0;
+            $res['message'] = '删除失败';
         }
 
         echo die(json_encode($res));

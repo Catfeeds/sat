@@ -76,7 +76,7 @@
         <!-- 阅读-->
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
             <div class="read-title">
-              <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
+              <p class="pull-right"><?php echo $n?></p>
               <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
             <div class="work-wrap-left pull-left">

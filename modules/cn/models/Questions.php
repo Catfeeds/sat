@@ -71,4 +71,68 @@ class Questions extends ActiveRecord{
         return $re;
     }
 
+    /* 做题进度
+    * @major科目
+    * @id 题目的id
+    * @section 题目所属的部分
+    * @tpId 试卷id
+    * @essayId 短文的id
+    */
+    public function Progress($major,$id,$section,$tpId,$essayId){
+        if ($major == 'Math1' || $major == "Math2") {
+            $a = 1;
+            $n = 1;
+        } else {
+            $a = count(Yii::$app->db->createCommand("select id from {{%questions}} where id<" . $id . " and major= '$major' and section=" . $section . " and tpId=" . $tpId . " and essayId=" . $essayId)->queryAll()) + 1;
+            $n = count(Yii::$app->db->createCommand("select id from {{%questions}} where major= '$major' and section=" . $section . " and tpId=" . $tpId . " and essayId=" . $essayId)->queryAll());
+        }
+        return "$a/$n";
+    }
+
+    /* 题目是否收藏
+    * @uid 用户id
+    * @qid 题目的id
+    */
+    public function isCollection($uid,$qid)
+    {
+        if($uid) {
+            $arr = Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=" . $uid)->queryOne();
+            $collection = explode(',', $arr['qid']);
+            if (in_array($qid, $collection)) {
+                $collection= 1;
+            } else {
+                $collection= 0;
+            }
+        }else{
+            $collection= 0;
+        }
+        return $collection;
+    }
+    /* 对讨论进行递归排序
+    * @data 原始的数组
+    * @pid  父id
+    */
+    public function getReplyList($data, $pid = 0)
+    {
+        static $arr = array();
+        foreach ($data as $key => $value) {
+            if ($value['pid'] == $pid) {
+//                $value['lev'] = $lev;
+                $arr[] = $value;
+                $this->getReplyList($data, $value['id']);
+            }
+        }
+        return $arr;
+    }
+    /* 对当前题目的谈论数据
+    * @data 原始的数组
+    * @qid  题目id
+    */
+    public function getReplyData($qid)
+    {
+        $arr = Yii::$app->db->createCommand("select re.*,u.nickname,u.username from {{%replay}} re left join {{%user}} u on u.uid=r.uid where qid=" . $qid)->queryAll();
+        $data=$this->getReplyList($arr, $pid = 0);
+        return $data;
+    }
+
 }

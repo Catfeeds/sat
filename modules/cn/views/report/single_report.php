@@ -18,7 +18,7 @@
       <h3 class="report-title">成绩</h3>
       <div class="report-score clearfix">
         <div class="score pull-left">
-          <h5><?php echo $report['part']?>成绩</h5>
+          <h5><?php if($report['part']=='Reading'){echo '阅读';}elseif($report['part']=='Math'){echo '数学';}elseif($report['part']=='Writing'){echo '文法';}?>成绩</h5>
           <p>本次得分<span><?php $major=$report["part"];if($major=='Math'){echo $report["$major"];}else{echo $report["$major"]*10;}?></span>分</p>
           <p>答对<span><?php if($report['part']=='Math'){echo $report['mathnum'];}elseif($report['part']=='Reading'){echo $report['readnum'];}else{echo $report['writenum'];}?></span>题</p>
           <p>答题所用时间<span><?php echo sprintf("%.2f",$report['time']/60)?></span>min</p>
@@ -99,7 +99,10 @@
       <div class="ranking-wrap">
         <ul class="ranking-list ranking-list1">
           <?php foreach($score as $v){?>
-            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span><span><?php if(isset($v['score'])&&isset($v['part'])){if ($v['part']!='Math'){ echo $v['score']*10;}else{echo $v['score'];}}?></span></li>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span>
+              <span><?php echo isset($v['name'])?$v['name'].'-'.$v['time'].'-'.$v['part']:''?></span>
+              <span><?php if(isset($v['score'])&&isset($v['part'])){if ($v['part']!='Math'){ echo $v['score']*10;}else{echo $v['score'];}}?></span>
+            </li>
           <?php }?>
         </ul>
         <ul class="ranking-list ranking-list2"></ul>
