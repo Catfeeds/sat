@@ -112,7 +112,7 @@ class ExerciseController extends Controller
         $data['uid']        = 32;
         $data['qid']        = Yii::$app->request->get('qId');
         $data['detail']     = strip_tags(Yii::$app->request->get('cnt'));
-        $data['pid']        = Yii::$app->request->get('pID');// 被回复的id
+        $data['pid']        = Yii::$app->request->get('pId');// 被回复的id
         $data['createTime'] = time();
         //将获取的数据保存到数据库
         if($data['uid']==false){
@@ -128,6 +128,8 @@ class ExerciseController extends Controller
                 die(json_encode($res));
             }else{
                 $re = Yii::$app->db->createCommand()->insert("{{%reply}}", $data)->execute();
+                $id=Yii::$app->db->createCommand("SELECT LAST_INSERT_ID()")->queryOne();
+                var_dump($id);
                 if($re){
                     $res['code'] = 1;
                     $res['message'] = '回复成功';
@@ -137,9 +139,13 @@ class ExerciseController extends Controller
                 }
                 if($data['pid']=0){
                     $res['num']=2;
+                    $res['pid']=0;
+                    $res['id']=$id;
 
-                }elseif($data['pid']=1){
+                }else{
                     $res['num']=1;
+                    $res['pid']=$data['pid'];
+                    $res['id']=$id;
                 }
                 $res['nickname']=$arr['nickname'];
                 $res['username']=$arr['username'];

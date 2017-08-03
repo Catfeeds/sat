@@ -230,15 +230,15 @@
             <h3>题目讨论</h3>
             <div class="dis-usr-list">
               <ul>
-                <?php foreach($dis as $v){ if($v['pid']==0){?>
+                <?php static $n=0;foreach($dis as $v){ if($v['pid']==0){$n+=1;?>
                 <li>
                   <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>
-                  <div class="dis-usr-cnt pull-left">
+                  <div class="dis-usr-cnt pull-left" data-id="<?php echo $v['id']?>">
                     <p>用户<span><?php echo $v['nickname']!=false ? $v['nickname']:$v['username']?></span>发表于<span><?php echo date('Y-m-d H:i:s',$v['createTime'])?></span></p>
                     <p><?php echo $v['detail']?></p>
                   </div>
                   <div class="dis-usr-reply pull-right">
-                    <span>1楼</span>
+                    <span><?php echo $n?>楼</span>
                     <span class="dis-reply-btn">回复</span>
                   </div>
                   <div style="clear: both;"></div>

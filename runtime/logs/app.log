@@ -4278,6 +4278,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1501727632.9356
     'REQUEST_TIME' => 1501727632
 ]
+<<<<<<< Updated upstream
 2017-08-02 17:39:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
 Stack trace:
 #0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
@@ -4292,10 +4293,27 @@ Stack trace:
 #2 {main}
 2017-08-02 17:39:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => 'v3s1dvrut3k5fe75829tkn16p1'
+=======
+2017-08-03 10:39:52 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/images/pubClass-dea_03.png".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/images/pubCl...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:39:52 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -6799,6 +6817,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1816'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1848'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/images/pubClass-dea_03.png'
     'QUERY_STRING' => ''
@@ -6806,6 +6834,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/images/pubClass-dea_03.png'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '51222'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -6848,10 +6877,55 @@ Stack trace:
 #2 {main}
 2017-08-03 10:02:48 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '60260'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/2.html'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501727992.6476
+    'REQUEST_TIME' => 1501727992
+]
+2017-08-03 10:39:53 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:39:53 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -6861,6 +6935,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1872'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1920'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -6868,6 +6952,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '51348'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -6973,10 +7058,53 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:03 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '60268'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501727993.7736
+    'REQUEST_TIME' => 1501727993
+]
+2017-08-03 10:40:12 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:40:12 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -6986,6 +7114,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1848'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -6993,6 +7131,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59794'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7033,10 +7172,53 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:10 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '60297'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501728012.2796
+    'REQUEST_TIME' => 1501728012
+]
+2017-08-03 10:40:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/images/pubClass-dea_03.png".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/images/pubCl...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:40:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7046,6 +7228,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1920'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/images/pubClass-dea_03.png'
     'QUERY_STRING' => ''
@@ -7053,6 +7245,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/images/pubClass-dea_03.png'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59810'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7095,10 +7288,55 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:11 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '60296'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/7.html'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501728017.5746
+    'REQUEST_TIME' => 1501728017
+]
+2017-08-03 10:40:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:40:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7108,6 +7346,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1848'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -7115,6 +7363,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59810'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7155,10 +7404,53 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:14 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '60297'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501728017.6506
+    'REQUEST_TIME' => 1501728017
+]
+2017-08-03 10:46:34 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/images/pubClass-dea_03.png".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/images/pubCl...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:46:34 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7168,6 +7460,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1848'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/images/pubClass-dea_03.png'
     'QUERY_STRING' => ''
@@ -7175,6 +7477,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/images/pubClass-dea_03.png'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59810'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7217,10 +7520,55 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:14 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '61060'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/7.html'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501728394.7206
+    'REQUEST_TIME' => 1501728394
+]
+2017-08-03 10:46:34 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:46:34 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7230,6 +7578,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1920'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -7237,6 +7595,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59829'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7278,10 +7637,53 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:16 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '61065'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501728394.8016
+    'REQUEST_TIME' => 1501728394
+]
+2017-08-03 10:59:07 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/images/pubClass-dea_03.png".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/images/pubCl...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:59:07 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7291,6 +7693,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1856'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/images/pubClass-dea_03.png'
     'QUERY_STRING' => ''
@@ -7298,6 +7710,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/images/pubClass-dea_03.png'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59834'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7340,10 +7753,55 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '61126'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/7.html'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729147.3976
+    'REQUEST_TIME' => 1501729147
+]
+2017-08-03 10:59:08 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:59:08 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7353,6 +7811,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -7360,6 +7828,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59834'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7400,10 +7869,53 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '61129'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729148.5236
+    'REQUEST_TIME' => 1501729148
+]
+2017-08-03 10:59:31 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/images/pubClass-dea_03.png".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/images/pubCl...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:59:31 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7413,6 +7925,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1856'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/images/pubClass-dea_03.png'
     'QUERY_STRING' => ''
@@ -7420,6 +7942,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/images/pubClass-dea_03.png'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59834'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7462,10 +7985,57 @@ Stack trace:
 #2 {main}
 2017-08-03 10:21:20 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '61169'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/7.html'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729171.2426
+    'REQUEST_TIME' => 1501729171
+]
+2017-08-03 10:59:31 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:59:31 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7475,6 +8045,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1844'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1856'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -7482,6 +8062,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '59846'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7746,10 +8327,145 @@ Stack trace:
 #2 {main}
 2017-08-03 10:52:31 [127.0.0.1][-][-][info][application] $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+    'REMOTE_PORT' => '61173'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729171.2896
+    'REQUEST_TIME' => 1501729171
+]
+2017-08-03 10:59:38 [127.0.0.1][-][-][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pid' cannot be null' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Command.php:771
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Command.php(771): PDOStatement->execute()
+#1 D:\phpStudy\WWW\sat\modules\cn\controllers\ExerciseController.php(130): yii\db\Command->execute()
+#2 [internal function]: app\modules\cn\controllers\ExerciseController->actionDiscuss()
+#3 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('discuss', Array)
+#6 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/exercise/dis...', Array)
+#7 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pid' cannot be null
+The SQL being executed was: INSERT INTO `sat_reply` (`uid`, `qid`, `detail`, `pid`, `createTime`) VALUES (32, 7, '11111111', NULL, 1501729177)' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Command.php(779): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `sa...')
+#1 D:\phpStudy\WWW\sat\modules\cn\controllers\ExerciseController.php(130): yii\db\Command->execute()
+#2 [internal function]: app\modules\cn\controllers\ExerciseController->actionDiscuss()
+#3 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('discuss', Array)
+#6 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/exercise/dis...', Array)
+#7 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1048
+    [2] => Column 'pid' cannot be null
+)
+
+2017-08-03 10:59:37 [127.0.0.1][-][-][info][application] $_GET = [
+    'qId' => '7'
+    'uId' => '32'
+    'cnt' => '11111111'
+    'pID' => '0'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
     'uid' => ''
 ]
 
 $_SERVER = [
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/exercise/discuss?qId=7&uId=32&cnt=11111111&pID=0'
+    'QUERY_STRING' => 'qId=7&uId=32&cnt=11111111&pID=0'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/exercise/discuss'
+    'REDIRECT_QUERY_STRING' => 'qId=7&uId=32&cnt=11111111&pID=0'
+    'REMOTE_PORT' => '61173'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/7.html'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729177.2596
+    'REQUEST_TIME' => 1501729177
+]
+2017-08-03 10:59:42 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-08-03 10:59:42 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
+    'uid' => ''
+]
+
+$_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7759,6 +8475,16 @@ $_SERVER = [
     'PHPRC' => 'D:/phpStudy/php55n'
     '_FCGI_SHUTDOWN_EVENT_' => '1820'
     'HTTP_CONNECTION' => 'close'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1856'
+>>>>>>> Stashed changes
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
     'QUERY_STRING' => ''
@@ -7766,6 +8492,7 @@ $_SERVER = [
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '62977'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
     'SERVER_ADMIN' => 'admin@phpStudy.net'
@@ -7942,6 +8669,59 @@ Stack trace:
 #6 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/exercise/dis...', Array)
 #7 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
 #8 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+=======
+    'REMOTE_PORT' => '61194'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729182.7036
+    'REQUEST_TIME' => 1501729182
+]
+2017-08-03 10:59:49 [127.0.0.1][-][-][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pid' cannot be null' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Command.php:771
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Command.php(771): PDOStatement->execute()
+#1 D:\phpStudy\WWW\sat\modules\cn\controllers\ExerciseController.php(130): yii\db\Command->execute()
+#2 [internal function]: app\modules\cn\controllers\ExerciseController->actionDiscuss()
+#3 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('discuss', Array)
+#6 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/exercise/dis...', Array)
+#7 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pid' cannot be null
+The SQL being executed was: INSERT INTO `sat_reply` (`uid`, `qid`, `detail`, `pid`, `createTime`) VALUES (32, 7, '11111111', NULL, 1501729188)' in D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Schema.php:595
+Stack trace:
+#0 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\db\Command.php(779): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `sa...')
+#1 D:\phpStudy\WWW\sat\modules\cn\controllers\ExerciseController.php(130): yii\db\Command->execute()
+#2 [internal function]: app\modules\cn\controllers\ExerciseController->actionDiscuss()
+#3 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('discuss', Array)
+#6 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/exercise/dis...', Array)
+#7 D:\phpStudy\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\phpStudy\WWW\sat\web\index.php(28): yii\base\Application->run()
+>>>>>>> Stashed changes
 #9 {main}
 Additional Information:
 Array
@@ -7951,6 +8731,7 @@ Array
     [2] => Column 'pid' cannot be null
 )
 
+<<<<<<< Updated upstream
 2017-08-03 11:00:14 [127.0.0.1][-][-][info][application] $_GET = [
     'qId' => '18'
     'uId' => '32'
@@ -7960,10 +8741,22 @@ Array
 
 $_COOKIE = [
     'PHPSESSID' => '9j7adbiboqu5keo7h8h8tkjp67'
+=======
+2017-08-03 10:59:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'qId' => '7'
+    'uId' => '32'
+    'cnt' => '11111111'
+    'pID' => '0'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '8pcpo8u8ifrfpdsceeohj4cae3'
+>>>>>>> Stashed changes
     'uid' => ''
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -7976,10 +8769,24 @@ $_SERVER = [
     'SCRIPT_NAME' => '/index.php'
     'REQUEST_URI' => '/cn/exercise/discuss?qId=18&uId=32&cnt=hgfhgf&pId=0'
     'QUERY_STRING' => 'qId=18&uId=32&cnt=hgfhgf&pId=0'
+=======
+    'PATH' => 'C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files (x86)\\Git\\cmd;D:\\phpStudy\\MySQL\\bin'
+    'SYSTEMROOT' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1836'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/exercise/discuss?qId=7&uId=32&cnt=11111111&pID=0'
+    'QUERY_STRING' => 'qId=7&uId=32&cnt=11111111&pID=0'
+>>>>>>> Stashed changes
     'REQUEST_METHOD' => 'GET'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'REDIRECT_URL' => '/cn/exercise/discuss'
+<<<<<<< Updated upstream
     'REDIRECT_QUERY_STRING' => 'qId=18&uId=32&cnt=hgfhgf&pId=0'
     'REMOTE_PORT' => '63653'
     'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
@@ -8010,4 +8817,35 @@ $_SERVER = [
     'PHP_SELF' => '/index.php'
     'REQUEST_TIME_FLOAT' => 1501729214.8356
     'REQUEST_TIME' => 1501729214
+=======
+    'REDIRECT_QUERY_STRING' => 'qId=7&uId=32&cnt=11111111&pID=0'
+    'REMOTE_PORT' => '61194'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.sysat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\windows'
+    'HTTP_COOKIE' => 'PHPSESSID=8pcpo8u8ifrfpdsceeohj4cae3; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.sysat.com/exercise_details/7.html'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.sysat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1501729188.1866
+    'REQUEST_TIME' => 1501729188
+>>>>>>> Stashed changes
 ]

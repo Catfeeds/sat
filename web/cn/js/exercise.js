@@ -188,7 +188,7 @@ function comment(obj,flag){
           if ((data.num == 1)&&(data.code == 1)){
             var liObj = '';
             liObj+="<li><div class='dis-usr-avatar pull-left'><img src='/cn/images/login.png' alt='用户头像'></div>"+
-              "<div class='dis-usr-cnt pull-left' data-id='22'>"+
+              "<div class='dis-usr-cnt pull-left' data-id='data.id'>"+
               "<p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>"+
               "<p>"+$('#dis-input-cnt').val()+"</p>"+
               "</div>"+
