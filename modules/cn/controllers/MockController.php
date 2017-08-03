@@ -24,8 +24,10 @@ class MockController extends Controller
         $princeton = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='princeton'")->queryAll();
         $kaplan = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='kaplan'")->queryAll();
         $barron = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='BARRON'")->queryAll();
-        $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid order by r.score limit 10")->queryAll();
-        return $this->render('index', ['data' => $data, 'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron,'score'=>$score]);
+        $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='all' order by r.score DESC limit 10")->queryAll();
+        $read=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='Reading' order by r.score DESC limit 10")->queryAll();
+        $write=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='writing' order by r.score DESC limit 10")->queryAll();
+        return $this->render('index', ['data' => $data, 'read'=>$read,'write'=>$write,'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron,'score'=>$score]);
 
     }
     // 注意事项的页面
@@ -92,7 +94,7 @@ class MockController extends Controller
         if($data['major']=='Math1'){
             $time  =55;
             $amount=38;
-            $amount=1;
+            $amount=3;
             $modle = 'mock_math';
         }elseif($data['major']=='Math2') {
             $time  =25;
@@ -100,7 +102,7 @@ class MockController extends Controller
             $amount=2;
             $modle = 'mock_math';
         }elseif ($data['major']=='Reading'){
-            $time  =62;
+            $time  =65;
             $amount=52;
             $amount=2;
             $modle = 'mock_read';

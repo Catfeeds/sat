@@ -131,16 +131,16 @@
       <div class="s-score s-score2">
         <h2>单科阅读模考</h2>
         <ul>
-          <?php foreach($score as $v){?>
-            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+          <?php foreach($read as $v){?>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']*10:''?></span></li>
           <?php }?>
         </ul>
       </div>
       <div class="s-score s-score3">
         <h2>单科文法模考</h2>
         <ul>
-          <?php foreach($score as $v){?>
-            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']:''?></span></li>
+          <?php foreach($write as $v){?>
+            <li><span><?php echo isset($v['nickname'])?$v['nickname']:$v['username']?></span><span><?php echo isset($v['name'])?$v['name'].'-'.$v['time']:''?></span><span><?php echo isset($v['score'])?$v['score']*10:''?></span></li>
           <?php }?>
         </ul>
       </div>

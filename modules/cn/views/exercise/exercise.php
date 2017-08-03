@@ -163,7 +163,7 @@
         <!-- 阅读-->
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
             <div class="read-title">
-              <p class="pull-right"><?php echo $a?>/<?php echo $n?></p>
+              <p class="pull-right"><?php echo $n?></p>
               <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
             <div class="work-wrap-left pull-left">
@@ -230,11 +230,12 @@
             <h3>题目讨论</h3>
             <div class="dis-usr-list">
               <ul>
+                <?php foreach($dis as $v){ if($v['pid']==0){?>
                 <li>
                   <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>
                   <div class="dis-usr-cnt pull-left">
-                    <p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>
-                    <p>take shape的主语应该是principles，rallies不能做take shape的主语，A错 a practice做rallies的同位语，不合适，B错 C选项应该是as once WAS prohitibed by Communist Chinese leaders, 选项里漏掉了was，C错 D里面最后的“they are”中的they指代不明，到底是中共的领导们呢，还是rallies？</p>
+                    <p>用户<span><?php echo $v['nickname']!=false ? $v['nickname']:$v['username']?></span>发表于<span><?php echo date('Y-m-d H:i:s',$v['createTime'])?></span></p>
+                    <p><?php echo $v['detail']?></p>
                   </div>
                   <div class="dis-usr-reply pull-right">
                     <span>1楼</span>
@@ -243,48 +244,51 @@
                   <div style="clear: both;"></div>
                   <div class="reply-wrap clearfix">
                     <ul>
+                      <?php foreach ($dis as $val ){if($val['pid']==$v['id']){?>
                       <li class="clearfix">
                         <img src="/cn/images/login.png" alt="用户头像">
-                        <span>lsls:</span>
-                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>
-                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>
+                        <span><?php echo $val['nickname']!=false ? $val['nickname']:$val['username']?>:</span>
+                        <p class="reply-wrap-cnt"><?php echo $val['detail']?></p>
+                        <p class="pull-right"><span><?php echo date('Y-m-d H:i:s',$val['createTime'])?></span><span class="reply-wrap-btn">回复</span></p>
                       </li>
-                      <li class="clearfix">
-                        <img src="/cn/images/login.png" alt="用户头像">
-                        <span>lsls:</span>
-                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>
-                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>
-                      </li>
+                      <?php }}?>
+<!--                      <li class="clearfix">-->
+<!--                        <img src="/cn/images/login.png" alt="用户头像">-->
+<!--                        <span>lsls:</span>-->
+<!--                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>-->
+<!--                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>-->
+<!--                      </li>-->
                     </ul>
                     <textarea cols="80" rows="4"></textarea>
                     <input class="pull-right" type="button" value="发表">
                   </div>
                 </li>
-                <li>
-                  <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>
-                  <div class="dis-usr-cnt pull-left">
-                    <p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>
-                    <p>take shape的主语应该是principles，rallies不能做take shape的主语，A错 a practice做rallies的同位语，不合适，B错 C选项应该是as once WAS prohitibed by Communist Chinese leaders, 选项里漏掉了was，C错 D里面最后的“they are”中的they指代不明，到底是中共的领导们呢，还是rallies？</p>
-                  </div>
-                  <div class="dis-usr-reply pull-right">
-                    <span>1楼</span>
-                    <span class="dis-reply-btn">回复</span>
-                  </div>
-                  <div style="clear: both;"></div>
-                  <div class="reply-wrap clearfix">
-                    <ul>
-                      <li class="clearfix">
-                        <img src="/cn/images/login.png" alt="用户头像">
-                        <span>lsls:</span>
-                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>
-                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>
-                      </li>
-                    </ul>
-                    <textarea cols="80" rows="4"></textarea>
-                    <input class="pull-right" type="button" value="发表">
-                    <div style="clear: both;"></div>
-                  </div>
-                </li>
+                <?php }}?>
+<!--                <li>-->
+<!--                  <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>-->
+<!--                  <div class="dis-usr-cnt pull-left">-->
+<!--                    <p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>-->
+<!--                    <p>take shape的主语应该是principles，rallies不能做take shape的主语，A错 a practice做rallies的同位语，不合适，B错 C选项应该是as once WAS prohitibed by Communist Chinese leaders, 选项里漏掉了was，C错 D里面最后的“they are”中的they指代不明，到底是中共的领导们呢，还是rallies？</p>-->
+<!--                  </div>-->
+<!--                  <div class="dis-usr-reply pull-right">-->
+<!--                    <span>1楼</span>-->
+<!--                    <span class="dis-reply-btn">回复</span>-->
+<!--                  </div>-->
+<!--                  <div style="clear: both;"></div>-->
+<!--                  <div class="reply-wrap clearfix">-->
+<!--                    <ul>-->
+<!--                      <li class="clearfix">-->
+<!--                        <img src="/cn/images/login.png" alt="用户头像">-->
+<!--                        <span>lsls:</span>-->
+<!--                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>-->
+<!--                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>-->
+<!--                      </li>-->
+<!--                    </ul>-->
+<!--                    <textarea cols="80" rows="4"></textarea>-->
+<!--                    <input class="pull-right" type="button" value="发表">-->
+<!--                    <div style="clear: both;"></div>-->
+<!--                  </div>-->
+<!--                </li>-->
               </ul>
             </div>
             <div class="dis-input">

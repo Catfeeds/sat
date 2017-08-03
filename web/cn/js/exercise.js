@@ -162,10 +162,10 @@ function comment(obj,flag){
     location.href = 'http://login.gmatonline.cn/cn/index?source=20&url='+location.href;
   }else{
       $.ajax({
-        url: '',
-        type: 'post',
+        url: '/cn/exercise/discuss',
+        type: 'get',
         data: {
-          tId: tId,
+          qId: tId,
           uId: uId,
           cnt: $('#dis-input-cnt').val(),
           pID: flag
@@ -175,7 +175,10 @@ function comment(obj,flag){
           if (data.num == 3){
             alert('请输入内容');
           }
-          if (data.num == 1){
+          if (data.code == 0){
+            alert('回复失败，请重试！');
+          }
+          if ((data.num == 1)&&(data.code == 1)){
             var liObj = '';
             liObj+="<li><div class='dis-usr-avatar pull-left'><img src='/cn/images/login.png' alt='用户头像'></div>"+
               "<div class='dis-usr-cnt pull-left' data-id='22'>"+
@@ -200,7 +203,7 @@ function comment(obj,flag){
               "<input class='pull-right'' type='button' value='发表'>"+
               "</div></li>";
             $('.dis-usr-list>ul').prepend(liObj);
-          } else if(data.num == 2){
+          } else if((data.num == 2)&&(data.code == 1)){
               var liObj = '';
               liObj+="<li class='clearfix'>"+
                 "<img src='/cn/images/login.png' alt='用户头像'>"+

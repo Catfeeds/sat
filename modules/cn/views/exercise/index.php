@@ -45,69 +45,35 @@
       <div class="s-right pull-right">
         <div class="s-right-subject s-right1">
           <h2>做题排行榜</h2>
+          <?php foreach ($rank as $k=>$v){if($k<3){?>
           <div class="s-rank-list">
             <div class="s-rank-img"></div>
             <div class="s-rank-name">
-              <h4>你小贱</h4>
-              <p><span>2548题</span><span>97%正确率</span></p>
+              <h4><?php echo $v['nickname']!=false?$v['nickname']:$v['username']?></h4>
+              <p><span><?php echo $v['count']?>题</span><span><?php echo sprintf("%.2f",$v['correctRate'])?>%正确率</span></p>
             </div>
           </div>
-          <div class="s-rank-list">
-            <div class="s-rank-img"></div>
-            <div class="s-rank-name">
-              <h4>里小贱</h4>
-              <p><span>2548题</span><span>97%正确率</span></p>
-            </div>
-          </div>
-          <div class="s-rank-list">
-            <div class="s-rank-img"></div>
-            <div class="s-rank-name">
-              <h4>好小贱</h4>
-              <p><span>2548题</span><span>97%正确率</span></p>
-            </div>
-          </div>
+          <?php }}?>
           <ul>
-           <li class="s-rank-box">
-             <p>nfjdangjai</p>
-             <p><span>2548题</span><span>97%正确率</span></p>
-           </li>
+            <?php foreach ($rank as $k=>$v){if($k>=3){?>
             <li class="s-rank-box">
-              <p>nfjdangjai</p>
-              <p><span>2548题</span><span>97%正确率</span></p>
+              <p><?php echo $v['nickname']!=false?$v['nickname']:$v['username']?></p>
+              <p><span><?php echo $v['count']?>题</span><span><?php echo sprintf("%.2f",$v['correctRate'])?>%正确率</span></p>
             </li>
-            <li class="s-rank-box">
-              <p>nfjdangjai</p>
-              <p><span>2548题</span><span>97%正确率</span></p>
-            </li>
-            <li class="s-rank-box">
-              <p>nfjdangjai</p>
-              <p><span>2548题</span><span>97%正确率</span></p>
-            </li>
-            <li class="s-rank-box">
-            <p>nfjdangjai</p>
-            <p><span>2548题</span><span>97%正确率</span></p>
-          </li>
-            <li class="s-rank-box">
-              <p>nfjdangjai</p>
-              <p><span>2548题</span><span>97%正确率</span></p>
-            </li>
-            <li class="s-rank-box">
-              <p>nfjdangjai</p>
-              <p><span>2548题</span><span>97%正确率</span></p>
-            </li>
+            <?php }}?>
           </ul>
         </div>
         <div class="s-right-subject s-right2">
           <h2>最新题目</h2>
           <ul>
             <?php foreach($arr as $k=>$v){?>
-            <li>
-              <h3><?php echo $v['qid']?></h3>
-              <a href="/exercise_details/<?php echo $v['qid']?>.html">
-                <?php echo $v['content']; ?>
-              </a>
-            <li>
-              <?php }?>
+              <li>
+                <h3><?php echo $v['qid']?></h3>
+                <a href="/exercise_details/<?php echo $v['qid']?>.html">
+                  <?php echo $v['content']; ?>
+                </a>
+              </li>
+            <?php }?>
           </ul>
         </div>
         <div class="s-right-code">

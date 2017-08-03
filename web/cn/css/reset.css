@@ -6,11 +6,10 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 body{
     min-width: 1000px;
 }
-strong{font-weight: normal;}
 img{border: none;vertical-align: middle;max-width: 100%;}
 html { height: 100%; width: 100%; outline: 0; -webkit-text-size-adjust:none;}
 /*-webkit-user-select: none;  webkit内核禁止文本选择*/
-span,b,em{font-weight: normal;font-style: normal;}
+span,b,em{font-style: normal;}
 input{outline: none;}
 input[type=radio]{-webkit-appearance: radio;} input[type=checkbox]{-webkit-appearance: checkbox;}
 a{text-decoration: none;color: #444444;}
