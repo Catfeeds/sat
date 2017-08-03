@@ -58,32 +58,94 @@ $(function () {
     $(this).find('.work-select').addClass('active');
   })
 //  练习、模考数学填空点击事件
-  var result = $('.math-gap-result input');
-  $('.math-btn').click(function () {
-    if ($('.math-gap-table').hasClass('sure')) {
-      return false;
-    }else {
-      result.get(0).value += $(this).html();
+  /**
+   * 注册数学做题页面虚拟键盘事件
+   */
+  function regMathEvents() {
+
+    //数学填空按钮事件
+    $(".dtk").bind("click", confirmBtnEvent);
+
+    //数学填空事件
+    $(".math_tiankong").find("a").bind("click", numBtnEvent);
+
+  }
+
+//数学填空按钮事件
+  function confirmBtnEvent() {
+    var btnName = $(this).attr("name");
+    var parent = $(this).parent().parent().parent();
+    var queNo = $(parent).data("num");
+    queNo = queNo.substr(3);
+    showPointer(queNo);
+    var queId = $(parent).attr("data-id")
+    if(btnName == "deleteValue"){
+      $(parent).find("a").removeClass("cut");
+      $(parent).find(".mathValue").eq(0).text("");
+      deleteValue(queId, queNo);
+      $(parent).find(".dtk").each(function(){$(this).addClass("invalid");});
+      $(parent).find(".dtk").each(function(){$(this).unbind();});
+
+      //恢复a标签的事件
+      $(parent).find("a").bind("click", numBtnEvent);
+      //恢复a标签的样式
+      $(parent).find("a").each(function(){
+        if($(this).hasClass("invalcut")) {
+          $(this).removeClass("invalcut");
+        } else {
+          $(this).removeClass("invalcur");
+        }
+      });
     }
-  })
-  $('.math-clear').click(function () {
-    if ($('.math-gap-table').hasClass('sure')) {
-      return false;
-    }else {
-      result.val('');
+    if(btnName == "confirmValue") {
+      var ans = $(parent).find(".mathValue").eq(0).text();
+      $.ajax({
+        url: basePath + "/web/wk/quesolve/chooseAns.ajax",
+        type: "POST",
+        dataType: "json",
+        data: {workId: $("#workId").val(), queId: queId, ans: ans, wkType: $("#wkType").val()},
+        success: function(data) {
+          if(data == 1) {
+            $("#a"+queNo).addClass("done");
+            requestExplain2(queNo, queId, parent, "click");
+            processBar();
+          }
+        },
+        error: function(data) {
+          console.log("操作失败，请重试！");
+        }
+      });
     }
-  })
-  $('.math-sure').click(function () {
-    $('.math-gap-table tr').addClass('sure');
-    $('.math-gap-table').addClass('sure');
-    $('.math-gap-table td').hover(function () {
-      $(".math-gap-table td:not('.math-gap-result')").css({
-        'color': '#ccc',
-        'backgroundColor': '#f1f1f1'
-      })
-    });
-    $('.math-gap-table .math-gap-result').css('color','rgb(54,178,251)');
-  })
+  }
+
+//数学填空事件
+
+//  var result = $('.math-gap-result input');
+//  $('.math-btn').click(function () {
+//    if ($('.math-gap-table').hasClass('sure')) {
+//      return false;
+//    }else {
+//      result.get(0).value += $(this).html();
+//    }
+//  })
+//  $('.math-clear').click(function () {
+//    if ($('.math-gap-table').hasClass('sure')) {
+//      return false;
+//    }else {
+//      result.val('');
+//    }
+//  })
+//  $('.math-sure').click(function () {
+//    $('.math-gap-table tr').addClass('sure');
+//    $('.math-gap-table').addClass('sure');
+//    $('.math-gap-table td').hover(function () {
+//      $(".math-gap-table td:not('.math-gap-result')").css({
+//        'color': '#ccc',
+//        'backgroundColor': '#f1f1f1'
+//      })
+//    });
+//    $('.math-gap-table .math-gap-result').css('color','rgb(54,178,251)');
+//  })
   //  侧边栏
   $('.side-bar li').mousemove(function () {
     $('.side-bar li').children('div').hide();

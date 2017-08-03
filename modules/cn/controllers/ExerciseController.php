@@ -129,7 +129,7 @@ class ExerciseController extends Controller
             }else{
                 $re = Yii::$app->db->createCommand()->insert("{{%reply}}", $data)->execute();
                 $id=Yii::$app->db->createCommand("SELECT LAST_INSERT_ID()")->queryOne();
-                var_dump($id);
+//                var_dump($id);
                 if($re){
                     $res['code'] = 1;
                     $res['message'] = '回复成功';
@@ -137,16 +137,14 @@ class ExerciseController extends Controller
                     $res['code'] = 0;
                     $res['message'] = '请重试';
                 }
-                if($data['pid']=0){
-                    $res['num']=2;
-                    $res['pid']=0;
-                    $res['id']=$id;
-
-                }else{
+                if($data['pid']==0){
                     $res['num']=1;
+                    $res['pid']=0;
+                }else{
+                    $res['num']=2;
                     $res['pid']=$data['pid'];
-                    $res['id']=$id;
                 }
+                $res['id']=$id;
                 $res['nickname']=$arr['nickname'];
                 $res['username']=$arr['username'];
                 $res['content']=$data['detail'] ;

@@ -49,24 +49,24 @@
               <tr>
                 <th colspan="2" class="math-value"></th>
                 <th colspan="2">
-                  <button value="X"></button>
-                  <button value="确定"></button>
+                  <button class="btn-type btn-invaild" value="X">X</button>
+                  <button class="btn-type btn-invaild" value="确定">确定</button>
                 </th>
               </tr>
               <tr class="head">
-                <td>
+                <td class="cut">
                   <br>
                   <a class="col1" href="javascript:void(0)">.</a>
                 </td>
-                <td>
+                <td class="cut">
                   <a class="col2" href="javascript:void(0)">/</a>
                   <a class="col2" href="javascript:void(0)">.</a>
                 </td>
-                <td>
+                <td class="cut">
                   <a class="col3" href="javascript:void(0)">/</a>
                   <a class="col3" href="javascript:void(0)">.</a>
                 </td>
-                <td>
+                <td class="cut">
                   <br>
                   <a class="col4" href="javascript:void(0)">.</a>
                 </td>
