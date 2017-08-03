@@ -131,7 +131,7 @@
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     height: 38px;
-    line-height: 38px;
+    /*line-height: 38px;*/
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -180,8 +180,17 @@
     margin: 0 2px;
     font-family: "Microsoft Yahei";
 }
-.btn-invaild {
+.btn-invalid {
     background-color: #bbb !important;
+}
+.btn-invalcur {
+    border: 2px solid #bbb !important;
+    color: #bbb !important;
+}
+.btn-invalcut {
+    border: 2px solid #bbb !important;
+    background-color: #bbb !important;
+    color: #fff !important;
 }
 /*数学填空*/
 .math-gap-table {

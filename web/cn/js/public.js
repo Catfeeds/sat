@@ -58,67 +58,9 @@ $(function () {
     $(this).find('.work-select').addClass('active');
   })
 //  练习、模考数学填空点击事件
-  /**
-   * 注册数学做题页面虚拟键盘事件
-   */
-  function regMathEvents() {
-
-    //数学填空按钮事件
-    $(".dtk").bind("click", confirmBtnEvent);
-
-    //数学填空事件
-    $(".math_tiankong").find("a").bind("click", numBtnEvent);
-
-  }
-
-//数学填空按钮事件
-  function confirmBtnEvent() {
-    var btnName = $(this).attr("name");
-    var parent = $(this).parent().parent().parent();
-    var queNo = $(parent).data("num");
-    queNo = queNo.substr(3);
-    showPointer(queNo);
-    var queId = $(parent).attr("data-id")
-    if(btnName == "deleteValue"){
-      $(parent).find("a").removeClass("cut");
-      $(parent).find(".mathValue").eq(0).text("");
-      deleteValue(queId, queNo);
-      $(parent).find(".dtk").each(function(){$(this).addClass("invalid");});
-      $(parent).find(".dtk").each(function(){$(this).unbind();});
-
-      //恢复a标签的事件
-      $(parent).find("a").bind("click", numBtnEvent);
-      //恢复a标签的样式
-      $(parent).find("a").each(function(){
-        if($(this).hasClass("invalcut")) {
-          $(this).removeClass("invalcut");
-        } else {
-          $(this).removeClass("invalcur");
-        }
-      });
-    }
-    if(btnName == "confirmValue") {
-      var ans = $(parent).find(".mathValue").eq(0).text();
-      $.ajax({
-        url: basePath + "/web/wk/quesolve/chooseAns.ajax",
-        type: "POST",
-        dataType: "json",
-        data: {workId: $("#workId").val(), queId: queId, ans: ans, wkType: $("#wkType").val()},
-        success: function(data) {
-          if(data == 1) {
-            $("#a"+queNo).addClass("done");
-            requestExplain2(queNo, queId, parent, "click");
-            processBar();
-          }
-        },
-        error: function(data) {
-          console.log("操作失败，请重试！");
-        }
-      });
-    }
-  }
-
-//数学填空事件
+  //数学填空事件
+  $(".btn-type").bind("click", confirmBtnEvent);
+  $(".math-table").find("a").bind("click", numBtnEvent);
 
 //  var result = $('.math-gap-result input');
 //  $('.math-btn').click(function () {
@@ -264,6 +206,76 @@ function leftCode(){
   $.post('/user/api/phone-code',{type:12,phoneNum:tel},function(re){
     alert(re.message);
   },"json")
+}
+
+//数学填空按钮事件
+function confirmBtnEvent() {
+  var btnName = $(this).attr("name");
+  var parent = $(this).parent().parent().parent();
+  var queNo = $(parent).data("id");
+  if(btnName == "delBtn"){
+    $(parent).find("a").removeClass("cut");
+    $(parent).find(".math-value").eq(0).text("");
+    $(parent).find(".btn-type").each(function(){$(this).addClass("btn-invalid");});
+    $(parent).find(".btn-type").each(function(){$(this).unbind();});
+
+    //恢复a标签的事件
+    $(parent).find("a").bind("click", numBtnEvent);
+    //恢复a标签的样式
+    $(parent).find("a").each(function(){
+      if($(this).hasClass("btn-invalcut")) {
+        $(this).removeClass("btn-invalcut");
+      } else {
+        $(this).removeClass("btn-invalcur");
+      }
+    });
+  }
+  if(btnName == "sureBtn") {
+    var ans = $(parent).find(".math-value").eq(0).text();
+    $(parent).find(".btn-type").eq(1).addClass("btn-invalid");
+    $(parent).find("a").each(function(){
+      if($(this).hasClass("cut")) {
+        $(this).addClass("btn-invalcut");
+      } else {
+        $(this).addClass("btn-invalcur");
+      }
+    });
+    $(parent).find("a").unbind();
+    $(parent).find(".btn-type").eq(1).unbind();
+    //$.ajax({
+    //  url: basePath + "/web/wk/quesolve/chooseAns.ajax",
+    //  type: "POST",
+    //  dataType: "json",
+    //  data: {workId: $("#workId").val(), queId: queId, ans: ans, wkType: $("#wkType").val()},
+    //  success: function(data) {
+    //    if(data == 1) {
+    //      $("#a"+queNo).addClass("done");
+    //      requestExplain2(queNo, queId, parent, "click");
+    //      processBar();
+    //    }
+    //  },
+    //  error: function(data) {
+    //    console.log("操作失败，请重试！");
+    //  }
+    //});
+  }
+}
+
+//数学填空事件
+function numBtnEvent() {
+  var parent = $(this).parent().parent().parent();
+  if($(parent).find(".btn-type").eq(1).hasClass("btn-invalid")) {
+    $(parent).find(".btn-type").each(function() {
+      $(this).removeClass("btn-invalid");
+    });
+    //恢复确认键的事件
+    $(parent).find(".btn-type").bind("click", confirmBtnEvent);
+  }
+  var queNo = $(parent).data("id");
+  var className = $(this).attr("class");
+  $(parent).find("."+className).removeClass("cut");
+  $(this).addClass("cut");
+  $(parent).find(".math-value").eq(0).text($(parent).find(".col1.cut").text()+$(parent).find(".col2.cut").text()+$(parent).find(".col3.cut").text()+$(parent).find(".col4.cut").text());
 }
 //禁止右键
 // function stop(){

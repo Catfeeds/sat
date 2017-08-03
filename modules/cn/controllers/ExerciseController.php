@@ -121,6 +121,7 @@ class ExerciseController extends Controller
             die;
         }else{
             $arr = Yii::$app->db->createCommand("select nickname,username from  {{%user}} where uid=" .$data['uid'])->queryOne();
+//            var_dump($data['pid']);
             if($data['detail']==false){
                 $res['code'] = 0;
                 $res['num']  = 3;
@@ -128,14 +129,14 @@ class ExerciseController extends Controller
                 die(json_encode($res));
             }else{
                 $re = Yii::$app->db->createCommand()->insert("{{%reply}}", $data)->execute();
-                $id=Yii::$app->db->createCommand("SELECT LAST_INSERT_ID()")->queryOne();
-//                var_dump($id);
+                $rid= (array)(Yii::$app->db->createCommand("SELECT LAST_INSERT_ID()")->queryOne());
+                $id=$rid['LAST_INSERT_ID()'];
                 if($re){
                     $res['code'] = 1;
                     $res['message'] = '回复成功';
                 }else{
                     $res['code'] = 0;
-                    $res['message'] = '请重试';
+                    $res['message'] = '回复失败，请重试！';
                 }
                 if($data['pid']==0){
                     $res['num']=1;
@@ -148,6 +149,7 @@ class ExerciseController extends Controller
                 $res['nickname']=$arr['nickname'];
                 $res['username']=$arr['username'];
                 $res['content']=$data['detail'] ;
+                $res['floor']=count(Yii::$app->db->createCommand("select id from  {{%reply}} where pid=0 and qid=".$data['qid'])->queryAll());
                 $res['time']=date('Y-m-d H:i:s',$data['createTime']);
                 echo die(json_encode($res));
             }

@@ -117,10 +117,11 @@ function upTime() {
 }
 //提交题目
 function ajaxEvent(obj,u) {
-  var _this = $(obj);
+  var _this = $(obj),
+    ans = '';
   if($('.read-exam').css('display') == 'none') {
     if($('.math-exam .work-que-list').css('display') == 'none') {
-      var ans = $('.math-gap-result input').val();
+      ans = $('.math-table .math-value').text();
     } else {
       ans = $('.math-exam .work-select.active').data('id');
     }
@@ -165,7 +166,6 @@ function comment(obj,flag){
         pId = _this.parent().siblings('.dis-usr-cnt').data('id');
 
   }
-  console.log(pId);
   if (uId == ''){
     var pos = location.href;
     location.href = 'http://login.gmatonline.cn/cn/index?source=20&url='+location.href;
@@ -196,33 +196,33 @@ function comment(obj,flag){
               "<p>"+$('#dis-input-cnt').val()+"</p>"+
               "</div>"+
               "<div class='dis-usr-reply pull-right'>"+
-              "<span>1楼</span>"+
+              "<span>"+data.floor+"楼</span>"+
               "<span class='dis-reply-btn'>回复</span>"+
               "</div>"+
               "<div style='clear: both;'></div>"+
               "<div class='reply-wrap clearfix'>"+
-              //"<ul>"+
+              "<ul>"+
               //"<li class='clearfix'>"+
               //"<img src='/cn/images/login.png' alt='用户头像'>"+
               //"<span>lsls:</span>"+
               //"<p class='reply-wrap-cnt'>fnkdnkmkdmaldl;g;</p>"+
               //"<p class='pull-right'><span>2017-10-22 08:30:20</span><span class='reply-wrap-btn'>回复</span></p>"+
               //"</li>"+
-              //"</ul>"+
+              "</ul>"+
               "<textarea name='' id='reply-input-cnt' cols='80' rows='4'></textarea>"+
               "<input class='pull-right'' type='button' value='发表'>"+
               "</div></li>";
             $('.dis-usr-list>ul').append(liObj);
           } else if((data.num == 2)&&(data.code == 1)){
-            console.log(_this.parent().children('ul'));
-              //var liObj = '';
-              //liObj+="<li class='clearfix'>"+
-              //  "<img src='/cn/images/login.png' alt='用户头像'>"+
-              //  "<span>lsls:</span>"+
-              //  "<p class='reply-wrap-cnt'>"+_this.siblings('textarea').val()+"</p>"+
-              //  "<p class='pull-right'><span>"+data.time+"</span><span class='reply-wrap-btn'>回复</span></p>"+
-              //  "</li>";
-              //_this.parent().children('ul').append(liObj);
+            console.log(_this.parent().children('ul').children());
+              var liObj = '';
+              liObj+="<li class='clearfix'>"+
+                "<img src='/cn/images/login.png' alt='用户头像'>"+
+                "<span>lsls:</span>"+
+                "<p class='reply-wrap-cnt'>"+_this.siblings('textarea').val()+"</p>"+
+                "<p class='pull-right'><span>"+data.time+"</span><span class='reply-wrap-btn'>回复</span></p>"+
+                "</li>";
+              _this.parent().children('ul').append(liObj);
           }
         },
         complete: function () {

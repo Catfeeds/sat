@@ -22,11 +22,11 @@
               <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
             <h2 class="s-num pull-left"><?php echo $data['qid']?>.</h2>
-            <div class="s-title" id="subjectId" data-id="<?php echo $data['qid']?>">
+            <div class="s-title">
               <?php echo $data['content']?>
             </div>
             <!-- 数学选择-->
-            <ul class="work-que-list" <?php if($data['isFilling']==1){echo 'style="display:none;"';}?>>
+            <ul class="work-que-list" id="subjectId" data-id="<?php echo $data['qid']?>" <?php if($data['isFilling']==1){echo 'style="display:none;"';}?>>
               <li class="work-que-wrap">
                 <div class="work-select work-select" data-id="A">A</div>
                 <div class="work-que"> <?php echo $data['keyA']?> </div>
@@ -45,120 +45,95 @@
               </li>
             </ul>
             <!--数学填空-->
-            <table class="math-table">
-              <tr>
-                <th colspan="2" class="math-value"></th>
-                <th colspan="2">
-                  <button class="btn-type btn-invaild" value="X">X</button>
-                  <button class="btn-type btn-invaild" value="确定">确定</button>
-                </th>
-              </tr>
-              <tr class="head">
-                <td class="cut">
-                  <br>
-                  <a class="col1" href="javascript:void(0)">.</a>
-                </td>
-                <td class="cut">
-                  <a class="col2" href="javascript:void(0)">/</a>
-                  <a class="col2" href="javascript:void(0)">.</a>
-                </td>
-                <td class="cut">
-                  <a class="col3" href="javascript:void(0)">/</a>
-                  <a class="col3" href="javascript:void(0)">.</a>
-                </td>
-                <td class="cut">
-                  <br>
-                  <a class="col4" href="javascript:void(0)">.</a>
-                </td>
-              </tr>
-              <tr>
-                <td class="zero"><br></td>
-                <td class="zero"><a class="col2" href="javascript:void(0)">0</a></td>
-                <td class="zero"><a class="col3" href="javascript:void(0)">0</a></td>
-                <td class="zero"><a class="col4" href="javascript:void(0)">0</a></td>
-              </tr>
-              <tr>
-                <td><a class="col1" href="javascript:void(0)">1</a></td>
-                <td><a class="col2" href="javascript:void(0)">1</a></td>
-                <td><a class="col3" href="javascript:void(0)">1</a></td>
-                <td><a class="col4" href="javascript:void(0)">1</a></td>
-              </tr>
-              <tr>
-                <td><a class="col1" href="javascript:void(0)">2</a></td>
-                <td><a class="col2" href="javascript:void(0)">2</a></td>
-                <td><a class="col3" href="javascript:void(0)">2</a></td>
-                <td><a class="col4" href="javascript:void(0)">2</a></td>
-              </tr>
-              <tr>
-                <td><a class="col1" href="javascript:void(0)">3</a></td>
-                <td><a class="col2" href="javascript:void(0)">3</a></td>
-                <td><a class="col3" href="javascript:void(0)">3</a></td>
-                <td><a class="col4" href="javascript:void(0)">3</a></td>
-              </tr>
-              <tr>
-                <td><a class="col1" href="javascript:void(0)">4</a></td>
-                <td><a class="col2" href="javascript:void(0)">4</a></td>
-                <td><a class="col3" href="javascript:void(0)">4</a></td>
-                <td><a class="col4" href="javascript:void(0)">4</a></td>
-              </tr>
-              <tr>
-                <td><a class="col4" href="javascript:void(0)">5</a></td>
-                <td><a class="col2" href="javascript:void(0)">5</a></td>
-                <td><a class="col3" href="javascript:void(0)">5</a></td>
-                <td><a class="col4" href="javascript:void(0)">5</a></td>
-              </tr>
-              <tr>
-                <td><a class="col1" href="javascript:void(0)">6</a></td>
-                <td><a class="col2" href="javascript:void(0)">6</a></td>
-                <td><a class="col3" href="javascript:void(0)">6</a></td>
-                <td><a class="col4" href="javascript:void(0)">6</a></td>
-              </tr>
-              <tr>
-                <td><a class="col6" href="javascript:void(0)">7</a></td>
-                <td><a class="col2" href="javascript:void(0)">7</a></td>
-                <td><a class="col3" href="javascript:void(0)">7</a></td>
-                <td><a class="col4" href="javascript:void(0)">7</a></td>
-              </tr>
-              <tr>
-                <td><a class="col7" href="javascript:void(0)">8</a></td>
-                <td><a class="col2" href="javascript:void(0)">8</a></td>
-                <td><a class="col3" href="javascript:void(0)">8</a></td>
-                <td><a class="col4" href="javascript:void(0)">8</a></td>
-              </tr>
-              <tr>
-                <td><a class="col8" href="javascript:void(0)">9</a></td>
+            <table class="math-table" <?php if($data['isFilling']==0){echo 'style="display:none;"';}?>>
+              <tbody id="subjectId" data-id="<?php echo $data['qid']?>">
+                <tr>
+                  <th colspan="2" class="math-value"></th>
+                  <th colspan="2">
+                    <input class="btn-type btn-invalid" type="button" name="delBtn" value="X">
+                    <input class="btn-type btn-invalid" type="button" name="sureBtn" value="确定">
+                  </th>
+                </tr>
+                <tr class="head">
+                  <td class="cut">
+                    <br>
+                    <a class="col1" href="javascript:void(0)">.</a>
+                  </td>
+                  <td class="cut">
+                    <a class="col2" href="javascript:void(0)">/</a>
+                    <a class="col2" href="javascript:void(0)">.</a>
+                  </td>
+                  <td class="cut">
+                    <a class="col3" href="javascript:void(0)">/</a>
+                    <a class="col3" href="javascript:void(0)">.</a>
+                  </td>
+                  <td class="cut">
+                    <br>
+                    <a class="col4" href="javascript:void(0)">.</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="zero"><br></td>
+                  <td class="zero"><a class="col2" href="javascript:void(0)">0</a></td>
+                  <td class="zero"><a class="col3" href="javascript:void(0)">0</a></td>
+                  <td class="zero"><a class="col4" href="javascript:void(0)">0</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">1</a></td>
+                  <td><a class="col2" href="javascript:void(0)">1</a></td>
+                  <td><a class="col3" href="javascript:void(0)">1</a></td>
+                  <td><a class="col4" href="javascript:void(0)">1</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">2</a></td>
+                  <td><a class="col2" href="javascript:void(0)">2</a></td>
+                  <td><a class="col3" href="javascript:void(0)">2</a></td>
+                  <td><a class="col4" href="javascript:void(0)">2</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">3</a></td>
+                  <td><a class="col2" href="javascript:void(0)">3</a></td>
+                  <td><a class="col3" href="javascript:void(0)">3</a></td>
+                  <td><a class="col4" href="javascript:void(0)">3</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">4</a></td>
+                  <td><a class="col2" href="javascript:void(0)">4</a></td>
+                  <td><a class="col3" href="javascript:void(0)">4</a></td>
+                  <td><a class="col4" href="javascript:void(0)">4</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">5</a></td>
+                  <td><a class="col2" href="javascript:void(0)">5</a></td>
+                  <td><a class="col3" href="javascript:void(0)">5</a></td>
+                  <td><a class="col4" href="javascript:void(0)">5</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">6</a></td>
+                  <td><a class="col2" href="javascript:void(0)">6</a></td>
+                  <td><a class="col3" href="javascript:void(0)">6</a></td>
+                  <td><a class="col4" href="javascript:void(0)">6</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">7</a></td>
+                  <td><a class="col2" href="javascript:void(0)">7</a></td>
+                  <td><a class="col3" href="javascript:void(0)">7</a></td>
+                  <td><a class="col4" href="javascript:void(0)">7</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">8</a></td>
+                  <td><a class="col2" href="javascript:void(0)">8</a></td>
+                  <td><a class="col3" href="javascript:void(0)">8</a></td>
+                  <td><a class="col4" href="javascript:void(0)">8</a></td>
+                </tr>
+                <tr>
+                <td><a class="col1" href="javascript:void(0)">9</a></td>
                 <td><a class="col2" href="javascript:void(0)">9</a></td>
                 <td><a class="col3" href="javascript:void(0)">9</a></td>
                 <td><a class="col4" href="javascript:void(0)">9</a></td>
               </tr>
+              </tbody>
             </table>
-<!--            <table class="math-gap-table" border="1" align="center" --><?php //if($data['isFilling']==0){echo 'style="display:none;"';}?><!-->-->
-<!--              <tr>-->
-<!--                <td class="math-gap-result" colspan="4"><input type="text"></td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="math-btn">7</td>-->
-<!--                <td class="math-btn">8</td>-->
-<!--                <td class="math-btn">9</td>-->
-<!--                <td class="math-sure" rowspan="2">确定</td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="math-btn">4</td>-->
-<!--                <td class="math-btn">5</td>-->
-<!--                <td class="math-btn">6</td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="math-btn">1</td>-->
-<!--                <td class="math-btn">2</td>-->
-<!--                <td class="math-btn">3</td>-->
-<!--                <td class="math-clear" rowspan="2">清空</td>-->
-<!--              </tr>-->
-<!--              <tr>-->
-<!--                <td class="math-btn">0</td>-->
-<!--                <td class="math-btn">.</td>-->
-<!--                <td class="math-btn">/</td>-->
-<!--              </tr>-->
-<!--            </table>-->
           </div>
         <!-- 阅读-->
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
@@ -252,43 +227,12 @@
                         <p class="pull-right"><span><?php echo date('Y-m-d H:i:s',$val['createTime'])?></span><span class="reply-wrap-btn">回复</span></p>
                       </li>
                       <?php }}?>
-<!--                      <li class="clearfix">-->
-<!--                        <img src="/cn/images/login.png" alt="用户头像">-->
-<!--                        <span>lsls:</span>-->
-<!--                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>-->
-<!--                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>-->
-<!--                      </li>-->
                     </ul>
                     <textarea cols="80" rows="4"></textarea>
                     <input class="pull-right" type="button" value="发表">
                   </div>
                 </li>
                 <?php }}?>
-<!--                <li>-->
-<!--                  <div class="dis-usr-avatar pull-left"><img src="/cn/images/login.png" alt="用户头像"></div>-->
-<!--                  <div class="dis-usr-cnt pull-left">-->
-<!--                    <p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>-->
-<!--                    <p>take shape的主语应该是principles，rallies不能做take shape的主语，A错 a practice做rallies的同位语，不合适，B错 C选项应该是as once WAS prohitibed by Communist Chinese leaders, 选项里漏掉了was，C错 D里面最后的“they are”中的they指代不明，到底是中共的领导们呢，还是rallies？</p>-->
-<!--                  </div>-->
-<!--                  <div class="dis-usr-reply pull-right">-->
-<!--                    <span>1楼</span>-->
-<!--                    <span class="dis-reply-btn">回复</span>-->
-<!--                  </div>-->
-<!--                  <div style="clear: both;"></div>-->
-<!--                  <div class="reply-wrap clearfix">-->
-<!--                    <ul>-->
-<!--                      <li class="clearfix">-->
-<!--                        <img src="/cn/images/login.png" alt="用户头像">-->
-<!--                        <span>lsls:</span>-->
-<!--                        <p class="reply-wrap-cnt">fnkdnkmkdmaldl;g;</p>-->
-<!--                        <p class="pull-right"><span>2017-10-22 08:30:20</span><span class="reply-wrap-btn">回复</span></p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                    <textarea cols="80" rows="4"></textarea>-->
-<!--                    <input class="pull-right" type="button" value="发表">-->
-<!--                    <div style="clear: both;"></div>-->
-<!--                  </div>-->
-<!--                </li>-->
               </ul>
             </div>
             <div class="dis-input">

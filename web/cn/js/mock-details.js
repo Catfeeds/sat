@@ -41,7 +41,6 @@ $(function () {
         $('.shade-wrap').hide();
     })
     $('.exit-out').click(function () {
-        clearSession('submit');
         exitOut();
     })
     //跳过休息点击事件
@@ -168,18 +167,6 @@ function workShade(obj) {
 function autoSubmit() {
     workShade('.auto-wrap');
 }
-//数学填空题
-// function mathGap() {
-//   var result = $('.math-gap-result input'),
-//       btn = $('.math-btn');
-//   console.log(btn);
-//   btn.each(function () {
-//     $(this).click(function () {
-//       console.log('a');
-//       result.get(0).value = $(this).html();
-//     })
-//   })
-// }
 //下一题、提交时进入进度、倒计时函数
 function process() {
     sessionStorage.countTime = TIME;
@@ -211,10 +198,11 @@ function clearSession(tag) {
 //下一题、提交
 function ckBefore(flag,tag) {
     //判断是否选择题
-    if ($('.math-gap-table').css('display') == undefined) {
-        var ans = $('.work-select.active').data('id');//获取答案
+    var ans = '';
+    if ($('.math-table').css('display') == undefined) {
+        ans = $('.work-select.active').data('id');//获取答案
     } else {
-        ans = $('.math-gap-result input').val();
+        ans = $('.math-table .math-value').text();
         if (ans == ''){
             ans = 'undefined';
         }
@@ -231,7 +219,7 @@ function ckBefore(flag,tag) {
     } else {
         process();
         var pos = location.search.indexOf('m=');
-        var subId = $('.common-id').data('id'),//题目ID
+        var subId = $('#subjectId').data('id'),//题目ID
           testId = $('#testId').val(),//试卷ID
           subject = $('#subject').val(),//所属科目
           classify = $('#classify').val(),//题目类型（跨学科）
@@ -345,6 +333,7 @@ function ckBefore(flag,tag) {
 function exitOut() {
     $.get('/cn/mock/leave',function(obj){
         if (obj) {
+            clearSession('submit');
             window.location.href = '/mock.html';
         }
     },'json')
