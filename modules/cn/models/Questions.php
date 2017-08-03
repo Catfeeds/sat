@@ -130,7 +130,7 @@ class Questions extends ActiveRecord{
     */
     public function getReplyData($qid)
     {
-        $arr = Yii::$app->db->createCommand("select re.*,u.nickname,u.username from {{%replay}} re left join {{%user}} u on u.uid=r.uid where qid=" . $qid)->queryAll();
+        $arr = Yii::$app->db->createCommand("select re.*,u.nickname,u.username from {{%reply}} re left join {{%user}} u on u.uid=re.uid where qid=" . $qid)->queryAll();
         $data=$this->getReplyList($arr, $pid = 0);
         return $data;
     }

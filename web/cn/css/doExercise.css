@@ -58,24 +58,6 @@
   padding-right: 10px;
   border-right: 1px dashed #ccc;
 }
-/*.s-exam .read-exam,*/
-/*.s-exam .read-exam .work-wrap-left,*/
-/*.s-exam .read-exam .work-wrap-right {*/
-  /*width: 100%;*/
-  /*overflow: hidden;*/
-/*}*/
-/*.s-exam .read-exam .work-wrap-left {*/
-  /*height: 400px;*/
-  /*overflow-y: auto;*/
-/*}*/
-/*.read-exam .work-wrap-left .read-text {*/
-  /*width: 100%;*/
-/*}*/
-.correct-ans-hide {
-  padding-top: 20px;
-  color: rgb(54,178,251);
-  display: none;
-}
 /*收藏、查看答案、上下题*/
 .s-exam .s-btn-list {
   margin: 40px 0;
@@ -106,14 +88,32 @@
 }
 /*题目解析*/
 .s-exam .s-answer-show {
+  width: 680px;
   display: none;
 }
-.s-exam .s-answer-show h3 {
+.s-exam .s-answer-show>h3,
+.discuss-wrap>h3 {
   font-size: 16px;
 }
 .s-exam .s-answer-show .s-answer-cnt {
   padding: 10px;
   border: 1px solid #000;
+}
+.dis-commit {
+  width: 680px;
+}
+.dis-commit>div {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(54,178,251);
+  color: #fff;
+  cursor: pointer;
+}
+.dis-commit>div i{
+  padding-right: 10px;
 }
 /*右侧栏*/
 .exer-side {
@@ -149,24 +149,80 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/*.s-exercise .s-adv .s-adv-img {*/
-  /*width: 100%;*/
-  /*height: 145px;*/
-  /*-webkit-box-shadow: 0 0 3px #000;*/
-  /*-moz-box-shadow: 0 0 3px #000;*/
-  /*box-shadow: 0 0 3px #000;*/
-/*}*/
-/*.s-exercise .s-adv .s-code {*/
-  /*margin: 30px 0;*/
-  /*text-align: center;*/
-/*}*/
-/*.s-exercise .s-adv .s-code img {*/
-  /*width: 70%;*/
-  /*font-size: 16px;*/
-/*}*/
 /**
-  遮罩
+  题目讨论
 **/
+.discuss-wrap {
+  width: 680px;
+  background-color: #ccc;
+}
+.dis-usr-list {
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(54,178,251);
+}
+.dis-usr-list>ul>li {
+  margin-bottom: 20px;
+}
+.dis-usr-avatar {
+  margin-right: 10px;
+}
+.dis-usr-avatar>img {
+  width: 86px;
+  height: 86px;
+}
+.dis-usr-cnt {
+  width: 85%;
+  font-size: 14px;
+}
+.dis-usr-cnt>p:nth-of-type(1){
+  color: #999;
+}
+.dis-reply-btn {
+  padding: 5px 10px;
+  /*background-color: #CDE4EE;*/
+  background-color: #fff;
+  cursor: pointer;
+  color: rgb(54,178,251);
+}
+.reply-wrap {
+  padding: 20px 30px;
+  background-color: #CDE4EE;
+  display: none;
+}
+.reply-wrap>ul>li {
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #999;
+}
+.reply-wrap>ul>li:last-child {
+  margin: 0;
+}
+.reply-wrap>ul img {
+  width: 30px;
+  height: 30px;
+}
+.reply-wrap>ul span {
+  color: #999;
+}
+.reply-wrap>ul .reply-wrap-cnt {
+  margin-left: 35px;
+}
+.reply-wrap>ul p:last-child {
+  color: #999;
+}
+.reply-wrap>ul p:last-child span:last-child {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.dis-input {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.dis-commit {
+  padding: 0 20px;
+}
+  /**
+    遮罩
+  **/
 .work-shade {
   /*display: block;*/
 }

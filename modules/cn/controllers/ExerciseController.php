@@ -55,6 +55,7 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis=$q->getReplyData($id);
+//        var_dump($dis);die;
         return $this->render('exercise', ['data' => $data, 'dis'=>$dis ,'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
     }
@@ -107,21 +108,47 @@ class ExerciseController extends Controller
 
     public function actionDiscuss()
     {
-        $data['uid']        = Yii::$app->request->get('uid');
-        $data['qid']        = Yii::$app->request->get('qid');
-        $data['detail']     = Yii::$app->request->get('content');
-        $data['pid']        = Yii::$app->request->get('pid');
+        $data['uid']        = Yii::$app->request->get('uId');
+        $data['uid']        = 32;
+        $data['qid']        = Yii::$app->request->get('qId');
+        $data['detail']     = strip_tags(Yii::$app->request->get('cnt'));
+        $data['pid']        = Yii::$app->request->get('pID');// 被回复的id
         $data['createTime'] = time();
         //将获取的数据保存到数据库
-        $re = Yii::$app->db->createCommand()->insert("{{%reply}}", $data)->execute();
-        if($re){
-            $res['code'] = 1;
-            $res['message'] = '回复成功';
+        if($data['uid']==false){
+            $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
+            echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+            die;
         }else{
-            $res['code'] = 0;
-            $res['message'] = '请重试';
+            $arr = Yii::$app->db->createCommand("select nickname,username from  {{%user}} where uid=" .$data['uid'])->queryOne();
+            if($data['detail']==false){
+                $res['code'] = 0;
+                $res['num']  = 3;
+                $res['message'] = '请输入内容';
+                die(json_encode($res));
+            }else{
+                $re = Yii::$app->db->createCommand()->insert("{{%reply}}", $data)->execute();
+                if($re){
+                    $res['code'] = 1;
+                    $res['message'] = '回复成功';
+                }else{
+                    $res['code'] = 0;
+                    $res['message'] = '请重试';
+                }
+                if($data['pid']=0){
+                    $res['num']=2;
+
+                }elseif($data['pid']=1){
+                    $res['num']=1;
+                }
+                $res['nickname']=$arr['nickname'];
+                $res['username']=$arr['username'];
+                $res['content']=$data['detail'] ;
+                $res['time']=date('Y-m-d H:i:s',$data['createTime']);
+                echo die(json_encode($res));
+            }
         }
-        echo die(json_encode($res));
+
     }
 
 }
