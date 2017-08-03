@@ -67,7 +67,6 @@ $(function() {
   //题目讨论回复
   //回复/收回回复切换
   $('.dis-usr-list>ul').on('click','.dis-reply-btn', function () {
-    console.log('aa');
     var _this = $(this);
     if(_this.html() == '回复'){
       _this.html('收起回复');
@@ -179,7 +178,7 @@ function comment(obj,flag){
           if (data.num == 1){
             var liObj = '';
             liObj+="<li><div class='dis-usr-avatar pull-left'><img src='/cn/images/login.png' alt='用户头像'></div>"+
-              "<div class='dis-usr-cnt pull-left'>"+
+              "<div class='dis-usr-cnt pull-left' data-id='22'>"+
               "<p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>"+
               "<p>"+$('#dis-input-cnt').val()+"</p>"+
               "</div>"+

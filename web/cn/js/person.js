@@ -68,12 +68,12 @@ function exer(src,classify,cas,p){
           "<div>"+
           "耗时: <span>"+array[1]+"</span>秒"+
           "</div>"+
-          "<a href='/exercise_details/"+array['time']+".html' target='_blank'>重新做</a>"+
+          "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>重新做</a>"+
           "</div>"+
           "<div class='collect-sub'>"+
           "<h4><i class='exer-delete fa fa-times-circle' onclick='exerDel(this)' data-id='"+array['time']+"'></i>"+array['name']+"-"+array['major']+"-"+array['number']+"<span>"+new Date(parseInt(array[2])*1000).toLocaleString()+"</span></h4>"+
           "<p>"+
-          "<a href='/exercise_details/"+array['time']+".html' target='_blank'>"+array['content']+"</a>"+
+          "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>"+
           "</p>"+
           "</div>"+
           "</li>"
@@ -183,7 +183,6 @@ function collect(src,classify,p){
       $('.person-cnt ul').html(li);
     },
     complete: function () {
-      console.log(tp);
       $.jqPaginator('.pagination', {
         totalPages: tp,
         visiblePages: 6,
