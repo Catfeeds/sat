@@ -45,7 +45,7 @@
               </li>
             </ul>
             <!--数学填空-->
-            <table class="math-table">
+            <table class="math-table" >
               <tr>
                 <th colspan="2" class="math-value"></th>
                 <th colspan="2">

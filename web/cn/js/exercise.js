@@ -179,6 +179,7 @@ function comment(obj,flag){
         },
         dataType: 'json',
         success: function (data) {
+          console.log(data);
           if (data.num == 3){
             alert('请输入内容');
           }
@@ -188,7 +189,7 @@ function comment(obj,flag){
           if ((data.num == 1)&&(data.code == 1)){
             var liObj = '';
             liObj+="<li><div class='dis-usr-avatar pull-left'><img src='/cn/images/login.png' alt='用户头像'></div>"+
-              "<div class='dis-usr-cnt pull-left' data-id='data.id'>"+
+              "<div class='dis-usr-cnt pull-left' data-id="+data.id+">"+
               "<p>用户<span>jajj</span>发表于<span>2017-08-12 10:22:03</span></p>"+
               "<p>"+$('#dis-input-cnt').val()+"</p>"+
               "</div>"+
@@ -198,18 +199,18 @@ function comment(obj,flag){
               "</div>"+
               "<div style='clear: both;'></div>"+
               "<div class='reply-wrap clearfix'>"+
-              "<ul>"+
-              "<li class='clearfix'>"+
-              "<img src='/cn/images/login.png' alt='用户头像'>"+
-              "<span>lsls:</span>"+
-              "<p class='reply-wrap-cnt'>fnkdnkmkdmaldl;g;</p>"+
-              "<p class='pull-right'><span>2017-10-22 08:30:20</span><span class='reply-wrap-btn'>回复</span></p>"+
-              "</li>"+
-              "</ul>"+
+              //"<ul>"+
+              //"<li class='clearfix'>"+
+              //"<img src='/cn/images/login.png' alt='用户头像'>"+
+              //"<span>lsls:</span>"+
+              //"<p class='reply-wrap-cnt'>fnkdnkmkdmaldl;g;</p>"+
+              //"<p class='pull-right'><span>2017-10-22 08:30:20</span><span class='reply-wrap-btn'>回复</span></p>"+
+              //"</li>"+
+              //"</ul>"+
               "<textarea name='' id='reply-input-cnt' cols='80' rows='4'></textarea>"+
               "<input class='pull-right'' type='button' value='发表'>"+
               "</div></li>";
-            $('.dis-usr-list>ul').prepend(liObj);
+            $('.dis-usr-list>ul').append(liObj);
           } else if((data.num == 2)&&(data.code == 1)){
               var liObj = '';
               liObj+="<li class='clearfix'>"+
@@ -218,7 +219,7 @@ function comment(obj,flag){
                 "<p class='reply-wrap-cnt'>"+_this.siblings('textarea').val()+"</p>"+
                 "<p class='pull-right'><span>2017-10-22 08:30:20</span><span class='reply-wrap-btn'>回复</span></p>"+
                 "</li>";
-              _this.parent().children('ul').prepend(liObj);
+              _this.parent().children('ul').append(liObj);
           }
         },
         complete: function () {
