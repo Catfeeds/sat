@@ -157,6 +157,13 @@ function comment(obj,flag){
       _this = $(obj),
   //uId = $.cookie('uid');
     uId = 32;
+  if(flag == 0){
+    var cnt = $('#dis-input-cnt').val(),
+      pId = 0;
+  } else {
+    var cnt = _this.siblings('textarea').val(),
+        pId = _this.parent().siblings('.dis-usr-cnt').data('id');
+  }
   if (uId == ''){
     var pos = location.href;
     location.href = 'http://login.gmatonline.cn/cn/index?source=20&url='+location.href;
@@ -167,8 +174,8 @@ function comment(obj,flag){
         data: {
           qId: tId,
           uId: uId,
-          cnt: $('#dis-input-cnt').val(),
-          pID: flag
+          cnt: cnt,
+          pId: pId
         },
         dataType: 'json',
         success: function (data) {
