@@ -65,9 +65,9 @@
                 <span>耗时</span><p>2.5</p><span>秒</span>
               </div>
               <div class='show-correct-ans pull-right'>
-                <strong>C</strong>
+                <strong>3/11</strong>
                 <i>/</i>
-                <b>B</b>
+                <b>0.27</b>
               </div>
               <div class='question-stem'>
                 <p>
@@ -80,9 +80,9 @@
                 <span>耗时</span><p>2.5</p><span>秒</span>
               </div>
               <div class='show-correct-ans pull-right'>
-                <strong>C</strong>
+                <strong>4/5</strong>
                 <i>/</i>
-                <b>B</b>
+                <b>0.8</b>
               </div>
               <div class='question-stem'>
                 <p>
@@ -141,6 +141,7 @@
 </section>
 <script>
   $(function() {
+    reportData($('.class-hid').data('class'),'all');
     pieChart('accuChart',[parseFloat(Number(<?php if($report['part']=='Reading'){$a=$report['readnum']/52*100;$b=$report['readerror']/52*100;$c=(52-$report['readnum']-$report['readerror'])/52*100;echo $a;}
     if($report['part']=='Writing'){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
     if($report['part']=='Math'){$a=$report['mathnum']/58*100;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
@@ -154,54 +155,6 @@
       reportData(s,c);
     })
   })
-  reportData($('.class-hid').data('class'),'all');
-  function reportData(s,c) {
-    $.ajax({
-      url: '/cn/report/que',
-      type: 'get',
-      data: {
-        'sub': s,
-        'classify': c,
-        'tid': $('#tpId').data('val'),
-        'rid': $('#rid').data('val')
-      },
-      dataType: 'json',
-      success: function (data) {
-        $('.ans-cnt ol').empty();
-        var li = '';
-        $.each(data,function(index,array) {
-          li+=" <li class='clearfix'>"+
-            "<div class='lost-time pull-left'>"+
-            "<span>耗时</span>"+
-            "<p>"+array['1']+"</p>"+
-            "<span>秒</span>"+
-            "</div>"+
-            "<div class='show-correct-ans pull-right'>"+
-            "<strong>"+array['0']+"</strong>"+
-            "<i>/</i>"+
-            "<b>"+array['answer']+"</b>"+
-            "</div>"+
-            " <div class='question-stem'>"+
-            "<p>"+
-            "<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>"+
-            "</p>"+
-            "</div>"+
-            "</li>"
-        });
-        $('.ans-cnt ol').append(li);
-      },
-      complete: function () {
-        $('.ans-cnt ol li').each(function (i) {
-          if ($('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').html() == $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('b').html()) {
-            $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').css('color','green');
-          }
-        })
-      },
-      error: function() {
-        console.log('错误');
-      }
-    })
-  }
 
   var speed = 50,
     rl1 = $('.ranking-list1'),

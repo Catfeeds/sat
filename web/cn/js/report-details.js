@@ -61,7 +61,6 @@ function pieChart(divId,data,categories,pre) {
     for(var i=0;i<data.length;i++){
         hcSeries.push(createPieDataObject(data[i],categories[i],pre.color[i]))
     };
-    console.log(hcSeries);
     $('#'+divId).highcharts({
         chart: {
             plotShadow: false,
@@ -210,7 +209,6 @@ function lineChart(divId,data,categories,lineName,pre) {
     for (var i = 0; i < data.length; i++) {
         hcSeries.push(createHighChartDataObject(data[i], lineName[i], pre.color[i]))
     }
-    console.log(hcSeries);
     $('#' + divId).highcharts({
         chart: {
             plotBackgroundImage: pre.plotBackgroundImage,
@@ -296,5 +294,65 @@ function lineChart(divId,data,categories,lineName,pre) {
             }
         },
         series: hcSeries
+    })
+}
+//做题详情
+function reportData(s,c) {
+    $.ajax({
+        url: '/cn/report/que',
+        type: 'get',
+        data: {
+            'sub': s,
+            'classify': c,
+            'tid': $('#tpId').data('val'),
+            'rid': $('#rid').data('val')
+        },
+        dataType: 'json',
+        success: function (data) {
+            $('.ans-cnt ol').empty();
+            var li = '';
+            $.each(data,function(index,array) {
+                li+=" <li class='clearfix'>"+
+                  "<div class='lost-time pull-left'>"+
+                  "<span>耗时</span>"+
+                  "<p>"+array['1']+"</p>"+
+                  "<span>秒</span>"+
+                  "</div>"+
+                  "<div class='show-correct-ans pull-right'>"+
+                  "<strong>"+array['0']+"</strong>"+
+                  "<i>/</i>"+
+                  "<b>"+array['answer']+"</b>"+
+                  "</div>"+
+                  " <div class='question-stem'>"+
+                  "<p>"+
+                  "<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>"+
+                  "</p>"+
+                  "</div>"+
+                  "</li>"
+            });
+            $('.ans-cnt ol').append(li);
+        },
+        complete: function () {
+            $('.ans-cnt ol li').each(function (i) {
+                var st = $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').html();
+                var sr = $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('b').html();
+                if (st.indexOf('/') != -1){
+                    var st1 = Number(st.split('/')[0]);
+                    var st2 = Number(st.split('/')[1]);
+                    st = (st1/st2).toFixed(2);
+                }
+                if (sr.indexOf('/') != -1){
+                    var sr1 = Number(sr.split('/')[0]);
+                    var sr2 = Number(sr.split('/')[1]);
+                    sr = (sr1/sr2).toFixed(2);
+                }
+                if (st == sr){
+                    $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').css('color','green');
+                }
+            })
+        },
+        error: function() {
+            console.log('错误');
+        }
     })
 }

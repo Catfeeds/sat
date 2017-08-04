@@ -9,7 +9,7 @@
       <ul>
         <li>
           <p>
-            <a href="/evaluation.html" target="_blank">留学评估</a>
+            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">留学评估</a>
           </p>
         </li>
         <li>
@@ -19,7 +19,7 @@
         </li>
         <li>
           <p>
-            <a href="/practices.html" target="_blank">背景提升</a>
+            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">背景提升</a>
           </p>
         </li>
       </ul>
@@ -28,7 +28,7 @@
   <div class="abroadFiveC">
     <ul>
       <li>
-        <a href="/Undergraduate/assistance.html" target="_blank">
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">
           <div class="topCircle">
             <span></span>
             <img src="/cn/images/abroad_circleIcon01.png" alt="图标"/>
@@ -37,7 +37,7 @@
         </a>
       </li>
       <li>
-        <a href="/Postgraduate/assistance.html" target="_blank">
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">
           <div class="topCircle">
             <span></span>
             <img src="/cn/images/abroad_circleIcon02.png" alt="图标"/>
@@ -46,7 +46,7 @@
         </a>
       </li>
       <li>
-        <a href="/Doctor/assistance.html" target="_blank">
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">
           <div class="topCircle">
             <span></span>
             <img src="/cn/images/abroad_circleIcon03.png" alt="图标"/>
@@ -55,7 +55,7 @@
         </a>
       </li>
       <li>
-        <a href="/single.html" target="_blank">
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">
           <div class="topCircle">
             <span></span>
             <img src="/cn/images/abroad_circleIcon04.png" alt="图标"/>
@@ -64,7 +64,7 @@
         </a>
       </li>
       <li>
-        <a href="/MBA-PHD.html" target="_blank">
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">
           <div class="topCircle">
             <span></span>
             <img src="/cn/images/abroad_circleIcon05.png" alt="图标"/>

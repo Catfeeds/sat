@@ -47,8 +47,10 @@
   padding: 0 20px;
   background-color: rgb(54,178,251);
 }
-.s-exam .read-exam .read-title>h3,
-.s-exam .read-exam .read-title>p {
+.math-title>h3,
+.math-title>p,
+.read-title>h3,
+.read-title>p {
   line-height: 35px;
   font-size: 20px;
   color: #fff;
@@ -160,6 +162,7 @@
   background-color: #ccc;
 }
 .dis-usr-list {
+  position: relative;
   padding: 0 20px;
   border-bottom: 1px solid rgb(54,178,251);
 }
@@ -223,19 +226,37 @@
 .dis-commit {
   padding: 5px 20px;
 }
+.dis-more {
+  position: absolute;
+  left: 40%;
+  bottom: -15px;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid rgb(54,178,251);
+  border-radius: 10px;
+  background-color: rgb(54,178,251);
+  cursor: pointer;
+  color: #fff;
+}
+.dis-more-hide {
+  display: none;
+}
   /**
     遮罩
   **/
-.work-shade {
-  /*display: block;*/
+.shade-cmn {
+  display: none;
 }
 .shade-wrap {
+  position: absolute;
   width: 300px;
   height: 200px;
   padding: 20px;
-  top: 50%;
+  top: 70%;
   left: 50%;
-  display: block;
+  z-index: 99;
 }
 .shade-wrap p {
   width: 100px;

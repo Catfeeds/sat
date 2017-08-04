@@ -97,12 +97,13 @@ function countTimeFun() {
             autoTime();
         }
         var min = Math.floor(TIME/60),
-            sec = TIME % 60,
+            sec = parseInt(TIME % 60),
             hour = Math.floor(min/60);
         min = min % 60;
         hour = checkTime(hour);
         min = checkTime(min);
         sec = checkTime(sec);
+        console.log(sec);
         $('.work-time-cnt').text("本section剩余时间: "+hour+ ":" +min+ ":" +sec);
     }
 }

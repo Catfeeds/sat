@@ -8,33 +8,6 @@
             <?php use app\commands\front\BannerWidget;?>
             <?php BannerWidget::begin();?>
             <?php BannerWidget::end();?>
-<!--            <div class="s-person clearfix">-->
-<!--                <div class="s-person-logo border-radius pull-left"></div>-->
-<!--                <div class="s-hi">-->
-<!--                    <h3>hi</h3>-->
-<!--                    <p>欢迎来到雷哥网</p>-->
-<!--                </div>-->
-<!--                --><?php //if($user){
-//                    echo '<div class="s-btn">
-//                    <button >欢迎您</button>
-//                    <button onclick="Out()" >退出</button>
-//                    </div>';
-//                }else{
-//                    echo '<div class="s-btn">
-//                    <button class="s-login-in"><a  href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">登录</a></button>
-<!--//                     <button class="s-sign-up"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=--><?php //echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">注册</a></button>-->
-<!--//                    </div>';-->
-<!--//                }?>-->
-<!--                <h3 class="s-adv">公告:</h3>-->
-<!--                <div class="s-adv-wrap">-->
-<!--                    <ul>-->
-<!--                        --><?php //foreach($infoAd as $v){?>
-<!--                        <li><a href="/info_details/--><?php //echo $v['id']?><!--.html">--><?php //echo $v['title']?><!--</a></li>-->
-<!--                        --><?php //}?>
-<!---->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
         <!--免费公开课-->
         <div class="s-pubclass">
@@ -334,9 +307,7 @@
     jQuery(".s-person").slide({mainCell:".s-adv-wrap ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
     //  名师团队
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
-    // 每日一题
-    jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
-    jQuery(".s-daily-cnt").slide({mainCell:".daily-question2 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+
 
     $(function () {
         $('.system-list>li').click(function () {
@@ -346,5 +317,11 @@
             $('.system-wrap').hide();
             $('.system-wrap').eq(index).show();
         })
+        $('.daily-question li').each(function (i) {
+            $('.daily-question li').eq(i).children('p').eq(0).nextAll().remove();
+        })
+        // 每日一题
+        jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+        jQuery(".s-daily-cnt").slide({mainCell:".daily-question2 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
     })
 </script>
