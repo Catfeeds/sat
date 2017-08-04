@@ -41,7 +41,7 @@
        if($data['isFilling']==='1'){
         $str='
         <table class="math-table">
-          <tbody id="subjectId" id="subjectId" data-id="'.$data['qid'].'">
+          <tbody id="subjectId" data-id="'.$data['qid'].'">
             <tr>
               <th colspan="2" class="math-value"></th>
               <th colspan="2">

@@ -271,23 +271,23 @@
                     <div class="daily-question daily-question1">
                         <ul>
                             <?php foreach($que as $k=>$v){if($k<10){?>
-                            <li>
-                                <h4><?php echo $v['name'].'-'.$v['time']?></h4>
-                                <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
-                            </li>
+                                <li>
+                                    <h4><?php echo $v['name'].'-'.$v['time']?></h4>
+                                    <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
+                                </li>
                             <?php }}?>
                         </ul>
                     </div>
-                   <div class="daily-question daily-question2">
-                       <ul>
-                           <?php foreach($que as $k=>$v){if($k>=10){?>
-                               <li>
-                                   <h4><?php echo $v['name'].'-'.$v['time']?></h4>
-                                   <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
-                               </li>
-                           <?php }}?>
-                       </ul>
-                   </div>
+                    <div class="daily-question daily-question2">
+                        <ul>
+                            <?php foreach($que as $k=>$v){if($k>=10){?>
+                                <li>
+                                    <h4><?php echo $v['name'].'-'.$v['time']?></h4>
+                                    <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
+                                </li>
+                            <?php }}?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
