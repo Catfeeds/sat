@@ -103,10 +103,24 @@ $(function() {
   }else {
     $('.dis-more').hide();
   }
+  var sub = $(".breadcrumb li").eq(1).children('a').text();
+  if((sub == 'Reading') || (sub == 'Writing')){
+    $('.s-exer-wrap').css('minHeight',1350);
+    $(".exer-side").css({
+      'position': 'absolute',
+      'width': 400,
+      'top': 655,
+      'right': 2
+    })
+    $('.s-exam .s-btn-list').css('paddingRight',0);
+  }
 })
 
 var uId = $.cookie('uid');
 uId = 444;
+
+
+
 // 加载页面时判断是否收藏
 if (($('.s-collect').data('value') == 1) && (uId != '')) {
   var sCollect = $('.s-collect');
@@ -159,7 +173,6 @@ function ajaxEvent(obj,u) {
     })
   }
 }
-
 //讨论回复
 function comment(obj,flag){
   var tId = $('#subjectId').data('id'),
