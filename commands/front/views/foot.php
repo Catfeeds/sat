@@ -11,18 +11,20 @@
 <!--            </dl>-->
             <dl>
                 <dt>网站说明</dt>
-                <dd><a href="/about.html">关于我们</a></dd>
-                <dd><a href="/about.html">联系我们</a></dd>
-                <dd><a href="/about.html">加入我们</a></dd>
-                <dd><a href="/about.html">您的建议</a></dd>
+                <dd><a href="/about.html#sAboutUs">关于我们</a></dd>
+                <dd><a href="/about.html#sRelation">联系我们</a></dd>
+                <dd><a href="/about.html#sJoin">加入我们</a></dd>
+                <dd><a href="/about.html#sCopyRight">版权声明</a></dd>
             </dl>
             <div class="s-qr">
                 <img src="/cn/images/qr-code01.png" alt="">
                 <p>本科留学与考试</p>
+                <p>(Thinku-BKLX)</p>
             </div>
             <div class="s-qr">
                 <img src="/cn/images/qr-code02.png" alt="">
                 <p>雷哥SAT微助手</p>
+                <p>(sat0704)</p>
             </div>
             <div class="s-tel">
                 <img src="/cn/images/tel_icon.png" alt="">
@@ -42,7 +44,7 @@
                 <dd><a href="http://quliuxue.net.cn/" target="_blank">去留学网</a></dd>
                 </dd>
             </dl>
-            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17017179号-1</a>
+            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17017179号-1</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a>
             </p>
         </div>
     </div>
