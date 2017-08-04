@@ -3,7 +3,7 @@ $(function() {
   $('.work-shade').height($(document).outerHeight());
   upTime();
   $('.now-do').click(function () {
-    $('.work-shade').hide();
+    $('.shade-cmn').hide();
   })
   //查看解析
   $('.s-exam .s-answer li').eq(0).click(function () {
@@ -17,7 +17,7 @@ $(function() {
       ans = $('.read-exam .work-select.active').data('id');
     }
     if (ans == undefined || ans == '') {
-      $('.work-shade').fadeIn();
+      $('.shade-cmn').fadeIn();
     }else {
       if ($(this).index() == 0) {
         if ($('.s-answer-show').css('display') == 'none') {
@@ -40,15 +40,6 @@ $(function() {
         color: '#fff'
       })
       //$('.correct-ans-hide').show();
-    }
-  })
-  $('.math-sure').click(function () {
-    var v = eval($('.math-gap-result input').val());
-    v = Math.floor(v*1000)/1000;
-    var r = eval($('.correct-answer').html());
-    r = Math.floor(r*1000)/1000;
-    if (v != r) {
-      $('.correct-ans-hide').fadeIn();
     }
   })
   //  收藏
@@ -96,6 +87,22 @@ $(function() {
     var name = _this.parent().siblings('span').html();
     _this.parent().parent().parent().siblings('textarea').val('回复'+name);
   })
+  //讨论查看更多
+  $('.dis-more-show').click(function () {
+    $('.dis-usr-list>ul>li').eq(2).nextAll().show(500);
+    $(this).hide();
+    $('.dis-more-hide').show();
+  })
+  $('.dis-more-hide').click(function () {
+    $('.dis-usr-list>ul>li').eq(2).nextAll().hide(500);
+    $(this).hide();
+    $('.dis-more-show').show();
+  })
+  if ($('.dis-usr-list>ul>li').length>=3){
+    $('.dis-usr-list>ul>li').eq(2).nextAll().hide();
+  }else {
+    $('.dis-more').hide();
+  }
 })
 
 var uId = $.cookie('uid');
@@ -129,7 +136,7 @@ function ajaxEvent(obj,u) {
     ans = $('.read-exam .work-select.active').data('id');
   }
   if (ans == undefined || ans == '') {
-    $('.work-shade').fadeIn();
+    $('.shade-cmn').fadeIn();
   }else {
     $.ajax({
       url: '/cn/exercise/notes',
@@ -152,6 +159,7 @@ function ajaxEvent(obj,u) {
     })
   }
 }
+
 //讨论回复
 function comment(obj,flag){
   var tId = $('#subjectId').data('id'),

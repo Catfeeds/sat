@@ -2,7 +2,6 @@
     <link rel="stylesheet" href="/cn/css/report-details.css">
     <script src="/cn/js/highcharts.js"></script>
     <script src="/cn/js/report-details.js"></script>
-
 <!--导航-->
 
 <!--内容区域-->
@@ -169,6 +168,7 @@
 <!--底部-->
 <script>
     $(function () {
+        reportData('Reading','all');
         barChart('reportTime',[[parseInt(<?php echo Yii::$app->session->get('time')/60?>),230]],["你的时间","标准时间"],["做题时间"],{xAxisColor:'#002D71', xRotation:0, title: "做题时间", subtitle:'', yAxisUnit: '(min)', color: ['#36B2FB'], min: 0, max: 230, tooltipUnit: 'min', showValue: true})
         // 阅读
         pieChart('repReading',[parseFloat(Number('<?php echo $report['readnum']/52*100?>').toFixed(1)),parseFloat(Number('<?php echo $report['readerror']/52*100?>').toFixed(1)),parseFloat(Number('<?php echo (52-$report['readnum']-$report['readerror'])/52*100?>').toFixed(1))],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
@@ -193,52 +193,5 @@
             reportData(s,c);
         })
     })
-    reportData('Reading','all');
-    function reportData(s,c) {
-        $.ajax({
-            url: '/cn/report/que',
-            type: 'get',
-            data: {
-                'sub': s,
-                'classify': c,
-                'tid': $('#tpId').data('val'),
-                'rid': $('#rid').data('val')
-            },
-            dataType: 'json',
-            success: function(data) {
-                $('.ans-cnt ol').empty();
-                var li = '';
-                $.each(data,function(index,array) {
-                    li+=" <li class='clearfix'>"+
-                        "<div class='lost-time pull-left'>"+
-                        "<span>耗时</span>"+
-                        "<p>"+array['1']+"</p>"+
-                        "<span>秒</span>"+
-                        "</div>"+
-                        "<div class='show-correct-ans pull-right'>"+
-                        "<strong>"+array['0']+"</strong>"+
-                        "<i>/</i>"+
-                        "<b>"+array['answer']+"</b>"+
-                        "</div>"+
-                        " <div class='question-stem'>"+
-                        "<p>"+
-                        "<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>"+
-                        "</p>"+
-                        "</div>"+
-                    "</li>"
-                });
-                $('.ans-cnt ol').append(li);
-            },
-            complete: function () {
-                $('.ans-cnt ol li').each(function (i) {
-                    if ($('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').html() == $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('b').html()) {
-                        $('.ans-cnt ol li').eq(i).find('.show-correct-ans').find('strong').css('color','green');
-                    }
-                })
-            },
-            error: function() {
-                console.log('错误');
-            }
-        })
-    }
+
 </script>

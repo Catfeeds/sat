@@ -19,56 +19,6 @@
   top: 45%;
   font: 400 50px simsun;
 }
-/*个人登录、公告区*/
-.s-sat .s-person {
-  width: 260px;
-  height: 420px;
-  border: 1px solid #000;
-  margin-left: 930px;
-  padding: 30px 20px;
-  overflow: hidden;
-}
-.s-sat .s-person-logo {
-  width: 83px;
-  height: 83px;
-  background: url("../images/sat01.png") center center no-repeat;
-  border: 2px solid rgb(48,167,237);
-}
-.s-sat .s-hi {
-  margin-left: 90px;
-}
-.s-sat .s-hi h3,
-.s-sat .s-hi p {
-  font-size: 16px;
-}
-.s-sat .s-btn {
-  margin-top: 30px;
-}
-.s-sat .s-btn button {
-  background-color: rgb(48,167,237);
-  font-size: 14px;
-  color: #fff;
-  outline: 0;
-  border: 0;
-  padding: 3px 20px;
-  margin: 0 14px;
-}
-.s-sat .s-btn button:hover {
-  background-color: rgb(54,178,251);
-}
-.s-sat .s-person .s-adv {
-  margin: 45px 0 20px 0;
-  font-size: 16px;
-}
-.s-sat .s-person li {
-  overflow: hidden;
-  white-space: nowrap;
-  -ms-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-}
-.s-sat .s-person li a {
-  font-size: 14px;
-}
 /*免费公开课*/
 .s-sat .s-pubclass {
   margin-top: 30px;

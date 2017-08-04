@@ -58,36 +58,8 @@ $(function () {
     $(this).find('.work-select').addClass('active');
   })
 //  练习、模考数学填空点击事件
-  //数学填空事件
   $(".btn-type").bind("click", confirmBtnEvent);
   $(".math-table").find("a").bind("click", numBtnEvent);
-
-//  var result = $('.math-gap-result input');
-//  $('.math-btn').click(function () {
-//    if ($('.math-gap-table').hasClass('sure')) {
-//      return false;
-//    }else {
-//      result.get(0).value += $(this).html();
-//    }
-//  })
-//  $('.math-clear').click(function () {
-//    if ($('.math-gap-table').hasClass('sure')) {
-//      return false;
-//    }else {
-//      result.val('');
-//    }
-//  })
-//  $('.math-sure').click(function () {
-//    $('.math-gap-table tr').addClass('sure');
-//    $('.math-gap-table').addClass('sure');
-//    $('.math-gap-table td').hover(function () {
-//      $(".math-gap-table td:not('.math-gap-result')").css({
-//        'color': '#ccc',
-//        'backgroundColor': '#f1f1f1'
-//      })
-//    });
-//    $('.math-gap-table .math-gap-result').css('color','rgb(54,178,251)');
-//  })
   //  侧边栏
   $('.side-bar li').mousemove(function () {
     $('.side-bar li').children('div').hide();

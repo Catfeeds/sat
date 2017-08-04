@@ -94,22 +94,22 @@ class MockController extends Controller
         if($data['major']=='Math1'){
             $time  =55;
             $amount=38;
-            $amount=3;
+            $amount=5;
             $modle = 'mock_math';
         }elseif($data['major']=='Math2') {
             $time  =25;
             $amount=20;
-            $amount=2;
+            $amount=5;
             $modle = 'mock_math';
         }elseif ($data['major']=='Reading'){
             $time  =65;
             $amount=52;
-            $amount=2;
+            $amount=10;
             $modle = 'mock_read';
         }else{
             $time  =35;
             $amount=44;
-            $amount=2;
+            $amount=10;
             $modle = 'mock_read';
         }
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);
@@ -168,7 +168,7 @@ class MockController extends Controller
         $data    = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
         $re      =$model->avg($solution,$utime,$data);
         // 统计答题总数，根据答题总数，返回数据
-        if($count<8){
+        if($count<30){
             $data= Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
             echo die(json_encode($data));
         }else{

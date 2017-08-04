@@ -19,6 +19,7 @@
         <!-- 数学-->
           <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
             <div class="math-title">
+              <p class="pull-right"><?php echo $n?></p>
               <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
             </div>
             <h2 class="s-num pull-left"><?php echo $data['qid']?>.</h2>
@@ -234,6 +235,8 @@
                 </li>
                 <?php }}?>
               </ul>
+              <div class="dis-more dis-more-show">查看更多</div>
+              <div class="dis-more dis-more-hide">隐藏</div>
             </div>
             <div class="dis-input">
               <textarea name="" id="dis-input-cnt" cols="89" rows="6" placeholder="我来说两句……"></textarea>
@@ -275,11 +278,10 @@
         </div>
     </div>
     <!--遮罩-->
-    <div class="work-shade">
-      <div class="shade-wrap">
-        <h3>答案忘写咯</h3>
-        <p class="now-do">这就去做！</p>
-      </div>
+    <div class="shade-cmn work-shade"></div>
+    <div class="shade-cmn shade-wrap">
+      <h3>答案忘写咯</h3>
+      <p class="now-do">这就去做！</p>
     </div>
   </section>
 </html>
