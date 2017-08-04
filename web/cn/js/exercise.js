@@ -140,7 +140,7 @@ function ajaxEvent(obj,u) {
   }else {
     $.ajax({
       url: '/cn/exercise/notes',
-      type: 'get',
+      type: 'POST',
       data: {
         'time': upTime(),
         'ans': ans,

@@ -15,7 +15,7 @@ use app\modules\cn\models\Notes;
 class ExerciseController extends Controller
 {
     public $layout = 'cn.php';
-
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
 
@@ -63,10 +63,10 @@ class ExerciseController extends Controller
     // 将登陆用户的做题数据存入数据库
     public function actionNotes()
     {
-        $answer = Yii::$app->request->get('ans');
-        $time = Yii::$app->request->get('time');
-        $qid = Yii::$app->request->get('qid');
-        $up = Yii::$app->request->get('up');
+        $answer = Yii::$app->request->post('ans');
+        $time = Yii::$app->request->post('time');
+        $qid = Yii::$app->request->post('qid');
+        $up = Yii::$app->request->post('up');
         $date = time();
         $data['uid'] = Yii::$app->session->get('uid');
 //        $data['uid'] = 333;
