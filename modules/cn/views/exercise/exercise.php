@@ -13,7 +13,7 @@
       <div class="s-top-img">
         <img src="/cn/images/pubClass-dea_03.png" alt="">
       </div>
-      <div class="clearfix">
+      <div class="s-exer-wrap clearfix">
         <!--题目-->
         <div class="s-exam pull-left">
         <!-- 数学-->
