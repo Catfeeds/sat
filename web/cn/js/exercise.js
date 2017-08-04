@@ -154,7 +154,7 @@ function ajaxEvent(obj,u) {
   }else {
     $.ajax({
       url: '/cn/exercise/notes',
-      type: 'get',
+      type: 'POST',
       data: {
         'time': upTime(),
         'ans': ans,
@@ -193,7 +193,7 @@ function comment(obj,flag){
   }else{
       $.ajax({
         url: '/cn/exercise/discuss',
-        type: 'get',
+        type: 'post',
         data: {
           qId: tId,
           uId: uId,

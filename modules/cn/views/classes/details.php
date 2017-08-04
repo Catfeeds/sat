@@ -28,27 +28,6 @@
             <div><?php echo $data['introduction']?></div>
           </div>
           <div role="tabpanel" class="tab-pane" id="teacher">
-<!--            <div class="s-introduce-img">-->
-<!--              <span class="s-top-left"></span>-->
-<!--              <img class="s-big-img" src="--><?php //if(isset($teacher[0]['pic'])){echo $teacher[0]['pic'];}else{echo '/cn/images/course-basis01.png';}?><!--" alt="">-->
-<!--              <span class="s-bottom-right"></span>-->
-<!--              <div class="s-down-img clearfix">-->
-<!--                <div class="teacher-img">-->
-<!--                  <img src="--><?php //echo isset($teacher[1]['pic'])?$teacher[1]['pic']:''?><!--" alt="">-->
-<!--                  <div>-->
-<!--                    --><?php //echo isset($teacher[1]['name'])?$teacher[1]['name']:''?>
-<!--                    --><?php //echo isset($teacher[1]['honorary'])?$teacher[1]['honorary']:''?>
-<!--                  </div>-->
-<!--                </div>-->
-<!--                <div class="teacher-img">-->
-<!--                  <img src="--><?php //echo isset($teacher[2]['pic'])?$teacher[2]['pic']:''?><!--" alt="">-->
-<!--                  <div>-->
-<!--                    --><?php //echo isset($teacher[2]['name'])?$teacher[2]['name']:''?>
-<!--                    --><?php //echo isset($teacher[2]['honorary'])?$teacher[2]['honorary']:''?>
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
             <ul class="s-int-img">
               <li class="on">
                 <img src="<?php echo isset($teacher[0]['pic'])?$teacher[0]['pic']:''?>" alt="">

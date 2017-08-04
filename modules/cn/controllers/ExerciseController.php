@@ -15,7 +15,7 @@ use app\modules\cn\models\Notes;
 class ExerciseController extends Controller
 {
     public $layout = 'cn.php';
-
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
 
@@ -63,12 +63,13 @@ class ExerciseController extends Controller
     // 将登陆用户的做题数据存入数据库
     public function actionNotes()
     {
-        $answer = Yii::$app->request->get('ans');
-        $time = Yii::$app->request->get('time');
-        $qid = Yii::$app->request->get('qid');
-        $up = Yii::$app->request->get('up');
+        $answer = Yii::$app->request->post('ans');
+        $time = Yii::$app->request->post('time');
+        $qid = Yii::$app->request->post('qid');
+        $up = Yii::$app->request->post('up');
         $date = time();
         $data['uid'] = Yii::$app->session->get('uid');
+
 //        $data['uid'] = 333;
         // 计算平均时间等
         $que = Yii::$app->db->createCommand("select *  from {{%questions}} where id=" . $qid)->queryOne();
@@ -108,11 +109,11 @@ class ExerciseController extends Controller
 
     public function actionDiscuss()
     {
-        $data['uid']        = Yii::$app->request->get('uId');
+        $data['uid']        = Yii::$app->request->post('uId');
         $data['uid']        = 32;
-        $data['qid']        = Yii::$app->request->get('qId');
-        $data['detail']     = strip_tags(Yii::$app->request->get('cnt'));
-        $data['pid']        = Yii::$app->request->get('pId');// 被回复的id
+        $data['qid']        = Yii::$app->request->post('qId');
+        $data['detail']     = strip_tags(Yii::$app->request->post('cnt'));
+        $data['pid']        = Yii::$app->request->post('pId');// 被回复的id
         $data['createTime'] = time();
         //将获取的数据保存到数据库
         if($data['uid']==false){

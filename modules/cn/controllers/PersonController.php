@@ -18,6 +18,7 @@ use app\modules\cn\models\Report;
 class PersonController extends Controller
 {
     public $layout = 'cn.php';
+    public $enableCsrfValidation = false;
 
     public function actionCollect()
     {
@@ -82,9 +83,9 @@ class PersonController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $uid = 444;
-        $name = Yii::$app->request->get('src');
-        $p = Yii::$app->request->get('p', '1');
-        $major = Yii::$app->request->get('classify');
+        $name = Yii::$app->request->post('src');
+        $p = Yii::$app->request->post('p', '1');
+        $major = Yii::$app->request->post('classify');
         $model = new collection();
         $pagesize = 2;
         $offset = $pagesize * ($p - 1);
@@ -97,10 +98,10 @@ class PersonController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $uid = 222;
-        $name = Yii::$app->request->get('src');
-        $major = Yii::$app->request->get('classify');
-        $error = Yii::$app->request->get('case');
-        $p = Yii::$app->request->get('p', '1');
+        $name = Yii::$app->request->post('src');
+        $major = Yii::$app->request->post('classify');
+        $error = Yii::$app->request->post('case');
+        $p = Yii::$app->request->post('p', '1');
         $pagesize = 2;
         $offset = $pagesize * ($p - 1);
 
@@ -118,9 +119,9 @@ class PersonController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $uid = 222;
-        $src = Yii::$app->request->get('src');
-        $type = Yii::$app->request->get('type');
-        $arr['curPage'] = $p = Yii::$app->request->get('p', '1');
+        $src = Yii::$app->request->post('src');
+        $type = Yii::$app->request->post('type');
+        $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
         $arr['pageSize'] = $pagesize = 2;
         if ($src != 'all') {
             $name = "and name='$src'";
@@ -158,7 +159,7 @@ class PersonController extends Controller
 
     public function actionDel()
     {
-        $id = Yii::$app->request->get('id');
+        $id = Yii::$app->request->post('id');
         $re = Report::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             $res['code'] = 1;
@@ -174,7 +175,7 @@ class PersonController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $uid = 222;
-        $id = Yii::$app->request->get('id');
+        $id = Yii::$app->request->post('id');
         $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);

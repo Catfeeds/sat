@@ -17,7 +17,7 @@ use app\modules\cn\models\Report;
 class ReportController extends Controller
 {
     public $layout = 'cn.php';
-
+    public $enableCsrfValidation = false;
     public function actionReport()
     {
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
@@ -137,10 +137,10 @@ class ReportController extends Controller
         // 接受的试卷的id
         $uid = Yii::$app->session->get('uid');
         $uid = 222;
-        $tpId = Yii::$app->request->get('tid');
-        $rid = Yii::$app->request->get('rid');
-        $major = Yii::$app->request->get('sub');
-        $classify = Yii::$app->request->get('classify');
+        $tpId = Yii::$app->request->post('tid');
+        $rid = Yii::$app->request->post('rid');
+        $major = Yii::$app->request->post('sub');
+        $classify = Yii::$app->request->post('classify');
 //        var_dump($rid);
         if ($uid) {
             if (!$rid) {
