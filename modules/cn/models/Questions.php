@@ -35,7 +35,7 @@ class Questions extends ActiveRecord{
 //            var_dump($str);die;
         }
         $page = Yii::$app->request->get('p', 1);
-        $pagesize=2;
+        $pagesize=10;
         $offset = $pagesize * ($page - 1);
         if(isset($str) && $str==false){
             $data='';
@@ -79,13 +79,13 @@ class Questions extends ActiveRecord{
     * @essayId 短文的id
     */
     public function Progress($major,$id,$section,$tpId,$essayId){
-        if ($major == 'Math1' || $major == "Math2") {
-            $a = 1;
-            $n = 1;
-        } else {
+//        if ($major == 'Math1' || $major == "Math2") {
+//            $a = 1;
+//            $n = 1;
+//        } else {
             $a = count(Yii::$app->db->createCommand("select id from {{%questions}} where id<" . $id . " and major= '$major' and section=" . $section . " and tpId=" . $tpId . " and essayId=" . $essayId)->queryAll()) + 1;
             $n = count(Yii::$app->db->createCommand("select id from {{%questions}} where major= '$major' and section=" . $section . " and tpId=" . $tpId . " and essayId=" . $essayId)->queryAll());
-        }
+//        }
         return "$a/$n";
     }
 

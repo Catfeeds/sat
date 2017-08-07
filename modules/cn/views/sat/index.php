@@ -83,7 +83,7 @@
                         <div>
                             <a href="/mock.html">全套模考</a>
                         </div>
-                        <div><a href="/mock.html">单科模考</a></div>
+                        <div><a href="/mock.html#m">单科模考</a></div>
                     </div>
                     <div class="system-wrap system-wrap2">
                         <div>

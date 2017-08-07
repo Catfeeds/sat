@@ -108,11 +108,11 @@ class ExerciseController extends Controller
 
     public function actionDiscuss()
     {
-        $data['uid']        = Yii::$app->request->get('uId');
-        $data['uid']        = 32;
-        $data['qid']        = Yii::$app->request->get('qId');
-        $data['detail']     = strip_tags(Yii::$app->request->get('cnt'));
-        $data['pid']        = Yii::$app->request->get('pId');// 被回复的id
+        $data['uid']        = Yii::$app->request->post('uId');
+//        $data['uid']        = 32;
+        $data['qid']        = Yii::$app->request->post('qId');
+        $data['detail']     = strip_tags(Yii::$app->request->post('cnt'));
+        $data['pid']        = Yii::$app->request->post('pId');// 被回复的id
         $data['createTime'] = time();
         //将获取的数据保存到数据库
         if($data['uid']==false){

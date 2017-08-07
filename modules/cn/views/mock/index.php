@@ -17,9 +17,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($v['isLogin']==0){
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].' " target="_blank" >'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -28,9 +28,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($v['isLogin']==0) {
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 
@@ -40,9 +40,9 @@
             <ul class="s-subject">
               <?php foreach($princeton as $k=>$v){
                 if($v['isLogin']==0) {
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
 
@@ -52,9 +52,9 @@
             <ul class="s-subject">
               <?php foreach($kaplan as $k=>$v){
                 if($v['isLogin']==0) {
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -63,9 +63,9 @@
             <ul class="s-subject">
               <?php foreach($barron as $k=>$v){
                 if($v['isLogin']==0) {
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">' . $v['name'] . $v['time'] . '</a></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?tid='.$v["id"].' " target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -73,7 +73,7 @@
         </div>
       </div>
       <!--单科模考-->
-      <div class="s-single-mock">
+      <div class="s-single-mock" id="m">
         <h2 class="s-title">单科模考</h2>
         <ul class="s-tag" role="tablist">
           <li role="presentation" class="active"><a href="#Read" aria-controls="Read" role="tab" data-toggle="tab">阅读</a></li>
@@ -85,9 +85,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($v['isLogin']==0){
-                  echo ' <li><a href="/mock_details?m=Reading&tid='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="/mock_details?m=Reading&tid='.$v["id"].'" target="_blank">'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?m=Reading&tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?m=Reading&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -96,9 +96,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($v['isLogin']==0){
-                  echo ' <li><a href="/mock_details?m=Math&tid='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="/mock_details?m=Math&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?m=Math&tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?m=Math&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -107,9 +107,9 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($v['isLogin']==0){
-                  echo ' <li><a href="/mock_details?m=Writing&tid='.$v["id"].'">'.$v['name'].$v['time'].'</a></li>';
+                  echo ' <li><a href="/mock_details?m=Writing&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a></li>';
                 }else{
-                  echo ' <li><a href="/mock_details?m=Writing&tid='.$v["id"].'">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+                  echo ' <li><a href="/mock_details?m=Writing&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
                 }
               }?>
             </ul>
@@ -128,7 +128,7 @@
           <?php }?>
         </ul>
       </div>
-      <div class="s-score s-score2">
+      <div class="s-score s-score2" id="m">
         <h2>单科阅读模考</h2>
         <ul>
           <?php foreach($read as $v){?>

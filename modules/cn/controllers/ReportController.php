@@ -17,12 +17,13 @@ use app\modules\cn\models\Report;
 class ReportController extends Controller
 {
     public $layout = 'cn.php';
+    public $enableCsrfValidation = false;
 
     public function actionReport()
     {
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
+//        $uid = 222;
         $user = Yii::$app->session->get('userData');
         $major = Yii::$app->session->get('part'); // 从前台得到还是从地址栏得到
 //        var_dump($_SESSION);die;
@@ -63,7 +64,6 @@ class ReportController extends Controller
                 $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
                 $tp = array_reverse($tp);
                 // 取出最新的一次报告
-
                 $report = new Report();
                 $res = $report->Show($uid, '');
             } else {
@@ -108,7 +108,7 @@ class ReportController extends Controller
     public function actionDetails()
     {
         $uid = Yii::$app->session->get('uid', '');
-        $uid = 222;
+//        $uid = 222;
         $user = Yii::$app->session->get('userData');
         $id = Yii::$app->request->get('id', '');
         $re = new Report();
@@ -136,18 +136,16 @@ class ReportController extends Controller
     {
         // 接受的试卷的id
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
-        $tpId = Yii::$app->request->get('tid');
-        $rid = Yii::$app->request->get('rid');
-        $major = Yii::$app->request->get('sub');
-        $classify = Yii::$app->request->get('classify');
-//        var_dump($rid);
+//        $uid = 222;
+        $tpId = Yii::$app->request->post('tid');
+        $rid = Yii::$app->request->post('rid');
+        $major = Yii::$app->request->post('sub');
+        $classify = Yii::$app->request->post('classify');
         if ($uid) {
             if (!$rid) {
                 $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=$uid and tpId=$tpId order by id desc limit 1")->queryOne();
             } else {
                 $data = Yii::$app->db->createCommand("select * from {{%report}} where id=$rid")->queryOne();
-//                var_dump($data);
             }
             $arr = explode(';', $data['answer']);
             static $brr = array();
@@ -159,8 +157,6 @@ class ReportController extends Controller
             }
             $report = new Report();
             $que = $report->queDetails($brr, $classify, $major);
-//            var_dump($brr);
-
         } else {
             if (isset($_SESSION['answer'])) {
                 $arr = (array)$_SESSION['answer'];

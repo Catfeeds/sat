@@ -18,11 +18,12 @@ use app\modules\cn\models\Report;
 class PersonController extends Controller
 {
     public $layout = 'cn.php';
+    public $enableCsrfValidation = false;
 
     public function actionCollect()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 444;
+//        $uid = 444;
         $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
         $qid = ltrim($arr['qid'], ',');
         $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
@@ -34,7 +35,7 @@ class PersonController extends Controller
     public function actionExercise()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
+//        $uid = 222;
         $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
@@ -69,7 +70,7 @@ class PersonController extends Controller
     public function actionMock()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
+//        $uid = 222;
         $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
         $model = new Format();
         foreach ($arr as $k => $v) {
@@ -81,10 +82,10 @@ class PersonController extends Controller
     public function actionColl()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 444;
-        $name = Yii::$app->request->get('src');
-        $p = Yii::$app->request->get('p', '1');
-        $major = Yii::$app->request->get('classify');
+//        $uid = 444;
+        $name = Yii::$app->request->post('src');
+        $p = Yii::$app->request->post('p', '1');
+        $major = Yii::$app->request->post('classify');
         $model = new collection();
         $pagesize = 2;
         $offset = $pagesize * ($p - 1);
@@ -96,10 +97,10 @@ class PersonController extends Controller
     public function actionExer()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
-        $name = Yii::$app->request->get('src');
-        $major = Yii::$app->request->get('classify');
-        $error = Yii::$app->request->get('case');
+//        $uid = 222;
+        $name = Yii::$app->request->post('src');
+        $major = Yii::$app->request->post('classify');
+        $error = Yii::$app->request->post('case');
         $p = Yii::$app->request->get('p', '1');
         $pagesize = 2;
         $offset = $pagesize * ($p - 1);
@@ -117,10 +118,10 @@ class PersonController extends Controller
     public function actionMo()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
-        $src = Yii::$app->request->get('src');
-        $type = Yii::$app->request->get('type');
-        $arr['curPage'] = $p = Yii::$app->request->get('p', '1');
+//        $uid = 222;
+        $src = Yii::$app->request->post('src');
+        $type = Yii::$app->request->post('type');
+        $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
         $arr['pageSize'] = $pagesize = 2;
         if ($src != 'all') {
             $name = "and name='$src'";
@@ -158,7 +159,7 @@ class PersonController extends Controller
 
     public function actionDel()
     {
-        $id = Yii::$app->request->get('id');
+        $id = Yii::$app->request->post('id');
         $re = Report::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             $res['code'] = 1;
@@ -173,8 +174,8 @@ class PersonController extends Controller
     public function actionRemoved()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
-        $id = Yii::$app->request->get('id');
+//        $uid = 333;
+        $id = Yii::$app->request->post('id');
         $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);

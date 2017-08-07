@@ -234,7 +234,7 @@ function ckBefore(flag,tag) {
             var u = location.search.split('&')[0].substr(1);
             if (tag == 'submit') {//提交进入下一小节
                 clearSession();
-                $.get('/cn/mock/section',{
+                $.post('/cn/mock/section',{
                     'tpId':testId,
                     'section':sec,
                     'qid':subId,
@@ -262,7 +262,7 @@ function ckBefore(flag,tag) {
                 },'json')
             } else {//下一题
                 $.ajax({
-                    type: 'get',
+                    type: 'post',
                     url: "/cn/mock/next",
                     data: {
                         'qid':subId,
@@ -286,7 +286,7 @@ function ckBefore(flag,tag) {
             var arr = location.search.substr(1).split('&'),
                 u = arr[0]+'&'+arr[1];
             if (tag == 'submit') {
-                $.get('/cn/mock/section',{
+                $.post('/cn/mock/section',{
                     'tpId':testId,
                     'section':sec,
                     'qid':subId,
@@ -305,7 +305,7 @@ function ckBefore(flag,tag) {
                 },'json')
             }else {
                 $.ajax({
-                    type: 'get',
+                    type: 'post',
                     url: "/cn/mock/next",
                     data: {
                         'qid':subId,
@@ -332,7 +332,7 @@ function ckBefore(flag,tag) {
 
 //退出模考、测评
 function exitOut() {
-    $.get('/cn/mock/leave',function(obj){
+    $.post('/cn/mock/leave',function(obj){
         if (obj) {
             clearSession('submit');
             window.location.href = '/mock.html';

@@ -93,7 +93,7 @@ $(function () {
       alert('验证码怎么能为空呢！')
     }else {
       $.ajax({
-        type: 'GET',
+        type: 'post',
         url: '/cn/message/index',
         data: {
           'name':name,
@@ -120,7 +120,7 @@ $(function () {
 })
 //获取uid
 var uId = $.cookie('uid');
-var uId = 444;
+var uId = 222;
 //收藏函数
 function collectEvent(obj) {
   if (uId == '') {
@@ -130,7 +130,7 @@ function collectEvent(obj) {
       subjectId = $('#subjectId').data('id'),
       val = $('.work-collect').data('value');
     $.ajax({
-      type: 'get',
+      type: 'post',
       url: '/cn/collection/collection',
       data: {
         uid: uId,

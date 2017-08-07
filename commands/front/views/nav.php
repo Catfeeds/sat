@@ -98,7 +98,7 @@
         <img src="/cn/images/logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
-        <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
+        <li><a <?php if($path==''){echo 'class="on"';}?> href="/">首页</a></li>
         <li class="s-nav-work">
             <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>
             <div class="s-nav-showing">

@@ -13,13 +13,15 @@ use yii\web\Controller;
 
 class CollectionController extends Controller
 {
+//    public $layout = 'cn.php';
+    public $enableCsrfValidation = false;
     // 收藏与取消收藏
     public function actionCollection()
     {
-        $data['qid'] =(string)Yii::$app->request->get('subId', '');
-        $data['uid'] =Yii::$app->request->get('uid', '');
+        $data['qid'] =(string)Yii::$app->request->post('subId', '');
+        $data['uid'] =Yii::$app->request->post('uid', '');
 //        $data['uid'] =222;
-        $flag=Yii::$app->request->get('val');
+        $flag=Yii::$app->request->post('val');
         $model=new Collection();
         // 查找 uid 是否存在
         $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();

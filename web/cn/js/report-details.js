@@ -300,7 +300,7 @@ function lineChart(divId,data,categories,lineName,pre) {
 function reportData(s,c) {
     $.ajax({
         url: '/cn/report/que',
-        type: 'get',
+        type: 'post',
         data: {
             'sub': s,
             'classify': c,

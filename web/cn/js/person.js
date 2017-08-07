@@ -44,7 +44,7 @@ $(function () {
 function exer(src,classify,cas,p){
   $.ajax({
     url: '/cn/person/exer',
-    type: 'get',
+    type: 'post',
     data: {
       'src': src,
       'classify': classify,
@@ -98,7 +98,7 @@ function exer(src,classify,cas,p){
 function mock(src,t,p){
   $.ajax({
     url: '/cn/person/mo',
-    type: 'get',
+    type: 'POST',
     data: {
       'src': src,
       'type': t,
@@ -150,7 +150,7 @@ function mock(src,t,p){
 function collect(src,classify,p){
   $.ajax({
     url: '/cn/person/coll',
-    type: 'get',
+    type: 'post',
     data: {
       'src': src,
       'classify': classify,
@@ -200,7 +200,7 @@ function collect(src,classify,p){
 //删除事件
 function mockDel(a) {
   var _this = $(a);
-  $.get('/cn/person/del',{id:_this.data('id')},function(data){
+  $.post('/cn/person/del',{id:_this.data('id')},function(data){
     if (data.code == 1) {
       _this.parent().parent().remove();
       alert(data.message);
@@ -209,7 +209,7 @@ function mockDel(a) {
 }
 function exerDel(a) {
   var _this = $(a);
-  $.get('/cn/person/removed',{id:_this.data('id')},function(data){
+  $.post('/cn/person/removed',{id:_this.data('id')},function(data){
     if (data.code == 1) {
       _this.parent().parent().parent().remove();
       alert(data.message);
@@ -218,7 +218,7 @@ function exerDel(a) {
 }
 function collDel(a){
   var _this = $(a);
-  $.get('/cn/collection/collection',{subId:_this.data('id'),val:1, uid: 444
+  $.post('/cn/collection/collection',{subId:_this.data('id'),val:1, uid:444
   },function(data){
     if (data.code == 2) {
       _this.parent().remove();

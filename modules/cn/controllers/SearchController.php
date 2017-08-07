@@ -23,7 +23,7 @@ class SearchController extends Controller
         $cate = Yii::$app->request->get('c');
         $page = Yii::$app->request->get('p', '1');
         if($keyword){
-            $pagesize = 6;
+            $pagesize = 15;
             $p = Yii::$app->request->get('p', 1);
             $offset= $pagesize * ($p - 1);
             if($cate=='i'){
@@ -43,12 +43,9 @@ class SearchController extends Controller
         }else{
             $data=array();
             $count='';
+            $str='';
         }
         if($count==0)$str='';
-//        foreach($data as $v){
-//            str_replace($keyword,'<span style="color:red;">'.$keyword.'</span>',isset($v['title'])?$v['title']:$v['content']);
-//        }
-//        var_dump($data);die;
         return $this->render('index',['data'=>$data,'str'=>$str]);
     }
 }
