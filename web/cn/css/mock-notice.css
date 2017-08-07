@@ -74,7 +74,7 @@
     background-color: rgb(54,178,251);
 }
 .s-notice .s-wrap {
-    margin-bottom: 5%;
+    /*margin-bottom: 5%;*/
     text-align: left;
 }
 .s-notice .s-tag {
@@ -123,7 +123,7 @@
 .s-notice .s-list li {
     position: relative;
     padding-left: 20px;
-    margin-bottom: 25px;
+    /*margin-bottom: 25px;*/
 }
 .s-notice .s-list li:before {
     position: absolute;

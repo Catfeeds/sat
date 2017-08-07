@@ -82,7 +82,6 @@ class PersonController extends Controller
     public function actionColl()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 444;
         $name = Yii::$app->request->post('src');
         $p = Yii::$app->request->post('p', '1');
         $major = Yii::$app->request->post('classify');
@@ -97,11 +96,11 @@ class PersonController extends Controller
     public function actionExer()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 222;
+        $uid = 222;
         $name = Yii::$app->request->post('src');
         $major = Yii::$app->request->post('classify');
         $error = Yii::$app->request->post('case');
-        $p = Yii::$app->request->get('p', '1');
+        $p = Yii::$app->request->post('p', '1');
         $pagesize = 2;
         $offset = $pagesize * ($p - 1);
 
@@ -118,7 +117,6 @@ class PersonController extends Controller
     public function actionMo()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 222;
         $src = Yii::$app->request->post('src');
         $type = Yii::$app->request->post('type');
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
@@ -174,7 +172,6 @@ class PersonController extends Controller
     public function actionRemoved()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 333;
         $id = Yii::$app->request->post('id');
         $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {

@@ -98,7 +98,7 @@ function exer(src,classify,cas,p){
 function mock(src,t,p){
   $.ajax({
     url: '/cn/person/mo',
-    type: 'POST',
+    type: 'post',
     data: {
       'src': src,
       'type': t,
@@ -218,7 +218,7 @@ function exerDel(a) {
 }
 function collDel(a){
   var _this = $(a);
-  $.post('/cn/collection/collection',{subId:_this.data('id'),val:1, uid:444
+  $.post('/cn/collection/collection',{subId:_this.data('id'),val:1, uid: $.cookie('uid')
   },function(data){
     if (data.code == 2) {
       _this.parent().remove();
