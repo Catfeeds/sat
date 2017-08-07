@@ -23,7 +23,6 @@ class PersonController extends Controller
     public function actionCollect()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 444;
         $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
         $qid = ltrim($arr['qid'], ',');
         $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
@@ -35,7 +34,6 @@ class PersonController extends Controller
     public function actionExercise()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 222;
         $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
@@ -70,7 +68,6 @@ class PersonController extends Controller
     public function actionMock()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 222;
         $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
         $model = new Format();
         foreach ($arr as $k => $v) {

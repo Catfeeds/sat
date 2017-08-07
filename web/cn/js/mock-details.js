@@ -103,7 +103,6 @@ function countTimeFun() {
         hour = checkTime(hour);
         min = checkTime(min);
         sec = checkTime(sec);
-        console.log(sec);
         $('.work-time-cnt').text("本section剩余时间: "+hour+ ":" +min+ ":" +sec);
     }
 }

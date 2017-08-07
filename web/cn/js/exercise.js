@@ -177,8 +177,7 @@ function ajaxEvent(obj,u) {
 function comment(obj,flag){
   var tId = $('#subjectId').data('id'),
       _this = $(obj),
-  uId = $.cookie('uid');
-    //uId = 32;
+      uId = $.cookie('uid');
   if(flag == 0){
     var cnt = $('#dis-input-cnt').val(),
       pId = 0;

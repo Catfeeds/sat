@@ -120,7 +120,6 @@ $(function () {
 })
 //获取uid
 var uId = $.cookie('uid');
-var uId = 222;
 //收藏函数
 function collectEvent(obj) {
   if (uId == '') {
@@ -250,7 +249,7 @@ function numBtnEvent() {
   $(parent).find(".math-value").eq(0).text($(parent).find(".col1.cut").text()+$(parent).find(".col2.cut").text()+$(parent).find(".col3.cut").text()+$(parent).find(".col4.cut").text());
 }
 //禁止右键
-// function stop(){
-//   return false;
-// }
-// document.oncontextmenu = stop;
+ function stop(){
+   return false;
+ }
+ document.oncontextmenu = stop;

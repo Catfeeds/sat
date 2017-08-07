@@ -22,7 +22,6 @@ class ReportController extends Controller
     {
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
         $uid = Yii::$app->session->get('uid');
-//        $uid = 222;
         $user = Yii::$app->session->get('userData');
         $major = Yii::$app->session->get('part'); // 从前台得到还是从地址栏得到
 //        var_dump($_SESSION);die;
@@ -107,7 +106,6 @@ class ReportController extends Controller
     public function actionDetails()
     {
         $uid = Yii::$app->session->get('uid', '');
-//        $uid = 222;
         $user = Yii::$app->session->get('userData');
         $id = Yii::$app->request->get('id', '');
         $re = new Report();
@@ -135,10 +133,12 @@ class ReportController extends Controller
     {
         // 接受的试卷的id
         $uid = Yii::$app->session->get('uid');
+
         $tpId = Yii::$app->request->post('tid');
         $rid = Yii::$app->request->post('rid');
         $major = Yii::$app->request->post('sub');
         $classify = Yii::$app->request->post('classify');
+
         if ($uid) {
             if (!$rid) {
                 $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=$uid and tpId=$tpId order by id desc limit 1")->queryOne();

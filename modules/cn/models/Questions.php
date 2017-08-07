@@ -72,6 +72,7 @@ class Questions extends ActiveRecord{
     }
 
     /* 做题进度
+
     * @param,major科目
     * @param,id 题目的id
     * @param,section 题目所属的部分

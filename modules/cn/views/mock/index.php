@@ -31,6 +31,7 @@
                   echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">' . $v['name'] . $v['time'] . '</a></li>';
                 }else{
                   echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+
                 }
               }?>
 
@@ -107,9 +108,11 @@
             <ul class="s-subject">
               <?php foreach($data as $k=>$v){
                 if($v['isLogin']==0){
+
                   echo ' <li><a href="/mock_details?m=Writing&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a></li>';
                 }else{
                   echo ' <li><a href="/mock_details?m=Writing&tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
+
                 }
               }?>
             </ul>

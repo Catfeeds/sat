@@ -211,6 +211,7 @@
   margin-top: 15px;
 }
 /*使用声明*/
+#sCopyRight p,
 #sStatement p {
   line-height: 24px;
   text-indent: 24px;

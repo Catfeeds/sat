@@ -16,7 +16,6 @@ class MockController extends Controller
 {
     public $layout = ' ';
     public $enableCsrfValidation = false;
-
     public function actionIndex()
     {
         $this->layout = 'cn.php';
@@ -131,8 +130,8 @@ class MockController extends Controller
         $_SESSION['tid'] = $tid;
         $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
         echo die(json_encode($next));
-
     }
+
 
     // 做题中途离开
     public function actionLeave()
@@ -144,6 +143,7 @@ class MockController extends Controller
     // 提交当前小节，进入下一小节
     public function actionSection()
     {
+
         $section = Yii::$app->request->post('section')+1;
         $count   = Yii::$app->request->post('allPos');// 做题总数
         $tid     = Yii::$app->request->post('tpId');
