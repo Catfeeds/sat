@@ -98,5 +98,7 @@
         })
         var h = $(window).height()-80;
         $('.s-evaluation .s-cnt').height(h);
+        $('.s-notice .s-wrap ').css('marginBottom',0.05*h);
+        $('.s-notice .s-list li').css('marginBottom',0.03*h);
     })
 </script>
