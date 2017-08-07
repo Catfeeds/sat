@@ -21,6 +21,11 @@ class KnowledgeController extends Controller
 
     public function actionDetails()
     {
-
+        $id= Yii::$app->request->get('id');
+        $data = Yii::$app->db->createCommand("select * from {{%knowledge}} where id=".$id." order by id desc")->queryOne();
+        // 相关知识点
+        $brr = Yii::$app->db->createCommand("select * from {{%knowledge}} where cate='".$data['cate']."' and major='".$data['major']."' order by id desc limit 10")->queryAll();
+//        var_dump($brr);die;
+        return $this->render('details',['data'=>$data,'brr'=>$brr]);
     }
 }

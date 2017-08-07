@@ -15,7 +15,6 @@
         <div class="s-detail clearfix">
           <div class="s-text pull-left">
             <h2>课程简介</h2>
-
             <div class="s-text-cnt"><?php echo isset($data[0]['introduction'])?$data[0]['introduction']:''?></div>
             <ul>
               <li>模块</li>

@@ -8,10 +8,13 @@
     }
 
 </style>
+<link rel="stylesheet" href="/cn/css/bootstrap.min.css">
+<script src="/cn/js/bootstrap.min.js"></script>
 <div class="span10">
     <div >
         <a href="/index/index">首页</a><span >&gt;</span><span>资讯管理</span>
     </div>
+
     <a href="<?php echo baseUrl.'/admin/info/add'?>">添加资讯</a>
     <table border="1"  style="table-layout: fixed;width:100%;">
         <tr align="center">
@@ -94,7 +97,9 @@
             </tr>
         <?php }?>
     </table>
+    <div style="align-content: center;"><?php echo $str?></div>
 </div>
+
 <script>
     function del(id){
         if(confirm("确定删除内容吗")) {

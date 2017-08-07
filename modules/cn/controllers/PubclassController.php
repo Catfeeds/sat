@@ -18,9 +18,6 @@ class PubclassController extends Controller
     public $enableCsrfValidation = false;
     public function actionIndex()
     {
-//        $pubclass = new Pubclass();
-//        $pubclass->getTime();
-
         $data = Yii::$app->db->createCommand("select * from {{%info}} where validTime>".time()."  and cate='公开课'")->queryAll();
         $arr = Yii::$app->db->createCommand("select * from {{%info}} where validTime<".time()." and cate='公开课'")->queryAll();
         $controller = Yii::$app->controller->id;
@@ -38,7 +35,6 @@ class PubclassController extends Controller
         }else{
             $arr['phone']=$_SESSION['userData']['email'];
         }
-//        $arr['phone']= Yii::$app->request->post('userTel', '');
         $id=$arr['pubclass_id'] ;
         $add_re = Yii::$app->db->createCommand()->insert("{{%class_apply}}", $arr)->execute();
         $data = Yii::$app->db->createCommand("select hits,id from {{%info}} where id=$id ")->queryOne();
@@ -75,8 +71,8 @@ class PubclassController extends Controller
                 'summary' => $v['summary'],
                 'title' => $v['title'],
                 'pic' => $v['pic'],
-              'videoAddress' => $v['videoAddress'],
-              'publishTime' => date('Y-m-d',$v['publishTime']),
+                'videoAddress' => $v['videoAddress'],
+                'publishTime' => date('Y-m-d',$v['publishTime']),
                 'activeDate' =>$time[0],
                 'activeTime' =>$time[1]
             );

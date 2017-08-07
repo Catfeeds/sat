@@ -1,7 +1,6 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
-
 <div class="span10">
     <div >
         <a href="/index/index">首页</a>
@@ -15,7 +14,8 @@
             <tr>
                 <td width="80px">适合学生:</td>
                 <td>
-                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:300px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea></td>
+                    <textarea type="text/plain" id="editor" name="student" placeholder="入学要求" style="height:300px;width:70%"><?php echo isset($data)? $data["student"]:''?></textarea>
+                </td>
             </tr>
 <!--            <tr>-->
 <!--                <td>图片:</td>-->
@@ -64,7 +64,9 @@
             <tr>
                 <td>学习计划：</td>
                 <td>
+
                     <textarea type="text/plain" id="plan"  name="plan" placeholder="学习计划" style="height:300px;width:70%"><?php echo isset($data)? $data['plan']:''?></textarea>
+
                 </td>
             </tr>
             <tr>
@@ -72,11 +74,25 @@
                 <td><input type="text"  style="width: 600px;" name="price" placeholder="课程价格" value="<?php echo isset($data)? $data['price']:''?>"/></td>
             </tr>
             <tr>
-                <td>课程简介：</td>
+                <td>课程介绍：</td>
                 <td>
-                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程简介" style="height:300px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
+                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程介绍" style="height:300px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
                 </td>
             </tr>
+
+            <tr>
+                <td>课程简介：</td>
+                <td>
+                    <textarea type="text/plain"   name="smallIntro" placeholder="课程简介" style="height:100px;width:50%"><?php echo isset($data)? $data['smallIntro']:''?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>开课时间：</td>
+                <td>
+                    <input type="text/plain"  name="classTime" placeholder="开课时间" value="<?php echo isset($data)? $data['classTime']:''?>"/>
+                </td>
+            </tr>
+
             <tr>
                 <td colspan="2" align="center"> <button type="submit" id="login-button">添加课程</button></td>
             </tr>

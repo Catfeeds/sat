@@ -10,9 +10,9 @@
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li class="active"><a href="/exercise.html?m=math"> 数学</a></li>
-          <li><a href="/exercise.html?m=reading">阅读</a></li>
-          <li><a href="/exercise.html?m=writing">写作</a></li>
+          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
+          <li><a href="/exercise.html?m=Reading">阅读</a></li>
+          <li><a href="/exercise.html?m=Writing">文法</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
@@ -26,35 +26,56 @@
           <ul>
             <?php foreach($data as $k=>$v){?>
             <li>
-              <h3><?php echo $v['id']?></h3>
-              <p><?php
-                    echo $v['topic'];
+              <h3><?php echo $v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number']?></h3>
+              <div><?php
+//                if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
+//                  echo $v['essay'];
+//                }else{
+                  echo $v['content'];
+//                }
                   ?>
-              </p>
-              <a href="/exercise_details/<?php echo $v['id']?>.html">做题</a>
+              </div>
+              <a href="/exercise_details/<?php echo $v['qid']?>.html">做题</a>
             </li>
             <?php }?>
           </ul>
-
         </div>
         <?php echo $page?>
       </div>
       <div class="s-right pull-right">
-        <div class="s-right-adv">
-          <img src="/cn/images/pubClass-dea_11.png" alt="">
+        <div class="s-right-subject s-right1">
+          <h2>做题排行榜</h2>
+          <?php foreach ($rank as $k=>$v){if($k<3){?>
+          <div class="s-rank-list">
+            <div class="s-rank-img"></div>
+            <div class="s-rank-name">
+              <h4><?php echo $v['nickname']!=false?$v['nickname']:$v['username']?></h4>
+              <p><span><?php echo $v['count']?>题</span><span><?php echo sprintf("%.2f",$v['correctRate'])?>%正确率</span></p>
+            </div>
+          </div>
+          <?php }}?>
+          <ul>
+            <?php foreach ($rank as $k=>$v){if($k>=3){?>
+            <li class="s-rank-box">
+              <p><?php echo $v['nickname']!=false?$v['nickname']:$v['username']?></p>
+              <p><span><?php echo $v['count']?>题</span><span><?php echo sprintf("%.2f",$v['correctRate'])?>%正确率</span></p>
+            </li>
+            <?php }}?>
+          </ul>
         </div>
-        <ul class="s-right-subject">
+        <div class="s-right-subject s-right2">
           <h2>最新题目</h2>
-          <?php foreach($arr as $k=>$v){?>
-          <li>
-            <h3><?php echo $v['id']?></h3>
-            <a href="/exercise_details/<?php echo $v['id']?>.html"><?php
-              echo $v['topic'];
-              ?>
-            </a>
-          <li>
-          <?php }?>
-        </ul>
+          <ul>
+            <?php foreach($arr as $k=>$v){?>
+              <li>
+                <h3><?php echo $v['qid']?></h3>
+                <a href="/exercise_details/<?php echo $v['qid']?>.html">
+                  <?php echo $v['content']; ?>
+                </a>
+              </li>
+            <?php }?>
+          </ul>
+        </div>
         <div class="s-right-code">
           <img src="/cn/images/qr-code01.png" alt="">
           <p>扫码关注</p>
@@ -66,23 +87,42 @@
 <!--底部-->
 <script>
   $(function () {
-    var search = location.search.split('&'),
-        m = search[0].substr(3);
+    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
+    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:6,interTime:100});
+    //  选项卡切换效果
+    var search = location.search.split('m='),
+        m = search[1];
+    if (location.search.split('&').length==2 && location.search.indexOf('p=') != -1) {
+      m = m.split('&')[0];
+    }
     $('.s-label-list li').removeClass('active');
     switch (m) {
-      case 'reading':
+      case 'Reading':
         $('.s-label-list li').eq(1).addClass('active');
         break;
-      case 'writing':
+      case 'Writing':
         $('.s-label-list li').eq(2).addClass('active');
         break;
       default:
         $('.s-label-list li').eq(0).addClass('active');
         break;
     }
-    if (search.length>1) {
-      var c = search[1].substr(2);
+    if (location.search.indexOf('c=') != -1) {
+      var search1 = location.search.split('m=')[1].split('&c=')[0];
+      search = location.search.split('c=');
+      var c = search[1];
+      if (location.search.split('&').length==3 && location.search.indexOf('p=') != -1) {
+        c = c.split('&')[0];
+      }
+      $('.s-label-list li').removeClass('active');
       $('.s-subject-src dd').removeClass('active');
+      if (search1 == 'Writing') {
+        $('.s-label-list li').eq(2).addClass('active');
+      } else if (search1 == 'Reading') {
+        $('.s-label-list li').eq(1).addClass('active');
+      } else {
+        $('.s-label-list li').eq(0).addClass('active');
+      }
       switch (c) {
         case 'OG':
           $('.s-subject-src dd').eq(1).addClass('active');
@@ -115,9 +155,8 @@
         window.location.href = url;
       }
     } else {
-      console.log(url+'/exercise.html?path=math'+'&c='+cate);
-//      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
+//      console.log(url+'/exercise.html?path=math'+'&c='+cate);
+      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
     }
-
   }
 </script>

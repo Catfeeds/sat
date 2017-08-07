@@ -25,7 +25,7 @@ class AboutController extends Controller
         $user=$session->get('userData');
         return $this->render('about',['join'=>$join,'contact'=>$contact,'user'=>$user,'token'=>$token]);
     }
-
+    // 用户建议意见
     public function actionSuggest()
     {
         $sugData['suggest'] = Yii::$app->request->post('suggest');

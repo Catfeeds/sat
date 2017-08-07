@@ -7,63 +7,129 @@
         <span >&gt;</span>
         <span><a href="/admin/questions/index">题库管理</a></span>
         <span >&gt;</span>
-        <span>添加题目拓展数据</span>
+        <span>添加题目数据</span>
     </div>
-    先添加短文或数学题目<a  href="/admin/questions/topic">添加</a> </br>
+<!--    先添加短文或题目图片<a  href="/admin/questions/extend">添加</a> </br>-->
 <!--            添加短文小题及选项<a><span id="addquestion">添加题目</span></a></br></br>-->
         <div id="question" >
-                <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add"?>">
-                    <span width="80px">题 &nbsp;&nbsp;&nbsp;&nbsp;号 :</span>
+            <form class="form" method="post" action="<?php echo baseUrl."/admin/questions/add"?>">
+                    <span>试 &nbsp;&nbsp;&nbsp;&nbsp;卷 &nbsp;:</span>
                     <span>
-                        <input type="text"  name="number" value="<?php echo isset($questions)?$questions['number']:''?>" placeholder="题号" >
+                        <select name="tpId">
+                            <option value ="">请选择试卷</option>
+                            <?php foreach($arr as $v){?>
+                                 <option value ="<?php echo $v['id']?>" <?php echo isset($data['tpId'])&& $data['tpId']==$v['id'] ?  'selected':''?>><?php echo $v['name'].$v['time']?></option>
+                            <?php }?>
+                        </select>
                     </span>
                     </br>
 
-                    <span width="80px">短文小题或数学附加图片:</span>
+                    <span>填 空 题 : </span>
                     <span>
-                         <textarea id="editor" type="text/plain" name="content"   style="width:600px;height:300px;" ><?php echo isset($questions)? $questions['content']:''?></textarea>
+                        <input name="isFilling" type="radio" value="0"  <?php echo isset($data['isFilling']) && $data['isFilling']==='0' ?  'checked="checked"':''?>/>否
+                        <input name="isFilling" type="radio" value="1" <?php echo isset($data['isFilling']) && $data['isFilling']==='1' ?  'checked="checked"':''?>/>是
+                    </span>
+                    </br>
+
+                    <span>所属小节:</span>
+                    <span>
+                        <input type="text"  name="section" value="<?php echo isset($data['section'])?$data['section']:''?>" placeholder="题目所在第几部分" >*只写数字
+                    </span>
+                    </br>
+
+                    <span>科&nbsp;&nbsp;&nbsp;&nbsp; 目 :</span>
+                    <span>
+                        <select name="major">
+                            <option value ="">请选择类型</option>
+                            <option value ="Math1" <?php echo isset($data['major'])&& $data['major']=="Math1" ?  'selected':''?>>数学1（带计算器）</option>
+                            <option value ="Math2" <?php echo isset($data['major'])&& $data['major']=="Math2" ?  'selected':''?>>数学2（不带计算器）</option>
+                            <option value ="Reading" <?php echo isset($data['major'])&& $data['major']=="Reading" ?  'selected':''?>>阅读</option>
+                            <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>文法</option>
+                            <option value ="Essay" <?php echo isset($data['major'])&& $data['major']=="Essay" ?  'selected':''?>>作文</option>
+                        </select>
+                    </span>
+                    </br>
+
+                    <span width="80px">题 &nbsp;&nbsp;&nbsp;&nbsp;号 :</span>
+                    <span>
+                        <input type="text"  name="number" value="<?php echo isset($data)?$data['number']:''?>" placeholder="题号" >
+                    </span>
+                    </br>
+
+                    <span>短文、图片id:</span>
+                    <span><input type="text" name="essayId" value="<?php echo isset($data)?$data['essayId']:''?>" placeholder="题干的id" ></span>
+                    </br>
+
+                    <span width="80px">问 &nbsp;&nbsp;&nbsp;&nbsp;题：</span>
+                    <span>
+                         <textarea id="content" type="text/plain" name="content"   style="width:80%;height:200px;" ><?php echo isset($data)? $data['content']:''?></textarea>
                     </span>
                     </br>
 
                     <span>选 &nbsp;项 &nbsp;A:</span>
-                    <span><input type="text" name="keyA" value="<?php echo isset($questions)?$questions['keyA']:''?>" placeholder="A选项" style="width:80%;"></span>
+                    <span>
+                         <textarea id="keyA"  type="text/plain" name="keyA" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyA']:''?></textarea>
+                    </span>
                     </br>
 
                     <span>选 &nbsp;项&nbsp; B:</span>
-                    <span><input type="text" name="keyB" value="<?php echo isset($questions)?$questions['keyB']:''?>" placeholder="B选项" style="width:80%;"></span>
+                    <span>
+                       <textarea id="keyB"  type="text/plain" name="keyB" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyB']:''?></textarea>
+                    </span>
                     </br>
 
                     <span>选 &nbsp;项 &nbsp;C:</span>
-                    <span><input type="text" name="keyC" value="<?php echo isset($questions)?$questions['keyC']:''?>" placeholder="C选项" style="width:80%;"></span>
+                    <span>
+                        <textarea id="keyC"  type="text/plain" name="keyC" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyC']:''?></textarea>
+                    </span>
                     </br>
 
                     <span>选 &nbsp;项&nbsp; D:</span>
-                    <span><input type="text" name="keyD" value="<?php echo isset($questions)?$questions['keyD']:''?>" placeholder="D选项" style="width:80%;"></span>
+                    <span><textarea id="keyD"  type="text/plain" name="keyD" style="width:80%;height: 80px;"><?php echo isset($data)?$data['keyD']:''?></textarea></span>
                     </br>
 
-                    <span>选 &nbsp;项&nbsp; E:</span>
-                    <span><input type="text" name="keyE" value="<?php echo isset($questions)?$questions['keyE']:''?>" placeholder="E选项" style="width:80%;"></span>
-                    </br>
+<!--                    <span>选 &nbsp;项&nbsp; E:</span>-->
+<!--                    <span>-->
+<!--                        <textarea id="keyE"  type="text/plain" name="keyD" style="width:80%;height: 80px;">--><?php //echo isset($data)?$data['keyD']:''?><!--</textarea>-->
+<!--                    </span>-->
+<!--                    </br>-->
 
                     <span>答 &nbsp;&nbsp;&nbsp;&nbsp;案 :</span>
-                    <span><input type="text" name="answer" value="<?php echo isset($questions)?$questions['answer']:''?>" placeholder="答案"></span>
+                    <span><input type="text" name="answer" value="<?php echo isset($data)?$data['answer']:''?>" placeholder="答案">*区分大小写</span>
+                    </br>
+                    <span>解 &nbsp;&nbsp;&nbsp;&nbsp;析 :</span>
+                    <span><textarea type="text" id="analysis" name="analysis" style="width:80%;height: 80px;"><?php echo isset($data)?$data['analysis']:''?></textarea></span>
                     </br>
 
-                    <span>短文、题干id:</span>
-                    <span><input type="text" name="topicId" value="<?php echo isset($questions)?$questions['topicId']:''?>" placeholder="题干的id" ></span>
+                    <span>难 &nbsp;&nbsp;&nbsp;&nbsp;度 :</span>
+                    <span><input type="text" name="level"  value="<?php echo isset($data)?$data['level']:''?>"></span>
+                    </br>
+                    <span>考 &nbsp;&nbsp;&nbsp;&nbsp;点 :</span>
+                    <span><input type="text" name="testCenter"  value="<?php echo isset($data)?$data['testCenter']:''?>"></span>
+                    </br>
+
+                    <span>类 &nbsp;&nbsp;&nbsp;&nbsp;型 :</span>
+                    <span>
+                        <select name="cate">
+                            <option value ="">请选择类型</option>
+                            <option value ="每日一题" <?php echo isset($data['cate'])&& $data['cate']=="每日一题" ?  'selected':''?>>每日一题</option>
+                            <option value ="模考" <?php echo isset($data['cate'])&& $data['cate']=="模考" ?  'selected':''?>>模考</option>
+                            <option value ="评测" <?php echo isset($data['cate'])&& $data['cate']=="评测" ?  'selected':''?>>评测</option>
+                        </select>
+                    </span>
                     </br>
 
                     <span>subScores:</span>
                     <span>
                         <select name="subScores">
                             <option value ="">请选择类型</option>
-                            <option value ="Heart of Algebra" <?php echo isset($questions)&& $questions['subScores']=="Heart of Algebra" ?  'selected':''?>>Heart of Algebra</option>
-                            <option value ="Problem Solving and Data Analysis" <?php echo isset($questions)&& $questions['subScores']=="Problem Solving and Data Analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
-                            <option value ="Passport to Advanced Math" <?php echo isset($questions)&& $questions['subScores']=="Passport to Advanced Math" ?  'selected':''?>>Passport to Advanced Math</option>
-                            <option value ="Expression of Ideas" <?php echo isset($questions)&& $questions['subScores']=="Expression of Ideas" ?  'selected':''?>>Expression of Ideas</option>
-                            <option value ="Standard English Conventions" <?php echo isset($questions)&& $questions['subScores']=="Standard English Conventions" ?  'selected':''?>>Standard English Conventions</option>
-                            <option value ="Words in Context" <?php echo isset($questions)&& $questions['subScores']=="Words in Context" ?  'selected':''?>>Words in Context</option>
-                            <option value ="Command of Evidence" <?php echo isset($questions)&& $questions['subScores']=="Command of Evidence" ?  'selected':''?>>Command of Evidence</option>
+                            <option value ="algebra" <?php echo isset($data)&& $data['subScores']=="algebra" ?  'selected':''?>>Heart of Algebra</option>
+                            <option value ="analysis" <?php echo isset($data)&& $data['subScores']=="analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
+                            <option value ="math" <?php echo isset($data)&& $data['subScores']=="math" ?  'selected':''?>>Passport to Advanced Math</option>
+                            <option value =expression" <?php echo isset($data)&& $data['subScores']=="expression" ?  'selected':''?>>Expression of Ideas</option>
+                            <option value ="english" <?php echo isset($data)&& $data['subScores']=="english" ?  'selected':''?>>Standard English Conventions</option>
+                            <option value ="words" <?php echo isset($data)&& $data['subScores']=="words" ?  'selected':''?>>Words in Context</option>
+                            <option value ="evidence" <?php echo isset($data)&& $data['subScores']=="evidence" ?  'selected':''?>>Command of Evidence</option>
                         </select>
                     </span>
                     </br>
@@ -72,19 +138,33 @@
                     <span>
                         <select name="crosstestScores">
                             <option value ="">请选择类型</option>
-                            <option value ="history/social" <?php echo isset($questions)&& $questions['crosstestScores']=="history/social" ?  'selected':''?>>history/social</option>
-                            <option value ="science"  <?php echo isset($questions)&& $questions['crosstestScores']=="science" ?  'selected':''?>>science</option>
+                            <option value ="social" <?php echo isset($data)&& $data['crosstestScores']=="social" ?  'selected':''?>>history/social</option>
+                            <option value ="science"  <?php echo isset($data)&& $data['crosstestScores']=="science" ?  'selected':''?>>science</option>
                         </select>
                     </span>
                     </br>
-              <span colspan="2" style=“align：center">
-                    <input type="hidden" name="id" value="<?php echo isset($questions)?$questions['id']:''?>"/>
-                    <button type="submit" id="login-button">添加/修改</button></span>
-            <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                <span colspan="2" style=“align：center">
+                    <input type="hidden" name="id" value="<?php echo isset($data)?$data['id']:''?>"/>
+                    <button type="submit" id="login-button">添加/修改</button>
+                </span>
+                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
             </form>
-            </div>
+        </div>
 </div>
 <script>
     //实例化编辑器
+//    config={window.UEDITOR_CONFIG = {
+//        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
+//        'fontsize':[16]
+//    }}
     var ue = UE.getEditor('editor');
+    var content = UE.getEditor('content',{
+        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
+        'fontsize':[16]
+    });
+    var keyA= UE.getEditor('keyA');
+    var keyB = UE.getEditor('keyB');
+    var keyC= UE.getEditor('keyC');
+    var keyD = UE.getEditor('keyD');
+    var keyE = UE.getEditor('analysis');
 </script>

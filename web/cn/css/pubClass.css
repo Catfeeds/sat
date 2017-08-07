@@ -188,22 +188,3 @@
   color: #fff;
   text-decoration: none;
 }
-/*分页*/
-.pagination {
-  width: 560px;
-  display: block;
-  margin: 20px auto 0;
-}
-.pagination li a {
-  margin: 5px;
-  padding: 0;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
-  text-align: center;
-  color: #000;
-}
-.pagination li.active a {
-  background-color: rgb(54,178,251);
-  border-color: rgb(54,178,251);
-}
