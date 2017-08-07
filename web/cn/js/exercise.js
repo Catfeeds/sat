@@ -231,11 +231,10 @@ function comment(obj,flag){
               //"</li>"+
               "</ul>"+
               "<textarea name='' id='reply-input-cnt' cols='80' rows='4'></textarea>"+
-              "<input class='pull-right'' type='button' value='发表'>"+
+              "<input class='pull-right' type='button' value='发表'>"+
               "</div></li>";
             $('.dis-usr-list>ul').append(liObj);
           } else if((data.num == 2)&&(data.code == 1)){
-            console.log(_this.parent().children('ul').children());
               var liObj = '';
               liObj+="<li class='clearfix'>"+
                 "<img src='/cn/images/login.png' alt='用户头像'>"+

@@ -8,6 +8,8 @@ class Report extends ActiveRecord{
     {
         return '{{%report}}';
     }
+
+    // 数组转化成字符串
     function arrToStr ($array)
     {
         // 定义存储所有字符串的数组
@@ -30,6 +32,12 @@ class Report extends ActiveRecord{
         $string = implode(",", $r_arr);
         return $string;
     }
+
+    /* 报告页面根据条件获取题目详情
+    *@$brr 所有题目的数组
+    *@$classify 题范围
+    *@$major 单科报告科目
+    */
     function queDetails($brr,$classify,$major)
     {
         if($major=='Math'){
@@ -72,6 +80,8 @@ class Report extends ActiveRecord{
         }
         return $que;
     }
+
+    // 用户的最新一套试题数据
     function Show($uid,$id)
     {
         if($id==false){
@@ -87,12 +97,11 @@ class Report extends ActiveRecord{
         $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
         $subscore   = $data['subScore'];
         $crosstest  = $data['crossScore'];
-        $re = array_merge($data, $score);
-        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
+        $re         = array_merge($data, $score);
+        $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
         array_push($re,$suggest);
-//        var_dump($re);die;
         return $re;
     }
 
