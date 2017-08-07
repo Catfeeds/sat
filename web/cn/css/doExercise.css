@@ -1,3 +1,10 @@
+.breadcrumb {
+  background-color: #fff;
+}
+.breadcrumb li,
+.breadcrumb li a {
+  font-size: 14px;
+}
 .s-exercise .s-top-img {
   margin-bottom: 60px;
 }
@@ -5,39 +12,62 @@
   width: 100%;
   height: 247px;
 }
+
+.s-exer-wrap {
+  position: relative;
+}
 .s-exam {
-  width: 680px;
+  min-height: 600px;
   font-size: 14px;
 }
 .s-exam .s-num {
+  margin-right: 10px;
   font-size: 16px;
 }
-.s-exam .s-que-list li {
-  padding: 10px;
-  cursor: pointer;
+.s-exam .math-exam .s-title{
+  margin-bottom: 20px;
 }
-.s-exam .s-select {
-  float: left;
-  width: 30px;
-  height: 30px;
-  line-height: 26px;
-  border-radius: 50%;
-  border: 2px solid rgb(54,178,251);
-  text-align: center;
-  color: rgb(54,178,251);
+  /*数学*/
+.math-exam {
+  width: 680px;
+  margin-right: 100px;
 }
-.s-exam .s-que-list li:hover .s-select,
-.s-exam .s-select.active {
+.math-exam .math-title {
+  width: 100%;
+  height: 35px;
+  padding: 0 20px;
+  margin-top: 0;
   background-color: rgb(54,178,251);
+}
+.math-exam .math-title>h3 {
+  line-height: 35px;
+  font-size: 20px;
   color: #fff;
 }
-.s-exam .s-que {
-  margin-left: 40px;
-  padding: 3px 0;
-}
-.s-exam .s-btn-list {
-  margin: 60px 0;
+/*阅读、文法*/
+.s-exam .read-exam .read-title {
+  width: 100%;
+  height: 35px;
   padding: 0 20px;
+  background-color: rgb(54,178,251);
+}
+.math-title>h3,
+.math-title>p,
+.read-title>h3,
+.read-title>p {
+  line-height: 35px;
+  font-size: 20px;
+  color: #fff;
+}
+.s-exam .read-exam .work-wrap-left {
+  height: 500px;
+  padding-right: 10px;
+  border-right: 1px dashed #ccc;
+}
+/*收藏、查看答案、上下题*/
+.s-exam .s-btn-list {
+  margin: 40px 0;
+  padding-right: 100px;
 }
 .s-exam .s-collect {
   padding: 5px 15px;
@@ -55,6 +85,9 @@
   background-color: rgb(243,243,243);
   cursor: pointer;
 }
+.s-exam .s-answer li:last-child {
+  margin-right: 0;
+}
 .s-exam .s-collect:hover,
 .s-exam .s-answer li:hover,
 .s-exam .s-collect.active,
@@ -64,31 +97,186 @@
 }
 /*题目解析*/
 .s-exam .s-answer-show {
+  width: 680px;
   display: none;
 }
-.s-exam .s-answer-show h3 {
+.s-exam .s-answer-show>h3,
+.discuss-wrap>h3 {
+  padding: 10px 0 10px 5px;
+  background-color:  rgb(54,178,251);
+  color: #fff;
   font-size: 16px;
 }
 .s-exam .s-answer-show .s-answer-cnt {
   padding: 10px;
   border: 1px solid #000;
 }
-/*右侧栏*/
-.s-exercise .s-adv {
-
+.dis-commit {
+  width: 680px;
 }
-.s-exercise .s-adv .s-adv-img {
-  width: 100%;
-  height: 145px;
-  -webkit-box-shadow: 0 0 3px #000;
-  -moz-box-shadow: 0 0 3px #000;
-  box-shadow: 0 0 3px #000;
-}
-.s-exercise .s-adv .s-code {
-  margin: 30px 0;
+.dis-commit>div {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
   text-align: center;
+  background-color: rgb(54,178,251);
+  color: #fff;
+  cursor: pointer;
 }
-.s-exercise .s-adv .s-code img {
-  width: 70%;
-  font-size: 16px;
+.dis-commit>div i{
+  padding-right: 10px;
+}
+/*右侧栏*/
+.exer-side {
+  /*float: right;*/
+  font-size: 0;
+}
+.exer-side>div {
+  /*float: left;*/
+  display: inline-block;
+  width: 380px;
+  height: 225px;
+  overflow: hidden;
+  margin: 0 10px 30px;
+  font-size: 14px;
+}
+.exer-side>div>h3 {
+  width: 100%;
+  height: 35px;
+  background-color: #ccc;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.exer-side>div li {
+  padding: 0 10px;
+  line-height: 30px;
+  border-bottom: 1px dashed #ccc;
+}
+.exer-side>div li a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/**
+  题目讨论
+**/
+.discuss-wrap {
+  width: 680px;
+  background-color: #ccc;
+}
+.dis-usr-list {
+  position: relative;
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(54,178,251);
+}
+.dis-usr-list>ul>li {
+  margin-bottom: 20px;
+}
+.dis-usr-avatar {
+  margin-right: 10px;
+}
+.dis-usr-avatar>img {
+  width: 86px;
+  height: 86px;
+}
+.dis-usr-cnt {
+  width: 85%;
+  font-size: 14px;
+}
+.dis-usr-cnt>p:nth-of-type(1){
+  color: #999;
+}
+.dis-reply-btn {
+  padding: 5px 10px;
+  /*background-color: #CDE4EE;*/
+  background-color: #fff;
+  cursor: pointer;
+  color: rgb(54,178,251);
+}
+.reply-wrap {
+  padding: 20px 30px;
+  background-color: #CDE4EE;
+  display: none;
+}
+.reply-wrap>ul>li {
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #999;
+}
+.reply-wrap>ul>li:last-child {
+  margin: 0;
+}
+.reply-wrap>ul img {
+  width: 30px;
+  height: 30px;
+}
+.reply-wrap>ul span {
+  color: #999;
+}
+.reply-wrap>ul .reply-wrap-cnt {
+  margin-left: 35px;
+}
+.reply-wrap>ul p:last-child {
+  color: #999;
+}
+.reply-wrap>ul p:last-child span:last-child {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.dis-input {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.dis-commit {
+  padding: 5px 20px;
+}
+.dis-more {
+  position: absolute;
+  left: 40%;
+  bottom: -15px;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid rgb(54,178,251);
+  border-radius: 10px;
+  background-color: rgb(54,178,251);
+  cursor: pointer;
+  color: #fff;
+}
+.dis-more-hide {
+  display: none;
+}
+  /**
+    遮罩
+  **/
+.shade-cmn {
+  display: none;
+}
+.shade-wrap {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  top: 70%;
+  left: 50%;
+  z-index: 99;
+}
+.shade-wrap p {
+  width: 100px;
+  padding: 6px 0;
+  margin: 20% auto 0;
+  border-radius: 10px;
+  background-color: rgb(54,178,251);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.shade-wrap p:hover {
+  background-color: #2e9fd9;
 }

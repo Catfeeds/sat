@@ -36,7 +36,7 @@ class ClassesController extends Controller
 //        var_dump($this->brr);die;
         return $this->render('index', ['data' => $data,'brr'=>$this->brr]);
     }
-
+    // 课程详情页
     public function actionDetails()
     {
         $id = Yii::$app->request->get('id', '');

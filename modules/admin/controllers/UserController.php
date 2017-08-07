@@ -12,6 +12,8 @@ use app\modules\admin\models\Message;
 use yii;
 use app\libs\ApiControl;
 use app\modules\admin\models\User;
+use app\modules\admin\models\Tactics;
+use app\libs\GetData;
 
 class UserController extends ApiControl
 {
@@ -50,8 +52,55 @@ class UserController extends ApiControl
     public function actionMessage()
     {
         // 公开课的ID，报名者电话，的取到title
-        $data = Yii::$app->db->createCommand("select * from {{%message}}")->queryALL();
+       $data = Yii::$app->db->createCommand("select * from {{%message}}")->queryALL();
         return $this->render('message',['data'=>$data]);
+    }
+    public function actionSuggest_edit()
+    {
+        if (!$_POST) {
+            $id = Yii::$app->request->get('id', '');
+            if (empty($id)) {
+                return $this->render('suggest_edit');
+            } else {
+                $data = Yii::$app->db->createCommand("select * from {{%tactics}} where id=" . $id)->queryOne();
+                return $this->render('suggest_edit', ['data' => $data]);
+            }
+
+        } else {
+            $tactics = new Tactics();
+            $getdata = new GetData();
+            $must = array('major' => '科目', 'min' => '最低分', 'max' => '最高分', 'suggestion' => '复习建议');
+            $data = $getdata->PostData($must);
+
+            if (empty($data['id'])) {
+                $re = Yii::$app->db->createCommand()->insert("{{%tactics}}", $data)->execute();
+            } else {
+                // 修改时，提交id
+                $re = $tactics->updateAll($data, 'id=:id', array(':id' => $data['id']));
+            }
+            if ($re) {
+                $this->redirect('suggest');
+            } else {
+                echo '<script>alert("数据添加/修改失败，请重试");history.go(-1);</script>';
+                die;
+            }
+
+        }
+
+    }
+    public function actionSuggest()
+    {
+        // 公开课的ID，报名者电话，的取到title
+        $data = Yii::$app->db->createCommand("select * from {{%tactics}}")->queryALL();
+        return $this->render('suggest',['data'=>$data]);
+    }
+    public function actionDel3()
+    {
+        $id = Yii::$app->request->get('id', '');
+        $re = Tactics::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
+            echo true;
+        }
     }
     public function actionCheck()
     {
@@ -68,6 +117,6 @@ class UserController extends ApiControl
             $res['message'] = '修改失败';
         }
         die(json_encode($res));
-
     }
+
 }

@@ -11,12 +11,9 @@
     <table border="1"  width="100%">
         <tr align="center">
             <th>id</th>
-            <th>试卷名称</th>
-            <th>数学</th>
-            <th>阅读</th>
-            <th>写作</th>
-            <th>作文</th>
-            <th>时间</th>
+            <th>试卷类</th>
+            <th>总分</th>
+            <th>试卷名</th>
             <th>操作</th>
         </tr>
         <?php
@@ -25,10 +22,7 @@
             <tr>
                 <td><?php echo $v['id']?></td>
                 <td><?php echo $v['name']?></td>
-                <td><?php echo $v['math']?></td>
-                <td><?php echo $v['read']?></td>
-                <td><?php echo $v['language']?></td>
-                <td><?php echo $v['write']?></td>
+                <td><?php echo $v['score']?></td>
                 <td><?php echo $v['time']?></td>
                 <td>
                     <a class="link-update" href="<?php echo baseUrl.'/admin/questions/add_testpaper'.'?'.'id='.$v['id']?>">修改</a>

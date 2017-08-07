@@ -1,0 +1,337 @@
+.abroadProBig {
+  font-size: 14px;
+}
+
+/*头部改版*/
+.abroadHead{
+  width: 100%;
+  height: 500px;
+  background: url("../images/abroad_headBg.jpg") no-repeat center;
+}
+.inAbroad{
+  width: 1006px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 70px;
+}
+.inAbroad .abroadAvatar h1{
+  font-size: 100px;
+  color: #fff;
+  letter-spacing: 25px;
+  margin-bottom: 27px;
+}
+.inAbroad .abroadAvatar p{
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 5px;
+}
+.inAbroad ul{
+  margin-top: 80px;
+}
+.inAbroad ul li{
+  display: inline-block;
+  margin-right: 120px;
+}
+.inAbroad ul li:last-child{
+  margin-right: 0;
+}
+.inAbroad ul li a{
+  padding: 5px 25px;
+  font-size: 20px;
+  background: rgb(34,161,249);
+  color: white;
+  border-radius: 20px;
+}
+.inAbroad ul li:hover a{
+  background: white;
+  color: rgb(34,161,249);
+}
+.abroadFiveC{
+  width: 1008px;
+  background: white;
+  padding: 36px 0 75px 0 ;
+  margin: 0 auto;
+  margin-top: -37px;
+  position: relative;
+  z-index: 10;
+}
+.abroadFiveC ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.abroadFiveC ul{
+  margin-left: 86px;
+}
+.abroadFiveC ul li{
+  width: 117px;
+  float: left;
+  margin-right: 63px;
+  text-align: center;
+}
+.abroadFiveC ul li a{
+  width: 100%;
+  display: block;
+}
+.abroadFiveC ul li:last-child{
+  margin-right: 0;
+}
+.abroadFiveC ul li:hover .topCircle{
+  border: 2px #4b8edf dashed;
+}
+.abroadFiveC ul li:hover .topCircle{
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+@-webkit-keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+.topCircle{
+  width: 100%;
+  height: 117px;
+  border-radius: 50%;
+  border: 2px #4b8edf solid;
+  margin-bottom: 13px;
+  text-align: center;
+}
+.topCircle span{
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.topCircle img{
+  vertical-align: middle;
+}
+.abroadFiveC ul li h4{
+  font-weight: normal;
+  font-size: 20px;
+}
+.abroadFiveC ul li:last-child h4{
+  margin-top: 25px;
+}
+
+/*七部曲*/
+.lifeMean{
+  padding: 33px 0 53px 0;
+  background: url("../images/product_smallbg.png") no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.lifeMean .lifeWrap{
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.lifeMean .lifeWrap h1{
+  color: #fff;
+  font: 200 35px/35px "微软雅黑";
+  letter-spacing: 3px;
+}
+.lifeMean .lifeContent{
+  position: relative;
+  width: 1000px;
+  height: 465px;
+  margin: 60px auto 0 auto;
+  background:url("../images/product_hexagon.png") center no-repeat;
+  background-size: 100% 100%;
+}
+.lifeMean .lifeContent li{
+  position: absolute;
+  width: 170px;
+}
+.lifeMean .lifeContent li h2{
+  color: rgb(255, 231, 26);
+  font-size: 25px;
+}
+.lifeMean .lifeContent li p{
+  color: #fff;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+.lifeMean .lifeContent li:first-child{
+  top: 74px;
+  left: 20px;
+}
+.lifeMean .lifeContent li:nth-child(2){
+  top: 74px;
+  left: 280px;
+}
+.lifeMean .lifeContent li:nth-child(3){
+  top: 74px;
+  left: 545px;
+}
+.lifeMean .lifeContent li:nth-child(4){
+  top: 74px;
+  left: 802px;
+}
+.lifeMean .lifeContent li:nth-child(5){
+  top: 300px;
+  left: 146px;
+}
+.lifeMean .lifeContent li:nth-child(6){
+  top: 300px;
+  left: 408px;
+}
+.lifeMean .lifeContent li:nth-child(7){
+  top: 300px;
+  left: 668px;
+}
+
+.serviceCRM{
+  position: relative;
+}
+.serviceCRM .serviceCRM-bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+/*超强服务体系*/
+.serviceSystem{
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 67px;
+}
+.serviceSystem .serviceTitle{
+  width: 426px;
+  margin: 0 auto;
+  text-align: center;
+}
+.serviceSystem .serviceTitle h1{
+  font-size: 36px;
+  font-weight: normal;
+}
+.serviceSystem .serviceTitle p{
+  margin-top: 34px;
+  line-height: 28px;
+  color: #5b5b5b;
+}
+.serviceSystem .serviceContent{
+  width: 1000px;
+  margin: 60px auto 0 auto;
+  overflow: hidden;
+}
+.serviceSystem .serviceContent li{
+  position: relative;
+  float: left;
+  width: 325px;
+  height: 203px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  margin: 0 9px 9px 0;
+  background-color: rgba(115,114,113,.4);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+.serviceSystem .serviceContent ul li:last-child{
+  margin-right: 0;
+}
+.serviceSystem .serviceContent li .background{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.serviceSystem .serviceContent li h2{
+  position: absolute;
+  display: inline;
+  font: 200 16px/25px 微软雅黑,\u5fae\u8f6f\u96c5\u9ed1,"Microsoft YaHei UI",黑体,\u9ed1\u4f53,SimHei;
+  background-color: rgb(255,211,71);
+  padding:4px 32px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-transition: all 0.8s 0.3s;
+  -moz-transition: all 0.8s 0.3s;
+  -ms-transition: all 0.8s 0.3s;
+  transition: all 0.8s 0.3s;
+}
+.serviceSystem .serviceContent li p{
+  position: absolute;
+  width: 215px;
+  color: #fff;
+  left: 50%;
+  top: 100%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+.serviceSystem .serviceContent li:hover{
+  background-color: rgb(66,64,65)
+}
+.serviceSystem .serviceContent li:hover h2{
+  top: 30%;
+}
+.serviceSystem .serviceContent li:hover p{
+  top: 50%;
+}
+
+/*CRM留学系统*/
+.crm-system{
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+.crm-system .crm-title{
+  padding-top: 87px;
+  text-align: center;
+}
+.crm-system .crm-title h2{
+  font: 200 35px/40px 微软雅黑,\u5fae\u8f6f\u96c5\u9ed1,"Microsoft YaHei UI",黑体,\u9ed1\u4f53,SimHei;
+  letter-spacing: 8px;
+}
+.crm-system .crm-title p{
+  margin-top: 25px;
+  color: rgb(91,91,91);
+  letter-spacing: 5px;
+}
+.crm-system .crm-content{
+  width: 1000px;
+  margin:40px auto 0 auto;
+}
+.crm-system .crm-content li{
+  float: left;
+  width: 105px;
+  text-align: center;
+  margin-right: 40px;
+}
+.crm-system .crm-content li:last-child{
+  margin-right: 0;
+}
+.crm-system .crm-content li p{
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 20px;
+}

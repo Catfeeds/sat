@@ -21,21 +21,39 @@
             </ul>
         </div>
         <div class="right-login pull-right">
-            <ul class="s-nav-login pull-right" id="outul" <?php if(!$user)echo 'style="display:none"';?>>
-                <li id="welcome"><a  href="#"><?php
-                        if($user){
-                            if($user['nickname']!=false){
-                                echo "欢迎:".$user['nickname'];
-                            }else{
-                                echo "欢迎:".$user['username'];
-                            }
-                        }?></a></li>
-                <li id="out"><a><span onclick="Out()">退出</span></a></li>
-            </ul>
-            <ul class="s-nav-login pull-right" id="loginul" <?php if($user)echo 'style="display:none"';?>>
+<!--            <ul class="s-nav-login pull-right" id="outul" --><?php //if(!$user)echo 'style="display:none"';?><!-->
+<!--                <li id="welcome"><a  href="#">--><?php
+//                        if($user){
+//                            if($user['nickname']!=false){
+//                                echo "欢迎:".$user['nickname'];
+//                            }else{
+//                                echo "欢迎:".$user['username'];
+//                            }
+//                        }?><!--</a></li>-->
+<!--                <li id="out"><a><span onclick="Out()">退出</span></a></li>-->
+<!--            </ul>-->
+            <ul class="s-nav-login pull-right" id="loginul" <?php if(isset($user)){echo 'style="display:none"';}else{echo 'style="display:block"';}?>>
                 <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
                 <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
             </ul>
+            <div class="login-after pull-right" <?php if(isset($user)){echo 'style="display:block"';}else{echo'style="display:none"';}?>>
+                <div class="login-after-show">
+                    <img src="/cn/images/login.png" alt="头像">
+                    <p>
+                        <span><?php echo isset($user)?($user['nickname']!=false?$user['nickname']:$user['username']):''?></span>
+                        <span>(初出茅庐)</span>
+                        <i class="fa fa-angle-down"></i>
+                    </p>
+                </div>
+                <div class="login-after-list">
+                    <ul>
+                        <li><a href="/person_collect.html">收藏题目</a></li>
+                        <li><a href="/person_exercise.html">做题记录</a></li>
+                        <li><a href="/person_mock.html">模考记录</a></li>
+                        <li id="out"><a href="#"><span onclick="Out()">退出登录</span></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="appDownload pull-right">
             <span class="app-tit">APP
@@ -81,23 +99,82 @@
     </a>
     <ul class="s-nav-cnt pull-left">
         <li><a <?php if($path=='index.html'||$path==''){echo 'class="on"';}?> href="/index.html">首页</a></li>
+        <li class="s-nav-work">
+            <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>
+            <div class="s-nav-showing">
+                <ul>
+                    <li><a href="/exercise.html?m=Math" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
+                    <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
+                    <!--                <li><a href="#">测评</a></li>-->
+                </ul>
+            </div>
+        </li>
+        <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
+        <li><a href="/re.html" <?php if($path=='re.html') echo 'class="on"';?>>报告</a></li>
         <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">SAT课程</a></li>
         <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
+        <li><a href="/US_abroad.html">美国留学</a></li>
+<!--        <li><a href="/act.html">ACT</a></li>-->
     </ul>
+    <form class="search-form" action="">
+        <div class="search-select">
+            <p>题目</p>
+            <i class="search-icon fa fa-angle-down"></i>
+            <ul>
+                <li>题目</li>
+                <li>资讯</li>
+            </ul>
+        </div>
+        <input type="button" class="search-btn pull-right" value="搜索" onclick="keySearch(this)">
+        <input class="search-text text1" name="keyword" onkeyup="javascript:enterKey(event,this)" type="value">
+
+    </form>
 </div>
 </nav>
 <script>
-    var uId ='<?php if(isset($uid)){echo $uid;}?>' ;
-    $.cookie('uid',uId);
-    // 用户登出
+    $(function () {
+        $('.search-select p').click(function () {
+            $('.search-select ul').toggle();
+        })
+        $('.search-select ul li').click(function () {
+            $('.search-select p').html($(this).html());
+            $('.search-select ul').hide();
+        })
+    })
+//    存储uid
+    var userId ='<?php if(isset($uid)){echo $uid;}?>' ;
+    $.cookie('uid',userId,  {path:'/'});
+//退出登录
     function Out(){
         $.post('/user/api/login-out',function(re){
             $('#outjs').html(re);
+            alert('退出成功');
+            $.cookie('uid',null);
             history.go(0);
         },"text")
+    }
+//搜索框事件
+    function enterKey(event,obj){
+        if ($(obj).prop('className').indexOf('text1') != -1){
+            $('.text2').val($('.text1').val());
+        } else if($(obj).prop('className').indexOf('text2') != -1){
+            $('.text1').val($('.text2').val());
+        }
+        if(event.keyCode == 13){
+            keySearch();
+        }
+    }
+    function keySearch() {
+        if ($('.search-select p').html() == '题目') {
+            var cate = 'q';
+        } else {
+            var cate = 'i';
+        }
+        var k = $('.search-text').val();
+        location.href = "/search.html?c=" + cate + "&keyword=" + encodeURIComponent(k);
     }
 
 </script>

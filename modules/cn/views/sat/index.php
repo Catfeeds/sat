@@ -8,34 +8,6 @@
             <?php use app\commands\front\BannerWidget;?>
             <?php BannerWidget::begin();?>
             <?php BannerWidget::end();?>
-<!--            <div class="s-person clearfix">-->
-<!--                <div class="s-person-logo border-radius pull-left"></div>-->
-<!--                <div class="s-hi">-->
-<!--                    <h3>hi</h3>-->
-<!--                    <p>欢迎来到雷哥网</p>-->
-<!--                </div>-->
-<!--                --><?php //if($user){
-//                    echo '<div class="s-btn">
-//                    <button >欢迎您</button>
-//                    <button onclick="Out()" >退出</button>
-//                    </div>';
-//                }else{
-//                    echo '<div class="s-btn">
-//                    <button class="s-login-in"><a  href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">登录</a></button>
-<!--//                     <button class="s-sign-up"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=--><?php //echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">注册</a></button>-->
-<!--//                    </div>';-->
-<!--//                }?>-->
-<!---->
-<!--                <h3 class="s-adv">公告:</h3>-->
-<!--                <div class="s-adv-wrap">-->
-<!--                    <ul>-->
-<!--                        --><?php //foreach($infoAd as $v){?>
-<!--                        <li><a href="/info_details/--><?php //echo $v['id']?><!--.html">--><?php //echo $v['title']?><!--</a></li>-->
-<!--                        --><?php //}?>
-<!---->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
         <!--免费公开课-->
         <div class="s-pubclass">
@@ -68,6 +40,65 @@
                     </li>
                     <?php }?>
                 </ul>
+            </div>
+        </div>
+        <!-- 答题系统-->
+        <div class="s-system">
+            <div class="s-w1200">
+                <div class="s-sat-title clearfix">
+                    <p class="pull-left">A</p>
+                    <div>
+                        <p>
+                            <span style="color: #000;font-weight: bold;">答题</span>
+                            <span style="color: rgb(229,104,215)">system</span>
+                        </p>
+                        <p>
+                            <span style="color: rgb(54,178,251);">nswer</span>
+                            <span style="color: #000;font-weight: bold;">系统</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="s-system-cnt clearfix">
+                    <ul class="system-list pull-left">
+                        <li class="on">
+                            <p>
+                                模考<br>
+                                MOCK
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                练习<br>
+                                EXERCISE
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                知识库<br>
+                                REPOSITORY
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="system-wrap system-wrap1 clearfix">
+                        <div>
+                            <a href="/mock.html">全套模考</a>
+                        </div>
+                        <div><a href="/mock.html">单科模考</a></div>
+                    </div>
+                    <div class="system-wrap system-wrap2">
+                        <div>
+                            <a href="/exercise.html?m=Math">题目分类</a>
+                        </div>
+                        <div><a href="/exercise.html?m=Math">题目来源</a></div>
+                    </div>
+                    <div class="system-wrap system-wrap3">
+                        <div>
+                            <a href="/knowledge.html">表达</a>
+                        </div>
+                        <div><a href="/knowledge.html">语法</a></div>
+                        <div><a href="/knowledge.html">数学</a></div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--SAT课程-->
@@ -125,7 +156,7 @@
                 <div class="s-information s-news">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-lightbulb-o"></i>新闻资讯</span>
-                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=n"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html?c=n"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -147,7 +178,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-tasks"></i>学术报告</span>
-                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=t"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html?c=t"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -169,7 +200,7 @@
                 <div class="s-information s-exam">
                     <div class="s-title-wrapper clearfix">
                         <span class="s-title pull-left"><i class="s-logo fa fa-leaf"></i>高分经验</span>
-                        <a class="s-more pull-right" href="http://sat.viplgw.cn/info.html?c=s"><i class="fa fa-angle-right"></i></a>
+                        <a class="s-more pull-right" href="/info.html?c=s"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <ul>
                         <li class="clearfix">
@@ -187,6 +218,49 @@
                             </li>
                         <?php }}?>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <!--每日一题-->
+        <div class="s-daily">
+            <div class="s-w1200">
+                <div class="s-sat-title clearfix">
+                    <p class="pull-left">D</p>
+                    <div>
+                        <p>
+                            <span style="color: #000;font-weight: bold;">每日</span>
+                            <span style="color: rgb(229,104,215)">question</span>
+                        </p>
+                        <p>
+                            <span style="color: rgb(54,178,251);">aily</span>
+                            <span style="color: #000;font-weight: bold;">一题</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="s-daily-cnt clearfix">
+                    <div class="s-daily-title clearfix">
+                        <a class="pull-right" href="/exercise.html?m=Math"><h3>MORE<i class="fa fa-angle-right"></i></h3></a>
+                    </div>
+                    <div class="daily-question daily-question1">
+                        <ul>
+                            <?php foreach($que as $k=>$v){if($k<10){?>
+                                <li>
+                                    <h4><?php echo $v['name'].'-'.$v['time']?></h4>
+                                    <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
+                                </li>
+                            <?php }}?>
+                        </ul>
+                    </div>
+                    <div class="daily-question daily-question2">
+                        <ul>
+                            <?php foreach($que as $k=>$v){if($k>=10){?>
+                                <li>
+                                    <h4><?php echo $v['name'].'-'.$v['time']?></h4>
+                                    <p><a href="/exercise_details/<?php echo $v['qid']?>.html"><?php echo $v['content']?></a></p>
+                                </li>
+                            <?php }}?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,9 +308,20 @@
     //  名师团队
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
 
+
     $(function () {
-        $('.course-text').each(function () {
-            $(this).children('p').eq(0).nextAll().remove();
+        $('.system-list>li').click(function () {
+            var index = $(this).index();
+            $('.system-list>li').removeClass('on');
+            $(this).addClass('on');
+            $('.system-wrap').hide();
+            $('.system-wrap').eq(index).show();
         })
+        $('.daily-question li').each(function (i) {
+            $('.daily-question li').eq(i).children('p').eq(0).nextAll().remove();
+        })
+        // 每日一题
+        jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+        jQuery(".s-daily-cnt").slide({mainCell:".daily-question2 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
     })
 </script>
