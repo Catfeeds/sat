@@ -100,7 +100,7 @@
     <ul class="s-nav-cnt pull-left">
         <li><a <?php if($path==''){echo 'class="on"';}?> href="/">首页</a></li>
         <li class="s-nav-work">
-            <a id="showA" href="#">做题<i class="fa fa-sort-desc"></i></a>
+            <a id="showA" href="#" <?php if(strpos($path,'exercise')!==false || $path=='knowledge.html') echo 'class="on"';?>>做题<i class="fa fa-sort-desc"></i></a>
             <div class="s-nav-showing">
                 <ul>
                     <li><a href="/exercise.html?m=Math" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
@@ -110,13 +110,13 @@
             </div>
         </li>
         <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
-        <li><a href="/re.html" <?php if($path=='re.html') echo 'class="on"';?>>报告</a></li>
+        <li><a href="/re.html" <?php if($path=='re.html' || $path=='re_single.html') echo 'class="on"';?>>报告</a></li>
         <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">SAT课程</a></li>
         <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
-        <li><a href="/US_abroad.html">美国留学</a></li>
+        <li><a href="/US_abroad.html" <?php if(strpos($path,'abroad')!==false){echo 'class="on"';}?>>美国留学</a></li>
 <!--        <li><a href="/act.html">ACT</a></li>-->
     </ul>
     <form class="search-form" action="">
