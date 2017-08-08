@@ -17,7 +17,7 @@ class SatController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
-        $classes = Yii::$app->db->createCommand("select id,cate,introduction,cate from {{%classes}} ")->queryAll();
+        $classes = Yii::$app->db->createCommand("select id,cate,smallIntro,cate from {{%classes}} ")->queryAll();
         $banner = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='classes'")->queryAll();
         $teachers = Yii::$app->db->createCommand("select pic,name,subject,introduction from {{%teachers}} ")->queryAll();
         $info1 = Yii::$app->db->createCommand("select * from {{%info}} where cate='公开课' order by id desc limit 5")->queryAll();
