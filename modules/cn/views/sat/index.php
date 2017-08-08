@@ -307,8 +307,6 @@
     jQuery(".s-person").slide({mainCell:".s-adv-wrap ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
     //  名师团队
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
-
-
     $(function () {
         $('.system-list>li').click(function () {
             var index = $(this).index();
@@ -316,9 +314,6 @@
             $(this).addClass('on');
             $('.system-wrap').hide();
             $('.system-wrap').eq(index).show();
-        })
-        $('.daily-question li').each(function (i) {
-            $('.daily-question li').eq(i).children('p').eq(0).nextAll().remove();
         })
         // 每日一题
         jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});

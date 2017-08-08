@@ -415,6 +415,9 @@ body {
   padding-left: 10px;
   color: rgb(54,178,251);
 }
+.s-footer-bottom .foot-copyright p{
+  font-size: 12px;
+}
 /**
   侧边栏
 **/
