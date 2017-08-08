@@ -149,12 +149,12 @@ class uc_note {
         }
         $sql = "set names utf8";
         $this->dbLink->query($sql);
-        $sql = "select * from sat_user WHERE  uid=$uid";
+        $sql = "select * from sat_user WHERE  uid=".$uid;
         $u = $this->dbLink->fetch_first($sql);
         if (!$u) {
             $time = time();
-            $sql = "INSERT INTO sat_user (`username`,`email`,`password`,`phone`,`createTime`,`uid`,`nickname`) VALUES ('{$username}','{$email}','{$password}','{$phone}','{$time}','{$uid}','{$nickname}')";
-            $this->dbLink->query($sql);
+            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid','nickname') VALUES ('{$username}','{$email}','{$password}','{$phone}','{$time}','{$uid}','{$nickname}')";
+			$this->dbLink->query($sql);
             $userId = $this->dbLink->insert_id();
             $data = array(
                 'username' => $username,
@@ -166,28 +166,28 @@ class uc_note {
             );
         } else {
             if($phone != $u['phone']){
-                $sql = "UPDATE sat_user SET phone = '$phone' WHERE id =".$u['id'];
+                $sql = "UPDATE sat_user SET phone = '$phone' WHERE id = {$u['id']}";
                 $this->dbLink->query($sql);
             }
             if($email != $u['email']){
-                $sql = "UPDATE sat_user SET email = '$email' WHERE id =".$u['id'];
+                $sql = "UPDATE sat_user SET email = '$email' WHERE id = {$u['id']}";
                 $this->dbLink->query($sql);
             }
             if($username != $u['username']){
-                $sql = "UPDATE sat_user SET username = '$username' WHERE id =".$u['id'];
+                $sql = "UPDATE sat_user SET username = '$username' WHERE id = {$u['id']}";
                 $this->dbLink->query($sql);
             }
 			if($username != $u['nickname']){
-				$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE id =".$u['id'];
+				$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE id = {$u['id']}";
 				$this->dbLink->query($sql);
 			}
             if(md5($str) != $u['password']){
 				$password=md5($str);
-                $sql = "UPDATE sat_user SET password = '$password' WHERE id =".$u['id'];
+                $sql = "UPDATE sat_user SET password = '$password'  WHERE id = {$u['id']}";
                 $this->dbLink->query($sql);
             }
 
-            $sql = "select * from sat_user WHERE id =".$u['id'];
+            $sql = "select * from sat_user  WHERE id = {$u['id']}";
             $u = $this->dbLink->fetch_first($sql);
             $data = $u;
         }

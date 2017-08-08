@@ -6,10 +6,9 @@
  * Time: 17:11
  */
 namespace app\modules\admin\models;
-
 use yii\db\ActiveRecord;
 
-class TestPaper extends ActiveRecord
+class Paper extends ActiveRecord
 {
     public static function tableName()
     {

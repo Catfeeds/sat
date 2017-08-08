@@ -21,6 +21,8 @@ class ClassesController extends ApiControl
     {
         // 从数据库获取数据
         $data = Yii::$app->db->createCommand("select * from {{%classes}} order by id desc ")->queryAll();
+        $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid','nickname') VALUES ('{$username}','{$email}','{$password}','{$phone}','{$time}','{$uid}','{$nickname}')";
+
         return $this->render('index', ['data' => $data]);
     }
 
