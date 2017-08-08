@@ -19,7 +19,7 @@ class InfoController extends ApiControl
 
     public function actionIndex()
     {
-        $pagesize = 6;
+        $pagesize = 15;
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} ")->queryOne();

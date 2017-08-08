@@ -153,7 +153,7 @@ class uc_note {
         $u = $this->dbLink->fetch_first($sql);
         if (!$u) {
             $time = time();
-            $sql = "INSERT INTO sat_user (`username`,`email`,`password`,`phone`,`createTime`,`uid`,`nickname`) VALUES ('{$username}','{$email}','{$password}','{$phone}','{$time}','{$uid}''{$nickname}',)";
+            $sql = "INSERT INTO sat_user (`username`,`email`,`password`,`phone`,`createTime`,`uid`,`nickname`) VALUES ('{$username}','{$email}','{$password}','{$phone}','{$time}','{$uid}','{$nickname}')";
             $this->dbLink->query($sql);
             $userId = $this->dbLink->insert_id();
             $data = array(
