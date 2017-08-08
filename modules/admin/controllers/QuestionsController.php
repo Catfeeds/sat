@@ -122,7 +122,7 @@ class QuestionsController extends ApiControl
     public function actionDel_testpaper()
     {
         $id = Yii::$app->request->get('id', '');
-        $re = TestPaper::deleteAll("id=:id", array(':id' => $id));
+        $re = Paper::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
             echo true;
         }
