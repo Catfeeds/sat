@@ -129,7 +129,7 @@
                         </div>
                         <h2 class="course-title">SAT <?php echo $v['cate']?></h2>
                         <div class="course-text">
-                            <?php echo $v['introduction']?>
+                            <?php echo $v['smallIntro']?>
                         </div>
                         <a class="course-more" href="/class_details/<?php echo $v['id']?>.html">查看更多</a>
                     </li>
@@ -292,7 +292,7 @@
                                 <h4>主讲：<?php echo $v['subject']?></h4>
                                 <p><?php echo $v['introduction']?></p>
                             </div>
-                            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">立即预约</a>
+                            <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">立即预约</a>
                         </li>
                         <?php }?>
                     </ul>

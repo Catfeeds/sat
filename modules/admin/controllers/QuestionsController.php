@@ -100,7 +100,7 @@ class QuestionsController extends ApiControl
                 return $this->render('add_testpaper', ['data' => $data]);
             }
         } else {
-            $model = new testPaper();
+            $model = new TestPaper();
             $getdata = new GetData();
             $must = array('name' => '试卷名称');
             $data = $getdata->PostData($must);
@@ -160,7 +160,7 @@ class QuestionsController extends ApiControl
     }
     public function actionContent()
     {
-        $pagesize = 10;
+        $pagesize = 15;
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $count = Yii::$app->db->createCommand("select count(*) as count from {{%questions}} ")->queryOne();
