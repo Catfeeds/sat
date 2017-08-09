@@ -5,7 +5,7 @@
     <div class="work-mk-top container">
         <div class="work-top-cnt row">
             <p class="work-title-pos col-lg-3 col-md-3"></p>
-            <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo $data['major']?> Section<?php echo $data['section']?></span></h1>
+            <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT <i>--</i><span class="work-subhead"><?php echo $data['name']?>-<?php echo $data['time']?> <?php echo $data['major']?> Section <?php echo $data['section']?></span></h1>
             <p class="work-collect col-lg-3 col-md-3" data-value=""><i class="fa fa-star-o">&nbsp;</i>收藏</p>
         </div>
     </div>

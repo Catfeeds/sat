@@ -76,13 +76,13 @@ class MockController extends Controller
              $section['section'] = 1;
         }
         if (!$qid) {
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
         }elseif($qid=='undefined') {
             echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
             die;
         }else{
             // 有qid的时候直接根据qid取
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where q.id=" . $qid)->queryOne();
         }
         if($data==false){
            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
@@ -104,6 +104,7 @@ class MockController extends Controller
             $amount=44;
             $modle = 'mock_read';
         }
+//        var_dump($data);die;
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);
     }
 

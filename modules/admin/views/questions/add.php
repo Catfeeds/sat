@@ -152,16 +152,8 @@
         </div>
 </div>
 <script>
-    //实例化编辑器
-//    config={window.UEDITOR_CONFIG = {
-//        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
-//        'fontsize':[16]
-//    }}
     var ue = UE.getEditor('editor');
-    var content = UE.getEditor('content',{
-        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
-        'fontsize':[16]
-    });
+    var content = UE.getEditor('content');
     var keyA= UE.getEditor('keyA');
     var keyB = UE.getEditor('keyB');
     var keyC= UE.getEditor('keyC');
