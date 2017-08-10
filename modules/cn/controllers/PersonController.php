@@ -25,7 +25,11 @@ class PersonController extends Controller
         $uid = Yii::$app->session->get('uid');
         $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
         $qid = ltrim($arr['qid'], ',');
-        $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+        if($qid==false){
+            $data='';
+        }else{
+            $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+        }
 //        var_dump($data);die;
 
         return $this->render('person_collect', ['data' => $data]);
