@@ -10,7 +10,7 @@
             </div>
             <ul>
                 <li>做题数:<span><?php echo count($crr);?></span></li>
-                <li>正确率:<span><?php echo sprintf("%.2f",($n/count($crr))*100)?>%</span></li>
+                <li>正确率:<span><?php echo ($n=='0')?'0': (sprintf("%.2f",($n/count($crr))*100).'%')?></span></li>
             </ul>
         </li>
         <li <?php if(strpos($path,'collect')!==false) echo 'class="on"';?>>

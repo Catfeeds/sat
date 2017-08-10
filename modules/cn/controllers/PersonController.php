@@ -93,7 +93,7 @@ class PersonController extends Controller
     public function actionExer()
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
+//        $uid = 222;
         $name = Yii::$app->request->post('src');
         $major = Yii::$app->request->post('classify');
         $error = Yii::$app->request->post('case');
