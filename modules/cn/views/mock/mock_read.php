@@ -6,9 +6,9 @@
     <!-- 头部-->
     <div class="work-mk-top container">
         <div class="work-top-cnt row">
-            <p class="work-title-pos col-lg-3 col-md-3"></p>
-            <h1 class="work-main-title col-lg-6 col-md-6">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <?php echo $data['major']?> Section<?php echo $data['section']?></span></h1>
-            <p class="work-collect col-lg-3 col-md-3" data-value=""><i class="fa fa-star-o">&nbsp;</i>收藏</p>
+            <p class="work-title-pos col-lg-2 col-md-2"></p>
+            <h1 class="work-main-title col-lg-8 col-md-8">Master the new SAT 6<i>--</i><span class="work-subhead">SAT <span id="subName"><?php echo $data['major']?></span> Section<?php echo $data['section']?></span></h1>
+            <p class="work-collect col-lg-2 col-md-2" data-value=""><i class="fa fa-star-o">&nbsp;</i>收藏</p>
         </div>
     </div>
     <!-- 内容区域-->
@@ -17,10 +17,15 @@
             <h3><?php echo $data['topic']?></h3>
             <h5><?php echo $data['details']?></h5>
             <div class="work-box">
+                <div class="pull-left text-line">
+<!--                    <br>-->
+<!--                    <br>-->
+<!--                    <br>-->
+<!--                    <br>-->
+<!--                    <p>5</p>-->
+                </div>
                 <div class="read-text">
-                    <p>
-                      <?php echo $data['essay']?>
-                    </p>
+                    <?php echo $data['essay']?>
                 </div>
             </div>
         </div>

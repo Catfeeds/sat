@@ -2,6 +2,7 @@ $(function() {
   $(window).scrollTop(350);
   $('.work-shade').height($(document).outerHeight());
   upTime();
+  lineNum();
   $('.now-do').click(function () {
     $('.shade-cmn').hide();
   })
@@ -119,8 +120,29 @@ $(function() {
 var uId = $.cookie('uid');
 uId = 444;
 
-
-
+//加载行号
+function lineNum(){
+  var subName = $('#subName').text();
+  var text = $('.read-text').html();
+  var tNum = text.split('</p>').length;
+  var line = '';
+  if (subName == 'Reading') {
+    console.log(tNum);
+    for (var j=1;j<=tNum+1;j++){
+      if (j%5 == 0){
+        line += '<p>'+j+'</p>';
+      } else {
+        line += '<br>'
+      }
+    }
+    $('.text-line').html(line);
+  } else {
+    for (var j=1;j<tNum;j++){
+      line+= '<br>'
+    }
+    $('.text-line').html(line);
+  }
+}
 // 加载页面时判断是否收藏
 if (($('.s-collect').data('value') == 1) && (uId != '')) {
   var sCollect = $('.s-collect');

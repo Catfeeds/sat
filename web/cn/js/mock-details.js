@@ -17,6 +17,8 @@ $(function () {
     //正计时
     upTime();
     upTime('b');
+    //加载行号
+    lineNum();
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);
@@ -64,7 +66,6 @@ $(function () {
     }else {
         allNum = sessionStorage.allPosition;
     }
-    $('.all-position').html(allNum);
 })
 
 var uId = $.cookie('uid'),//获取uId
@@ -78,6 +79,29 @@ function workHeight() {
     $('.work-mk-cnt').height(h);
     $('.work-wrap-left').height(h);
     $('.work-wrap-right').height(h);
+}
+//加载行号
+function lineNum(){
+    var subName = $('#subName').text();
+    var text = $('.read-text').html();
+    var tNum = text.split('</p>').length;
+    var line = '';
+    if (subName == 'Reading') {
+        console.log(tNum);
+        for (var j=1;j<=tNum+1;j++){
+            if (j%5 == 0){
+                line += '<p>'+j+'</p>';
+            } else {
+                line += '<br>'
+            }
+        }
+        $('.text-line').html(line);
+    } else {
+        for (var j=1;j<tNum;j++){
+            line+= '<br>'
+        }
+        $('.text-line').html(line);
+    }
 }
 //倒计时
 function countTimeFun() {
