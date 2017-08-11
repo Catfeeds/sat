@@ -63,7 +63,7 @@
 <!--            </tr>-->
             <tr>
                 <td>总分</td>
-                <td><input type="text" name="score" value="<?php echo isset($data)?$data['score']:''?>" placeholder="具体名称，如：年份或者名称" ></td>
+                <td><input type="text" name="score" value="<?php echo isset($data)?$data['score']:''?>" placeholder="总分" ></td>
             </tr>
             <tr>
                 <td>登录做题</td>

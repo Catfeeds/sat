@@ -105,7 +105,7 @@ class PersonController extends Controller
         $p = Yii::$app->request->post('p', '1');
         $major = Yii::$app->request->post('classify');
         $model = new collection();
-        $pagesize = 2;
+        $pagesize = 15;
         $offset = $pagesize * ($p - 1);
         $data = $model->CollectionDate($name, $uid, $major, $offset, $pagesize);
         $data['curPage'] = $p;
@@ -120,7 +120,7 @@ class PersonController extends Controller
         $major = Yii::$app->request->post('classify');
         $error = Yii::$app->request->post('case');
         $p = Yii::$app->request->post('p', '1');
-        $pagesize = 2;
+        $pagesize = 15;
         $offset = $pagesize * ($p - 1);
 
         $notes = new Notes();
@@ -139,7 +139,7 @@ class PersonController extends Controller
         $src = Yii::$app->request->post('src');
         $type = Yii::$app->request->post('type');
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
-        $arr['pageSize'] = $pagesize = 2;
+        $arr['pageSize'] = $pagesize = 15;
         if ($src != 'all') {
             $name = "and name='$src'";
         } else {

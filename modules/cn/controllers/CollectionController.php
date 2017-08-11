@@ -21,7 +21,6 @@ class CollectionController extends Controller
         $data['qid'] =(string)Yii::$app->request->post('subId', '');
         $data['uid'] =Yii::$app->request->post('uid', '');
         $flag=Yii::$app->request->post('val');
-
         $model=new Collection();
         // 查找 uid 是否存在
         $arr= Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=".$data['uid'])->queryOne();

@@ -119,6 +119,14 @@ $(function() {
     })
     $('.s-exam .s-btn-list').css('paddingRight',0);
   }
+  // 加载页面时判断是否收藏
+  if (($('.s-collect').data('value') == 1) && (uId != '')) {
+    var sCollect = $('.s-collect');
+    sCollect.addClass('active');
+    sCollect.find('i').removeClass('fa-star-o');
+    sCollect.find('i').addClass('fa-star');
+    sCollect.children('span').html('已收藏');
+  }
 })
 
 var uId = $.cookie('uid');
@@ -144,17 +152,7 @@ function lineNum(){
     $('.text-line').html(line);
   }
 }
-// 加载页面时判断是否收藏
-console.log($('.s-collect').data('value'));
-console.log(uId);
-if (($('.s-collect').data('value') == 1) && (uId != '')) {
-  console.log(uId);
-  var sCollect = $('.s-collect');
-  sCollect.addClass('active');
-  sCollect.find('i').removeClass('fa-star-o');
-  sCollect.find('i').addClass('fa-star');
-  sCollect.children('span').html('已收藏');
-}
+
 //正计时
 function upTime() {
   var usedTime = 0;
