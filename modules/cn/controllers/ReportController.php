@@ -25,7 +25,7 @@ class ReportController extends Controller
         $user = Yii::$app->session->get('userData');
         $major = Yii::$app->session->get('part'); // 从前台得到还是从地址栏得到
 //        var_dump($_SESSION);die;
-        if (isset($_SESSION['answer'])) {
+        if (isset($_SESSION['answer']) && isset($_SESSION['tid'])) {
             $answerData = ((array)$_SESSION['answer']);
             $answerData = $answerData['item'];// 获取用户的答题数据
             $getscore = new GetScore();
