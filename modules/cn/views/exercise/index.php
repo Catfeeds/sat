@@ -1,7 +1,4 @@
-
-  <title>练习</title>
-  <link rel="stylesheet" href="/cn/css/test.css">
-
+ <link rel="stylesheet" href="/cn/css/test.css">
 <section>
   <div class="s-test s-w1200">
     <div class="s-top-adv">
@@ -10,9 +7,9 @@
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
           <li><a href="/exercise.html?m=Reading">阅读</a></li>
           <li><a href="/exercise.html?m=Writing">文法</a></li>
+          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
@@ -92,16 +89,18 @@
     //  选项卡切换效果
     var search = location.search.split('m='),
         m = search[1];
+    console.log('&'+m);
     if (location.search.split('&').length==2 && location.search.indexOf('p=') != -1) {
       m = m.split('&')[0];
+      console.log('&&'+m);
     }
     $('.s-label-list li').removeClass('active');
     switch (m) {
-      case 'Reading':
-        $('.s-label-list li').eq(1).addClass('active');
+      case 'Math':
+        $('.s-label-list li').eq(2).addClass('active');
         break;
       case 'Writing':
-        $('.s-label-list li').eq(2).addClass('active');
+        $('.s-label-list li').eq(1).addClass('active');
         break;
       default:
         $('.s-label-list li').eq(0).addClass('active');
@@ -116,9 +115,9 @@
       }
       $('.s-label-list li').removeClass('active');
       $('.s-subject-src dd').removeClass('active');
-      if (search1 == 'Writing') {
+      if (search1 == 'Math') {
         $('.s-label-list li').eq(2).addClass('active');
-      } else if (search1 == 'Reading') {
+      } else if (search1 == 'Writing') {
         $('.s-label-list li').eq(1).addClass('active');
       } else {
         $('.s-label-list li').eq(0).addClass('active');
@@ -155,8 +154,8 @@
         window.location.href = url;
       }
     } else {
-//      console.log(url+'/exercise.html?path=math'+'&c='+cate);
-      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
+      alert(url+'/exercise.html?path=Reading'+'&c='+cate);
+      window.location.href = url+'/exercise.html?path=Reading'+'&c='+cate;
     }
   }
 </script>

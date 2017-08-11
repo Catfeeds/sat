@@ -83,24 +83,25 @@ function workHeight() {
 //加载行号
 function lineNum(){
     var subName = $('#subName').text();
-    var text = $('.read-text').html();
-    var tNum = text.split('</p>').length;
-    var line = '';
-    if (subName == 'Reading') {
-        console.log(tNum);
-        for (var j=1;j<=tNum+1;j++){
-            if (j%5 == 0){
-                line += '<p>'+j+'</p>';
-            } else {
-                line += '<br>'
+    if (subName != ''){
+        var text = $('.read-text').html();
+        var tNum = text.split('</p>').length;
+        var line = '';
+        if (subName == 'Reading') {
+            for (var j=1;j<=tNum+1;j++){
+                if (j%5 == 0){
+                    line += '<p>'+j+'</p>';
+                } else {
+                    line += '<br>'
+                }
             }
+            $('.text-line').html(line);
+        } else {
+            for (var j=1;j<tNum;j++){
+                line+= '<br>'
+            }
+            $('.text-line').html(line);
         }
-        $('.text-line').html(line);
-    } else {
-        for (var j=1;j<tNum;j++){
-            line+= '<br>'
-        }
-        $('.text-line').html(line);
     }
 }
 //倒计时
