@@ -84,7 +84,7 @@ class PersonController extends Controller
     public function actionMock()
     {
         $uid = Yii::$app->session->get('uid');
-        if(uid){
+        if($uid){
             $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
             $model = new Format();
             foreach ($arr as $k => $v) {

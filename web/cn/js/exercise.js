@@ -122,8 +122,6 @@ $(function() {
 })
 
 var uId = $.cookie('uid');
-uId = 444;
-
 //加载行号
 function lineNum(){
   var subName = $('#subName').text();
@@ -131,7 +129,6 @@ function lineNum(){
   var tNum = text.split('</p>').length;
   var line = '';
   if (subName == 'Reading') {
-    console.log(tNum);
     for (var j=1;j<=tNum+1;j++){
       if (j%5 == 0){
         line += '<p>'+j+'</p>';
@@ -148,7 +145,10 @@ function lineNum(){
   }
 }
 // 加载页面时判断是否收藏
+console.log($('.s-collect').data('value'));
+console.log(uId);
 if (($('.s-collect').data('value') == 1) && (uId != '')) {
+  console.log(uId);
   var sCollect = $('.s-collect');
   sCollect.addClass('active');
   sCollect.find('i').removeClass('fa-star-o');

@@ -159,6 +159,7 @@
 .s-test .s-right-subject li {
   padding: 10px 0;
   min-height: 35px;
+  overflow: hidden;
   border-bottom: 1px dashed #ccc;
 }
 .s-test .s-right-subject h2 {
