@@ -65,7 +65,7 @@
           <ul>
             <?php foreach($arr as $k=>$v){?>
               <li>
-                <h3><?php echo $v['qid']?></h3>
+                <h3><?php echo $v['qid']?>.</h3>
                 <a href="/exercise_details/<?php echo $v['qid']?>.html">
                   <?php echo $v['content']; ?>
                 </a>
@@ -84,8 +84,8 @@
 <!--底部-->
 <script>
   $(function () {
-    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
-    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:6,interTime:100});
+    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:100});
+    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:100});
     //  选项卡切换效果
     var search = location.search.split('m='),
         m = search[1];
