@@ -152,10 +152,7 @@
         </div>
 </div>
 <script>
-    var ue = UE.getEditor('editor');
     var content = UE.getEditor('content',{
-        'fontfamily':[{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}],
-        'fontsize':[20],
         tabSize: 2
     });
     var keyA= UE.getEditor('keyA');

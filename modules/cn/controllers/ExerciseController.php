@@ -35,12 +35,14 @@ class ExerciseController extends Controller
         $id = Yii::$app->request->get('id');
         $uid = Yii::$app->session->get('uid','');
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
-        $isLogin = Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=" . $data['tpId'])->queryOne();
-        if ($isLogin['isLogin'] == 1 && $uid == false) {
+        /*需登录再做题
+         $isLogin = Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=" . $data['tpId'])->queryOne();
+         if ($isLogin['isLogin'] == 1 && $uid == false) {
             $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
             echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
             die;
         }
+        */
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
