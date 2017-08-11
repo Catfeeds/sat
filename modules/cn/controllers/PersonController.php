@@ -23,61 +23,79 @@ class PersonController extends Controller
     public function actionCollect()
     {
         $uid = Yii::$app->session->get('uid');
-        $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
-        $qid = ltrim($arr['qid'], ',');
-        if($qid==false){
-            $data='';
-        }else{
-            $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
-        }
+        if($uid){
+            $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
+            $qid = ltrim($arr['qid'], ',');
+            if($qid==false){
+                $data='';
+            }else{
+                $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+            }
 //        var_dump($data);die;
 
-        return $this->render('person_collect', ['data' => $data]);
+            return $this->render('person_collect', ['data' => $data]);
+        }else{
+            echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+            die;
+        }
+
     }
 
     public function actionExercise()
     {
         $uid = Yii::$app->session->get('uid');
-        $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
-        if ($arr['notes'] != false) {
-            $brr = explode(';', $arr['notes']);
-            static $crr = array();
-            static $s = '';
-            foreach ($brr as $k => $v) {
-                if ($v != '') {
-                    $key = explode(',', $v)[0];
-                    $crr[$key] = explode(',', $v);
-                    $s .= $key . ',';
-                }
+        if($uid){
+            $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
+            if ($arr['notes'] != false) {
+                $brr = explode(';', $arr['notes']);
+                static $crr = array();
+                static $s = '';
+                foreach ($brr as $k => $v) {
+                    if ($v != '') {
+                        $key = explode(',', $v)[0];
+                        $crr[$key] = explode(',', $v);
+                        $s .= $key . ',';
+                    }
 
-            }
-            $qid = rtrim($s, ',');
-            $data = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
-            static $n = 0;
-            foreach ($data as $k => $v) {
-                if ($v['answer'] == $crr[$v['qid']][1]) {
-                    $n += 1;
                 }
+                $qid = rtrim($s, ',');
+                $data = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
+                static $n = 0;
+                foreach ($data as $k => $v) {
+                    if ($v['answer'] == $crr[$v['qid']][1]) {
+                        $n += 1;
+                    }
+                }
+            } else {
+                $crr = array();
+                $data = array();
+                $n = 0;
             }
-        } else {
-            $crr = array();
-            $data = array();
-            $n = 0;
-        }
 
 //        var_dump($data);die;
-        return $this->render('person_exercise', ['data' => $data, 'crr' => $crr, 'n' => $n]);
+            return $this->render('person_exercise', ['data' => $data, 'crr' => $crr, 'n' => $n]);
+        }else{
+            echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+            die;
+        }
+
     }
 
     public function actionMock()
     {
         $uid = Yii::$app->session->get('uid');
-        $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
-        $model = new Format();
-        foreach ($arr as $k => $v) {
-            $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+        if(uid){
+            $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
+            $model = new Format();
+            foreach ($arr as $k => $v) {
+                $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+            }
+            return $this->render('person_mock', ['arr' => $arr]);
+        }else{
+            echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+            die;
         }
-        return $this->render('person_mock', ['arr' => $arr]);
+
     }
 
     public function actionColl()
