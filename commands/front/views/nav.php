@@ -103,7 +103,7 @@
             <a id="showA" href="#" <?php if(strpos($path,'exercise')!==false || $path=='knowledge.html') echo 'class="on"';?>>做题<i class="fa fa-sort-desc"></i></a>
             <div class="s-nav-showing">
                 <ul>
-                    <li><a href="/exercise.html?m=Math" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
+                    <li><a href="/exercise.html?m=Reading" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
                     <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
                     <!--                <li><a href="#">测评</a></li>-->
                 </ul>

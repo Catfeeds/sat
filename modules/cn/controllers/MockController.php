@@ -78,6 +78,7 @@ class MockController extends Controller
         if (!$qid) {
             $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
         }elseif($qid=='undefined') {
+            unset($_SESSION['answer']);unset($_SESSION['tid']);
             echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
             die;
         }else{
