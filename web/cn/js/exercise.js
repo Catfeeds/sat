@@ -20,14 +20,18 @@ $(function() {
     if (ans == undefined || ans == '') {
       $('.shade-cmn').fadeIn();
     }else {
-      if ($(this).index() == 0) {
-        if ($('.s-answer-show').css('display') == 'none') {
-          $(this).addClass('active');
-          $('.s-exam .s-answer-show').fadeIn(1000)
-        } else {
-          $(this).removeClass('active');
-          $('.s-exam .s-answer-show').fadeOut(300)
+      if ($.cookie('uid') != ''){
+        if ($(this).index() == 0) {
+          if ($('.s-answer-show').css('display') == 'none') {
+            $(this).addClass('active');
+            $('.s-exam .s-answer-show').fadeIn(1000)
+          } else {
+            $(this).removeClass('active');
+            $('.s-exam .s-answer-show').fadeOut(300)
+          }
         }
+      }else {
+        window.location.href="http://login.gmatonline.cn/cn/index?source=20&url="+location.href;
       }
     }
   })
