@@ -158,7 +158,7 @@
   $(function () {
     $('.s-mock-cnt .s-subject li a').click(function () {
       if ($(this).next().hasClass('fa-lock')) {
-        if (!sessionStorage.getItem('userId')) {
+        if ($.cookie('uid') == '') {
           alert('请登录');
           return false;
         }

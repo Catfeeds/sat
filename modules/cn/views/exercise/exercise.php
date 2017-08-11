@@ -11,7 +11,7 @@
         <li class="active"><?php echo $data['name'].'-'.$data['time']?></li>
       </ol>
       <div class="s-top-img">
-        <img src="/cn/images/pubClass-dea_03.png" alt="">
+        <img src="/cn/images/exer02.png" alt="背景图片">
       </div>
       <div class="s-exer-wrap clearfix">
         <!--题目-->

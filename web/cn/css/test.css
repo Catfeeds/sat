@@ -74,7 +74,8 @@
   margin-bottom: 0;
   padding-bottom: 13px;
   border-bottom: 1px solid rgb(238,238,238);
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
 }
 .s-test .s-subject-cnt div {
   max-height: 100px;
@@ -156,8 +157,8 @@
 }
 /*最新题目*/
 .s-test .s-right-subject li {
-  /*padding: 10px 0;*/
-  line-height: 35px;
+  padding: 10px 0;
+  /*line-height: 35px;*/
   border-bottom: 1px dashed #ccc;
 }
 .s-test .s-right-subject h2 {

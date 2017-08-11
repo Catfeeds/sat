@@ -2,7 +2,7 @@
 <section>
   <div class="s-test s-w1200">
     <div class="s-top-adv">
-      <img src="/cn/images/teacher-detail01.png" alt="">
+      <img src="/cn/images/exer01.png" alt="背景图片">
     </div>
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
@@ -89,10 +89,8 @@
     //  选项卡切换效果
     var search = location.search.split('m='),
         m = search[1];
-    console.log('&'+m);
     if (location.search.split('&').length==2 && location.search.indexOf('p=') != -1) {
       m = m.split('&')[0];
-      console.log('&&'+m);
     }
     $('.s-label-list li').removeClass('active');
     switch (m) {
@@ -154,7 +152,6 @@
         window.location.href = url;
       }
     } else {
-      alert(url+'/exercise.html?path=Reading'+'&c='+cate);
       window.location.href = url+'/exercise.html?path=Reading'+'&c='+cate;
     }
   }
