@@ -34,18 +34,22 @@ class QuestionsController extends ApiControl
             $id = Yii::$app->request->get('id', '');
             // 取出试卷的名称
             $arr = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
-//            var_dump($arr);die;
             if ($id == '') {
                 return $this->render('add', ['arr' => $arr]);
             } else {
                 $data= Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $id)->queryOne();
+                if(strpos($data['subScores'],',')!=false){
+                    $data['subScores2']=explode(',',$data['subScores'])[1];
+                    $data['subScores']=explode(',',$data['subScores'])[0];
+                }
+//                var_dump($data);die;
                 return $this->render('add', ['data' => $data, 'arr' => $arr]);
             }
         } else {
             // 添加数据到数据
             $model = new Questions();
             $getdata = new GetData();
-            $must = array('content' => '题目','tpId'=>'试卷','section'=>'所属的小节');
+            $must = array('tpId'=>'试卷','section'=>'所属的小节');
             $data = $getdata->PostData($must);
 //            var_dump($data);die;
             if ($data['id'] == '') {
@@ -55,7 +59,7 @@ class QuestionsController extends ApiControl
             }
             if ($re) {
                 echo '<script>alert("数据\修改成功")</script>';
-                $this->redirect('index');
+                $this->redirect('content');
             } else {
                 echo '<script>alert("数据添加\修改失败，请重试");history.go(-1);</script>';
                 die;
@@ -151,7 +155,7 @@ class QuestionsController extends ApiControl
             }
             if ($re) {
                 echo '<script>alert("数据添加成功")</script>';
-                $this->redirect('index');
+                $this->redirect('topic');
             } else {
                 echo '<script>alert("数据添加失败，请重试");history.go(-1);</script>';
                 die;
