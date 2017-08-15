@@ -249,8 +249,10 @@ function numBtnEvent() {
   $(this).addClass("cut");
   $(parent).find(".math-value").eq(0).text($(parent).find(".col1.cut").text()+$(parent).find(".col2.cut").text()+$(parent).find(".col3.cut").text()+$(parent).find(".col4.cut").text());
 }
-//禁止右键
-// function stop(){
-//   return false;
-// }
-// document.oncontextmenu = stop;
+//禁止复制以及右键
+document.oncopy = function(){
+  return false;
+}
+ document.oncontextmenu = function () {
+   return false;
+ };

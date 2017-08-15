@@ -21,17 +21,6 @@
             </ul>
         </div>
         <div class="right-login pull-right">
-<!--            <ul class="s-nav-login pull-right" id="outul" --><?php //if(!$user)echo 'style="display:none"';?><!-->
-<!--                <li id="welcome"><a  href="#">--><?php
-//                        if($user){
-//                            if($user['nickname']!=false){
-//                                echo "欢迎:".$user['nickname'];
-//                            }else{
-//                                echo "欢迎:".$user['username'];
-//                            }
-//                        }?><!--</a></li>-->
-<!--                <li id="out"><a><span onclick="Out()">退出</span></a></li>-->
-<!--            </ul>-->
             <ul class="s-nav-login pull-right" id="loginul" <?php if(isset($user)){echo 'style="display:none"';}else{echo 'style="display:block"';}?>>
                 <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
                 <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
@@ -117,7 +106,7 @@
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
         <li><a href="/US_abroad.html">美国留学</a></li>
-<!--        <li><a href="/act.html">ACT</a></li>-->
+        <li><a href="/act.html">ACT</a></li>
     </ul>
     <form class="search-form" action="">
         <div class="search-select">

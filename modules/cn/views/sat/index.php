@@ -46,14 +46,14 @@
         <div class="s-system">
             <div class="s-w1200">
                 <div class="s-sat-title clearfix">
-                    <p class="pull-left">A</p>
+                    <p class="pull-left">E</p>
                     <div>
                         <p>
-                            <span style="color: #000;font-weight: bold;">答题</span>
-                            <span style="color: rgb(229,104,215)">system</span>
+                            <span style="color: #000;font-weight: bold;">在线学习</span>
+                            <span style="color: rgb(229,104,215)">System</span>
                         </p>
                         <p>
-                            <span style="color: rgb(54,178,251);">nswer</span>
+                            <span style="color: rgb(54,178,251);">-learning</span>
                             <span style="color: #000;font-weight: bold;">系统</span>
                         </p>
                     </div>
