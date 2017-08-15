@@ -161,7 +161,7 @@ class MockController extends Controller
         $data    = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
         $re      =$model->avg($solution,$utime,$data);
         // 统计答题总数，根据答题总数，返回数据
-        if($count<30){
+        if($count<154){
             $data= Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
             echo die(json_encode($data));
         }else{

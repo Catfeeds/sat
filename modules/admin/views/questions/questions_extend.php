@@ -16,7 +16,7 @@
                 <select name="tid">
                     <option value ="">请选择试卷</option>
                     <?php foreach($arr as $v){?>
-                        <option value ="<?php echo $v['id']?>" <?php echo isset($data['tpId'])&& $data['tpId']==$v['id'] ?  'selected':''?>><?php echo $v['name'].$v['time']?></option>
+                        <option value ="<?php echo $v['id']?>" <?php echo isset($data['tid'])&& $data['tid']==$v['id'] ?  'selected':''?>><?php echo $v['name'].$v['time']?></option>
                     <?php }?>
                 </select>
             </span>

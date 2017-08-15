@@ -53,7 +53,9 @@ class InfoController extends Controller
     {
         $id = Yii::$app->request->get('id', '');
         $data = Yii::$app->db->createCommand("select * from {{%info}} where id=$id")->queryOne();
-        $data['hits']+=1;
+        if($data['cate']!='公开课'){
+            $data['hits']+=1;
+        }
         $model=new Info;
         $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
         $cate = $data['cate'];

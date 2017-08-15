@@ -85,6 +85,13 @@
                     <input type="text" name="validTime" placeholder="格式为: 年-月-日 时：分, 无则填：2037-8-8"  style="width: 500px;" value="<?php echo isset($data)? $data['validTime']:''?>" />
                 </td>
             </tr>
+
+            <tr>
+                <td>初始化点击量:</td>
+                <td>
+                    <input type="text" name="hits" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['hits']:''?>" />
+                </td>
+            </tr>
             <tr>
                 <td>是否置顶:</td>
                 <td>

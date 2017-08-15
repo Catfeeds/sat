@@ -77,42 +77,85 @@ class GetScore {
         }
         foreach($data as $k=>$v) {
             $que = Yii::$app->db->createCommand("select * from {{%questions}}  where id=" . $k)->queryOne();
-            if ($que['subScores'] == 'expression') {
-                if ($v[1] == $que['answer']) {
-                    $expression =$expression+ 1;
-                }
+            // subScores可能存在的两种情况
+            if(strpos($que['subScores'],',')!=false){
+                $que['subScores2']=explode(',',$que['subScores'])[1];
+                $que['subScores']=explode(',',$que['subScores'])[0];
+                if ($que['subScores'] == 'expression'||$que['subScores2']== 'expression') {
+                    if ($v[1] == $que['answer']) {
+                        $expression =$expression+ 1;
+                    }
 
-            } elseif ($que['subScores'] == 'english') {
-                if ($v[1] == $que['answer']) {
-                    $english =$english + 1;
-                }
+                } elseif ($que['subScores'] == 'english'||$que['subScores2'] == 'english') {
+                    if ($v[1] == $que['answer']) {
+                        $english =$english + 1;
+                    }
 
-            } elseif ($que['subScores'] == 'algebra') {
-                if ($v[1] == $que['answer']) {
-                    $algebra =$algebra + 1;
-                }
+                } elseif ($que['subScores'] == 'algebra'||$que['subScores2'] == 'algebra') {
+                    if ($v[1] == $que['answer']) {
+                        $algebra =$algebra + 1;
+                    }
 
-            } elseif ($que['subScores'] == 'analysis') {
-                if ($v[1] == $que['answer']) {
-                    $analysis =$analysis + 1;
-                }
+                } elseif ($que['subScores'] == 'analysis'||$que['subScores2'] == 'analysis') {
+                    if ($v[1] == $que['answer']) {
+                        $analysis =$analysis + 1;
+                    }
 
-            } elseif ($que['subScores'] == 'math') {
-                if ($v[1] == $que['answer']) {
-                    $math =$math + 1;
-                }
+                } elseif ($que['subScores'] == 'math'||$que['subScores2'] == 'math') {
+                    if ($v[1] == $que['answer']) {
+                        $math =$math + 1;
+                    }
 
-            } elseif ($que['subScores'] == 'words') {
-                if ($v[1] == $que['answer']) {
-                    $words = $words +1;
-                }
+                } elseif ($que['subScores'] == 'words'||$que['subScores2'] == 'words') {
+                    if ($v[1] == $que['answer']) {
+                        $words = $words +1;
+                    }
 
-            } elseif ($que['subScores'] == 'evidence') {
-                if ($v[1] == $que['answer']) {
-                    $evidence =$evidence + 1;
-                }
+                } elseif ($que['subScores'] == 'evidence'||$que['subScores2'] == 'evidence') {
+                    if ($v[1] == $que['answer']) {
+                        $evidence =$evidence + 1;
+                    }
 
+                }
+            }else{
+                if ($que['subScores'] == 'expression') {
+                    if ($v[1] == $que['answer']) {
+                        $expression =$expression+ 1;
+                    }
+
+                } elseif ($que['subScores'] == 'english') {
+                    if ($v[1] == $que['answer']) {
+                        $english =$english + 1;
+                    }
+
+                } elseif ($que['subScores'] == 'algebra') {
+                    if ($v[1] == $que['answer']) {
+                        $algebra =$algebra + 1;
+                    }
+
+                } elseif ($que['subScores'] == 'analysis') {
+                    if ($v[1] == $que['answer']) {
+                        $analysis =$analysis + 1;
+                    }
+
+                } elseif ($que['subScores'] == 'math') {
+                    if ($v[1] == $que['answer']) {
+                        $math =$math + 1;
+                    }
+
+                } elseif ($que['subScores'] == 'words') {
+                    if ($v[1] == $que['answer']) {
+                        $words = $words +1;
+                    }
+
+                } elseif ($que['subScores'] == 'evidence') {
+                    if ($v[1] == $que['answer']) {
+                        $evidence =$evidence + 1;
+                    }
+
+                }
             }
+
         }
         foreach($data as $k=>$v){
             $que=Yii::$app->db->createCommand("select * from {{%questions}}  where id=".$k)->queryOne();
