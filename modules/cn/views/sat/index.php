@@ -87,9 +87,9 @@
                     </div>
                     <div class="system-wrap system-wrap2">
                         <div>
-                            <a href="/exercise.html?m=Math">题目分类</a>
+                            <a href="/exercise.html?m=Reading">题目分类</a>
                         </div>
-                        <div><a href="/exercise.html?m=Math">题目来源</a></div>
+                        <div><a href="/exercise.html?m=Reading">题目来源</a></div>
                     </div>
                     <div class="system-wrap system-wrap3">
                         <div>

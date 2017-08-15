@@ -66,6 +66,7 @@ $(function () {
     }else {
         allNum = sessionStorage.allPosition;
     }
+    $('.all-position').html(allNum);
 })
 
 var uId = $.cookie('uid'),//获取uId
@@ -349,8 +350,6 @@ function ckBefore(flag,tag) {
                 })
             }
         }
-
-
     }
 }
 
@@ -363,4 +362,3 @@ function exitOut() {
         }
     },'json')
 }
-
