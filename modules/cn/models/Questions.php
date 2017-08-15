@@ -35,7 +35,7 @@ class Questions extends ActiveRecord{
 //            var_dump($str);die;
         }
         $page = Yii::$app->request->get('p', 1);
-        $pagesize=2;
+        $pagesize=10;
         $offset = $pagesize * ($page - 1);
         if(isset($str) && $str==false){
             $data='';
@@ -52,9 +52,9 @@ class Questions extends ActiveRecord{
     }
 
     /* 做题正确率,做题时间的更新
-     * @time每题做题时间
-     * @answer做题答案
-     * @data题目数据
+     * @param,time每题做题时间
+     * @param,answer做题答案
+     * @param,data题目数据
     */
     public function avg($answer,$time,$data){
         if($answer==$data['answer']){
@@ -72,26 +72,27 @@ class Questions extends ActiveRecord{
     }
 
     /* 做题进度
-    * @major科目
-    * @id 题目的id
-    * @section 题目所属的部分
-    * @tpId 试卷id
-    * @essayId 短文的id
+
+    * @param,major科目
+    * @param,id 题目的id
+    * @param,section 题目所属的部分
+    * @param,tpId 试卷id
+    * @param,essayId 短文的id
     */
     public function Progress($major,$id,$section,$tpId,$essayId){
-        if ($major == 'Math1' || $major == "Math2") {
-            $a = 1;
-            $n = 1;
-        } else {
+//        if ($major == 'Math1' || $major == "Math2") {
+//            $a = 1;
+//            $n = 1;
+//        } else {
             $a = count(Yii::$app->db->createCommand("select id from {{%questions}} where id<" . $id . " and major= '$major' and section=" . $section . " and tpId=" . $tpId . " and essayId=" . $essayId)->queryAll()) + 1;
             $n = count(Yii::$app->db->createCommand("select id from {{%questions}} where major= '$major' and section=" . $section . " and tpId=" . $tpId . " and essayId=" . $essayId)->queryAll());
-        }
+//        }
         return "$a/$n";
     }
 
     /* 题目是否收藏
-    * @uid 用户id
-    * @qid 题目的id
+    * @param,uid 用户id
+    * @param,qid 题目的id
     */
     public function isCollection($uid,$qid)
     {
@@ -109,8 +110,8 @@ class Questions extends ActiveRecord{
         return $collection;
     }
     /* 对讨论进行递归排序
-    * @data 原始的数组
-    * @pid  父id
+    * @param,data 原始的数组
+    * @param,pid  父id
     */
     public function getReplyList($data, $pid = 0)
     {
@@ -125,8 +126,8 @@ class Questions extends ActiveRecord{
         return $arr;
     }
     /* 对当前题目的谈论数据
-    * @data 原始的数组
-    * @qid  题目id
+    * @param,data 原始的数组
+    * @param,qid  题目id
     */
     public function getReplyData($qid)
     {

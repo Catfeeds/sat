@@ -11,7 +11,7 @@
         <li class="active"><?php echo $data['name'].'-'.$data['time']?></li>
       </ol>
       <div class="s-top-img">
-        <img src="/cn/images/pubClass-dea_03.png" alt="">
+        <img src="/cn/images/exer02.png" alt="背景图片">
       </div>
       <div class="s-exer-wrap clearfix">
         <!--题目-->
@@ -20,7 +20,7 @@
           <div class="math-exam work-question-part"  <?php if($data['major']!='Math1'&&$data['major']!='Math2'){echo 'style="display:none;"';}?>>
             <div class="math-title">
               <p class="pull-right"><?php echo $n?></p>
-              <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
+              <h3><?php echo $data['name'].'-'.$data['time'].'-<span id="subName">'.$data['major'].'</span>'?></h3>
             </div>
             <h2 class="s-num pull-left"><?php echo $data['qid']?>.</h2>
             <div class="s-title">
@@ -140,16 +140,15 @@
           <div class="read-exam clearfix" <?php if($data['major']=='Math1'||$data['major']=='Math2'){echo 'style="display:none;"';}?>>
             <div class="read-title">
               <p class="pull-right"><?php echo $n?></p>
-              <h3><?php echo $data['name'].'-'.$data['time'].'-'.$data['major']?></h3>
+              <h3><?php echo $data['name'].'-'.$data['time'].'-<span id="subName">'.$data['major'].'</span>'?></h3>
             </div>
             <div class="work-wrap-left pull-left">
               <h3><?php echo isset($data['topic'])?$data['topic']:''?></h3>
               <h5><?php echo isset($data['details'])?$data['details']:''?></h5>
               <div class="work-box">
+                <div class="pull-left text-line"></div>
                 <div class="read-text">
-                  <p>
                     <?php echo isset($data['essay'])?$data['essay']:''?>
-                  </p>
                 </div>
               </div>
             </div>

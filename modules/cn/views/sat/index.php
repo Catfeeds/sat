@@ -83,13 +83,13 @@
                         <div>
                             <a href="/mock.html">全套模考</a>
                         </div>
-                        <div><a href="/mock.html">单科模考</a></div>
+                        <div><a href="/mock.html#m">单科模考</a></div>
                     </div>
                     <div class="system-wrap system-wrap2">
                         <div>
-                            <a href="/exercise.html?m=Math">题目分类</a>
+                            <a href="/exercise.html?m=Reading">题目分类</a>
                         </div>
-                        <div><a href="/exercise.html?m=Math">题目来源</a></div>
+                        <div><a href="/exercise.html?m=Reading">题目来源</a></div>
                     </div>
                     <div class="system-wrap system-wrap3">
                         <div>
@@ -129,7 +129,7 @@
                         </div>
                         <h2 class="course-title">SAT <?php echo $v['cate']?></h2>
                         <div class="course-text">
-                            <?php echo $v['introduction']?>
+                            <?php echo $v['smallIntro']?>
                         </div>
                         <a class="course-more" href="/class_details/<?php echo $v['id']?>.html">查看更多</a>
                     </li>
@@ -292,7 +292,7 @@
                                 <h4>主讲：<?php echo $v['subject']?></h4>
                                 <p><?php echo $v['introduction']?></p>
                             </div>
-                            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">立即预约</a>
+                            <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">立即预约</a>
                         </li>
                         <?php }?>
                     </ul>
@@ -307,8 +307,6 @@
     jQuery(".s-person").slide({mainCell:".s-adv-wrap ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
     //  名师团队
     jQuery('.s-teacher-cnt').slide({mainCell:".s-teacher-int", effect:"leftLoop",vis:4, autoPlay:false});
-
-
     $(function () {
         $('.system-list>li').click(function () {
             var index = $(this).index();
@@ -316,9 +314,6 @@
             $(this).addClass('on');
             $('.system-wrap').hide();
             $('.system-wrap').eq(index).show();
-        })
-        $('.daily-question li').each(function (i) {
-            $('.daily-question li').eq(i).children('p').eq(0).nextAll().remove();
         })
         // 每日一题
         jQuery(".s-daily-cnt").slide({mainCell:".daily-question1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});

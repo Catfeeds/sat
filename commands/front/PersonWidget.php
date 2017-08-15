@@ -32,7 +32,6 @@
         }
         public function rate(){
             $uid=Yii::$app->session->get('uid');
-            $uid=222;
             $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
             if($arr['notes'] != false) {
                 $brr = explode(';', $arr['notes']);

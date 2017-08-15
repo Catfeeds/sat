@@ -41,14 +41,13 @@
 
             <span>短文或图片:</span>
             <span>
-                <textarea id="editor" type="text/plain" name="essay"   style="width:600px;height:300px;" ><?php echo isset($data['essay'])? $data['essay']:''?></textarea>
+                <textarea id="editor" type="text/plain" name="essay" style="width:600px;height:300px;" ><?php echo isset($data['essay'])? $data['essay']:''?></textarea>
             </span>
             </br>
             <input type="hidden" name="id" value="<?php echo isset($data['id'])?$data['id']:''?>"/>
             <button type="submit" id="login-button">添加/修改</button></span>
         </form>
     </div>
-
 </div>
 <script>
     //实例化编辑器

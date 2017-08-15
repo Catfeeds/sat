@@ -10,7 +10,8 @@
       同学你好,以下是你的<span class="class-hid" data-class="<?php echo $report['part']?>"><?php if($report['part']=='Reading'){echo '阅读';}elseif($report['part']=='Math'){
           echo '数学';}elseif($report['part']=='Writing'){echo '文法';}?></span>分析报告
     </div>
-    <a href="/person_mock.html">历史报告</a>
+    <?php if(Yii::$app->session->get('uid')){?><a href="/person_mock.html">历史报告</a><?php }?>
+
   </div>
   <div class="report-wrap clearfix">
     <div class="report-cnt pull-left">

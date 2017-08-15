@@ -90,13 +90,10 @@ class Report extends ActiveRecord{
             $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
         }
         $getscore   = new GetScore();
-//        $number     = $getscore->Number($answerData);
         $number['Math']      =$data['mathnum'];
         $number['Writing']   =$data['writenum'];
         $number['Reading']   =$data['readnum'];
         $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
-        $subscore   = $data['subScore'];
-        $crosstest  = $data['crossScore'];
         $re         = array_merge($data, $score);
         $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
         $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();

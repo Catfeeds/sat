@@ -22,32 +22,30 @@ class ReportController extends Controller
     {
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
         $uid = Yii::$app->session->get('uid');
-        $uid = 222;
         $user = Yii::$app->session->get('userData');
-        $major = Yii::$app->session->get('part'); // 从前台得到还是从地址栏得到
-//        var_dump($_SESSION);die;
-        if (isset($_SESSION['answer'])) {
-            $answerData = ((array)$_SESSION['answer']);
-            $answerData = $answerData['item'];// 获取用户的答题数据
-            $getscore = new GetScore();
-            $number = $getscore->Number($answerData);
-            $score = $getscore->Score($number);// 各科分数均有，按科目的分类
-            $subscore = $getscore->Subscore($number);
-            $crosstest = $getscore->CrossTest($number);
+        $major = Yii::$app->session->get('part');
+        if (isset($_SESSION['answer']) && isset($_SESSION['tid'])) {
+            $answerData  = ((array)$_SESSION['answer']);
+            $answerData  = $answerData['item'];// 获取用户的答题数据
+            $getscore    = new GetScore();
+            $number      = $getscore->Number($answerData);
+            $score       = $getscore->Score($number);// 各科分数均有，按科目的分类
+            $subscore    = $getscore->Subscore($number);
+            $crosstest   = $getscore->CrossTest($number);
             // 需要存到数据库里的数据
-            $re['tpId'] = $_SESSION['tid'];
-            $re['readnum'] = $number['Reading'];
-            $re['part'] = ($major == false) ? 'all' : "$major";
-            $re['uid'] = $uid;
-            $re['mathnum'] = $number['Math'];
-            $re['writenum'] = $number['Writing'];
-            $re['matherror'] = $number['matherror'];
-            $re['readerror'] = $number['readerror'];
+            $re['tpId']       = $_SESSION['tid'];
+            $re['readnum']    = $number['Reading'];
+            $re['part']       = ($major == false) ? 'all' : "$major";
+            $re['uid']        = $uid;
+            $re['mathnum']    = $number['Math'];
+            $re['writenum']   = $number['Writing'];
+            $re['matherror']  = $number['matherror'];
+            $re['readerror']  = $number['readerror'];
             $re['writeerror'] = $number['writeerror'];
-            $re['subScore'] = $subscore['total'];
+            $re['subScore']   = $subscore['total'];
             $re['crossScore'] = $crosstest['total'];
-            $re['date'] = time();
-            $re['time'] = Yii::$app->session->get('time');// 做题总时间
+            $re['date']        = time();
+            $re['time']       = Yii::$app->session->get('time');// 做题总时间
             ($re['part'] == 'all') ? ($re['score'] = $score['total']) : ($re['score'] = $score["$major"]);
             if ($uid) {
                 // 将答案组合成字符串
@@ -57,13 +55,13 @@ class ReportController extends Controller
                     $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
                     if ($res) {
                         unset($_SESSION['answer']);
+                        unset($_SESSION['tid']);
                     }//入库完成
                 }
                 // 历史报告
                 $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
                 $tp = array_reverse($tp);
                 // 取出最新的一次报告
-
                 $report = new Report();
                 $res = $report->Show($uid, '');
             } else {
@@ -73,12 +71,12 @@ class ReportController extends Controller
 
         } else {
             if ($uid) {
-                $report = new Report();
-                $res = $report->Show($uid, '');
-                if ($res) {
+                if(Yii::$app->db->createCommand("select id from {{%report}} where uid=".$uid)->queryAll()) {
+                    $report = new Report();
+                    $res = $report->Show($uid, '');
                     $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
                     $tp = array_reverse($tp);
-                } else {
+                }else {
                     echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
                     die;
                 }
@@ -93,9 +91,9 @@ class ReportController extends Controller
         if ($res['part'] == 'all') {
             return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
         } else {
-            $info = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
-            $math = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
-            $read = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
+            $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
+            $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
+            $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
             $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='write' order by r.score limit 5")->queryAll();
             $score = array_merge($write, array_merge($math, $read));
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user, 'info' => $info, 'score' => $score]);
@@ -108,7 +106,6 @@ class ReportController extends Controller
     public function actionDetails()
     {
         $uid = Yii::$app->session->get('uid', '');
-        $uid = 222;
         $user = Yii::$app->session->get('userData');
         $id = Yii::$app->request->get('id', '');
         $re = new Report();
@@ -120,34 +117,32 @@ class ReportController extends Controller
             $tp = array_reverse($tp);
             return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
         } else {
-            $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='" . $res['part'] . "' order by r.id desc limit 5")->queryAll();
-            $tp = array_reverse($tp);
-            $info = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
-            $math = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
-            $read = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
+            $tp    = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='" . $res['part'] . "' order by r.id desc limit 5")->queryAll();
+            $tp    = array_reverse($tp);
+            $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
+            $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
+            $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
             $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='write' order by r.score limit 5")->queryAll();
             $score = array_merge($write, array_merge($math, $read));
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user, 'info' => $info, 'score' => $score]);
         }
 
     }
-
+    // 报告页面 用户做题详情
     public function actionQue()
     {
         // 接受的试卷的id
-        $uid = Yii::$app->session->get('uid');
-        $uid = 222;
-        $tpId = Yii::$app->request->post('tid');
-        $rid = Yii::$app->request->post('rid');
-        $major = Yii::$app->request->post('sub');
+        $uid      = Yii::$app->session->get('uid');
+        $tpId     = Yii::$app->request->post('tid');
+        $rid      = Yii::$app->request->post('rid');
+        $major    = Yii::$app->request->post('sub');
         $classify = Yii::$app->request->post('classify');
-//        var_dump($rid);
+
         if ($uid) {
             if (!$rid) {
                 $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=$uid and tpId=$tpId order by id desc limit 1")->queryOne();
             } else {
                 $data = Yii::$app->db->createCommand("select * from {{%report}} where id=$rid")->queryOne();
-//                var_dump($data);
             }
             $arr = explode(';', $data['answer']);
             static $brr = array();
@@ -159,8 +154,6 @@ class ReportController extends Controller
             }
             $report = new Report();
             $que = $report->queDetails($brr, $classify, $major);
-//            var_dump($brr);
-
         } else {
             if (isset($_SESSION['answer'])) {
                 $arr = (array)$_SESSION['answer'];

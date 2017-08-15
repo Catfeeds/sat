@@ -133,70 +133,106 @@ class uc_note {
 		return $this->_serialize($return, 1);
 	}
 
-    function synlogin($get, $post) {
-        session_start();
-        $uid = $get['uid'];
-        $email = $get['email'];
-        $phone = $get['phone'];
-        $username = $get['username'];
-        $password = $get['password'];
-        $nickname = $get['nickname'];
-		$str=substr($password, 1);
-		$str='_@5!'.$str."*a1";
-        if(!API_SYNLOGIN) {
-            return API_RETURN_FORBIDDEN;
-        }
-        $sql = "set names utf8";
-        $this->dbLink->query($sql);
-        $sql = "select * from sat_user WHERE  uid=$uid";
-        $u = $this->dbLink->fetch_first($sql);
-        if (!$u) {
-            $time = time();
-            $sql = "INSERT INTO sat_user ('username','email','password','phone','createTime','uid','nickname') VALUES ('{$username}','{$email}','".md5($str)."','{$phone}','{$time}','{$uid}''{$nickname}',)";
-            $this->dbLink->query($sql);
-            $userId = $this->dbLink->insert_id();
-            $data = array(
-                'username' => $username,
-                'email' => $email,
-                'phone' => $phone,
-                'nickname' => $nickname,
-                'image' => '',
-                'id' => $userId
-            );
-        } else {
-            if($phone != $u['phone']){
-                $sql = "UPDATE sat_user SET phone = '$phone' WHERE uid = $uid";
-                $this->dbLink->query($sql);
-            }
-            if($email != $u['email']){
-                $sql = "UPDATE sat_user SET email = '$email' WHERE uid = $uid";
-                $this->dbLink->query($sql);
-            }
-            if($username != $u['username']){
-                $sql = "UPDATE sat_user SET username = '$username' WHERE uid = $uid";
-                $this->dbLink->query($sql);
-            }
-			if($username != $u['nickname']){
-				$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE uid = $uid";
+	function synlogin($get, $post) {
+		session_start();
+		$uid      = $get['uid'];
+		$email    = $get['email'];
+		$phone    = $get['phone'];
+		$username = $get['username'];
+		$password = $get['password'];
+		$nickname = $get['nickname'];
+		$level    = $get['level'];
+		$str      =substr($password, 1);
+		$str      ='_@5!'.$str."*a1";
+		$password =md5($str);
+		if(!API_SYNLOGIN) {
+			return API_RETURN_FORBIDDEN;
+		}
+		$sql = "set names utf8";
+		$this->dbLink->query($sql);
+		$sql = "select * from sat_user WHERE  uid=$uid";
+		$u = $this->dbLink->fetch_first($sql);
+		if(!$u){
+			$where = '';
+			if(!empty($email) ){
+				$where .= empty($where)?"email='$email'":" or email='$email'";
+			}
+			if(!empty($username) ){
+				$where .= empty($where)?"username='$username'":" or username='$username'";
+			}
+			if(!empty($phone) ){
+				$where .= empty($where)?"phone='$phone'":" or phone='$phone'";
+			}
+			$sql = "select * from sat_user WHERE  $where";
+			$u = $this->dbLink->fetch_first($sql);
+			if (!$u) {
+				$time = time();
+				$sql = "INSERT INTO sat_user (`username`,`nickname`,`email`,`password`,`phone`,`createTime`,`uid`) VALUES ('{$username}','{$nickname}','{$email}','{$password}','{$phone}','{$time}','{$uid}')";
+				$this->dbLink->query($sql);
+				$userId = $this->dbLink->insert_id();
+				$data = array(
+						'username' => $username,
+						'nickname' => $nickname,
+						'email' => $email,
+						'phone' => $phone,
+						'image' => '',
+						'id' => $userId,
+						'uid' => $uid
+				);
+			} else {
+				$userId = $u['id'];
+				if($phone != $u['phone']){
+					$sql = "UPDATE sat_user SET phone = '$phone' WHERE id = {$u['id']}";
+					$this->dbLink->query($sql);
+				}
+				if($email != $u['email']){
+					$sql = "UPDATE sat_user SET email = '$email' WHERE id = {$u['id']}";
+					$this->dbLink->query($sql);
+				}
+				if($username != $u['username']){
+					$sql = "UPDATE sat_user SET username = '$username' WHERE id = {$u['id']}";
+					$this->dbLink->query($sql);
+				}
+				if($nickname != $u['nickname']){
+					$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE id = {$u['id']}";
+					$this->dbLink->query($sql);
+				}
+				if($uid != $u['uid']){
+					$sql = "UPDATE sat_user SET uid = '$uid' WHERE id = {$u['id']}";
+					$this->dbLink->query($sql);
+				}
+				$sql = "select * from sat_user WHERE  id=$userId";
+				$u = $this->dbLink->fetch_first($sql);
+				$data = $u;
+			}
+		}else{
+			$userId = $u['id'];
+			if($phone != $u['phone']){
+				$sql = "UPDATE sat_user SET phone = '$phone' WHERE id = {$u['id']}";
 				$this->dbLink->query($sql);
 			}
-            if(md5($str) != $u['password']){
-				$password=md5($str);
-                $sql = "UPDATE sat_user SET password = '$password' WHERE uid = $uid";
-                $this->dbLink->query($sql);
-            }
-
-            $sql = "select * from sat_user WHERE  uid=$uid";
-            $u = $this->dbLink->fetch_first($sql);
-            $data = $u;
-        }
-        $_SESSION['uid'] = $uid;
-        $_SESSION['userData'] = $data;
-        $_SESSION['cartSign'] = 1;
-        header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
-//		_setcookie('Example_auth', _authcode($uid."\t".$username, 'ENCODE'));
-    }
-
+			if($email != $u['email']){
+				$sql = "UPDATE sat_user SET email = '$email' WHERE id = {$u['id']}";
+				$this->dbLink->query($sql);
+			}
+			if($nickname != $u['nickname']){
+				$sql = "UPDATE sat_user SET nickname = '$nickname' WHERE id = {$u['id']}";
+				$this->dbLink->query($sql);
+			}
+			if($username != $u['username']){
+				$sql = "UPDATE sat_user SET username = '$username' WHERE id = {$u['id']}";
+				$this->dbLink->query($sql);
+			}
+			$sql = "select * from sat_user WHERE  id=$userId";
+			$u = $this->dbLink->fetch_first($sql);
+			$data = $u;
+		}
+		$_SESSION['userId'] = $userId;
+		$_SESSION['userData'] = $data;
+		$_SESSION['uid'] = $uid;
+		$_SESSION['level'] = $level;
+		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
+	}
 	function synlogout($get, $post) {
         session_start();
 		if(!API_SYNLOGOUT) {

@@ -1,18 +1,15 @@
-
-  <title>练习</title>
-  <link rel="stylesheet" href="/cn/css/test.css">
-
+ <link rel="stylesheet" href="/cn/css/test.css">
 <section>
   <div class="s-test s-w1200">
     <div class="s-top-adv">
-      <img src="/cn/images/teacher-detail01.png" alt="">
+      <img src="/cn/images/exer01.png" alt="背景图片">
     </div>
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
           <li><a href="/exercise.html?m=Reading">阅读</a></li>
           <li><a href="/exercise.html?m=Writing">文法</a></li>
+          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
         </ul>
         <dl class="s-subject-src">
           <dt>题目来源:</dt>
@@ -68,7 +65,7 @@
           <ul>
             <?php foreach($arr as $k=>$v){?>
               <li>
-                <h3><?php echo $v['qid']?></h3>
+                <h3><?php echo $v['qid']?>.</h3>
                 <a href="/exercise_details/<?php echo $v['qid']?>.html">
                   <?php echo $v['content']; ?>
                 </a>
@@ -87,8 +84,8 @@
 <!--底部-->
 <script>
   $(function () {
-    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:100});
-    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:6,interTime:100});
+    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:100});
+    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:100});
     //  选项卡切换效果
     var search = location.search.split('m='),
         m = search[1];
@@ -97,11 +94,11 @@
     }
     $('.s-label-list li').removeClass('active');
     switch (m) {
-      case 'Reading':
-        $('.s-label-list li').eq(1).addClass('active');
+      case 'Math':
+        $('.s-label-list li').eq(2).addClass('active');
         break;
       case 'Writing':
-        $('.s-label-list li').eq(2).addClass('active');
+        $('.s-label-list li').eq(1).addClass('active');
         break;
       default:
         $('.s-label-list li').eq(0).addClass('active');
@@ -116,9 +113,9 @@
       }
       $('.s-label-list li').removeClass('active');
       $('.s-subject-src dd').removeClass('active');
-      if (search1 == 'Writing') {
+      if (search1 == 'Math') {
         $('.s-label-list li').eq(2).addClass('active');
-      } else if (search1 == 'Reading') {
+      } else if (search1 == 'Writing') {
         $('.s-label-list li').eq(1).addClass('active');
       } else {
         $('.s-label-list li').eq(0).addClass('active');
@@ -155,8 +152,7 @@
         window.location.href = url;
       }
     } else {
-//      console.log(url+'/exercise.html?path=math'+'&c='+cate);
-      window.location.href = url+'/exercise.html?path=math'+'&c='+cate;
+      window.location.href = url+'/exercise.html?path=Reading'+'&c='+cate;
     }
   }
 </script>

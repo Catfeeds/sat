@@ -1,4 +1,5 @@
-.work-mk p {
+.work-mk p,
+.s-exer-wrap p{
     margin: 0;
 }
 .work-mk-top {
@@ -42,12 +43,14 @@
     overflow-y: auto;
 }
 .work-wrap-left h3 {
+    margin-left: 35px;
     font-size: 20px;
     color: #333;
     font-weight: bold;
     line-height: 26px;
 }
 .work-wrap-left h5 {
+    margin-left: 35px;
     padding: 10px 0;
     line-height: 28px;
     font-weight: normal;
@@ -56,13 +59,23 @@
     font-size: 22px;
     color: #333;
 }
+.text-line {
+    font-size: 16px;
+    font-style: italic;
+    margin-right: 5px;
+    width: 38px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: bold;
+}
 .work-wrap-left .read-text {
     width: 530px;
 }
+.work-wrap-left .read-text span,
 .work-wrap-left .read-text p {
-    font-size: 22px;
-    line-height: 28px;
-    font-family: Times New Roman;
+    font-size: 20px;
+    line-height: 28px!important;
+    font-family: Arial;
     color: #333;
 }
 .work-wrap-right {
@@ -79,9 +92,14 @@
     font-size: 18px;
     font-weight: bold;
 }
-.work-question-part>div h1 {
+.work-question-part>.clearfix h1 {
     margin: 0 10px 0 0;
     font-size: 20px;
+}
+.work-question-part>.clearfix p,
+.work-question-part>.clearfix span {
+    font-size: 20px !important;
+    line-height: 30px!important;
 }
 .work-question-part .work-que-wrap {
     margin-bottom: 20px;
@@ -112,6 +130,10 @@
     padding: 3px 0;
     line-height: 24px;
     font-size: 16px;
+}
+.work-question-part .work-que p,
+.work-question-part .work-que span {
+    line-height: 28px!important;
 }
 /*数学*/
 .work-mk-math,
@@ -182,10 +204,6 @@
 }
 .btn-invalid {
     background-color: #bbb !important;
-}
-.btn-invalcur {
-    border: 2px solid #bbb !important;
-    color: #bbb !important;
 }
 .btn-invalcut {
     border: 2px solid #bbb !important;

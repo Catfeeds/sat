@@ -3,11 +3,14 @@
   font-size: 18px;
 }
 .act>div {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
+}
+p{
+  margin: 0;
 }
 /* 标题 */
 .act-title {
-  margin: 65px auto 40px;
+  padding: 65px 0 40px 0;
   text-align: center;
 }
 .act-title>h2 {
@@ -49,14 +52,14 @@
 .act-time {
   background-color: #e9edef;
 }
-.act-time-ul {
-  font-size: 0;
-}
 .act-time-ul>li {
-  display: inline-block;
+  float: left;
   width: 185px;
   height: 185px;
   margin-right: 18px;
+  -webkit-box-shadow: 0 0 20px #a5a7a8;
+  -moz-box-shadow: 0 0 20px #a5a7a8;
+  box-shadow: 0 0 20px #a5a7a8;
 }
 .act-time-ul>li:last-child {
   margin-right: 0;
@@ -65,24 +68,22 @@
   width: 100%;
   height: 52px;
   font-size: 32px;
+  background-color: #009999;
   color: #fff;
 }
-.act-time-ul>li:first-child p{
-  background-color: #009999;
-}
-.act-time-ul>li:nth-child(2) p{
+.act-time-ul>li:nth-child(2) .act-month{
   background-color: #ff5252;
 }
-.act-time-ul>li:nth-child(3) p{
+.act-time-ul>li:nth-child(3) .act-month{
   background-color: #52a8ff;
 }
-.act-time-ul>li:nth-child(4) p{
+.act-time-ul>li:nth-child(4) .act-month{
   background-color: #a852ff;
 }
-.act-time-ul>li:nth-child(5) p{
+.act-time-ul>li:nth-child(5) .act-month{
   background-color: #5252ff;
 }
-.act-time-ul>li:nth-child(6) p{
+.act-time-ul>li:nth-child(6) .act-month{
   background-color: #ff8a14;
 }
 .act-time-ul>li>div {
@@ -91,6 +92,289 @@
   background-color: #ececec;
 }
 .act-time-ul>li>div p{
+  line-height: 1.2;
   color: #000;
   font-size: 85px;
+}
+.act-time-ul>li>div span {
+  font-size: 12px;
+  color: #009999;
+}
+.act-time-adv {
+  width: 732px;
+  padding: 16px 0;
+  margin: 80px auto 0;
+  color: #fff;
+  background-color: #30a7ed;
+  font-size: 20px;
+}
+/* ACT考试结构 */
+.act-structure>table {
+  margin: 0 auto;
+  text-align: center;
+  border-color: #ddd;
+}
+.act-structure>table th {
+  width: 220px;
+  height: 55px;
+  text-align: center;
+  color: #fff;
+  background-color: #227db6;
+  font-size: 22px;
+}
+.act-structure>table th:first-child {
+  background-color: #7aac00;
+}
+.act-structure>table td {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.act-structure>p {
+  width: 1150px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 12px;
+}
+/* ACT备考材料 */
+.a-material {
+  background-color: #f3f5f6;
+}
+.a-mat-wrap {
+  width: 1100px;
+  margin: 0 auto;
+}
+.a-mat-cnt {
+  position: relative;
+  float: left;
+  width: 514px;
+  height: 410px;
+  margin-right: 50px;
+  padding: 47px 15px 30px;
+  background: url("/cn/images/act-index02.png") no-repeat;
+  font-size: 18px;
+  -webkit-box-shadow: 0 0 20px #a5a7a8;
+  -moz-box-shadow: 0 0 20px #a5a7a8;
+  box-shadow: 0 0 20px #a5a7a8;
+}
+.a-mat-cnt:last-child {
+  margin-right: 0;
+  background: url("/cn/images/act-index03.png") no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.a-mat-cnt p {
+  color: #fff;
+}
+.a-mat-title {
+  margin-bottom: 40px;
+}
+.a-mat-title>div {
+  width: 57px;
+  height: 68px;
+  margin: 0 auto 15px;
+  background: url("/cn/images/act-index04.png") no-repeat;
+}
+.a-mat-cnt:last-child .a-mat-title>div {
+  background-position: -57px 0;
+}
+.a-mat-title>p {
+  position: relative;
+  padding-bottom: 5px;
+}
+.a-mat-title>p:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100px;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+/* ACT备考建议 */
+.a-advice {
+  background-color: #499ed0;
+  color: #fff;
+}
+.a-advice .act-title {
+  color: #fff;
+}
+.a-advice li {
+  width: 862px;
+  margin: 0 auto 25px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 25px;
+  border: 1px solid #ccc;
+}
+.a-advice li span,
+.a-advice li p {
+  color: #fff;
+  font-size: 16px;
+}
+.a-advice li p {
+  text-align: left;
+}
+.a-adv-img {
+  width: 78px;
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+}
+.a-adv-img>div {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto;
+  background: url("/cn/images/act-index05.png") no-repeat;
+}
+.a-advice li:nth-child(2) .a-adv-img>div {
+  width: 54px;
+  background-position: -55px 0;
+}
+.a-advice li:nth-child(3) .a-adv-img>div {
+  width: 54px;
+  background-position: -109px 0;
+}
+.a-advice li:nth-child(4) .a-adv-img>div {
+  width: 54px;
+  background-position: -163px 0;
+}
+.a-advice li:nth-child(5) .a-adv-img>div {
+  background-position: -217px 0;
+}
+/* ACT对比SAT */
+.a-cmpare ul{
+  position: relative;
+}
+.a-cmpare li {
+  position: absolute;
+  width: 576px;
+  height: 120px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 7px;
+  border: 1px solid #bbb;
+}
+.a-cmpare li:first-child {
+  top: -595px;
+  left: 0;
+}
+.a-cmpare li:nth-child(2){
+  top: -467px;
+  right: 0;
+}
+.a-cmpare li:nth-child(3){
+  top: -348px;
+  left: 0;
+}
+.a-cmpare li:nth-child(4){
+  top: -225px;
+  right: 0;
+}
+.a-cmpare li:nth-child(5){
+  top: -108px;
+  left: 0;
+}
+.a-cmpare li:after,
+.a-cmpare li:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 20px;
+  border: 10px solid transparent;
+}
+.a-cmpare li:nth-child(1):before,
+.a-cmpare li:nth-child(3):before,
+.a-cmpare li:nth-child(5):before{
+  right: -20px;
+  border-left-color: #bbb;
+}
+.a-cmpare li:nth-child(2):before,
+.a-cmpare li:nth-child(4):before {
+  left: -20px;
+  border-right-color: #bbb;
+}
+.a-cmpare li:nth-child(1):after,
+.a-cmpare li:nth-child(3):after,
+.a-cmpare li:nth-child(5):after{
+  right: -19px;
+  border-left-color: #fff;
+}
+.a-cmpare li:nth-child(2):after,
+.a-cmpare li:nth-child(4):after {
+  left: -19px;
+  border-right-color: #fff;
+}
+
+.a-cmpare-img {
+  width: 92px;
+  height: 92px;
+  background: url("/cn/images/act-index07.png") no-repeat;
+}
+.a-cmpare li:nth-child(2) .a-cmpare-img {
+  background-position: -92px 0;
+}
+.a-cmpare li:nth-child(3) .a-cmpare-img {
+  background-position: -184px 0;
+}
+.a-cmpare li:nth-child(4) .a-cmpare-img {
+  background-position: -276px 0;
+}
+.a-cmpare li:nth-child(5) .a-cmpare-img {
+  background-position: -368px 0;
+}
+.a-cmpage-text {
+  padding: 20px 0;
+}
+.a-cmpage-text p{
+  line-height: 25px;
+  font-size: 14px;
+}
+/* ACT考试地点 */
+.a-place {
+  background-color: #f3f5f6;
+}
+.a-place-text {
+  margin-bottom: 30px;
+  line-height: 30px;
+  font-size: 16px;
+}
+.a-place-list {
+
+}
+.a-place-list>li {
+  float: left;
+  width: 533px;
+  height: 150px;
+  margin: 0 100px 15px 0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.a-place-list>li:nth-child(2n) {
+  margin-right: 0;
+}
+.a-place-list>li h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.a-place-list>li p{
+  line-height: 24px;
+  font-size: 14px;
+}
+.a-place-list>li:last-child {
+  line-height: 150px;
+  color: #499ed0;
+  font-size: 18px;
+  font-weight: bold;
 }

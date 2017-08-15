@@ -6901,7 +6901,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                     '.view{padding:0;word-wrap:break-word;cursor:text;height:90%;}\n' +
                     //设置默认字体和字号
                     //font-family不能呢随便改，在safari下fillchar会有解析问题
-                    'body{margin:8px;font-family:sans-serif;font-size:16px;}' +
+                    'body{margin:8px;font-family:times new roman;font-size:20px;}' +
                     //设置段落间距
                     'p{margin:5px 0;}</style>' +
                     ( options.iframeCssUrl ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'' + utils.unhtml(options.iframeCssUrl) + '\'/>' : '' ) +
@@ -16520,12 +16520,8 @@ UE.plugins['enterkey'] = function() {
                 }
             }
             if (tag == 'p') {
-
-
                 if (!browser.ie) {
-
                     start = domUtils.findParentByTagName(range.startContainer, ['ol','ul','p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6','blockquote','caption'], true);
-
                     //opera下执行formatblock会在table的场景下有问题，回车在opera原生支持很好，所以暂时在opera去掉调用这个原生的command
                     //trace:2431
                     if (!start && !browser.opera) {
@@ -16545,7 +16541,6 @@ UE.plugins['enterkey'] = function() {
                     }
 
                 }
-
             } else {
                 evt.preventDefault ? evt.preventDefault() : ( evt.returnValue = false);
 

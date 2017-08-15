@@ -2,6 +2,7 @@ $(function() {
   $(window).scrollTop(350);
   $('.work-shade').height($(document).outerHeight());
   upTime();
+  lineNum();
   $('.now-do').click(function () {
     $('.shade-cmn').hide();
   })
@@ -19,14 +20,18 @@ $(function() {
     if (ans == undefined || ans == '') {
       $('.shade-cmn').fadeIn();
     }else {
-      if ($(this).index() == 0) {
-        if ($('.s-answer-show').css('display') == 'none') {
-          $(this).addClass('active');
-          $('.s-exam .s-answer-show').fadeIn(1000)
-        } else {
-          $(this).removeClass('active');
-          $('.s-exam .s-answer-show').fadeOut(300)
+      if ($.cookie('uid') != ''){
+        if ($(this).index() == 0) {
+          if ($('.s-answer-show').css('display') == 'none') {
+            $(this).addClass('active');
+            $('.s-exam .s-answer-show').fadeIn(1000)
+          } else {
+            $(this).removeClass('active');
+            $('.s-exam .s-answer-show').fadeOut(300)
+          }
         }
+      }else {
+        window.location.href="http://login.gmatonline.cn/cn/index?source=20&url="+location.href;
       }
     }
   })
@@ -114,21 +119,40 @@ $(function() {
     })
     $('.s-exam .s-btn-list').css('paddingRight',0);
   }
+  // 加载页面时判断是否收藏
+  if (($('.s-collect').data('value') == 1) && (uId != '')) {
+    var sCollect = $('.s-collect');
+    sCollect.addClass('active');
+    sCollect.find('i').removeClass('fa-star-o');
+    sCollect.find('i').addClass('fa-star');
+    sCollect.children('span').html('已收藏');
+  }
 })
 
 var uId = $.cookie('uid');
-uId = 444;
-
-
-
-// 加载页面时判断是否收藏
-if (($('.s-collect').data('value') == 1) && (uId != '')) {
-  var sCollect = $('.s-collect');
-  sCollect.addClass('active');
-  sCollect.find('i').removeClass('fa-star-o');
-  sCollect.find('i').addClass('fa-star');
-  sCollect.children('span').html('已收藏');
+//加载行号
+function lineNum(){
+  var subName = $('#subName').text();
+  var text = $('.read-text').html();
+  var tNum = text.split('</p>').length;
+  var line = '';
+  if (subName == 'Reading') {
+    for (var j=1;j<=tNum+1;j++){
+      if (j%5 == 0){
+        line += '<p>'+j+'</p>';
+      } else {
+        line += '<br>'
+      }
+    }
+    $('.text-line').html(line);
+  } else {
+    for (var j=1;j<tNum;j++){
+      line+= '<br>'
+    }
+    $('.text-line').html(line);
+  }
 }
+
 //正计时
 function upTime() {
   var usedTime = 0;
@@ -177,8 +201,7 @@ function ajaxEvent(obj,u) {
 function comment(obj,flag){
   var tId = $('#subjectId').data('id'),
       _this = $(obj),
-  //uId = $.cookie('uid');
-    uId = 32;
+      uId = $.cookie('uid');
   if(flag == 0){
     var cnt = $('#dis-input-cnt').val(),
       pId = 0;

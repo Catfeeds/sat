@@ -93,7 +93,7 @@ $(function () {
       alert('验证码怎么能为空呢！')
     }else {
       $.ajax({
-        type: 'GET',
+        type: 'post',
         url: '/cn/message/index',
         data: {
           'name':name,
@@ -120,7 +120,6 @@ $(function () {
 })
 //获取uid
 var uId = $.cookie('uid');
-var uId = 444;
 //收藏函数
 function collectEvent(obj) {
   if (uId == '') {
@@ -130,7 +129,7 @@ function collectEvent(obj) {
       subjectId = $('#subjectId').data('id'),
       val = $('.work-collect').data('value');
     $.ajax({
-      type: 'get',
+      type: 'post',
       url: '/cn/collection/collection',
       data: {
         uid: uId,
@@ -145,14 +144,12 @@ function collectEvent(obj) {
           _this.find('i').addClass('fa-star');
           _this.data('value',1);
           _this.children('span').html('已收藏');
-          alert(data.message);
         } else if(data.code == 2){//取消收藏
           _this.removeClass('active');
           _this.find('i').removeClass('fa-star');
           _this.find('i').addClass('fa-star-o');
           _this.data('value',0);
           _this.children('span').html('收藏');
-          alert(data.message);
         } else {
           alert(data.message);
         }

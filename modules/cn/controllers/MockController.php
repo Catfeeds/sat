@@ -15,7 +15,7 @@ use app\modules\cn\models\Questions;
 class MockController extends Controller
 {
     public $layout = ' ';
-
+    public $enableCsrfValidation = false;
     public function actionIndex()
     {
         $this->layout = 'cn.php';
@@ -76,13 +76,14 @@ class MockController extends Controller
              $section['section'] = 1;
         }
         if (!$qid) {
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
         }elseif($qid=='undefined') {
+            unset($_SESSION['answer']);unset($_SESSION['tid']);
             echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
             die;
         }else{
             // 有qid的时候直接根据qid取
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.id=" . $qid)->queryOne();
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where q.id=" . $qid)->queryOne();
         }
         if($data==false){
            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
@@ -90,24 +91,21 @@ class MockController extends Controller
         if($data['major']=='Math1'){
             $time  =55;
             $amount=38;
-            $amount=5;
             $modle = 'mock_math';
         }elseif($data['major']=='Math2') {
             $time  =25;
             $amount=20;
-            $amount=5;
             $modle = 'mock_math';
         }elseif ($data['major']=='Reading'){
             $time  =65;
             $amount=52;
-            $amount=10;
             $modle = 'mock_read';
         }else{
             $time  =35;
             $amount=44;
-            $amount=10;
             $modle = 'mock_read';
         }
+//        var_dump($data);die;
         return $this->render($modle, ['data' => $data, 'time' => $time, 'count' => $count, 'amount' => $amount]);
     }
 
@@ -115,14 +113,14 @@ class MockController extends Controller
     public function actionNext()
     {
         // 是只存id 和答案，还是报告所需数据都存
-        $solution = Yii::$app->request->get('solution');// 用户提交的答案
-        $major    = Yii::$app->request->get('major');// 学科
-        $tid      = Yii::$app->request->get('tid');
-        $qid      = Yii::$app->request->get('qid');
-        $uid      = Yii::$app->request->get('uid');
-        $utime    = Yii::$app->request->get('utime');
-        $number   = Yii::$app->request->get('number');
-        $section  = Yii::$app->request->get('section');
+        $solution = Yii::$app->request->post('solution');// 用户提交的答案
+        $major    = Yii::$app->request->post('major');// 学科
+        $tid      = Yii::$app->request->post('tid');
+        $qid      = Yii::$app->request->post('qid');
+        $uid      = Yii::$app->request->post('uid');
+        $utime    = Yii::$app->request->post('utime');
+        $number   = Yii::$app->request->post('number');
+        $section  = Yii::$app->request->post('section');
         session_start();
         $a        = KeepAnswer::getCat();
         $re       = $a->addPro($qid, $solution,$utime);
@@ -130,13 +128,12 @@ class MockController extends Controller
         $model    =new Questions();
         $data     = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
         $re       =$model->avg($solution,$utime,$data);
-
         $_SESSION['uid'] = $uid;
         $_SESSION['tid'] = $tid;
         $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
         echo die(json_encode($next));
-
     }
+
 
     // 做题中途离开
     public function actionLeave()
@@ -148,22 +145,21 @@ class MockController extends Controller
     // 提交当前小节，进入下一小节
     public function actionSection()
     {
-        $section = Yii::$app->request->get('section')+1;
-        $count   = Yii::$app->request->get('allPos');// 做题总数
-        $tid     = Yii::$app->request->get('tpId');
-        $qid     = Yii::$app->request->get('qid');
-        $utime   = Yii::$app->request->get('utime');// 每题的做题时间
-        $time    = Yii::$app->request->get('allTime');// 做题总时间
-        $solution= Yii::$app->request->get('solution');// 用户提交的答案
+
+        $section = Yii::$app->request->post('section')+1;
+        $count   = Yii::$app->request->post('allPos');// 做题总数
+        $tid     = Yii::$app->request->post('tpId');
+        $qid     = Yii::$app->request->post('qid');
+        $utime   = Yii::$app->request->post('utime');// 每题的做题时间
+        $time    = Yii::$app->request->post('allTime');// 做题总时间
+        $solution= Yii::$app->request->post('solution');// 用户提交的答案
         Yii::$app->session->set('time',$time);
-//        session_start();
         $a       = KeepAnswer::getCat();
         $re      = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
         // 正确率等的计算
         $model   =new Questions();
         $data    = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
         $re      =$model->avg($solution,$utime,$data);
-//        var_dump($count);die;
         // 统计答题总数，根据答题总数，返回数据
         if($count<30){
             $data= Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();

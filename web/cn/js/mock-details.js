@@ -17,6 +17,8 @@ $(function () {
     //正计时
     upTime();
     upTime('b');
+    //加载行号
+    lineNum();
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);
@@ -79,6 +81,30 @@ function workHeight() {
     $('.work-wrap-left').height(h);
     $('.work-wrap-right').height(h);
 }
+//加载行号
+function lineNum(){
+    var subName = $('#subName').text();
+    if (subName != ''){
+        var text = $('.read-text').html();
+        var tNum = text.split('</p>').length;
+        var line = '';
+        if (subName == 'Reading') {
+            for (var j=1;j<=tNum+1;j++){
+                if (j%5 == 0){
+                    line += '<p>'+j+'</p>';
+                } else {
+                    line += '<br>'
+                }
+            }
+            $('.text-line').html(line);
+        } else {
+            for (var j=1;j<tNum;j++){
+                line+= '<br>'
+            }
+            $('.text-line').html(line);
+        }
+    }
+}
 //倒计时
 function countTimeFun() {
     if (sessionStorage.countTime == undefined) {
@@ -103,7 +129,6 @@ function countTimeFun() {
         hour = checkTime(hour);
         min = checkTime(min);
         sec = checkTime(sec);
-        console.log(sec);
         $('.work-time-cnt').text("本section剩余时间: "+hour+ ":" +min+ ":" +sec);
     }
 }
@@ -234,7 +259,7 @@ function ckBefore(flag,tag) {
             var u = location.search.split('&')[0].substr(1);
             if (tag == 'submit') {//提交进入下一小节
                 clearSession();
-                $.get('/cn/mock/section',{
+                $.post('/cn/mock/section',{
                     'tpId':testId,
                     'section':sec,
                     'qid':subId,
@@ -262,7 +287,7 @@ function ckBefore(flag,tag) {
                 },'json')
             } else {//下一题
                 $.ajax({
-                    type: 'get',
+                    type: 'post',
                     url: "/cn/mock/next",
                     data: {
                         'qid':subId,
@@ -286,7 +311,7 @@ function ckBefore(flag,tag) {
             var arr = location.search.substr(1).split('&'),
                 u = arr[0]+'&'+arr[1];
             if (tag == 'submit') {
-                $.get('/cn/mock/section',{
+                $.post('/cn/mock/section',{
                     'tpId':testId,
                     'section':sec,
                     'qid':subId,
@@ -305,7 +330,7 @@ function ckBefore(flag,tag) {
                 },'json')
             }else {
                 $.ajax({
-                    type: 'get',
+                    type: 'post',
                     url: "/cn/mock/next",
                     data: {
                         'qid':subId,
@@ -325,18 +350,15 @@ function ckBefore(flag,tag) {
                 })
             }
         }
-
-
     }
 }
 
 //退出模考、测评
 function exitOut() {
-    $.get('/cn/mock/leave',function(obj){
+    $.post('/cn/mock/leave',function(obj){
         if (obj) {
             clearSession('submit');
             window.location.href = '/mock.html';
         }
     },'json')
 }
-

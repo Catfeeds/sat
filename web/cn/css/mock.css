@@ -1,6 +1,6 @@
 /*模考内容*/
 .s-mock-cnt {
-  width: 700px;
+  width: 750px;
 }
 .s-mock-cnt .s-title {
   padding: 20px 0 20px 10px;
@@ -43,6 +43,7 @@
 .s-mock-cnt .s-subject li {
   position: relative;
   display: inline-block;
+  margin-right: 10px;
   padding: 25px 0;
   width: 175px;
   border-bottom: 1px solid rgb(240,240,240);
@@ -52,6 +53,10 @@
   display: block;
   height: 40px;
   line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
   font-size: 14px;
 }
 .s-mock-cnt .s-subject li i {

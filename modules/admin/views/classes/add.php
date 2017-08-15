@@ -74,11 +74,25 @@
                 <td><input type="text"  style="width: 600px;" name="price" placeholder="课程价格" value="<?php echo isset($data)? $data['price']:''?>"/></td>
             </tr>
             <tr>
-                <td>课程简介：</td>
+                <td>课程介绍：</td>
                 <td>
-                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程简介" style="height:300px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
+                    <textarea type="text/plain" id="intro"  name="introduction" placeholder="课程介绍" style="height:300px;width:70%"><?php echo isset($data)? $data['introduction']:''?></textarea>
                 </td>
             </tr>
+
+            <tr>
+                <td>课程简介：</td>
+                <td>
+                    <textarea type="text/plain"   name="smallIntro" placeholder="课程简介" style="height:100px;width:50%"><?php echo isset($data)? $data['smallIntro']:''?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>开课时间：</td>
+                <td>
+                    <input type="text/plain"  name="classTime" placeholder="开课时间" value="<?php echo isset($data)? $data['classTime']:''?>"/>
+                </td>
+            </tr>
+
             <tr>
                 <td colspan="2" align="center"> <button type="submit" id="login-button">添加课程</button></td>
             </tr>
