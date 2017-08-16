@@ -102,30 +102,36 @@ class ReportController extends Controller
 
     }
 
-    // 根据个人中心点击进入详情页面
+    // 根据个人中心点击进入报告详情页面
     public function actionDetails()
     {
         $uid = Yii::$app->session->get('uid', '');
-        $user = Yii::$app->session->get('userData');
-        $id = Yii::$app->request->get('id', '');
-        $re = new Report();
-        $res = $re->Show($uid, $id);
-        $suggest = $res[0];
-        unset($res[0]);
-        if ($res['part'] == 'all') {
-            $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
-            $tp = array_reverse($tp);
-            return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
-        } else {
-            $tp    = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='" . $res['part'] . "' order by r.id desc limit 5")->queryAll();
-            $tp    = array_reverse($tp);
-            $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
-            $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
-            $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
-            $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='write' order by r.score limit 5")->queryAll();
-            $score = array_merge($write, array_merge($math, $read));
-            return $this->render('single_report', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user, 'info' => $info, 'score' => $score]);
+        if($uid){
+            $user = Yii::$app->session->get('userData');
+            $id = Yii::$app->request->get('id', '');
+            $re = new Report();
+            $res = $re->Show($uid, $id);
+            $suggest = $res[0];
+            unset($res[0]);
+            if ($res['part'] == 'all') {
+                $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
+                $tp = array_reverse($tp);
+                return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
+            } else {
+                $tp    = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='" . $res['part'] . "' order by r.id desc limit 5")->queryAll();
+                $tp    = array_reverse($tp);
+                $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
+                $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
+                $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
+                $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='write' order by r.score limit 5")->queryAll();
+                $score = array_merge($write, array_merge($math, $read));
+                return $this->render('single_report', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user, 'info' => $info, 'score' => $score]);
+            }
+        }else{
+            echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+            die;
         }
+
 
     }
     // 报告页面 用户做题详情

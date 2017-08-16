@@ -120,13 +120,13 @@
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
           <div class="item active">
-            <a href="<?php echo isset($info[0]['pic'])?'/info_details/$info[0][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[0]['pic'])?$info[0]['pic']:''?>" alt="First slide"></a>
+            <a href="<?php echo isset($info[0]['pic'])?'/info_details/'.$info[0]['id'].'.html':''?>" target="_blank"><img src="<?php echo isset($info[0]['pic'])?$info[0]['pic']:''?>" alt="First slide"></a>
           </div>
           <div class="item">
-            <a href="<?php echo isset($info[1]['pic'])?'/info_details/$info[1][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[1]['pic'])?$info[1]['pic']:''?>" alt="Second slide"></a>
+            <a href="<?php echo isset($info[1]['pic'])?'/info_details/'.$info[1]['id'].'.html':''?>" target="_blank"><img src="<?php echo isset($info[1]['pic'])?$info[1]['pic']:''?>" alt="Second slide"></a>
           </div>
           <div class="item">
-            <a href="<?php echo isset($info[1]['pic'])?'/info_details/$info[0][\'id\']?>.html':''?>" target="_blank"><img src="<?php echo isset($info[2]['pic'])?$info[2]['pic']:''?>" alt="Third slide"></a>
+            <a href="<?php echo isset($info[2]['pic'])?'/info_details/'.$info[2]['id'].'.html':''?>" target="_blank"><img src="<?php echo isset($info[2]['pic'])?$info[2]['pic']:''?>" alt="Third slide"></a>
           </div>
         </div>
       </div>
