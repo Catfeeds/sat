@@ -7,7 +7,7 @@ $(function () {
     exer('all','all','all',1);
   } else if(pos == 'mock') {
     var type = $('.per-type dd').filter('.on').data('val');
-    mock('all','all',1);
+    mock('whole','all',1);
   } else if(pos == 'collect') {
     collect('all','all',1);
   }
