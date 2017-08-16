@@ -12,19 +12,19 @@
         <h2><?php echo $data['name']?> SAT主讲名师</h2>
         <a class="border-blue" href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">点我聊聊</a>
         <p class="s-cnt-introduce"><?php echo $data['introduction']?></p>
-        <div class="s-title">
-          <img src="/cn/images/teacher-detail02.png" alt="成功案例">
-          <h3>成功案例</h3>
-        </div>
-        <ul>
-          <?php foreach($brr as $v){?>
-          <li>
-            <p><?php echo $v['str1']?></p>
-            <p><?php echo $v['str2']?></p>
-          </li>
-          <?php }?>
-        </ul>
-        <img class="s-foot-img" src="/cn/images/teacher-detail03.png" alt="图片">
+<!--        <div class="s-title">-->
+<!--          <img src="/cn/images/teacher-detail02.png" alt="成功案例">-->
+<!--          <h3>成功案例</h3>-->
+<!--        </div>-->
+<!--        <ul>-->
+<!--          --><?php //foreach($brr as $v){?>
+<!--          <li>-->
+<!--            <p>--><?php //echo $v['str1']?><!--</p>-->
+<!--            <p>--><?php //echo $v['str2']?><!--</p>-->
+<!--          </li>-->
+<!--          --><?php //}?>
+<!--        </ul>-->
+<!--        <img class="s-foot-img" src="/cn/images/teacher-detail03.png" alt="图片">-->
       </div>
     </div>
   </section>

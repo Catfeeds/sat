@@ -5,7 +5,7 @@
 .act>div {
   padding-bottom: 60px;
 }
-p{
+p,h3{
   margin: 0;
 }
 /* 标题 */
@@ -376,5 +376,51 @@ p{
   line-height: 150px;
   color: #499ed0;
   font-size: 18px;
+  font-weight: bold;
+}
+/* 资讯 */
+.a-info {
+  padding: 65px 0 40px 0;
+}
+.a-info-wrap {
+  float: left;
+  width: 520px;
+  height: 440px;
+  margin-right: 155px;
+}
+.a-info-wrap:last-child {
+  margin-right: 0;
+}
+.a-info-title {
+  padding: 10px 15px;
+  line-height: 26px;
+  background-color: #499ed0;
+  color: #fff;
+}
+.a-info-title h3 {
+  font-size: 20px;
+}
+.a-info-title h3>span {
+  font-size: 12px;
+}
+.a-info-title a {
+  float: right;
+  color: #fff;
+  font-size: 14px;
+}
+.a-info-wrap ul {
+  border: 1px solid #bbb;
+}
+.a-info-wrap li {
+  padding: 20px 15px;
+  border-bottom: 1px solid #bbb;
+}
+.a-info-wrap li>h3,
+.a-info-wrap li p{
+  line-height: 25px;
+  text-align: left;
+  font-size: 14px;
+}
+.a-info-wrap li>h3 {
   font-weight: bold;
 }
