@@ -60,7 +60,7 @@
 //                $n=0;
 //            }
 //            $crr['n']=$n;
-            $crr = Yii::$app->db->createCommand("select count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  where uid=$uid")->queryOne();
+            $crr = Yii::$app->db->createCommand("select count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  where n.uid=$uid")->queryOne();
             return $crr;
 
         }
