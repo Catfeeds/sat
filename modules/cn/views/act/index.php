@@ -76,7 +76,7 @@
         <th>内容</th>
       </tr>
       <tr>
-        <td>文法(English)</td>
+        <td>英语(English)</td>
         <td>75</td>
         <td>45min</td>
         <td>36</td>
@@ -305,15 +305,68 @@
         <p>考试中心地址：香港学堂国际学校新界西贡惠民路33号</p>
       </li>
       <li>
-        MOST
+        MORE
       </li>
     </ul>
   </div>
-<!--  名校录取-->
-<!--  <div class="a-require">-->
-<!--    <div class="act-title">-->
-<!--      <h2>美国TOP30名校SAT/ACT录取要求</h2>-->
-<!--      <h4>US TOP30 Schools SAT/ACT Admission Requirements</h4>-->
-<!--    </div>-->
-<!--  </div>-->
+<!--资讯-->
+  <div class="a-info s-w1200 clearfix">
+    <div class="a-info-wrap">
+      <div class="a-info-title clearfix">
+        <h3 class="fl">ACT备考FAQ <span>ACT FAQ</span></h3>
+        <a href="#">更多+</a>
+      </div>
+      <ul>
+        <li>
+          <h3>Q1、ACT满分多少分，考试科目都有哪些？</h3>
+          <p>雷哥ACT：ACT满分36分。考试科目包含英语、数学、阅读、科学、写作（可选）
+            五部分。其中英语、数学、阅读、科学各科单项总分分别为36分，写作总分12分。</p>
+        </li>
+        <li>
+          <h3>Q2、ACT考试分数怎么计算？</h3>
+          <p>雷哥ACT：每套题的最后都含有各科单项分数换算表，分数对应着做对题的个
+            数（例如：英语36分对应75道题）。</p>
+        </li>
+        <li>
+          <h3>Q3、美国好的学校认同ACT吗？ACT和SAT作用一样吗？</h3>
+          <p>雷哥ACT：在美国，基本上所有大学都接受ACT和SAT；并且在美国本土，每年
+            参加ACT考试的人数比参加SAT考试的人数要多一些。</p>
+        </li>
+      </ul>
+    </div>
+    <div class="a-info-wrap">
+      <div class="a-info-title clearfix">
+        <h3 class="fl">ACT新闻资讯 <span>ACT News</span></h3>
+        <a href="#">更多+</a>
+      </div>
+      <ul>
+        <li>
+          <h3>香港ACT考点1：</h3>
+          <p>香港考试及评核局新浦港办事处 HKEEAA SAN PO KONG OFFICE</p>
+          <p>考试中心代码：872790</p>
+          <p>考试中心地址：九龙新蒲岗爵禄街17号</p>
+        </li>
+        <li>
+          <h3>香港ACT考点2：</h3>
+          <p>炮台山评测中心 HKEAA Fortress Hill Assessment Ct</p>
+          <p>考试中心代码：870040</p>
+          <p>考试中心地址：香港北角电气道169号康宏汇26楼</p>
+        </li>
+        <li>
+          <h3>香港ACT考点3：</h3>
+          <p>香港学堂国际学校 HONG KONG ACADEMY SAI KUNG NEW TERR,HK</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--  名校录取-->
+  <div class="a-require">
+    <div class="act-title">
+      <h2>美国TOP50名校SAT/ACT录取要求</h2>
+      <h4>US TOP50 Schools SAT/ACT Admission Requirements</h4>
+    </div>
+    <div>
+      <img src="/cn/images/act-index-rank.png" alt="学校排名">
+    </div>
+  </div>
 </section>
