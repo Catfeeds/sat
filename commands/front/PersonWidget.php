@@ -26,9 +26,7 @@
         public function run(){
             $crr=$this->rate();
             $user=Yii::$app->session->get('userData');
-            $n=$crr['n'];
-            unset($crr['n']);
-            return $this->render('person',['crr'=>$crr,'n'=>$n,'path'=>$this->now_path,'user'=>$user]);
+            return $this->render('person',['crr'=>$crr,'path'=>$this->now_path,'user'=>$user]);
         }
         public function rate(){
             $uid=Yii::$app->session->get('uid');
