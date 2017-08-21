@@ -31,8 +31,6 @@ class PersonController extends Controller
             }else{
                 $data = Yii::$app->db->createCommand("select q.id as qid,q.number,q.content,q.major ,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in ($qid)")->queryAll();
             }
-//        var_dump($data);die;
-
             return $this->render('person_collect', ['data' => $data]);
         }else{
             echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
