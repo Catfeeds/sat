@@ -50,6 +50,14 @@ class GetData {
             unset($data['editorValue']);
         }
         if(isset($data['_csrf'])){unset($data['_csrf']);};
+        // subScores 同一道题有两种类型时
+        if(isset($data['subScores2']) && $data['subScores2']){
+            $data['subScores']=$data['subScores'].','.$data['subScores2'];
+            unset($data['subScores2']);
+        }else{
+            unset($data['subScores2']);
+        }
+
         // 判断完整性
         foreach($must as $k=>$v){
             if(empty($data["$k"])){

@@ -123,13 +123,23 @@
                     <span>
                         <select name="subScores">
                             <option value ="">请选择类型</option>
-                            <option value ="algebra" <?php echo isset($data)&& $data['subScores']=="algebra" ?  'selected':''?>>Heart of Algebra</option>
-                            <option value ="analysis" <?php echo isset($data)&& $data['subScores']=="analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
-                            <option value ="math" <?php echo isset($data)&& $data['subScores']=="math" ?  'selected':''?>>Passport to Advanced Math</option>
-                            <option value =expression" <?php echo isset($data)&& $data['subScores']=="expression" ?  'selected':''?>>Expression of Ideas</option>
-                            <option value ="english" <?php echo isset($data)&& $data['subScores']=="english" ?  'selected':''?>>Standard English Conventions</option>
-                            <option value ="words" <?php echo isset($data)&& $data['subScores']=="words" ?  'selected':''?>>Words in Context</option>
-                            <option value ="evidence" <?php echo isset($data)&& $data['subScores']=="evidence" ?  'selected':''?>>Command of Evidence</option>
+                            <option value ="algebra" <?php echo (isset($data['subScores'])&& $data['subScores']=="algebra")?  'selected':''?>>Heart of Algebra</option>
+                            <option value ="analysis" <?php echo (isset($data['subScores'])&& $data['subScores']=="analysis") ?  'selected':''?>>Problem Solving and Data Analysis</option>
+                            <option value ="math" <?php echo (isset($data['subScores'])&& $data['subScores']=="math")?  'selected':''?>>Passport to Advanced Math</option>
+                            <option value ="expression" <?php echo (isset($data['subScores'])&& $data['subScores']=="expression" )?  'selected':''?>>Expression of Ideas</option>
+                            <option value ="english" <?php echo (isset($data['subScores'])&& $data['subScores']=="english" )?  'selected':''?>>Standard English Conventions</option>
+                            <option value ="words" <?php echo (isset($data['subScores'])&& $data['subScores']=="words") ?  'selected':''?>>Words in Context</option>
+                            <option value ="evidence" <?php echo (isset($data['subScores'])&& $data['subScores']=="evidence" )?  'selected':''?>>Command of Evidence</option>
+                        </select>
+                        <select name="subScores2">
+                            <option value ="">请选择类型</option>
+                            <option value ="algebra" <?php echo isset($data['subScores2'])&& $data['subScores2']=="algebra" ?  'selected':''?>>Heart of Algebra</option>
+                            <option value ="analysis" <?php echo isset($data['subScores2'])&& $data['subScores2']=="analysis" ?  'selected':''?>>Problem Solving and Data Analysis</option>
+                            <option value ="math" <?php echo isset($data['subScores2'])&& $data['subScores2']=="math" ?  'selected':''?>>Passport to Advanced Math</option>
+                            <option value ="expression" <?php echo isset($data['subScores2'])&& $data['subScores2']=="expression" ?  'selected':''?>>Expression of Ideas</option>
+                            <option value ="english" <?php echo isset($data['subScores2'])&& $data['subScores2']=="english" ?  'selected':''?>>Standard English Conventions</option>
+                            <option value ="words" <?php echo isset($data['subScores2'])&& $data['subScores2']=="words" ?  'selected':''?>>Words in Context</option>
+                            <option value ="evidence" <?php echo isset($data['subScores2'])&& $data['subScores2']=="evidence" ?  'selected':''?>>Command of Evidence</option>
                         </select>
                     </span>
                     </br>

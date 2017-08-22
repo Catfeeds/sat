@@ -20,7 +20,7 @@
         <div class="s-pd-left pull-left">
           <h2 class="s-pd-title"><?php echo $data['title']?></h2>
           <div class="clearfix">
-            <p class="s-pd-time pull-right"><span><?php echo date('Y-m-d',$data['publishTime'])?></span><span>阅读<i><?php echo $data['hits']?></i></span></p>
+            <p class="s-pd-time pull-right"><span><?php echo date('Y-m-d',$data['publishTime'])?></span><span><?php echo $data['cate']=='公开课'?'报名人数':'阅读'?><i><?php echo $data['hits']?></i></span></p>
           </div>
           <h3><?php if($data['summary']!=false) echo "摘要：".$data['summary']?></h3>
           <div class="s-pd-font"><?php echo $data['content']?></div>
