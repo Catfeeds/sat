@@ -94,7 +94,7 @@
                 <ul>
                     <li><a href="/exercise.html?m=Reading" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
                     <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
-                    <!--                <li><a href="#">测评</a></li>-->
+                    <li><a href="/evaulation.html">测评</a></li>
                 </ul>
             </div>
         </li>

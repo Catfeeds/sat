@@ -1,0 +1,395 @@
+.eval-bnr {
+  height: 420px;
+  border-top: 1px solid transparent;
+  background: url("/cn/images/eval-bg01.png") no-repeat;
+}
+.bnr-box {
+  width: 845px;
+  height: 270px;
+  margin: 72px auto 0;
+  padding: 42px 160px 0;
+  background-color: rgba(0,0,0,.5);
+  
+}
+.bnr-box-s {
+  float: left;
+  margin-top: -40px;
+  font-size: 175px;
+  color: #fff;
+}
+.bnr-box-text {
+  margin-left: 100px;
+}
+.bnr-box-text p {
+  color: #fff;
+}
+.bnr-box-text>div {
+  position: relative;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #fff;
+}
+.bnr-box-text>div:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: -10px;
+  left: -5px;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+}
+.bnr-box-text>div:after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: -10px;
+  right: -5px;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+}
+.bnr-box-text>p {
+  margin-top: 30px;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+/*
+  测评入口
+*/
+.entry {
+  margin: 144px auto 50px;
+}
+.entry li {
+  position: relative;
+  float: left;
+  width: 370px;
+  height: 490px;
+  margin-right: 44px;
+  -webkit-box-shadow: 0 0 5px #555;
+  -moz-box-shadow: 0 0 5px #555;
+  box-shadow: 0 0 5px #555;
+  background: url("/cn/images/eval-bgg01.png") no-repeat;
+}
+.entry li:nth-child(2){
+  background-position: -379px 0;
+}
+.entry li:last-child {
+  margin-right: 0;
+  background-position: -757px 0;
+}
+.entry-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  padding-top: 45px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 1s;
+  background-color: #fafafa;
+}
+.entry-box>h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.entry-box>p {
+  position: relative;
+  padding-bottom: 16px;
+  font-size: 16px;
+}
+.entry-box>p:after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: #353535;
+}
+.entry-box>.entry-hide {
+  margin-top: 68px;
+}
+.entry-box>.entry-hide>p {
+  font-size: 12px;
+  color: #fff;
+}
+.entry-box>.entry-hide>a {
+  display: block;
+  width: 147px;
+  height: 40px;
+  line-height: 40px;
+  margin: 70px auto 0;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+/*效果*/
+.entry li:hover .entry-box {
+  height: 100%;
+  background-color: #42abe9;
+}
+.entry li:hover .entry-box>h2 {
+  color: #fff;
+}
+.entry li:hover .entry-box>p {
+  color: #fff;
+}
+.entry li:hover .entry-box>p:after {
+  background-color: #fff;
+}
+/*
+  SAT备考大本营
+*/
+.camp {
+  padding: 80px 0;
+  background-color: #f9fdff;
+}
+.eval-title {
+  width: 190px;
+  height: 80px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  text-align: center;
+}
+.eval-title>h2 {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+}
+.eval-title>p {
+  margin: 10px 0 0 0;
+  font-size: 16px;
+}
+.camp-wrap {
+  position: relative;
+  width: 950px;
+  height: 530px;
+  margin: 0 auto;
+}
+.camp-wrap>.camp-img {
+  width: 320px;
+  height: 320px;
+  margin: 70px auto 0;
+  border-radius: 50%;
+  border: 10px solid #40adeb;
+  background: url("/cn/images/eval-bg03.png") -30px 0;
+}
+.camp-wrap li {
+  position: absolute;
+}
+.camp-wrap li:first-child {
+  top: 0;
+  left: 0;
+}
+.camp-wrap li:nth-child(2){
+  top: 286px;
+  left: 50px;
+}
+.camp-wrap li:nth-child(3){
+  top: 62px;
+  right: -12px;
+}
+.camp-wrap li>.camp-icon {
+  float: left;
+  width: 72px;
+  height: 72px;
+  line-height: 72px;
+  margin-right: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #40adeb;
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+}
+.camp-wrap li:nth-child(3)>.camp-icon {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+.camp-wrap li>.camp-text {
+  position: relative;
+  width: 240px;
+  line-height: 65px;
+  margin-left: 50px;
+  border-bottom: 1px solid #999;
+  font-size: 14px;
+}
+.camp-wrap li:nth-child(3)>.camp-text {
+  margin-right: 50px;
+}
+.camp-wrap li>.camp-text:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: #999;
+}
+.camp-wrap li:first-child .camp-text:after {
+  right: -51px;
+  bottom: -20px;
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+.camp-wrap li:nth-child(2) .camp-text:after{
+  width: 80px;
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  right: -70px;
+  bottom: 25px;
+}
+.camp-wrap li:nth-child(3)>.camp-text:after {
+  -webkit-transform: rotate(130deg);
+  -moz-transform: rotate(130deg);
+  -ms-transform: rotate(130deg);
+  -o-transform: rotate(130deg);
+  transform: rotate(130deg);
+  left: -48px;
+  bottom: -23px;
+}
+.camp-wrap li>.camp-text span {
+  color: #40adeb;
+  font-size: 18px;
+}
+
+/*
+  其他入口
+*/
+.other {
+  width: 100%;
+  height: 327px;
+  padding: 70px 0 56px 0;
+  background: url("/cn/images/eval-bg02.png") no-repeat;
+}
+.other>ul {
+  width: 905px;
+  margin: 0 auto;
+}
+.other li {
+  float: left;
+  width: 145px;
+  height: 210px;
+  margin-right: 44px;
+  text-align: center;
+}
+.other li:last-child {
+  margin-right: 0;
+}
+.other li>div {
+  width: 100%;
+  height: 145px;
+  margin-bottom: 25px;
+  background: url("/cn/images/eval-bgg02.png") no-repeat;
+}
+.other li:nth-child(2)>div {
+  background-position: -145px 0;
+}
+.other li:nth-child(3)>div {
+  background-position: -290px 0;
+}
+.other li:nth-child(4)>div {
+  background-position: -435px 0;
+}
+.other li:nth-child(5)>div {
+  background-position: -580px 0;
+}
+.other li>a {
+  color: #fff;
+  font-size: 24px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+/*
+  我们的课程
+*/
+.course {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+.course .eval-title {
+  height: 50px;
+}
+.course ul {
+  position: relative;
+  width: 1025px;
+  height: 960px;
+  margin: 80px auto 0;
+}
+.course li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 365px;
+  overflow: hidden;
+  background: url("/cn/images/eval-bg04.png");
+}
+.course li:nth-child(2){
+  left: 344px;
+  background: url("/cn/images/eval-bg05.png");
+}
+.course li:nth-child(3){
+  left: 700px;
+  background: url("/cn/images/eval-bg06.png");
+}
+.course li:nth-child(4){
+  top: 295px;
+  left: 173px;
+  background: url("/cn/images/eval-bg07.png");
+}
+.course li:nth-child(5){
+  top: 295px;
+  left: 525px;
+  background: url("/cn/images/eval-bg08.png");
+}
+.course li:nth-child(6){
+  top: 594px;
+  left: 345px;
+  background: url("/cn/images/eval-bg09.png");
+}
+.course li>h2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  transition:  all 1.5s;
+}
+.course li>p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #fff;
+  transition:  all 1s;
+}
+/*效果*/
+.course li:hover h2{
+  top: 20%;
+}
+.course li:hover p {
+  top: 40%;
+}
