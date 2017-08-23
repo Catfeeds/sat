@@ -44,19 +44,24 @@ class ReportController extends Controller
             $re['writeerror'] = $number['writeerror'];
             $re['subScore']   = $subscore['total'];
             $re['crossScore'] = $crosstest['total'];
-            $re['date']        = time();
+            $re['date']       = time();
             $re['time']       = Yii::$app->session->get('time');// 做题总时间
             ($re['part'] == 'all') ? ($re['score'] = $score['total']) : ($re['score'] = $score["$major"]);
             if ($uid) {
                 // 将答案组合成字符串
                 $format = new Format();
                 $re['answer'] = $format->arrToStr($answerData);
-                if ($re['answer'] != false) {
+                if ($re['answer'] != false && $re['time']!=false) {
                     $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
                     if ($res) {
                         unset($_SESSION['answer']);
                         unset($_SESSION['tid']);
                     }//入库完成
+                }else {
+//                    echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+//                    die;
+                    $report = new Report();
+                    $res = $report->Show($uid, '');
                 }
                 // 历史报告
                 $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
