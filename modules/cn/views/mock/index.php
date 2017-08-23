@@ -25,14 +25,13 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="OG">
           <ul class="s-subject">
-            <?php foreach($data as $k=>$v){
+            <?php foreach($og as $k=>$v){
               if($v['isLogin']==0) {
                 echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">' . $v['name'] . $v['time'] . '</a></li>';
               }else{
                 echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
               }
             }?>
-
           </ul>
         </div>
         <div role="tabpanel" class="tab-pane" id="Princeton">
@@ -44,7 +43,6 @@
                 echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
               }
             }?>
-
           </ul>
         </div>
         <div role="tabpanel" class="tab-pane" id="Kaplan">

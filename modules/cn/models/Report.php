@@ -89,17 +89,23 @@ class Report extends ActiveRecord{
         }else{
             $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
         }
-        $getscore   = new GetScore();
-        $number['Math']      =$data['mathnum'];
-        $number['Writing']   =$data['writenum'];
-        $number['Reading']   =$data['readnum'];
-        $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
-        $re         = array_merge($data, $score);
-        $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
-        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
-        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
-        array_push($re,$suggest);
-        return $re;
+        if($data){
+            $getscore   = new GetScore();
+            $number['Math']      =$data['mathnum'];
+            $number['Writing']   =$data['writenum'];
+            $number['Reading']   =$data['readnum'];
+            $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
+            $re         = array_merge($data, $score);
+            $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
+            $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
+            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
+            array_push($re,$suggest);
+            return $re;
+        }else{
+            echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+            die;
+        }
+
     }
 
 }
