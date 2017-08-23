@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/cn/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="/cn/css/bootstrap.min.css">-->
 <script src="/cn/js/bootstrap.min.js"></script>
 <div class="span10">
     <div >
