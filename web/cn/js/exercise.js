@@ -17,10 +17,10 @@ $(function() {
     }else {
       ans = $('.read-exam .work-select.active').data('id');
     }
-    if (ans == undefined || ans == '') {
+    if (!ans) {
       $('.shade-cmn').fadeIn();
     }else {
-      if ($.cookie('uid') != ''){
+      if ($.cookie('uid')){
         if ($(this).index() == 0) {
           if ($('.s-answer-show').css('display') == 'none') {
             $(this).addClass('active');
@@ -210,7 +210,7 @@ function comment(obj,flag){
         pId = _this.parent().siblings('.dis-usr-cnt').data('id');
 
   }
-  if (uId == ''){
+  if (!uId){
     var pos = location.href;
     location.href = 'http://login.gmatonline.cn/cn/index?source=20&url='+location.href;
   }else{
@@ -225,7 +225,6 @@ function comment(obj,flag){
         },
         dataType: 'json',
         success: function (data) {
-          console.log(data);
           if (data.num == 3){
             alert('请输入内容');
           }
