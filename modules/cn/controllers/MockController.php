@@ -19,7 +19,7 @@ class MockController extends Controller
     public function actionIndex()
     {
         $this->layout = 'cn.php';
-        $data = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%testpaper}}where name!='测评' and name!='每日一题'")->queryAll();
         $og = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='OG'")->queryAll();
         $princeton = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='princeton'")->queryAll();
         $kaplan = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='kaplan'")->queryAll();
