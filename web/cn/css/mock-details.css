@@ -32,9 +32,27 @@
 }
 /*做题区域*/
 .work-mk-cnt {
+    position: relative;
     width: 1200px;
     margin: 0 auto;
     background-color: #f1f1f1;
+}
+.work-mk-cnt .work-warn {
+    position: absolute;
+    top: 30%;
+    right: -200px;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #666;
+    color: #fff;
+}
+.work-mk-cnt .work-warn>h3 {
+    font-size: 24px;
+}
+.work-mk-cnt .work-warn>p {
+    color: #fff;
 }
 .work-wrap-left {
     width: 590px;
@@ -90,11 +108,12 @@
 .work-question-part>.clearfix {
     margin-bottom: 20px;
     font-size: 18px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .work-question-part>.clearfix h1 {
     margin: 0 10px 0 0;
     font-size: 20px;
+    font-weight: bold;
 }
 .work-question-part>.clearfix p,
 .work-question-part>.clearfix span {
@@ -266,6 +285,7 @@
 .work-mk-btm .work-btm-cnt a {
     color: #fff;
 }
+
 /*离开*/
 .work-time-icon,
 .work-time span,

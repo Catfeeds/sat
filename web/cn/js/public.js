@@ -250,6 +250,6 @@ function numBtnEvent() {
 document.oncopy = function(){
   return false;
 }
- document.oncontextmenu = function () {
-   return false;
- };
+document.oncontextmenu = function () {
+ return false;
+};

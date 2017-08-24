@@ -23,6 +23,12 @@ $(function () {
     $('.work-next-icon').click(function () {
         ckBefore(0);
     })
+    document.onkeydown = function (e) {
+        if (e.keyCode === 39) {
+            ckBefore(0);
+        }
+    }
+    //function
     $('.do-next').click(function () {
         if($('.sec-position').html() == $('.sec-all-num').html()-1){
             ckBefore(2,'submit');
@@ -67,6 +73,7 @@ $(function () {
         allNum = sessionStorage.allPosition;
     }
     $('.all-position').html(allNum);
+
 })
 
 var uId = $.cookie('uid'),//获取uId
@@ -98,10 +105,13 @@ function lineNum(){
             }
             $('.text-line').html(line);
         } else {
-            for (var j=1;j<tNum;j++){
-                line+= '<br>'
-            }
-            $('.text-line').html(line);
+            $('.read-text').css({
+               'paddingLeft': '38px'
+            })
+            //for (var j=1;j<tNum;j++){
+            //    line+= '<br>'
+            //}
+            //$('.text-line').html(line);
         }
     }
 }

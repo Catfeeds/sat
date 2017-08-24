@@ -43,7 +43,7 @@
                 <dd><a href="http://quliuxue.net.cn/" target="_blank">去留学网</a></dd>
                 </dd>
             </dl>
-            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17017179号-1</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a></p>
+            <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15006607号-2</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a></p>
         </div>
         <div class="foot-copyright">
             <p> 本网站提供的OG内容，版权归College Board所有；Princeton 2017 & 500+ Questions内容，版权归Princeton Review所有；KAPLAN2017内容，版权归Kaplan Publishing所有；Barron’s tests & Reading, 版权归Barron’s Educational Series所有。</p>
