@@ -11,128 +11,132 @@
     </div>
     <!--数学-->
     <div class="work-mk-cnt <?php echo $data['isFilling']=="1"?'work-math-gap':'work-mk-math'?>">
-    <div class="work-question-part">
-        <div class="clearfix">
-            <h1 class="pull-left"><?php echo $data['number']?>.</h1>
-            <?php echo $data['content']?>
-        </div>
-        <?php
-        if($data['isFilling']==='0'){
-            $ul='<ul class="work-que-list common-id" id="subjectId" data-id="'.$data['qid'].'">
-            <li class="work-que-wrap clearfix">
-                <div class="work-select" data-id="A">A</div>
-                <div class="work-que">'. $data['keyA'].'</div>
-            </li>
-            <li class="work-que-wrap clearfix">
-                <div class="work-select" data-id="B">B</div>
-                <div class="work-que">'. $data['keyB'].'</div>
-            </li>
-            <li class="work-que-wrap clearfix">
-                <div class="work-select" data-id="C">C</div>
-                <div class="work-que">'. $data['keyC'].'</div>
-            </li>
-            <li class="work-que-wrap clearfix">
-                <div class="work-select" data-id="D">D</div>
-                <div class="work-que">'. $data['keyD'].'</div>
-            </li>
-        </ul>';
-            echo $ul;
-        }
-       if($data['isFilling']==='1'){
-        $str='
-        <table class="math-table">
-          <tbody id="subjectId" data-id="'.$data['qid'].'">
-            <tr>
-              <th colspan="2" class="math-value"></th>
-              <th colspan="2">
-                <input class="btn-type btn-invalid" type="button" name="delBtn" value="X">
-                <input class="btn-type btn-invalid" type="button" name="sureBtn" value="确定">
-              </th>
-            </tr>
-            <tr class="head">
-              <td class="cut">
-                <br>
-                <a class="col1" href="javascript:void(0)">.</a>
-              </td>
-              <td class="cut">
-                <a class="col2" href="javascript:void(0)">/</a>
-                <a class="col2" href="javascript:void(0)">.</a>
-              </td>
-              <td class="cut">
-                <a class="col3" href="javascript:void(0)">/</a>
-                <a class="col3" href="javascript:void(0)">.</a>
-              </td>
-              <td class="cut">
-                <br>
-                <a class="col4" href="javascript:void(0)">.</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="zero"><br></td>
-              <td class="zero"><a class="col2" href="javascript:void(0)">0</a></td>
-              <td class="zero"><a class="col3" href="javascript:void(0)">0</a></td>
-              <td class="zero"><a class="col4" href="javascript:void(0)">0</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">1</a></td>
-              <td><a class="col2" href="javascript:void(0)">1</a></td>
-              <td><a class="col3" href="javascript:void(0)">1</a></td>
-              <td><a class="col4" href="javascript:void(0)">1</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">2</a></td>
-              <td><a class="col2" href="javascript:void(0)">2</a></td>
-              <td><a class="col3" href="javascript:void(0)">2</a></td>
-              <td><a class="col4" href="javascript:void(0)">2</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">3</a></td>
-              <td><a class="col2" href="javascript:void(0)">3</a></td>
-              <td><a class="col3" href="javascript:void(0)">3</a></td>
-              <td><a class="col4" href="javascript:void(0)">3</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">4</a></td>
-              <td><a class="col2" href="javascript:void(0)">4</a></td>
-              <td><a class="col3" href="javascript:void(0)">4</a></td>
-              <td><a class="col4" href="javascript:void(0)">4</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">5</a></td>
-              <td><a class="col2" href="javascript:void(0)">5</a></td>
-              <td><a class="col3" href="javascript:void(0)">5</a></td>
-              <td><a class="col4" href="javascript:void(0)">5</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">6</a></td>
-              <td><a class="col2" href="javascript:void(0)">6</a></td>
-              <td><a class="col3" href="javascript:void(0)">6</a></td>
-              <td><a class="col4" href="javascript:void(0)">6</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">7</a></td>
-              <td><a class="col2" href="javascript:void(0)">7</a></td>
-              <td><a class="col3" href="javascript:void(0)">7</a></td>
-              <td><a class="col4" href="javascript:void(0)">7</a></td>
-            </tr>
-            <tr>
-              <td><a class="col1" href="javascript:void(0)">8</a></td>
-              <td><a class="col2" href="javascript:void(0)">8</a></td>
-              <td><a class="col3" href="javascript:void(0)">8</a></td>
-              <td><a class="col4" href="javascript:void(0)">8</a></td>
-            </tr>
-            <tr>
-            <td><a class="col1" href="javascript:void(0)">9</a></td>
-            <td><a class="col2" href="javascript:void(0)">9</a></td>
-            <td><a class="col3" href="javascript:void(0)">9</a></td>
-            <td><a class="col4" href="javascript:void(0)">9</a></td>
-          </tr>
-          </tbody>
-        </table>';
-        echo $str;
-       }
-        ?>
+        <div class="work-question-part">
+            <div class="clearfix">
+                <h1 class="pull-left"><?php echo $data['number']?>.</h1>
+                <?php echo $data['content']?>
+            </div>
+            <?php
+            if($data['isFilling']==='0'){
+                $ul='<ul class="work-que-list common-id" id="subjectId" data-id="'.$data['qid'].'">
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="A">A</div>
+                    <div class="work-que">'. $data['keyA'].'</div>
+                </li>
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="B">B</div>
+                    <div class="work-que">'. $data['keyB'].'</div>
+                </li>
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="C">C</div>
+                    <div class="work-que">'. $data['keyC'].'</div>
+                </li>
+                <li class="work-que-wrap clearfix">
+                    <div class="work-select" data-id="D">D</div>
+                    <div class="work-que">'. $data['keyD'].'</div>
+                </li>
+            </ul>';
+                echo $ul;
+            }
+           if($data['isFilling']==='1'){
+            $str='
+            <table class="math-table">
+              <tbody id="subjectId" data-id="'.$data['qid'].'">
+                <tr>
+                  <th colspan="2" class="math-value"></th>
+                  <th colspan="2">
+                    <input class="btn-type btn-invalid" type="button" name="delBtn" value="X">
+                    <input class="btn-type btn-invalid" type="button" name="sureBtn" value="确定">
+                  </th>
+                </tr>
+                <tr class="head">
+                  <td class="cut">
+                    <br>
+                    <a class="col1" href="javascript:void(0)">.</a>
+                  </td>
+                  <td class="cut">
+                    <a class="col2" href="javascript:void(0)">/</a>
+                    <a class="col2" href="javascript:void(0)">.</a>
+                  </td>
+                  <td class="cut">
+                    <a class="col3" href="javascript:void(0)">/</a>
+                    <a class="col3" href="javascript:void(0)">.</a>
+                  </td>
+                  <td class="cut">
+                    <br>
+                    <a class="col4" href="javascript:void(0)">.</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="zero"><br></td>
+                  <td class="zero"><a class="col2" href="javascript:void(0)">0</a></td>
+                  <td class="zero"><a class="col3" href="javascript:void(0)">0</a></td>
+                  <td class="zero"><a class="col4" href="javascript:void(0)">0</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">1</a></td>
+                  <td><a class="col2" href="javascript:void(0)">1</a></td>
+                  <td><a class="col3" href="javascript:void(0)">1</a></td>
+                  <td><a class="col4" href="javascript:void(0)">1</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">2</a></td>
+                  <td><a class="col2" href="javascript:void(0)">2</a></td>
+                  <td><a class="col3" href="javascript:void(0)">2</a></td>
+                  <td><a class="col4" href="javascript:void(0)">2</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">3</a></td>
+                  <td><a class="col2" href="javascript:void(0)">3</a></td>
+                  <td><a class="col3" href="javascript:void(0)">3</a></td>
+                  <td><a class="col4" href="javascript:void(0)">3</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">4</a></td>
+                  <td><a class="col2" href="javascript:void(0)">4</a></td>
+                  <td><a class="col3" href="javascript:void(0)">4</a></td>
+                  <td><a class="col4" href="javascript:void(0)">4</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">5</a></td>
+                  <td><a class="col2" href="javascript:void(0)">5</a></td>
+                  <td><a class="col3" href="javascript:void(0)">5</a></td>
+                  <td><a class="col4" href="javascript:void(0)">5</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">6</a></td>
+                  <td><a class="col2" href="javascript:void(0)">6</a></td>
+                  <td><a class="col3" href="javascript:void(0)">6</a></td>
+                  <td><a class="col4" href="javascript:void(0)">6</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">7</a></td>
+                  <td><a class="col2" href="javascript:void(0)">7</a></td>
+                  <td><a class="col3" href="javascript:void(0)">7</a></td>
+                  <td><a class="col4" href="javascript:void(0)">7</a></td>
+                </tr>
+                <tr>
+                  <td><a class="col1" href="javascript:void(0)">8</a></td>
+                  <td><a class="col2" href="javascript:void(0)">8</a></td>
+                  <td><a class="col3" href="javascript:void(0)">8</a></td>
+                  <td><a class="col4" href="javascript:void(0)">8</a></td>
+                </tr>
+                <tr>
+                <td><a class="col1" href="javascript:void(0)">9</a></td>
+                <td><a class="col2" href="javascript:void(0)">9</a></td>
+                <td><a class="col3" href="javascript:void(0)">9</a></td>
+                <td><a class="col4" href="javascript:void(0)">9</a></td>
+              </tr>
+              </tbody>
+            </table>';
+            echo $str;
+           }
+            ?>
       </div>
+        <div class="work-warn clearfix">
+            <h3>友情提示</h3>
+            <p>点击右方向键也可以切换下一题哦！</p>
+        </div>
     </div>
     <div class="work-mk-btm container">
         <div class="work-btm-cnt row">

@@ -3,10 +3,6 @@ $(function () {
     document.onkeydown = function (e) {
         return (e.which || e.keyCode) != 116;
     }
-//  禁止右键
-    document.oncontextmenu = function () {
-        //return false;
-    }
 //  禁止后退
     window.history.forward(1);
 
@@ -24,11 +20,16 @@ $(function () {
         ckBefore(0);
     })
     document.onkeydown = function (e) {
+        var num = Number($('.sec-position').text()),
+          allNum = Number($('.sec-all-num').text()-1);
         if (e.keyCode === 39) {
-            ckBefore(0);
+            if (num >= allNum) {
+                ckBefore(0,'submit');
+            }else {
+                ckBefore(0);
+            }
         }
     }
-    //function
     $('.do-next').click(function () {
         if($('.sec-position').html() == $('.sec-all-num').html()-1){
             ckBefore(2,'submit');

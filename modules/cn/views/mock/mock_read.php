@@ -57,9 +57,9 @@
                 </div>
             </div>
         </div>
-        <div class="work-warn">
-            <h3>友情提示：</h3>
-            <p>右方向键(->)也可以进入下一题哦！</p>
+        <div class="work-warn clearfix">
+            <h3>友情提示</h3>
+            <p>点击右方向键也可以切换下一题哦！</p>
         </div>
     </div>
     <!-- 底部-->
