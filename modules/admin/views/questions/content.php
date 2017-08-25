@@ -28,6 +28,7 @@
         <span><a href="<?php echo baseUrl.'/admin/questions/index'?>">题库管理</a></span>
     </div>
     <a href="<?php echo baseUrl.'/admin/questions/add'?>">添加具体题目</a></br>
+    <a href="<?php echo baseUrl.'/admin/questions/search'?>">搜索题目</a>
     <div id="topic">
         题目信息表
         <table border="1"  width="100%" >
