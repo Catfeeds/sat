@@ -97,7 +97,7 @@ function lineNum(){
         var tNum = text.split('</p>').length;
         var line = '';
         if (subName == 'Reading') {
-            for (var j=1;j<=tNum+1;j++){
+            for (var j=1;j<=tNum;j++){
                 if (j%5 == 0){
                     line += '<p>'+j+'</p>';
                 } else {
@@ -109,10 +109,6 @@ function lineNum(){
             $('.read-text').css({
                'paddingLeft': '38px'
             })
-            //for (var j=1;j<tNum;j++){
-            //    line+= '<br>'
-            //}
-            //$('.text-line').html(line);
         }
     }
 }
