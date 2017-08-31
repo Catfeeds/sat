@@ -12,7 +12,7 @@
     <!--数学-->
     <div class="work-mk-cnt <?php echo $data['isFilling']=="1"?'work-math-gap':'work-mk-math'?>">
     <div class="work-question-part">
-        <div class="clearfix">
+        <div class="question-title">
             <h1 class="pull-left"><?php echo $data['number']?>.</h1>
             <?php echo $data['content']?>
         </div>

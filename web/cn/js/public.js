@@ -54,7 +54,7 @@ $(function () {
   });
 //  练习、模考选择题点击事件
   $('.work-que-wrap').click(function () {
-    $('.work-select').removeClass('active');
+    $(this).siblings().find('.work-select').removeClass('active');
     $(this).find('.work-select').addClass('active');
   })
 //  练习、模考数学填空点击事件

@@ -3,10 +3,6 @@ $(function () {
     document.onkeydown = function (e) {
         return (e.which || e.keyCode) != 116;
     }
-//  禁止右键
-    document.oncontextmenu = function () {
-        //return false;
-    }
 //  禁止后退
     window.history.forward(1);
 

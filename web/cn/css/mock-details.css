@@ -87,20 +87,21 @@
 .work-question-part>div {
     margin-top: 20px;
 }
-.work-question-part>.clearfix {
+.work-question-part>.question-title {
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
 }
-.work-question-part>.clearfix h1 {
+.work-question-part>.question-title h1 {
     margin: 0 10px 0 0;
     font-size: 20px;
 }
-.work-question-part>.clearfix p,
-.work-question-part>.clearfix span {
+.work-question-part>.question-title p,
+.work-question-part>.question-title span {
     font-size: 20px !important;
     line-height: 30px!important;
 }
+.work-question-part .work-que-box,
 .work-question-part .work-que-wrap {
     margin-bottom: 20px;
     padding-bottom: 5px;

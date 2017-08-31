@@ -13,10 +13,21 @@ use app\libs\Pager;
 
 class EvaulationController extends Controller
 {
-    public $layout = 'cn.php';
+    public $layout = '';
     public $enableCsrfValidation = false;
     public function actionIndex()
     {
+        $this->layout = 'cn.php';
         return $this->render('index');
+    }
+    public function actionSubject()
+    {
+        $this->layout = 'cn1.php';
+        return $this->render('subject');
+    }
+    public function actionReport()
+    {
+        $this->layout = 'cn.php';
+        return $this->render('report');
     }
 }
