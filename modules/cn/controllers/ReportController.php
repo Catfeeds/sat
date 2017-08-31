@@ -56,8 +56,10 @@ class ReportController extends Controller
             unset($_SESSION['tid']);
           }//入库完成
         }else {
-          echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
-          die;
+//                    echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+//                    die;
+          $report = new Report();
+          $res = $report->Show($uid, '');
         }
         // 历史报告
         $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();

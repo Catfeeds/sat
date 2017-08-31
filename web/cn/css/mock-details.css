@@ -30,12 +30,58 @@
     text-align: right;
     cursor: pointer;
 }
-/*做题区域*/
+/*
+    做题区域
+*/
 .work-mk-cnt {
+    position: relative;
     width: 1200px;
     margin: 0 auto;
     background-color: #f1f1f1;
 }
+/*友情提示*/
+.work-mk-cnt .work-warn {
+    position: absolute;
+    top: 30%;
+    right: -30px;
+    width: 30px;
+    height: 140px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(54,178,251);
+    color: #fff;
+    overflow: hidden;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+.work-mk-cnt .work-warn>h3 {
+    float: left;
+    width: 30px;
+    height: 100%;
+    font-size: 20px;
+}
+.work-mk-cnt .work-warn>p {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100%;
+    padding: 15px;
+    background-color: #666;
+    color: #fff;
+}
+.work-mk-cnt .work-warn:hover {
+    width: 130px;
+    right: -130px;
+}
+
+
 .work-wrap-left {
     width: 590px;
     padding: 0 20px;
@@ -90,11 +136,12 @@
 .work-question-part>.question-title {
     margin-bottom: 20px;
     font-size: 18px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .work-question-part>.question-title h1 {
     margin: 0 10px 0 0;
     font-size: 20px;
+    font-weight: bold;
 }
 .work-question-part>.question-title p,
 .work-question-part>.question-title span {
@@ -267,6 +314,7 @@
 .work-mk-btm .work-btm-cnt a {
     color: #fff;
 }
+
 /*离开*/
 .work-time-icon,
 .work-time span,

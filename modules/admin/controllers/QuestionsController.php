@@ -180,8 +180,6 @@ class QuestionsController extends ApiControl
     }
     public function actionTopic()
     {
-//        $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} order by id desc")->queryAll();
-
         $pagesize = 5;
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
@@ -193,4 +191,5 @@ class QuestionsController extends ApiControl
         $str = $page->GetPager();
         return $this->render('topic', ['data' => $data,'str'=>$str]);
     }
+
 }

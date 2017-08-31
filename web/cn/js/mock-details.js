@@ -19,6 +19,17 @@ $(function () {
     $('.work-next-icon').click(function () {
         ckBefore(0);
     })
+    document.onkeydown = function (e) {
+        var num = Number($('.sec-position').text()),
+          allNum = Number($('.sec-all-num').text()-1);
+        if (e.keyCode === 39) {
+            if (num >= allNum) {
+                ckBefore(0,'submit');
+            }else {
+                ckBefore(0);
+            }
+        }
+    }
     $('.do-next').click(function () {
         if($('.sec-position').html() == $('.sec-all-num').html()-1){
             ckBefore(2,'submit');
@@ -63,6 +74,7 @@ $(function () {
         allNum = sessionStorage.allPosition;
     }
     $('.all-position').html(allNum);
+
 })
 
 var uId = $.cookie('uid'),//获取uId
@@ -83,9 +95,11 @@ function lineNum(){
     if (subName != ''){
         var text = $('.read-text').html();
         var tNum = text.split('</p>').length;
+        console.log(tNum);
         var line = '';
         if (subName == 'Reading') {
-            for (var j=1;j<=tNum+1;j++){
+            for (var j=1;j<=tNum;j++){
+                console.log(j);
                 if (j%5 == 0){
                     line += '<p>'+j+'</p>';
                 } else {
@@ -94,10 +108,9 @@ function lineNum(){
             }
             $('.text-line').html(line);
         } else {
-            for (var j=1;j<tNum;j++){
-                line+= '<br>'
-            }
-            $('.text-line').html(line);
+            $('.read-text').css({
+               'paddingLeft': '38px'
+            })
         }
     }
 }

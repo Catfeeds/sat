@@ -20,6 +20,7 @@
                         <option value ="kaplan" <?php echo isset($data)&& $data['name']=="kaplan" ?  'selected':''?>>开普兰</option>
                         <option value ="BARRON" <?php echo isset($data)&& $data['name']=="BARRON" ?  'selected':''?>>BARRON</option>
                         <option value ="每日一题" <?php echo isset($data)&& $data['name']=="每日一题" ?  'selected':''?>>每日一题</option>
+                        <option value ="测评" <?php echo isset($data)&& $data['name']=="测评" ?  'selected':''?>>测评</option>
                     </select>
                 </td>
             </tr>

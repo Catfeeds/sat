@@ -32,7 +32,6 @@
                 echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank" >'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
               }
             }?>
-
           </ul>
         </div>
         <div role="tabpanel" class="tab-pane" id="Princeton">
@@ -44,7 +43,6 @@
                 echo ' <li><a href="/mock_details?tid='.$v["id"].'" target="_blank">'.$v['name'].$v['time'].'</a><i class="fa fa-lock"></i></li>';
               }
             }?>
-
           </ul>
         </div>
         <div role="tabpanel" class="tab-pane" id="Kaplan">

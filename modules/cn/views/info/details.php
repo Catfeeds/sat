@@ -78,6 +78,10 @@
               <img src="/cn/images/qr-code01.png" alt="二维码">
               <p>扫一扫添加关注</p>
             </div>
+            <div class="s-pd-qr">
+              <img src="/cn/images/qr-code02.png" alt="二维码">
+              <p>SAT微助手</p>
+            </div>
           </div>
         </div>
       </div>
