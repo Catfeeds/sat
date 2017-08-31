@@ -15,45 +15,49 @@ class Questions extends ActiveRecord
     // 练习二级页面分页逻辑
     public function data()
     {
-        $major = Yii::$app->request->get('m', 'Math');
-        if ($major == 'Math') {
-            $m = "major = 'Math1' or major='Math2'";
-        } else {
-            $m = "major = '$major'";
-        }
-        $cate = Yii::$app->request->get('c', '');
-        $now_path = ltrim($_SERVER['REQUEST_URI'], '/');
-        // 判断地址栏参数是否存在，构建where语句
-        if ($cate == false) {
-            $where = "where $m";
-            $url = 'exercise.html?m=' . $major . '&p';
-        } else {
-            $where2 = "where name='$cate'";
-            $ids = Yii::$app->db->createCommand("select id from {{%testpaper}} $where2")->queryAll();
-            $str = '';
-            foreach ($ids as $v) {
-                $str .= $v['id'] . ',';
+        $major = Yii::$app->request->get('m', 'Reading');
+        if($major=='Reading'|| $major=='Math'|| $major=='Writing') {
+            if ($major == 'Math') {
+                $m = "major = 'Math1' or major='Math2'";
+            } else {
+                $m = "major = '$major'";
             }
-            $str = rtrim($str, ',');
-            $where = "where tpId in ($str) and ($m)";
-            $url = 'exercise.html?m=' . $major . '&c=' . $cate . '&p';
+            $cate = Yii::$app->request->get('c', '');
+            $now_path = ltrim($_SERVER['REQUEST_URI'], '/');
+            // 判断地址栏参数是否存在，构建where语句
+            if ($cate == false) {
+                $where = "where $m";
+                $url = 'exercise.html?m=' . $major . '&p';
+            } else {
+                $where2 = "where name='$cate'";
+                $ids = Yii::$app->db->createCommand("select id from {{%testpaper}} $where2")->queryAll();
+                $str = '';
+                foreach ($ids as $v) {
+                    $str .= $v['id'] . ',';
+                }
+                $str = rtrim($str, ',');
+                $where = "where tpId in ($str) and ($m)";
+                $url = 'exercise.html?m=' . $major . '&c=' . $cate . '&p';
 //            var_dump($str);die;
-        }
-        $page = Yii::$app->request->get('p', 1);
-        $pagesize = 10;
-        $offset = $pagesize * ($page - 1);
-        if (isset($str) && $str == false) {
-            $data = '';
-            $count = 0;
-        } else {
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
-            $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
-            $count = $count['count(*)'];
-        }
+            }
+            $page = Yii::$app->request->get('p', 1);
+            $pagesize = 10;
+            $offset = $pagesize * ($page - 1);
+            if (isset($str) && $str == false) {
+                $data = '';
+                $count = 0;
+            } else {
+                $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
+                $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
+                $count = $count['count(*)'];
+            }
 
-        $page = new Pager("$url", $count, $page, $pagesize);
-        $data['str'] = $page->GetPager();
-        return $data;
+            $page = new Pager("$url", $count, $page, $pagesize);
+            $data['str'] = $page->GetPager();
+            return $data;
+        }else{
+            return 'error';
+        }
     }
 
     /* 做题正确率,做题时间的更新
