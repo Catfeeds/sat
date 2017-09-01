@@ -9,7 +9,7 @@
     <div class="work-top-cnt row">
       <p class="work-title-pos col-lg-2 col-md-2"></p>
       <h1 class="work-main-title col-lg-8 col-md-8">初级测评--
-        <span>Section1</span><b>:</b><span>vocabulary</span>
+        <span id="secNum" data-id="11" data-sec="section1">Section1</span><b>:</b><span id="secName">vocabulary</span>
       </h1>
     </div>
   </div>
@@ -23,7 +23,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -47,7 +47,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -71,7 +71,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -95,7 +95,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -119,7 +119,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -147,7 +147,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-id="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -171,7 +171,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-id="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -195,7 +195,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-id="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -219,7 +219,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-id="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -243,7 +243,7 @@
           <div class="question">
             polycyclic
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-id="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -281,23 +281,23 @@
         <ul class="article-list">
           <li>
             <label>1.</label>
-            <input type="text">
+            <input class="article-inpu" type="text">
           </li>
           <li>
             <label>2.</label>
-            <input type="text">
+            <input class="article-input" type="text">
           </li>
           <li>
             <label>3.</label>
-            <input type="text">
+            <input class="article-input" type="text">
           </li>
           <li>
             <label>4.</label>
-            <input type="text">
+            <input class="article-input" type="text">
           </li>
           <li>
             <label>5.</label>
-            <input type="text">
+            <input class="article-input" type="text">
           </li>
         </ul>
       </div>
@@ -309,7 +309,7 @@
           <div class="question">
             Remember _______ the newspaper when you have finished it.
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">putting back </div>
@@ -333,7 +333,7 @@
           <div class="question">
             Remember _______ the newspaper when you have finished it.
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">putting back </div>
@@ -357,7 +357,7 @@
           <div class="question">
             Remember _______ the newspaper when you have finished it.
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">putting back </div>
@@ -381,7 +381,7 @@
           <div class="question">
             Remember _______ the newspaper when you have finished it.
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">putting back </div>
@@ -405,7 +405,7 @@
           <div class="question">
             Remember _______ the newspaper when you have finished it.
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">putting back </div>
@@ -427,14 +427,14 @@
       </ul>
     </div>
     <!--句子翻译-->
-    <div class="work-wrap-left pull-left" style="display: none;">
+    <div class="work-wrap-left pull-left" style="display: none;" >
       <ul class="translate">
         <li>
           <span class="pull-left">1.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="12" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">2.</span>
@@ -444,28 +444,28 @@
             which organisms are related, the time since they diverged from a common
             ancestor, and the reconstruction of ancestral versions of genes.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="13" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">3.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="14" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">4.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="15" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">5.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="16" cols="70" rows="5"></textarea>
         </li>
       </ul>
     </div>
@@ -476,7 +476,7 @@
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="17" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">2.</span>
@@ -486,28 +486,28 @@
             which organisms are related, the time since they diverged from a common
             ancestor, and the reconstruction of ancestral versions of genes.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="18" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">3.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="19" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">4.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="20" cols="70" rows="5"></textarea>
         </li>
         <li>
           <span class="pull-left">5.</span>
           <div class="e-sentence">
             In order for the far-ranging benefits of individual ownership to be achieved by owners, companies, and countries, employees and other individuals must make their own decisions to buy, and they must commit some of their own resources to the choice.
           </div>
-          <textarea class="translate-ans" cols="70" rows="5"></textarea>
+          <textarea class="translate-ans" data-pid="21" cols="70" rows="5"></textarea>
         </li>
       </ul>
     </div>
@@ -534,7 +534,7 @@
               Experiments by scientists have shown that when people evaluate individuals on certain attributes ________.
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">32.00 sq cm </div>
@@ -560,7 +560,7 @@
               The figure above shows the dimensions of a semicircular cross section of a one-way tunnel. The single traffic lane is 12 feet wide and is equidistant from the sides of the tunnel. If vehicles must clear the top of the tunnel by at least ½ foot when they are inside the traffic lane, what should be the limit on the height of vehicles that are allowed to use the tunnel?
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -586,7 +586,7 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -612,7 +612,7 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -638,7 +638,7 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">答案一 </div>
@@ -669,7 +669,7 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que">32.00 sq cm </div>
@@ -695,22 +695,22 @@
               The figure above shows the dimensions of a semicircular cross section of a one-way tunnel. The single traffic lane is 12 feet wide and is equidistant from the sides of the tunnel. If vehicles must clear the top of the tunnel by at least ½ foot when they are inside the traffic lane, what should be the limit on the height of vehicles that are allowed to use the tunnel?
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
@@ -721,22 +721,22 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
@@ -747,22 +747,22 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
@@ -773,22 +773,22 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
@@ -803,22 +803,48 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
+            </li>
+          </ul>
+        </li>
+        <li class="work-question-part">
+          <div class="clearfix">
+            <span class="num pull-left">1.</span>
+            <div class="question pull-left">
+              The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
+            </div>
+          </div>
+          <ul class="work-que-list" data-pid="0000">
+            <li class="work-que-wrap clearfix">
+              <div class="work-select" data-id="A">A</div>
+              <div class="work-que">32.00 sq cm </div>
+            </li>
+            <li class="work-que-wrap clearfix">
+              <div class="work-select" data-id="B">B</div>
+              <div class="work-que">34.00 sq cm </div>
+            </li>
+            <li class="work-que-wrap clearfix">
+              <div class="work-select" data-id="C">C</div>
+              <div class="work-que">35.00 sq cm </div>
+            </li>
+            <li class="work-que-wrap clearfix">
+              <div class="work-select" data-id="D">D</div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
@@ -855,22 +881,22 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
@@ -881,48 +907,22 @@
               The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
             </div>
           </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
+              <div class="work-que">32.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
+              <div class="work-que">34.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
+              <div class="work-que">35.00 sq cm </div>
             </li>
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
-            </li>
-          </ul>
-        </li>
-        <li class="work-question-part">
-          <div class="clearfix">
-            <span class="num pull-left">1.</span>
-            <div class="question pull-left">
-              The sides of a square region, measured to the nearest centimeter, are 6 centimeters long. The least possible value of the actual area of the square region is
-            </div>
-          </div>
-          <ul class="work-que-list common-id" id="subjectId" data-id="0000">
-            <li class="work-que-wrap clearfix">
-              <div class="work-select" data-id="A">A</div>
-              <div class="work-que">答案一 </div>
-            </li>
-            <li class="work-que-wrap clearfix">
-              <div class="work-select" data-id="B">B</div>
-              <div class="work-que">答案问 </div>
-            </li>
-            <li class="work-que-wrap clearfix">
-              <div class="work-select" data-id="C">C</div>
-              <div class="work-que">答案三 </div>
-            </li>
-            <li class="work-que-wrap clearfix">
-              <div class="work-select" data-id="D">D</div>
-              <div class="work-que">答案四 </div>
+              <div class="work-que">36.00 sq cm </div>
             </li>
           </ul>
         </li>
