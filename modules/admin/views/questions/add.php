@@ -46,6 +46,8 @@
                             <option value ="Reading" <?php echo isset($data['major'])&& $data['major']=="Reading" ?  'selected':''?>>阅读</option>
                             <option value ="Writing" <?php echo isset($data['major'])&& $data['major']=="Writing" ?  'selected':''?>>文法</option>
                             <option value ="Essay" <?php echo isset($data['major'])&& $data['major']=="Essay" ?  'selected':''?>>作文</option>
+                            <option value ="Vocabulary" <?php echo isset($data['major'])&& $data['major']=="Vocabulary" ?  'selected':''?>>词汇</option>
+                            <option value ="Translation" <?php echo isset($data['major'])&& $data['major']=="Translation" ?  'selected':''?>>翻译</option>
                         </select>
                     </span>
                     </br>
