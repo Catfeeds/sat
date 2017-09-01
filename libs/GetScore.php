@@ -23,6 +23,7 @@ class GetScore {
         static $mathnum=0;
         static $readnum=0;
         static $writnum=0;
+        static $vocabularynum=0;
         static $expression=0;
         static $english=0;
         static $algebra=0;
@@ -53,14 +54,12 @@ class GetScore {
                 $v[1] = rtrim($v[1], 0);
                 if ($v[1] == $que['answer']) {
                     $mathnum =$mathnum+ 1;
-//                    continue;
                 }else{
                     $matherror+=1;
                 }
             } elseif ($que['major'] == 'Reading') {
                 if ($v[1] == $que['answer']) {
                     $readnum =$readnum + 1;
-//                    continue;
                 }else{
                     $readerror+=1;
                 }
@@ -68,11 +67,14 @@ class GetScore {
             } elseif ($que['major'] == 'Writing') {
                 if ($v[1] == $que['answer']) {
                     $writnum =$writnum + 1;
-//                    continue;
                 }else{
                     $writeerror+=1;
                 }
 
+            }elseif ($que['major'] == 'Vocabulary') {
+                if ($v[1] == $que['answer']) {
+                    $vocabularynum =$vocabularynum + 1;
+                }
             }
         }
         foreach($data as $k=>$v) {
@@ -175,6 +177,7 @@ class GetScore {
         $number['Math']=$mathnum;
         $number['Reading']=$readnum;
         $number['Writing']=$writnum;
+        $number['Vocabulary']=$vocabularynum;
         $number['matherror']=$matherror;
         $number['readerror']=$readerror;
         $number['writeerror']=$writeerror;
