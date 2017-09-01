@@ -53,14 +53,16 @@ class GetScore {
                 $v[1] = rtrim($v[1], 0);
                 if ($v[1] == $que['answer']) {
                     $mathnum =$mathnum+ 1;
-//                    continue;
+                }elseif($v[1]==''){
+
                 }else{
                     $matherror+=1;
                 }
             } elseif ($que['major'] == 'Reading') {
                 if ($v[1] == $que['answer']) {
                     $readnum =$readnum + 1;
-//                    continue;
+                }elseif($v[1]==''){
+
                 }else{
                     $readerror+=1;
                 }
@@ -68,7 +70,8 @@ class GetScore {
             } elseif ($que['major'] == 'Writing') {
                 if ($v[1] == $que['answer']) {
                     $writnum =$writnum + 1;
-//                    continue;
+                }elseif($v[1]==''){
+
                 }else{
                     $writeerror+=1;
                 }
