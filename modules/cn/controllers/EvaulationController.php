@@ -10,6 +10,9 @@ namespace app\modules\cn\controllers;
 use yii;
 use yii\web\Controller;
 use app\libs\GetScore;
+use app\libs\Format;
+use app\libs\KeepAnswer;
+use app\modules\cn\models\Report;
 
 class EvaulationController extends Controller
 {
@@ -18,7 +21,6 @@ class EvaulationController extends Controller
     public function actionIndex()
     {
         $this->layout = 'cn.php';
-        return $this->render('index');
         $data[0]= Yii::$app->db->createCommand("select * from {{%testpaper}} where name='测评'  and time='初级卷' ")->queryOne();
         $data[1]= Yii::$app->db->createCommand("select * from {{%testpaper}} where name='测评' and time='中级卷' ")->queryOne();
         $data[2]= Yii::$app->db->createCommand("select * from {{%testpaper}} where name='测评' and time='高级卷' ")->queryOne();
@@ -30,12 +32,12 @@ class EvaulationController extends Controller
         $this->layout = 'cn1.php';
         $tid = Yii::$app->request->get('tid');
         $uid = Yii::$app->session->get('uid','');
-        $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
         $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
-        if($uid==false && $isLogin['isLogin']==1){
-            echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
-            die;
-        }
+/*        if($uid==false){
+//            echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+//            die;
+//        }
+*/
         if(isset($_SESSION['answer'])){
             unset($_SESSION['answer']);
         }
@@ -47,50 +49,130 @@ class EvaulationController extends Controller
     {
 //        session_start();
         $this->layout = 'cn1.php';
-//        $s = Yii::$app->request->get('s',1);
-//        $tid = Yii::$app->request->get('tid');
-//        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number")->queryAll();
-//        if($data==false){
-//            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
-//        }
-//        return $this->render("details", ['data' => $data]);
-        return $this->render("subject");
+        $s = Yii::$app->request->get('s',1);
+        $tid = Yii::$app->request->get('tid');
+        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number")->queryAll();
+        if($data==false){
+            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
+        }
+//        var_dump($data);die;
+        return $this->render("subject", ['data' => $data]);
+//        return $this->render("subject");
     }
+
+    // 下一小节
     public function actionNext()
     {
-        //接收数据
-        $s = Yii::$app->request->post('s',1)+1;
-        $tid = Yii::$app->request->post('id');
+
+        // 最后一次提交也将tid 存入session中
+        $s      = Yii::$app->request->post('s',1);
+        $tid    = Yii::$app->request->post('id');
         $answer = Yii::$app->request->post('ans');
         $time = Yii::$app->request->post('time','');
-        var_dump($answer);die;
-        $this->layout = 'cn1.php';
-        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number")->queryAll();
+        $a      = KeepAnswer::getCat();
+        foreach($answer as $k=>$v){
+            $re      = $a->addPro($v[0], $v[1],30);
+        }
+        $time   = Yii::$app->request->post('time','1');
+        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . ($s+1) . "   and tpId=$tid order by q.number")->queryAll();
         if($data==false){
             echo die(json_encode('rep'));
         }
        echo die(json_encode($data));
     }
+
+    // 正确个数
     public function actionNumber($data)
     {
         $getScore=new GetScore();
         $number=$getScore->number($data);// $data为做题的数据
         return $number;
     }
-    public function actionScore()
+
+    // 获取测评的分数
+    public function actionScore($data)
     {
         $number=$this->actionNumber($data);
-        $score=$number['mathnum']*3+$number['readnum']*3+$number['writnum']*2+$number['vocabulary'];
+        // 翻译的分数
+        $translation= Yii::$app->db->createCommand("select id,answer from {{%question}} where  major='Translation' and tpId=".Yii::$app->session->get('tid'))->queryAll();
+        $count=0;
+        $vocabulary=0;
+        foreach($translation as $k=>$v){
+            $answer=explode(',',$v['answer']);
+            foreach($answer as $key=>$val){
+                if(strpos($val,$data[$v['id']][1])!==false){
+                    $count+=1;
+                }
+            }
+            $vocabulary+=$count>=6?3:($count>4?2:1);
+        }
+        $vocabulary=$vocabulary['vocabularynum'];
+        $score=$number['mathnum']*3+$number['readnum']*3+$number['writnum']*2+$vocabulary;
+        return $score;
 
     }
-    public function actionSubject()
-    {
-        $this->layout = 'cn1.php';
-        return $this->render('subject');
-    }
+
+    // 测评报告
     public function actionReport()
     {
-        $this->layout = 'cn.php';
-        return $this->render('report');
+        $id = Yii::$app->request->get('id','');
+        $uid = Yii::$app->session->get('uid','');
+        if($id==false){
+            $data  = ((array)$_SESSION['answer']);
+            $data  = $data['item'];// 获取用户的答题数据
+            $re['tpId']       = $_SESSION['tid'];
+            $re['readnum']    = $this->actionNumber($data)['Reading'];
+            $re['mathnum']    = $this->actionNumber($data)['Math'];
+            $re['writenum']   = $this->actionNumber($data)['Writing'];
+            $re['part']       = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=".$re['tpId'])->queryOne()['name'].Yii::$app->db->createCommand("select time from {{%testpaper}} where id=".$re['tpId'])->queryOne()['time'];
+            $re['uid']        = Yii::$app->session->get('uid');
+            $re['matherror']  = 10-$re['mathnum'] ;
+            $re['readerror']  = 10-$re['readnum'];
+            $re['writeerror'] = 10-$re['writenum'];
+            $re['score']      = $this->actionScore($data);
+            $re['date']       = time();
+            $re['time']       = Yii::$app->session->get('time');// 做题总时间
+            if ($uid) {
+                // 将答案组合成字符串
+                $format = new Format();
+                $re['answer'] = $format->arrToStr($data);
+                if ($re['answer'] != false && $re['time'] != false) {
+                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+                    if ($res) {
+                        unset($_SESSION['answer']);
+                        unset($_SESSION['tid']);
+                    }//入库完成
+                }
+            }
+
+            $res = $this->Show($uid, '');
+        }else{
+
+            $res = $this->Show($uid, $id);
+        }
+
+    }
+
+    // 显示
+    public function Show($id){
+        $uid = Yii::$app->request->get('uid');
+        if($id==false){
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
+        }else{
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
+        }
+        if($data){
+//            $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
+//            $re         = array_merge($data, $score);
+            $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
+            $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
+            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
+            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
+            array_push($re,$suggest);
+            return $re;
+        }else{
+            echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+            die;
+        }
     }
 }
