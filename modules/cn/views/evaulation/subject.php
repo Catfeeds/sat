@@ -47,102 +47,6 @@
           </ul>
         </li>
         <?PHP }}?>
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">2.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-pid="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">3.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-pid="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">4.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-pid="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">5.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-pid="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
       </ul>
     </div>
     <div class="work-wrap-right pull-right" >
@@ -173,102 +77,6 @@
           </ul>
         </li>
         <?PHP }}?>
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">7.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-id="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">8.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-id="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">9.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-id="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="work-question-part">-->
-<!--          <span class="num pull-left">10.</span>-->
-<!--          <div class="question">-->
-<!--            polycyclic-->
-<!--          </div>-->
-<!--          <ul class="work-que-list" data-id="0000">-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="A">A</div>-->
-<!--              <div class="work-que">答案一 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="B">B</div>-->
-<!--              <div class="work-que">答案问 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="C">C</div>-->
-<!--              <div class="work-que">答案三 </div>-->
-<!--            </li>-->
-<!--            <li class="work-que-wrap clearfix">-->
-<!--              <div class="work-select" data-id="D">D</div>-->
-<!--              <div class="work-que">答案四 </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
       </ul>
     </div>
     <!-- 语法-->
@@ -288,7 +96,7 @@
 <!--        <ul class="article-list">-->
 <!--          <li>-->
 <!--            <label>1.</label>-->
-<!--            <input class="article-inpu" type="text">-->
+<!--            <input class="article-input" type="text">-->
 <!--          </li>-->
 <!--          <li>-->
 <!--            <label>2.</label>-->
@@ -520,8 +328,6 @@
 <!--    </div>-->
     <!--阅读理解-->
 <!--    <div class="work-wrap-left pull-left">-->
-<!--<!--      <h3>初级测评--</h3>-->-->
-<!--<!--      <h5>Section1:vocabulary</h5>-->-->
 <!--      <div class="work-box">-->
 <!--        <div class="read-text">-->
 <!--          A few common misconceptions. Beauty is only skin deep. One’s physical assets and liabilities don’t count all that much in a managerial career. A woman should always try to look her best.-->

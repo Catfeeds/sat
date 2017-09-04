@@ -6,6 +6,12 @@ $(function () {
     },
     bindEvent: function () {
       var _this = this;
+      //选择题点击事件
+      $('.work-mk-cnt').on('click','.work-que-wrap', function () {
+        $(this).siblings().find('.work-select').removeClass('active');
+        $(this).find('.work-select').addClass('active');
+      });
+      //下一小节点击事件
       $('.work-next-icon').click(function () {
         var sec = $('#secNum').attr('data-sec'),//第几小节
             id = $('#secNum').attr('data-id');//试卷id
@@ -24,8 +30,10 @@ $(function () {
           },
           dataType : 'json',
           success  : function (res) {
-            //_this.wordTemplate(res);
-            console.log(res);
+            if (res.code) {
+              _this.wordTemplate(res);
+              console.log(res);
+            }
           }
         })
       })
@@ -49,10 +57,12 @@ $(function () {
             ans[i] = new Array();
             if (i < artInputL) {
               for (var j=0; j<1; j++) {
+                ans[i].push($('.article-input').eq(i).parent().parent().attr('data-pid'));
                 ans[i].push($('.article-input').eq(i).val());
               }
             } else {
-              for (var j=0; j<2; j++) {
+              for (var j=0; j<1; j++) {
+                ans[i].push($('.article-input').eq(i).parent().attr('data-pid'));
                 ans[i].push($('.work-question-part').eq(i-artInputL).find('.work-select.active').data('id'));
               }
             }
@@ -73,8 +83,8 @@ $(function () {
           for (var i=0;i<sentenceL; i++) {
             ans[i] = new Array();
             for (var j=0;j<1;j++) {
-              ans[i].push($('.translate-ans').eq(j).attr('data-pid'));
-              ans[i].push($('.translate-ans').eq(j).val());
+              ans[i].push($('.translate-ans').eq(i).attr('data-pid'));
+              ans[i].push($('.translate-ans').eq(i).val());
             }
           }
           console.log(ans);
@@ -82,15 +92,15 @@ $(function () {
         }
       } else {
         var long  = $('.words-ul .work-question-part').length,
-          short = $('.work-select.active').length;
+            short = $('.work-select.active').length;
         if (Number(short) < Number(long)) {
           alert('还有题目没做哦！');
         } else {
           for (var i=0;i<long; i++) {
             ans[i] = new Array();
             for (var j=0;j<1;j++) {
-              ans[i].push($('.work-select.active').eq(j).parent().parent().attr('data-pid'));
-              ans[i].push($('.work-select.active').eq(j).attr('data-id'));
+              ans[i].push($('.work-select.active').eq(i).parent().parent().attr('data-pid'));
+              ans[i].push($('.work-select.active').eq(i).attr('data-id'));
             }
           }
           console.log(ans);
@@ -125,62 +135,212 @@ $(function () {
       return m<10? "0"+m : m;
     },
     wordTemplate : function(res){
-      if (res.section == 'section2') {
+      if (res.section == 2) {
+        $('.work-mk-cnt').html('');
         var div = '';
-        div+= "<div class='work-wrap-left pull-left' style='display: none;'>"+
-          "<div class='grammer'>"+
-        "<div class='article'>"+
-        "I hunted for 30 years for various reasons, mostly because my grandfather and"+
-        " my father did. We ate what we killed. I began _1_(look) at hunting differently"+
-        "in November 1989.That day I happened _2_ (walk) in the forest when a deer hunter"+
-        "shot me in the leg. The irresponsible hunter left me for death. Loading me in a truck,"+
-        " my twelve-year-old son drove me 40 miles to a hospital. That did give me a solid taste"+
-        " of what the animals endured. I started _3_ (understand) that the animal was not just"+
-        "target, but a living thing, a thing that suffered when shot, a thing that I had no"+
-        "right _4_ (kill). I was sorry _5_ (kill) so many animals. To help animals, rather than"+
-        "kill them, is of great importance to me."+
-        "</div>"+
-        "<ul class='article-list'>"+
-        "<li>"+
-        "<label>1.</label>"+
-        "<input class='article-inpu' type='text'>"+
-        "</li>"+
-        "</ul>"+
-        "</div>"+
-        "</div>"+
-        "<div class='work-wrap-right pull-right'>"+
-        "<ul class='words-ul'>"+
-        "<li class='work-question-part'>"+
-        "<span class='num pull-left'>1.</span>"+
-        "<div class='question'>"+
-        "Remember _______ the newspaper when you have finished it."+
-        "</div>"+
-        "<ul class='work-que-list' data-pid='0000'>"+
-        "<li class='work-que-wrap clearfix'>"+
-        "<div class='work-select' data-id='A'>A</div>"+
-        "<div class='work-que'>putting back </div>"+
-        " </li>"+
-        "<li class='work-que-wrap clearfix'>"+
-        "<div class='work-select' data-id='B'>B</div>"+
-        "<div class='work-que'> put back </div>"+
-        "</li>"+
-        "<li class='work-que-wrap clearfix'>"+
-        "<div class='work-select' data-id='C'>C</div>"+
-        "<div class='work-que'>to put back </div>"+
-        "</li>"+
-        "<li class='work-que-wrap clearfix'>"+
-        "<div class='work-select' data-id='D'>D</div>"+
-        "<div class='work-que'>be put back </div>"+
-        "</li>"+
-        "</ul>"+
-        "</li>"+
-        "</ul>"+
-        "</div>"
+        div+= "<div class='work-wrap-left pull-left'>"+
+              "<div class='grammer'>"+
+              "<div class='article'>"+ res.data[0]['essay'] +"</div>"+
+              "<ul class='article-list'>";
+        $.each(res.data, function (i,data) {
+          if (i<=4) {
+            div+= "<li data-pid='"+ data['qid'] +"'>"+
+                  "<label>"+ (i+1) +".</label>"+
+                  "<input class='article-input' type='text'>"+
+                  "</li>";
+          }
+        });
+        div+="</ul>"+
+              "</div>"+
+              "</div>"+
+              "<div class='work-wrap-right pull-right'>"+
+              "<ul class='words-ul'>";
+        $.each(res.data, function (i,data) {
+          if (i>4) {
+            div+= "<li class='work-question-part'>"+
+              "<span class='num pull-left'>"+(i+1)+".</span>"+
+              "<div class='question'>"+ data['content'] + "</div>"+
+              "<ul class='work-que-list' data-pid='"+ data['qid'] +"'>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='A'>A</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              " </li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='B'>B</div>"+
+              "<div class='work-que'>"+ data['keyB'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='C'>C</div>"+
+              "<div class='work-que'>"+ data['keyC'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='D'>D</div>"+
+              "<div class='work-que'>"+ data['keyD'] +"</div>"+
+              "</li>"+
+              "</ul>"+
+              "</li>";
+          }
+        });
+        div+="</ul>"+
+             "</div>";
+        $('#secNum').html('section'+res.data[0]['section']);
+        $('#secNum').attr('data-sec',res.data[0]['section']);
+        $('#secName').html(res.data[0]['major']);
+        $('.work-mk-cnt').html(div);
+      } else if (res.section == 3) {
+        $('.work-mk-cnt').html('');
+        var div = '';
+        div+= "<div class='work-wrap-left pull-left'>"+
+              "<ul class='translate'>";
+        $.each(res.data,function(i,data){
+          if (i<=4) {
+            div+=" <li>"+
+                  "<span class='pull-left'>"+ (i+1) +".</span>"+
+                  "<div class='e-sentence'>"+ data['content'] +"</div>"+
+                  "<textarea class='translate-ans' data-pid='"+ data['qid'] +"' cols='70' rows='5'></textarea>"+
+                  "</li>";
+          }
+        });
+        div+="</ul>"+
+              "</div>"+
+              "<div class='work-wrap-right pull-right'>"+
+              "<ul class='translate'>";
+        $.each(res.data,function(i,data) {
+          if (i>4 && i<10) {
+            div+=" <li>"+
+                  "<span class='pull-left'>"+ (i+1) +".</span>"+
+                  "<div class='e-sentence'>"+ data['content'] +"</div>"+
+                  "<textarea class='translate-ans' data-pid='"+ data['qid'] +"' cols='70' rows='5'></textarea>"+
+                  "</li>";
+          }
+        });
+        div+="</ul>"+
+              "</div>";
+        $('#secNum').html('section'+res.data[0]['section']);
+        $('#secNum').attr('data-sec',res.data[0]['section']);
+        $('#secName').html(res.data[0]['major']);
+        $('.work-mk-cnt').html(div);
+        }else if (res.section == 4) {
+          $('.work-mk-cnt').html('');
+          var div = '';
+          div+="<div class='work-wrap-left pull-left'>"+
+                "<div class='work-box'>"+
+                "<div class='read-text'>"+  +"</div>"+
+                "</div>"+
+                "</div>"+
+                " <div class='work-wrap-right pull-right'>"+
+                "<ul class='words-ul'>";
+        $.each(res.data, function (i,data) {
+          div+="<li class='work-question-part'>"+
+          "<div class='clearfix'>"+
+          "<span class='num pull-left'>1.</span>"+
+          "<div class='question pull-left'>"+
+
+          "</div>"+
+          "</div>"+
+          "<ul class='work-que-list' data-pid='0000'>"+
+          "<li class='work-que-wrap clearfix'>"+
+          "<div class='work-select' data-id='A'>A</div>"+
+          "<div class='work-que'>32.00 sq cm </div>"+
+          "</li>"+
+          "<li class='work-que-wrap clearfix'>"+
+          "<div class='work-select' data-id='B'>B</div>"+
+          "<div class='work-que'>34.00 sq cm </div>"+
+          "</li>"+
+          "<li class='work-que-wrap clearfix'>"+
+          "<div class='work-select' data-id='C'>C</div>"+
+          "<div class='work-que'>35.00 sq cm </div>"+
+          "</li>"+
+          "<li class='work-que-wrap clearfix'>"+
+          "<div class='work-select' data-id='D'>D</div>"+
+          "<div class='work-que'>36.00 sq cm </div>"+
+          "</li>"+
+          "</ul>"+
+          "</li>";
+        });
+        div+=" </ul>"+
+              "</div>";
+        $('#secNum').html('section'+res.data[0]['section']);
+        $('#secNum').attr('data-sec',res.data[0]['section']);
+        $('#secName').html(res.data[0]['major']);
+        $('.work-mk-cnt').html(div);
+      } else {
+        $('.work-mk-cnt').html('');
+        var div = '';
+        div+="<div class='work-wrap-left pull-left'>"+
+              "<ul class='words-ul'>";
+        $.each(res.data, function (i,data) {
+          if (i>=4) {
+            div+=" <li class='work-question-part'>"+
+                  "<div class='clearfix'>"+
+                  "<span class='num pull-left'>1.</span>"+
+                  "<div class='question pull-left'>"+
+                  "</div>"+
+                  "</div>"+
+                  "<ul class='work-que-list' data-pid='0000'>"+
+                  "<li class='work-que-wrap clearfix'>"+
+                  "<div class='work-select' data-id='A'>A</div>"+
+                  "<div class='work-que'>32.00 sq cm </div>"+
+                  "</li>"+
+                  "<li class='work-que-wrap clearfix'>"+
+                  "<div class='work-select' data-id='B'>B</div>"+
+                  "<div class='work-que'>34.00 sq cm </div>"+
+                  "</li>"+
+                  "<li class='work-que-wrap clearfix'>"+
+                  "<div class='work-select' data-id='C'>C</div>"+
+                  "<div class='work-que'>35.00 sq cm </div>"+
+                  "</li>"+
+                  "<li class='work-que-wrap clearfix'>"+
+                  "<div class='work-select' data-id='D'>D</div>"+
+                  "<div class='work-que'>36.00 sq cm </div>"+
+                  "</li>"+
+                  "</ul>"+
+                  "</li>";
+          }
+        });
+        div+="</ul>"+
+              "</div>"+
+              "<div class='work-wrap-right pull-right'>"+
+              "<ul class='words-ul'>";
+        $.each(res.data, function (i,data) {
+          if (i>4) {
+            div+=" <li class='work-question-part'>"+
+              "<div class='clearfix'>"+
+              "<span class='num pull-left'>1.</span>"+
+              "<div class='question pull-left'>"+
+              "</div>"+
+              "</div>"+
+              "<ul class='work-que-list' data-pid='0000'>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='A'>A</div>"+
+              "<div class='work-que'>32.00 sq cm </div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='B'>B</div>"+
+              "<div class='work-que'>34.00 sq cm </div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='C'>C</div>"+
+              "<div class='work-que'>35.00 sq cm </div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='D'>D</div>"+
+              "<div class='work-que'>36.00 sq cm </div>"+
+              "</li>"+
+              "</ul>"+
+              "</li>";
+          }
+        })
+        div+=" </ul>"+
+              "</div>";
+        $('#secNum').html('section'+res.data[0]['section']);
+        $('#secNum').attr('data-sec',res.data[0]['section']);
+        $('#secName').html(res.data[0]['major']);
+        $('.work-mk-cnt').html(div);
       }
     }
   }
   sub.init();
-
 })
 
 

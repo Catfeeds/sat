@@ -79,6 +79,7 @@ class EvaulationController extends Controller
             echo die(json_encode('res'));
         }
         $data['code']=1;
+        $data['section']=$data['data'][0]['section'];
        echo die(json_encode($data));
     }
 
