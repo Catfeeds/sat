@@ -46,8 +46,8 @@
             <p>题目来源：精选题库</p>
             <p>题目难度：1000-1200分</p>
             <p>测试学员英语基础，长难句，阅读理解，逻辑思维，数学</p>
-            <a href="/evaulation_test.html">开始测试</a>
-<!--            <a href="--><?php //echo $data[2]!=false?'evaulation_notice/'.$data[2]['id'].'.html':'#'?><!--">开始测试</a>-->
+<!--            <a href="/evaulation_test.html">开始测试</a>-->
+            <a href="<?php echo $data[2]!=false?'evaulation_notice/'.$data[2]['id'].'.html':'#'?>">开始测试</a>
 
           </div>
         </div>
