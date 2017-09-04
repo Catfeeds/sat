@@ -15,7 +15,6 @@ $(function () {
       $('.work-next-icon').click(function () {
         var sec = $('#secNum').attr('data-sec'),//第几小节
             id = $('#secNum').attr('data-id');//试卷id
-        //_this.answer(sec);
         if (sec == 5) {
           var time = sessionStorage.getItem('t');
         }
@@ -33,9 +32,23 @@ $(function () {
             if (res.code) {
               _this.wordTemplate(res);
               console.log(res);
+            }else {
+              window.location.href = 'http://www.baidu.com';
             }
           }
         })
+      });
+    //  退出
+      $('.work-out').click(function(){
+        $('.work-shade').show();
+        $('.quit-wrap').show();
+      });
+      $('.quit-wrap .shade-in').click(function(){
+        $('.work-shade').hide();
+        $('.quit-wrap').hide();
+      });
+      $('.quit-wrap .exit-out').click(function(){
+        window.location.href = '/evaulation.html';
       })
     },
     answer : function (sec) {
@@ -225,38 +238,36 @@ $(function () {
           var div = '';
           div+="<div class='work-wrap-left pull-left'>"+
                 "<div class='work-box'>"+
-                "<div class='read-text'>"+  +"</div>"+
+                "<div class='read-text'>"+ res.data[0]['essay'] +"</div>"+
                 "</div>"+
                 "</div>"+
                 " <div class='work-wrap-right pull-right'>"+
                 "<ul class='words-ul'>";
         $.each(res.data, function (i,data) {
           div+="<li class='work-question-part'>"+
-          "<div class='clearfix'>"+
-          "<span class='num pull-left'>1.</span>"+
-          "<div class='question pull-left'>"+
-
-          "</div>"+
-          "</div>"+
-          "<ul class='work-que-list' data-pid='0000'>"+
-          "<li class='work-que-wrap clearfix'>"+
-          "<div class='work-select' data-id='A'>A</div>"+
-          "<div class='work-que'>32.00 sq cm </div>"+
-          "</li>"+
-          "<li class='work-que-wrap clearfix'>"+
-          "<div class='work-select' data-id='B'>B</div>"+
-          "<div class='work-que'>34.00 sq cm </div>"+
-          "</li>"+
-          "<li class='work-que-wrap clearfix'>"+
-          "<div class='work-select' data-id='C'>C</div>"+
-          "<div class='work-que'>35.00 sq cm </div>"+
-          "</li>"+
-          "<li class='work-que-wrap clearfix'>"+
-          "<div class='work-select' data-id='D'>D</div>"+
-          "<div class='work-que'>36.00 sq cm </div>"+
-          "</li>"+
-          "</ul>"+
-          "</li>";
+                "<div class='clearfix'>"+
+                "<span class='num pull-left'>"+ (i+1) +".</span>"+
+                "<div class='question pull-left'>"+ data['content'] +"</div>"+
+                "</div>"+
+                "<ul class='work-que-list' data-pid='"+ data['qid'] +"'>"+
+                "<li class='work-que-wrap clearfix'>"+
+                "<div class='work-select' data-id='A'>A</div>"+
+                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "</li>"+
+                "<li class='work-que-wrap clearfix'>"+
+                "<div class='work-select' data-id='B'>B</div>"+
+                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "</li>"+
+                "<li class='work-que-wrap clearfix'>"+
+                "<div class='work-select' data-id='C'>C</div>"+
+                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "</li>"+
+                "<li class='work-que-wrap clearfix'>"+
+                "<div class='work-select' data-id='D'>D</div>"+
+                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "</li>"+
+                "</ul>"+
+                "</li>";
         });
         div+=" </ul>"+
               "</div>";
@@ -270,32 +281,31 @@ $(function () {
         div+="<div class='work-wrap-left pull-left'>"+
               "<ul class='words-ul'>";
         $.each(res.data, function (i,data) {
-          if (i>=4) {
-            div+=" <li class='work-question-part'>"+
-                  "<div class='clearfix'>"+
-                  "<span class='num pull-left'>1.</span>"+
-                  "<div class='question pull-left'>"+
-                  "</div>"+
-                  "</div>"+
-                  "<ul class='work-que-list' data-pid='0000'>"+
-                  "<li class='work-que-wrap clearfix'>"+
-                  "<div class='work-select' data-id='A'>A</div>"+
-                  "<div class='work-que'>32.00 sq cm </div>"+
-                  "</li>"+
-                  "<li class='work-que-wrap clearfix'>"+
-                  "<div class='work-select' data-id='B'>B</div>"+
-                  "<div class='work-que'>34.00 sq cm </div>"+
-                  "</li>"+
-                  "<li class='work-que-wrap clearfix'>"+
-                  "<div class='work-select' data-id='C'>C</div>"+
-                  "<div class='work-que'>35.00 sq cm </div>"+
-                  "</li>"+
-                  "<li class='work-que-wrap clearfix'>"+
-                  "<div class='work-select' data-id='D'>D</div>"+
-                  "<div class='work-que'>36.00 sq cm </div>"+
-                  "</li>"+
-                  "</ul>"+
-                  "</li>";
+          if (i<=4) {
+            div+="<li class='work-question-part'>"+
+              "<div class='clearfix'>"+
+              "<span class='num pull-left'>"+ (i+1) +".</span>"+
+              "<div class='question pull-left'>"+ data['content'] +"</div>"+
+              "</div>"+
+              "<ul class='work-que-list' data-pid='"+ data['qid'] +"'>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='A'>A</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='B'>B</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='C'>C</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='D'>D</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "</ul>"+
+              "</li>";
           }
         });
         div+="</ul>"+
@@ -304,28 +314,27 @@ $(function () {
               "<ul class='words-ul'>";
         $.each(res.data, function (i,data) {
           if (i>4) {
-            div+=" <li class='work-question-part'>"+
+            div+="<li class='work-question-part'>"+
               "<div class='clearfix'>"+
-              "<span class='num pull-left'>1.</span>"+
-              "<div class='question pull-left'>"+
+              "<span class='num pull-left'>"+ (i+1) +".</span>"+
+              "<div class='question pull-left'>"+ data['content'] +"</div>"+
               "</div>"+
-              "</div>"+
-              "<ul class='work-que-list' data-pid='0000'>"+
+              "<ul class='work-que-list' data-pid='"+ data['qid'] +"'>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='A'>A</div>"+
-              "<div class='work-que'>32.00 sq cm </div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='B'>B</div>"+
-              "<div class='work-que'>34.00 sq cm </div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='C'>C</div>"+
-              "<div class='work-que'>35.00 sq cm </div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='D'>D</div>"+
-              "<div class='work-que'>36.00 sq cm </div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
               "</li>"+
               "</ul>"+
               "</li>";
@@ -342,7 +351,3 @@ $(function () {
   }
   sub.init();
 })
-
-
-
-
