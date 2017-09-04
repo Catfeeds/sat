@@ -9,7 +9,7 @@
     <div class="work-top-cnt row">
       <p class="work-title-pos col-lg-2 col-md-2"></p>
       <h1 class="work-main-title col-lg-8 col-md-8">初级测评--
-        <span id="secNum" data-id="11" data-sec="section1">Section1</span><b>:</b><span id="secName">vocabulary</span>
+        <span id="secNum" data-id="11" data-sec="5">Section1</span><b>:</b><span id="secName">vocabulary</span>
       </h1>
     </div>
   </div>

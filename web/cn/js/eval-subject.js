@@ -10,7 +10,7 @@ $(function () {
         var sec = $('#secNum').attr('data-sec'),//第几小节
             id = $('#secNum').attr('data-id');//试卷id
         //_this.answer(sec);
-        if (sec == 'section5') {
+        if (sec == 5) {
           var time = sessionStorage.getItem('t');
         }
         $.ajax({
@@ -32,7 +32,7 @@ $(function () {
     },
     answer : function (sec) {
       var ans = [];
-      if (sec == 'section2') {
+      if (sec == 2) {
         var artInputL   = $('.article-input').length,
           artSelectL  = $('.words-ul .work-question-part').length,
           artSelectS  = $('.work-select.active').length;
@@ -60,7 +60,7 @@ $(function () {
           console.log(ans);
           return ans;
         }
-      } else if (sec == 'section3') {
+      } else if (sec == 3) {
         var sentenceL = $('.translate-ans').length;
         for (var i=0; i<sentenceL; i++) {
           if ($('.translate-ans').eq(i).val()) {
