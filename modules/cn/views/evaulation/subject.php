@@ -54,7 +54,7 @@
           <div class="question">
             <?php echo $v['content']?>
           </div>
-          <ul class="work-que-list" data-id="0000">
+          <ul class="work-que-list" data-pid="0000">
             <li class="work-que-wrap clearfix">
               <div class="work-select" data-id="A">A</div>
               <div class="work-que"><?php echo $v['keyA']?> </div>

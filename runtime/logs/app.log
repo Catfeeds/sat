@@ -16261,3 +16261,1039 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1504517136.6666
     'REQUEST_TIME' => 1504517136
 ]
+2017-09-04 17:31:08 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:31:08 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1804'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '62107'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504517468.4046
+    'REQUEST_TIME' => 1504517468
+]
+2017-09-04 17:35:07 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:35:07 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1804'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '62471'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504517707.7356
+    'REQUEST_TIME' => 1504517707
+]
+2017-09-04 17:35:56 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:35:56 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1804'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '62560'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504517756.7076
+    'REQUEST_TIME' => 1504517756
+]
+2017-09-04 17:36:19 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:36:19 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1804'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '62612'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504517779.3416
+    'REQUEST_TIME' => 1504517779
+]
+2017-09-04 17:38:39 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:38:39 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1804'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '62836'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504517919.4326
+    'REQUEST_TIME' => 1504517919
+]
+2017-09-04 17:40:50 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:40:50 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1776'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63044'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518050.8886
+    'REQUEST_TIME' => 1504518050
+]
+2017-09-04 17:42:26 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:42:26 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1776'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63206'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518146.3036
+    'REQUEST_TIME' => 1504518146
+]
+2017-09-04 17:43:40 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:43:40 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1776'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63337'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518220.5496
+    'REQUEST_TIME' => 1504518220
+]
+2017-09-04 17:45:00 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\WWW\sat\modules\cn\controllers\EvaulationController.php:71
+Stack trace:
+#0 D:\WWW\sat\modules\cn\controllers\EvaulationController.php(71): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\WWW\\sat\\modu...', 71, Array)
+#1 [internal function]: app\modules\cn\controllers\EvaulationController->actionNext()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('next', Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/evaulation/n...', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#8 {main}
+2017-09-04 17:45:00 [127.0.0.1][-][-][info][application] $_POST = [
+    'id' => '3'
+    's' => '5'
+    'time' => '77'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SESSION = [
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => []
+    )
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1776'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/evaulation/next'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/evaulation/next'
+    'REMOTE_PORT' => '63476'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_LANTERN_VERSION' => '3.7.4'
+    'HTTP_REFERER' => 'http://sat.com/evaulation_test/3.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_ORIGIN' => 'http://sat.com'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'CONTENT_LENGTH' => '16'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518300.4886
+    'REQUEST_TIME' => 1504518300
+]
+2017-09-04 17:45:26 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:45:26 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63559'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.4'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518326.4426
+    'REQUEST_TIME' => 1504518326
+]
+2017-09-04 17:45:39 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\WWW\sat\modules\cn\controllers\EvaulationController.php:71
+Stack trace:
+#0 D:\WWW\sat\modules\cn\controllers\EvaulationController.php(71): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\WWW\\sat\\modu...', 71, Array)
+#1 [internal function]: app\modules\cn\controllers\EvaulationController->actionNext()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('next', Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/evaulation/n...', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#8 {main}
+2017-09-04 17:45:39 [127.0.0.1][-][-][info][application] $_POST = [
+    'id' => '3'
+    's' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SESSION = [
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => []
+    )
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/evaulation/next'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/evaulation/next'
+    'REMOTE_PORT' => '63580'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_LANTERN_VERSION' => '3.7.4'
+    'HTTP_REFERER' => 'http://sat.com/evaulation_test/3.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_ORIGIN' => 'http://sat.com'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'CONTENT_LENGTH' => '8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518339.1606
+    'REQUEST_TIME' => 1504518339
+]
+2017-09-04 17:46:00 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\WWW\sat\modules\cn\controllers\EvaulationController.php:71
+Stack trace:
+#0 D:\WWW\sat\modules\cn\controllers\EvaulationController.php(71): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\WWW\\sat\\modu...', 71, Array)
+#1 [internal function]: app\modules\cn\controllers\EvaulationController->actionNext()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('next', Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/evaulation/n...', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#8 {main}
+2017-09-04 17:46:00 [127.0.0.1][-][-][info][application] $_POST = [
+    'id' => '3'
+    's' => '3'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SESSION = [
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => []
+    )
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/evaulation/next'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/evaulation/next'
+    'REMOTE_PORT' => '63620'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_LANTERN_VERSION' => '3.7.4'
+    'HTTP_REFERER' => 'http://sat.com/evaulation_test/3.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_ORIGIN' => 'http://sat.com'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'CONTENT_LENGTH' => '8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518360.8866
+    'REQUEST_TIME' => 1504518360
+]
+2017-09-04 17:46:22 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\WWW\sat\modules\cn\controllers\EvaulationController.php:71
+Stack trace:
+#0 D:\WWW\sat\modules\cn\controllers\EvaulationController.php(71): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\WWW\\sat\\modu...', 71, Array)
+#1 [internal function]: app\modules\cn\controllers\EvaulationController->actionNext()
+#2 D:\WWW\sat\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\WWW\sat\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('next', Array)
+#5 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/evaulation/n...', Array)
+#6 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#8 {main}
+2017-09-04 17:46:22 [127.0.0.1][-][-][info][application] $_POST = [
+    'id' => '3'
+    's' => '5'
+    'time' => '52'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SESSION = [
+    'answer' => app\libs\KeepAnswer#1
+    (
+        [item] => []
+    )
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/evaulation/next'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/evaulation/next'
+    'REMOTE_PORT' => '63665'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_LANTERN_VERSION' => '3.7.4'
+    'HTTP_REFERER' => 'http://sat.com/evaulation_test/3.html'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_ORIGIN' => 'http://sat.com'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'CONTENT_LENGTH' => '16'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518382.9266
+    'REQUEST_TIME' => 1504518382
+]
+2017-09-04 17:46:33 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:46:33 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63736'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518393.7296
+    'REQUEST_TIME' => 1504518393
+]
+2017-09-04 17:46:36 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:46:36 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63737'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518396.3436
+    'REQUEST_TIME' => 1504518396
+]
+2017-09-04 17:47:50 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "cn/css/bootstrap.min.css.map".' in D:\WWW\sat\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('cn/css/bootstra...', Array)
+#1 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\sat\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\sat\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\sat\web\index.php(28): yii\base\Application->run()
+#2 {main}
+2017-09-04 17:47:50 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'iov7kaj48unj65hlqc9kbffks1'
+    'uid' => ''
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\soft-install\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1824'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/cn/css/bootstrap.min.css.map'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/cn/css/bootstrap.min.css.map'
+    'REMOTE_PORT' => '63889'
+    'SCRIPT_FILENAME' => 'D:/WWW/sat/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW/sat/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'sat.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_X_LANTERN_VERSION' => '3.7.4'
+    'HTTP_PROXY_CONNECTION' => 'keep-alive'
+    'HTTP_COOKIE' => 'PHPSESSID=iov7kaj48unj65hlqc9kbffks1; uid='
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+    'HTTP_HOST' => 'sat.com'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504518470.6386
+    'REQUEST_TIME' => 1504518470
+]
