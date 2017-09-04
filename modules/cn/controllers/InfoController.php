@@ -32,6 +32,8 @@ class InfoController extends Controller
         }elseif ($cate == 's') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='高分经验'")->queryOne();
             $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='高分经验' $order limit $offset,$pagesize")->queryAll();
+        }else{
+            return $this->render('/sat/surprise');
         }
         $count = $count['count'];
         if ($cate != false) {

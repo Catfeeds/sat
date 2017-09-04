@@ -99,7 +99,10 @@ function lineNum(){
         var line = '';
         if (subName == 'Reading') {
             for (var j=1;j<=tNum;j++){
-                console.log(j);
+//<<<<<<< HEAD
+//                console.log(j);
+//=======
+//>>>>>>> master
                 if (j%5 == 0){
                     line += '<p>'+j+'</p>';
                 } else {
