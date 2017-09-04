@@ -22,7 +22,7 @@
             <p>题目来源：精选题库</p>
             <p>题目难度：800分以下</p>
             <p>测试学员英语基础，词汇语句的运用，阅读理解，数学词汇和基础</p>
-<!--            <a href="--><?php //echo $data[0]!=false?'evaulation_notice/'.$data[0]['id'].'.html':'#'?><!--">开始测试</a>-->
+            <a href="<?php echo $data[0]!=false?'evaulation_notice/'.$data[0]['id'].'.html':'#'?>">开始测试</a>
           </div>
         </div>
       </li>
