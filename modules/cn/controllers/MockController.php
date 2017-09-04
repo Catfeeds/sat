@@ -27,60 +27,77 @@ class MockController extends Controller
     $write=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='writing' order by r.score DESC limit 10")->queryAll();
     return $this->render('index', ['data' => $data, 'read'=>$read,'write'=>$write,'og' => $og, 'princeton' => $princeton, 'kaplan' => $kaplan, 'barron' => $barron,'score'=>$score]);
   }
-  // 注意事项的页面
-  public function actionNotice()
-  {
-    $this->layout = 'cn1.php';
-    $tid = Yii::$app->request->get('tid');
-    $uid = Yii::$app->session->get('uid','');
-    $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
-    $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
-    if($uid==false && $isLogin['isLogin']==1){
-      echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
-      die;
+    // 注意事项的页面
+    public function actionNotice()
+    {
+        $this->layout = 'cn1.php';
+        $tid = Yii::$app->request->get('tid');
+        $uid = Yii::$app->session->get('uid','');
+        if(is_numeric($tid)){
+            $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
+            $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
+/*            if($uid==false){
+//                echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+//                die;
+//            }
+*/
+            $major = Yii::$app->request->get('m', '');
+            if(isset($_SESSION['answer'])){
+                unset($_SESSION['answer']);
+            }
+            $_SESSION['part']=$major;
+            return $this->render('mock_notice', ['tid' => $tid, 'major' => $major]);
+        }else{
+            $this->layout = 'cn.php';
+            return $this->render('/sat/surprise');
+        }
+
     }
-    $major = Yii::$app->request->get('m', '');
-    if(isset($_SESSION['answer'])){
-      unset($_SESSION['answer']);
-    }
-    $_SESSION['part']=$major;
-    return $this->render('mock_notice', ['tid' => $tid, 'major' => $major]);
-  }
-  // 开始模考功能，无qid取第一道题，有qid取题目详情
-  public function actionDetails()
-  {
-    session_start();
-    $this->layout = 'cn1.php';
-    $major = Yii::$app->request->get('m', '');
-    $id = Yii::$app->request->get('tid');
-    $qid = Yii::$app->request->get('qid', '');
-    $a = KeepAnswer::getCat();
-    $count = $a->Gettype();
-    if ($major != false) {
-      if ($major == 'Math') {
-        $major = '(major="Math1" or major="Math2")';
-        $where = "where tpId=" . $id . " and $major";
-      } else {
-        $where = "where tpId=" . $id . " and major='$major'";
-      }
-      $section = Yii::$app->db->createCommand("select section from {{%questions}} $where order by section asc limit 1")->queryOne();
-      if($section['section'] ==false) {
-        echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
-        die;
-      }
-    } else {
-      $section['section'] = 1;
-    }
-    if (!$qid) {
-      $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
-    }elseif($qid=='undefined') {
-      unset($_SESSION['answer']);unset($_SESSION['tid']);
-      echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
-      die;
-    }else{
-      // 有qid的时候直接根据qid取
-      $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where q.id=" . $qid)->queryOne();
-    }
+
+    // 开始模考功能，无qid取第一道题，有qid取题目详情
+    public function actionDetails()
+    {
+        session_start();
+        $this->layout = 'cn1.php';
+        $major = Yii::$app->request->get('m', '');
+        $id = Yii::$app->request->get('tid');
+        $qid = Yii::$app->request->get('qid', '');
+        $a = KeepAnswer::getCat();
+        $count = $a->Gettype();
+        if(!is_numeric($id)){
+            $this->layout="cn.php";
+            return $this->render('/sat/surprise');
+        }
+        if ($major != false) {
+            if ($major == 'Math') {
+                $major = '(major="Math1" or major="Math2")';
+                $where = "where tpId=" . $id . " and $major";
+            } else {
+                $where = "where tpId=" . $id . " and major='$major'";
+            }
+            $section = Yii::$app->db->createCommand("select section from {{%questions}} $where order by section asc limit 1")->queryOne();
+          if($section['section'] ==false) {
+              echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
+              die;
+          }
+        } else {
+             $section['section'] = 1;
+        }
+        if (!$qid) {
+            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
+        }elseif($qid=='undefined') {
+            unset($_SESSION['answer']);unset($_SESSION['tid']);
+            echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
+            die;
+        }else{
+            // 有qid的时候直接根据qid取
+            if(is_numeric($qid)){
+                $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where q.id=" . $qid)->queryOne();
+            }else{
+                $this->layout="cn.php";
+                return $this->render('/sat/surprise');
+            }
+        }
     if($data==false){
       echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";die;
     }

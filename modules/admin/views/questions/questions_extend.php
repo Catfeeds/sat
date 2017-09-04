@@ -35,7 +35,7 @@
 
             <span>描&nbsp;&nbsp;&nbsp;&nbsp;述:</span>
             <span>
-                <textarea  type="text/plain" name="details"   style="width:500px;height:300px;" ><?php echo isset($data['details'])? $data['details']:''?></textarea>
+                <textarea id="details" type="text/plain" name="details"   style="width:500px;height:300px;" ><?php echo isset($data['details'])? $data['details']:''?></textarea>
             </span>
             </br>
 
@@ -52,4 +52,5 @@
 <script>
     //实例化编辑器
     var ue = UE.getEditor('editor');
+    var de = UE.getEditor('details');
 </script>

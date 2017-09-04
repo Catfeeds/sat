@@ -21,6 +21,9 @@ class ExerciseController extends Controller
 
         $model = new Questions();
         $data = $model->data();
+        if($data=='error'){
+            return $this->render('/sat/surprise');
+        }
         $str = $data['str'];
         unset($data['str']);
         $arr = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 18")->queryAll();

@@ -57,13 +57,11 @@ class EvaulationController extends Controller
         }
 //        var_dump($data);die;
         return $this->render("subject", ['data' => $data]);
-//        return $this->render("subject");
     }
 
     // 下一小节
     public function actionNext()
     {
-
         // 最后一次提交也将tid 存入session中
         $s      = Yii::$app->request->post('s',1);
         $tid    = Yii::$app->request->post('id');
@@ -74,10 +72,13 @@ class EvaulationController extends Controller
             $re      = $a->addPro($v[0], $v[1],30);
         }
         $time   = Yii::$app->request->post('time','1');
-        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . ($s+1) . "   and tpId=$tid order by q.number")->queryAll();
-        if($data==false){
-            echo die(json_encode('rep'));
+        $data['data'] = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . ($s+1) . "   and tpId=$tid order by q.number")->queryAll();
+        if($data['data']==false){
+            $res['code']=0;
+            $res['message']='没有更多的章节了！';
+            echo die(json_encode('res'));
         }
+        $data['code']=1;
        echo die(json_encode($data));
     }
 
@@ -145,29 +146,31 @@ class EvaulationController extends Controller
                 }
             }
 
-            $res = $this->Show($uid, '');
+            $res = $this->Show('');
         }else{
 
-            $res = $this->Show($uid, $id);
+            $res = $this->Show($id);
         }
 
     }
 
     // 显示
     public function Show($id){
-        $uid = Yii::$app->request->get('uid');
+        $uid = Yii::$app->session->get('uid');
         if($id==false){
             $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
         }else{
             $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
         }
         if($data){
-//            $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
-//            $re         = array_merge($data, $score);
+            $re['Math']=$data['mathnum']*3;
+            $re['Reading']=$data['Reading']*3;
+            $re['Writing']=$data['Writing']*2;
+            $re['Vocabulary']=$data['score']-$re['Math']-$re['Reading']-$re['Writing'];
             $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
             $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
             $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
-            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
+            $suggest[''] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
             array_push($re,$suggest);
             return $re;
         }else{
