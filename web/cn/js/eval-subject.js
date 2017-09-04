@@ -42,7 +42,7 @@ $(function () {
       var ans = [];
       if (sec == 2) {
         var artInputL   = $('.article-input').length,
-          artSelectL  = $('.words-ul .work-question-part').length,
+          artSelectL  = $('.work-mk-cnt .work-question-part').length,
           artSelectS  = $('.work-select.active').length;
         for (var i=0; i<artInputL; i++) {
           if ($('.article-input').eq(i).val()) {
@@ -91,7 +91,7 @@ $(function () {
           return ans;
         }
       } else {
-        var long  = $('.words-ul .work-question-part').length,
+        var long  = $('.work-mk-cnt .work-question-part').length,
             short = $('.work-select.active').length;
         if (Number(short) < Number(long)) {
           alert('还有题目没做哦！');

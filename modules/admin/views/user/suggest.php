@@ -1,7 +1,7 @@
 <div class="span10">
     <a href="/admin/user/index">用户管理</a>>复习建议</br>
     <a href="/admin/user/suggest_edit">添加复习建议</a>
-    <table border="1"  width="800px">
+    <table border="1"  width="800px"  >
         <tr align="center">
             <th>id</th>
             <th>科目</th>
