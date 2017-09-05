@@ -13,13 +13,9 @@ class GetScore {
     大分数
     跨学科分数
     subscore
+    @$data== ((array)$_SESSION['answer'])['item']
     */
-//    public $number;
     public function Number($data){
-        // 获取session 里的答案与数据库的答案对比得到个数 number['math'],number['Reading']number['writing']number['math'],number['subscore'],
-        // 获取session里的数据并对比
-//        $data = ((array)$_SESSION['answer']);
-//        $data = $data['item'];
         static $mathnum=0;
         static $readnum=0;
         static $writnum=0;

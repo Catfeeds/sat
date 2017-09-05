@@ -72,7 +72,6 @@ class EvaulationController extends Controller
         $time   = Yii::$app->request->post('time','');
         session_start();
         $_SESSION['tid']=$tid;
-//        $answer=array(array(51,'D'),array(52,'D'),array(53,'D'),array(54,'D'));
         static $item=array();
         foreach($answer as $k=>$v){
             $item[$v[0]][]=$answer[$k][0];
@@ -88,12 +87,13 @@ class EvaulationController extends Controller
         if($data['data']==false){
             $data['code']=0;
             $data['message']='没有更多的章节了！';
-            echo die(json_encode('data'));
+            echo die(json_encode($data));
         }
         $data['code']=1;
         $data['section']=$data['data'][0]['section'];
-//        $score=$this->actionScore($item);
-        var_dump($_SESSION);die;
+        $data['test']=$data['data'][0]['time'];
+//        $score=$this->actionScore($_SESSION['answer']['item']);
+//        var_dump($score);die;
        echo die(json_encode($data));
     }
 
@@ -109,6 +109,7 @@ class EvaulationController extends Controller
     public function actionScore($data)
     {
         $number=$this->actionNumber($data);
+//        var_dump($number);die;
         // 翻译的分数
         $translation= Yii::$app->db->createCommand("select id,answer from {{%questions}} where  major='Translation' and tpId=".Yii::$app->session->get('tid'))->queryAll();
         $count=0;
@@ -122,8 +123,9 @@ class EvaulationController extends Controller
             }
             $vocabulary+=$count>=6?3:($count>4?2:1);
         }
-        $vocabulary=$number['vocabularynum']+$vocabulary;
-        $score=$number['mathnum']*3+$number['readnum']*3+$number['writnum']*2+$vocabulary;
+        $vocabulary=$number['Vocabulary']+$vocabulary;
+        $score=$number['Math']*3+$number['Reading']*(30/($number['Reading']+$number['readerror']))+$number['Writing']*2+$vocabulary;
+//        var_dump(111111111);die;
         return $score;
 
     }
@@ -136,15 +138,16 @@ class EvaulationController extends Controller
         if($id==false){
             $data  = ((array)$_SESSION['answer']);
             $data  = $data['item'];// 获取用户的答题数据
+            $number=$this->actionNumber($data);
             $re['tpId']       = $_SESSION['tid'];
-            $re['readnum']    = $this->actionNumber($data)['Reading'];
-            $re['mathnum']    = $this->actionNumber($data)['Math'];
-            $re['writenum']   = $this->actionNumber($data)['Writing'];
+            $re['readnum']    = $number['Reading'];
+            $re['mathnum']    = $number['Math'];
+            $re['writenum']   = $number['Writing'];
             $re['part']       = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=".$re['tpId'])->queryOne()['name'].Yii::$app->db->createCommand("select time from {{%testpaper}} where id=".$re['tpId'])->queryOne()['time'];
             $re['uid']        = Yii::$app->session->get('uid');
-            $re['matherror']  = 10-$re['mathnum'] ;
-            $re['readerror']  = 10-$re['readnum'];
-            $re['writeerror'] = 10-$re['writenum'];
+            $re['matherror']  = $number['matherror'] ;
+            $re['readerror']  = $number['readerror'];
+            $re['writeerror'] = $number['writeerror'];
             $re['score']      = $this->actionScore($data);
             $re['date']       = time();
             $re['time']       = Yii::$app->session->get('time');// 做题总时间
@@ -170,7 +173,7 @@ class EvaulationController extends Controller
     }
 
     // 显示
-    public function Show($id){
+    public function Show($id=''){
         $uid = Yii::$app->session->get('uid');
         if($id==false){
             $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
@@ -179,7 +182,7 @@ class EvaulationController extends Controller
         }
         if($data){
             $re['Math']=$data['mathnum']*3;
-            $re['Reading']=$data['Reading']*3;
+            $re['Reading']=$data['Reading']*(30/($data['readerror']+$data['Reading']));
             $re['Writing']=$data['Writing']*2;
             $re['Vocabulary']=$data['score']-$re['Math']-$re['Reading']-$re['Writing'];
             $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
