@@ -16,6 +16,12 @@ use app\modules\cn\models\Report;
 
 class PersonController extends Controller
 {
+
+    function init()
+    {
+        parent::init();
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/../libs/ucenter/ucenter.php');
+    }
     public $layout = 'cn.php';
 
     public $enableCsrfValidation = false;
@@ -232,11 +238,11 @@ class PersonController extends Controller
     public function actionGetIntegral()
     {
         $session = Yii::$app->session;
-        $uid= $session->get('uid');
-//        if (!$uid) {
-//            $re = ['code' => 2];
-//            die(json_encode($re));
-//        }
+        $uid= $session->get('uid',14329);
+        if (!$uid) {
+            $re = ['code' => 2];
+            die(json_encode($re));
+        }
         $userData = $session->get('userData');
         $userData['userName']='lgw1492650262';
         $data = uc_user_integral($userData['userName']);
@@ -249,8 +255,4 @@ class PersonController extends Controller
         die(json_encode($data));
     }
 
-    // 积分管理
-    public function actionIntegral(){
-        return $this->render("integral");
-    }
 }

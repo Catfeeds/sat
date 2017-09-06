@@ -307,7 +307,7 @@ function uc_user_login($username, $password, $isuid = 0, $checkques = 0, $questi
 	return UC_CONNECT == 'mysql' ? $return : uc_unserialize($return);
 }
 
-function uc_user_integral($username,$limit="",$where="") {
+function uc_user_integral($username,$limit="limit 0,10",$where="") {
     $return = call_user_func(UC_API_FUNC, 'user', 'get_integral', array('where'=>$where,'username'=>$username,'limit' => $limit));
     return uc_unserialize($return);
 }
