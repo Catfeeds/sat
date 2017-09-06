@@ -8,6 +8,10 @@
                     <span>(初出茅庐)</span>
                 </p>
             </div>
+            <p class="lei-dou">
+                <span>雷豆：</span>
+                <span>233</span>
+            </p>
             <ul>
                 <li>做题数:<span><?php echo $crr['count'];?></span></li>
                 <li>正确率:<span><?php echo (sprintf("%.2f",$crr['correctRate']))?></span></li>

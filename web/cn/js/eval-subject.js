@@ -124,6 +124,7 @@ $(function () {
         }
       }
     },
+    //倒计时
     countTime : function () {
       var _this = this;
       var time = 120,
@@ -150,6 +151,7 @@ $(function () {
     checkZero : function (m) {
       return m<10? "0"+m : m;
     },
+    //小节模板
     wordTemplate : function(res){
       if (res.section == 2) {
         $('.work-mk-cnt').html('');
