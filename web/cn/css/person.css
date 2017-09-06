@@ -246,8 +246,10 @@
   -webkit-box-sizing: border-box;
 }
 .balance-left h1{
+  margin: 0;
   font-weight: normal;
   font-size: 60px;
+  color: rgb(54,178,251);
 }
 .balance-right{
   float:right;
@@ -296,7 +298,7 @@
 .balanceBottom h1 span{
   height: 29px;
   display: inline-block;
-  border-left: 9px #ff6702 solid;
+  border-left: 9px rgb(54,178,251) solid;
   margin-right: 5px;
   position: relative;
   top: 3px;

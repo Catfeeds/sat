@@ -46,7 +46,8 @@ var person = {
     this.onLoad();
   },
   onLoad : function() {
-    $.post('/cn/api/get-integral',{},function(re){
+    //预加载雷豆数量、详情
+    $.post('/cn/person/get-integral',{},function(re){
       $('.integral').html(re.integral);
       var str = '';
       for(i=0;i<re.details.length;i++){
