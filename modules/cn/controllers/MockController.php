@@ -143,6 +143,7 @@ class MockController extends Controller
     $_SESSION['uid'] = $uid;
     $_SESSION['tid'] = $tid;
     $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
+//   var_dump($_SESSION);die;
     echo die(json_encode($next));
   }
   // 做题中途离开

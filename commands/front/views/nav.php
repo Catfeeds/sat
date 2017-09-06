@@ -21,11 +21,12 @@
             </ul>
         </div>
         <div class="right-login pull-right">
-            <ul class="s-nav-login pull-right" id="loginul" <?php if(isset($user)){echo 'style="display:none"';}else{echo 'style="display:block"';}?>>
-                <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">登录</a></li>
-                <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
-            </ul>
-            <div class="login-after pull-right" <?php if(isset($user)){echo 'style="display:block"';}else{echo'style="display:none"';}?>>
+<!--            <ul class="s-nav-login pull-right" id="loginul" --><?php //if(isset($user)){echo 'style="display:none"';}else{echo 'style="display:block"';}?><!-->-->
+<!--                <li id="login"><a class="s-login-in" href="http://login.gmatonline.cn/cn/index?source=20&url=--><?php //echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">登录</a></li>-->
+<!--                <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=--><?php //echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?><!--">注册</a></li>-->
+<!--            </ul>-->
+<!--            <div class="login-after pull-right" --><?php //if(isset($user)){echo 'style="display:block"';}else{echo'style="display:none"';}?><!-->-->
+            <div class="login-after pull-right" >
                 <div class="login-after-show">
                     <img src="/cn/images/login.png" alt="头像">
                     <p>

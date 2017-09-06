@@ -107,7 +107,7 @@ $(function () {
           return ans;
         }
       } else {
-        var long  = $('.words-ul .work-question-part').length,
+        var long  = $('.work-mk-cnt .work-question-part').length,
             short = $('.work-select.active').length;
         if (Number(short) < Number(long)) {
           alert('还有题目没做哦！');
