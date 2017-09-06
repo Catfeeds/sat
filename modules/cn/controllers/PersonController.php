@@ -64,7 +64,6 @@ class PersonController extends Controller
         $data = array();
         $n = 0;
       }
-//        var_dump($data);die;
       return $this->render('person_exercise', ['data' => $data, 'crr' => $crr, 'n' => $n]);
     }else{
       echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
@@ -82,6 +81,22 @@ class PersonController extends Controller
         $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
       }
       return $this->render('person_mock', ['arr' => $arr]);
+    }else{
+      echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+      die;
+    }
+  }
+  public function actionBeans()
+  {
+    $uid = Yii::$app->session->get('uid');
+    $uid=14329;
+    if($uid){
+      $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
+      $model = new Format();
+      foreach ($arr as $k => $v) {
+        $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+      }
+      return $this->render('person_beans', ['arr' => $arr]);
     }else{
       echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
       die;

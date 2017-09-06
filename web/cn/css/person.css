@@ -45,6 +45,10 @@
   font-size: 16px;
   color: #fff;
 }
+.person-wrap .lei-dou span {
+  font-size: 16px;
+  color: #fff;
+}
 .person-title>ul {
   margin-top: 20px;
   font-size: 0;
@@ -225,4 +229,87 @@
 .person-mock .mock-look .mock-record:hover {
   background-color: #999;
   color: #fff;
+}
+/*
+  雷豆管理
+*/
+.balance-left{
+  width: 190px;
+  height: 134px;
+  float: left;
+  border-radius: 8px;
+  border: 2px #dedede dashed;
+  text-align: center;
+  padding-top: 23px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.balance-left h1{
+  font-weight: normal;
+  font-size: 60px;
+}
+.balance-right{
+  float:right;
+  margin-top: 60px;
+}
+.balance-right input{
+  width: 196px;
+  height: 41px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: '微软雅黑';
+  font-size: 20px;
+}
+.balance-right input:first-child{
+  background: #7abc38;
+  margin-right: 30px;
+}
+.balance-right input:last-child{
+  background: #dd3b41;
+  margin-right: 10px;
+}
+.balanceTop table{
+  margin-top: 30px;
+  font-size: 14px;
+  color: #6c6c6c;
+  display: none;
+}
+.balanceTop table tr td,th{
+  padding: 10px 20px;
+}
+.balanceTop table tr th{
+  text-align: left;
+}
+.balanceBottom{
+  width: 100%;
+  margin-top: 78px;
+}
+.balanceBottom h1{
+  font-weight: normal;
+  border-bottom: 1px #eeeeee solid;
+  padding-left: 5px;
+  padding-bottom: 13px;
+  margin-bottom: 24px;
+}
+.balanceBottom h1 span{
+  height: 29px;
+  display: inline-block;
+  border-left: 9px #ff6702 solid;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.balanceBottom ul li{
+  margin-bottom: 35px;
+}
+.balanceBottom ul li p{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.balanceBottom ul li span{
+  font-size: 14px;
+  color: #2c2c2c;
 }

@@ -32,5 +32,10 @@
                 <i class="fa fa-file-text-o"></i>做题记录
             </a>
         </li>
+        <li <?php if(strpos($path,'beans')!==false) echo 'class="on"';?>>
+            <a href="/person_beans.html" >
+                <i class="fa fa-diamond"></i>雷豆管理
+            </a>
+        </li>
     </ul>
 </div>

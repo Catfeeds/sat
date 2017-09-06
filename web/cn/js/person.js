@@ -1,4 +1,6 @@
 $(function () {
+  person.init();
+
   var pos = location.href.split('_')[1].split('.')[0];
   var src = $('.per-src dd').filter('.on').data('val'),
     classify = $('.per-classify dd').filter('.on').data('val');
@@ -39,6 +41,31 @@ $(function () {
   })
 
 })
+var person = {
+  init : function () {
+    this.onLoad();
+  },
+  onLoad : function() {
+    $.post('/cn/api/get-integral',{},function(re){
+      $('.integral').html(re.integral);
+      var str = '';
+      for(i=0;i<re.details.length;i++){
+        str +='<tr>';
+        str +='<td>'+re.details[i].behavior+'</td>';
+        str +='<td>'+re.details[i].createTime+'</td>';
+        if(re.details[i].type == 1){
+          var type = '+'
+        }else{
+          var type = '-'
+        }
+        str +='<td>'+type+re.details[i].integral+'</td>';
+        str +='<td>'+re.details[i].behavior+'</td>';
+        str +='</tr>';
+      }
+      $('.integral_table').append(str);
+    },'json')
+  }
+}
 
 //练习
 function exer(src,classify,cas,p){
@@ -192,6 +219,10 @@ function collect(src,classify,p){
       });
     }
   })
+}
+//雷豆显示明细
+function showTable(o){
+  $(o).parents("div.balanceTop").find("div table").slideToggle();
 }
 
 //删除事件
