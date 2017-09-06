@@ -14,8 +14,16 @@ use app\modules\cn\models\Notes;
 
 class ExerciseController extends Controller
 {
+    function init()
+    {
+        parent::init();
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/../libs/ucenter/ucenter.php');
+    }
+
     public $layout = 'cn.php';
+
     public $enableCsrfValidation = false;
+
     public function actionIndex()
     {
 
@@ -37,6 +45,7 @@ class ExerciseController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $uid = Yii::$app->session->get('uid','');
+        $userData = Yii::$app->session->get('userData');
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
         /*需登录再做题
          $isLogin = Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=" . $data['tpId'])->queryOne();
@@ -60,6 +69,7 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis=$q->getReplyData($id);
+        uc_user_edit_integral($userData['userName'], 'SAT做题一道', 1, 2);
 //        var_dump($dis);die;
         return $this->render('exercise', ['data' => $data, 'dis'=>$dis ,'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 

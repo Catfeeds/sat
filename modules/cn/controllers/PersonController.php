@@ -19,6 +19,7 @@ class PersonController extends Controller
   public function actionCollect()
   {
     $uid = Yii::$app->session->get('uid');
+    $uid=14329;
     if($uid){
       $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
       $qid = ltrim($arr['qid'], ',');
@@ -36,6 +37,7 @@ class PersonController extends Controller
   public function actionExercise()
   {
     $uid = Yii::$app->session->get('uid');
+    $uid=14329;
     if($uid){
       $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
       if ($arr['notes'] != false) {
@@ -72,6 +74,7 @@ class PersonController extends Controller
   public function actionMock()
   {
     $uid = Yii::$app->session->get('uid');
+    $uid=14329;
     if($uid){
       $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
       $model = new Format();
@@ -87,6 +90,7 @@ class PersonController extends Controller
   public function actionColl()
   {
     $uid = Yii::$app->session->get('uid');
+    $uid=14329;
     $name = Yii::$app->request->post('src');
     $p = Yii::$app->request->post('p', '1');
     $major = Yii::$app->request->post('classify');
@@ -100,7 +104,7 @@ class PersonController extends Controller
   public function actionExer()
   {
     $uid = Yii::$app->session->get('uid');
-//        $uid = 222;
+    $uid=14329;
     $name = Yii::$app->request->post('src');
     $major = Yii::$app->request->post('classify');
     $error = Yii::$app->request->post('case');
@@ -117,6 +121,7 @@ class PersonController extends Controller
   public function actionMo()
   {
     $uid = Yii::$app->session->get('uid');
+    $uid=14329;
     $src = Yii::$app->request->post('src');
     $type = Yii::$app->request->post('type');
     $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
@@ -169,6 +174,7 @@ class PersonController extends Controller
   public function actionRemoved()
   {
     $uid = Yii::$app->session->get('uid');
+    $uid=14329;
     $id = Yii::$app->request->post('id');
     $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
     if ($arr['notes'] != false) {
