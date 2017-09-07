@@ -133,42 +133,45 @@ class EvaulationController extends Controller
     // 测评报告
     public function actionReport()
     {
-        $id = Yii::$app->request->get('id','');
-        $uid = Yii::$app->session->get('uid','');
-        if($id==false){
-            $data  = ((array)$_SESSION['answer']);
-            $data  = $data['item'];// 获取用户的答题数据
-            $number=$this->actionNumber($data);
-            $re['tpId']       = $_SESSION['tid'];
-            $re['readnum']    = $number['Reading'];
-            $re['mathnum']    = $number['Math'];
-            $re['writenum']   = $number['Writing'];
-            $re['part']       = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=".$re['tpId'])->queryOne()['name'].Yii::$app->db->createCommand("select time from {{%testpaper}} where id=".$re['tpId'])->queryOne()['time'];
-            $re['uid']        = Yii::$app->session->get('uid');
-            $re['matherror']  = $number['matherror'] ;
-            $re['readerror']  = $number['readerror'];
-            $re['writeerror'] = $number['writeerror'];
-            $re['score']      = $this->actionScore($data);
-            $re['date']       = time();
-            $re['time']       = Yii::$app->session->get('time');// 做题总时间
-            if ($uid) {
-                // 将答案组合成字符串
-                $format = new Format();
-                $re['answer'] = $format->arrToStr($data);
-                if ($re['answer'] != false && $re['time'] != false) {
-                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-                    if ($res) {
-                        unset($_SESSION['answer']);
-                        unset($_SESSION['tid']);
-                    }//入库完成
-                }
-            }
-
-            $res = $this->Show('');
-        }else{
-
-            $res = $this->Show($id);
-        }
+        $this->layout = 'cn.php';
+//        $id = Yii::$app->request->get('id','');
+//        $uid = Yii::$app->session->get('uid','');
+//        if($id==false){
+//            $data  = ((array)$_SESSION['answer']);
+//            $data  = $data['item'];// 获取用户的答题数据
+//            $number=$this->actionNumber($data);
+//            $re['tpId']       = $_SESSION['tid'];
+//            $re['readnum']    = $number['Reading'];
+//            $re['mathnum']    = $number['Math'];
+//            $re['writenum']   = $number['Writing'];
+//            $re['part']       = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=".$re['tpId'])->queryOne()['name'].Yii::$app->db->createCommand("select time from {{%testpaper}} where id=".$re['tpId'])->queryOne()['time'];
+//            $re['uid']        = Yii::$app->session->get('uid');
+//            $re['matherror']  = $number['matherror'] ;
+//            $re['readerror']  = $number['readerror'];
+//            $re['writeerror'] = $number['writeerror'];
+//            $re['score']      = $this->actionScore($data);
+//            $re['date']       = time();
+//            $re['time']       = Yii::$app->session->get('time');// 做题总时间
+//            if ($uid) {
+//                // 将答案组合成字符串
+//                $format = new Format();
+//                $re['answer'] = $format->arrToStr($data);
+//                if ($re['answer'] != false && $re['time'] != false) {
+//                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+//                    if ($res) {
+//                        unset($_SESSION['answer']);
+//                        unset($_SESSION['tid']);
+//                    }//入库完成
+//                }
+//            }
+//
+//            $res = $this->Show('');
+//        }else{
+//
+//            $res = $this->Show($id);
+//        }
+//        return $this->render("report", ['data' => $data]);
+        return $this->render("report");
 
     }
 
