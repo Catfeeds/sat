@@ -8,7 +8,7 @@
   <div class="work-mk-top container">
     <div class="work-top-cnt row">
       <p class="work-title-pos col-lg-2 col-md-2"></p>
-      <h1 class="work-main-title col-lg-8 col-md-8"><?php echo isset($data[0])&&$data[0]!=false?$data[0]['name'].$data[0]['time']:''?>--
+      <h1 class="work-main-title col-lg-8 col-md-8"><strong><?php echo isset($data[0])&&$data[0]!=false?$data[0]['name'].$data[0]['time']:''?></strong><b> --</b>
         <span id="secNum" data-id="<?php echo isset($data[0])&&$data[0]!=false?$data[0]['tid']:''?>" data-sec="<?php echo isset($data[0])&&$data[0]!=false?$data[0]['section']:''?>">Section<?php echo isset($data[0])&&$data[0]!=false?$data[0]['section']:''?></span><b>:</b><span id="secName"><?php echo isset($data[0])&&$data[0]!=false?$data[0]['major']:''?></span>
       </h1>
     </div>

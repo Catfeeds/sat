@@ -49,6 +49,7 @@ var person = {
     //预加载雷豆数量、详情
     $.post('/cn/person/get-integral',{},function(re){
       $('.integral').html(re.integral);
+      $('.lei-dou span:eq(1)').html(re.integral);
       var str = '';
       for(i=0;i<re.details.length;i++){
         str +='<tr>';

@@ -6,7 +6,7 @@ $(function () {
     },
     bindEvent: function () {
       var _this = this;
-      //选择题点击事件
+      //选择题点击效果
       $('.work-mk-cnt').on('click','.work-que-wrap', function () {
         $(this).siblings().find('.work-select').removeClass('active');
         $(this).find('.work-select').addClass('active');
@@ -14,7 +14,8 @@ $(function () {
       //下一小节点击事件
       $('.work-next-icon').click(function () {
         var sec = $('#secNum').attr('data-sec'),//第几小节
-            id = $('#secNum').attr('data-id');//试卷id
+            id = $('#secNum').attr('data-id'),//试卷id
+            name = $('.work-main-title strong').html();//试卷名称
         if (sec == 5) {
           var time = sessionStorage.getItem('t');
         }
@@ -24,7 +25,7 @@ $(function () {
           data: {
             id    : id,
             s     : sec,
-            ans   : _this.answer(sec),
+            ans   : _this.answer(sec,name),
             time  : time
           },
           dataType : 'json',
@@ -47,13 +48,16 @@ $(function () {
         $('.work-shade').hide();
         $('.quit-wrap').hide();
       });
+      //退出测评
       $('.quit-wrap .exit-out').click(function(){
         window.location.href = '/evaulation.html';
       })
     },
-    answer : function (sec) {
+    //获取答案
+    answer : function (sec,name) {
       var ans = [];
-      if (sec == 2) {
+      //第二小节文法答案
+      if ((sec == 2) && (name == '测评初级卷')) {
         var artInputL   = $('.article-input').length,
           artSelectL  = $('.work-mk-cnt .work-question-part').length,
           artSelectS  = $('.work-select.active').length;
@@ -66,7 +70,6 @@ $(function () {
           alert('还有题目没做哦！');
         } else {
           var artNum = Number(artInputL) + Number(artSelectL);
-          console.log(artNum);
           for (var i=0; i<artNum; i++) {
             ans[i] = new Array();
             if (i < artInputL) {
@@ -77,16 +80,16 @@ $(function () {
             }
             if (i >= artInputL){
               for (var j=0; j<1; j++) {
-                console.log(i)
                 ans[i].push($('.work-select.active').eq(i-artInputL).parent().parent().attr('data-pid'));
                 ans[i].push($('.work-select.active').eq(i-artInputL).attr('data-id'));
               }
             }
           }
-          console.log(ans);
           return ans;
         }
-      } else if (sec == 3) {
+      }
+      //第三小节翻译答案
+      else if (sec == 3) {
         var sentenceL = $('.translate-ans').length;
         for (var i=0; i<sentenceL; i++) {
           if ($('.translate-ans').eq(i).val()) {
@@ -103,10 +106,11 @@ $(function () {
               ans[i].push($('.translate-ans').eq(i).val());
             }
           }
-          console.log(ans);
           return ans;
         }
-      } else {
+      }
+      //第一、二、四、五小节（单词、中级文法、高级文法、阅读、数学）答案
+      else {
         var long  = $('.work-mk-cnt .work-question-part').length,
             short = $('.work-select.active').length;
         if (Number(short) < Number(long)) {
@@ -119,7 +123,6 @@ $(function () {
               ans[i].push($('.work-select.active').eq(i).attr('data-id'));
             }
           }
-          console.log(ans);
           return ans;
         }
       }
@@ -153,7 +156,8 @@ $(function () {
     },
     //小节模板
     wordTemplate : function(res){
-      if (res.section == 2) {
+      //第二小节（初级卷--文法）
+      if ((res.section == 2) && (res.test == '初级卷')) {
         $('.work-mk-cnt').html('');
         var div = '';
         div+= "<div class='work-wrap-left pull-left'>"+
@@ -204,8 +208,85 @@ $(function () {
         $('#secNum').html('section'+res.data[0]['section']);
         $('#secNum').attr('data-sec',res.data[0]['section']);
         $('#secName').html(res.data[0]['major']);
+        $('.work-main-title strong').html("测评"+res.test);
         $('.work-mk-cnt').html(div);
-      } else if (res.section == 3) {
+      }
+      //第二小节（中级卷--文法）
+      else if ((res.section == 2) && (res.test == '中级卷')) {
+        $('.work-mk-cnt').html('');
+        var div = '';
+        div+="<div class='work-wrap-left pull-left'>"+
+          "<ul class='words-ul'>";
+        $.each(res.data, function (i,data) {
+          if (i<=3) {
+            div+="<li class='work-question-part'>"+
+              "<div class='clearfix'>"+
+              "<span class='num pull-left'>"+ (i+1) +".</span>"+
+              "<div class='question pull-left'>"+ data['content'] +"</div>"+
+              "</div>"+
+              "<ul class='work-que-list' data-pid='"+ data['qid'] +"'>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='A'>A</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='B'>B</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='C'>C</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='D'>D</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "</ul>"+
+              "</li>";
+          }
+        });
+        div+="</ul>"+
+          "</div>"+
+          "<div class='work-wrap-right pull-right'>"+
+          "<ul class='words-ul'>";
+        $.each(res.data, function (i,data) {
+          if (i>3) {
+            div+="<li class='work-question-part'>"+
+              "<div class='clearfix'>"+
+              "<span class='num pull-left'>"+ (i+1) +".</span>"+
+              "<div class='question pull-left'>"+ data['content'] +"</div>"+
+              "</div>"+
+              "<ul class='work-que-list' data-pid='"+ data['qid'] +"'>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='A'>A</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='B'>B</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='C'>C</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "<li class='work-que-wrap clearfix'>"+
+              "<div class='work-select' data-id='D'>D</div>"+
+              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "</li>"+
+              "</ul>"+
+              "</li>";
+          }
+        })
+        div+=" </ul>"+
+          "</div>";
+        $('#secNum').html('section'+res.data[0]['section']);
+        $('#secNum').attr('data-sec',res.data[0]['section']);
+        $('#secName').html(res.data[0]['major']);
+        $('.work-main-title strong').html("测评"+res.test);
+        $('.work-mk-cnt').html(div);
+      }
+      //第三小节（翻译）模板
+      else if (res.section == 3) {
         $('.work-mk-cnt').html('');
         var div = '';
         div+= "<div class='work-wrap-left pull-left'>"+
@@ -237,8 +318,11 @@ $(function () {
         $('#secNum').html('section'+res.data[0]['section']);
         $('#secNum').attr('data-sec',res.data[0]['section']);
         $('#secName').html(res.data[0]['major']);
+        $('.work-main-title strong').html("测评"+res.test);
         $('.work-mk-cnt').html(div);
-        }else if (res.section == 4) {
+        }
+        //第四小节（阅读）
+        else if ((res.section == 4) || ((res.test == '高级卷') && (res.section == 2))) {
           $('.work-mk-cnt').html('');
           var div = '';
           div+="<div class='work-wrap-left pull-left'>"+
@@ -279,8 +363,11 @@ $(function () {
         $('#secNum').html('section'+res.data[0]['section']);
         $('#secNum').attr('data-sec',res.data[0]['section']);
         $('#secName').html(res.data[0]['major']);
+        $('.work-main-title strong').html("测评"+res.test);
         $('.work-mk-cnt').html(div);
-      } else {
+      }
+      //数学模板
+      else {
         $('.work-mk-cnt').html('');
         var div = '';
         div+="<div class='work-wrap-left pull-left'>"+
@@ -350,6 +437,7 @@ $(function () {
         $('#secNum').html('section'+res.data[0]['section']);
         $('#secNum').attr('data-sec',res.data[0]['section']);
         $('#secName').html(res.data[0]['major']);
+        $('.work-main-title strong').html("测评"+res.test);
         $('.work-mk-cnt').html(div);
       }
     }
