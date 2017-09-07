@@ -49,8 +49,10 @@ ul,ol,h1,h2,h3 {
 .eval-bnr>div i {
   font: 600 20px/20px simsun;
 }
-.score，
-.single {
+.score,
+.single,
+.language,
+.classes {
   margin: 40px 0;
 }
 
@@ -190,4 +192,76 @@ ul,ol,h1,h2,h3 {
   width: 340px;
   padding: 20px;
   font-size: 16px;
+}
+/*
+  整体语言情况分析
+*/
+.language {
+
+}
+.language .lang-img {
+  width: 416px;
+  height: 290px;
+  background: url("/cn/images/eval-report03.png") 0 0 no-repeat;
+}
+.language .lang-font {
+  width: 800px;
+  height: 290px;
+  padding: 90px 55px;
+  margin-left: -30px;
+  border: 1px solid #999;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 28px;
+}
+/*
+  报班建议
+*/
+.classes>ul>li {
+  float: left;
+  width: 330px;
+  height: 260px;
+  margin: 43px 45px 0 0;
+  border: 1px solid #ccc;
+}
+.classes>ul>li:last-child {
+  margin-right: 0;
+}
+.classes .classes-top {
+  width: 100%;
+  height: 85px;
+  padding-top: 15px;
+  text-align: center;
+  background-color: #30a7ed;
+  color: #fff;
+}
+.classes .classes-top>p {
+  color: #fff;
+}
+.classes .classes-font {
+  width: 100%;
+  padding: 50px 35px;
+}
+.classes .classes-font>a {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+.classes>ul>li:nth-child(2) {
+  width: 443px;
+  height: 351px;
+  margin-top: 0;
+  -webkit-box-shadow: 0 0 3px #666;
+  -moz-box-shadow: 0 0 3px #666;
+  box-shadow:  0 0 3px #666;
+}
+.classes>ul>li:nth-child(2) .classes-top {
+  height: 110px;
+  padding-top: 25px;
+}
+.classes>ul>li:nth-child(2) .classes-font {
+  padding: 85px 56px;
 }

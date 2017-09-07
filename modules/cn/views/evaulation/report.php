@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/cn/css/eval-report.css">
+<script src="/cn/js/eval-report.js"></script>
 <section class="s-w1200">
 <!--  广告图-->
   <div class="eval-bnr">
@@ -230,17 +231,52 @@
     <div class="title">
       <h1>你的整体语言情况分析</h1>
     </div>
-    
+    <div class="language-wrap clearfix">
+      <div class="lang-img fl"></div>
+      <div class="lang-font fl">
+        0~60分：哎呀，语言水平有些弱呀，题目理解起来是不是也有点吃力？现在最重要的是多背单词积累词汇量哦，建议除了背诵雷哥SAT备考词汇素材之外，整理所阅读文章的词汇，深度理解记忆，先把词汇这块提上来哦。
+      </div>
+    </div>
   </div>
 <!--  SAT报班建议-->
   <div class="classes">
     <div class="title">
       <h1>SAT报班建议</h1>
     </div>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
+    <ul class="clearfix">
+      <li>
+        <div class="classes-top">
+          <i class="fa fa-star"></i>
+          <p>0~60分</p>
+        </div>
+        <div class="classes-font">
+          <a href="#">雷哥SAT1V1 VIP</a>
+          <a href="#">雷哥SAT1V2 VIP</a>
+          <a href="#">雷哥SAT全能小班</a>
+        </div>
+      </li>
+      <li>
+        <div class="classes-top">
+          <i class="fa fa-star"></i>
+          <p>60~90分</p>
+        </div>
+        <div class="classes-font">
+          <a href="#">雷哥SAT1V1 VIP</a>
+          <a href="#">雷哥SAT1V2 VIP</a>
+          <a href="#">雷哥SAT全能小班</a>
+        </div>
+      </li>
+      <li>
+        <div class="classes-top">
+          <i class="fa fa-star"></i>
+          <p>90~120分</p>
+        </div>
+        <div class="classes-font">
+          <a href="#">雷哥SAT1V1 VIP</a>
+          <a href="#">雷哥SAT1V2 VIP</a>
+          <a href="#">雷哥SAT全能小班</a>
+        </div>
+      </li>
     </ul>
   </div>
 </section>
