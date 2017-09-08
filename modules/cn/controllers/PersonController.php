@@ -99,6 +99,24 @@ class PersonController extends Controller
             die;
         }
     }
+//  个人测评
+  public function actionEval()
+  {
+    $uid = Yii::$app->session->get('uid');
+    $uid = 14329;
+    if ($uid) {
+      $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
+      $model = new Format();
+      foreach ($arr as $k => $v) {
+        $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+      }
+      return $this->render('person_eval', ['arr' => $arr]);
+    } else {
+      echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+      die;
+    }
+  }
+//  雷豆管理
   public function actionBeans()
   {
     $uid = Yii::$app->session->get('uid');

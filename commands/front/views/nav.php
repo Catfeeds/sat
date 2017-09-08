@@ -40,6 +40,8 @@
                         <li><a href="/person_collect.html">收藏题目</a></li>
                         <li><a href="/person_exercise.html">做题记录</a></li>
                         <li><a href="/person_mock.html">模考记录</a></li>
+                        <li><a href="/person_eval.html">测评记录</a></li>
+                        <li><a href="/person_beans.html">雷豆管理</a></li>
                         <li id="out"><a href="#"><span onclick="Out()">退出登录</span></a></li>
                     </ul>
                 </div>

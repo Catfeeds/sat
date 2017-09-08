@@ -2,8 +2,8 @@ $(function () {
   person.init();
 
   var pos = location.href.split('_')[1].split('.')[0];
-  var src = $('.per-src dd').filter('.on').data('val'),
-    classify = $('.per-classify dd').filter('.on').data('val');
+  var src = $('.per-src dd').filter('.on').data('val'),//题目来源
+      classify = $('.per-classify dd').filter('.on').data('val');//题目分类
   if (pos == 'exercise') {
     var cas = $('.per-case dd').filter('.on').data('val');
     exer('all','all','all',1);
@@ -16,12 +16,12 @@ $(function () {
 
   //条件筛选
   $('.person-cnt dl').on('click','dd',function() {
-    $('.person-cnt ul').html('');
+    $('.person-cnt>ul').html('');
     var _this=  $(this);
     _this.siblings().removeClass('on');
     _this.addClass('on');
-    var cls = _this.parent().attr('class'),
-      val = _this.data('val');
+    var cls = _this.parent().attr('class'),//父元素的类名
+        val = _this.data('val');//当前元素的项
     if (cls == 'per-src') {
       src = val;
     } else if(cls == 'per-classify') {
@@ -37,9 +37,10 @@ $(function () {
       mock(src,type,1);
     } else if (pos == 'collect') {
       collect(src,classify,1);
+    }else if (pos == 'eval') {
+      person.eval('all','all',1);
     }
   })
-
 })
 var person = {
   init : function () {
@@ -66,6 +67,56 @@ var person = {
       }
       $('.integral_table').append(str);
     },'json')
+  },
+  //测评记录
+  eval : function (src,t,p) {
+    $.ajax({
+      url: '',
+      type: 'post',
+      data: {
+        
+      },
+      dataType : 'json',
+      success : function (data) {
+        var li = '';
+        tp = data.totalPage;
+        if (data.list == undefined) {
+          data.list = 0;
+          tp = 1;
+        }
+        $.each(data.list, function (i,array) {
+          li+="<li class='clearfix'>"+
+            "<div class='mock-look pull-right'>";
+          if (array['part'] == 'all'){
+            li+="<a href='/mock_details?tid="+array['tpId']+"' class='mock-again'>重新模考</a>";
+          }else {
+            li+="<a href='/mock_details?m="+array['part']+"&tid="+array['tpId']+"' class='mock-again'>重新模考</a>";
+          }
+          li+="<a href='/report/"+array['id']+".html' target='_blank' class='mock-record'>查看报告</a>"+
+            "</div>"+
+            "<h3><i class='mock-delete fa fa-trash' onclick='mockDel(this)' data-id='"+array['id']+"'></i>"+array['name']+"</h3>"+
+            "<div class='mock-details'>"+
+            "<p>耗时：<span>"+array['rtime']+"s</span></p>"+
+            "<p>正确率: <span>"+Math.round((Number(array['mathnum'])+Number(array['readnum'])+Number(array['writenum']))/154*10000)/100+"%</span></p>"+
+            "<p>完成时间: <span>"+new Date(parseInt(array['date'])*1000).toLocaleString()+"</span></p>"+
+            "</div>"+
+            "</li>"
+        })
+        $('.person-mock').html(li);
+      },
+      complete: function () {
+        $.jqPaginator('.pagination', {
+          totalPages: tp,
+          visiblePages: 6,
+          currentPage: p,
+          onPageChange: function (num,type) {
+            if(type == 'change'){
+              mock(src,t,num);
+            }
+          }
+        });
+      }
+    })
   }
 }
 
