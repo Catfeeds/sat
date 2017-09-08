@@ -72,6 +72,7 @@ class EvaulationController extends Controller
         $time   = Yii::$app->request->post('time','');
         session_start();
         $_SESSION['tid']=$tid;
+        $_SESSION['time']=$time;
         static $item=array();
         foreach($answer as $k=>$v){
             $item[$v[0]][]=$answer[$k][0];
@@ -125,7 +126,6 @@ class EvaulationController extends Controller
         }
         $vocabulary=$number['Vocabulary']+$vocabulary;
         $score=$number['Math']*3+$number['Reading']*(30/($number['Reading']+$number['readerror']))+$number['Writing']*2+$vocabulary;
-//        var_dump(111111111);die;
         return $score;
 
     }
@@ -134,50 +134,74 @@ class EvaulationController extends Controller
     public function actionReport()
     {
         $this->layout = 'cn.php';
-//        $id = Yii::$app->request->get('id','');
-//        $uid = Yii::$app->session->get('uid','');
-//        if($id==false){
-//            $data  = ((array)$_SESSION['answer']);
-//            $data  = $data['item'];// 获取用户的答题数据
-//            $number=$this->actionNumber($data);
-//            $re['tpId']       = $_SESSION['tid'];
-//            $re['readnum']    = $number['Reading'];
-//            $re['mathnum']    = $number['Math'];
-//            $re['writenum']   = $number['Writing'];
-//            $re['part']       = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=".$re['tpId'])->queryOne()['name'].Yii::$app->db->createCommand("select time from {{%testpaper}} where id=".$re['tpId'])->queryOne()['time'];
-//            $re['uid']        = Yii::$app->session->get('uid');
-//            $re['matherror']  = $number['matherror'] ;
-//            $re['readerror']  = $number['readerror'];
-//            $re['writeerror'] = $number['writeerror'];
-//            $re['score']      = $this->actionScore($data);
-//            $re['date']       = time();
-//            $re['time']       = Yii::$app->session->get('time');// 做题总时间
-//            if ($uid) {
-//                // 将答案组合成字符串
-//                $format = new Format();
-//                $re['answer'] = $format->arrToStr($data);
-//                if ($re['answer'] != false && $re['time'] != false) {
-//                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-//                    if ($res) {
-//                        unset($_SESSION['answer']);
-//                        unset($_SESSION['tid']);
-//                    }//入库完成
-//                }
-//            }
-//
-//            $res = $this->Show('');
-//        }else{
-//
-//            $res = $this->Show($id);
-//        }
-//        return $this->render("report", ['data' => $data]);
-        return $this->render("report");
+        $id = Yii::$app->request->get('id','');
+        $uid = Yii::$app->session->get('uid','');
+        $uid = 11437;
+//        var_dump($_SESSION);die;
+        if(isset($_SESSION['answer']) && isset($_SESSION['tid'])){
+            $data  = ((array)$_SESSION['answer']);
+            $data  = $data['item'];// 获取用户的答题数据
+            $number=$this->actionNumber($data);
+            $re['tpId']       = $_SESSION['tid'];
+            $re['readnum']    = $number['Reading'];
+            $re['mathnum']    = $number['Math'];
+            $re['writenum']   = $number['Writing'];
+            $re['jumpnum']    = $number['Vocabulary'];// jumpnum字段来保存词汇正确个数
+            $re['part']       = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=".$re['tpId'])->queryOne()['name'].Yii::$app->db->createCommand("select time from {{%testpaper}} where id=".$re['tpId'])->queryOne()['time'];
+            $re['uid']        = Yii::$app->session->get('uid',21);
+            $re['matherror']  = $number['matherror'] ;
+            $re['readerror']  = $number['readerror'];
+            $re['writeerror'] = $number['writeerror'];
+            $re['score']      = $this->actionScore($data);
+            $re['date']       = time();
+            $re['time']       = Yii::$app->session->get('time');// 做题总时间
+//            var_dump($re);die;
+            $uid=111;
+            if ($uid) {
+                // 将答案组合成字符串
+                $format = new Format();
+                $re['answer'] = $format->arrToStr($data);
+                if ($re['answer'] != false && $re['time'] != false) {
+                    $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+//                    var_dump($res);die;
+                    if ($res) {
+                        unset($_SESSION['answer']);
+                        unset($_SESSION['tid']);
+                    }//入库完成
+                }
+            }
 
+            $res = $this->Show('');
+//            var_dump($res);die;
+        }else{
+            $res = $this->Show($id);
+        }
+//        $que =$this->Question($res['tpId'],$res['answer']);
+//        var_dump($que);die;
+//        return $this->render("report", ['res' => $res,'que'=>$que]);
+//        return $this->render("report");
+        if($res==false){
+            $data['code']=0;
+            $data['message']='没有评测报告';
+        }else{
+            $data=$res;
+            $data['code']=1;
+            $data['que']=$this->Question($data['report']['tpId'],$res['report']['answer']);
+            $data['win']=count(Yii::$app->db->createCommand("select id from {{%report}} where part='".$data['report']['part']."' and score<".$data['report']['score'])->queryOne());
+        }
+
+//        echo '<pre>';
+//        var_dump($data);
+//        echo '</pre>';
+//        die;
+        die(json_encode($data));
     }
 
     // 显示
     public function Show($id=''){
         $uid = Yii::$app->session->get('uid');
+        $uid = 21;
+
         if($id==false){
             $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
         }else{
@@ -185,18 +209,63 @@ class EvaulationController extends Controller
         }
         if($data){
             $re['Math']=$data['mathnum']*3;
-            $re['Reading']=$data['Reading']*(30/($data['readerror']+$data['Reading']));
-            $re['Writing']=$data['Writing']*2;
-            $re['Vocabulary']=$data['score']-$re['Math']-$re['Reading']-$re['Writing'];
-            $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
-            $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
-            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
-            $suggest[''] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
-            array_push($re,$suggest);
-            return $re;
+            $re['Reading']=$data['readnum']*(30/($data['readerror']+$data['readnum']));
+            $re['Writing']=$data['writenum']*2;
+            $re['Vocabulary']=$data['jumpnum'];
+            $re['Translation']=$data['score']-$re['Math']-$re['Reading']-$re['Writing']-$re['Vocabulary'];
+            $re['score']=$data['score'];
+            $suggest=$this->Suggest($data['tpId'],$re);
+//            array_push($re,$suggest);
+            $report['score']=$re;
+            $report['suggest']=$suggest;
+            $report['report']=$data;
+//            $re=array_merge($re,$data);
+            return $report;
         }else{
-            echo '<script>alert("还没有报告，赶紧做套模考题吧！");location.href="/mock.html"</script>';
+            echo '<script>alert("还没有报告，赶紧测评一下吧！");location.href="/evaulation.html"</script>';
             die;
         }
+    }
+    public function Suggest($tid,$re){
+        $data = Yii::$app->db->createCommand("select * from {{%testpaper}} where id=" . $tid)->queryOne();
+        if($data['time']=='初级卷'){
+            $models="Ping01";
+        }elseif($data['time']=='中级卷'){
+            $models="Ping02";
+        }elseif($data['time']=='高级卷'){
+            $models="Ping03";
+        }
+        $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='".$models."-Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='".$models."-Writing'")->queryOne();
+        $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='".$models."-Math'")->queryOne();
+        $suggest['Vocabulary'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='".$models."-Vocabulary'")->queryOne();
+        $suggest['Translation'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='".$models."-Translation'")->queryOne();
+        $suggest['All'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['score']  . "  and min<" . $re['Writing']." and major='".$models."-All'")->queryOne();
+        return $suggest;
+    }
+    public function Question($tid,$answer){
+
+        $s= Yii::$app->db->createCommand("select id,answer,section from {{%questions}} where tpId=$tid")->queryAll();
+            $arr = explode(';', $answer);
+            static $brr = array();
+            static $que =array();
+            // 获取做题的数据
+            foreach ($arr as $k => $v) {
+                $key = explode(',', $v)[0];
+                $brr[$key] = explode(',', $v);
+                $s= Yii::$app->db->createCommand("select id,answer,section from {{%questions}} where id=$key")->queryOne();
+                if($brr[$key][1]==$s['answer']){
+                    $que[$s['section']][$k][0]=1;
+                    $que[$s['section']][$k][1]=$s['id'];
+                }else{
+                    $que[$s['section']][$k][0]=0;
+                    $que[$s['section']][$k][1]=$s['id'];
+                }
+            }
+//        echo '<pre>';
+//            var_dump($que);
+//        echo '</pre>';
+//        die;
+        return $que;
     }
 }

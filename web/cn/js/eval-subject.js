@@ -34,7 +34,7 @@ $(function () {
               _this.wordTemplate(res);
               console.log(res);
             }else {
-              //window.location.href = 'http://www.baidu.com';
+              window.location.href = '/evaulation_report.html';
             }
           }
         })

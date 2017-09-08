@@ -31,7 +31,7 @@
                     <img src="/cn/images/login.png" alt="头像">
                     <p>
                         <span><?php echo isset($user)?($user['nickname']!=false?$user['nickname']:$user['username']):''?></span>
-                        <span>(初出茅庐)</span>
+                        <span>(<?php echo isset($_SESSION['level'])?Yii::$app->params['levelName'][$_SESSION['level']]:'初出茅庐'?>)</span>
                         <i class="fa fa-angle-down"></i>
                     </p>
                 </div>
@@ -40,6 +40,7 @@
                         <li><a href="/person_collect.html">收藏题目</a></li>
                         <li><a href="/person_exercise.html">做题记录</a></li>
                         <li><a href="/person_mock.html">模考记录</a></li>
+                        <li><a href="/person_beans.html">雷豆管理</a></li>
                         <li id="out"><a href="#"><span onclick="Out()">退出登录</span></a></li>
                     </ul>
                 </div>
