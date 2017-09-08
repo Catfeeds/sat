@@ -45,6 +45,9 @@ class MockController extends Controller
             if(isset($_SESSION['answer'])){
                 unset($_SESSION['answer']);
             }
+            if(isset($_SESSION['tid'])){
+                unset($_SESSION['tid']);
+            }
             $_SESSION['part']=$major;
             return $this->render('mock_notice', ['tid' => $tid, 'major' => $major]);
         }else{

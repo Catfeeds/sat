@@ -90,9 +90,9 @@ class ReportController extends Controller
                 die;
             }
         }
-        $suggest['Math'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Math'] . " and min<=" . $res['Math'] . " and major='Math'")->queryOne();
-        $suggest['Reading'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Reading'] . "  and min<=" . $res['Reading'] . " and major='Reading'")->queryOne();
-        $suggest['Writing'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Writing'] . "  and min<=" . $res['Writing'] . " and major='Writing'")->queryOne();
+        $suggest['Math'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Math'] . " and min<=" . $res['Math'] . " and major='Mock-Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Reading'] . "  and min<=" . $res['Reading'] . " and major='Mock-Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Writing'] . "  and min<=" . $res['Writing'] . " and major='Mock-Writing'")->queryOne();
         if ($res['part'] == 'all') {
             return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
         } else {
