@@ -99,23 +99,23 @@ class PersonController extends Controller
             die;
         }
     }
-//  个人测评
-  public function actionEval()
-  {
-    $uid = Yii::$app->session->get('uid');
-    $uid = 14329;
-    if ($uid) {
-      $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
-      $model = new Format();
-      foreach ($arr as $k => $v) {
-        $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
-      }
-      return $this->render('person_eval', ['arr' => $arr]);
-    } else {
-      echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
-      die;
-    }
-  }
+////  个人测评
+//  public function actionEval()
+//  {
+//    $uid = Yii::$app->session->get('uid');
+//    $uid = 14329;
+//    if ($uid) {
+//      $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
+//      $model = new Format();
+//      foreach ($arr as $k => $v) {
+//        $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+//      }
+//      return $this->render('person_eval', ['arr' => $arr]);
+//    } else {
+//      echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+//      die;
+//    }
+//  }
 //  雷豆管理
   public function actionBeans()
   {
@@ -271,6 +271,37 @@ class PersonController extends Controller
             $data['details'][$k]['createTime'] = date('Y-m-d', $v['createTime']);
         }
         die(json_encode($data));
+    }
+    public function actionEvaulation()
+    {
+        $uid = Yii::$app->session->get('uid');
+        $uid = 21;
+        if ($uid) {
+            $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '测评%'")->queryAll();
+            $model = new Format();
+            foreach ($arr as $k => $v) {
+                $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+            }
+            return $this->render('person_eval', ['arr' => $arr]);
+        } else {
+            echo " <script>alert('没有登录，无法查看个人中心'); location.href='/'</script>";
+            die;
+        }
+    }
+    public function actionEval()
+    {
+        $cate= Yii::$app->request->post('cate');
+        $uid = Yii::$app->session->get('uid');
+        $uid = 21;
+        if ($uid) {
+            $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%'")->queryAll();
+            $model = new Format();
+            foreach ($arr as $k => $v) {
+                $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
+            }
+
+        }
+        die(json_encode($arr));
     }
 
 }

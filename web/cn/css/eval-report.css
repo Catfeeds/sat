@@ -101,7 +101,7 @@ ul,ol,h1,h2,h3 {
 .score .score-table table tr:first-child {
   background-color: #30a7ed;
 }
-.score .score-table table tr:nth-child(3) {
+.score .score-table table tr.score-bc {
   background-color: #6ec4f6;
 }
 .score-time {

@@ -9,7 +9,6 @@ namespace app\libs;
 use yii;
 class GetScore {
     /*判断对错（各科的对错，跨学科对错个数，subscore对错个数）
-
     大分数
     跨学科分数
     subscore

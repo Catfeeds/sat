@@ -29,7 +29,7 @@ class ExerciseController extends Controller
 
         $model = new Questions();
         $data = $model->data();
-        if($data=='error'){
+        if ($data == 'error') {
             return $this->render('/sat/surprise');
         }
         $str = $data['str'];
@@ -44,34 +44,26 @@ class ExerciseController extends Controller
     public function actionExercise()
     {
         $id = Yii::$app->request->get('id');
-        $uid = Yii::$app->session->get('uid','');
+        $uid = Yii::$app->session->get('uid', '');
         $userData = Yii::$app->session->get('userData');
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
-        /*需登录再做题
-         $isLogin = Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=" . $data['tpId'])->queryOne();
-         if ($isLogin['isLogin'] == 1 && $uid == false) {
-            $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
-            echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
-            die;
-        }
-        */
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
         // 统计做题进程
         $major = $data['major'];
-        $q= new Questions();
-        $n=$q->Progress($major,$id,$data['section'],$data['tpId'],$data['essayId']);
+        $q = new Questions();
+        $n = $q->Progress($major, $id, $data['section'], $data['tpId'], $data['essayId']);
         $nextid = Yii::$app->db->createCommand("select id from {{%questions}} where id>" . $id . " and major= '$major' and section=" . $data['section'] . " and tpId=" . $data['tpId'] . " order by id asc limit 1")->queryOne();
         $upid = Yii::$app->db->createCommand("select id from {{%questions}} where id<" . $id . " and major='$major' and section=" . $data['section'] . " and tpId=" . $data['tpId'] . " order by id desc limit 1")->queryOne();
         // 查找题目是否收藏
-        $data['collection']= $q->isCollection($uid,$id);
+        $data['collection'] = $q->isCollection($uid, $id);
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
-        $dis=$q->getReplyData($id);
+        $dis = $q->getReplyData($id);
         uc_user_edit_integral($userData['userName'], 'SAT做题一道', 1, 2);
 //        var_dump($dis);die;
-        return $this->render('exercise', ['data' => $data, 'dis'=>$dis ,'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
+        return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
     }
 
@@ -124,48 +116,48 @@ class ExerciseController extends Controller
 
     public function actionDiscuss()
     {
-        $data['uid']        = Yii::$app->request->post('uId');
-        $data['qid']        = Yii::$app->request->post('qId');
-        $data['detail']     = strip_tags(Yii::$app->request->post('cnt'));
-        $data['pid']        = Yii::$app->request->post('pId');// 被回复的id
+        $data['uid'] = Yii::$app->request->post('uId');
+        $data['qid'] = Yii::$app->request->post('qId');
+        $data['detail'] = strip_tags(Yii::$app->request->post('cnt'));
+        $data['pid'] = Yii::$app->request->post('pId');// 被回复的id
         $data['createTime'] = time();
         //将获取的数据保存到数据库
-        if($data['uid']==false){
+        if ($data['uid'] == false) {
             $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
             echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
             die;
-        }else{
-            $arr = Yii::$app->db->createCommand("select nickname,username from  {{%user}} where uid=" .$data['uid'])->queryOne();
+        } else {
+            $arr = Yii::$app->db->createCommand("select nickname,username from  {{%user}} where uid=" . $data['uid'])->queryOne();
 //            var_dump($data['pid']);
-            if($data['detail']==false){
+            if ($data['detail'] == false) {
                 $res['code'] = 0;
-                $res['num']  = 3;
+                $res['num'] = 3;
                 $res['message'] = '请输入内容';
                 die(json_encode($res));
-            }else{
+            } else {
                 $re = Yii::$app->db->createCommand()->insert("{{%reply}}", $data)->execute();
-                $rid= (array)(Yii::$app->db->createCommand("SELECT LAST_INSERT_ID()")->queryOne());
-                $id=$rid['LAST_INSERT_ID()'];
-                if($re){
+                $rid = (array)(Yii::$app->db->createCommand("SELECT LAST_INSERT_ID()")->queryOne());
+                $id = $rid['LAST_INSERT_ID()'];
+                if ($re) {
                     $res['code'] = 1;
                     $res['message'] = '回复成功';
-                }else{
+                } else {
                     $res['code'] = 0;
                     $res['message'] = '回复失败，请重试！';
                 }
-                if($data['pid']==0){
-                    $res['num']=1;
-                    $res['pid']=0;
-                }else{
-                    $res['num']=2;
-                    $res['pid']=$data['pid'];
+                if ($data['pid'] == 0) {
+                    $res['num'] = 1;
+                    $res['pid'] = 0;
+                } else {
+                    $res['num'] = 2;
+                    $res['pid'] = $data['pid'];
                 }
-                $res['id']=$id;
-                $res['nickname']=$arr['nickname'];
-                $res['username']=$arr['username'];
-                $res['content']=$data['detail'] ;
-                $res['floor']=count(Yii::$app->db->createCommand("select id from  {{%reply}} where pid=0 and qid=".$data['qid'])->queryAll());
-                $res['time']=date('Y-m-d H:i:s',$data['createTime']);
+                $res['id'] = $id;
+                $res['nickname'] = $arr['nickname'];
+                $res['username'] = $arr['username'];
+                $res['content'] = $data['detail'];
+                $res['floor'] = count(Yii::$app->db->createCommand("select id from  {{%reply}} where pid=0 and qid=" . $data['qid'])->queryAll());
+                $res['time'] = date('Y-m-d H:i:s', $data['createTime']);
                 echo die(json_encode($res));
             }
         }
