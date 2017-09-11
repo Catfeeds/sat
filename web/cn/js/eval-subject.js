@@ -443,4 +443,11 @@ $(function () {
     }
   }
   sub.init();
+  //禁止复制以及右键
+  document.oncopy = function(){
+    return false;
+  }
+  document.oncontextmenu = function () {
+    return false;
+  };
 })

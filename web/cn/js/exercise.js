@@ -3,6 +3,13 @@ $(function() {
   $('.work-shade').height($(document).outerHeight());
   upTime();
   lineNum();
+  //禁止复制以及右键
+  document.oncopy = function(){
+    return false;
+  }
+  document.oncontextmenu = function () {
+    return false;
+  };
   $('.now-do').click(function () {
     $('.shade-cmn').hide();
   })

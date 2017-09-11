@@ -13,8 +13,9 @@
     <!--内容-->
     <div class="wrap">
       <ul class="score-top clearfix">
+        <li class="total">测评总分：<span>100</span>分</li>
         <li>总正确率<span>60</span>%</li>
-        <li>你击败了<span>5</span>人</li>
+        <li>你击败了<span><?php echo $data['win']?></span>人</li>
       </ul>
       <div class="score-cnt clearfix">
         <div class="score-img fl">
@@ -63,31 +64,41 @@
       <div class="box clearfix">
         <div class="box-left fl">
           <div class="single-score clearfix">
-            <p class="fl"><span>10</span>/20分</p>
+            <p class="fl"><span><?php echo $data['score']['Vocabulary']?></span>/10分</p>
             <p class="fl"><i class="fa fa-star"></i>词汇</p>
           </div>
           <ul class="single-num">
-            <li class="red"><a href="#">1</a></li>
-            <li class="green"><a href="#">2</a></li>
-            <li class="red"><a href="#">3</a></li>
-            <li class="green"><a href="#">4</a></li>
-            <li class="red"><a href="#">5</a></li>
-            <li class="green"><a href="#">6</a></li>
-            <li class="green"><a href="#">7</a></li>
-            <li class="red"><a href="#">8</a></li>
-            <li class="green"><a href="#">9</a></li>
-            <li class="green"><a href="#">10</a></li>
+            <?php foreach($data['que'][1] as $k=>$v){?>
+            <li class="<?php echo $v[0]==1?'green':'red'?>"><a href="/exercise_details/<?php echo $v[1]?>.html"><?php echo $k+1?></a></li>
+            <?php }?>
+<!--            <li class="green"><a href="#">2</a></li>-->
+<!--            <li class="red"><a href="#">3</a></li>-->
+<!--            <li class="green"><a href="#">4</a></li>-->
+<!--            <li class="red"><a href="#">5</a></li>-->
+<!--            <li class="green"><a href="#">6</a></li>-->
+<!--            <li class="green"><a href="#">7</a></li>-->
+<!--            <li class="red"><a href="#">8</a></li>-->
+<!--            <li class="green"><a href="#">9</a></li>-->
+<!--            <li class="green"><a href="#">10</a></li>-->
           </ul>
         </div>
         <div class="box-right fr">
           <p class="headline"><i class="fa fa-star"></i>你的词汇能力</p>
           <div class="advice-wrap clearfix">
             <div class="circle-wrap fr">
-              <p class="circle">0-5分</p>
-              <p>一般</p>
+              <?php if($data['score']['Vocabulary']<5){?>
+              <p class="circle">0-4分</p>
+                <p>一般</p>
+              <?php }elseif($data['score']['Vocabulary']>=5&&$data['score']['Vocabulary']<9){?>
+              <p class="circle">5-8分</p>
+              <p>良好</p>
+              <?php }else{?>
+              <p class="circle">9-10分</p>
+              <p>优秀</p>
+              <?php }?>
             </div>
             <div class="advice-cnt">
-              词汇能力有点弱呀，建议多花些时间丰富词汇量，整理每天所做阅读文章的词汇，多积累扩充词汇量，建议多背雷哥SAT的词汇书。
+              <?php echo $data['suggest']['Vocabulary']!=false?$data['suggest']['Vocabulary']:'无'?>
             </div>
           </div>
         </div>
@@ -96,31 +107,32 @@
       <div class="box clearfix">
         <div class="box-left fl">
           <div class="single-score clearfix">
-            <p class="fl"><span>10</span>/20分</p>
+            <p class="fl"><span><?php echo $data['score']['Writing']?></span>/20分</p>
             <p class="fl"><i class="fa fa-star"></i>语法</p>
           </div>
           <ul class="single-num">
-            <li class="red"><a href="#">1</a></li>
-            <li class="green"><a href="#">2</a></li>
-            <li class="red"><a href="#">3</a></li>
-            <li class="green"><a href="#">4</a></li>
-            <li class="red"><a href="#">5</a></li>
-            <li class="green"><a href="#">6</a></li>
-            <li class="green"><a href="#">7</a></li>
-            <li class="red"><a href="#">8</a></li>
-            <li class="green"><a href="#">9</a></li>
-            <li class="green"><a href="#">10</a></li>
+            <?php foreach($data['que'][2] as $k=>$v){?>
+              <li class="<?php echo $v[0]==1?'green':'red'?>"><a href="/exercise_details/<?php echo $v[1]?>.html"><?php echo $k+1?></a></li>
+            <?php }?>
           </ul>
         </div>
         <div class="box-right fr">
           <p class="headline"><i class="fa fa-star"></i>你的文法能力</p>
           <div class="advice-wrap clearfix">
             <div class="circle-wrap fr">
-              <p class="circle">0-5分</p>
-              <p>一般</p>
+              <?php if($data['score']['Writing']<10){?>
+                <p class="circle">0-9分</p>
+                <p>一般</p>
+              <?php }elseif($data['score']['Writing']>=10&&$data['score']['Writing']<16){?>
+                <p class="circle">10-15分</p>
+                <p>良好</p>
+              <?php }else{?>
+                <p class="circle">16-20分</p>
+                <p>优秀</p>
+              <?php }?>
             </div>
             <div class="advice-cnt">
-              词汇能力有点弱呀，建议多花些时间丰富词汇量，整理每天所做阅读文章的词汇，多积累扩充词汇量，建议多背雷哥SAT的词汇书。
+              <?php echo $data['suggest']['Writing']!=false?$data['suggest']['Writing']:'无'?>
             </div>
           </div>
         </div>
@@ -129,31 +141,32 @@
       <div class="box clearfix">
         <div class="box-left fl">
           <div class="single-score clearfix">
-            <p class="fl"><span>10</span>/20分</p>
+            <p class="fl"><span><?php echo $data['score']['Translation']?></span>/30分</p>
             <p class="fl"><i class="fa fa-star"></i>句子翻译</p>
           </div>
           <ul class="single-num">
-            <li class="red"><a href="#">12</a></li>
-            <li class="green"><a href="#">12</a></li>
-            <li class="red"><a href="#">35</a></li>
-            <li class="green"><a href="#">14</a></li>
-            <li class="red"><a href="#">50</a></li>
-            <li class="green"><a href="#">66</a></li>
-            <li class="green"><a href="#">74</a></li>
-            <li class="red"><a href="#">82</a></li>
-            <li class="green"><a href="#">9</a></li>
-            <li class="green"><a href="#">10</a></li>
+            <?php foreach($data['que'][3] as $k=>$v){?>
+              <li class="<?php echo $v[0]==1?'green':'red'?>"><a href="/exercise_details/<?php echo $v[1]?>.html"><?php echo $k+1?></a></li>
+            <?php }?>
           </ul>
         </div>
         <div class="box-right fr">
           <p class="headline"><i class="fa fa-star"></i>你的句子翻译能力</p>
           <div class="advice-wrap clearfix">
             <div class="circle-wrap fr">
-              <p class="circle">0-5分</p>
-              <p>一般</p>
+              <?php if($data['score']['Translation']<11){?>
+                <p class="circle">0-10分</p>
+                <p>一般</p>
+              <?php }elseif($data['score']['Translation']>=10&&$data['score']['Translation']<21){?>
+                <p class="circle">10-20分</p>
+                <p>良好</p>
+              <?php }else{?>
+                <p class="circle">21-30分</p>
+                <p>优秀</p>
+              <?php }?>
             </div>
             <div class="advice-cnt">
-              词汇能力有点弱呀，建议多花些时间丰富词汇量，整理每天所做阅读文章的词汇，多积累扩充词汇量，建议多背雷哥SAT的词汇书。
+              <?php echo $data['suggest']['Translation']!=false?$data['suggest']['Translation']:'无'?>
             </div>
           </div>
         </div>
@@ -162,31 +175,33 @@
       <div class="box clearfix">
         <div class="box-left fl">
           <div class="single-score clearfix">
-            <p class="fl"><span>10</span>/20分</p>
+            <p class="fl"><span><?php echo $data['score']['Reading']?></span>/30分</p>
             <p class="fl"><i class="fa fa-star"></i>阅读</p>
           </div>
           <ul class="single-num">
-            <li class="red"><a href="#">1</a></li>
-            <li class="green"><a href="#">2</a></li>
-            <li class="red"><a href="#">3</a></li>
-            <li class="green"><a href="#">4</a></li>
-            <li class="red"><a href="#">5</a></li>
-            <li class="green"><a href="#">6</a></li>
-            <li class="green"><a href="#">7</a></li>
-            <li class="red"><a href="#">8</a></li>
-            <li class="green"><a href="#">9</a></li>
-            <li class="green"><a href="#">10</a></li>
+            <?php foreach($data['que'][4] as $k=>$v){?>
+              <li class="<?php echo $v[0]==1?'green':'red'?>"><a href="/exercise_details/<?php echo $v[1]?>.html"><?php echo $k+1?></a></li>
+            <?php }?>
+
           </ul>
         </div>
         <div class="box-right fr">
           <p class="headline"><i class="fa fa-star"></i>你的理解能力</p>
           <div class="advice-wrap clearfix">
             <div class="circle-wrap fr">
-              <p class="circle">0-5分</p>
-              <p>一般</p>
+              <?php if($data['score']['Reading']<11){?>
+                <p class="circle">0-10分</p>
+                <p>一般</p>
+              <?php }elseif($data['score']['Reading']>=10&&$data['score']['Reading']<21){?>
+                <p class="circle">10-20分</p>
+                <p>良好</p>
+              <?php }else{?>
+                <p class="circle">21-30分</p>
+                <p>优秀</p>
+              <?php }?>
             </div>
             <div class="advice-cnt">
-              词汇能力有点弱呀，建议多花些时间丰富词汇量，整理每天所做阅读文章的词汇，多积累扩充词汇量，建议多背雷哥SAT的词汇书。
+              <?php echo $data['suggest']['Reading']!=false?$data['suggest']['Reading']:'无'?>
             </div>
           </div>
         </div>
@@ -195,31 +210,32 @@
       <div class="box clearfix">
         <div class="box-left fl">
           <div class="single-score clearfix">
-            <p class="fl"><span>10</span>/20分</p>
+            <p class="fl"><span><?php echo $data['score']['Math']?></span>/30分</p>
             <p class="fl"><i class="fa fa-star"></i>数学</p>
           </div>
           <ul class="single-num">
-            <li class="red"><a href="#">1</a></li>
-            <li class="green"><a href="#">2</a></li>
-            <li class="red"><a href="#">3</a></li>
-            <li class="green"><a href="#">4</a></li>
-            <li class="red"><a href="#">5</a></li>
-            <li class="green"><a href="#">6</a></li>
-            <li class="green"><a href="#">7</a></li>
-            <li class="red"><a href="#">8</a></li>
-            <li class="green"><a href="#">9</a></li>
-            <li class="green"><a href="#">10</a></li>
+            <?php foreach($data['que'][5] as $k=>$v){?>
+              <li class="<?php echo $v[0]==1?'green':'red'?>"><a href="/exercise_details/<?php echo $v[1]?>.html"><?php echo $k+1?></a></li>
+            <?php }?>
           </ul>
         </div>
         <div class="box-right fr">
           <p class="headline"><i class="fa fa-star"></i>你的数学能力</p>
           <div class="advice-wrap clearfix">
             <div class="circle-wrap fr">
-              <p class="circle">0-5分</p>
-              <p>一般</p>
+              <?php if($data['score']['Math']<11){?>
+                <p class="circle">0-10分</p>
+                <p>一般</p>
+              <?php }elseif($data['score']['Math']>=10&&$data['score']['Math']<21){?>
+                <p class="circle">10-20分</p>
+                <p>良好</p>
+              <?php }else{?>
+                <p class="circle">21-30分</p>
+                <p>优秀</p>
+              <?php }?>
             </div>
             <div class="advice-cnt">
-              词汇能力有点弱呀，建议多花些时间丰富词汇量，整理每天所做阅读文章的词汇，多积累扩充词汇量，建议多背雷哥SAT的词汇书。
+              <?php echo $data['suggest']['Math']!=false?$data['suggest']['Math']:'无'?>
             </div>
           </div>
         </div>
@@ -234,7 +250,7 @@
     <div class="language-wrap clearfix">
       <div class="lang-img fl"></div>
       <div class="lang-font fl">
-        0~60分：哎呀，语言水平有些弱呀，题目理解起来是不是也有点吃力？现在最重要的是多背单词积累词汇量哦，建议除了背诵雷哥SAT备考词汇素材之外，整理所阅读文章的词汇，深度理解记忆，先把词汇这块提上来哦。
+        <?php echo $data['score']['score']?>：<?php echo $data['suggest']['All']!=false?$data['suggest']['All']:'无'?>
       </div>
     </div>
   </div>
@@ -244,6 +260,7 @@
       <h1>SAT报班建议</h1>
     </div>
     <ul class="clearfix">
+      <?php if($data['score']['score']<61) {?>
       <li>
         <div class="classes-top">
           <i class="fa fa-star"></i>
@@ -255,6 +272,7 @@
           <a href="#">雷哥SAT全能小班</a>
         </div>
       </li>
+      <?php }elseif($data['score']['score']>60&&$data['score']['score']<91){?>
       <li>
         <div class="classes-top">
           <i class="fa fa-star"></i>
@@ -266,6 +284,7 @@
           <a href="#">雷哥SAT全能小班</a>
         </div>
       </li>
+      <?php }else{?>
       <li>
         <div class="classes-top">
           <i class="fa fa-star"></i>
@@ -277,6 +296,7 @@
           <a href="#">雷哥SAT全能小班</a>
         </div>
       </li>
+      <?php }?>
     </ul>
   </div>
 </section>

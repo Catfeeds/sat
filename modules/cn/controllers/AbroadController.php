@@ -12,9 +12,10 @@ use yii\web\Controller;
 
 class AbroadController extends Controller
 {
-    public $layout='cn.php';
+    public $layout='';
     public function actionIndex()
     {
+        $this->layout="cn1.php";
         return $this->render('index');
     }
 

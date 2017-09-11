@@ -108,8 +108,8 @@
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
-        <li><a href="/act.html">ACT</a></li>
-        <li><a href="/US_abroad.html" <?php if(strpos($path,'abroad')!==false){echo 'class="on"';}?>>美国留学</a></li>
+        <li><a <?php if($path=='act.html'){echo 'class="on"';}?> href="/act.html">ACT</a></li>
+        <li><a href="/US_abroad.html" <?php if(strpos($path,'abroad')!==false){echo 'class="on"';}?> target="_blank">美国留学</a></li>
     </ul>
     <form class="search-form" action="">
         <div class="search-select">

@@ -73,6 +73,9 @@ ul,ol,h1,h2,h3 {
   color: #fff;
   font-size: 16px;
 }
+.score .score-top>li.total {
+  float: left;
+}
 .score .score-top>li>span {
   font-size: 20px;
 }
@@ -220,19 +223,17 @@ ul,ol,h1,h2,h3 {
   报班建议
 */
 .classes>ul>li {
-  float: left;
-  width: 330px;
-  height: 260px;
-  margin: 43px 45px 0 0;
-  border: 1px solid #ccc;
-}
-.classes>ul>li:last-child {
-  margin-right: 0;
+  width: 443px;
+  height: 351px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 3px #666;
+  -moz-box-shadow: 0 0 3px #666;
+  box-shadow:  0 0 3px #666;
 }
 .classes .classes-top {
   width: 100%;
-  height: 85px;
-  padding-top: 15px;
+  height: 110px;
+  padding-top: 25px;
   text-align: center;
   background-color: #30a7ed;
   color: #fff;
@@ -242,26 +243,11 @@ ul,ol,h1,h2,h3 {
 }
 .classes .classes-font {
   width: 100%;
-  padding: 50px 35px;
+  padding: 85px 56px;
 }
 .classes .classes-font>a {
   display: block;
   margin-bottom: 10px;
   text-align: center;
   font-size: 16px;
-}
-.classes>ul>li:nth-child(2) {
-  width: 443px;
-  height: 351px;
-  margin-top: 0;
-  -webkit-box-shadow: 0 0 3px #666;
-  -moz-box-shadow: 0 0 3px #666;
-  box-shadow:  0 0 3px #666;
-}
-.classes>ul>li:nth-child(2) .classes-top {
-  height: 110px;
-  padding-top: 25px;
-}
-.classes>ul>li:nth-child(2) .classes-font {
-  padding: 85px 56px;
 }

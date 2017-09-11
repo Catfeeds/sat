@@ -109,12 +109,10 @@ class EvaulationController extends Controller
     // 获取测评的分数
     public function actionScore($data)
     {
-        $number=$this->actionNumber($data);
-//        var_dump($number);die;
-        // 翻译的分数
+        // $number=$this->actionNumber($data);数据将翻倍 错
         $translation= Yii::$app->db->createCommand("select id,answer from {{%questions}} where  major='Translation' and tpId=".Yii::$app->session->get('tid'))->queryAll();
         $count=0;
-        $vocabulary=0;
+        $trans=0;
         foreach($translation as $k=>$v){
             $answer=explode(',',$v['answer']);
             foreach($answer as $key=>$val){
@@ -122,12 +120,10 @@ class EvaulationController extends Controller
                     $count+=1;
                 }
             }
-            $vocabulary+=$count>=6?3:($count>4?2:1);
+            $trans+=($count>=6?3:($count>4?2:1));
         }
-        $vocabulary=$number['Vocabulary']+$vocabulary;
-        $score=$number['Math']*3+$number['Reading']*(30/($number['Reading']+$number['readerror']))+$number['Writing']*2+$vocabulary;
-        return $score;
-
+//        $score=$number['Math']*3+$number['Reading']*(30/($number['Reading']+$number['readerror']))+$number['Writing']*2+$number['Vocabulary']+$trans;
+        return $trans;
     }
 
     // 测评报告
@@ -152,10 +148,9 @@ class EvaulationController extends Controller
             $re['matherror']  = $number['matherror'] ;
             $re['readerror']  = $number['readerror'];
             $re['writeerror'] = $number['writeerror'];
-            $re['score']      = $this->actionScore($data);
+            $re['score']      = $this->actionScore($data)+$number['Math']*3+$number['Reading']*(30/($number['Reading']+$number['readerror']))+$number['Writing']*2+$number['Vocabulary'];
             $re['date']       = time();
             $re['time']       = Yii::$app->session->get('time');// 做题总时间
-//            var_dump($re);die;
             $uid=111;
             if ($uid) {
                 // 将答案组合成字符串
@@ -163,7 +158,6 @@ class EvaulationController extends Controller
                 $re['answer'] = $format->arrToStr($data);
                 if ($re['answer'] != false && $re['time'] != false) {
                     $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-//                    var_dump($res);die;
                     if ($res) {
                         unset($_SESSION['answer']);
                         unset($_SESSION['tid']);
@@ -172,14 +166,9 @@ class EvaulationController extends Controller
             }
 
             $res = $this->Show('');
-//            var_dump($res);die;
         }else{
             $res = $this->Show($id);
         }
-//        $que =$this->Question($res['tpId'],$res['answer']);
-//        var_dump($que);die;
-//        return $this->render("report", ['res' => $res,'que'=>$que]);
-//        return $this->render("report");
         if($res==false){
             $data['code']=0;
             $data['message']='没有评测报告';
@@ -189,12 +178,11 @@ class EvaulationController extends Controller
             $data['que']=$this->Question($data['report']['tpId'],$res['report']['answer']);
             $data['win']=count(Yii::$app->db->createCommand("select id from {{%report}} where part='".$data['report']['part']."' and score<".$data['report']['score'])->queryOne());
         }
-
 //        echo '<pre>';
 //        var_dump($data);
 //        echo '</pre>';
 //        die;
-        echo die(json_encode($data));
+        return $this->render("report", ['data' => $data]);
     }
 
     // 显示
@@ -215,11 +203,9 @@ class EvaulationController extends Controller
             $re['Translation']=$data['score']-$re['Math']-$re['Reading']-$re['Writing']-$re['Vocabulary'];
             $re['score']=$data['score'];
             $suggest=$this->Suggest($data['tpId'],$re);
-//            array_push($re,$suggest);
             $report['score']=$re;
             $report['suggest']=$suggest;
             $report['report']=$data;
-//            $re=array_merge($re,$data);
             return $report;
         }else{
             echo '<script>alert("还没有报告，赶紧测评一下吧！");location.href="/evaulation.html"</script>';
@@ -262,10 +248,6 @@ class EvaulationController extends Controller
                     $que[$s['section']][$k][1]=$s['id'];
                 }
             }
-//        echo '<pre>';
-//            var_dump($que);
-//        echo '</pre>';
-//        die;
         return $que;
     }
 }

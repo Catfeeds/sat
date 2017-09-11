@@ -1,5 +1,12 @@
 $(function () {
   person.init();
+  //禁止复制以及右键
+  document.oncopy = function(){
+    return false;
+  }
+  document.oncontextmenu = function () {
+    return false;
+  };
 
   var pos = location.href.split('_')[1].split('.')[0];
   var src = $('.per-src dd').filter('.on').data('val'),//题目来源

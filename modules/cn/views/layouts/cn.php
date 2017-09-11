@@ -43,7 +43,6 @@
     <script src="/cn/js/jquery.cookie.js"></script>
     <script src="/cn/js/jquery.SuperSlide.2.1.1.js"></script>
     <script src="/cn/js/public.js"></script>
-
 </head>
 <body>
 <!--导航-->

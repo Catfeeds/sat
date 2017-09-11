@@ -15,6 +15,13 @@ $(function () {
     upTime('b');
     //加载行号
     lineNum();
+    //禁止复制以及右键
+    document.oncopy = function(){
+        return false;
+    }
+    document.oncontextmenu = function () {
+        return false;
+    };
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);

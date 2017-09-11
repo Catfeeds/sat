@@ -1,6 +1,11 @@
 .abroadProBig {
   font-size: 14px;
 }
+.box-title {
+  font: 200 35px/40px 微软雅黑,\u5fae\u8f6f\u96c5\u9ed1,"Microsoft YaHei UI",黑体,\u9ed1\u4f53,SimHei;
+  text-align: center;
+  margin: 70px 0 40px 0;
+}
 
 /*头部改版*/
 .abroadHead{
@@ -334,4 +339,388 @@
   margin-top: 20px;
   font-size: 12px;
   line-height: 20px;
+}
+/*
+  留学服务团队
+*/
+.group {
+  position: relative;
+}
+.group-arrow {
+  width: 100%;
+}
+.group-arrow>li {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font: 400 60px/100px simsun;
+  cursor: pointer;
+}
+.group-arrow>li:last-child {
+  right: 0;
+}
+.group-wrap {
+  width: 995px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.group-cnt>.group-ul {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+.group-cnt>ul>li {
+  position: relative;
+  float: left;
+  width: 478px;
+  height: 350px;
+  padding: 25px;
+  margin: 0 35px 35px 0;
+  border: 1px solid #bbb;
+  overflow: hidden;
+}
+.group-cnt>ul>li:nth-child(2n) {
+  margin-right: 0;
+}
+.group-wrap .group-img {
+
+}
+.group-wrap .group-img>img {
+  width: 130px;
+  height: 130px;
+  margin-right: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.group-wrap .group-chat {
+  margin-top: 27px;
+}
+.group-wrap .group-chat>p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.group-wrap .group-chat>a {
+  padding: 5px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #30a7ed;
+  color: #fff;
+  font-size:  18px;
+}
+.group-wrap .introduce {
+  margin-top: 15px;
+  max-height: 120px;
+  overflow: auto;
+  font-size: 14px;
+}
+.group-wrap .show-case {
+  width: 150px;
+  height: 35px;
+  line-height:35px;
+  margin: 10px auto 0;
+  background-color: #30a7ed;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+.group-wrap .case {
+  position: absolute;
+  top: -102%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background-color: rgba(0,0,0,.8);
+  text-align: center;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.group-wrap .case>h2 {
+  margin-bottom: 45px;
+  font-size: 18px;
+  color: #fff;
+}
+.group-wrap .case li {
+  float: left;
+  width: 190px;
+  height: 50px;
+  padding-top: 5px;
+  text-align: center;
+  margin: 0 30px 15px 0;
+  background-color: #30a7ed;
+}
+.group-wrap .case li:nth-child(2n) {
+  margin-right: 0;
+}
+.group-wrap .case li>p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #fff;
+}
+/*效果*/
+.group-cnt>ul>li .show-case:hover .case {
+  top: 0;
+}
+/*
+  名校成功案例
+*/
+.success {
+  position: relative;
+}
+.success-arrow {
+  width: 100%;
+}
+.success-arrow>li {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font: 200 30px/50px simsun;
+}
+.success-arrow>li:last-child {
+  right: 0;
+}
+.success-wrap{
+  width: 895px;
+  margin: 0 auto;
+}
+.success-wrap ul>li {
+  float: left;
+  width: 212px;
+  margin-right: 15px;
+  border: 1px solid #bbb;
+  padding: 10px;
+}
+.success-wrap ul>li:last-child {
+  margin-right: 0;
+}
+.success-img>img {
+  width: 190px;
+  height: 118px;
+}
+.success-font {
+  height: 45px;
+  margin: 16px 0 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #bbb;
+  font-size: 14px;
+  overflow: hidden;
+}
+.success-cnt li>p {
+  height: 20px;
+  overflow: hidden;
+}
+/*
+  留学申请
+*/
+.service {
+  width: 100%;
+  height: 325px;
+  padding: 40px 0;
+  margin-top: 70px;
+  background: url("/cn/images/abroad01.png") 0 0 no-repeat;
+}
+.service-cnt {
+  width: 1000px;
+  margin: 0 auto;
+}
+.service-list>li {
+  float: left;
+  width: 180px;
+  margin-right: 25px;
+  padding: 20px 0;
+  border: 1px solid #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.service-list>li:last-child {
+  margin-right: 0;
+}
+.service-list>li p{
+  color: #fff;
+}
+.service-cnt>.box-title {
+  margin: 0 0 50px 0;
+  color: #fff;
+}
+.service-item .service-star {
+  position: relative;
+  width: 69px;
+  height: 72px;
+  margin: 0 auto 10px;
+}
+.service-item .service-star  i {
+  font-size: 75px;
+}
+.service-item .service-star  span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 18px;
+}
+.service-list>li div>p {
+  margin: 0;
+  font-size: 14px;
+}
+.service-list>li div>p:first-child {
+  font-size: 24px;
+}
+
+/*咨询框改版样式*/
+.referBox{
+  width:5%;
+  background: #ffffff;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  position: fixed;
+  right: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 55;
+  box-shadow: 0 0 5px #969696;
+}
+.refer_close{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: -7px;
+  top: -15px;
+  cursor: pointer;
+  z-index: 99;
+}
+.refer_top{
+  width: 150%;
+  position: absolute;
+  right: -10px;
+  top: -90px;
+}
+.refer_con{
+  width: 100%;
+}
+.refer_con ul li a{
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding:10% 0;
+  font-size: 0.6em;
+  background-size: 100% auto;
+  border-bottom: 1px #c25abf solid;
+  position: relative;
+}
+.refer_con ul li:last-child a{
+  border: none;
+}
+.refer_con ul li a p{
+  margin-top: 10%;
+  color: #c25abf;
+}
+.refer_con ul li:hover a{
+  border-bottom: 1px #000000 solid;
+}
+.refer_con ul li:hover a p{
+  color: #000000;
+}
+.refer_con ul li:last-child:hover a{
+  border: none;
+}
+.diffBG {
+  width: 33px;
+  height: 33px;
+  margin: 0 auto;
+  background: url("/cn/images/abroad-icon.png") 0 0 no-repeat;
+}
+.diffBG02{
+  background-position: -66px 0;
+}
+.diffBG03{
+  background-position: -132px 0;
+}
+.diffBG04{
+  background-position: -198px 0;
+}
+.diffBG05{
+  width: 47px;
+  background-position: -264px 0;
+}
+.refer_con ul li:hover .diffBG01{
+  background-position: -33px 0;
+}
+.refer_con ul li:hover .diffBG02{
+  background-position: -99px 0;
+}
+.refer_con ul li:hover .diffBG03{
+  background-position: -165px 0;
+}
+.refer_con ul li:hover .diffBG04{
+  background-position: -231px 0;
+}
+.refer_con ul li:hover .diffBG05{
+  background-position: -310px 0;
+}
+
+.refer_con ul li:nth-child(2):hover .tanc_mask01{
+  display: block;
+  -webkit-animation-name:fadeIn;
+  -webkit-animation-duration:0.8s;
+  -webkit-animation-timing-function:ease-out;
+  -webkit-animation-iteration-count: 1;
+}
+.refer_con ul li:nth-child(4):hover .tanc_mask02{
+  display: block;
+  -webkit-animation-name:fadeInLeft;
+  -webkit-animation-duration:0.3s;
+  -webkit-animation-timing-function:ease-out;
+  -webkit-animation-iteration-count: 1;
+}
+.tanc_mask01{
+  width: 130px;
+  height: 130px;
+  background-color: #666;
+  position: absolute;
+  left: -130px;
+  top: -20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: none;
+  padding: 10px 13px 10px 10px;
+}
+.tanc_mask01 img{
+  width: 100%;
+}
+.tanc_mask02{
+  width: 212px;
+  height: 45px;
+  line-height: 45px;
+  background: url("/cn/images/bg-12.png") no-repeat;
+  position: absolute;
+  left: -212px;
+  top: 10px;
+  color: #ffffff;
+  font-size: 22px;
+  display: none;
 }
