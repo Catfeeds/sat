@@ -99,17 +99,13 @@ var person = {
         $.each(data.list, function (i,array) {
           li+="<li class='clearfix'>"+
             "<div class='mock-look pull-right'>";
-          if (array['part'] == 'all'){
-            li+="<a href='/mock_details?tid="+array['tpId']+"' class='mock-again'>重新模考</a>";
-          }else {
-            li+="<a href='/mock_details?m="+array['part']+"&tid="+array['tpId']+"' class='mock-again'>重新模考</a>";
-          }
-          li+="<a href='/report/"+array['id']+".html' target='_blank' class='mock-record'>查看报告</a>"+
+          li+="<a href='/evaulation_notice/"+array['tpId']+".html' class='mock-again'>重新测评</a>";
+          li+="<a href='/evaulation_report/"+array['id']+".html' target='_blank' class='mock-record'>查看报告</a>"+
             "</div>"+
-            "<h3><i class='mock-delete fa fa-trash' onclick='mockDel(this)' data-id='"+array['id']+"'></i>"+array['name']+"</h3>"+
+            "<h3><i class='mock-delete fa fa-trash' onclick='mockDel(this)' data-id='"+array['id']+"'></i>"+array['part']+"</h3>"+
             "<div class='mock-details'>"+
-            "<p>耗时：<span>"+array['rtime']+"s</span></p>"+
-            "<p>正确率: <span>"+Math.round((Number(array['mathnum'])+Number(array['readnum'])+Number(array['writenum']))/154*10000)/100+"%</span></p>"+
+            "<p>耗时：<span>"+array['rtime']+"</span></p>"+
+            "<p>正确率: <span>"+Math.round((Number(array['score'])+Number(array['readnum'])+Number(array['writenum']))/120*10000)/100+"%</span></p>"+
             "<p>完成时间: <span>"+new Date(parseInt(array['date'])*1000).toLocaleString()+"</span></p>"+
             "</div>"+
             "</li>"

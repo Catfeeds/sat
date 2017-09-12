@@ -262,7 +262,7 @@ class PersonController extends Controller
             die(json_encode($re));
         }
         $userData = $session->get('userData');
-        $userData['userName']='lgw1492650262';
+//        $userData['userName']='lgw1492650262';
         $data = uc_user_integral($userData['userName']);
         if (!is_array($data['details'])) {
             $data['details'] = [];
@@ -290,16 +290,30 @@ class PersonController extends Controller
     }
     public function actionEval()
     {
+
         $cate= Yii::$app->request->post('cate');
         $uid = Yii::$app->session->get('uid');
+        $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
+        $arr['pageSize'] = $pagesize = 15;
         $uid = 21;
-        if ($uid) {
-            $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%'")->queryAll();
-            $model = new Format();
-            foreach ($arr as $k => $v) {
-                $arr[$k]['rtime'] = $model->FormatTime($v['rtime']);
-            }
-
+        $offset = $pagesize * ($p - 1);
+        $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%' limit $offset,$pagesize")->queryAll();
+        $arr['total'] = count($arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%'")->queryAll());
+        $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $model = new Format();
+        foreach ($data as $k => $v) {
+            $arr['list'][] = array(
+                'part' => $v['part'],
+                'id' => $v['id'],
+                'tpId' => $v['tpId'],
+                'name' => $v['name'],
+                'time' => $v['time'],
+                'mathnum' => $v['mathnum'],
+                'readnum' => $v['readnum'],
+                'writenum' => $v['writenum'],
+                'date' => $v['date'],
+                'rtime' => $model->FormatTime($v['rtime']),
+            );
         }
         die(json_encode($arr));
     }
