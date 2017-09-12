@@ -298,7 +298,7 @@ class PersonController extends Controller
         $uid = 21;
         $offset = $pagesize * ($p - 1);
         $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%' limit $offset,$pagesize")->queryAll();
-        $arr['total'] = count($arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%'")->queryAll());
+        $arr['total'] = count( Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid." and part like '%".$cate."%'")->queryAll());
         $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
@@ -309,6 +309,7 @@ class PersonController extends Controller
                 'name' => $v['name'],
                 'time' => $v['time'],
                 'mathnum' => $v['mathnum'],
+                'score' => $v['score'],
                 'readnum' => $v['readnum'],
                 'writenum' => $v['writenum'],
                 'date' => $v['date'],

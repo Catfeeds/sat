@@ -290,30 +290,39 @@
 .other li:last-child {
   margin-right: 0;
 }
-.other li>div {
+.other li div {
   width: 100%;
   height: 145px;
   margin-bottom: 25px;
   background: url("/cn/images/eval-bgg02.png") no-repeat;
 }
-.other li:nth-child(2)>div {
+.other li:nth-child(2) div {
   background-position: -145px 0;
 }
-.other li:nth-child(3)>div {
+.other li:nth-child(3) div {
   background-position: -290px 0;
 }
-.other li:nth-child(4)>div {
+.other li:nth-child(4) div {
   background-position: -435px 0;
 }
-.other li:nth-child(5)>div {
+.other li:nth-child(5) div {
   background-position: -580px 0;
 }
-.other li>a {
+.other li span {
   color: #fff;
   font-size: 24px;
   padding-bottom: 5px;
   text-decoration: none;
   border-bottom: 1px solid #fff;
+}
+/*效果*/
+.other li:hover a {
+  text-decoration: none;
+  color: #bbb;
+}
+.other li:hover span {
+  color: #bbb;
+  border-bottom-color: #bbb;
 }
 /*
   我们的课程

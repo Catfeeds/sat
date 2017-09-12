@@ -89,6 +89,9 @@ var person = {
         p:p
       },
       dataType : 'json',
+      beforeSend: function () {
+        $('.person-mock').html('正在加载中……');
+      },
       success : function (data) {
         var li = '';
         tp = data.totalPage;
@@ -105,7 +108,7 @@ var person = {
             "<h3><i class='mock-delete fa fa-trash' onclick='mockDel(this)' data-id='"+array['id']+"'></i>"+array['part']+"</h3>"+
             "<div class='mock-details'>"+
             "<p>耗时：<span>"+array['rtime']+"</span></p>"+
-            "<p>正确率: <span>"+Math.round((Number(array['score'])+Number(array['readnum'])+Number(array['writenum']))/120*10000)/100+"%</span></p>"+
+            "<p>正确率: <span>"+Math.round((Number(array['score']))/120*10000)/100+"%</span></p>"+
             "<p>完成时间: <span>"+new Date(parseInt(array['date'])*1000).toLocaleString()+"</span></p>"+
             "</div>"+
             "</li>"
@@ -140,6 +143,9 @@ function exer(src,classify,cas,p){
       'p': p
     },
     dataType: 'json',
+    beforeSend: function () {
+      $('.person-cnt>ul').html('正在加载中……');
+    },
     success: function (data) {
       var li = '';
       tp = data.totalPage;
@@ -190,6 +196,9 @@ function mock(src,t,p){
       'p': p
     },
     dataType: 'json',
+    beforeSend: function () {
+      $('.person-mock').html('正在加载中……');
+    },
     success: function (data) {
       var li = '';
       tp = data.totalPage;
@@ -242,6 +251,9 @@ function collect(src,classify,p){
       'p': p
     },
     dataType: 'json',
+    beforeSend: function () {
+      $('.person-cnt>ul').html('正在加载中……');
+    },
     success: function (data) {
       var li = '';
       tp = data.totalPage;

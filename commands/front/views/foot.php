@@ -121,19 +121,23 @@
     <div class="side-bar">
         <ul>
             <li class="side-service">
-                <p></p>
-                <div><i class="fa fa-user-circle"></i><a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">在线咨询</a></div>
+                <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">
+                    <p></p>
+                    <div><i class="fa fa-user-circle"></i></div>
+                </a>
             </li>
             <li class="side-wechat">
                 <p></p>
                 <div>
                     <img src="/cn/images/qr-code02.png" alt="微信二维码">
-                    <p>请扫描二维码</p>
+                    <span>请扫描二维码</span>
                 </div>
             </li>
             <li class="side-qq">
-                <p></p>
-                <div><i class="fa fa-qq"></i>QQ:2992826058</div>
+                <a href="tencent://message/?uin=2992826058&Site=www.cnclcy&Menu=yes">
+                    <p></p>
+                    <div><i class="fa fa-qq"></i></div>
+                </a>
             </li>
             <li class="side-tel">
                 <p></p>
