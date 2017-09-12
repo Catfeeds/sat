@@ -35,24 +35,21 @@ class EvaulationController extends Controller
         $tid = Yii::$app->request->get('tid');
         $uid = Yii::$app->session->get('uid', '');
         $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
-        /*        if($uid==false){
-        //            echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
-        //            die;
-        //        }
-        */
+        if($uid==false){
+            echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+            die;
+        }
         if (isset($_SESSION['answer'])) {
             unset($_SESSION['answer']);
         }
         if (isset($_SESSION['tid'])) {
             unset($_SESSION['tid']);
         }
-//        $_SESSION['part']=$major;
         return $this->render('notice', ['tid' => $tid]);
     }
 
     public function actionDetails()
     {
-//        session_start();
         $this->layout = 'cn1.php';
         $s = Yii::$app->request->get('s', 1);
         $tid = Yii::$app->request->get('tid');
@@ -61,7 +58,6 @@ class EvaulationController extends Controller
             echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
             die;
         }
-//        var_dump($data);die;
         return $this->render("subject", ['data' => $data]);
     }
 
@@ -96,8 +92,6 @@ class EvaulationController extends Controller
         $data['code'] = 1;
         $data['section'] = $data['data'][0]['section'];
         $data['test'] = $data['data'][0]['time'];
-//        $score=$this->actionScore($_SESSION['answer']['item']);
-//        var_dump($score);die;
         echo die(json_encode($data));
     }
 
@@ -112,7 +106,6 @@ class EvaulationController extends Controller
     // 获取测评的分数
     public function actionScore($data)
     {
-        // $number=$this->actionNumber($data);数据将翻倍 错
         $translation = Yii::$app->db->createCommand("select id,answer from {{%questions}} where  major='Translation' and tpId=" . Yii::$app->session->get('tid'))->queryAll();
         $count = 0;
         $trans = 0;
@@ -125,7 +118,6 @@ class EvaulationController extends Controller
             }
             $trans += ($count >= 6 ? 3 : ($count > 4 ? 2 : 1));
         }
-//        $score=$number['Math']*3+$number['Reading']*(30/($number['Reading']+$number['readerror']))+$number['Writing']*2+$number['Vocabulary']+$trans;
         return $trans;
     }
 
@@ -135,7 +127,6 @@ class EvaulationController extends Controller
         $this->layout = 'cn.php';
         $id = Yii::$app->request->get('id', '');
         $uid = Yii::$app->session->get('uid', '');
-        $uid = 11437;
         if (isset($_SESSION['answer']) && isset($_SESSION['tid'])) {
             $data = ((array)$_SESSION['answer']);
             $data = $data['item'];// 获取用户的答题数据
@@ -146,7 +137,7 @@ class EvaulationController extends Controller
             $re['writenum'] = $number['Writing'];
             $re['jumpnum'] = $number['Vocabulary'];// jumpnum字段来保存词汇正确个数
             $re['part'] = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=" . $re['tpId'])->queryOne()['name'] . Yii::$app->db->createCommand("select time from {{%testpaper}} where id=" . $re['tpId'])->queryOne()['time'];
-            $re['uid'] = Yii::$app->session->get('uid',22);
+            $re['uid'] = Yii::$app->session->get('uid');
             $re['matherror'] = $number['matherror'];
             $re['readerror'] = $number['readerror'];
             $re['writeerror'] = $number['writeerror'];
@@ -185,7 +176,6 @@ class EvaulationController extends Controller
     public function Show($id = '')
     {
         $uid = Yii::$app->session->get('uid');
-        $uid = 21;
         if ($id == false) {
             $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
         } else {

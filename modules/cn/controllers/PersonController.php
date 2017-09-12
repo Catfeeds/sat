@@ -30,7 +30,6 @@ class PersonController extends Controller
     public function actionCollect()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         if ($uid) {
             $arr = Yii::$app->db->createCommand("select * from {{%collection}} where uid=" . $uid)->queryOne();
             $qid = ltrim($arr['qid'], ',');
@@ -49,7 +48,6 @@ class PersonController extends Controller
     public function actionExercise()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         if ($uid) {
             $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
             if ($arr['notes'] != false) {
@@ -87,7 +85,6 @@ class PersonController extends Controller
     public function actionMock()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         if ($uid) {
             $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
             $model = new Format();
@@ -105,7 +102,6 @@ class PersonController extends Controller
     public function actionBeans()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         if ($uid) {
             $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid)->queryAll();
             $model = new Format();
@@ -122,7 +118,6 @@ class PersonController extends Controller
     public function actionColl()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         $name = Yii::$app->request->post('src');
         $p = Yii::$app->request->post('p', '1');
         $major = Yii::$app->request->post('classify');
@@ -137,7 +132,6 @@ class PersonController extends Controller
     public function actionExer()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         $name = Yii::$app->request->post('src');
         $major = Yii::$app->request->post('classify');
         $error = Yii::$app->request->post('case');
@@ -155,7 +149,6 @@ class PersonController extends Controller
     public function actionMo()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         $src = Yii::$app->request->post('src');
         $type = Yii::$app->request->post('type');
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
@@ -209,7 +202,6 @@ class PersonController extends Controller
     public function actionRemoved()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 14329;
         $id = Yii::$app->request->post('id');
         $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
@@ -225,7 +217,6 @@ class PersonController extends Controller
         }
         $model = new Format();
         $data['notes'] = $model->arrToStr($crr);
-//        var_dump($data['notes']);
         $notes = new Notes();
         $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
         if ($re) {
@@ -248,7 +239,6 @@ class PersonController extends Controller
             die(json_encode($re));
         }
         $userData = $session->get('userData');
-//        $userData['userName']='lgw1492650262';
         $data = uc_user_integral($userData['userName']);
         if (!is_array($data['details'])) {
             $data['details'] = [];
@@ -262,7 +252,6 @@ class PersonController extends Controller
     public function actionEvaulation()
     {
         $uid = Yii::$app->session->get('uid');
-//        $uid = 21;
         if ($uid) {
             $arr = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '测评%'")->queryAll();
             $model = new Format();
@@ -283,7 +272,6 @@ class PersonController extends Controller
         $uid = Yii::$app->session->get('uid');
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
         $arr['pageSize'] = $pagesize = 15;
-//        $uid = 21;
         $offset = $pagesize * ($p - 1);
         $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%" . $cate . "%' limit $offset,$pagesize")->queryAll();
         $arr['total'] = count(Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%" . $cate . "%'")->queryAll());
