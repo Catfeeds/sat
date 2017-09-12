@@ -19,8 +19,8 @@ $(function () {
     mock('all','whole',1);
   } else if(pos == 'collect') {
     collect('all','all',1);
-  } else if (pos == 'eval') {
-    person.eval('all',1);
+  }else if (pos == 'eval') {
+    person.eval('测评',1);
   }
 
   //条件筛选
@@ -39,6 +39,8 @@ $(function () {
       type = val;
     } else if(cls == 'per-case'){
       cas = val;
+    } else if (cls == 'per-type') {
+      type = val;
     }
     if (pos == 'exercise') {
       exer(src,classify,cas,1);
@@ -47,7 +49,7 @@ $(function () {
     } else if (pos == 'collect') {
       collect(src,classify,1);
     }else if (pos == 'eval') {
-      person.eval('all','all',1);
+      person.eval(type,1);
     }
   })
 })
@@ -80,10 +82,11 @@ var person = {
   //测评记录
   eval : function (src,p) {
     $.ajax({
-      url: '',
+      url: '/cn/person/eval',
       type: 'post',
       data: {
-        
+        cate:src,
+        p:p
       },
       dataType : 'json',
       success : function (data) {

@@ -9,10 +9,10 @@
     <div class="person-cnt pull-left">
       <dl class="per-type">
         <dt>测评难度</dt>
-        <dd class="on" data-val="all">全部</dd>
-        <dd data-val="chu">初级卷</dd>
-        <dd data-val="zhong">中级卷</dd>
-        <dd data-val="gao">高级卷</dd>
+        <dd class="on" data-val="测评">全部</dd>
+        <dd data-val="初级">初级卷</dd>
+        <dd data-val="中级">中级卷</dd>
+        <dd data-val="高级">高级卷</dd>
       </dl>
       <ul class="person-mock"></ul>
       <!--分页-->

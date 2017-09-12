@@ -70,9 +70,6 @@ class UserController extends ApiControl
 
         } else {
             $tactics = new Tactics();
-//            $getdata = new GetData();
-//            $must = array('major' => '科目', 'min' => '最低分', 'max' => '最高分', 'suggestion' => '复习建议');
-//            $data = $getdata->PostData($must);
             $data["major"]=Yii::$app->request->post("models",'')."-".Yii::$app->request->post("major",'');
             $data["min"]=Yii::$app->request->post("min",'');
             $data["max"]=Yii::$app->request->post("max",'');
