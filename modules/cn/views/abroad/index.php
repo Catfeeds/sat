@@ -333,13 +333,15 @@
           <ul class="clearfix">
             <?php foreach($info as $k=>$v){if($k<4){?>
             <li>
-              <div class="success-img">
-                <img src="<?php echo $v['pic']?>" alt="图片">
-              </div>
-              <div class="success-font">
-                <?php echo $v['title']?>
-              </div>
-              <p><?php echo $v['keywords']?></p>
+              <a href="/info_details/<?php echo $v['id']?>.html">
+                <div class="success-img">
+                  <img src="<?php echo $v['pic']?>" alt="图片">
+                </div>
+                <div class="success-font">
+                  <?php echo $v['title']?>
+                </div>
+                <p><?php echo $v['keywords']?></p>
+              </a>
             </li>
             <?php }}?>
 <!--            <li>-->
