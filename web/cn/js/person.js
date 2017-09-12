@@ -19,6 +19,8 @@ $(function () {
     mock('all','whole',1);
   } else if(pos == 'collect') {
     collect('all','all',1);
+  } else if (pos == 'eval') {
+    person.eval('all',1);
   }
 
   //条件筛选
@@ -76,7 +78,7 @@ var person = {
     },'json')
   },
   //测评记录
-  eval : function (src,t,p) {
+  eval : function (src,p) {
     $.ajax({
       url: '',
       type: 'post',

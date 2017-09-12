@@ -27,7 +27,7 @@
 <body>
   <nav class="s-nav">
   <div class="container clearfix">
-    <a class="s-nav-logo pull-left" href="http://sat.viplgw.cn/index.html">
+    <a class="s-nav-logo pull-left">
       <img src="/cn/images/sy-logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
