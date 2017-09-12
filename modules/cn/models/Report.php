@@ -96,9 +96,9 @@ class Report extends ActiveRecord{
             $number['Reading']   =$data['readnum'];
             $score      = $getscore->Score($number);// 各科分数均有，按科目的分类
             $re         = array_merge($data, $score);
-            $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Math'")->queryOne();
-            $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Reading'")->queryOne();
-            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Writing'")->queryOne();
+            $suggest['Math']    = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Math']  . "  and min<" . $re['Math'] . " and major='Mock-Math'")->queryOne();
+            $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading']  . "  and min<" . $re['Reading'] . " and major='Mock-Reading'")->queryOne();
+            $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing']  . "  and min<" . $re['Writing']." and major='Mock-Writing'")->queryOne();
             array_push($re,$suggest);
             return $re;
         }else{

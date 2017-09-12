@@ -32,7 +32,7 @@
         <div class="work-wrap-right pull-right">
             <div class="work-question" id="1">
                 <div class="work-question-part clearfix">
-                    <div class="clearfix">
+                    <div class="question-title clearfix">
                         <h1 class="pull-left"><?php echo $data['number']?>.</h1>
                         <?php echo $data['content']?>
                     </div>

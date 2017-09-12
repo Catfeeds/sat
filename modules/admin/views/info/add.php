@@ -23,11 +23,12 @@
                         <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "开班信息" ?  'selected=selected':''?>>开班信息</option>
                         <option value ="公告" <?php echo isset($data)&& $data['cate']== "公告" ?  'selected=selected':''?>>公告</option>
                         <option value ="高分经验" <?php echo isset($data)&& $data['cate']== "高分经验" ?  'selected=selected':''?>>高分经验</option>
+                        <option value ="留学案例" <?php echo isset($data)&& $data['cate']== "留学案例" ?  'selected=selected':''?>>留学案例</option>
                     </select>
                 </td>
             </tr>
-            <tr id="name" style="display:none">
-                <td>主讲人</td>
+            <tr id="name" >
+                <td>老师/主讲人：</td>
                 <td>
                     <input type="text" name="name" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['name']:''?>" />
                 </td>
@@ -52,26 +53,26 @@
                     <input id="file" type="file" name="pic" >
                 </td>
             </tr>
-            <tr>
+            <tr id="videoAddress">
                 <td>视频网址:</td>
                 <td>
                     <input type="text" name="videoAddress" value="<?php echo isset($data)? $data['videoAddress']:''?>">
                 </td>
             </tr>
             <tr id="summary">
-                <td>摘要</td>
+                <td>摘要：</td>
                 <td>
                     <input type="text" name="summary" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['summary']:''?>" />限200字内
                 </td>
             </tr>
             <tr>
-                <td>关键词</td>
+                <td>关键词：</td>
                 <td>
                     <input type="text" name="keywords" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['keywords']:''?>" />限200字内
                 </td>
             </tr>
             <tr>
-                <td>内容</td>
+                <td>内容：</td>
                 <td id="content">
                     <textarea id="editor" type="text/plain" name="" style="width:600px;height:300px;">
                         <?php echo isset($data)? $data['content']:''?>
@@ -116,11 +117,11 @@
     function chageCate(){
         var cate = document.getElementById("cate").value;
         if(cate=="公开课"){
-            $('#name').show();
             $('#activeTime').show();
+            $('#videoAddress').show();
         }else{
-            $('#name').hide();
             $('#activeTime').hide();
+            $('#videoAddress').hide();
         }
     }
     chageCate();

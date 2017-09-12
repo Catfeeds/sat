@@ -9,20 +9,16 @@ namespace app\libs;
 use yii;
 class GetScore {
     /*判断对错（各科的对错，跨学科对错个数，subscore对错个数）
-
     大分数
     跨学科分数
     subscore
+    @$data== ((array)$_SESSION['answer'])['item']
     */
-//    public $number;
     public function Number($data){
-        // 获取session 里的答案与数据库的答案对比得到个数 number['math'],number['Reading']number['writing']number['math'],number['subscore'],
-        // 获取session里的数据并对比
-//        $data = ((array)$_SESSION['answer']);
-//        $data = $data['item'];
         static $mathnum=0;
         static $readnum=0;
         static $writnum=0;
+        static $vocabularynum=0;
         static $expression=0;
         static $english=0;
         static $algebra=0;
@@ -76,6 +72,10 @@ class GetScore {
                     $writeerror+=1;
                 }
 
+            }elseif ($que['major'] == 'Vocabulary') {
+                if ($v[1] == $que['answer']) {
+                    $vocabularynum =$vocabularynum + 1;
+                }
             }
         }
         foreach($data as $k=>$v) {
@@ -178,6 +178,7 @@ class GetScore {
         $number['Math']=$mathnum;
         $number['Reading']=$readnum;
         $number['Writing']=$writnum;
+        $number['Vocabulary']=$vocabularynum;
         $number['matherror']=$matherror;
         $number['readerror']=$readerror;
         $number['writeerror']=$writeerror;

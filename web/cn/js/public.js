@@ -54,7 +54,7 @@ $(function () {
   });
 //  练习、模考选择题点击事件
   $('.work-que-wrap').click(function () {
-    $('.work-select').removeClass('active');
+    $(this).siblings().find('.work-select').removeClass('active');
     $(this).find('.work-select').addClass('active');
   })
 //  练习、模考数学填空点击事件
@@ -246,10 +246,4 @@ function numBtnEvent() {
   $(this).addClass("cut");
   $(parent).find(".math-value").eq(0).text($(parent).find(".col1.cut").text()+$(parent).find(".col2.cut").text()+$(parent).find(".col3.cut").text()+$(parent).find(".col4.cut").text());
 }
-//禁止复制以及右键
-document.oncopy = function(){
-  return false;
-}
-document.oncontextmenu = function () {
- return false;
-};
+

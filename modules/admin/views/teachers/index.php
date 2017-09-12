@@ -6,12 +6,12 @@
         <span>讲师管理</span>
     </div>
 
-    <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加讲师</a>
+    <a href="<?php echo baseUrl.'/admin/teachers/add'?>">添加老师</a>
     <table border="1" allrules="0" width="100%">
 
         <tr align="center">
             <th>id</th>
-            <th>讲师</th>
+            <th>老师</th>
             <th>图片</th>
             <th>简介</th>
             <th>课程</th>

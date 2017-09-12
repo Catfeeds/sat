@@ -1,0 +1,98 @@
+body,html {
+  height: 100%;
+}
+.work-mk {
+  height: 100%;
+}
+.work-main-title>span,
+.work-main-title>b {
+  font-size: 16px;
+  font-weight: 800;
+}
+.work-main-title>b {
+  padding: 0 3px;
+}
+
+/*
+  内容区
+*/
+.work-mk-cnt {
+  height: 87%;
+  padding-bottom: 15px;
+}
+.work-mk-cnt .work-wrap-left {
+  height: 100%;
+}
+.work-mk-cnt .work-wrap-right {
+  height: 100%;
+}
+.num,
+.question {
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-family: "Times New Roman", serif;
+}
+.question {
+  width: 95%;
+}
+/*
+  词汇
+*/
+.words-ul .num {
+  padding-right: 10px;
+}
+.work-question-part .work-que-list {
+  padding-left: 20px;
+}
+/*
+  语法
+*/
+.grammer {
+  padding-top: 20px;
+}
+.grammer .article {
+  font-size: 20px;
+  font-family: "Times New Roman", serif;
+}
+.grammer .article-list {
+  margin-top: 40px;
+  font-size: 0;
+}
+.grammer .article-list>li {
+  display: inline-block;
+  margin: 5px 20px 5px 0;
+  font-size: 20px;
+  font-family: "Times New Roman", serif;
+}
+.grammer .article-list>li input {
+  width: 100px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #666;
+  background-color: #ccc;
+}
+/*
+  句子翻译
+*/
+.translate {
+  padding-top: 20px;
+}
+.translate>li {
+  margin-bottom: 25px;
+}
+.translate>li>span,
+.translate .e-sentence {
+  font-size: 20px;
+  font-family: "Times New Roman", serif;
+}
+.translate-ans {
+  margin-top: 30px;
+}
+/*
+  阅读理解
+*/
+.read-text {
+  padding: 20px;
+  font-size: 20px;
+  font-family: "Times New Roman", serif;
+}

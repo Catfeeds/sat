@@ -79,7 +79,7 @@
             </tr>
             <tr>
                 <td>SAT：</td>
-                <td><input type="text" name="GMAT" value="<?php echo isset($data)?$data['SAT']:''?>" style="width:500px;"></td>
+                <td><input type="text" name="SAT" value="<?php echo isset($data)?$data['SAT']:''?>" style="width:500px;"></td>
             </tr>
             <tr>
                 <td>录取学校：</td>

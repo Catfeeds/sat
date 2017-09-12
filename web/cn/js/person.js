@@ -1,7 +1,16 @@
 $(function () {
+  person.init();
+  //禁止复制以及右键
+  document.oncopy = function(){
+    return false;
+  }
+  document.oncontextmenu = function () {
+    return false;
+  };
+
   var pos = location.href.split('_')[1].split('.')[0];
-  var src = $('.per-src dd').filter('.on').data('val'),
-    classify = $('.per-classify dd').filter('.on').data('val');
+  var src = $('.per-src dd').filter('.on').data('val'),//题目来源
+      classify = $('.per-classify dd').filter('.on').data('val');//题目分类
   if (pos == 'exercise') {
     var cas = $('.per-case dd').filter('.on').data('val');
     exer('all','all','all',1);
@@ -10,16 +19,18 @@ $(function () {
     mock('all','whole',1);
   } else if(pos == 'collect') {
     collect('all','all',1);
+  }else if (pos == 'eval') {
+    person.eval('测评',1);
   }
 
   //条件筛选
   $('.person-cnt dl').on('click','dd',function() {
-    $('.person-cnt ul').html('');
+    $('.person-cnt>ul').html('');
     var _this=  $(this);
     _this.siblings().removeClass('on');
     _this.addClass('on');
-    var cls = _this.parent().attr('class'),
-      val = _this.data('val');
+    var cls = _this.parent().attr('class'),//父元素的类名
+        val = _this.data('val');//当前元素的项
     if (cls == 'per-src') {
       src = val;
     } else if(cls == 'per-classify') {
@@ -28,6 +39,8 @@ $(function () {
       type = val;
     } else if(cls == 'per-case'){
       cas = val;
+    } else if (cls == 'per-type') {
+      type = val;
     }
     if (pos == 'exercise') {
       exer(src,classify,cas,1);
@@ -35,10 +48,85 @@ $(function () {
       mock(src,type,1);
     } else if (pos == 'collect') {
       collect(src,classify,1);
+    }else if (pos == 'eval') {
+      person.eval(type,1);
     }
   })
-
 })
+var person = {
+  init : function () {
+    this.onLoad();
+  },
+  onLoad : function() {
+    //预加载雷豆数量、详情
+    $.post('/cn/person/get-integral',{},function(re){
+      $('.integral').html(re.integral);
+      $('.lei-dou span:eq(1)').html(re.integral);
+      var str = '';
+      for(i=0;i<re.details.length;i++){
+        str +='<tr>';
+        str +='<td>'+re.details[i].behavior+'</td>';
+        str +='<td>'+re.details[i].createTime+'</td>';
+        if(re.details[i].type == 1){
+          var type = '+'
+        }else{
+          var type = '-'
+        }
+        str +='<td>'+type+re.details[i].integral+'</td>';
+        str +='<td>'+re.details[i].behavior+'</td>';
+        str +='</tr>';
+      }
+      $('.integral_table').append(str);
+    },'json')
+  },
+  //测评记录
+  eval : function (src,p) {
+    $.ajax({
+      url: '/cn/person/eval',
+      type: 'post',
+      data: {
+        cate:src,
+        p:p
+      },
+      dataType : 'json',
+      success : function (data) {
+        var li = '';
+        tp = data.totalPage;
+        if (data.list == undefined) {
+          data.list = 0;
+          tp = 1;
+        }
+        $.each(data.list, function (i,array) {
+          li+="<li class='clearfix'>"+
+            "<div class='mock-look pull-right'>";
+          li+="<a href='/evaulation_notice/"+array['tpId']+".html' class='mock-again'>重新测评</a>";
+          li+="<a href='/evaulation_report/"+array['id']+".html' target='_blank' class='mock-record'>查看报告</a>"+
+            "</div>"+
+            "<h3><i class='mock-delete fa fa-trash' onclick='mockDel(this)' data-id='"+array['id']+"'></i>"+array['part']+"</h3>"+
+            "<div class='mock-details'>"+
+            "<p>耗时：<span>"+array['rtime']+"</span></p>"+
+            "<p>正确率: <span>"+Math.round((Number(array['score']))/120*10000)/100+"%</span></p>"+
+            "<p>完成时间: <span>"+new Date(parseInt(array['date'])*1000).toLocaleString()+"</span></p>"+
+            "</div>"+
+            "</li>"
+        })
+        $('.person-mock').html(li);
+      },
+      complete: function () {
+        $.jqPaginator('.pagination', {
+          totalPages: tp,
+          visiblePages: 6,
+          currentPage: p,
+          onPageChange: function (num,type) {
+            if(type == 'change'){
+              mock(src,t,num);
+            }
+          }
+        });
+      }
+    })
+  }
+}
 
 //练习
 function exer(src,classify,cas,p){
@@ -192,6 +280,10 @@ function collect(src,classify,p){
       });
     }
   })
+}
+//雷豆显示明细
+function showTable(o){
+  $(o).parents("div.balanceTop").find("div table").slideToggle();
 }
 
 //删除事件

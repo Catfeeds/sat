@@ -15,6 +15,13 @@ $(function () {
     upTime('b');
     //加载行号
     lineNum();
+    //禁止复制以及右键
+    document.oncopy = function(){
+        return false;
+    }
+    document.oncontextmenu = function () {
+        return false;
+    };
     //下一题点击事件
     $('.work-next-icon').click(function () {
         ckBefore(0);
@@ -95,9 +102,14 @@ function lineNum(){
     if (subName != ''){
         var text = $('.read-text').html();
         var tNum = text.split('</p>').length;
+        console.log(tNum);
         var line = '';
         if (subName == 'Reading') {
             for (var j=1;j<=tNum;j++){
+//<<<<<<< HEAD
+//                console.log(j);
+//=======
+//>>>>>>> master
                 if (j%5 == 0){
                     line += '<p>'+j+'</p>';
                 } else {

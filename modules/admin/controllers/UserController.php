@@ -63,14 +63,17 @@ class UserController extends ApiControl
                 return $this->render('suggest_edit');
             } else {
                 $data = Yii::$app->db->createCommand("select * from {{%tactics}} where id=" . $id)->queryOne();
+                $data['models']=explode('-',$data['major'])[0];
+                $data['major']=explode('-',$data['major'])[1];
                 return $this->render('suggest_edit', ['data' => $data]);
             }
 
         } else {
             $tactics = new Tactics();
-            $getdata = new GetData();
-            $must = array('major' => '科目', 'min' => '最低分', 'max' => '最高分', 'suggestion' => '复习建议');
-            $data = $getdata->PostData($must);
+            $data["major"]=Yii::$app->request->post("models",'')."-".Yii::$app->request->post("major",'');
+            $data["min"]=Yii::$app->request->post("min",'');
+            $data["max"]=Yii::$app->request->post("max",'');
+            $data["suggestion"]=Yii::$app->request->post("suggestion",'');
 
             if (empty($data['id'])) {
                 $re = Yii::$app->db->createCommand()->insert("{{%tactics}}", $data)->execute();

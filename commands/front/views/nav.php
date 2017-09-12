@@ -26,11 +26,12 @@
                 <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
             </ul>
             <div class="login-after pull-right" <?php if(isset($user)){echo 'style="display:block"';}else{echo'style="display:none"';}?>>
+<!--            <div class="login-after pull-right" >-->
                 <div class="login-after-show">
                     <img src="/cn/images/login.png" alt="头像">
                     <p>
                         <span><?php echo isset($user)?($user['nickname']!=false?$user['nickname']:$user['username']):''?></span>
-                        <span>(初出茅庐)</span>
+                        <span>(<?php echo isset($_SESSION['level'])?Yii::$app->params['levelName'][$_SESSION['level']]:'初出茅庐'?>)</span>
                         <i class="fa fa-angle-down"></i>
                     </p>
                 </div>
@@ -39,6 +40,8 @@
                         <li><a href="/person_collect.html">收藏题目</a></li>
                         <li><a href="/person_exercise.html">做题记录</a></li>
                         <li><a href="/person_mock.html">模考记录</a></li>
+                        <li><a href="/person_eval.html">测评记录</a></li>
+                        <li><a href="/person_beans.html">雷豆管理</a></li>
                         <li id="out"><a href="#"><span onclick="Out()">退出登录</span></a></li>
                     </ul>
                 </div>
@@ -94,7 +97,7 @@
                 <ul>
                     <li><a href="/exercise.html?m=Reading" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
                     <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
-                    <!--                <li><a href="#">测评</a></li>-->
+                    <li><a href="/evaulation.html">测评</a></li>
                 </ul>
             </div>
         </li>
@@ -105,8 +108,8 @@
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
-        <li><a href="/act.html">ACT</a></li>
-        <li><a href="/US_abroad.html" <?php if(strpos($path,'abroad')!==false){echo 'class="on"';}?>>美国留学</a></li>
+        <li><a <?php if($path=='act.html'){echo 'class="on"';}?> href="/act.html">ACT</a></li>
+        <li><a href="/US_abroad.html" <?php if(strpos($path,'abroad')!==false){echo 'class="on"';}?> target="_blank">美国留学</a></li>
     </ul>
     <form class="search-form" action="">
         <div class="search-select">

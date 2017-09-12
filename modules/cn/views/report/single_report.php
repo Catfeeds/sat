@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="/cn/css/single-report.css">
 <script src="/cn/js/highcharts.js"></script>
 <script src="/cn/js/report-details.js"></script>
@@ -48,7 +47,7 @@
       <div class="report-review">
         <img src="/cn/images/report01.png" alt="">
         <div class="review-text">
-            <?php if($suggest["$major"]!=false){echo $suggest["$major"]['suggestion'];}else{echo '无';}?>
+          <?php if($suggest["$major"]!=false){echo $suggest["$major"]['suggestion'];}else{echo '无';}?>
         </div>
       </div>
       <!--做题详情-->
@@ -147,7 +146,6 @@
     if($report['part']=='Writing'){$a=$report['writenum']/44*100;$b=$report['writeerror']/44*100;$c=(44-$report['writenum']-$report['writeerror'])/44*100;echo $a;}
     if($report['part']=='Math'){$a=$report['mathnum']/58*100;$b=$report['matherror']/58*100;$c=((58-$report['mathnum']-$report['matherror'])/58)*100;echo $a;}
     ?>).toFixed(1)),parseFloat(Number(<?php echo $b?>).toFixed(1)),parseFloat(Number(<?php echo $c?>).toFixed(1))],['正确','错误','放弃'], {legendEnable:false, xRotation:-30, title: '', yAxisUnit: '(%)',color: ['#05bc02','#e9604e','#2e9fd9'], min: 0, max: 100, tooltipUnit: '%', showValue: true,distance:-15});
-
     $('.ans-classify li').click(function () {
       $('.ans-classify li').removeClass('on');
       $(this).addClass('on');
@@ -156,7 +154,6 @@
       reportData(s,c);
     })
   })
-
   var speed = 50,
     rl1 = $('.ranking-list1'),
     rl2 = $('.ranking-list2'),
@@ -166,14 +163,14 @@
     if (rw.scrollTop() >= rl1.outerHeight()) {
       rw.scrollTop(0);
     } else {
-     rw.get(0).scrollTop+=1;
+      rw.get(0).scrollTop+=1;
     }
   }
   var rankTime = setInterval(rankInfo,speed);
   rw.bind({
     mouseover:function(){
       clearInterval(rankTime);
-  }, mouseout:function() {
+    }, mouseout:function() {
       rankTime = setInterval(rankInfo, speed);
     }
   })

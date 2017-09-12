@@ -9,7 +9,7 @@
     <table>
         <form class="form" method="post" action="<?php echo baseUrl."/admin/teachers/add"?>" enctype="multipart/form-data">
             <tr>
-                <td width="80px">讲师:</td>
+                <td width="80px">老师:</td>
                 <td><input type="text" name="name" value="<?php echo isset($data)?$data['name']:''?>" placeholder="讲师名"></td>
             </tr>
 
@@ -41,8 +41,8 @@
                 <td><input type="text" name="honorary" value="<?php echo isset($data)?$data['honorary']:''?>"  placeholder="荣誉职称" ></td>
             </tr>
             <tr>
-                <td>资历:</td>
-                <td><input type="text" name="seniority" value="<?php echo isset($data)?$data['seniority']:''?>" placeholder="资历" ></td>
+                <td>职位:</td>
+                <td><input type="text" name="seniority" value="<?php echo isset($data)?$data['seniority']:''?>" placeholder="职位" ></td>
             </tr>
             <tr>
                 <td>教师等级:</td>

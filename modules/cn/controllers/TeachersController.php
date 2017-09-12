@@ -18,13 +18,13 @@ class TeachersController extends Controller
     public function actionIndex()
     {
         $order='ORDER BY flag ASC,id ASC ';
-        $count = Yii::$app->db->createCommand("select count(*) as count from {{%teachers}} ")->queryOne();
+        $count = Yii::$app->db->createCommand("select count(*) as count from {{%teachers}} where seniority='讲师'")->queryOne();
         $count = $count['count'];
         $pagesize = 6;
         $page = Yii::$app->request->get('p', 1);
         $maxpage = ceil($count / $pagesize);
         $offset = $pagesize * ($page - 1);
-        $data = Yii::$app->db->createCommand("select * from {{%teachers}} $order limit $offset,$pagesize")->queryAll();
+        $data = Yii::$app->db->createCommand("select * from {{%teachers}} where seniority='讲师' $order limit $offset,$pagesize")->queryAll();
         return $this->render('index', ['data' => $data, 'maxpage' => $maxpage]);
     }
 

@@ -7,14 +7,14 @@
         <span>权限分配</span>
     </div>
     <a href="<?php echo baseUrl?>/admin/role/add">分配权限</a>
-    <table border="1" width="60%">
+    <table border="1" width="1000px" style="TABLE-LAYOUT: fixed">
         <thead>
         <tr>
-            <th>序号</th>
-            <th>角色名</th>
-            <th>权限列表</th>
-            <th>权限路径</th>
-            <th>操作</th>
+            <th width="50px">序号</th>
+            <th width="50px">角色名</th>
+            <th style="WORD-WRAP: break-word;word-break:break-all;" >权限列表</th>
+            <th width="300px">权限路径</th>
+            <th width="35px">操作</th>
         </tr>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
             <tr>
                 <td><?php echo $val['id'] ?></td>
                 <td><?php echo $val['name'] ?></td>
-                <td><?php echo $val['ids'] ?></td>
+                <td style="overflow: auto;"><?php echo $val['ids'] ?></td>
                 <td><?php echo $val['path'] ?></td>
                 <td>
                     <a  href="<?php echo baseUrl."/admin/role/add"."?id=".$val['id']?>">修改</a>

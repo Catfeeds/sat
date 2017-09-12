@@ -90,16 +90,16 @@ class ReportController extends Controller
                 die;
             }
         }
-        $suggest['Math'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Math'] . " and min<=" . $res['Math'] . " and major='Math'")->queryOne();
-        $suggest['Reading'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Reading'] . "  and min<=" . $res['Reading'] . " and major='Reading'")->queryOne();
-        $suggest['Writing'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Writing'] . "  and min<=" . $res['Writing'] . " and major='Writing'")->queryOne();
+        $suggest['Math'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Math'] . " and min<=" . $res['Math'] . " and major='Mock-Math'")->queryOne();
+        $suggest['Reading'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Reading'] . "  and min<=" . $res['Reading'] . " and major='Mock-Reading'")->queryOne();
+        $suggest['Writing'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Writing'] . "  and min<=" . $res['Writing'] . " and major='Mock-Writing'")->queryOne();
         if ($res['part'] == 'all') {
             return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
         } else {
             $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
-            $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
-            $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
-            $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='write' order by r.score limit 5")->queryAll();
+            $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
+            $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
+            $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Writing' order by r.score limit 5")->queryAll();
             $score = array_merge($write, array_merge($math, $read));
             return $this->render('single_report', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user, 'info' => $info, 'score' => $score]);
         }
@@ -126,9 +126,9 @@ class ReportController extends Controller
                 $tp    = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='" . $res['part'] . "' order by r.id desc limit 5")->queryAll();
                 $tp    = array_reverse($tp);
                 $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
-                $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
-                $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
-                $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='write' order by r.score limit 5")->queryAll();
+                $math  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Math' order by r.score limit 5")->queryAll();
+                $read  = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Reading' order by r.score limit 5")->queryAll();
+                $write = Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where r.part='Writing' order by r.score limit 5")->queryAll();
                 $score = array_merge($write, array_merge($math, $read));
                 return $this->render('single_report', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user, 'info' => $info, 'score' => $score]);
             }
