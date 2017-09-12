@@ -87,7 +87,6 @@
   <div class="other">
     <ul class="clearfix">
       <li>
-<<<<<<< HEAD
         <a href="/knowledge.html">
           <div></div>
           <span>SAT知识库</span>
