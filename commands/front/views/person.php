@@ -5,7 +5,7 @@
                 <img src="/cn/images/login.png" alt="头像">
                 <p>
                     <span><?php echo $user['nickname']?$user['nickname']:$user['username']?></span>
-                    <span>(<?php echo isset($_SESSION['level'])&&$_SESSION['level']!=false?Yii::$app->params['levelName'][$_SESSION['level']]:'初出茅庐'?>)</span>
+                    <span>(<?php echo isset($_SESSION['level'])&&$_SESSION['level']!=false?[$_SESSION['level']]:'初出茅庐'?>)</span>
                 </p>
             </div>
             <p class="lei-dou">

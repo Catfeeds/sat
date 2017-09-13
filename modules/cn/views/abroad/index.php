@@ -333,15 +333,14 @@
           <ul class="clearfix">
             <?php foreach($info as $k=>$v){if($k<4){?>
             <li>
-              <a href="/info_details/<?php echo $v['id']?>.html">
                 <div class="success-img">
                   <img src="<?php echo $v['pic']?>" alt="图片">
                 </div>
                 <div class="success-font">
-                  <?php echo $v['title']?>
+                  <?php echo $v['name'].' '.$v['matriculate']?>
                 </div>
-                <p><?php echo $v['keywords']?></p>
-              </a>
+                <p><?php echo $v['direction']?></p>
+
             </li>
             <?php }}?>
 <!--            <li>-->
@@ -364,9 +363,9 @@
                   <img src="<?php echo $v['pic']?>" alt="图片">
                 </div>
                 <div class="success-font">
-                  <?php echo $v['title']?>
+                  <?php echo $v['name'].' '.$v['matriculate']?>
                 </div>
-                <p><?php echo $v['keywords']?></p>
+                <p><?php echo $v['direction']?></p>
               </li>
             <?php }}?>
 <!--            <li>-->
@@ -414,8 +413,8 @@
                 <ul class="clearfix">
                   <?php foreach ($v['case'] as $val){?>
                   <li>
-                    <p><?php echo $val['title']?></p>
-                    <p><?php echo $val['keywords']?></p>
+                    <p><?php echo $val['name'].' '.$val['matriculate']?></p>
+                    <p><?php echo $val['direction']?></p>
                   </li>
                   <?php }?>
                 </ul>

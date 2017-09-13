@@ -21,10 +21,10 @@ public function formatting ($arr){
         $major=($v['major']!=false)?$v['major'].',':'';
         $GPA=($v['GPA']!=false)?'GPA:'.$v['GPA'].',':'';
         $TOFEL=($v['TOFEL']!=false)?'TOFEL:'.$v['TOFEL'].',':'';
-        $GMAT=($v['GMAT']!=false)?'GMAT'.$v['GMAT'].',':'';
+        $SAT=($v['SAT']!=false)?'GMAT'.$v['SAT'].',':'';
         $direction=($v['direction']!=false)?'申请方向：'.$v['direction'].',':'';
         $matriculate=($v['matriculate']!=false)?'录取学校：'.$v['matriculate']:'';
-        $brr[$k]['str1']=$name.$school.$major.$GPA.$TOFEL.$GMAT;
+        $brr[$k]['str1']=$name.$school.$major.$GPA.$TOFEL.$SAT;
         $brr[$k]['str2']=$direction.$matriculate;
     }
     return $brr;
