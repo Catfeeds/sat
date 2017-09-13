@@ -30,7 +30,7 @@
                     <img src="/cn/images/login.png" alt="头像">
                     <p>
                         <span><?php echo isset($user)?($user['nickname']!=false?$user['nickname']:$user['username']):''?></span>
-                        <span>(<?php echo isset($_SESSION['level'])?Yii::$app->params['levelName'][$_SESSION['level']]:'初出茅庐'?>)</span>
+                        <span>(<?php echo isset($_SESSION['level'])&&$_SESSION['level']!=false?Yii::$app->params['levelName'][$_SESSION['level']]:'初出茅庐'?>)</span>
                         <i class="fa fa-angle-down"></i>
                     </p>
                 </div>
