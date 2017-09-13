@@ -24,4 +24,14 @@ return [
     'categoryUrl' => 'http://schools.smartapply.cn/cn/api/cats',
     'contentUrl' => 'http://schools.smartapply.cn/cn/api/content',
     'schoolConnect' => 'http://schools.smartapply.cn',
+    'levelName' => [
+        0 => '初来乍到',
+        1 => '初窥门道',
+        2 => '略有小成',
+        3 => '渐入佳境',
+        4 => '炉火纯青',
+        5 => '自成一派',
+        6 => '登峰造极',
+        7 => '神功绝世',
+    ]
 ];
