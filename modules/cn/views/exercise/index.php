@@ -7,29 +7,41 @@
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li><a href="/exercise.html?m=Reading">阅读</a></li>
-          <li><a href="/exercise.html?m=Writing">文法</a></li>
-          <li class="active"><a href="/exercise.html?m=Math"> 数学</a></li>
+          <li class="active" data-src="reading">阅读</li>
+          <li data-src="writing">文法</li>
+          <li data-src="math"> 数学</li>
         </ul>
-        <dl class="s-subject-src">
-          <dt>题目来源:</dt>
-          <dd class="active"><span data-id="All" onclick="getCate('')">全部</span></dd>
-          <dd><span onclick="getCate('OG')" >OG</span></dd>
-          <dd><span onclick="getCate('princeton')" >普林斯顿</span></dd>
-          <dd><span onclick="getCate('kaplan')">开普兰</span></dd>
-          <dd><span onclick="getCate('BARRON')">BARRON</span></dd>
-        </dl>
+        <div class="s-subject-src">
+          <dl class="s-src">
+            <dt>题目来源：</dt>
+            <dd class="active" data-src="all">全部</dd>
+            <dd data-src="og">OG</dd>
+            <dd data-src="princeton">普林斯顿</dd>
+            <dd data-src="kaplan">开普兰</dd>
+            <dd data-src="barron">BARRON</dd>
+          </dl>
+          <dl class="s-sub">
+            <dt>试卷来源：</dt>
+            <dd class="active" data-src="all">全部</dd>
+            <dd data-src="og1">OG1</dd>
+            <dd data-src="og2">OG2</dd>
+            <dd data-src="og1">OG1</dd>
+            <dd data-src="og2">OG2</dd>
+            <dd data-src="og1">OG1</dd>
+            <dd data-src="og2">OG2</dd>
+            <dd data-src="og1">OG1</dd>
+            <dd data-src="og2">OG2</dd>
+            <dd data-src="og1">OG1</dd>
+            <dd data-src="og2">OG2</dd>
+          </dl>
+        </div>
         <div class="s-subject-cnt">
           <ul>
             <?php foreach($data as $k=>$v){?>
             <li>
               <h3><?php echo $v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number']?></h3>
               <div><?php
-//                if($v['essay']!=false && ($v['major']!='Math1'||$v['major']!='Math2')){
-//                  echo $v['essay'];
-//                }else{
                   echo $v['content'];
-//                }
                   ?>
               </div>
               <a href="/exercise_details/<?php echo $v['qid']?>.html">做题</a>
@@ -84,75 +96,60 @@
 <!--底部-->
 <script>
   $(function () {
-    jQuery(".s-right").slide({mainCell:".s-right1 ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:100});
-    jQuery(".s-right").slide({mainCell:".s-right2 ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:100});
-    //  选项卡切换效果
-    var search = location.search.split('m='),
-        m = search[1];
-    if (location.search.split('&').length==2 && location.search.indexOf('p=') != -1) {
-      m = m.split('&')[0];
-    }
-    $('.s-label-list li').removeClass('active');
-    switch (m) {
-      case 'Math':
-        $('.s-label-list li').eq(2).addClass('active');
-        break;
-      case 'Writing':
-        $('.s-label-list li').eq(1).addClass('active');
-        break;
-      default:
-        $('.s-label-list li').eq(0).addClass('active');
-        break;
-    }
-    if (location.search.indexOf('c=') != -1) {
-      var search1 = location.search.split('m=')[1].split('&c=')[0];
-      search = location.search.split('c=');
-      var c = search[1];
-      if (location.search.split('&').length==3 && location.search.indexOf('p=') != -1) {
-        c = c.split('&')[0];
-      }
-      $('.s-label-list li').removeClass('active');
-      $('.s-subject-src dd').removeClass('active');
-      if (search1 == 'Math') {
-        $('.s-label-list li').eq(2).addClass('active');
-      } else if (search1 == 'Writing') {
-        $('.s-label-list li').eq(1).addClass('active');
-      } else {
-        $('.s-label-list li').eq(0).addClass('active');
-      }
-      switch (c) {
-        case 'OG':
-          $('.s-subject-src dd').eq(1).addClass('active');
-          break;
-        case 'princeton':
-          $('.s-subject-src dd').eq(2).addClass('active');
-          break;
-        case 'kaplan':
-          $('.s-subject-src dd').eq(3).addClass('active');
-          break;
-        case 'BARRON':
-          $('.s-subject-src dd').eq(4).addClass('active');
-          break;
-        default:
-          $('.s-subject-src dd').eq(0).addClass('active');
-          break;
-      }
-    }
+    jQuery(".s-right").slide({mainCell: ".s-right1 ul", autoPlay: true, effect: "topMarquee", vis: 4, interTime: 100});
+    jQuery(".s-right").slide({mainCell: ".s-right2 ul", autoPlay: true, effect: "topMarquee", vis: 4, interTime: 100});
+
+    subject.init();
   })
-  function getCate(cate) {
-    var url = window.location.href,
-        rec = url.indexOf('c='),
-        rep = url.indexOf('m=');
-    if (rep != -1) {
-      if (rec == -1) {
-        window.location.href = url + "&c=" + cate;
-      } else {
-        var port = window.location.search;
-        url = port.substring(port.lastIndexOf('&c='), port.length - rec) + "&c=" + cate;
-        window.location.href = url;
-      }
-    } else {
-      window.location.href = url+'/exercise.html?path=Reading'+'&c='+cate;
+  var subject = {
+    init: function () {
+      this.bindEvent();
+    },
+    bindEvent: function() {
+      var _this = this;
+      $('.s-label-list>li').click(function(){
+        var name = $(this).attr('data-src');
+        _this.effectEvent(this);
+        _this.ajaxEvent(name,'all','all',1);
+      });
+      $('.s-subject-src dd').click(function(){
+        var par = $(this).parent().attr('class');
+        var name = $('.s-label-list li.active').attr('data-src');
+        if (par == "s-src") {
+          var src = $(this).attr('data-src');
+          var sub = 'all';
+        }else if (par == "s-sub") {
+          var src = $('.s-src dd.active').attr('data-src');
+          var sub = $(this).attr('data-src');
+        }
+        _this.effectEvent(this);
+        _this.ajaxEvent(name,src,sub,1);
+      })
+    },
+    //  点击效果
+    effectEvent: function (obj) {
+      $(obj).parent().children().removeClass('active');
+      $(obj).addClass('active');
+    },
+    // ajax数据交互
+    ajaxEvent: function (name,src,sub,p) {
+      $.ajax({
+        url: '',
+        type: 'post',
+        data: {
+          name: name,
+          src: src,
+          subject: sub,
+          p: p
+        },
+        dataType: 'json',
+        beforeSend: function () {
+          $('.s-subject-cnt>ul').html('加载中');
+        },
+        success: function (res) {
+          console.log(res);
+        }
+      })
     }
   }
 </script>
