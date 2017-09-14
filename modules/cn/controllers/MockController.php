@@ -36,11 +36,10 @@ class MockController extends Controller
         if(is_numeric($tid)){
             $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
             $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
-/*            if($uid==false){
-//                echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
-//                die;
-//            }
-*/
+           if($uid==false){
+                echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+                die;
+            }
             $major = Yii::$app->request->get('m', '');
             if(isset($_SESSION['answer'])){
                 unset($_SESSION['answer']);
