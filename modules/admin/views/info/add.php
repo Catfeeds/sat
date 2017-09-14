@@ -23,11 +23,10 @@
                         <option value ="开班信息" <?php echo isset($data)&& $data['cate']== "开班信息" ?  'selected=selected':''?>>开班信息</option>
                         <option value ="公告" <?php echo isset($data)&& $data['cate']== "公告" ?  'selected=selected':''?>>公告</option>
                         <option value ="高分经验" <?php echo isset($data)&& $data['cate']== "高分经验" ?  'selected=selected':''?>>高分经验</option>
-                        <option value ="留学案例" <?php echo isset($data)&& $data['cate']== "留学案例" ?  'selected=selected':''?>>留学案例</option>
                     </select>
                 </td>
             </tr>
-            <tr id="name" >
+            <tr id="name" style="display:none" >
                 <td>老师/主讲人：</td>
                 <td>
                     <input type="text" name="name" placeholder=""  style="width: 500px;" value="<?php echo isset($data)? $data['name']:''?>" />
@@ -53,7 +52,7 @@
                     <input id="file" type="file" name="pic" >
                 </td>
             </tr>
-            <tr id="videoAddress">
+            <tr id="videoAddress" style="display:none">
                 <td>视频网址:</td>
                 <td>
                     <input type="text" name="videoAddress" value="<?php echo isset($data)? $data['videoAddress']:''?>">
@@ -119,9 +118,11 @@
         if(cate=="公开课"){
             $('#activeTime').show();
             $('#videoAddress').show();
+            $('#name').show();
         }else{
             $('#activeTime').hide();
             $('#videoAddress').hide();
+            $('#name').hide();
         }
     }
     chageCate();

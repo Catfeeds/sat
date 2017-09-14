@@ -68,6 +68,15 @@ $(function () {
   $('.side-bar li').mouseout(function () {
     $(this).children('div').hide();
   })
+  //关闭侧边栏
+  $('.side-bar .fa-times').click(function() {
+    $('.side-bar>ul').slideUp();
+    $('.side-bar .side').delay(500).fadeIn();
+  })
+  $('.side-bar .side').click(function () {
+    $('.side-bar .side').hide();
+    $('.side-bar>ul').slideDown();
+  })
   //小火箭置顶
   $('.side-arrow').click(function () {
     $('html,body').animate({scrollTop:0},'slow');
@@ -122,7 +131,7 @@ $(function () {
 var uId = $.cookie('uid');
 //收藏函数
 function collectEvent(obj) {
-  if (uId == '') {
+  if (!uId) {
     alert('登陆后才可以收藏哦！')
   }else {
     var _this = $(obj),

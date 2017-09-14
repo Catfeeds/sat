@@ -54,6 +54,7 @@
     <!--侧边栏-->
     <div class="side-bar">
         <ul>
+            <i class="fa fa-times"></i>
             <li class="side-service">
                 <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">
                     <p></p>
@@ -81,5 +82,6 @@
                 <p></p>
             </li>
         </ul>
+        <div class="side">我要咨询</div>
     </div>
 </footer>
