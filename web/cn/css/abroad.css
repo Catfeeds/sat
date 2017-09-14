@@ -401,9 +401,12 @@
   margin-top: 27px;
 }
 .group-wrap .group-chat>p {
-  margin-bottom: 15px;
+  margin-bottom: 0;
   font-size: 18px;
   font-weight: 600;
+}
+.group-wrap .group-chat>p:nth-child(2) {
+  margin-bottom: 15px;
 }
 .group-wrap .group-chat>a {
   padding: 5px 20px;
@@ -412,11 +415,11 @@
   border-radius: 5px;
   background-color: #30a7ed;
   color: #fff;
-  font-size:  18px;
+  font-size: 14px;
 }
 .group-wrap .introduce {
   margin-top: 15px;
-  max-height: 120px;
+  height: 100px;
   overflow: auto;
   font-size: 14px;
 }
@@ -424,10 +427,10 @@
   width: 150px;
   height: 35px;
   line-height:35px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   background-color: #30a7ed;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
 }
 .group-wrap .case {
