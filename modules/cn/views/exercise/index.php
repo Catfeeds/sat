@@ -1,4 +1,5 @@
  <link rel="stylesheet" href="/cn/css/test.css">
+ <script src="/cn/js/jqPaginator.js"></script>
 <section>
   <div class="s-test s-w1200">
     <div class="s-top-adv">
@@ -26,15 +27,6 @@
             <?php foreach($paper as $v){?>
             <dd data-src="<?php echo $v['id']?>"><?php echo $v['name'].$v['time']?></dd>
             <?php }?>
-<!--            <dd data-src="og2">OG2</dd>-->
-<!--            <dd data-src="og1">OG1</dd>-->
-<!--            <dd data-src="og2">OG2</dd>-->
-<!--            <dd data-src="og1">OG1</dd>-->
-<!--            <dd data-src="og2">OG2</dd>-->
-<!--            <dd data-src="og1">OG1</dd>-->
-<!--            <dd data-src="og2">OG2</dd>-->
-<!--            <dd data-src="og1">OG1</dd>-->
-<!--            <dd data-src="og2">OG2</dd>-->
           </dl>
         </div>
         <div class="s-subject-cnt">
@@ -51,7 +43,9 @@
             <?php }?>
           </ul>
         </div>
-        <?php echo $page?>
+        <div class="s-page">
+          <ul class="pagination clearfix"></ul>
+        </div>
       </div>
       <div class="s-right pull-right">
         <div class="s-right-subject s-right1">
@@ -114,7 +108,7 @@
         _this.effectEvent(this);
         _this.ajaxEvent(name,'all','all',1);
       });
-      $('.s-subject-src dd').click(function(){
+      $('.s-subject-src dl').on('click','dd',function(){
         var par = $(this).parent().attr('class');
         var name = $('.s-label-list li.active').attr('data-src');
         if (par == "s-src") {
@@ -130,6 +124,7 @@
     },
     //  点击效果
     effectEvent: function (obj) {
+      console.log($(obj).attr('data-src'));
       $(obj).parent().children().removeClass('active');
       $(obj).addClass('active');
     },
@@ -149,7 +144,43 @@
           $('.s-subject-cnt>ul').html('加载中');
         },
         success: function (res) {
-          console.log(res);
+          $('.s-sub').html('');
+          $('.s-subject-cnt').html('');
+          var dd = '',
+              li = '';
+              tp = res.count;
+          if (!res.data){
+            res.data = 0;
+            tp = 1;
+          }
+          if (res.paper) {
+            dd+="<dt>试卷来源：</dt>"+
+              "<dd class='active' data-src='all'>全部</dd>";
+            $.each(res.paper, function (i,data) {
+              dd+="<dd data-src='"+ data[1] +"'>"+ data[0] +"</dd>";
+            });
+          };
+          $.each(res.data, function (i,data) {
+            li+="<h3>"+data['name']+"-"+data['time']+"-"+data['major']+"-"+data['number']+"</h3>"+
+                "<div>"+data['content']+"</div>"+
+                "<a href='/exercise_details/"+data['qid']+".html'>做题</a>";
+          })
+          $('.s-sub').html(dd);
+          $('.s-subject-cnt').html(li);
+        },
+        complete: function () {
+          $.jqPaginator('.pagination', {
+            totalPages: tp,
+            visiblePages: 6,
+            currentPage: p,
+            onPageChange: function (num,type) {
+              console.log(num,type);
+              if(type == 'change'){
+                console.log(name,src,sub,num);
+                subject.ajaxEvent(name,src,sub,num);
+              }
+            }
+          });
         }
       })
     }

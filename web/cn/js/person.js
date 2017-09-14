@@ -257,7 +257,7 @@ function collect(src,classify,p){
     success: function (data) {
       var li = '';
       tp = data.totalPage;
-      if (data.list == undefined) {
+      if (!data.list) {
         data.list = 0;
         tp = 1;
       }
