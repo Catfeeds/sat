@@ -170,12 +170,18 @@ class ExerciseController extends Controller
         $tid = Yii::$app->request->post('subject');
         $major = Yii::$app->request->post('name','Reading');
         $cate = Yii::$app->request->post('src','');// og 开浦兰
-        $p = Yii::$app->request->post('p','');
+        $p = Yii::$app->request->post('p',1);
         $pagesize = 15;
         $model = new Questions();
         $data = $model->que($major, $cate, $p, $tid, $pagesize);
 //        return $data;
 //        var_dump($data);
+        if($data['data']!=false){
+            $data['msg']='没有更多的数据了!';
+            $data['code']=0;
+        }else{
+            $data['code']=1;
+        }
         die(json_encode($data));
     }
 }

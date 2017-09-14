@@ -22,25 +22,10 @@
             <dd data-src="barron">BARRON</dd>
           </dl>
           <dl class="s-sub">
-            <dt>试卷来源：</dt>
-            <dd class="active" data-src="all">全部</dd>
-            <?php foreach($paper as $v){?>
-            <dd data-src="<?php echo $v['id']?>"><?php echo $v['name'].$v['time']?></dd>
-            <?php }?>
           </dl>
         </div>
         <div class="s-subject-cnt">
           <ul>
-            <?php foreach($data as $k=>$v){?>
-            <li>
-              <h3><?php echo $v['name'].'-'.$v['time'].'-'.$v['major'].'-'.$v['number']?></h3>
-              <div><?php
-                  echo $v['content'];
-                  ?>
-              </div>
-              <a href="/exercise_details/<?php echo $v['qid']?>.html">做题</a>
-            </li>
-            <?php }?>
           </ul>
         </div>
         <div class="s-page">
@@ -99,7 +84,11 @@
   })
   var subject = {
     init: function () {
+      this.onLoad();
       this.bindEvent();
+    },
+    onLoad: function () {
+      this.ajaxEvent('Reading','all','all',1);
     },
     bindEvent: function() {
       var _this = this;
@@ -124,12 +113,12 @@
     },
     //  点击效果
     effectEvent: function (obj) {
-      console.log($(obj).attr('data-src'));
       $(obj).parent().children().removeClass('active');
       $(obj).addClass('active');
     },
     // ajax数据交互
     ajaxEvent: function (name,src,sub,p) {
+      var tp = '';
       $.ajax({
         url: '/cn/exercise/topic',
         type: 'post',
@@ -148,16 +137,25 @@
           $('.s-subject-cnt').html('');
           var dd = '',
               li = '';
-              tp = res.count;
-          if (!res.data){
+              tp = res.pagecount;
+          if (!res.count){
             res.data = 0;
             tp = 1;
           }
           if (res.paper) {
-            dd+="<dt>试卷来源：</dt>"+
-              "<dd class='active' data-src='all'>全部</dd>";
+            dd+="<dt>试卷来源：</dt>";
+            if (res['tid'] == 'all') {
+              dd+="<dd data-src='all' class='active'>全部</dd>";
+            }else {
+              dd+="<dd data-src='all'>全部</dd>";
+            }
             $.each(res.paper, function (i,data) {
-              dd+="<dd data-src='"+ data[1] +"'>"+ data[0] +"</dd>";
+              if (data[1] == res['tid']) {
+                dd+="<dd data-src='"+ data[1] +"' class='active'>"+ data[0] +"</dd>";
+              } else {
+                dd+="<dd data-src='"+ data[1] +"'>"+ data[0] +"</dd>";
+              }
+
             });
           };
           $.each(res.data, function (i,data) {
@@ -174,9 +172,7 @@
             visiblePages: 6,
             currentPage: p,
             onPageChange: function (num,type) {
-              console.log(num,type);
               if(type == 'change'){
-                console.log(name,src,sub,num);
                 subject.ajaxEvent(name,src,sub,num);
               }
             }
