@@ -134,7 +134,7 @@
     // ajax数据交互
     ajaxEvent: function (name,src,sub,p) {
       $.ajax({
-        url: '',
+        url: '/cn/exercise/topic',
         type: 'post',
         data: {
           name: name,
