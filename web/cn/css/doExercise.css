@@ -21,11 +21,11 @@
   font-size: 14px;
 }
 .s-exam .s-num {
-  margin-right: 10px;
+  margin: 10px 10px 0 0;
   font-size: 16px;
 }
 .s-exam .math-exam .s-title{
-  margin-bottom: 20px;
+  margin: 10px 0 20px 0;
 }
   /*数学*/
 .math-exam {

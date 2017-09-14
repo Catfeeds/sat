@@ -206,7 +206,7 @@ class Questions extends ActiveRecord
             $data['paper'][$k][]=$paper[$k]['id'];
         }
         $data['data'] = Yii::$app->db->createCommand("select number,content,q.id as qid,t.name,t.time,major from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where and t.name!='测评' limit $offset,$pagesize")->queryAll();
-        $data['count'] = count(Yii::$app->db->createCommand("select q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where ")->queryAll());
+        $data['count'] = count(Yii::$app->db->createCommand("select q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where and t.name!='测评'")->queryAll());
         $data['pagecount'] = ($data['count']!=0?ceil($data['count']/$pagesize):0);
         $data['page'] = $p;
         $data['tid'] = $tid;
