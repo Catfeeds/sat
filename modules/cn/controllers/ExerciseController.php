@@ -62,7 +62,7 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis = $q->getReplyData($id);
-        uc_user_edit_integral($userData['userName'], 'SAT做题一道', 1, 2);
+        uc_user_edit_integral($userData['username'], 'SAT做题一道', 1, 2);
 //        var_dump($dis);die;
         return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
