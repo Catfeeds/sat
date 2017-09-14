@@ -200,15 +200,16 @@ class Questions extends ActiveRecord
 
         }
         $offset = $pagesize * ($p - 1);
-        $data=array();
+        static $data=array();
         foreach($paper as $k=>$v){
             $data['paper'][$k][]=$paper[$k]['name'].$paper[$k]['time'];
             $data['paper'][$k][]=$paper[$k]['id'];
         }
-            $data['data'] = Yii::$app->db->createCommand("select q.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
-            $data['count'] = count(Yii::$app->db->createCommand("select q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where ")->queryAll());
-            $data['page'] = $p;
-//        }
+        $data['data'] = Yii::$app->db->createCommand("select number,content,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
+        $data['count'] = count(Yii::$app->db->createCommand("select q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where ")->queryAll());
+        $data['pagecount'] = ($data['count']!=0?ceil($data['count']/$pagesize):0);
+        $data['page'] = $p;
+
         return $data;
 
     }
