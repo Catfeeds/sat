@@ -427,13 +427,22 @@ body {
   top: 20%;
   right: 0;
 }
+.side-bar>ul {
+  /*display: none;*/
+}
+.side-bar>ul>i {
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  z-index: 9;
+}
 .side-bar li {
   position: relative;
   width: 64px;
   height: 72px;
   padding-top: 20px;
   margin-bottom: 2px;
-  background-color: #bababa;
+  background-color: #36B2FB;
 }
 .side-bar li:first-child {
   border-top-left-radius: 5px;
@@ -444,9 +453,9 @@ body {
   border-bottom-right-radius: 5px;
 }
 .side-bar li:hover {
-  background-color: rgb(54,178,251);
+  background-color: #bababa;
 }
-.side-bar li>p {
+.side-bar li p {
   width: 32px;
   height: 32px;
   margin: 0 auto;
@@ -455,7 +464,7 @@ body {
 .side-bar .side-wechat>p {
   background-position: -32px 0;
 }
-.side-bar .side-qq>p {
+.side-bar .side-qq p {
   background-position: -64px 0;
 }
 .side-bar .side-tel>p {
@@ -464,25 +473,25 @@ body {
 .side-bar .side-arrow>p {
   background-position: -128px 0;
 }
-.side-bar li>div {
+.side-bar li div {
   position: absolute;
   top: 0;
   right: 72px;
   display: none;
   padding: 12px 0;
   text-align: center;
-  background: rgb(54,178,251);
+  background-color: #bababa;
   font-size: 12px;
   color: #fff;
 }
-.side-bar li>div:after {
+.side-bar li div:after {
   position: absolute;
   display: block;
   content: '';
   top: 25px;
   right: -20px;
   border: 10px solid transparent;
-  border-left-color: rgb(54,178,251);
+  border-left-color: #bababa;
 }
 .side-bar .side-service>div {
   width: 125px;
@@ -500,11 +509,12 @@ body {
   width: 130px;
   height: 130px;
 }
-.side-bar .side-wechat>div p {
+.side-bar .side-wechat span {
+  display: block;
   margin: 10px 0 0 0;
   color: #fff;
 }
-.side-bar .side-qq>div,
+.side-bar .side-qq div,
 .side-bar .side-tel>div {
   width: 230px;
   height: 72px;
@@ -512,9 +522,22 @@ body {
   font-size: 16px;
 }
 .side-bar .side-service>div i,
-.side-bar .side-qq>div i,
+.side-bar .side-qq div i,
 .side-bar .side-tel>div i {
   padding-right: 10px;
+}
+/*我要咨询*/
+.side-bar>.side {
+  width: 25px;
+  padding: 20px 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  background-color: #36B2FB;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
 }
 /**
   底部报名栏

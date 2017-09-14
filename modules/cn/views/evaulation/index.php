@@ -87,24 +87,34 @@
   <div class="other">
     <ul class="clearfix">
       <li>
-        <div></div>
-        <a href="/knowledge.html">SAT知识库</a>
+        <a href="/knowledge.html">
+          <div></div>
+          <span>SAT知识库</span>
+        </a>
       </li>
       <li>
-        <div></div>
-        <a href="/mock.html">SAT模考</a>
+        <a href="/mock.html">
+          <div></div>
+          <span>SAT模考</span>
+        </a>
       </li>
       <li>
-        <div></div>
-        <a href="/exercise.html?m=Reading">阅读</a>
+        <a href="/exercise.html?m=Reading">
+          <div></div>
+          <span>阅读</span>
+        </a>
       </li>
       <li>
-        <div></div>
-        <a href="/exercise.html?m=Writing">文法</a>
+        <a href="/exercise.html?m=Writing">
+          <div></div>
+          <span>文法</span>
+        </a>
       </li>
       <li>
-        <div></div>
-        <a href="/exercise.html?m=Math">数学</a>
+        <a href="/exercise.html?m=Math">
+          <div></div>
+          <span>数学</span>
+        </a>
       </li>
     </ul>
   </div>

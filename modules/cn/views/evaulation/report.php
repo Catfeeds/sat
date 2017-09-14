@@ -3,7 +3,7 @@
 <section class="s-w1200">
     <!--  广告图-->
     <div class="eval-bnr">
-        <div><a href="#">历史测评报告&nbsp;<i>&gt;</i></a></div>
+        <div><a href="/person_eval.html">历史测评报告&nbsp;<i>&gt;</i></a></div>
     </div>
     <!--测评报告成绩-->
     <div class="score">
@@ -57,7 +57,6 @@
     <div class="single">
         <div class="title">
             <h1>单项结果分析</h1>
-
             <p>（友情提示：红色是错误答案，绿色是正确答案，点击你的答案可查看具体题目）</p>
         </div>
         <div class="single-cnt">
@@ -268,17 +267,31 @@
         </div>
         <ul class="clearfix">
             <?php if ($data['score']['score'] < 61) { ?>
-                <li>
-                    <div class="classes-top">
+                <li class="clearfix">
+                    <div class="classes-top fl">
                         <i class="fa fa-star"></i>
-
                         <p>0~60分</p>
                     </div>
-                    <div class="classes-font">
-                        <a href="#">雷哥SAT1V1 VIP</a>
-                        <a href="#">雷哥SAT1V2 VIP</a>
-                        <a href="#">雷哥SAT全能小班</a>
-                    </div>
+                    <ul class="classes-list clearfix">
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             <?php } elseif ($data['score']['score'] > 60 && $data['score']['score'] < 91) { ?>
                 <li>
@@ -287,11 +300,26 @@
 
                         <p>60~90分</p>
                     </div>
-                    <div class="classes-font">
-                        <a href="#">雷哥SAT1V1 VIP</a>
-                        <a href="#">雷哥SAT1V2 VIP</a>
-                        <a href="#">雷哥SAT全能小班</a>
-                    </div>
+                    <ul class="classes-list clearfix">
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             <?php } else { ?>
                 <li>
@@ -300,11 +328,26 @@
 
                         <p>90~120分</p>
                     </div>
-                    <div class="classes-font">
-                        <a href="#">雷哥SAT1V1 VIP</a>
-                        <a href="#">雷哥SAT1V2 VIP</a>
-                        <a href="#">雷哥SAT全能小班</a>
-                    </div>
+                    <ul class="classes-list clearfix">
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h2>雷哥SAT1V1 VIP</h2>
+                                <p>这些是报班的建议</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             <?php } ?>
         </ul>

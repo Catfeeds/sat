@@ -300,6 +300,72 @@
             </div>
         </div>
     </div>
+    <!--固定底部-->
+    <div class="apply-fix">
+        <div class="apply-wrap s-w1200 clearfix">
+            <h1 class="pull-left">SAT
+                <br/>课程报名
+            </h1>
+            <ul class="clearfix">
+                <li>
+                    <label for="">姓名:</label>
+                    <br/>
+                    <input class="apply-name" type="text" placeholder="请输入姓名">
+                </li>
+                <li>
+                    <label for="">申请国家:</label>
+                    <br/>
+                    <select class="apply-country" name="country">
+                        <option value="美国">美国</option>
+                        <option value="英国">英国</option>
+                        <option value="加拿大">加拿大</option>
+                        <option value="新加坡">新加坡</option>
+                        <option value="澳洲">澳洲</option>
+                        <option value="香港">香港</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <i class="fa fa-angle-down"></i>
+                </li>
+                <li>
+                    <label for="">SAT目标分数:</label>
+                    <br/>
+                    <input class="apply-score" type="text" placeholder="请输入您的目标分数">
+                </li>
+                <li>
+                    <label for="">SAT考试时间:</label>
+                    <br/>
+                    <select class="apply-time" name="time">
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                    <i class="fa fa-angle-down"></i>
+                </li>
+                <li>
+                    <label for="">邮箱:</label>
+                    <br/>
+                    <input class="apply-email" onblur="ckEmail(this)" type="text" placeholder="请输入您的邮箱">
+                </li>
+                <li>
+                    <label for="">电话:</label>
+                    <br/>
+                    <input class="apply-tel" type="text" placeholder="请输入您的电话">
+                </li>
+                <li class="apply-code">
+                    <label for="">验证码:</label>
+                    <br/>
+                    <input class="apply-cde" type="text" placeholder="请输入验证码">
+                    <span onclick="leftCode()">获取验证码</span>
+                </li>
+                <li class="apply-submit">
+                    <br/>
+                    <input type="button" value="提交">
+                </li>
+            </ul>
+        </div>
+        <i class="apply-close a-close fa fa-times"></i>
+    </div>
 </section>
 <!--底部-->
 <script>

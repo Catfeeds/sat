@@ -26,12 +26,11 @@
                 <li id="register"><a class="s-sign-up" href="http://login.gmatonline.cn/cn/index/register?source=20&url=<?php echo Yii::$app->request->hostInfo.Yii::$app->request->getUrl()?>">注册</a></li>
             </ul>
             <div class="login-after pull-right" <?php if(isset($user)){echo 'style="display:block"';}else{echo'style="display:none"';}?>>
-<!--            <div class="login-after pull-right" >-->
                 <div class="login-after-show">
                     <img src="/cn/images/login.png" alt="头像">
                     <p>
                         <span><?php echo isset($user)?($user['nickname']!=false?$user['nickname']:$user['username']):''?></span>
-                        <span>(<?php echo isset($_SESSION['level'])?Yii::$app->params['levelName'][$_SESSION['level']]:'初出茅庐'?>)</span>
+                        <span>(<?php echo isset($_SESSION['level'])&&$_SESSION['level']!=false?$_SESSION['level']:'初出茅庐'?>)</span>
                         <i class="fa fa-angle-down"></i>
                     </p>
                 </div>
@@ -96,7 +95,7 @@
             <div class="s-nav-showing">
                 <ul>
                     <li><a href="/exercise.html?m=Reading" <?php if(strpos($path,'exercise')!==false) echo 'class="on"';?>>练习</a></li>
-                    <li><a href="/knowledge.html" <?php if($path=='knowledge.html') echo 'class="on"';?>>知识库</a></li>
+<!--                    <li><a href="/knowledge.html" --><?php //if($path=='knowledge.html') echo 'class="on"';?><!-->知识库</a></li>-->
                     <li><a href="/evaulation.html">测评</a></li>
                 </ul>
             </div>

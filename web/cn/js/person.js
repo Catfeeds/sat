@@ -89,6 +89,9 @@ var person = {
         p:p
       },
       dataType : 'json',
+      beforeSend: function () {
+        $('.person-mock').html('正在加载中……');
+      },
       success : function (data) {
         var li = '';
         tp = data.totalPage;
@@ -140,6 +143,9 @@ function exer(src,classify,cas,p){
       'p': p
     },
     dataType: 'json',
+    beforeSend: function () {
+      $('.person-cnt>ul').html('正在加载中……');
+    },
     success: function (data) {
       var li = '';
       tp = data.totalPage;
@@ -190,6 +196,9 @@ function mock(src,t,p){
       'p': p
     },
     dataType: 'json',
+    beforeSend: function () {
+      $('.person-mock').html('正在加载中……');
+    },
     success: function (data) {
       var li = '';
       tp = data.totalPage;
@@ -242,6 +251,9 @@ function collect(src,classify,p){
       'p': p
     },
     dataType: 'json',
+    beforeSend: function () {
+      $('.person-cnt>ul').html('正在加载中……');
+    },
     success: function (data) {
       var li = '';
       tp = data.totalPage;

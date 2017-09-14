@@ -130,13 +130,9 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.work-question-part>div {
-    margin-top: 20px;
-}
 .work-question-part>.question-title {
     margin-bottom: 20px;
     font-size: 18px;
-    /*font-weight: bold;*/
 }
 .work-question-part>.question-title h1 {
     margin: 0 10px 0 0;

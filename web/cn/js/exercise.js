@@ -55,18 +55,18 @@ $(function() {
     }
   })
   //  收藏
-  $('.s-exam .s-collect').click(function () {
-    var _this = $(this);
-    if (_this.find('i').hasClass('fa-star-o')) {
-      _this.addClass('active');
-      _this.find('i').removeClass('fa-star-o');
-      _this.find('i').addClass('fa-star');
-    } else {
-      _this.removeClass('active');
-      _this.find('i').removeClass('fa-star');
-      _this.find('i').addClass('fa-star-o');
-    }
-  })
+  //$('.s-exam .s-collect').click(function () {
+  //  var _this = $(this);
+  //  if (_this.find('i').hasClass('fa-star-o')) {
+  //    _this.addClass('active');
+  //    _this.find('i').removeClass('fa-star-o');
+  //    _this.find('i').addClass('fa-star');
+  //  } else {
+  //    _this.removeClass('active');
+  //    _this.find('i').removeClass('fa-star');
+  //    _this.find('i').addClass('fa-star-o');
+  //  }
+  //})
   //题目讨论回复
   //回复/收回回复切换
   $('.dis-usr-list>ul').on('click','.dis-reply-btn', function () {

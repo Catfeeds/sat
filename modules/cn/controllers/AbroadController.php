@@ -16,11 +16,10 @@ class AbroadController extends Controller
     public function actionIndex()
     {
         $this->layout="cn1.php";
-        $order="order by isShow asc,id desc";
-        $info = Yii::$app->db->createCommand("select id,title,keywords,pic from {{%info}} where cate='留学案例' $order")->queryAll();
+        $info = Yii::$app->db->createCommand("select name,pic,direction,matriculate from {{%student_case}} order by id DESC ")->queryAll();
         $data = Yii::$app->db->createCommand("select * from {{%teachers}} where seniority!='讲师' ORDER BY flag ASC,id ASC")->queryAll();
         foreach($data as $k=>$v){
-            $data[$k]['case']= Yii::$app->db->createCommand("select id,title,keywords,pic from {{%info}} where cate='留学案例' and name='".$data[$k]['name']."'")->queryAll();
+            $data[$k]['case']= Yii::$app->db->createCommand("select name,direction,matriculate from {{%student_case}} where teacher like '%".$data[$k]['name']."%'")->queryAll();
         }
 //        echo '<pre>';
 //        var_dump($data);
