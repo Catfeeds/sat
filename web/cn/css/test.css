@@ -2,7 +2,7 @@
   margin: 40px 0 100px 0;
 }
 .s-test .s-left {
-  width: 685px;
+  width: 740px;
 }
 .s-test .s-label-list {
   margin-bottom: 20px;
@@ -58,16 +58,26 @@
 .s-test .s-subject-src .s-src {
   margin-bottom: 20px;
 }
-.s-test .s-subject-src .s-sub>dd {
+.s-test .s-subject-src .s-sub>dd,
+.s-test .s-subject-src .s-sub>dt{
   margin-bottom: 10px;
 }
 .s-test .s-subject-src dt,
 .s-test .s-subject-src dd {
   display: inline-block;
-  width: 100px;
+  width: 110px;
+  margin-right: 8px;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.s-test .s-subject-src dt {
+  width: 70px;
+}
+.s-test .s-subject-src dl dd:first-of-type {
+  width: 50px;
 }
 .s-test .s-subject-src dd.active {
   color: rgb(54,178,251);
@@ -90,6 +100,8 @@
 .s-test .s-subject-cnt div {
   max-height: 100px;
   margin: 10px 0;
+  font-size: 16px;
+  font-weight: 200;
   overflow: hidden;
 }
 .s-test .s-subject-cnt p {
