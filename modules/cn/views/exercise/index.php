@@ -7,9 +7,9 @@
     <div class="s-cnt clearfix">
       <div class="s-left pull-left">
         <ul class="s-label-list">
-          <li class="active" data-src="reading">阅读</li>
-          <li data-src="writing">文法</li>
-          <li data-src="math"> 数学</li>
+          <li class="active" data-src="Reading">阅读</li>
+          <li data-src="Writing">文法</li>
+          <li data-src="Math"> 数学</li>
         </ul>
         <div class="s-subject-src">
           <dl class="s-src">
@@ -23,16 +23,18 @@
           <dl class="s-sub">
             <dt>试卷来源：</dt>
             <dd class="active" data-src="all">全部</dd>
-            <dd data-src="og1">OG1</dd>
-            <dd data-src="og2">OG2</dd>
-            <dd data-src="og1">OG1</dd>
-            <dd data-src="og2">OG2</dd>
-            <dd data-src="og1">OG1</dd>
-            <dd data-src="og2">OG2</dd>
-            <dd data-src="og1">OG1</dd>
-            <dd data-src="og2">OG2</dd>
-            <dd data-src="og1">OG1</dd>
-            <dd data-src="og2">OG2</dd>
+            <?php foreach($paper as $v){?>
+            <dd data-src="<?php echo $v['id']?>"><?php echo $v['name'].$v['time']?></dd>
+            <?php }?>
+<!--            <dd data-src="og2">OG2</dd>-->
+<!--            <dd data-src="og1">OG1</dd>-->
+<!--            <dd data-src="og2">OG2</dd>-->
+<!--            <dd data-src="og1">OG1</dd>-->
+<!--            <dd data-src="og2">OG2</dd>-->
+<!--            <dd data-src="og1">OG1</dd>-->
+<!--            <dd data-src="og2">OG2</dd>-->
+<!--            <dd data-src="og1">OG1</dd>-->
+<!--            <dd data-src="og2">OG2</dd>-->
           </dl>
         </div>
         <div class="s-subject-cnt">

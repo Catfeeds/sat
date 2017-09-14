@@ -35,10 +35,11 @@ class ExerciseController extends Controller
         $str = $data['str'];
         unset($data['str']);
         $arr = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 18")->queryAll();
+        $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评'")->queryAll();
         $rank = Yii::$app->db->createCommand("select count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  order by count desc,correctRate DESC limit 10")->queryAll();
 //        var_dump($this->actionTopic());die;
 //        var_dump($arr);
-        return $this->render('index', ['data' => $data, 'rank' => $rank, 'page' => $str, 'arr' => $arr]);
+        return $this->render('index', ['data' => $data,'paper' => $paper, 'rank' => $rank, 'page' => $str, 'arr' => $arr]);
     }
 
     public function actionExercise()
@@ -166,14 +167,15 @@ class ExerciseController extends Controller
 
     public function actionTopic()
     {
-        $tid = Yii::$app->request->post('id');
-        $major = Yii::$app->request->post('major','Reading');
-        $cate = Yii::$app->request->post('cate','');
+        $tid = Yii::$app->request->post('subject');
+        $major = Yii::$app->request->post('name','Reading');
+        $cate = Yii::$app->request->post('src','');// og 开浦兰
         $p = Yii::$app->session->get('p',1);
         $pagesize = 15;
         $model = new Questions();
         $data = $model->que($major, $cate, $p, $tid, $pagesize);
 //        return $data;
+//        var_dump($data);
         die(json_decode($data));
     }
 }

@@ -170,9 +170,19 @@ class Questions extends ActiveRecord
             $m = "major = '$major'";
         }
         // 判断$cate参数是否存在，构建where语句
-        if ($cate == false) {
+        if ($cate == false  ) {
             $where = "where $m";
-        } else {
+            $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评'")->queryAll();
+        } elseif($cate=='all'){
+            if($tid=='all'||$tid==false){
+                $where = "where $m";
+            }else{
+                $where = "where $m and tpId=$tid";
+            }
+            $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评'")->queryAll();
+
+        }else {
+            $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评' and name='".$cate."'")->queryAll();
             if ($tid == false) {
                 $where2 = "where name='$cate'";
                 $ids = Yii::$app->db->createCommand("select id from {{%testpaper}} $where2")->queryAll();
@@ -182,18 +192,21 @@ class Questions extends ActiveRecord
                 }
                 $str = rtrim($str, ',');
                 $where = "where tpId in ($str) and ($m)";
+            }elseif($tid=='all'){
+                $where = "where $m and t.name='".$cate."'";
             } else {
-                $where = "where tpId=$tid and ($m)";
+                $where = "where tpId=$tid and $m";
             }
 
         }
         $offset = $pagesize * ($p - 1);
-//        if (isset($str) && $str == false) {
-//            $data = '';
-//            $count = 0;
-//        } else {
+        $data=array();
+        foreach($paper as $k=>$v){
+            $data['paper'][$k][]=$paper[$k]['name'].$paper[$k]['time'];
+            $data['paper'][$k][]=$paper[$k]['id'];
+        }
             $data['data'] = Yii::$app->db->createCommand("select q.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
-            $data['count'] = count(Yii::$app->db->createCommand("select id from {{%questions}} $where")->queryAll());
+            $data['count'] = count(Yii::$app->db->createCommand("select q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where ")->queryAll());
             $data['page'] = $p;
 //        }
         return $data;
