@@ -340,7 +340,6 @@
                   <?php echo $v['name'].' '.$v['matriculate']?>
                 </div>
                 <p><?php echo $v['direction']?></p>
-
             </li>
             <?php }}?>
 <!--            <li>-->

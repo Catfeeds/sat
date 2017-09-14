@@ -18,12 +18,12 @@
   border-left: 1px solid #000;
   font-size: 14px;
   font-weight: bold;
-  cursor: default;
+  cursor: pointer;
 }
 .s-test .s-label-list li:last-child {
   border-right: 1px solid #000;
 }
-.s-test .s-label-list li.active a{
+.s-test .s-label-list li.active {
   color: rgb(54,178,251);
 }
 .s-test .s-label-list li.active:before,
@@ -48,9 +48,18 @@
   border-bottom-color: #fff;
 }
 .s-test .s-subject-src {
-  padding: 20px 10px;
+  padding: 20px 10px 0 10px;
   border: 1px solid #000;
   font-size: 0;
+}
+.s-test .s-subject-src dl {
+  margin-bottom: 0;
+}
+.s-test .s-subject-src .s-src {
+  margin-bottom: 20px;
+}
+.s-test .s-subject-src .s-sub>dd {
+  margin-bottom: 10px;
 }
 .s-test .s-subject-src dt,
 .s-test .s-subject-src dd {
@@ -58,11 +67,12 @@
   width: 100px;
   text-align: center;
   font-size: 14px;
-  cursor: default;
+  cursor: pointer;
 }
 .s-test .s-subject-src dd.active {
   color: rgb(54,178,251);
 }
+/*题目列表*/
 .s-test .s-subject-cnt {
   margin: 40px 0 0 0;
 }

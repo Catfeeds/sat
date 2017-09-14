@@ -14,8 +14,7 @@ class PersonWidget extends Widget  {
      * 定义函数
      * */
     public function init()
-    {//这个可以取侧边栏数
-//            $this->udata();
+    {
         $this->url();
     }
     /**
