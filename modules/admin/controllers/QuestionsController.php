@@ -45,7 +45,6 @@ class QuestionsController extends ApiControl
                     $data['subScores2']=explode(',',$data['subScores'])[1];
                     $data['subScores']=explode(',',$data['subScores'])[0];
                 }
-//                var_dump($data);die;
                 return $this->render('add', ['data' => $data, 'arr' => $arr]);
             }
         } else {
@@ -54,14 +53,12 @@ class QuestionsController extends ApiControl
             $getdata = new GetData();
             $must = array('tpId'=>'试卷','section'=>'所属的小节');
             $data = $getdata->PostData($must);
-//            var_dump($data);die;
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
             } else {
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
             if ($re) {
-                echo "<script>alert('数据\修改成功');</script>";
                 if($_SESSION['url']){
                     $url=$_SESSION['url'];
                 }else{

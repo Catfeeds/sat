@@ -46,7 +46,6 @@ class ExerciseController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $uid = Yii::$app->session->get('uid', '');
-        $userData = Yii::$app->session->get('userData');
         $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
@@ -62,7 +61,6 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis = $q->getReplyData($id);
-        uc_user_edit_integral($userData['username'], 'SAT做题一道', 1, 2);
 //        var_dump($dis);die;
         return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
@@ -86,6 +84,8 @@ class ExerciseController extends Controller
         // 将做题的数据存入数据库
         $data['notes'] = $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
         if ($data['uid']) {
+            $userData = Yii::$app->session->get('userData');
+            uc_user_edit_integral($userData['username'], 'SAT做题一道', 1, 2);
             $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $data['uid'])->queryOne();
             if (!$arr) {
                 $data['count'] = 1;
