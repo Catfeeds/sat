@@ -29,6 +29,7 @@
     </div>
     <a href="<?php echo baseUrl.'/admin/questions/add'?>">添加具体题目</a></br>
     <a href="<?php echo baseUrl.'/admin/questions/search'?>">搜索题目</a>
+    <div><?php echo $str?><input type="text" class="tiao-val"><button class="tiao-btn">跳转</button></div>
     <div id="topic">
         题目信息表
         <table border="1"  width="100%" >
@@ -64,7 +65,7 @@
          <?php }?>
     </table>
     </div>
-    <div><?php echo $str?><input type="text" class="tiao-val"><button class="tiao-btn">跳转</button></div>
+
 </div>
 <script>
     $(function () {

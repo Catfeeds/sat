@@ -65,8 +65,7 @@
 .s-test .s-subject-src dt,
 .s-test .s-subject-src dd {
   display: inline-block;
-  width: 110px;
-  margin-right: 8px;
+  padding: 0 10px;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
