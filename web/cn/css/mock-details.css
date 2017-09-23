@@ -192,6 +192,7 @@
 .work-mk-math,
 .work-math-gap {
     padding: 10px 20px;
+    overflow-y: auto;
 }
 /*新数学填空*/
 .math-table {
