@@ -22,9 +22,9 @@ class QuestionsController extends ApiControl
     public function actionIndex()
     {
         // 从数据库获取数据
-        $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} order by id desc")->queryAll();
-        $arr= Yii::$app->db->createCommand("select * from {{%questions}} order by id desc")->queryAll();
-        return $this->render('index', ['data' => $data,'arr'=>$arr]);
+//        $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} order by id desc")->queryAll();
+//        $arr= Yii::$app->db->createCommand("select * from {{%questions}} order by id desc")->queryAll();
+        return $this->render('index');
     }
 
     public function actionAdd()
@@ -36,7 +36,7 @@ class QuestionsController extends ApiControl
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
             // 取出试卷的名称
-            $arr = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
+            $arr = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}}")->queryAll();
             if ($id == '') {
                 return $this->render('add', ['arr' => $arr]);
             } else {
@@ -45,7 +45,6 @@ class QuestionsController extends ApiControl
                     $data['subScores2']=explode(',',$data['subScores'])[1];
                     $data['subScores']=explode(',',$data['subScores'])[0];
                 }
-//                var_dump($data);die;
                 return $this->render('add', ['data' => $data, 'arr' => $arr]);
             }
         } else {
@@ -54,14 +53,12 @@ class QuestionsController extends ApiControl
             $getdata = new GetData();
             $must = array('tpId'=>'试卷','section'=>'所属的小节');
             $data = $getdata->PostData($must);
-//            var_dump($data);die;
             if ($data['id'] == '') {
                 $re = Yii::$app->db->createCommand()->insert("{{%questions}}", $data)->execute();
             } else {
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
             if ($re) {
-                echo "<script>alert('数据\修改成功');</script>";
                 if($_SESSION['url']){
                     $url=$_SESSION['url'];
                 }else{
@@ -96,7 +93,7 @@ class QuestionsController extends ApiControl
     // 展示试卷
     public function actionTestpaper()
     {
-        $data = Yii::$app->db->createCommand("select * from {{%testPaper}} ")->queryAll();
+        $data = Yii::$app->db->createCommand("select id,time,name,score,isLogin from {{%testPaper}} ")->queryAll();
         return $this->render('testpaper', ['data' => $data]);
     }
 
@@ -108,7 +105,7 @@ class QuestionsController extends ApiControl
             if ($id == '') {
                 return $this->render('add_testpaper');
             } else {
-                $data = Yii::$app->db->createCommand("select * from {{%testpaper}} where id=" . $id)->queryOne();
+                $data = Yii::$app->db->createCommand("select id,time,name,score,isLogin from {{%testpaper}} where id=" . $id)->queryOne();
                 return $this->render('add_testpaper', ['data' => $data]);
             }
         } else {
@@ -144,11 +141,11 @@ class QuestionsController extends ApiControl
     {
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');
-            $arr = Yii::$app->db->createCommand("select * from {{%testpaper}}")->queryAll();
+            $arr = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}}")->queryAll();
             if ($id == '') {
                 return $this->render('questions_extend',['arr'=>$arr]);
             } else {
-                $data = Yii::$app->db->createCommand("select * from {{%questions_extend}} where id=" . $id)->queryOne();
+                $data = Yii::$app->db->createCommand("select id,num,topic,details,essay,tid from {{%questions_extend}} where id=" . $id)->queryOne();
                 return $this->render('questions_extend', ['data' => $data,'arr'=>$arr]);
             }
         } else {
@@ -177,7 +174,7 @@ class QuestionsController extends ApiControl
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $count = Yii::$app->db->createCommand("select count(*) as count from {{%questions}} ")->queryOne();
-        $arr= Yii::$app->db->createCommand("select * from {{%questions}} order by id desc limit $offset,$pagesize")->queryAll();
+        $arr= Yii::$app->db->createCommand("select id,number,content,answer,major,essayId,tpId,subScores,crosstestScores from {{%questions}} order by id desc limit $offset,$pagesize")->queryAll();
         $url='/admin/questions/content?p';
         $count = $count['count'];
         $page = new Pager("$url", $count, $page, $pagesize);
@@ -200,4 +197,8 @@ class QuestionsController extends ApiControl
         return $this->render('topic', ['data' => $data,'str'=>$str]);
     }
 
+    public function actionSearch()
+    {
+        return $this->render('search');
+    }
 }

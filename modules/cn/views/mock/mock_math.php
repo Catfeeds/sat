@@ -13,12 +13,14 @@
     <div class="work-mk-cnt <?php echo $data['isFilling']=="1"?'work-math-gap':'work-mk-math'?>">
     <div class="work-question-part">
         <div class="question-title">
+            <h3><?php echo isset($data['topic'])&&$data['topic']!=false?$data['topic']:''?></h3>
+            <h5><?php echo isset($data['details'])&&$data['details']!=false?$data['details']:''?></h5>
             <?php if($data['essay']!=false){?>
             <div>
                 <?php echo $data['essay']?>
             </div>
             <?php }?>
-            <h1 class="pull-left"><?php echo $data['number']?>.<p></p></h1>
+            <h1 class="pull-left"><?php echo $data['number']?>.</h1>
             <?php echo $data['content']?>
         </div>
         <?php
