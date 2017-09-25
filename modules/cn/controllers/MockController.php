@@ -17,11 +17,11 @@ class MockController extends Controller
   public function actionIndex()
   {
     $this->layout = 'cn.php';
-    $data = Yii::$app->db->createCommand("select * from {{%testpaper}}where name!='测评' and name!='每日一题'")->queryAll();
-    $og = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='OG'")->queryAll();
-    $princeton = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='princeton'")->queryAll();
-    $kaplan = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='kaplan'")->queryAll();
-    $barron = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='BARRON'")->queryAll();
+    $data = Yii::$app->db->createCommand("select id,name,time,isLogin from {{%testpaper}}where name!='测评' and name!='每日一题'")->queryAll();
+    $og = Yii::$app->db->createCommand("select id,name,time,isLogin  from {{%testpaper}} where name='OG'")->queryAll();
+    $princeton = Yii::$app->db->createCommand("select id,name,time,isLogin  from {{%testpaper}} where name='princeton'")->queryAll();
+    $kaplan = Yii::$app->db->createCommand("select id,name,time,isLogin  from {{%testpaper}} where name='kaplan'")->queryAll();
+    $barron = Yii::$app->db->createCommand("select id,name,time,isLogin  from {{%testpaper}} where name='BARRON'")->queryAll();
     $score=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='all' order by r.score DESC limit 10")->queryAll();
     $read=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='Reading' order by r.score DESC limit 10")->queryAll();
     $write=Yii::$app->db->createCommand("select t.name,t.time,r.score,u.nickname,u.username,r.part from ({{%report}} r left join {{%testpaper}} t on r.tpId=t.id) left join {{%user}} u on r.uid=u.uid where part='writing' order by r.score DESC limit 10")->queryAll();
@@ -36,10 +36,11 @@ class MockController extends Controller
         if(is_numeric($tid)){
             $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
             $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
-           if($uid==false){
+          /* if($uid==false){
                 echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
                 die;
             }
+          */
             $major = Yii::$app->request->get('m', '');
             if(isset($_SESSION['answer'])){
                 unset($_SESSION['answer']);
@@ -86,7 +87,7 @@ class MockController extends Controller
              $section['section'] = 1;
         }
         if (!$qid) {
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
+            $data = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.subScores,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section['section'] . "  and q.number='1' and tpId=$id")->queryOne();
         }elseif($qid=='undefined') {
             unset($_SESSION['answer']);unset($_SESSION['tid']);
             echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
@@ -94,7 +95,7 @@ class MockController extends Controller
         }else{
             // 有qid的时候直接根据qid取
             if(is_numeric($qid)){
-                $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where q.id=" . $qid)->queryOne();
+                $data = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.subScores,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where q.id=" . $qid)->queryOne();
             }else{
                 $this->layout="cn.php";
                 return $this->render('/sat/surprise');
@@ -106,18 +107,22 @@ class MockController extends Controller
     if($data['major']=='Math1'){
       $time  =55;
       $amount=38;
+      $amount=5;
       $modle = 'mock_math';
     }elseif($data['major']=='Math2') {
       $time  =25;
       $amount=20;
+      $amount=5;
       $modle = 'mock_math';
     }elseif ($data['major']=='Reading'){
       $time  =65;
       $amount=52;
+      $amount=5;
       $modle = 'mock_read';
     }else{
       $time  =35;
       $amount=44;
+      $amount=5;
       $modle = 'mock_read';
     }
 //        var_dump($data);die;
@@ -140,11 +145,11 @@ class MockController extends Controller
     $re       = $a->addPro($qid, $solution,$utime);
     // 正确率等的计算
     $model    =new Questions();
-    $data     = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
+    $data     = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id from {{%questions}} where id=" . $qid)->queryOne();
     $re       =$model->avg($solution,$utime,$data);
     $_SESSION['uid'] = $uid;
     $_SESSION['tid'] = $tid;
-    $next = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
+    $next = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne();
 //   var_dump($_SESSION);die;
     echo die(json_encode($next));
   }
@@ -170,11 +175,12 @@ class MockController extends Controller
     $re      = $a->addPro($qid, $solution,$utime);// 将答案保存到session里
     // 正确率等的计算
     $model   =new Questions();
-    $data    = Yii::$app->db->createCommand("select * from {{%questions}} where id=" . $qid)->queryOne();
+    $data    = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id from {{%questions}} where id=" . $qid)->queryOne();
     $re      =$model->avg($solution,$utime,$data);
     // 统计答题总数，根据答题总数，返回数据
-    if($count<154){
-      $data= Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
+//    if($count<154){
+    if($count<20){
+      $data= Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
       echo die(json_encode($data));
     }else{
       echo die(json_encode('rep'));

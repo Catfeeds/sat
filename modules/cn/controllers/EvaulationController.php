@@ -19,9 +19,9 @@ class EvaulationController extends Controller
   public function actionIndex()
   {
     $this->layout = 'cn.php';
-    $data[0] = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='测评'  and time='初级卷' ")->queryOne();
-    $data[1] = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='测评' and time='中级卷' ")->queryOne();
-    $data[2] = Yii::$app->db->createCommand("select * from {{%testpaper}} where name='测评' and time='高级卷' ")->queryOne();
+    $data[0] = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='测评'  and time='初级卷' ")->queryOne();
+    $data[1] = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='测评' and time='中级卷' ")->queryOne();
+    $data[2] = Yii::$app->db->createCommand("select id,name,time from {{%testpaper}} where name='测评' and time='高级卷' ")->queryOne();
 //        var_dump($data);die;
     return $this->render('index', ['data' => $data]);
   }
@@ -48,7 +48,7 @@ class EvaulationController extends Controller
     $this->layout = 'cn1.php';
     $s = Yii::$app->request->get('s', 1);
     $tid = Yii::$app->request->get('tid');
-    $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number")->queryAll();
+    $data = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number")->queryAll();
     if ($data == false) {
       echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
       die;
@@ -77,7 +77,7 @@ class EvaulationController extends Controller
     } else {
       $_SESSION['answer']['item'] = $_SESSION['answer']['item'] + $item;
     }
-    $data['data'] = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . ($s + 1) . "   and tpId=$tid order by q.number")->queryAll();
+    $data['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . ($s + 1) . "   and tpId=$tid order by q.number")->queryAll();
     if ($data['data'] == false) {
       $data['code'] = 0;
       $data['message'] = '没有更多的章节了！';
@@ -167,9 +167,9 @@ class EvaulationController extends Controller
   {
     $uid = Yii::$app->session->get('uid');
     if ($id == false) {
-      $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
+      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crosstestScores,time,part from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
     } else {
-      $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
+      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crosstestScores,time,part from {{%report}} where id=" . $id)->queryOne();
     }
     if ($data) {
       $re['Math'] = $data['mathnum'] * 3;
@@ -190,7 +190,7 @@ class EvaulationController extends Controller
   }
   public function Suggest($tid, $re)
   {
-    $data = Yii::$app->db->createCommand("select * from {{%testpaper}} where id=" . $tid)->queryOne();
+    $data = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}} where id=" . $tid)->queryOne();
     if ($data['time'] == '初级卷') {
       $models = "Ping01";
     } elseif ($data['time'] == '中级卷') {
@@ -198,12 +198,12 @@ class EvaulationController extends Controller
     } elseif ($data['time'] == '高级卷') {
       $models = "Ping03";
     }
-    $suggest['Reading'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Reading'] . "  and min<" . $re['Reading'] . " and major='" . $models . "-Reading'")->queryOne();
-    $suggest['Writing'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Writing'")->queryOne();
-    $suggest['Math'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Math'")->queryOne();
-    $suggest['Vocabulary'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Vocabulary'")->queryOne();
-    $suggest['Translation'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Translation'")->queryOne();
-    $suggest['All'] = Yii::$app->db->createCommand("select * from {{%tactics}} where max>" . $re['score'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-All'")->queryOne();
+    $suggest['Reading'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['Reading'] . "  and min<" . $re['Reading'] . " and major='" . $models . "-Reading'")->queryOne();
+    $suggest['Writing'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Writing'")->queryOne();
+    $suggest['Math'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Math'")->queryOne();
+    $suggest['Vocabulary'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Vocabulary'")->queryOne();
+    $suggest['Translation'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['Writing'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-Translation'")->queryOne();
+    $suggest['All'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['score'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-All'")->queryOne();
     return $suggest;
   }
   public function Question($tid, $answer)

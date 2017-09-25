@@ -53,7 +53,7 @@ class Notes extends ActiveRecord
     // 根据条件取数据
     public function Ex($uid,$name,$major,$error,$offset,$pagesize,$p)
     {
-        $arr= Yii::$app->db->createCommand("select * from {{%notes}} where uid=".$uid)->queryOne();
+        $arr= Yii::$app->db->createCommand("select uid,notes,count,correctRate from {{%notes}} where uid=".$uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
             static $crr = array();

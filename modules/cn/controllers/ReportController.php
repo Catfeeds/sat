@@ -94,6 +94,7 @@ class ReportController extends Controller
         $suggest['Reading'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Reading'] . "  and min<=" . $res['Reading'] . " and major='Mock-Reading'")->queryOne();
         $suggest['Writing'] = Yii::$app->db->createCommand("select suggestion from {{%tactics}} where max>" . $res['Writing'] . "  and min<=" . $res['Writing'] . " and major='Mock-Writing'")->queryOne();
         if ($res['part'] == 'all') {
+//            var_dump($res);die;
             return $this->render('details', ['report' => $res, 'suggest' => $suggest, 'tp' => $tp, 'user' => $user]);
         } else {
             $info  = Yii::$app->db->createCommand("select id,pic from {{%info}} where cate='公开课' order by id DESC limit 3")->queryAll();
@@ -151,9 +152,9 @@ class ReportController extends Controller
 
         if ($uid) {
             if (!$rid) {
-                $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=$uid and tpId=$tpId order by id desc limit 1")->queryOne();
+                $data = Yii::$app->db->createCommand("select answer from {{%report}} where uid=$uid and tpId=$tpId order by id desc limit 1")->queryOne();
             } else {
-                $data = Yii::$app->db->createCommand("select * from {{%report}} where id=$rid")->queryOne();
+                $data = Yii::$app->db->createCommand("select answer from {{%report}} where id=$rid")->queryOne();
             }
             $arr = explode(';', $data['answer']);
             static $brr = array();

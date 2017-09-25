@@ -18,10 +18,10 @@ class ClassesController extends Controller
     public $brr;
     public function actionIndex()
     {
-        $data[0] = Yii::$app->db->createCommand("select * from {{%classes}} where cate='VIP精品班'")->queryOne();
-        $data[1] = Yii::$app->db->createCommand("select * from {{%classes}} where cate='全能小班'")->queryOne();
-        $data[2] = Yii::$app->db->createCommand("select * from {{%classes}} where cate='冲刺小班'")->queryOne();
-        $data[3]= Yii::$app->db->createCommand("select * from {{%classes}} where cate='直播/录播课'")->queryOne();
+        $data[0] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} where cate='VIP精品班'")->queryOne();
+        $data[1] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} where cate='全能小班'")->queryOne();
+        $data[2] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} where cate='冲刺小班'")->queryOne();
+        $data[3]= Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} where cate='直播/录播课'")->queryOne();
         $arr=$this->brr=array();
         foreach($data as $k=>$v){
             array_push($arr,$v['duration']);
@@ -40,10 +40,10 @@ class ClassesController extends Controller
     public function actionDetails()
     {
         $id = Yii::$app->request->get('id', '');
-        $data = Yii::$app->db->createCommand("select * from {{%classes}} where id=$id ")->queryOne();
+        $data = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction,teacher,student from {{%classes}} where id=$id ")->queryOne();
         $t=explode(',',$data['teacher']);
         foreach($t as $k =>$v){
-            $teacher[$k] = Yii::$app->db->createCommand("select * from {{%teachers}} where name='$v' ")->queryOne();
+            $teacher[$k] = Yii::$app->db->createCommand("select name,pic,introduction from {{%teachers}} where name='$v' ")->queryOne();
         }
 //        var_dump($teacher);die;
         return $this->render('details', ["data" => $data,'brr'=>$this->brr,'teacher'=>$teacher]);
