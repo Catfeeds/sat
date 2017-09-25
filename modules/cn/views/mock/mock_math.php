@@ -20,7 +20,7 @@
                 <?php echo $data['essay']?>
             </div>
             <?php }?>
-            <h1 class="pull-left"><?php echo $data['number']?>.<p></p></h1>
+            <h1 class="pull-left"><?php echo $data['number']?>.</h1>
             <?php echo $data['content']?>
         </div>
         <?php
