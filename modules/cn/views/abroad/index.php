@@ -421,6 +421,8 @@
           <p>400-600-1123</p>
         </div>
       </div>
+      <p class="s-w1200" style="font-size: 16px; margin-top: 15px; line-height: 24px;">上海申雷友管理咨询有限公司(简称"申友国际教育")，成立于上海，目前在北京、成都、西安、杭州、武汉、广州、深圳、珠海、加利福尼亚等10个城市拥有分支机构。申友国际教育专注于高端留学咨询和出国考试培训。</p>
+
     </div>
     <div class="s-footer-bottom">
       <div class="s-w1200">
@@ -433,7 +435,9 @@
           <dd><a href="http://bbs.gmatonline.cn/forum.php" target="_blank">留学社区</a></dd>
 <!--          </dd>-->
         </dl>
-        <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15006607号-2</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a>&nbsp;该网站归属于上海申雷友管理有限公司</p>
+        <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15006607号-2</a>
+<!--          <a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a>-->
+          &nbsp;该网站归属于上海申雷友管理咨询有限公司</p>
       </div>
     </div>
 <!--    右侧框-->

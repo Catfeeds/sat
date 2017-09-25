@@ -6,7 +6,9 @@
     <div class="bnr-wrap center-block">
         <div class="carousel-inner">
             <div class="item active">
-                <img src="/cn/images/teacher-bc.jpg" alt="First slide">
+                <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">
+                    <img src="/cn/images/teacher-bc.jpg" alt="First slide">
+                </a>
             </div>
         </div>
     </div>
