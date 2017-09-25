@@ -171,13 +171,13 @@ class Questions extends ActiveRecord
         }
         // 判断$cate参数是否存在，构建where语句
         if ($cate == false  ) {
-            $where = "where $m";
+            $where = "where ($m)";
             $paper = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}} where name!='测评'")->queryAll();
         } elseif($cate=='all'){
             if($tid=='all'||$tid==false){
-                $where = "where $m";
+                $where = "where ($m)";
             }else{
-                $where = "where $m and tpId=$tid";
+                $where = "where ($m) and tpId=$tid";
             }
             $paper = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}} where name!='测评'")->queryAll();
 
@@ -193,9 +193,9 @@ class Questions extends ActiveRecord
                 $str = rtrim($str, ',');
                 $where = "where tpId in ($str) and ($m)";
             }elseif($tid=='all'){
-                $where = "where $m and t.name='".$cate."'";
+                $where = "where ($m) and t.name='".$cate."'";
             } else {
-                $where = "where tpId=$tid and $m";
+                $where = "where tpId=$tid and ($m)";
             }
 
         }
