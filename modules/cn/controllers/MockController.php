@@ -36,11 +36,11 @@ class MockController extends Controller
         if(is_numeric($tid)){
             $isLogin= Yii::$app->db->createCommand("select isLogin from {{%testpaper}} where id=".$tid)->queryOne();
             $url=Yii::$app->request->hostInfo.Yii::$app->request->getUrl();
-          /* if($uid==false){
-                echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+           if($uid==false){
+                echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
                 die;
-            }
-          */
+           }
+
             $major = Yii::$app->request->get('m', '');
             if(isset($_SESSION['answer'])){
                 unset($_SESSION['answer']);
@@ -107,22 +107,18 @@ class MockController extends Controller
     if($data['major']=='Math1'){
       $time  =55;
       $amount=38;
-      $amount=5;
       $modle = 'mock_math';
     }elseif($data['major']=='Math2') {
       $time  =25;
       $amount=20;
-      $amount=5;
       $modle = 'mock_math';
     }elseif ($data['major']=='Reading'){
       $time  =65;
       $amount=52;
-      $amount=5;
       $modle = 'mock_read';
     }else{
       $time  =35;
       $amount=44;
-      $amount=5;
       $modle = 'mock_read';
     }
 //        var_dump($data);die;
@@ -178,8 +174,8 @@ class MockController extends Controller
     $data    = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id from {{%questions}} where id=" . $qid)->queryOne();
     $re      =$model->avg($solution,$utime,$data);
     // 统计答题总数，根据答题总数，返回数据
-//    if($count<154){
-    if($count<20){
+    if($count<154){
+//    if($count<20){
       $data= Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number=1 and tpId=" . $tid . " and section='$section' limit 1 ")->queryOne();
       echo die(json_encode($data));
     }else{

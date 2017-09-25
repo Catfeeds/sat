@@ -32,7 +32,7 @@ class EvaulationController extends Controller
     $uid = Yii::$app->session->get('uid', '');
     $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
     if($uid==false){
-      echo "<script>alert('该题目需要登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+      echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
       die;
     }
     if (isset($_SESSION['answer'])) {
