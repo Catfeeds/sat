@@ -224,7 +224,7 @@ class PersonController extends Controller
             die(json_encode($re));
         }
         $userData = $session->get('userData');
-        $data = uc_user_integral($userData['userName']);
+        $data = uc_user_integral($userData['username']);
         if (!is_array($data['details'])) {
             $data['details'] = [];
         }

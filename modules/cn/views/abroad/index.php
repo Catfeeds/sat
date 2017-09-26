@@ -330,8 +330,9 @@
       </ul>
       <div class="success-wrap">
         <div class="success-cnt">
+          <?php $b=($info==false?0:ceil(count($info)/4)); for($j=0;$j<$b;$j++){?>
           <ul class="clearfix">
-            <?php foreach($info as $k=>$v){if($k<4){?>
+            <?php foreach($info as $k=>$v){if($k<($j+1)*4&&$k>=$j*4){?>
             <li>
                 <div class="success-img">
                   <img src="<?php echo $v['pic']?>" alt="图片">
@@ -342,41 +343,6 @@
                 <p><?php echo $v['direction']?></p>
             </li>
             <?php }}?>
-<!--            <li>-->
-<!--              <div class="success-img">-->
-<!--                <img src="/cn/images/service_bg03.png" alt="图片">-->
-<!--              </div>-->
-<!--              <div class="success-font">-->
-<!--                GUO同学:【新】申友GUO-->
-<!--                同学获哈佛,哥大,UIUC等名-->
-<!--                校Offer!-->
-<!--              </div>-->
-<!--              <p>学校：剑桥大学、牛津大学</p>-->
-<!--            </li>-->
-          </ul>
-          <?php if(count($info)>4){?>
-          <ul class="clearfix">
-            <?php foreach($info as $k=>$v){if($k>3){?>
-              <li>
-                <div class="success-img">
-                  <img src="<?php echo $v['pic']?>" alt="图片">
-                </div>
-                <div class="success-font">
-                  <?php echo $v['name'].' '.$v['matriculate']?>
-                </div>
-                <p><?php echo $v['direction']?></p>
-              </li>
-            <?php }}?>
-<!--            <li>-->
-<!--              <div class="success-img">-->
-<!--                <img src="/cn/images/service_bg03.png" alt="图片">-->
-<!--              </div>-->
-<!--              <div class="success-font">-->
-<!--                UE同学:申友XUE同学-->
-<!--                斩获牛津和剑桥双Offer！-->
-<!--              </div>-->
-<!--              <p>学校：剑桥大学、牛津大学</p>-->
-<!--            </li>-->
           </ul>
           <?php }?>
         </div>
@@ -422,190 +388,8 @@
             </div>
           </li>
           <?php }}?>
-<!--          <li>-->
-<!--            <div>-->
-<!--              <div class="group-img clearfix">-->
-<!--                <img class="fl" src="/cn/images/classes-details01.png" alt="老师图片">-->
-<!--                <div class="group-chat">-->
-<!--                  <p>Callian申友留学文书顾问</p>-->
-<!--                  <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">来聊聊</a>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="introduce">-->
-<!--                申友留学文书顾问，持英语专业八级证书，5年以上留学行业经验，积累了丰富的留学申请和文书包装经验, 善于帮助学生挖掘申请亮点结合申请方向进行文书写作。工作认真，细致，有耐心，坚持以对留学申请负责的工作态度为每一位学子服务。从事留学行业以来，已成功帮助百多名学生获得美国，英国，加拿大、香港等国家和地区的名校录取。-->
-<!--              </div>-->
-<!--              <p class="show-case">查看案例</p>-->
-<!--              <div class="case">-->
-<!--                <h2>部分名校成功案例</h2>-->
-<!--                <ul class="clearfix">-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </li>-->
         </ul>
         <?php }?>
-<!--        <ul class="group-ul clearfix">-->
-<!--          <li>-->
-<!--            <div>-->
-<!--              <div class="group-img clearfix">-->
-<!--                <img class="fl" src="/cn/images/classes-details01.png" alt="老师图片">-->
-<!--                <div class="group-chat">-->
-<!--                  <p>Callian申友留学文书顾问</p>-->
-<!--                  <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">来聊聊</a>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="introduce">-->
-<!--                申友留学文书顾问，持英语专业八级证书，5年以上留学行业经验，积累了丰富的留学申请和文书包装经验, 善于帮助学生挖掘申请亮点结合申请方向进行文书写作。工作认真，细致，有耐心，坚持以对留学申请负责的工作态度为每一位学子服务。从事留学行业以来，已成功帮助百多名学生获得美国，英国，加拿大、香港等国家和地区的名校录取。-->
-<!--              </div>-->
-<!--              <p class="show-case">查看案例</p>-->
-<!--              <div class="case">-->
-<!--                <h2>部分名校成功案例</h2>-->
-<!--                <ul class="clearfix">-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <div>-->
-<!--              <div class="group-img clearfix">-->
-<!--                <img class="fl" src="/cn/images/classes-details01.png" alt="老师图片">-->
-<!--                <div class="group-chat">-->
-<!--                  <p>Callian申友留学文书顾问</p>-->
-<!--                  <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">来聊聊</a>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="introduce">-->
-<!--                申友留学文书顾问，持英语专业八级证书，5年以上留学行业经验，积累了丰富的留学申请和文书包装经验, 善于帮助学生挖掘申请亮点结合申请方向进行文书写作。工作认真，细致，有耐心，坚持以对留学申请负责的工作态度为每一位学子服务。从事留学行业以来，已成功帮助百多名学生获得美国，英国，加拿大、香港等国家和地区的名校录取。-->
-<!--              </div>-->
-<!--              <p class="show-case">查看案例</p>-->
-<!--              <div class="case">-->
-<!--                <h2>部分名校成功案例</h2>-->
-<!--                <ul class="clearfix">-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <div>-->
-<!--              <div class="group-img clearfix">-->
-<!--                <img class="fl" src="/cn/images/classes-details01.png" alt="老师图片">-->
-<!--                <div class="group-chat">-->
-<!--                  <p>Callian申友留学文书顾问</p>-->
-<!--                  <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">来聊聊</a>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="introduce">-->
-<!--                申友留学文书顾问，持英语专业八级证书，5年以上留学行业经验，积累了丰富的留学申请和文书包装经验, 善于帮助学生挖掘申请亮点结合申请方向进行文书写作。工作认真，细致，有耐心，坚持以对留学申请负责的工作态度为每一位学子服务。从事留学行业以来，已成功帮助百多名学生获得美国，英国，加拿大、香港等国家和地区的名校录取。-->
-<!--              </div>-->
-<!--              <p class="show-case">查看案例</p>-->
-<!--              <div class="case">-->
-<!--                <h2>部分名校成功案例</h2>-->
-<!--                <ul class="clearfix">-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <div>-->
-<!--              <div class="group-img clearfix">-->
-<!--                <img class="fl" src="/cn/images/classes-details01.png" alt="老师图片">-->
-<!--                <div class="group-chat">-->
-<!--                  <p>Callian申友留学文书顾问</p>-->
-<!--                  <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">来聊聊</a>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="introduce">-->
-<!--                申友留学文书顾问，持英语专业八级证书，5年以上留学行业经验，积累了丰富的留学申请和文书包装经验, 善于帮助学生挖掘申请亮点结合申请方向进行文书写作。工作认真，细致，有耐心，坚持以对留学申请负责的工作态度为每一位学子服务。从事留学行业以来，已成功帮助百多名学生获得美国，英国，加拿大、香港等国家和地区的名校录取。-->
-<!--              </div>-->
-<!--              <p class="show-case">查看案例</p>-->
-<!--              <div class="case">-->
-<!--                <h2>部分名校成功案例</h2>-->
-<!--                <ul class="clearfix">-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <p>纽约大学市场营销/金工</p>-->
-<!--                    <p>（$7000奖学金）</p>-->
-<!--                  </li>-->
-<!--                </ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--        </ul>-->
       </div>
     </div>
   </div>
@@ -627,11 +411,6 @@
           <dd><a href="#group">留学顾问</a></dd>
           <dd><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">留学评估</a></dd>
         </dl>
-<!--        <div class="s-qr">-->
-<!--          <img src="/cn/images/abroad-qr01.png" alt="二维码">-->
-<!--          <p>申友留学</p>-->
-<!--          <p>(mingxiaoliuxue)</p>-->
-<!--        </div>-->
         <div class="s-qr">
           <img src="/cn/images/abroad-qr02.png" alt="二维码">
           <p>留学微助手小小申</p>
@@ -647,12 +426,12 @@
       <div class="s-w1200">
         <dl>
           <dt>友情链接:</dt>
-          <dd>
+<!--          <dd>-->
           <dd><a href="http://www.thinkwithu.com" target="_blank">申友网</a></dd>
           <dd><a href="http://www.gmatonline.cn" target="_blank">雷哥网</a></dd>
           <dd><a href="http://www.thinkugmat.com/" target="_blank">申友在线</a></dd>
           <dd><a href="http://bbs.gmatonline.cn/forum.php" target="_blank">留学社区</a></dd>
-          </dd>
+<!--          </dd>-->
         </dl>
         <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15006607号-2</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a> &nbsp;该网站归属于上海申雷友管理有限公司</p>
       </div>

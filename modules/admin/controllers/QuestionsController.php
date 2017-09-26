@@ -29,6 +29,9 @@ class QuestionsController extends ApiControl
 
     public function actionAdd()
     {
+        if(strstr($_SERVER['HTTP_REFERER'],"content")){
+            $_SESSION['url']=$_SERVER['HTTP_REFERER'];
+        }
         $apps = Yii::$app->request;
         if (!$_POST) {
             $id = Yii::$app->request->get('id', '');

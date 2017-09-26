@@ -62,7 +62,6 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis = $q->getReplyData($id);
-
 //        var_dump($dis);die;
         return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
