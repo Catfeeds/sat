@@ -58,8 +58,14 @@ class QuestionsController extends ApiControl
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
             if ($re) {
-                echo '<script>alert("数据\修改成功")</script>';
-                $this->redirect('content');
+                if($_SESSION['url']){
+                    $url=$_SESSION['url'];
+                }else{
+                    $url='/admin/questions/content';
+                }
+                echo "<script type='text/javascript'>";
+                echo "window.location.href='$url'";
+                echo "</script>";
             } else {
                 echo '<script>alert("数据添加\修改失败，请重试");history.go(-1);</script>';
                 die;
