@@ -87,7 +87,7 @@ class Report extends ActiveRecord{
         if($id==false){
             $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
         }else{
-            $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id. " order by id desc")->queryOne();
         }
         if($data){
             $getscore   = new GetScore();

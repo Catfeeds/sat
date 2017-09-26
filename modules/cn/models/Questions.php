@@ -209,8 +209,7 @@ class Questions extends ActiveRecord
         $data['count'] = count(Yii::$app->db->createCommand("select q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where ")->queryAll());
         $data['pagecount'] = ($data['count']!=0?ceil($data['count']/$pagesize):0);
         $data['page'] = $p;
-
         return $data;
-
     }
+
 }

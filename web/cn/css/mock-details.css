@@ -95,7 +95,8 @@
     font-weight: bold;
     line-height: 26px;
 }
-.work-wrap-left h5 {
+.work-wrap-left h5,
+.work-wrap-left h5>p {
     margin-left: 35px;
     padding: 10px 0;
     line-height: 28px;

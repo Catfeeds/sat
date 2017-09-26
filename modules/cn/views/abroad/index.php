@@ -613,7 +613,7 @@
   <footer class="s-footer">
     <div class="s-footer-top">
       <div class="s-w1200 clearfix">
-        <dl class="pull-left">
+        <dl>
           <dt>快速入口</dt>
           <dd><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">本科留学</a></dd>
           <dd><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">硕士留学</a></dd>
@@ -627,11 +627,11 @@
           <dd><a href="#group">留学顾问</a></dd>
           <dd><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">留学评估</a></dd>
         </dl>
-        <div class="s-qr">
-          <img src="/cn/images/abroad-qr01.png" alt="二维码">
-          <p>申友留学</p>
-          <p>(mingxiaoliuxue)</p>
-        </div>
+<!--        <div class="s-qr">-->
+<!--          <img src="/cn/images/abroad-qr01.png" alt="二维码">-->
+<!--          <p>申友留学</p>-->
+<!--          <p>(mingxiaoliuxue)</p>-->
+<!--        </div>-->
         <div class="s-qr">
           <img src="/cn/images/abroad-qr02.png" alt="二维码">
           <p>留学微助手小小申</p>
@@ -654,7 +654,7 @@
           <dd><a href="http://bbs.gmatonline.cn/forum.php" target="_blank">留学社区</a></dd>
           </dd>
         </dl>
-        <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15006607号-2</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a></p>
+        <p>Copyright © 2017 All Right Reserved 雷哥网 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备15006607号-2</a><a class="about-statement" href="/about.html#sStatement" target="_blank">免责声明</a> &nbsp;该网站归属于上海申雷友管理有限公司</p>
       </div>
     </div>
 <!--    右侧框-->
