@@ -61,7 +61,6 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis = $q->getReplyData($id);
-//        var_dump($data);die;
         return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
     }
@@ -76,7 +75,6 @@ class ExerciseController extends Controller
         $date = time();
         $data['uid'] = Yii::$app->session->get('uid');
 
-//        $data['uid'] = 333;
         // 计算平均时间等
         $que = Yii::$app->db->createCommand("select content,answer,number,keyA,keyB,keyC,keyD,major,section,tpId,isFilling from {{%questions}} where id=" . $qid)->queryOne();
         $model = new Questions();

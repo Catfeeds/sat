@@ -210,8 +210,7 @@ class Questions extends ActiveRecord
         $data['pagecount'] = ($data['count']!=0?ceil($data['count']/$pagesize):0);
         $data['page'] = $p;
         $data['tid'] = $tid;
-
         return $data;
-
     }
+
 }

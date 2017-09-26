@@ -64,7 +64,9 @@ class QuestionsController extends ApiControl
                 }else{
                     $url='/admin/questions/content';
                 }
-                header("Location: $url");
+                echo "<script type='text/javascript'>";
+                echo "window.location.href='$url'";
+                echo "</script>";
             } else {
                 echo '<script>alert("数据添加\修改失败，请重试");history.go(-1);</script>';
                 die;
