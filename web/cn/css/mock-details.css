@@ -140,6 +140,13 @@
     font-size: 20px;
     font-family: "Times New Roman";
 }
+.work-question-part>.question-title>h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    line-height: 26px;
+}
 .work-question-part>.question-title h1 {
     margin: 2px 10px 0 0;
     font-size: 20px;
