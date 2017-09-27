@@ -18,6 +18,11 @@ use app\modules\cn\models\Report;
 use app\modules\cn\models\Questions;
 use app\modules\cn\models\Collection;
 
+header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Headers: X-Requested-With');
+//header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
+
+
 class WapApiController extends Controller
 {
     function init (){
