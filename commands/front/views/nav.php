@@ -85,7 +85,7 @@
 <!--</div>-->
 <nav class="s-nav">
     <div class="container clearfix">
-    <a class="s-nav-logo pull-left" href="http://sat.viplgw.cn/index.html">
+    <a class="s-nav-logo pull-left" href="http://www.thinkusat.com">
         <img src="/cn/images/logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
@@ -103,12 +103,12 @@
         <li><a href="/mock.html" <?php if($path=='mock.html') echo 'class="on"';?>>模考</a></li>
         <li><a href="/re.html" <?php if($path=='re.html' || $path=='re_single.html') echo 'class="on"';?>>报告</a></li>
         <li><a <?php if(strpos($path,'class')!==false && $path!='pubclass.html'){echo 'class="on"';}?> href="/class.html">SAT课程</a></li>
-        <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
 <!--        <li><a href="#">学员案例</a></li>-->
         <li><a <?php if($path=='pubclass.html'){echo 'class="on"';}?> href="/pubclass.html">公开课</a></li>
         <li><a  <?php if(strpos($path,'info')!==false){echo 'class="on"';}?> href="/info.html">SAT资讯</a></li>
         <li><a <?php if($path=='act.html'){echo 'class="on"';}?> href="/act.html">ACT</a></li>
         <li><a href="/US_abroad.html" <?php if(strpos($path,'abroad')!==false){echo 'class="on"';}?> target="_blank">美国留学</a></li>
+        <li><a <?php if(strpos($path,'teachers')!==false){echo 'class="on"';}?> href="/teachers.html">名师团队</a></li>
     </ul>
     <form class="search-form" action="">
         <div class="search-select">
@@ -128,6 +128,9 @@
 <script>
     $(function () {
         $('.search-select p').click(function () {
+            $('.search-select ul').toggle();
+        });
+        $('.search-select i').click(function () {
             $('.search-select ul').toggle();
         })
         $('.search-select ul li').click(function () {

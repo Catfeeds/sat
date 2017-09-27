@@ -17,7 +17,7 @@
             </dl>
             <div class="s-qr">
                 <img src="/cn/images/qr-code01.png" alt="">
-                <p>本科留学与考试</p>
+                <p>雷哥赛达备考</p>
                 <p>(Thinku-BKLX)</p>
             </div>
             <div class="s-qr">
