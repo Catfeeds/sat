@@ -25,13 +25,13 @@ class InfoController extends Controller
         $cate = Yii::$app->request->get('c', 'n');
         if ($cate == 'n') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='新闻资讯'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='新闻资讯' $order limit $offset,$pagesize")->queryAll();
+            $info = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='新闻资讯' $order limit $offset,$pagesize")->queryAll();
         } elseif ($cate == 't') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='学术报告'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='学术报告' $order limit $offset,$pagesize")->queryAll();
+            $info = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='学术报告' $order limit $offset,$pagesize")->queryAll();
         }elseif ($cate == 's') {
             $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} where cate='高分经验'")->queryOne();
-            $info = Yii::$app->db->createCommand("select * from {{%info}} where cate='高分经验' $order limit $offset,$pagesize")->queryAll();
+            $info = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='高分经验' $order limit $offset,$pagesize")->queryAll();
         }else{
             return $this->render('/sat/surprise');
         }
@@ -43,18 +43,18 @@ class InfoController extends Controller
         }
         $page = new Pager("$url", $count, $page, $pagesize);
         $str = $page->GetPager();
-        $hot = Yii::$app->db->createCommand("select * from {{%info}} order by hits desc limit 5")->queryAll();
+        $hot = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} order by hits desc limit 5")->queryAll();
         $student = Yii::$app->db->createCommand("select * from {{%student_case}} order by id desc limit 5")->queryAll();
-        $newinfo = Yii::$app->db->createCommand("select * from {{%info}} order by id desc limit 6")->queryAll();
+        $newinfo = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} order by id desc limit 6")->queryAll();
         $controller = Yii::$app->controller->id;
-        $pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$controller'")->queryAll();
+        $pic = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}} where module='$controller'")->queryAll();
         return $this->render('index', ['student' => $student, 'info' => $info, 'str' => $str, 'hot' => $hot, 'newinfo' => $newinfo,'pic'=>$pic]);
     }
 
     public function actionDetails()
     {
         $id = Yii::$app->request->get('id', '');
-        $data = Yii::$app->db->createCommand("select * from {{%info}} where id=$id")->queryOne();
+        $data = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,content,hits from {{%info}} where id=$id")->queryOne();
         if($data){
             if($data['cate']!='公开课'){
                 $data['hits']+=1;
@@ -62,8 +62,8 @@ class InfoController extends Controller
             $model=new Info;
             $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             $cate = $data['cate'];
-            $arr = Yii::$app->db->createCommand("select * from {{%info}} where cate='$cate' order by hits desc ")->queryAll();
-            $brr = Yii::$app->db->createCommand('select * from {{%info}} where isShow=0 order by hits desc limit 5 ')->queryAll();
+            $arr = Yii::$app->db->createCommand("select title,pic,id,cate,summary from {{%info}} where cate='$cate' order by hits desc ")->queryAll();
+            $brr = Yii::$app->db->createCommand('select title,pic,id,cate,summary from {{%info}} where isShow=0 order by hits desc limit 5 ')->queryAll();
 //        var_dump($data);die;
             return $this->render('details', ['data' => $data, 'arr' => $arr, 'brr' => $brr]);
         }else{

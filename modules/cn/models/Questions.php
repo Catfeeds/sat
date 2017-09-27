@@ -47,7 +47,7 @@ class Questions extends ActiveRecord
                 $data = '';
                 $count = 0;
             } else {
-                $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
+                $data = Yii::$app->db->createCommand("select q.content,q.number,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
                 $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
                 $count = $count['count(*)'];
             }
@@ -65,7 +65,7 @@ class Questions extends ActiveRecord
             $data = '';
             $count = 0;
         } else {
-            $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
+            $data = Yii::$app->db->createCommand("select q.content,q.number,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id $where limit $offset,$pagesize")->queryAll();
             $count = Yii::$app->db->createCommand("select count(*) from {{%questions}} $where")->queryOne();
             $count = $count['count(*)'];
         }
@@ -171,18 +171,18 @@ class Questions extends ActiveRecord
         }
         // 判断$cate参数是否存在，构建where语句
         if ($cate == false  ) {
-            $where = "where $m";
-            $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评'")->queryAll();
+            $where = "where ($m)";
+            $paper = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}} where name!='测评'")->queryAll();
         } elseif($cate=='all'){
             if($tid=='all'||$tid==false){
-                $where = "where $m";
+                $where = "where ($m)";
             }else{
-                $where = "where $m and tpId=$tid";
+                $where = "where ($m) and tpId=$tid";
             }
-            $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评'")->queryAll();
+            $paper = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}} where name!='测评'")->queryAll();
 
         }else {
-            $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评' and name='".$cate."'")->queryAll();
+            $paper = Yii::$app->db->createCommand("select id,time,name  from {{%testpaper}} where name!='测评' and name='".$cate."'")->queryAll();
             if ($tid == false) {
                 $where2 = "where name='$cate'";
                 $ids = Yii::$app->db->createCommand("select id from {{%testpaper}} $where2")->queryAll();
@@ -193,9 +193,9 @@ class Questions extends ActiveRecord
                 $str = rtrim($str, ',');
                 $where = "where tpId in ($str) and ($m)";
             }elseif($tid=='all'){
-                $where = "where $m and t.name='".$cate."'";
+                $where = "where ($m) and t.name='".$cate."'";
             } else {
-                $where = "where tpId=$tid and $m";
+                $where = "where tpId=$tid and ($m)";
             }
 
         }

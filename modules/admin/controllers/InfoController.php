@@ -23,7 +23,7 @@ class InfoController extends ApiControl
         $page = Yii::$app->request->get('p', 1);
         $offset = $pagesize * ($page - 1);
         $count = Yii::$app->db->createCommand("select count(*) as count from {{%info}} ")->queryOne();
-        $data = Yii::$app->db->createCommand("select * from {{%info}} order by id desc limit $offset,$pagesize")->queryAll();
+        $data = Yii::$app->db->createCommand("select id,title,pic,videoAddress,keywords,summary,content,cate,publishTime,hits,validTime from {{%info}} order by id desc limit $offset,$pagesize")->queryAll();
         $url='/admin/info/index?p';
         $count = $count['count'];
         $page = new Pager("$url", $count, $page, $pagesize);

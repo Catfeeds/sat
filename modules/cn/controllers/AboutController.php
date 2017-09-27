@@ -17,8 +17,8 @@ class AboutController extends Controller
     public $token;
     public function actionAbout()
     {
-        $contact = Yii::$app->db->createCommand("select * from {{%contact}} ")->queryAll();
-        $join = Yii::$app->db->createCommand("select * from {{%job_offers}} ")->queryAll();
+        $contact = Yii::$app->db->createCommand("select city,name,pic,telephone,address,bus,subWay from {{%contact}} ")->queryAll();
+        $join = Yii::$app->db->createCommand("select cate,job,demand,city from {{%job_offers}} ")->queryAll();
         $session = Yii::$app->session;
         $token=md5(rand(1,999999));
         $session->set('token', $token);

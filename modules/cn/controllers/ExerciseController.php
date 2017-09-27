@@ -34,8 +34,8 @@ class ExerciseController extends Controller
         }
         $str = $data['str'];
         unset($data['str']);
-        $arr = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 18")->queryAll();
-        $paper = Yii::$app->db->createCommand("select *  from {{%testpaper}} where name!='测评'")->queryAll();
+        $arr = Yii::$app->db->createCommand("select q.content,q.number,q.major,q.section,q.tpId,q.isFilling,q.id as qid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 18")->queryAll();
+        $paper = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} where name!='测评'")->queryAll();
         $rank = Yii::$app->db->createCommand("select count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  order by count desc,correctRate DESC limit 10")->queryAll();
 //        var_dump($this->actionTopic());die;
 //        var_dump($arr);
@@ -46,8 +46,7 @@ class ExerciseController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $uid = Yii::$app->session->get('uid', '');
-
-        $data = Yii::$app->db->createCommand("select q.*,qe.*,q.id as qid,t.name,t.time  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
+        $data = Yii::$app->db->createCommand("select q.analysis,q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
@@ -62,7 +61,6 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis = $q->getReplyData($id);
-//        var_dump($dis);die;
         return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
     }
@@ -78,14 +76,14 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
 
         // 计算平均时间等
-        $que = Yii::$app->db->createCommand("select *  from {{%questions}} where id=" . $qid)->queryOne();
+        $que = Yii::$app->db->createCommand("select content,answer,number,keyA,keyB,keyC,keyD,major,section,tpId,isFilling from {{%questions}} where id=" . $qid)->queryOne();
         $model = new Questions();
         $re = $model->avg($answer, $time, $que);
         // 将做题的数据存入数据库
         $data['notes'] = $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
         if ($data['uid']) {
             $userData = Yii::$app->session->get('userData');
-            uc_user_edit_integral($userData['userName'], 'SAT做题一道', 1, 2);
+            uc_user_edit_integral($userData['username'], 'SAT做题一道', 1, 2);
             $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $data['uid'])->queryOne();
             if (!$arr) {
                 $data['count'] = 1;

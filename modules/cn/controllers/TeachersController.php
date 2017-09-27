@@ -24,14 +24,14 @@ class TeachersController extends Controller
         $page = Yii::$app->request->get('p', 1);
         $maxpage = ceil($count / $pagesize);
         $offset = $pagesize * ($page - 1);
-        $data = Yii::$app->db->createCommand("select * from {{%teachers}} where seniority='讲师' $order limit $offset,$pagesize")->queryAll();
+        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' $order limit $offset,$pagesize")->queryAll();
         return $this->render('index', ['data' => $data, 'maxpage' => $maxpage]);
     }
 
     public function actionDetails()
     {
         $id = Yii::$app->request->get('id', '');
-        $data = Yii::$app->db->createCommand("select * from {{%teachers}} where id=$id ")->queryOne();
+        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where id=$id ")->queryOne();
         $name = $data['name'];
         $arr = Yii::$app->db->createCommand("select * from {{%student_case}} where teacher='$name' limit 5")->queryAll();
         if ($arr != false) {
