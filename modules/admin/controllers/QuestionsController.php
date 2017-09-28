@@ -59,7 +59,7 @@ class QuestionsController extends ApiControl
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $data['id']));
             }
             if ($re) {
-                if($_SESSION['url']){
+                if(isset($_SESSION['url'])&&$_SESSION['url']!=false){
                     $url=$_SESSION['url'];
                 }else{
                     $url='/admin/questions/content';
