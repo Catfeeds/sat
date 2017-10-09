@@ -81,7 +81,7 @@ class Report extends ActiveRecord{
         return $que;
     }
 
-    // 用户的最新一套试题数据
+    // 用户报告的数据
     function Show($uid,$id)
     {
         if($id==false){

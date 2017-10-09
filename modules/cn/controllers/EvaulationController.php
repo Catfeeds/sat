@@ -48,7 +48,7 @@ class EvaulationController extends Controller
     $this->layout = 'cn1.php';
     $s = Yii::$app->request->get('s', 1);
     $tid = Yii::$app->request->get('tid');
-    $data = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number")->queryAll();
+    $data = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $s . "   and tpId=$tid order by q.number limit 10")->queryAll();
     if ($data == false) {
       echo " <script>alert('题目正在更新中，换一套题吧！'); location.href='/mock.html'</script>";
       die;
@@ -88,6 +88,7 @@ class EvaulationController extends Controller
     $data['test'] = $data['data'][0]['time'];
     echo die(json_encode($data));
   }
+
   // 正确个数
   public function actionNumber($data)
   {
@@ -95,6 +96,7 @@ class EvaulationController extends Controller
     $number = $getScore->number($data);// $data为做题的数据
     return $number;
   }
+
   // 获取测评的分数
   public function actionScore($data)
   {
@@ -112,6 +114,7 @@ class EvaulationController extends Controller
     }
     return $trans;
   }
+
   // 测评报告
   public function actionReport()
   {
@@ -162,6 +165,7 @@ class EvaulationController extends Controller
     }
     return $this->render("report", ['data' => $data]);
   }
+
   // 显示
   public function Show($id = '')
   {
@@ -188,6 +192,7 @@ class EvaulationController extends Controller
       die;
     }
   }
+
   public function Suggest($tid, $re)
   {
     $data = Yii::$app->db->createCommand("select id,time,name from {{%testpaper}} where id=" . $tid)->queryOne();
@@ -206,6 +211,7 @@ class EvaulationController extends Controller
     $suggest['All'] = Yii::$app->db->createCommand("select major,suggestion from {{%tactics}} where max>" . $re['score'] . "  and min<" . $re['Writing'] . " and major='" . $models . "-All'")->queryOne();
     return $suggest;
   }
+
   public function Question($tid, $answer)
   {
     $s = Yii::$app->db->createCommand("select id,answer,section from {{%questions}} where tpId=$tid")->queryAll();
