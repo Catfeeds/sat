@@ -340,12 +340,17 @@ class WapApiController extends Controller
         $major = Yii::$app->request->post('major','Reading');
         $uid = Yii::$app->session->get('uid');
         $num = Yii::$app->request->post('num');
+        if($uid==false){
+            $re['code'] = 5;
+            $re['msg'] = '用户未登录';
+            die(json_encode($re));
+        }
 //        session_start();
         $major = "major='" . $major . "'";
         $q = new Questions();
         $data['collection'] = $q->isCollection($uid, $qid);
         if ($qid != false) {
-            $data['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
+            $data['data'] = Yii::$app->db->createCommand("select q.content,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
             if(isset($_SESSION['answer'])){
                 $answerData = ((array)$_SESSION['answer']);
                 $data['answer'] =(isset($answerData['item'][$qid])?$answerData['item'][$qid][1]:'');// 获取用户的答题数据
@@ -380,18 +385,18 @@ class WapApiController extends Controller
     // 将登陆用户的做题数据存入数据库,练习的上下一题
     public function actionNotes()
     {
-        $answer = Yii::$app->request->post('answer');
-        $time = Yii::$app->request->post('time');
-        $qid = Yii::$app->request->post('qid');
-        $pos = Yii::$app->request->post('pos');
+        $answer = Yii::$app->request->post('answer',1);
+        $time = Yii::$app->request->post('time',3);
+        $qid = Yii::$app->request->post('qid',1);
+        $pos = Yii::$app->request->post('pos','next');
         $date = time();
-        $data['uid'] = Yii::$app->session->get('uid');
+//        $data['uid'] = Yii::$app->session->get('uid');
+        $data['uid'] = 444;
         $que = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id,number,section,tpId,major,essayId  from {{%questions}} where id=" . $qid)->queryOne();
         $model = new Questions();
         $re = $model->avg($answer, $time, $que);
         // 将做题的数据存入数据库
         $data['notes'] = $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
-//        session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $answer, $time);
         if ($data['uid']) {
@@ -403,7 +408,7 @@ class WapApiController extends Controller
                 $answer == $que['answer'] ? $data['correctRate'] = 100 : $data['correctRate'] = 0;
                 $re = Yii::$app->db->createCommand()->insert("{{%notes}}", $data)->execute();
             } else {
-                $model = new Notes();
+                $notes = new Notes();
                 $data['count'] = $arr['count'] + 1;
                 $arr['correctRate'] == 0 ? $correct = 0 : ($correct = $arr['correctRate'] * $arr['count'] / 100);
                 if ($answer == $que['answer']) {
@@ -412,7 +417,7 @@ class WapApiController extends Controller
                     $data['correctRate'] = $correct / $data['count'] * 100;
                 }
                 $data['notes'] = $arr['notes'] . $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
-                $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
+                $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
             }
         }
         if ($pos == 'next') {
@@ -537,6 +542,12 @@ class WapApiController extends Controller
     {
         $tid = Yii::$app->request->post('tid');
         $major = Yii::$app->request->post('major', '');
+        $uid = Yii::$app->session->get('userid', '');
+        if($uid==false){
+            $re['code'] = 5;
+            $re['msg'] = '用户未登录';
+            die(json_encode($re));
+        }
         $data['Reading']['count'] = 52;
         $data['Reading']['time'] = 65;
         $data['Writing']['count'] = 44;
