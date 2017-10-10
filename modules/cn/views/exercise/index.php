@@ -61,7 +61,7 @@
               <li>
                 <h3><?php echo $v['qid']?>.</h3>
                 <a href="/exercise_details/<?php echo $v['qid']?>.html">
-                  <?php echo $v['content']; ?>
+                  <?php echo $v['content']!=false?$v['content']:'Title hidden, click to view'; ?>
                 </a>
               </li>
             <?php }?>

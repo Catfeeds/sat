@@ -46,7 +46,7 @@ class ExerciseController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $uid = Yii::$app->session->get('uid', '');
-        $data = Yii::$app->db->createCommand("select q.analysis,q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
+        $data = Yii::$app->db->createCommand("select q.analysis,q.answer,q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $id)->queryOne();
         $knowledge = Yii::$app->db->createCommand("select * from {{%knowledge}} order by id desc limit 6")->queryAll();
         $question = Yii::$app->db->createCommand("select id as qid,content  from {{%questions}} limit 5")->queryAll();
         $mock = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} limit 5")->queryAll();
@@ -86,7 +86,7 @@ class ExerciseController extends Controller
         if ($data['uid']) {
             $userData = Yii::$app->session->get('userData');
             uc_user_edit_integral($userData['username'], 'SAT做题一道', 1, 2);
-            $arr = Yii::$app->db->createCommand("select * from {{%notes}} where uid=" . $data['uid'])->queryOne();
+            $arr = Yii::$app->db->createCommand("select count,correctRate,notes,id,uid from {{%notes}} where uid=" . $data['uid'])->queryOne();
             if (!$arr) {
                 $data['count'] = 1;
                 $answer == $que['answer'] ? $data['correctRate'] = 100 : $data['correctRate'] = 0;
