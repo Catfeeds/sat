@@ -10,6 +10,7 @@ use yii\db\ActiveRecord;
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: X-Requested-With');
+header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 
 class ApiController extends Controller
 {
@@ -202,7 +203,8 @@ class ApiController extends Controller
     {
         set_time_limit(0);
         $mail = Yii::$app->mailer->compose();
-        $em_1 = md5($email);
+//        $em_1 = md5($email);
+        $email="yanyao_feng@163.com";
         $mail->setTo($email);
         $mail->setSubject("【申友网(thinku)】邮件验证码");
         $content = "<a href='http://www.sysat.com/index.php/user/api/live?em_1=" . $em_1 . "&email=" . $email . "'>点击此链接</a>激活账号【申友网(thinku)】";
