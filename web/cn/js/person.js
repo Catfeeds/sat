@@ -163,9 +163,13 @@ function exer(src,classify,cas,p){
           "</div>"+
           "<div class='collect-sub'>"+
           "<h4><i class='exer-delete fa fa-times-circle' onclick='exerDel(this)' data-id='"+array['qid']+"'></i>"+array['name']+"-"+array['major']+"-"+array['number']+"<span>"+new Date(parseInt(array[2])*1000).toLocaleString()+"</span></h4>"+
-          "<p>"+
-          "<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>"+
-          "</p>"+
+          "<p>";
+          if (array['content']) {
+              li+="<a href='/exercise_details/"+array['qid']+".html' target='_blank'>"+array['content']+"</a>";
+          } else {
+              li+="<a href='/exercise_details/"+array['qid']+".html' target='_blank'>title hidden,click to view</a>";
+          }
+          li+="</p>"+
           "</div>"+
           "</li>"
       })

@@ -341,11 +341,11 @@ class WapApiController extends Controller
         $major = Yii::$app->request->post('major','Reading');
         $uid = Yii::$app->session->get('uid');
         $num = Yii::$app->request->post('num');
-        if($uid==false){
-            $re['code'] = 5;
-            $re['msg'] = '用户未登录';
-            die(json_encode($re));
-        }
+//        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
 //        session_start();
         $major = "major='" . $major . "'";
         $q = new Questions();

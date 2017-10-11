@@ -81,9 +81,13 @@ var subject = {
           });
         };
         $.each(res.data, function (i,data) {
-          li+="<h3>"+data['name']+"-"+data['time']+"-"+data['major']+"-"+data['number']+"</h3>"+
-            "<div>"+data['content']+"</div>"+
-            "<a href='/exercise_details/"+data['qid']+".html'>做题</a>";
+          li+="<h3>"+data['name']+"-"+data['time']+"-"+data['major']+"-"+data['number']+"</h3>";
+          if (data['content']) {
+              li+="<div>"+data['content']+"</div>";
+          }else {
+            li+="<div>Title hidden, click to view</div>";
+          }
+          li+="<a href='/exercise_details/"+data['qid']+".html'>做题</a>";
         })
         $('.s-sub').html(dd);
         $('.s-subject-cnt').html(li);
