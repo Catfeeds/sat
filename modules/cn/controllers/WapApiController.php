@@ -402,12 +402,11 @@ class WapApiController extends Controller
     //做题详情,有待商榷
     public function actionExerDetails()
     {
-        $qid = Yii::$app->request->post('id',1);
-        $tid = Yii::$app->request->post('tid',1);
-        $tid = 1;
+        $qid = Yii::$app->request->post('id');
+        $tid = Yii::$app->request->post('tid',3);
         $major = Yii::$app->request->post('major','Reading');
         $uid = Yii::$app->session->get('uid');
-        $num = Yii::$app->request->post('num',1);
+        $num = Yii::$app->request->post('num',4);
 //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
@@ -416,7 +415,7 @@ class WapApiController extends Controller
         $q = new Questions();
         $data['collection'] = $q->isCollection($uid, $qid);
         if ($qid != false) {
-            $data['data'] = Yii::$app->db->createCommand("select q.content,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
+            $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
             if(isset($_SESSION['answer'])){
                 $answerData = ((array)$_SESSION['answer']);
                 $data['answer'] =(isset($answerData['item'][$qid])?$answerData['item'][$qid][1]:'');// 获取用户的答题数据
@@ -426,12 +425,12 @@ class WapApiController extends Controller
                 $_SESSION['answer']= array();
             }
             if($major=='Math1'|| $major=='Math2' ){
-                $data['data'] = Yii::$app->db->createCommand("select q.content,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.number=1 and q.tpId=$tid and major='".$major."' order by q.number asc limit 1 ")->queryOne();
+                $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.number=1 and q.tpId=$tid and major='".$major."' order by q.number asc limit 1 ")->queryOne();
             }else{
-                $data['data'] = Yii::$app->db->createCommand("select q.content,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where qe.num=$num and q.tpId=$tid and major='".$major."' order by q.number asc limit 1 ")->queryOne();
+                $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where qe.num=$num and q.tpId=$tid and major='".$major."' order by q.number asc limit 1 ")->queryOne();
             }
         }
-        $data['n'] = $q->Progress($major, $qid, $data['section'], $data['tpId'], $data['essayId']);
+        $data['n'] = $q->Progress($major, $data['data']['qid'], $data['data']['section'], $data['data']['tpId'], $data['data']['essayId']);
         if($major!='Math1' && $major!='Math1') {
             $data['nextid'] = Yii::$app->db->createCommand("select id from {{%questions}} where number>" . $data['data']['number'] . "  and  tpId=" . $tid . " and major='".$major."' and essayId=" . $data['data']['essayId'] . " order by number asc limit 1")->queryOne()['id'];
             $data['upid'] = Yii::$app->db->createCommand("select id from {{%questions}} where number<" . $data['data']['number'] . "  and   tpId=" . $tid . " and major='".$major."' and essayId=" . $data['data']['essayId'] . " order by number desc limit 1")->queryOne()['id'];
@@ -446,9 +445,8 @@ class WapApiController extends Controller
         } else {
             $code = 0;
         }
-        $data['data']['content']=strip_tags($data['data']['content']);
-        $data['data']['topic']=strip_tags($data['data']['topic']);
-        $data['data']['details']=strip_tags($data['data']['details']);
+        $data['data']['isFilling']=($data['data']['isFilling']==false?false:true);
+
 //        var_dump($data);die;
         die(json_encode(['data' => $data, 'code' => $code]));
     }
@@ -493,17 +491,18 @@ class WapApiController extends Controller
         }
         if ($pos == 'next') {
             if($que['major']=='Math1'||$que['major']=='Math2'){
-                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " order by q.number asc limit 1 ")->queryOne();
+                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.analysis,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " order by q.number asc limit 1 ")->queryOne();
             }else{
-                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " and essayId=".$que['essayId']." order by q.number asc limit 1 ")->queryOne();
+                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.analysis,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " and essayId=".$que['essayId']." order by q.number asc limit 1 ")->queryOne();
             }
         } else {
             if($que['major']=='Math1'||$que['major']=='Math2'){
-                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number<" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " order by q.number desc limit 1 ")->queryOne();
+                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.analysis,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number<" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " order by q.number desc limit 1 ")->queryOne();
             }else {
-                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number<" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " and essayId=".$que['essayId']." order by q.number desc limit 1 ")->queryOne();
+                $res['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.answer,q.analysis,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number<" . $que['number'] . " and tpId=" . $que['tpId'] . " and section=" . $que['section'] . " and essayId=".$que['essayId']." order by q.number desc limit 1 ")->queryOne();
             }
         }
+        $res['n'] = $model->Progress($res['data']['major'], $res['data']['qid'], $res['data']['section'], $res['data']['tpId'], $res['data']['essayId']);
         if ($res == false) {
             $res['code'] = ($pos=='next'?'1':'2');
             $res['msg'] = '没有更多的数据了';
@@ -511,14 +510,12 @@ class WapApiController extends Controller
         }
         if(isset($_SESSION['answer'])){
             $answerData = ((array)$_SESSION['answer']);
-            $res['answer'] =(isset($answerData['item'][$res['qid']])?$answerData['item'][$res['qid']][1]:'');// 获取用户的答题数据
+            $res['userans'] =(isset($answerData['item'][$res['qid']])?$answerData['item'][$res['qid']][1]:'');// 获取用户的答题数据
         }
+        $res['n'] = $model->Progress($res['data']['major'], $res['data']['qid'], $res['data']['section'], $res['data']['tpId'], $res['data']['essayId']);
         $res['collection'] = $model ->isCollection($data['uid'], $res['qid']);
         $code = 0;
-        $res['data']['content']=strip_tags($res['data']['content']);
-        $res['data']['topic']=strip_tags($res['data']['topic']);
-        $res['data']['details']=strip_tags($res['data']['details']);
-//         var_dump($_SESSION);die;
+        $res['data']['isFilling']=($res['data']['isFilling']==false?false:true);
         die(json_encode(['data' => $res, 'code' => $code]));
     }
 
