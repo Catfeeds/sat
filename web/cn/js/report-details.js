@@ -324,9 +324,14 @@ function reportData(s,c) {
                   "<b>"+array['answer']+"</b>"+
                   "</div>"+
                   " <div class='question-stem'>"+
-                  "<p>"+
-                  "<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>"+
-                  "</p>"+
+                  "<p>";
+                if (array['content']) {
+                    li+="<a href=/exercise_details/"+array['id']+".html target='_blank'>"+array['content']+"</a>";
+                }else {
+                    li+="<a href=/exercise_details/"+array['id']+".html target='_blank'>title hidden,click to view</a>";
+                }
+
+              li+="</p>"+
                   "</div>"+
                   "</li>"
             });
