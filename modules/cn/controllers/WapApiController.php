@@ -467,6 +467,7 @@ class WapApiController extends Controller
         // 将做题的数据存入数据库
         $data['notes'] = $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
         $a = KeepAnswer::getCat();
+        session_start();
         $re = $a->addPro($qid, $answer, $time);
         if ($data['uid']) {
             $userData = Yii::$app->session->get('userData');
@@ -509,14 +510,14 @@ class WapApiController extends Controller
         }
         if($res['data']['major']=='Math1'||$res['data']['major']=='Math2'){
             (Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $res['data']['number'] . " and tpId=" . $res['data']['tpId'] . " and section=" . $res['data']['section'] . " order by q.number asc limit 1 ")->queryOne()['qid']!=false)?$res['nextId']=true:$res['nextId']=false;
-            (Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $res['data']['number'] . " and tpId=" . $res['data']['tpId'] . " and section=" . $res['data']['section'] . " order by q.number desc limit 1 ")->queryOne()['qid']!=false)?$res['upId']=true:$res['upId']=false;
+            (Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number<" . $res['data']['number'] . " and tpId=" . $res['data']['tpId'] . " and section=" . $res['data']['section'] . " order by q.number desc limit 1 ")->queryOne()['qid']!=false)?$res['upId']=true:$res['upId']=false;
         }else{
             (Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $res['data']['number'] . " and tpId=" . $res['data']['tpId'] . " and section=" . $res['data']['section'] . " and essayId=".$res['data']['essayId']." order by q.number asc limit 1 ")->queryOne()['qid']!=false)?$res['nextId']=true:$res['nextId']=false;
-            (Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $res['data']['number'] . " and tpId=" . $res['data']['tpId'] . " and section=" . $res['data']['section'] . " and essayId=".$res['data']['essayId']." order by q.number desc limit 1 ")->queryOne()['qid']!=false)?$res['upId']=true:$res['upId']=false;
+            (Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number<" . $res['data']['number'] . " and tpId=" . $res['data']['tpId'] . " and section=" . $res['data']['section'] . " and essayId=".$res['data']['essayId']." order by q.number desc limit 1 ")->queryOne()['qid']!=false)?$res['upId']=true:$res['upId']=false;
         }
         if(isset($_SESSION['answer'])){
             $answerData = ((array)$_SESSION['answer']);
-            $res['userans'] =(isset($answerData['item'][$res['qid']])?$answerData['item'][$res['qid']][1]:'');// 获取用户的答题数据
+            $res['userans'] =(isset($answerData['item'][$qid])?$answerData['item'][$qid][1]:'');// 获取用户的答题数据
         }
         $res['n'] = $model->Progress($res['data']['major'], $res['data']['qid'], $res['data']['section'], $res['data']['tpId'], $res['data']['essayId']);
         $res['collection'] = $model ->isCollection($data['uid'], $res['qid']);
@@ -668,6 +669,7 @@ class WapApiController extends Controller
             $section = 1;
         }
         $data['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=" . $section . "  and q.number=1 and tpId=$tid")->queryOne();
+        $data['nextId'] = Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>1  and tpId=" . $tid . " and section='$section' order by q.number asc limit 1 ")->queryOne()['qid'];
         if ($data == false) {
             $re['msg'] = '题目正在更新中！';
             $re['code'] = 2;
@@ -696,14 +698,14 @@ class WapApiController extends Controller
     // 保存答案，下一题
     public function actionMockNext()
     {
-        $answer = Yii::$app->request->post('answer',"a");// 用户提交的答案
+        $answer = Yii::$app->request->post('answer');// 用户提交的答案
         $major = Yii::$app->request->post('major', '');// 全科时不传
-        $tid = Yii::$app->request->post('tid',1);
-        $qid = Yii::$app->request->post('qid',3);
-        $uid = Yii::$app->session->get('uid', '');
-        $utime = Yii::$app->request->post('utime',3);
-        $number = Yii::$app->request->post('number',1);
-        $section = Yii::$app->request->post('section',1);
+        $tid = Yii::$app->request->post('tid');
+        $qid = Yii::$app->request->post('qid');
+        $uid = Yii::$app->session->get('uid','');
+        $utime = Yii::$app->request->post('utime');
+        $number = Yii::$app->request->post('number');
+        $section = Yii::$app->request->post('section');
         session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $answer, $utime);
