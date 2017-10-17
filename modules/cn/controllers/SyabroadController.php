@@ -10,7 +10,7 @@ namespace app\modules\cn\controllers;
 use yii;
 use yii\web\Controller;
 
-class AbroadController extends Controller
+class SyabroadController extends Controller
 {
     public $layout='';
     public function actionIndex()
@@ -26,6 +26,4 @@ class AbroadController extends Controller
 //        echo '</pre>';die;
         return $this->render('index',['info'=>$info,'data'=>$data]);
     }
-
-
 }
