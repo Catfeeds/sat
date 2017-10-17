@@ -744,21 +744,18 @@ class WapApiController extends Controller
                     $now['nextSection'] = Yii::$app->db->createCommand("select section from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tpId . " and section>'$section' order by q.section asc limit 1 ")->queryOne()['section'];
                 }
             }
-            if ($major == 'Math1') {
-                $data['time'] = 55;
-                $data['num'] = 38;
-            } elseif ($major == 'Math2') {
-                $data['time'] = 25;
-                $data['num']= 20;
-            } elseif ($major == 'Reading') {
-                $data['time'] = 65;
-                $data['num'] = 52;
-            } elseif ($major == 'Writing') {
-                $data['time'] = 35;
-                $data['num']= 44;
-            } else {
-                $data['time'] = 180;
-                $data['num'] = 154;
+            if ($now['data']['major'] == 'Math1') {
+                $now['sectionTime'] = 55;
+                $now['sectionNum'] = 38;
+            } elseif ($now['data']['major'] == 'Math2') {
+                $now['sectionTime']  = 25;
+                $now['sectionNum']= 20;
+            } elseif ($now['data']['major'] == 'Reading') {
+                $now['sectionTime']  = 65;
+                $now['sectionNum'] = 52;
+            } elseif ($now['data']['major'] == 'Writing') {
+                $now['sectionTime']  = 35;
+                $now['sectionNum']= 44;
             }
             $code = 0;
             $now['data']['isFilling']=($now['data']['isFilling']==false?false:true);
@@ -1296,8 +1293,9 @@ class WapApiController extends Controller
         die(json_encode($arr));
     }
 
+    //banner图
     public function actionSat(){
-        //banner图
+
         $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='wapIndex' order by id DESC limit 5")->queryAll();
         $data['publicClass']= Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 4")->queryAll();
         $data['classs'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
@@ -1308,9 +1306,19 @@ class WapApiController extends Controller
         die(json_encode(['data'=>$data,'code'=>0]));
     }
 
+    // 课程二级
     public function actionClass(){
         $data['publicClass']= Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 5")->queryAll();
         $data['classs'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
         die(json_encode(['data'=>$data,'code'=>0]));
     }
+
+    // 课程详情
+    public function actionClassDetails(){
+        $id= $p = Yii::$app->request->post('id');
+        $data = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction,teacher,student from {{%classes}} where id=$id ")->queryOne();
+        die(json_encode(['data'=>$data,'code'=>0]));
+    }
+
+
 }
