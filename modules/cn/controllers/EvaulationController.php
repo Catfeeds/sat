@@ -171,9 +171,9 @@ class EvaulationController extends Controller
   {
     $uid = Yii::$app->session->get('uid');
     if ($id == false) {
-      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crosstestScores,time,part from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
+      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crossScores,time,part from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
     } else {
-      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crosstestScores,time,part from {{%report}} where id=" . $id)->queryOne();
+      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crossScores,time,part from {{%report}} where id=" . $id)->queryOne();
     }
     if ($data) {
       $re['Math'] = $data['mathnum'] * 3;

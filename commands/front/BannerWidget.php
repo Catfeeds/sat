@@ -26,7 +26,7 @@
 
         public function path(){
             $this->controller = Yii::$app->controller->id;
-            $this->pic = Yii::$app->db->createCommand("select * from {{%banner}} where module='$this->controller'")->queryAll();
+            $this->pic = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}} where module='$this->controller'")->queryAll();
 //            var_dump($controller);die;
 //            $this->data = Yii::$app->db->createCommand("select * from {{%banner}} where module=".$controller)->queryAll();
 //            $now_path=$controller.'/'.$action;
