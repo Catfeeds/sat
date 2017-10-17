@@ -528,6 +528,7 @@ class WapApiController extends Controller
         if(isset($_SESSION['answer'])){
             $answerData = ((array)$_SESSION['answer']);
             $res['userans'] =(isset($answerData['item'][$res['data']['qid']])?$answerData['item'][$res['data']['qid']][1]:'');// 获取用户的答题数据
+            $res['userTime'] =(isset($answerData['item'][$res['data']['qid']])?$answerData['item'][$res['data']['qid']][2]:'');// 获取用户的答题时间
         }
 //        var_dump($res['userans']);die;
         $res['n'] = $model->Progress($res['data']['major'], $res['data']['qid'], $res['data']['section'], $res['data']['tpId'], $res['data']['essayId']);
