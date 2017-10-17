@@ -321,8 +321,8 @@ $(function () {
         $('.work-main-title strong').html("测评"+res.test);
         $('.work-mk-cnt').html(div);
         }
-        //第四小节（阅读）
-        else if ((res.section == 4) || ((res.test == '高级卷') && (res.section == 2))) {
+      //第四小节（阅读）、第二小节高级卷
+      else if ((res.section == 4) || ((res.test == '高级卷') && (res.section == 2))) {
           $('.work-mk-cnt').html('');
           var div = '';
           div+="<div class='work-wrap-left pull-left'>"+
