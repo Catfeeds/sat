@@ -410,7 +410,7 @@ class WapApiController extends Controller
     //做题详情,有待商榷
     public function actionExerDetails()
     {
-        $qid = Yii::$app->request->post('id');
+        $qid = Yii::$app->request->post('qid');
         $tpId = Yii::$app->request->post('tpId');
         $major = Yii::$app->request->post('major','Reading');
         $uid = Yii::$app->session->get('uid');
@@ -543,15 +543,20 @@ class WapApiController extends Controller
             $answerData =$answerData['item'];// 获取用户的答题数据
             static $que = array();
             // 获取做题的数据
+//            var_dump($answerData);die;
             foreach ($answerData as $k => $v) {
                 $s = Yii::$app->db->createCommand("select id,answer,section,number from {{%questions}} where id=$k")->queryOne();
                 if ($answerData[$k][1] == $s['answer']) {
-                    $que[$s['number']][0] = 1;
-                    $que[$s['number']][1] = $s['id'];
-                } else {
-                    $que[$s['number']][0] = 0;
-                    $que[$s['number']][1] = $s['id'];
+                    $que[$s['number']]['correct'] = 1;
+                } elseif($answerData[$k][1] != $s['answer']) {
+                    if($answerData[$k][1] == false){
+                        $que[$s['number']]['correct'] = 2;
+                    }else{
+                        $que[$s['number']]['correct'] = 0;
+                    }
                 }
+                $que[$s['number']]['qid'] = $s['id'];
+                $que[$s['number']]['number'] = $s['number'];
             }
         }else{
             $re['code']=1;
@@ -689,17 +694,17 @@ class WapApiController extends Controller
         }
 
         if ($data['data']['major'] == 'Math1') {
-            $data['time'] = 55;
-            $data['count'] = 38;
+            $data['sectionTime'] = 55;
+            $data['sectionNum'] = 38;
         } elseif ($data['data']['major'] == 'Math2') {
-            $data['time'] = 25;
-            $data['count'] = 20;
+            $data['sectionTime'] = 25;
+            $data['sectionNum'] = 20;
         } elseif ($data['data']['major'] == 'Reading') {
-            $data['time'] = 65;
-            $data['count'] = 52;
+            $data['sectionTime'] = 65;
+            $data['sectionNum'] = 52;
         } else {
-            $data['time'] = 35;
-            $data['count'] = 44;
+            $data['sectionTime'] = 35;
+            $data['sectionNum'] = 44;
         }
         $data['data']['isFilling']=($data['data']['isFilling']==false?false:true);
         $code = 0;
@@ -879,14 +884,18 @@ class WapApiController extends Controller
         foreach ($arr as $k => $v) {
             $key = explode(',', $v)[0];
             $brr[$key] = explode(',', $v);
-            $s = Yii::$app->db->createCommand("select id,answer,section from {{%questions}} where id=$key")->queryOne();
+            $s = Yii::$app->db->createCommand("select id,answer,section,number from {{%questions}} where id=$key")->queryOne();
             if ($brr[$key][1] == $s['answer']) {
-                $que[$s['section']][$k][0] = 1;
-                $que[$s['section']][$k][1] = $s['id'];
-            } else {
-                $que[$s['section']][$k][0] = 0;
-                $que[$s['section']][$k][1] = $s['id'];
+                $que[$s['section']][$k]['correct'] = 1;
+            }elseif($brr[$key][1] != $s['answer']){
+                if($brr[$key][1] == false){
+                    $que[$s['section']][$k]['correct'] = 2;
+                }else{
+                    $que[$s['section']][$k]['correct'] = 0;
+                }
             }
+            $que[$s['section']][$k]['qid'] = $s['id'];
+            $que[$s['section']][$k]['number'] = $s['number'];
         }
         return $que;
     }
@@ -1186,12 +1195,12 @@ class WapApiController extends Controller
                 'id' => $v['id'],
                 'tpId' => $v['tpId'],
                 'name' => $v['name'],
-                'time' => $v['time'],
+                'time' => $v['time'],//试卷名详情
                 'mathnum' => $v['mathnum'],
                 'readnum' => $v['readnum'],
                 'writenum' => $v['writenum'],
                 'date' => $v['date'],
-                'rtime' => $model->FormatTime($v['rtime']),
+                'rtime' => $model->FormatTime($v['rtime']),// 用户做题时间
             );
         }
         echo die(json_encode($arr));
