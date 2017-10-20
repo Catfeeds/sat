@@ -85,7 +85,7 @@ class Report extends ActiveRecord{
     function Show($uid,$id)
     {
         if($id==false){
-            $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " order by id desc limit 1")->queryOne();
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " and (part='Reading' or part='Writing' or part='all' or part='Math') order by id desc limit 1")->queryOne();
         }else{
             $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
         }
