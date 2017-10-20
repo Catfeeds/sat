@@ -415,6 +415,8 @@ class WapApiController extends Controller
         $major = Yii::$app->request->post('major','Reading');
         $uid = Yii::$app->session->get('uid');
         $num = Yii::$app->request->post('num');
+        $qid=1238;
+        $major='Reading';
 //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
@@ -423,11 +425,13 @@ class WapApiController extends Controller
         $q = new Questions();
         $data['collection'] = $q->isCollection($uid, $qid);
         if ($qid != false) {
-//            $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
             $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid)->queryOne();
-            if(isset($_SESSION['answer'])){
-                $answerData = ((array)$_SESSION['answer']);
+            $answerData = isset($_SESSION['answer'])?(array)$_SESSION['answer']:'';
+            if(isset($answerData['item'][$qid])){
                 $data['userans'] =(isset($answerData['item'][$qid])?$answerData['item'][$qid][1]:'');// 获取用户的答题数据
+            }else{
+                $question=new Questions();
+                $data['userans'] =$question->details($qid,$data['data']['tpId'],$major);
             }
         } else {
             if(isset($_SESSION['answer'])){
@@ -834,7 +838,7 @@ class WapApiController extends Controller
                     if ($re['answer'] != false && $re['time'] != false) {
                         $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
                         if ($res) {
-                            unset($_SESSION['answer']);
+//                            unset($_SESSION['answer']);
                             unset($_SESSION['tpId']);
                         }//入库完成
                     }
@@ -1030,7 +1034,7 @@ class WapApiController extends Controller
                     if ($re['answer'] != false && $re['time'] != false) {
                         $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
                         if ($res) {
-                            unset($_SESSION['answer']);
+//                            unset($_SESSION['answer']);
                             unset($_SESSION['tpId']);
                         }//入库完成
                     }
