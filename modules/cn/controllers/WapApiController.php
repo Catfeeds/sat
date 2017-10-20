@@ -423,10 +423,11 @@ class WapApiController extends Controller
         $q = new Questions();
         $data['collection'] = $q->isCollection($uid, $qid);
         if ($qid != false) {
-            $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
+//            $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid." and qe.num= $num")->queryOne();
+            $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid)->queryOne();
             if(isset($_SESSION['answer'])){
                 $answerData = ((array)$_SESSION['answer']);
-                $data['answer'] =(isset($answerData['item'][$qid])?$answerData['item'][$qid][1]:'');// 获取用户的答题数据
+                $data['userans'] =(isset($answerData['item'][$qid])?$answerData['item'][$qid][1]:'');// 获取用户的答题数据
             }
         } else {
             if(isset($_SESSION['answer'])){
@@ -438,13 +439,13 @@ class WapApiController extends Controller
                 $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where qe.num=$num and q.tpId=$tpId and major='".$major."' order by q.number asc limit 1 ")->queryOne();
             }
         }
-        $data['n'] = $q->Progress($major, $data['data']['qid'], $data['data']['section'], $data['data']['tpId'], $data['data']['essayId']);
-        if($major!='Math1' && $major!='Math2') {
-            $data['nextId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number>" . $data['data']['number'] . "  and  tpId=" . $tpId . " and major='".$major."' and essayId=" . $data['data']['essayId'] . " order by number asc limit 1")->queryOne()['id'];
-            $data['upId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number<" . $data['data']['number'] . "  and   tpId=" . $tpId . " and major='".$major."' and essayId=" . $data['data']['essayId'] . " order by number desc limit 1")->queryOne()['id'];
+        $data['n'] = $q->Progress($data['data']['major'], $data['data']['qid'], $data['data']['section'], $data['data']['tpId'], $data['data']['essayId']);
+        if($data['data']['major']!='Math1' && $data['data']['major']!='Math2') {
+            $data['nextId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number>" . $data['data']['number'] . "  and  tpId=" . $data['data']['tpId'] . " and major='".$data['data']['major']."' and essayId=" . $data['data']['essayId'] . " order by number asc limit 1")->queryOne()['id'];
+            $data['upId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number<" . $data['data']['number'] . "  and   tpId=" . $data['data']['tpId'] . " and major='".$data['data']['major']."' and essayId=" . $data['data']['essayId'] . " order by number desc limit 1")->queryOne()['id'];
         }else{
-            $data['nextId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number>" . $data['data']['number'] . "  and  tpId=" . $tpId . " and major='".$major."'  order by number asc limit 1")->queryOne()['id'];
-            $data['upId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number<" . $data['data']['number'] . "  and   tpId=" . $tpId . " and major='".$major."'  order by number desc limit 1")->queryOne()['id'];
+            $data['nextId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number>" . $data['data']['number'] . "  and  tpId=" . $data['data']['tpId'] . " and major='".$data['data']['major']."'  order by number asc limit 1")->queryOne()['id'];
+            $data['upId'] = Yii::$app->db->createCommand("select id from {{%questions}} where number<" . $data['data']['number'] . "  and   tpId=" . $data['data']['tpId'] . " and major='".$data['data']['major']."'  order by number desc limit 1")->queryOne()['id'];
         }
         if ($data == false) {
             $re['code'] = 1;
@@ -454,8 +455,6 @@ class WapApiController extends Controller
             $code = 0;
         }
         $data['data']['isFilling']=($data['data']['isFilling']==false?false:true);
-
-//        var_dump($data);die;
         die(json_encode(['data' => $data, 'code' => $code]));
     }
 
@@ -464,18 +463,18 @@ class WapApiController extends Controller
     {
 //        session_start();
         $answer = Yii::$app->request->post('answer');
-        $time = Yii::$app->request->post('time');
+        $uesrTime= Yii::$app->request->post('userTime');
         $qid = Yii::$app->request->post('qid');
         $pos = Yii::$app->request->post('pos','next');
         $date = time();
         $data['uid'] = Yii::$app->session->get('uid');
         $que = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id,number,section,tpId,major,essayId  from {{%questions}} where id=" . $qid)->queryOne();
         $model = new Questions();
-        $re = $model->avg($answer, $time, $que);
+        $re = $model->avg($answer, $uesrTime, $que);
         // 将做题的数据存入数据库
-        $data['notes'] = $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
+        $data['notes'] = $qid . ',' . $answer . ',' . $uesrTime . ',' . $date . ';';
         $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $answer, $time);
+        $re = $a->addPro($qid, $answer, $uesrTime);
         if ($data['uid']) {
             $userData = Yii::$app->session->get('userData');
             uc_user_edit_integral($userData['userName'], 'SAT做题一道', 1, 2);
@@ -493,7 +492,7 @@ class WapApiController extends Controller
                 } else {
                     $data['correctRate'] = $correct / $data['count'] * 100;
                 }
-                $data['notes'] = $arr['notes'] . $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
+                $data['notes'] = $arr['notes'] . $qid . ',' . $answer . ',' . $uesrTime . ',' . $date . ';';
                 $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
             }
         }
@@ -544,20 +543,23 @@ class WapApiController extends Controller
             static $que = array();
             // 获取做题的数据
 //            var_dump($answerData);die;
+            static $i = 0;
+            static $a = 0;
             foreach ($answerData as $k => $v) {
                 $s = Yii::$app->db->createCommand("select id,answer,section,number from {{%questions}} where id=$k")->queryOne();
                 if ($answerData[$k][1] == $s['answer']) {
-                    $que[$s['number']]['correct'] = 1;
+                    $que['data'][$i]['correct'] = 1;
+                    $a++;
                 } elseif($answerData[$k][1] != $s['answer']) {
-                    if($answerData[$k][1] == false){
-                        $que[$s['number']]['correct'] = 2;
-                    }else{
-                        $que[$s['number']]['correct'] = 0;
-                    }
+                    $que['data'][$i]['correct'] = 0;
                 }
-                $que[$s['number']]['qid'] = $s['id'];
-                $que[$s['number']]['number'] = $s['number'];
+                $que['data'][$i]['qid'] = $s['id'];
+                $que['data'][$i]['number'] = $s['number'];
+                $i++;
             }
+
+            $b=($que['data']!=false && $a!=false)?($a/count($que['data'])*100):0;
+            $que['correctRate']=sprintf("%.2f",$b);
         }else{
             $re['code']=1;
             $re['msg']='无做题数据';
@@ -639,6 +641,12 @@ class WapApiController extends Controller
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
+        if (isset($_SESSION['answer'])) {
+            unset($_SESSION['answer']);
+        }
+        if (isset($_SESSION['tpId'])) {
+            unset($_SESSION['tpId']);
+        }
         $data['Reading']['count'] = 52;
         $data['Reading']['time'] = 65;
         $data['Writing']['count'] = 44;
@@ -666,6 +674,11 @@ class WapApiController extends Controller
             $re['code'] = 1;
             die(json_encode($re));
         }
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         if ($major != false) {
             if ($major == 'Math') {
                 $major = '(major="Math1" or major="Math2")';
@@ -719,18 +732,18 @@ class WapApiController extends Controller
         $tpId = Yii::$app->request->post('tpId');
         $qid = Yii::$app->request->post('qid');
         $uid = Yii::$app->session->get('uid', '');
-        $utime = Yii::$app->request->post('utime');
+        $userTime = Yii::$app->request->post('userTime');
         $time = Yii::$app->request->post('time',0);// 总的做题时间
         $number = Yii::$app->request->post('number');
         $section = Yii::$app->request->post('section');
         Yii::$app->session->set('time',$time);
         session_start();
         $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $answer, $utime);
+        $re = $a->addPro($qid, $answer, $userTime);
         // 正确率等的计算
         $model = new Questions();
         $data = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id from {{%questions}} where id=" . $qid)->queryOne();
-        $re = $model->avg($answer, $utime, $data);
+        $re = $model->avg($answer, $userTime, $data);
         $_SESSION['uid'] = $uid;
         $_SESSION['tpId'] = $tpId;
         $now['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tpId . " and section='$section' order by q.number asc limit 1 ")->queryOne();
@@ -774,19 +787,21 @@ class WapApiController extends Controller
     {
         $a = KeepAnswer::getCat();
         $re = $a->Emptyitem();
-        echo die(json_encode($re));
+        echo die(json_encode(['re'=>$re,'code'=>0]));
     }
 
     // 模考报告页面, 可能有问题
     public function actionMockReport()
     {
+//        var_dump(1111);die;
         // 生成报告页面
         //个人中心页面
         //登录状态直接点击‘报告’
         // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
-        $uid = Yii::$app->session->get('uid');
-        $data['user'] = Yii::$app->session->get('userData');
-        $major = Yii::$app->session->get('part');
+        $uid = Yii::$app->session->get('uid','');
+        $uid=14329;
+        $data['user'] = Yii::$app->session->get('userData','');
+        $major = Yii::$app->session->get('part','');
         $id = Yii::$app->request->post('id', '');// 个人中心才传参,报告的id
         if ($id == false) {
             if (isset($_SESSION['answer']) && isset($_SESSION['tpId'])) {
@@ -880,22 +895,24 @@ class WapApiController extends Controller
         $arr = explode(';', $answer);
         static $brr = array();
         static $que = array();
+        static $a = 0;
+        static $i = 0;
         // 获取做题的数据
         foreach ($arr as $k => $v) {
             $key = explode(',', $v)[0];
             $brr[$key] = explode(',', $v);
-            $s = Yii::$app->db->createCommand("select id,answer,section,number from {{%questions}} where id=$key")->queryOne();
+            $s = Yii::$app->db->createCommand("select id,answer,major,number from {{%questions}} where id=$key")->queryOne();
             if ($brr[$key][1] == $s['answer']) {
-                $que[$s['section']][$k]['correct'] = 1;
+                $que[$s['major']]['data'][$s['number']-1]['correct'] = 1;
+                $a++;
             }elseif($brr[$key][1] != $s['answer']){
-                if($brr[$key][1] == false){
-                    $que[$s['section']][$k]['correct'] = 2;
-                }else{
-                    $que[$s['section']][$k]['correct'] = 0;
-                }
+                $que[$s['major']]['data'][$s['number']-1]['correct'] = 0;
             }
-            $que[$s['section']][$k]['qid'] = $s['id'];
-            $que[$s['section']][$k]['number'] = $s['number'];
+            $i++;
+            $que[$s['major']]['data'][$s['number']-1]['qid'] = $s['id'];
+            $que[$s['major']]['data'][$s['number']-1]['number'] = $s['number'];
+            $b=($i!=false && $a!=false)?($a/$i*100):0;
+            $que['correctRate']=sprintf("%.2f",$b);
         }
         return $que;
     }
@@ -919,7 +936,13 @@ class WapApiController extends Controller
     public function actionEvaulationNotice()
     {
         $data['tpId']= Yii::$app->request->post('tpId');
+        $uid= Yii::$app->session->get('uid');
         $data['evaulation']= true;
+//        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         if (isset($_SESSION['answer'])) {
             unset($_SESSION['answer']);
         }
@@ -953,15 +976,15 @@ class WapApiController extends Controller
         $tpId = Yii::$app->request->post('tpId');
         $qid = Yii::$app->request->post('qid');
         $uid = Yii::$app->request->post('uid');
-        $utime = Yii::$app->request->post('utime');
+        $userTime = Yii::$app->request->post('userTime');
         $number = Yii::$app->request->post('number');
         $section = Yii::$app->request->post('section');
         session_start();
         $a = KeepAnswer::getCat();
-        $re = $a->addPro($qid, $solution, $utime);//保存做题数据
+        $re = $a->addPro($qid, $solution, $userTime);//保存做题数据
         $model = new Questions();
         $data = Yii::$app->db->createCommand("select answer,peopleNum,correctRate,avgTime,id from {{%questions}} where id=" . $qid)->queryOne();
-        $re = $model->avg($solution, $utime, $data);
+        $re = $model->avg($solution, $userTime, $data);
         $_SESSION['uid'] = $uid;
         $_SESSION['tpId'] = $tpId;
         $now['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $number . " and tpId=" . $tpId . " and section='$section' order by q.number asc limit 1 ")->queryOne();
@@ -978,6 +1001,7 @@ class WapApiController extends Controller
     // 测评生成报告
     public function actionEvaulationReport()
     {
+
         $id = Yii::$app->request->post('id', '');// 报告的id
         $uid = Yii::$app->session->get('uid', '');
         if ($id == false) {
@@ -1110,36 +1134,20 @@ class WapApiController extends Controller
         return $suggest;
     }
 
-//    // 具体题目
-//    public function actionQuestion($tpId, $answer)
-//    {
-//        $s = Yii::$app->db->createCommand("select id as qid,answer,section from {{%questions}} where tpId=$tpId")->queryAll();
-//        $arr = explode(';', $answer);
-//        static $brr = array();
-//        static $que = array();
-//        // 获取做题的数据
-//        foreach ($arr as $k => $v) {
-//            $key = explode(',', $v)[0];
-//            $brr[$key] = explode(',', $v);
-//            $s = Yii::$app->db->createCommand("select id as qid,answer,section from {{%questions}} where id=$key")->queryOne();
-//            if ($brr[$key][1] == $s['answer']) {
-//                $que[$s['section']][$k][0] = 1;
-//                $que[$s['section']][$k][1] = $s['qid'];
-//            } else {
-//                $que[$s['section']][$k][0] = 0;
-//                $que[$s['section']][$k][1] = $s['qid'];
-//            }
-//        }
-//        return $que;
-//    }
 
     // 个人中心收藏页面
     public function actionPensonCollect()
     {
+
         $uid = Yii::$app->session->get('uid');
         $source = Yii::$app->request->post('source');
         $p = Yii::$app->request->post('p', '1');
         $major = Yii::$app->request->post('major');
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         $model = new collection();
         $pagesize = 15;
         $offset = $pagesize * ($p - 1);
@@ -1156,6 +1164,11 @@ class WapApiController extends Controller
         $major = Yii::$app->request->post('major');
         $error = Yii::$app->request->post('case');
         $p = Yii::$app->request->post('p', '1');
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         $pagesize = 15;
         $offset = $pagesize * ($p - 1);
         $notes = new Notes();
@@ -1173,6 +1186,11 @@ class WapApiController extends Controller
         $source = Yii::$app->request->post('source');
         $type = Yii::$app->request->post('major');
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         $arr['pageSize'] = $pagesize = 15;
         if ($source != 'all') {
             $name = "and name='$source'";
@@ -1190,7 +1208,7 @@ class WapApiController extends Controller
         $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
-            $arr['list'][] = array(
+            $arr['data'][] = array(
                 'part' => $v['part'],
                 'id' => $v['id'],
                 'tpId' => $v['tpId'],
@@ -1209,6 +1227,12 @@ class WapApiController extends Controller
     // 删除报告
     public function actionDel()
     {
+        $uid = Yii::$app->session->get('uid');
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         $id = Yii::$app->request->post('id');
         $re = Report::deleteAll("id=:id", array(':id' => $id));
         if ($re) {
@@ -1226,6 +1250,11 @@ class WapApiController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $qid = Yii::$app->request->post('qid');
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         $arr = Yii::$app->db->createCommand("select id,notes,uid from {{%notes}} where uid=" . $uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
@@ -1243,10 +1272,10 @@ class WapApiController extends Controller
         $notes = new Notes();
         $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
         if ($re) {
-            $res['code'] = 1;
+            $res['code'] = 0;
             $res['message'] = '删除成功';
         } else {
-            $res['code'] = 0;
+            $res['code'] = 1;
             $res['message'] = '删除失败';
         }
         echo die(json_encode($res));
@@ -1278,6 +1307,11 @@ class WapApiController extends Controller
 //        $cate = Yii::$app->request->post('cate');
         $uid = Yii::$app->session->get('uid');
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
+        //        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
         $arr['pageSize'] = $pagesize = 15;
         $offset = $pagesize * ($p - 1);
         $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
@@ -1285,7 +1319,7 @@ class WapApiController extends Controller
         $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
-            $arr['list'][] = array(
+            $arr['data'][] = array(
                 'part' => $v['part'],
                 'id' => $v['id'],
                 'tpId' => $v['tpId'],
@@ -1329,5 +1363,40 @@ class WapApiController extends Controller
         die(json_encode(['data'=>$data,'code'=>0]));
     }
 
+    // 公开课
+    public function actionPubClass(){
+        // 观看往期视频需登录
+        $data=array();
+      die(json_encode(['data'=>$data,'code'=>0]));
+    }
+
+    // 名师
+    public function actionTeacher(){
+        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC ")->queryAll();
+        die(json_encode(['data'=>$data,'code'=>0]));
+    }
+
+    // 资讯
+    public function actionInfo(){
+        $pageSize=10;
+        $page = Yii::$app->request->post('p', 1);
+        $offset = $pageSize * ($page - 1);
+        $data['news']= Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='新闻资讯' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
+        $data['report']= Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='学术报告' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
+        $data['experience']= Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='备考经验' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
+        die(json_encode(['data'=>$data,'code'=>0]));
+    }
+
+    // 资讯详情
+    public function actionInfoDetails(){
+        $id = Yii::$app->request->post('id', '');
+        if($id==false){
+            $res['code'] = 1;
+            $res['message'] = '请求错误';
+            die(json_encode($res));
+        }
+        $data = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,content,hits from {{%info}} where id=$id")->queryOne();
+        die(json_encode(['data'=>$data,'code'=>0]));
+    }
 
 }
