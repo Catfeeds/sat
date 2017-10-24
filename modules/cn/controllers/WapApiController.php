@@ -49,22 +49,13 @@ class WapApiController extends Controller
      */
 
     public function actionCheckLogin()
-
     {
         $apps = Yii::$app->request;
         $session = Yii::$app->session;
         $logins = new Login();
         if ($apps->isPost) {
-            $verificationCode   = $apps->post('verificationCode',''); // 验证码
-            if($verificationCode){
-                if(strtolower($session->get('verificationCode'))!=strtolower($verificationCode )){
-                    $re['code'] = 1;
-                    $re['message'] = '验证码错误';
-                    die(json_encode($re));
-                }
-            }
             $userName = $apps->post('userName');
-            $userPass = $apps->post('userPass');
+            $userPass = $apps->post('pass');
             if (!$userName) {
                 $re['code'] = 1;
                 $re['message'] = '请输入用户名';
@@ -134,40 +125,23 @@ class WapApiController extends Controller
      */
 
     public function actionPhoneCode()
-
     {
-
         $session = Yii::$app->session;
-
         $sms = new Sms();
-
-        $phoneNum = Yii::$app->request->post('phoneNum');
-
-        if (!empty($phoneNum)) {
-
+        $phone = Yii::$app->request->post('phone');
+        if (!empty($phone)) {
             $phoneCode = mt_rand(100000, 999999);
-
-            $session->set($phoneNum . 'phoneCode', $phoneCode);
-
+            $session->set($phone . 'phoneCode', $phoneCode);
             $session->set('phoneTime', time());
-
             $content = '【雷哥SAT】验证码：' . $phoneCode . '（10分钟有效），您正在通过手机注册雷哥网免费会员！关注微信:雷哥SAT微助手，获取更多信息；若有SAT题库和课程问题，请咨询管理员QQ:2992826058。';
-            $sms->send($phoneNum, $content, $ext = '', $stime = '', $rrid = '');
-
+            $sms->send($phone, $content, $ext = '', $stime = '', $rrid = '');
             $res['code'] = 0;
-
             $res['message'] = '短信发送成功！';
-
         } else {
-
             $res['code'] = 1;
-
             $res['message'] = '发送失败!手机号码为空！';
-
         }
-
         die(json_encode($res));
-
     }
 
 
@@ -179,48 +153,28 @@ class WapApiController extends Controller
     {
         $login = new Login();
         $registerStr = Yii::$app->request->post('registerStr');
-
         $pass = Yii::$app->request->post('pass');
-
-        $code = Yii::$app->request->post('code');
-
+        $verificationCode = Yii::$app->request->post('verificationCode');
         $type = Yii::$app->request->post('type');// 手机注册为1 ，邮箱注册为2
-
         $source = Yii::$app->request->post('source','SATwap');
-
         $userName = Yii::$app->request->post('userName','');
-
         if($userName == ''){
             $userName =  'lgw'.time();
         }
-
         $checkTime = $login->checkTime();
-
         if ($checkTime) {
-
-            $checkCode = $login->checkCode($registerStr, $code);
-
+            $checkCode = $login->checkCode($registerStr, $verificationCode);
             if ($checkCode) {
-
                 if ($type == 1) {
-
                     $login->phone = $registerStr;
-
                     $login->userPass = md5($pass);
-
                     $login->createTime = time();
-
                     $login->userName = $userName;
                     $uid = uc_user_register($userName,md5($pass),'',$registerStr,$source,time());
-
                 } else {
-
                     $login->email = $registerStr;
-
                     $login->userPass = md5($pass);
-
                     $login->createTime = time();
-
                     $login->userName = $userName;
                     $uid = uc_user_register($userName,md5($pass),$registerStr,'',$source,time());
                 }
@@ -255,37 +209,23 @@ class WapApiController extends Controller
                         $res['message'] = '注册成功';
                         uc_user_edit_integral($userName,'注册成功',1,10);
                     } else {
-
                         $res['code'] = 1;
-
                         $res['message'] = '注册失败，请重试';
-
                         $res['type'] = '3';
-
                     }
                 }
             } else {
-
                 $res['code'] = 1;
-
                 $res['message'] = '验证码错误';
-
                 $res['type'] = '1';
-
             }
 
         } else {
-
             $res['code'] = 1;
-
             $res['message'] = '验证码过期';
-
             $res['type'] = '1';
-
         }
-
         die(json_encode($res));
-
     }
 
 
@@ -295,24 +235,14 @@ class WapApiController extends Controller
 
     public function actionSendMail()
     {
-
         $session = Yii::$app->session;
-
         $emailCode = mt_rand(100000, 999999);
-
         $email = Yii::$app->request->post('email');
-//        $email = "yanyao_feng@163.com";
-
         $session->set($email . 'phoneCode', $emailCode);
-
         $session->set('phoneTime', time());
-
         $mail = Yii::$app->mailer->compose();
-
         $mail->setTo($email);
-
         $mail->setSubject("【雷哥SAT(http://www.thinkusat.com)】邮件验证码");
-
         $mail->setHtmlBody('
 
             <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -356,21 +286,13 @@ class WapApiController extends Controller
         );    //发布可以带html标签的文本
 
         if ($mail->send()) {
-
             $res['code'] = 0;
-
             $res['message'] = '邮件发送成功！';
-
         } else {
-
             $res['code'] = 1;
-
             $res['message'] = '邮件发送失败！';
-
         }
-
         die(json_encode($res));
-
     }
 
 
@@ -392,6 +314,83 @@ class WapApiController extends Controller
         die(json_encode(['code' => 0]));
     }
 
+    /**
+     * 找回密码
+     * @return string
+     * */
+
+    public function actionFindPass()
+    {
+        $login = new Login();
+        $registerStr = Yii::$app->request->post('registerStr');
+        $pass = Yii::$app->request->post('pass');
+        $verificationCode = Yii::$app->request->post('verificationCode');
+        $type = Yii::$app->request->post('type');// 邮箱还是电话，1是电话，2或其他事邮箱
+        $re = $login->find()->where("phone='$registerStr' or email='$registerStr'")->one();
+        $userData = [1 => $re->username];
+        if (!$re) {
+            if ($type == 1) {
+                $status = uc_user_checkphone($registerStr);
+                if($status){
+                    $userData = uc_get_user($registerStr,2);
+                    $login->username = $userData[1];
+                    $login->email = $userData[2];
+                    $login->phone = $userData[3];
+                    $login->createTime = time();
+                    $login->save();
+                }else{
+                    $res['code'] = 2;
+                    $res['message'] = '此电话还没有注册！';
+                    die(json_encode($res));
+                }
+            } else{
+                $status = uc_user_checkemail($registerStr);
+                if($status){
+                    $userData = uc_get_user($registerStr,3);
+                    $login->username = $userData[1];
+                    $login->email = $userData[2];
+                    $login->phone = $userData[3];
+                    $login->createTime = time();
+                    $login->save();
+                }else {
+                    $res['code'] = 2;
+                    $res['message'] = '此邮箱还没有注册！';
+                    die(json_encode($res));
+                }
+            }
+        }
+        $checkTime = $login->checkTime();
+        if ($checkTime) {
+            $checkCode = $login->checkCode($registerStr, $verificationCode);
+            if ($checkCode) {
+                $str      =substr($pass, 1);
+                $str      ='_@5!'.$str."*a1";
+                if ($type == 1) {
+                    $re = $login->updateAll(['userPass' => md5($str)], "phone='$registerStr'");
+                } else {
+                    $re = $login->updateAll(['userPass' => md5($str)], "email='$registerStr'");
+                }
+                if ($re) {
+                    uc_user_edit($userData[1],'',$pass,'','',1);
+                    $res['code'] = 0;
+                    $res['message'] = '密码找回成功';
+                } else {
+                    $res['code'] = 3;
+                    $res['message'] = '找回失败，请重试';
+                    $res['type'] = '3';
+                }
+            } else {
+                $res['code'] = 1;
+                $res['message'] = '验证码错误';
+                $res['type'] = '1';
+            }
+        } else {
+            $res['code'] = 1;
+            $res['message'] = '验证码过期';
+            $res['type'] = '1';
+        }
+        die(json_encode($res));
+    }
 
     // 练习二级页面接口
     public function actionExerIndex()
@@ -801,7 +800,6 @@ class WapApiController extends Controller
     // 模考报告页面, 可能有问题
     public function actionMockReport()
     {
-//        var_dump(1111);die;
         // 生成报告页面
         //个人中心页面
         //登录状态直接点击‘报告’
@@ -944,7 +942,7 @@ class WapApiController extends Controller
     public function actionEvaulationNotice()
     {
         $data['tpId']= Yii::$app->request->post('tpId');
-        $uid= Yii::$app->session->get('uid');
+        $uid= Yii::$app->session->get('uid','');
         $data['evaulation']= true;
 //        if($uid==false){
 //            $re['code'] = 5;
@@ -965,7 +963,7 @@ class WapApiController extends Controller
     public function actionEvaulationTest()
     {
         $tpId = Yii::$app->request->post('tpId');
-        $data['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.answer,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where section=1  and tpId=$tpId order by q.number limit 1")->queryOne();
+        $data['data'] = Yii::$app->db->createCommand("select q.content,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.answer,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on t.id=q.tpId where number=1 and section=1  and tpId=$tpId order by q.number limit 1")->queryOne();
         $data['nextSection']=2;
         $data['nextId'] = Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>1  and tpId=" . $tpId . " and section='".$data['data']['section']."' order by q.number asc limit 1 ")->queryOne()['qid'];
         if ($data == false) {
@@ -1002,7 +1000,7 @@ class WapApiController extends Controller
             $res['code'] = 1;
             die(json_encode($res));
         }
-        $data['nextId'] = Yii::$app->db->createCommand("select q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $data['data']['number'] . " and tpId=" . $tpId . " and section='$section' order by q.number asc limit 1 ")->queryOne()['qid'];
+        $data['nextId']= Yii::$app->db->createCommand("select q.id as qid,q.subScores from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where q.number>" . $data['data']['number'] . " and tpId=" . $tpId . " and section='$section' order by q.number asc limit 1 ")->queryOne()['qid'];
         $data['nextSection'] =Yii::$app->db->createCommand("select q.section from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where  tpId=" . $tpId . " and section>'$section' order by q.section asc limit 1 ")->queryOne()['section'];
         $data['data']['isFilling']=($data['data']['isFilling']==false?false:true);
         echo die(json_encode(['data' => $data, 'code' => 0]));
@@ -1011,7 +1009,6 @@ class WapApiController extends Controller
     // 测评生成报告
     public function actionEvaulationReport()
     {
-
         $id = Yii::$app->request->post('id', '');// 报告的id
         $uid = Yii::$app->session->get('uid', '');
         $uid=14329;
@@ -1028,6 +1025,7 @@ class WapApiController extends Controller
                 $re['jumpnum'] = $number['Vocabulary'];// jumpnum字段来保存词汇正确个数
                 $re['part'] = Yii::$app->db->createCommand("select name from {{%testpaper}} where id=" . $re['tpId'])->queryOne()['name'] . Yii::$app->db->createCommand("select time from {{%testpaper}} where id=" . $re['tpId'])->queryOne()['time'];
                 $re['uid'] = Yii::$app->session->get('uid');
+                $re['uid'] =14329;
                 $re['matherror'] = $number['matherror'];
                 $re['readerror'] = $number['readerror'];
                 $re['writeerror'] = $number['writeerror'];
@@ -1072,7 +1070,6 @@ class WapApiController extends Controller
             die(json_encode($res));
         } else {
             $data = $res;
-            $data['code'] = 0;
             $data['que'] = $this->Question($data['report']['tpId'], $res['report']['answer']);
             $data['win'] = count(Yii::$app->db->createCommand("select id from {{%report}} where part='" . $data['report']['part'] . "' and score<" . $data['report']['score'])->queryOne());
             $code=0;

@@ -13,7 +13,6 @@ class Login extends ActiveRecord
     /**s
      * 验证短信码
      * @param $code
-     * @Obelisk
      */
     public function checkCode($phone,$code){
         $phoneCode = \Yii::$app->session->get($phone.'phoneCode');
@@ -28,7 +27,6 @@ class Login extends ActiveRecord
 
     /**
      * 验证短信的时间是否过期
-     * @Obelisk
      */
     public function checkTime(){
         $phoneTime = \Yii::$app->session->get('phoneTime');
