@@ -60,6 +60,8 @@ class WapApiController extends Controller
                 $re['message'] = '请输入用户名';
                 die(json_encode($re));
             }
+            $str      =substr($userPass, 1);
+            $str      ='_@5!'.$str."*a1";
             $userPass = md5($userPass);
             list($uid, $username, $password, $email,$merge,$phone) = uc_user_login($userName, $userPass);
             if($uid < 0){
@@ -74,7 +76,7 @@ class WapApiController extends Controller
                 if (empty($loginsdata['id'])) {
                     $login = new Login();
                     $login->phone = $phone;
-                    $login->password = $password;
+                    $login->password = md5($str);
                     $login->email = $email;
                     $login->createTime = time();
                     $login->username = $username;
@@ -127,7 +129,7 @@ class WapApiController extends Controller
     {
         $session = Yii::$app->session;
         $sms = new Sms();
-        $phone = Yii::$app->request->post('phone');
+        $phone = Yii::$app->request->post('phone','17620123966');
         if (!empty($phone)) {
             $phoneCode = mt_rand(100000, 999999);
             $session->set($phone . 'phoneCode', $phoneCode);
@@ -166,13 +168,17 @@ class WapApiController extends Controller
             if ($checkCode) {
                 if ($type == 1) {
                     $login->phone = $registerStr;
-                    $login->userPass = md5($pass);
+                    $str      =substr($pass, 1);
+                    $str      ='_@5!'.$str."*a1";
+                    $login->password = md5($str);
                     $login->createTime = time();
                     $login->userName = $userName;
                     $uid = uc_user_register($userName,md5($pass),'',$registerStr,$source,time());
                 } else {
                     $login->email = $registerStr;
-                    $login->userPass = md5($pass);
+                    $str      =substr($pass, 1);
+                    $str      ='_@5!'.$str."*a1";
+                    $login->password = md5($str);
                     $login->createTime = time();
                     $login->userName = $userName;
                     $uid = uc_user_register($userName,md5($pass),$registerStr,'',$source,time());
@@ -202,6 +208,7 @@ class WapApiController extends Controller
                     }
                 }else{
                     $login->uid = $uid;
+
                     $re = $login->save();
                     if ($re) {
                         $res['code'] = 0;
