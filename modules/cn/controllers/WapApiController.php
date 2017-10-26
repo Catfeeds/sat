@@ -60,8 +60,7 @@ class WapApiController extends Controller
                 $re['message'] = '请输入用户名';
                 die(json_encode($re));
             }
-            $str      =substr($userPass, 1);
-            $str      ='_@5!'.$str."*a1";
+
             $userPass = md5($userPass);
             list($uid, $username, $password, $email,$merge,$phone) = uc_user_login($userName, $userPass);
             if($uid < 0){
@@ -70,6 +69,8 @@ class WapApiController extends Controller
                     list($uid, $username, $password, $email,$merge,$phone) = uc_user_login($userName, $userPass,3);
                 }
             }
+            $str      =substr($password, 1);
+            $str      ='_@5!'.$str."*a1";
             if($uid > 0) {
                 $success_content =  uc_user_synlogin($uid);
                 $loginsdata = $logins->find()->where("(phone='$userName' or username='$userName' or email='$userName')")->one();
@@ -129,7 +130,7 @@ class WapApiController extends Controller
     {
         $session = Yii::$app->session;
         $sms = new Sms();
-        $phone = Yii::$app->request->post('phone','17620123966');
+        $phone = Yii::$app->request->post('phone');
         if (!empty($phone)) {
             $phoneCode = mt_rand(100000, 999999);
             $session->set($phone . 'phoneCode', $phoneCode);
@@ -1214,8 +1215,8 @@ class WapApiController extends Controller
             $part = "and part ='$type'";
         }
         $offset = $pagesize * ($p - 1);
-        $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part limit $offset,$pagesize")->queryAll();
-        $arr['total'] = count(Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part ")->queryAll());
+        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.name,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part limit $offset,$pagesize")->queryAll();
+        $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part ")->queryAll());
         $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
@@ -1325,8 +1326,8 @@ class WapApiController extends Controller
 //        }
         $arr['pageSize'] = $pagesize = 15;
         $offset = $pagesize * ($p - 1);
-        $data = Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
-        $arr['total'] = count(Yii::$app->db->createCommand("select r.*,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
+        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.name,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
+        $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
         $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
