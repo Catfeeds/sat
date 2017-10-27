@@ -23,6 +23,7 @@
             <p>
               雷哥SAT网站，一站式SAT新生态学习服务平台，提供包含SAT在线做题、 在线模考、在线测评、在线答疑、在线学习计划定制、面授课程、在线直播课程、录播视频课程、免费公开课等一系列SAT学习服务。
               雷哥SAT是教育科技领域里提供“在线做题+在线模考+在线测评+在线答疑＋面授课+视频课＋直播课+公开课”一站式SAT新生态的学习系统。集结了SAT行业教学专家以及来自哈佛、耶鲁、哥大、MIT 、LSE等海外名师团队任教， 为用户提供“名师专家课程”与“课后练习模考”的新生态SAT学习系统。
+              该网站归属于上海申雷友管理咨询有限公司。
             </p>
           </div>
           <img src="/cn/images/about02.png" alt="">
@@ -37,25 +38,38 @@
               <br/>
               官方个人微信号：sat0704
             </dt>
-            <?php foreach($contact as $k=>$v){?>
-              <dd <?php if($k==0) echo 'class="co-black"'?>><?php echo $v['city']?></dd>
-            <?php }?>
+<!--            --><?php //foreach($contact as $k=>$v){?>
+<!--              <dd --><?php //if($k==0) echo 'class="co-black"'?><!--><?php //echo $v['city']?><!--</dd>-->
+<!--            --><?php //}?>
+            <dd>上海</dd>
           </dl>
           <ul class="s-relation-cnt">
-            <?php foreach($contact as $k=>$v){?>
-              <li <?php if($k==0)echo 'class="s-active"'?>>
-                <img src="<?php if($v['pic']){echo $v['pic'];}else{echo '/cn/images/about07.png';}?>" alt="">
-                <dl>
-                  <dt><?php echo $v['name']?></dt>
-                  <dd>电话:
-                    <span><?php echo $v['telephone']?></span>
-                  </dd>
-                  <dd>地址：<?php echo $v['address']?></dd>
-                  <dd>公交路线：<?php if($v['bus']){echo  $v['bus'];}else{echo '请咨询工作人员';}?></dd>
-                  <dd>地铁路线：<?php if($v['subWay']){echo  $v['subWay'];}else{echo '请咨询工作人员';}?></dd>
-                </dl>
-              </li>
-            <?php }?>
+            <li class="s-active">
+              <img src="/cn/images/about07.png" alt="">
+              <dl>
+                <dt>上海</dt>
+                <dd>电话:
+                  <span>021-55271219</span>&nbsp;<span>021-52986736</span>
+                </dd>
+                <dd>地址：杨浦区政学路51号瑞力创新中心2号楼305室（近大学路）</dd>
+                <dd>公交路线：请咨询工作人员</dd>
+                <dd>地铁路线：乘坐10号线江湾体育场站下车1号口出，步行约630米即可到达</dd>
+              </dl>
+            </li>
+<!--            --><?php //foreach($contact as $k=>$v){?>
+<!--              <li --><?php //if($k==0)echo 'class="s-active"'?><!-->
+<!--                <img src="--><?php //if($v['pic']){echo $v['pic'];}else{echo '/cn/images/about07.png';}?><!--" alt="">-->
+<!--                <dl>-->
+<!--                  <dt>--><?php //echo $v['name']?><!--</dt>-->
+<!--                  <dd>电话:-->
+<!--                    <span>--><?php //echo $v['telephone']?><!--</span>-->
+<!--                  </dd>-->
+<!--                  <dd>地址：--><?php //echo $v['address']?><!--</dd>-->
+<!--                  <dd>公交路线：--><?php //if($v['bus']){echo  $v['bus'];}else{echo '请咨询工作人员';}?><!--</dd>-->
+<!--                  <dd>地铁路线：--><?php //if($v['subWay']){echo  $v['subWay'];}else{echo '请咨询工作人员';}?><!--</dd>-->
+<!--                </dl>-->
+<!--              </li>-->
+<!--            --><?php //}?>
           </ul>
         </div>
         <div id="sJoin">
