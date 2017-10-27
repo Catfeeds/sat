@@ -43,4 +43,36 @@ class Collection extends ActiveRecord{
 
         return $brr;
     }
+
+    public function CateData($uid, $major, $offset, $pagesize,$p)
+    {
+        $arr= Yii::$app->db->createCommand("select id,qid,uid from {{%collection}} where uid=".$uid)->queryOne();
+        $qid=explode(',',ltrim($arr['qid'],','));
+        static $brr = array();
+        foreach ($qid as $k => $v) {
+            if ($v != '') {
+                $arr = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id=$v")->queryOne();
+                if ($arr['major'] == 'Math1' || $arr['major'] == 'Math2') {
+                    $brr['data']['Math'][] = $arr;
+                } elseif ($arr['major'] == 'Writing') {
+                    $brr['data']['Writing'][] = $arr;
+                } elseif ($arr['major'] == 'Reading') {
+                    $brr['data']['Reading'][] = $arr;
+                }
+            }
+        }
+        $data['data']['Math'] =$this->Data('Math',$pagesize,0,$brr);
+        $data['data']['Reading'] = $this->Data('Reading',$pagesize,0,$brr);
+        $data['data']['Writing'] =$this->Data('Writing',$pagesize,0,$brr);
+        $data['data'][$major] = $this->Data($major,$pagesize,$offset,$brr);
+        return $data;
+
+    }
+
+    public function Data($major,$pagesize,$offset,$data){
+        $arr["$major".'Total']=count( $data['data']["$major"]);
+        $arr["$major".'Page']=ceil($arr["$major".'Total']/$pagesize);
+        $arr['data']=array_slice ($data['data']["$major"],$offset ,$pagesize);
+        return $arr;
+    }
 }

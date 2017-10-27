@@ -1145,12 +1145,12 @@ class WapApiController extends Controller
 
 
     // 个人中心收藏页面
-    public function actionPensonCollect()
+    public function actionPersonCollect()
     {
         $uid = Yii::$app->session->get('uid');
-        $source = Yii::$app->request->post('source');
+        $uid=14329;
         $p = Yii::$app->request->post('p', '1');
-        $major = Yii::$app->request->post('major');
+        $major = Yii::$app->request->post('major','Reading');
         //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
@@ -1159,7 +1159,7 @@ class WapApiController extends Controller
         $model = new collection();
         $pagesize = 15;
         $offset = $pagesize * ($p - 1);
-        $data = $model->CollectionDate($source, $uid, $major, $offset, $pagesize);
+        $data = $model->CateData( $uid, $major, $offset, $pagesize,$p);
         $data['curPage'] = $p;
         echo die(json_encode($data));
     }
@@ -1167,7 +1167,8 @@ class WapApiController extends Controller
     // 个人中心练习题目
     public function actionPersonExercise()
     {
-        $uid = Yii::$app->session->get('uid',14329);
+        $uid = Yii::$app->session->get('uid');
+        $uid=14329;
         $major = Yii::$app->request->post('major');
         $p = Yii::$app->request->post('p','1');
 //        var_dump($page);die;
@@ -1186,6 +1187,10 @@ class WapApiController extends Controller
     public function actionPersonMock()
     {
         $uid = Yii::$app->session->get('uid');
+        $p = Yii::$app->request->post('p',1);
+        $major= Yii::$app->request->post('major','Reading');
+        $pagesize=15;
+        $offset = $pagesize * ($p - 1);
         $uid = 14329;
         //        if($uid==false){
 //            $re['code'] = 5;
@@ -1202,11 +1207,17 @@ class WapApiController extends Controller
                 'tpId' => $v['tpId'],
                 'name' => $v['name'],
                 'time' => $v['time'],//试卷名详情
-                'date' => $v['date'],
+                'date' => date('Y-m-d H:i:s',$v['date']),
                 'rtime' => $model->FormatTime($v['rtime']),// 用户做题时间
             );
         }
-        echo die(json_encode(['data'=>$arr,'code'=>0]));
+        $collect=new Collection();
+        $brr['data']['Math'] =$collect->Data('Math',$pagesize,0,$arr);
+        $brr['data']['Reading'] = $collect->Data('Reading',$pagesize,0,$arr);
+        $brr['data']['Writing'] =$collect->Data('Writing',$pagesize,0,$arr);
+        $brr['data']['all'] = $collect->Data('all',$pagesize,0,$arr);
+        $brr['data'][$major] = $collect->Data("$major",$pagesize,$offset,$arr);
+        echo die(json_encode(['data'=>$brr,'code'=>0]));
     }
 
     // 删除模考记录
@@ -1292,6 +1303,7 @@ class WapApiController extends Controller
     {
 //        $cate = Yii::$app->request->post('cate');
         $uid = Yii::$app->session->get('uid');
+        $uid=14329;
         $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
         //        if($uid==false){
 //            $re['code'] = 5;
@@ -1300,7 +1312,7 @@ class WapApiController extends Controller
 //        }
         $arr['pageSize'] = $pagesize = 15;
         $offset = $pagesize * ($p - 1);
-        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.name,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
+        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
         $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
         $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();

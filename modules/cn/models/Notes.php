@@ -134,7 +134,8 @@ class Notes extends ActiveRecord
     // 个人中心题目
     public function Details($major,$p)
     {
-        $uid = Yii::$app->session->get('uid',14329);
+        $uid = Yii::$app->session->get('uid');
+        $uid=14329;
         $arr= Yii::$app->db->createCommand("select uid,notes,count,correctRate from {{%notes}} where uid=".$uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
@@ -157,14 +158,17 @@ class Notes extends ActiveRecord
         $data['data']['Math'] =$this->Data('Math',$pagesize,1,$s);
         $data['data']['Reading'] = $this->Data('Reading',$pagesize,1,$s);
         $data['data']['Writing'] =$this->Data('Writing',$pagesize,1,$s);
-        $data['data']['ALL'] = $this->Data('ALL',$pagesize,1,$s);
+        $data['data']['all'] = $this->Data('ALL',$pagesize,1,$s);
         $data['data'][$major] = $this->Data($major,$pagesize,$p,$s);
+//        echo'<pre>';
+//        var_dump($data);
+//        echo '</pre>';die;
         return $data;
     }
 
     private function Data($major,$pagesize,$p,$s){
         $offset = $pagesize * ($p - 1);
-        if($major=='ALL'){
+        if($major=='all'){
             $s['ALL']=rtrim($s['Math'].$s['Reading'].$s['Writing'],',');
         }
         if($s[$major]!=false){
