@@ -902,7 +902,7 @@ class WapApiController extends Controller
     // 做题详情，正确与否 ture or false，题目的id
     public function Question($tpId, $answer)
     {
-        $s = Yii::$app->db->createCommand("select id,answer,section from {{%questions}} where tpId=$tpId limit 100")->queryAll();
+//        $s = Yii::$app->db->createCommand("select id,answer,section from {{%questions}} where tpId=$tpId limit 100")->queryAll();
         $arr = explode(';', $answer);
         static $brr = array();
         static $que = array();
@@ -1196,7 +1196,7 @@ class WapApiController extends Controller
         $uid = Yii::$app->session->get('uid');
         $p = Yii::$app->request->post('p',1);
         $major= Yii::$app->request->post('major');
-        $pagesize=15;
+        $pagesize=10;
         $offset = $pagesize * ($p - 1);
         $uid = 14329;
         //        if($uid==false){
@@ -1204,7 +1204,8 @@ class WapApiController extends Controller
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid")->queryAll();
+        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid and t.name!='测评'")->queryAll();
+//        $data = Yii::$app->db->createCommand("select r.* from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid and t.name!='测评'")->queryAll();
         $model = new Format();
         foreach ($data as $k => $v) {
             $v['date']=date('Y-m-d H:i:s',$v['date']);
