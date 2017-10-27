@@ -1188,7 +1188,7 @@ class WapApiController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $p = Yii::$app->request->post('p',1);
-        $major= Yii::$app->request->post('major','Reading');
+        $major= Yii::$app->request->post('major');
         $pagesize=15;
         $offset = $pagesize * ($p - 1);
         $uid = 14329;
@@ -1198,23 +1198,18 @@ class WapApiController extends Controller
 //            die(json_encode($re));
 //        }
         $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid")->queryAll();
-        $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid")->queryAll());
         $model = new Format();
         foreach ($data as $k => $v) {
-            $arr['data'][$v['part']][] = array(
-                'part' => $v['part'],
-                'id' => $v['id'],
-                'tpId' => $v['tpId'],
-                'name' => $v['name'],
-                'time' => $v['time'],//试卷名详情
-                'date' => date('Y-m-d H:i:s',$v['date']),
-                'rtime' => $model->FormatTime($v['rtime']),// 用户做题时间
-            );
+            $v['date']=date('Y-m-d H:i:s',$v['date']);
+            $v['rtime']=$model->FormatTime($v['rtime']);
+            if($v['part']=='all'){
+                $arr['data']['all'][]=$v;
+            }else{
+                $arr['data']['single'][]=$v;
+            }
         }
         $collect=new Collection();
-        $brr['data']['Math'] =$collect->Data('Math',$pagesize,0,$arr);
-        $brr['data']['Reading'] = $collect->Data('Reading',$pagesize,0,$arr);
-        $brr['data']['Writing'] =$collect->Data('Writing',$pagesize,0,$arr);
+        $brr['data']['single'] =$collect->Data('single',$pagesize,0,$arr);
         $brr['data']['all'] = $collect->Data('all',$pagesize,0,$arr);
         $brr['data'][$major] = $collect->Data("$major",$pagesize,$offset,$arr);
         echo die(json_encode(['data'=>$brr,'code'=>0]));
