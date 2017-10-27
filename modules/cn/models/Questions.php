@@ -214,7 +214,8 @@ class Questions extends ActiveRecord
     }
 
     public function details($qid,$tpId,$major){
-        $uid = Yii::$app->session->get('uid',14329);
+        $uid = Yii::$app->session->get('uid');
+        $uid=14329;
         $data = Yii::$app->db->createCommand("select answer from {{%report}} where uid=$uid and tpId=$tpId and part ='$major' order by id desc limit 1")->queryOne();
         $arr = explode(';', $data['answer']);
         static $userans ='' ;
