@@ -1155,9 +1155,9 @@ class WapApiController extends Controller
     public function actionPersonCollect()
     {
         $uid = Yii::$app->session->get('uid');
-        $source = Yii::$app->request->post('source');
+        $uid=14329;
         $p = Yii::$app->request->post('p', '1');
-        $major = Yii::$app->request->post('major');
+        $major = Yii::$app->request->post('major','Reading');
         //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
@@ -1166,7 +1166,7 @@ class WapApiController extends Controller
         $model = new collection();
         $pagesize = 15;
         $offset = $pagesize * ($p - 1);
-        $data = $model->CollectionDate($source, $uid, $major, $offset, $pagesize);
+        $data = $model->CateData( $uid, $major, $offset, $pagesize,$p);
         $data['curPage'] = $p;
         echo die(json_encode($data));
     }
@@ -1174,8 +1174,8 @@ class WapApiController extends Controller
     // 个人中心练习题目
     public function actionPersonExercise()
     {
-        $uid = Yii::$app->session->get('uid',14329);
-        $uid = 14329;
+        $uid = Yii::$app->session->get('uid');
+        $uid=14329;
         $major = Yii::$app->request->post('major');
         $p = Yii::$app->request->post('p','1');
 //        var_dump($page);die;
@@ -1194,6 +1194,10 @@ class WapApiController extends Controller
     public function actionPersonMock()
     {
         $uid = Yii::$app->session->get('uid');
+        $p = Yii::$app->request->post('p',1);
+        $major= Yii::$app->request->post('major','Reading');
+        $pagesize=15;
+        $offset = $pagesize * ($p - 1);
         $uid = 14329;
         //        if($uid==false){
 //            $re['code'] = 5;
@@ -1220,7 +1224,6 @@ class WapApiController extends Controller
         $brr['data']['Writing'] =$collect->Data('Writing',$pagesize,0,$arr);
         $brr['data']['all'] = $collect->Data('all',$pagesize,0,$arr);
         $brr['data'][$major] = $collect->Data("$major",$pagesize,$offset,$arr);
-
         echo die(json_encode(['data'=>$brr,'code'=>0]));
     }
 
