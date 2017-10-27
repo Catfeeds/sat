@@ -117,7 +117,6 @@ class WapApiController extends Controller
                 $re['message'] = '未定义';
             }
             die(json_encode($re));
-
         }
 
     }
@@ -210,7 +209,6 @@ class WapApiController extends Controller
                     }
                 }else{
                     $login->uid = $uid;
-
                     $re = $login->save();
                     if ($re) {
                         $res['code'] = 0;
@@ -227,7 +225,6 @@ class WapApiController extends Controller
                 $res['message'] = '验证码错误';
                 $res['type'] = '1';
             }
-
         } else {
             $res['code'] = 1;
             $res['message'] = '验证码过期';
@@ -805,7 +802,7 @@ class WapApiController extends Controller
         echo die(json_encode(['re'=>$re,'code'=>0]));
     }
 
-    // 模考报告页面, 可能有问题
+    // 模考报告页面
     public function actionMockReport()
     {
         // 生成报告页面
@@ -846,11 +843,11 @@ class WapApiController extends Controller
                     // 将答案组合成字符串
                     $re['answer'] = $format->arrToStr($answerData);
                     if ($re['answer'] != false && $re['time'] != false) {
-                        $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
-                        if ($res) {
-//                            unset($_SESSION['answer']);
-                            unset($_SESSION['tpId']);
-                        }//入库完成
+                        $date= Yii::$app->db->createCommand("select date from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 1")->queryOne()['date'];
+                        if( time()-$date>300){
+                            $res = Yii::$app->db->createCommand()->insert("{{%report}}", $re)->execute();
+                            if($res!=false) unset($_SESSION['tpId']);
+                        }
                     }
                     // 历史报告
                     $tp = Yii::$app->db->createCommand("select t.name,t.time,r.score from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id where r.uid=$uid and part='all' order by r.id desc limit 5")->queryAll();
@@ -1157,7 +1154,6 @@ class WapApiController extends Controller
     // 个人中心收藏页面
     public function actionPensonCollect()
     {
-
         $uid = Yii::$app->session->get('uid');
         $source = Yii::$app->request->post('source');
         $p = Yii::$app->request->post('p', '1');
@@ -1178,72 +1174,49 @@ class WapApiController extends Controller
     // 个人中心练习题目
     public function actionPersonExercise()
     {
-        $uid = Yii::$app->session->get('uid');
-        $source = Yii::$app->request->post('source');
+        $uid = Yii::$app->session->get('uid',14329);
         $major = Yii::$app->request->post('major');
-        $error = Yii::$app->request->post('case');
-        $p = Yii::$app->request->post('p', '1');
+        $p = Yii::$app->request->post('p','1');
+//        var_dump($page);die;
         //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-        $pagesize = 15;
-        $offset = $pagesize * ($p - 1);
+
         $notes = new Notes();
-        $arr = $notes->Ex($uid, $source, $major, $error, $offset, $pagesize, $p);
-        $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
-        $arr['curPage'] = $p;
-        $arr['pageSize'] = $pagesize;
-        echo die(json_encode($arr));
+        $arr = $notes->details($major,$p);
+        echo die(json_encode(['data'=>$arr,'code'=>0]));
     }
 
     // 个人中心模考记录
     public function actionPersonMock()
     {
         $uid = Yii::$app->session->get('uid');
-        $source = Yii::$app->request->post('source');
-        $type = Yii::$app->request->post('major');
-        $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
+        $uid = 14329;
         //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-        $arr['pageSize'] = $pagesize = 15;
-        if ($source != 'all') {
-            $name = "and name='$source'";
-        } else {
-            $name = '';
-        }
-        if ($type == 'whole') {
-            $part = '';
-        } else {
-            $part = "and part ='$type'";
-        }
-        $offset = $pagesize * ($p - 1);
-        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.name,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part limit $offset,$pagesize")->queryAll();
-        $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid $name $part ")->queryAll());
-        $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid")->queryAll();
+        $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=$uid")->queryAll());
         $model = new Format();
         foreach ($data as $k => $v) {
-            $arr['data'][] = array(
+            $arr['data'][$v['part']][] = array(
                 'part' => $v['part'],
                 'id' => $v['id'],
                 'tpId' => $v['tpId'],
                 'name' => $v['name'],
                 'time' => $v['time'],//试卷名详情
-                'mathnum' => $v['mathnum'],
-                'readnum' => $v['readnum'],
-                'writenum' => $v['writenum'],
                 'date' => $v['date'],
                 'rtime' => $model->FormatTime($v['rtime']),// 用户做题时间
             );
         }
-        echo die(json_encode($arr));
+        echo die(json_encode(['data'=>$arr,'code'=>0]));
     }
 
-    // 删除报告
+    // 删除模考记录
     public function actionDel()
     {
         $uid = Yii::$app->session->get('uid');
@@ -1299,6 +1272,7 @@ class WapApiController extends Controller
         }
         echo die(json_encode($res));
     }
+
     // 获取用户积分
     public function actionGetIntegral()
     {
@@ -1345,14 +1319,11 @@ class WapApiController extends Controller
                 'name' => $v['name'],
                 'time' => $v['time'],
                 'score' => $v['score'],
-                'mathnum' => $v['mathnum'],
-                'readnum' => $v['readnum'],
-                'writenum' => $v['writenum'],
                 'date' => $v['date'],
                 'rtime' => $model->FormatTime($v['rtime']),
             );
         }
-        die(json_encode($arr));
+        die(json_encode(['data'=>$arr,'code'=>0]));
     }
 
     //banner图
