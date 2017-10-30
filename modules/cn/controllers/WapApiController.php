@@ -812,7 +812,7 @@ class WapApiController extends Controller
         $data['user'] = Yii::$app->session->get('userData', '');
         $major = Yii::$app->session->get('part', '');
         $id = Yii::$app->request->post('id', '');// 个人中心才传参,报告的id
-        //$id = 25;// 个人中心才传参,报告的id
+        //$id = 50;// 个人中心才传参,报告的id
         if ($id == false) {
             if (isset($_SESSION['answer']) && isset($_SESSION['tpId'])) {
                 $answerData = ((array)$_SESSION['answer']);
