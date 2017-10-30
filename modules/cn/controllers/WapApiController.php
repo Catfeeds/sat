@@ -812,7 +812,7 @@ class WapApiController extends Controller
         $data['user'] = Yii::$app->session->get('userData', '');
         $major = Yii::$app->session->get('part', '');
         $id = Yii::$app->request->post('id', '');// 个人中心才传参,报告的id
-        $id = 25;// 个人中心才传参,报告的id
+        $id = 11;// 个人中心才传参,报告的id
         if ($id == false) {
             if (isset($_SESSION['answer']) && isset($_SESSION['tpId'])) {
                 $answerData = ((array)$_SESSION['answer']);
@@ -1164,7 +1164,6 @@ class WapApiController extends Controller
         $pagesize = 10;
         $offset = $pagesize * ($p - 1);
         $data = $model->CateData($uid, $major, $offset, $pagesize, $p);
-        $data['curPage'] = $p;
         echo die(json_encode($data));
     }
 
@@ -1215,7 +1214,7 @@ class WapApiController extends Controller
         $collect = new Collection();
         $brr['data']['single'] = $collect->Data('single', $pagesize, 0, $arr,1);
         $brr['data']['all'] = $collect->Data('all', $pagesize, 0, $arr,1);
-        if($major!=false) $brr['data'][$major] = $collect->Data("$major", $pagesize, $offset, $p);
+        if($major!=false){ $brr['data'][$major] = $collect->Data("$major", $pagesize, $offset, $arr, $p);}
         echo die(json_encode(['data' => $brr, 'code' => 0]));
     }
 
@@ -1303,20 +1302,20 @@ class WapApiController extends Controller
 //        $cate = Yii::$app->request->post('cate');
         $uid = Yii::$app->session->get('uid');
         $uid = 14329;
-        $arr['curPage'] = $p = Yii::$app->request->post('p', '1');
+        $arr['data']['Current'] = $p = Yii::$app->request->post('p', '1');
         //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-        $arr['pageSize'] = $pagesize = 15;
+        $arr['data']['pageSize'] = $pagesize = 15;
         $offset = $pagesize * ($p - 1);
         $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
-        $arr['total'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
-        $arr['totalPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $arr['data']['allTotal'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
+        $arr['data']['allPage'] = ceil($arr['total'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
-            $arr['data'][] = array(
+            $arr['data']['data'][] = array(
                 'part' => $v['part'],
                 'id' => $v['id'],
                 'tpId' => $v['tpId'],
@@ -1330,10 +1329,9 @@ class WapApiController extends Controller
         die(json_encode(['data' => $arr, 'code' => 0]));
     }
 
-    //banner图
+    //首页
     public function actionSat()
     {
-
         $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='wapIndex' order by id DESC limit 5")->queryAll();
         $data['publicClass'] = Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 4")->queryAll();
         $data['classs'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
@@ -1355,8 +1353,10 @@ class WapApiController extends Controller
     // 课程详情
     public function actionClassDetails()
     {
-        $id = $p = Yii::$app->request->post('id');
+        $id = $p = Yii::$app->request->post('id',1);
         $data = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction,teacher,student from {{%classes}} where id=$id ")->queryOne();
+        $t=explode(',',$data['duration']);
+        $data['lesson']=$t;
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
@@ -1371,7 +1371,10 @@ class WapApiController extends Controller
     // 名师
     public function actionTeacher()
     {
-        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC ")->queryAll();
+        $page = Yii::$app->request->post('p', 1);
+        $pageSize = 10;
+        $offset = $pageSize * ($page - 1);
+        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit $offset,$pageSize")->queryAll();
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
@@ -1380,10 +1383,12 @@ class WapApiController extends Controller
     {
         $pageSize = 10;
         $page = Yii::$app->request->post('p', 1);
+        $cate = Yii::$app->request->post('cate','');
         $offset = $pageSize * ($page - 1);
-        $data['news'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='新闻资讯' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
-        $data['report'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='学术报告' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
-        $data['experience'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary from {{%info}} where cate='备考经验' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
+        $data['news'] = Yii::$app->db->createCommand("select hits,title,pic,id,cate,publishTime,summary from {{%info}} where cate='新闻资讯' order by isShow asc,id desc limit 0,$pageSize")->queryAll();
+        $data['report'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,hits,summary from {{%info}} where cate='学术报告' order by isShow asc,id desc limit 0,$pageSize")->queryAll();
+        $data['experience'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,hits,summary from {{%info}} where cate='高分经验' order by isShow asc,id desc limit 0,$pageSize")->queryAll();
+        if($cate!=false) $data["$cate"] = Yii::$app->db->createCommand("select title,pic,id,cate,hits,publishTime,summary from {{%info}} where cate='".$cate."' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
@@ -1397,6 +1402,7 @@ class WapApiController extends Controller
             die(json_encode($res));
         }
         $data = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,content,hits from {{%info}} where id=$id")->queryOne();
+        $data['publishTime']=date('Y-m-d H:i:s',$data['publishTime']);
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 

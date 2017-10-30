@@ -69,7 +69,8 @@ class Collection extends ActiveRecord{
 
     }
 
-    public function Data($major,$pagesize,$offset,$data,$p){
+    public function Data($major,$pagesize,$offset,$data,$p)
+    {
         $arr["$major".'Total']=count( $data['data']["$major"]);
         $arr["$major".'Page']=ceil($arr["$major".'Total']/$pagesize);
         $arr["$major".'Current']=$p;
