@@ -61,17 +61,18 @@ class Collection extends ActiveRecord{
                 }
             }
         }
-        $data['data']['Math'] =$this->Data('Math',$pagesize,0,$brr);
-        $data['data']['Reading'] = $this->Data('Reading',$pagesize,0,$brr);
-        $data['data']['Writing'] =$this->Data('Writing',$pagesize,0,$brr);
-        $data['data'][$major] = $this->Data($major,$pagesize,$offset,$brr);
+        $data['data']['Math'] =$this->Data('Math',$pagesize,0,$brr,1);
+        $data['data']['Reading'] = $this->Data('Reading',$pagesize,0,$brr,1);
+        $data['data']['Writing'] =$this->Data('Writing',$pagesize,0,$brr,1);
+        if($major!=false) $data['data'][$major] = $this->Data($major,$pagesize,$offset,$brr,$p);
         return $data;
 
     }
 
-    public function Data($major,$pagesize,$offset,$data){
+    public function Data($major,$pagesize,$offset,$data,$p){
         $arr["$major".'Total']=count( $data['data']["$major"]);
         $arr["$major".'Page']=ceil($arr["$major".'Total']/$pagesize);
+        $arr["$major".'Current']=$p;
         $arr['data']=array_slice ($data['data']["$major"],$offset ,$pagesize);
         return $arr;
     }
