@@ -1346,7 +1346,7 @@ class WapApiController extends Controller
     public function actionClass()
     {
         $data['publicClass'] = Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 5")->queryAll();
-        $data['classs'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
+        $data['class'] = Yii::$app->db->createCommand("select classTime,id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
@@ -1354,7 +1354,7 @@ class WapApiController extends Controller
     public function actionClassDetails()
     {
         $id = $p = Yii::$app->request->post('id',1);
-        $data = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction,teacher,student from {{%classes}} where id=$id ")->queryOne();
+        $data = Yii::$app->db->createCommand("select classTime,id,pic,cate,duration,plan,introduction,teacher,student from {{%classes}} where id=$id ")->queryOne();
         $t=explode(',',$data['duration']);
         $data['lesson']=$t;
         die(json_encode(['data' => $data, 'code' => 0]));
@@ -1365,6 +1365,13 @@ class WapApiController extends Controller
     {
         // 观看往期视频需登录
         $data = array();
+        $page = Yii::$app->request->post('p',1);
+        $pageSize=10;
+        $offset = $pageSize * ($page - 1);
+        $data['data'] = Yii::$app->db->createCommand("select hits,title,pic,id,cate,publishTime,summary from {{%info}} where cate='公开课' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
+        $data['total'] = count(Yii::$app->db->createCommand("select id from {{%info}} where cate='公开课' order by isShow asc,id desc ")->queryAll());
+        $data['current'] =$page;
+        $data['page']=ceil($data['total']/$pageSize);
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
@@ -1395,16 +1402,16 @@ class WapApiController extends Controller
     // 资讯详情
     public function actionInfoDetails()
     {
-        $id = Yii::$app->request->post('id', '');
+        $id = Yii::$app->request->post('id');
         if ($id == false) {
             $res['code'] = 1;
             $res['message'] = '请求错误';
             die(json_encode($res));
         }
         $data = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,content,hits from {{%info}} where id=$id")->queryOne();
-        $recommend= Yii::$app->db->createCommand("select title,id from {{%info}} order by isShow asc,id desc limit 5")->queryAll();
+        $data['recommend']= Yii::$app->db->createCommand("select title,id from {{%info}} order by isShow asc,id desc limit 5")->queryAll();
         $data['publishTime']=date('Y-m-d H:i:s',$data['publishTime']);
-        die(json_encode(['data' => $data, 'recommend'=>$recommend, 'code' => 0]));
+        die(json_encode(['data' => $data, 'code' => 0]));
     }
 
 }
