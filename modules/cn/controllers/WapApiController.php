@@ -1407,6 +1407,14 @@ class WapApiController extends Controller
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
+    // 名师详情
+    public function actionTeacherDetails()
+    {
+        $id = Yii::$app->request->post('id');
+        $data['data'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where id=$id")->queryOne();
+        die(json_encode(['data' => $data, 'code' => 0]));
+    }
+
     // 资讯
     public function actionInfo()
     {
@@ -1434,6 +1442,37 @@ class WapApiController extends Controller
         $data['recommend']= Yii::$app->db->createCommand("select title,id from {{%info}} order by isShow asc,id desc limit 5")->queryAll();
         $data['publishTime']=date('Y-m-d H:i:s',$data['publishTime']);
         die(json_encode(['data' => $data, 'code' => 0]));
+    }
+
+    //资讯和题目的搜索功能
+    public function actionSearch()
+    {
+        $keyword = Yii::$app->request->get('keyword', '');
+        $keyword  =addslashes($keyword);
+        $keyword  =strip_tags($keyword);
+        $cate = Yii::$app->request->get('cate');
+        $page = Yii::$app->request->get('p', '1');
+        $pagesize = 15;
+        $offset= $pagesize * ($page - 1);
+        if($keyword){
+            if($cate=='info'){
+                $data = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
+                $count= count(Yii::$app->db->createCommand("select id from {{%info}} where title like '%$keyword%'")->queryAll());
+            }elseif($cate=='question'){
+                $data= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid,t.name,t.time,q.number,q.major from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on q.tpId=t.id where content like '%$keyword%' order by q.id desc limit $offset,$pagesize")->queryAll();
+                $count= count(Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
+            }else{
+                $data=array();
+                $count=0;
+            }
+        }else{
+            $data=array();
+            $count='';
+        }
+        $data['Total'] = $count;
+        $data['Current'] =$page;
+        $data['Page']=ceil($data['Total']/$pagesize);
+        echo json_encode(['data' => $data, 'code' => 0]);
     }
 
 }
