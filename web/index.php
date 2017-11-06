@@ -13,11 +13,11 @@ $config = require(__DIR__ . '/../config/web.php');
 //$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 //switch ($deviceType){
 //    case 'tablet':
-//        header('Location: http://m.thinkwithu.com/');die;
+//        header('Location: http://www.baidu.com/');die;
 //        break;
 //
 //    case 'phone':
-//        header('Location: http://m.thinkwithu.com/');die;
+//        header('Location: http://www.baidu.com/');die;
 //        break;
 //
 //    default:

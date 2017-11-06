@@ -16,6 +16,7 @@
                         <option value ="sat" <?php echo isset($data)&& $data['module']=="sat" ?  'selected':''?>>首页</option>
                         <option value ="pubclass" <?php echo isset($data)&& $data['module']=="pubclass" ?  'selected':''?>>公开课</option>
                         <option value ="info" <?php echo isset($data)&& $data['module']=="info" ?  'selected':''?>>资讯</option>
+                        <option value ="wapIndex" <?php echo isset($data)&& $data['module']=="wapIndex" ?  'selected':''?>>移动端首页</option>
                     </select>
                 </td>
 <!--                <td><input type="text" name="module" placeholder="模块"  value="--><?php //echo isset($data)? $data['controller']:''?><!--"></td>-->
