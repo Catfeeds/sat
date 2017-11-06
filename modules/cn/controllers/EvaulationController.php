@@ -30,9 +30,8 @@ class EvaulationController extends Controller
     $this->layout = 'cn1.php';
     $tid = Yii::$app->request->get('tid');
     $uid = Yii::$app->session->get('uid', '');
-    $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
     if($uid==false){
-      echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+      header("Location:http://login.gmatonline.cn/cn/index?source=2&url=http://www.thinkusat.com/evaulation.html");die;
       die;
     }
     if (isset($_SESSION['answer'])) {
@@ -168,9 +167,9 @@ class EvaulationController extends Controller
   {
     $uid = Yii::$app->session->get('uid');
     if ($id == false) {
-      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crossScores,time,part from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
+      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crossScore,time,part from {{%report}} where uid=" . $uid . " order by id desc limit 1")->queryOne();
     } else {
-      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crossScores,time,part from {{%report}} where id=" . $id)->queryOne();
+      $data = Yii::$app->db->createCommand("select answer,id,mathnum,jumpnum,writenum,readnum,readerror,writeerror,matherror,score,tpId,subScore,crossScore,time,part from {{%report}} where id=" . $id)->queryOne();
     }
     if ($data) {
       $re['Math'] = $data['mathnum'] * 3;
