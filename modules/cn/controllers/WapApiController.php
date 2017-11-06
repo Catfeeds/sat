@@ -1407,14 +1407,6 @@ class WapApiController extends Controller
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
-    // 名师详情
-    public function actionTeacherDetails()
-    {
-        $id = Yii::$app->request->post('id');
-        $data['data'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where id=$id")->queryOne();
-        die(json_encode(['data' => $data, 'code' => 0]));
-    }
-
     // 资讯
     public function actionInfo()
     {
@@ -1456,22 +1448,23 @@ class WapApiController extends Controller
         $offset= $pagesize * ($page - 1);
         if($keyword){
             if($cate=='info'){
-                $data = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
+                $data['data'] = Yii::$app->db->createCommand("select id,title,summary from {{%info}} where title like '%$keyword%' limit $offset,$pagesize")->queryAll();
                 $count= count(Yii::$app->db->createCommand("select id from {{%info}} where title like '%$keyword%'")->queryAll());
             }elseif($cate=='question'){
-                $data= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid,t.name,t.time,q.number,q.major from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on q.tpId=t.id where content like '%$keyword%' order by q.id desc limit $offset,$pagesize")->queryAll();
+                $data['data']= Yii::$app->db->createCommand("select q.content,qe.essay,q.id as qid,t.name,t.time,q.number,q.major from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId left join {{%testpaper}} t on q.tpId=t.id where content like '%$keyword%' order by q.id desc limit $offset,$pagesize")->queryAll();
                 $count= count(Yii::$app->db->createCommand("select q.id as qid from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId where content like '%$keyword%'")->queryAll());
             }else{
-                $data=array();
+                $data['data']=array();
                 $count=0;
             }
         }else{
-            $data=array();
+            $data['data']=array();
             $count='';
         }
         $data['Total'] = $count;
         $data['Current'] =$page;
         $data['Page']=ceil($data['Total']/$pagesize);
+        $data['cate']=$cate;
         echo json_encode(['data' => $data, 'code' => 0]);
     }
 
