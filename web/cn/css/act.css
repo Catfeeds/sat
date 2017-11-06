@@ -45,6 +45,8 @@ p,h3{
   height: 420px;
   background: url("/cn/images/act-index01.png") no-repeat;
   overflow: hidden;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 /* 什么是ACT考试 */
 

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/cn/css/bootstrap.min.css">
   <link rel="stylesheet" href="/cn/css/font-awesome.min.css">
   <link rel="stylesheet" href="/cn/css/public.css">
-  <link rel="stylesheet" href="/cn/css/abroad.css">
+  <link rel="stylesheet" href="/cn/css/syabroad.css">
   <script src="/cn/js/jquery-2.1.1.min.js"></script>
   <script src="/cn/js/bootstrap.min.js"></script>
   <script src="/cn/js/jquery.cookie.js"></script>
@@ -27,7 +27,7 @@
 <body>
   <nav class="s-nav">
   <div class="container clearfix">
-    <a class="s-nav-logo pull-left">
+    <a class="s-nav-logo pull-left" href="./US_abroad.html">
       <img src="/cn/images/sy-logo.png" alt="企业logo">
     </a>
     <ul class="s-nav-cnt pull-left">
@@ -38,7 +38,7 @@
       <li><a href="#service">服务体系</a></li>
       <li><a href="#success">成功案例</a></li>
       <li><a href="#group">服务团队</a></li>
-      <li><a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">联系我们</a></li>
+      <li><a href="./US_about.html">联系我们</a></li>
     </ul>
   </div>
 </nav>
@@ -52,17 +52,17 @@
       <ul>
         <li>
           <p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">留学评估</a>
+            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">免费留学评估</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">快速定制留学方案</a>
+            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">免费快速定制留学方案</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">背景提升</a>
+            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=%E6%96%B0%E5%AE%98%E7%BD%91%EF%BC%88thinkwithu%EF%BC%89&cw=%E5%AE%98%E7%BD%91%E5%8F%B3%E4%BE%A7%E5%AE%A2%E6%9C%8D%E5%88%97%E8%A1%A8" target="_blank">免费背景提升</a>
           </p>
         </li>
       </ul>
@@ -357,9 +357,9 @@
     </ul>
     <div class="group-wrap">
       <div class="group-cnt">
-        <?php $a=($data==false?0:ceil(count($data)/4)); for($i=0;$i<$a;$i++){?>
+        <?php $a=($data==false?0:ceil(count($data)/2)); for($i=0;$i<$a;$i++){?>
         <ul class="group-ul clearfix">
-          <?php foreach($data as $k=>$v){if($k<($i+1)*4&&$k>=$i*4){?>
+          <?php foreach($data as $k=>$v){if($k<($i+1)*2&&$k>=$i*2){?>
           <li>
             <div>
               <div class="group-img clearfix">
@@ -419,9 +419,10 @@
         <div class="s-tel">
           <img src="/cn/images/tel_icon.png" alt="电话">
           <p>400-600-1123</p>
+          <p>021-52986736</p>
         </div>
       </div>
-      <p class="s-w1200" style="font-size: 16px; margin-top: 15px; line-height: 24px;">上海申雷友管理咨询有限公司(简称"申友国际教育")，成立于上海，目前在北京、成都、西安、杭州、武汉、广州、深圳、珠海、加利福尼亚等10个城市拥有分支机构。申友国际教育专注于高端留学咨询和出国考试培训。</p>
+      <p class="s-w1200" style="font-size: 16px; margin-top: 15px; line-height: 24px;">申友留学隶属于上海申雷友管理咨询有限公司，上海申雷友管理咨询有限公司(简称"申友国际教育")，成立于上海，目前在北京、成都、西安、杭州、武汉、广州、深圳、珠海、加利福尼亚等10个城市拥有分支机构。申友国际教育专注于高端留学咨询和出国考试培训。</p>
 
     </div>
     <div class="s-footer-bottom">

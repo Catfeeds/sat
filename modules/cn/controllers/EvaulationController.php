@@ -30,9 +30,8 @@ class EvaulationController extends Controller
     $this->layout = 'cn1.php';
     $tid = Yii::$app->request->get('tid');
     $uid = Yii::$app->session->get('uid', '');
-    $url = Yii::$app->request->hostInfo . Yii::$app->request->getUrl();
     if($uid==false){
-      echo "<script>alert('请登录'); location.href='http://login.gmatonline.cn/cn/index?source=20&url=<?php echo $url?>'</script>";
+      header("Location:http://login.gmatonline.cn/cn/index?source=2&url=http://www.thinkusat.com/evaulation.html");die;
       die;
     }
     if (isset($_SESSION['answer'])) {
@@ -98,23 +97,22 @@ class EvaulationController extends Controller
   }
 
   // 获取测评的分数
-  public function actionScore($data)
-  {
-    $translation = Yii::$app->db->createCommand("select id,answer from {{%questions}} where  major='Translation' and tpId=" . Yii::$app->session->get('tid'))->queryAll();
-    $count = 0;
-    $trans = 0;
-    foreach ($translation as $k => $v) {
-      $answer = explode(',', $v['answer']);
-      foreach ($answer as $key => $val) {
-        if (strpos($val, $data[$v['id']][1]) !== false) {
-          $count += 1;
-        }
-      }
-      $trans += ($count >= 6 ? 3 : ($count > 4 ? 2 : 1));
-    }
-    return $trans;
-  }
-
+//  public function actionScore($data)
+//  {
+//    $translation = Yii::$app->db->createCommand("select id,answer from {{%questions}} where  major='Translation' and tpId=" . Yii::$app->session->get('tid'))->queryAll();
+//    $count = 0;
+//    $trans = 0;
+//    foreach ($translation as $k => $v) {
+//      $answer = explode(',', $v['answer']);
+//      foreach ($answer as $key => $val) {
+//        if (strpos($val, $data[$v['id']][1]) !== false) {
+//          $count += 1;
+//        }
+//      }
+//      $trans += ($count >= 6 ? 3 : ($count > 4 ? 2 : 1));
+//    }
+//    return $trans;
+//  }
   // 测评报告
   public function actionReport()
   {
@@ -135,7 +133,8 @@ class EvaulationController extends Controller
       $re['matherror'] = $number['matherror'];
       $re['readerror'] = $number['readerror'];
       $re['writeerror'] = $number['writeerror'];
-      $re['score'] = $this->actionScore($data) + $number['Math'] * 3 + $number['Reading'] * (30 / ($number['Reading'] + $number['readerror'])) + $number['Writing'] * 2 + $number['Vocabulary'];
+//      $re['score'] = $this->actionScore($data) + $number['Math'] * 3 + $number['Reading'] * (30 / ($number['Reading'] + $number['readerror'])) + $number['Writing'] * 2 + $number['Vocabulary'];
+      $re['score'] = $number['Math'] * 3 + $number['Reading'] * (30 / ($number['Reading'] + $number['readerror'])) + $number['Writing'] * 2 + $number['Vocabulary'];
       $re['date'] = time();
       $re['time'] = Yii::$app->session->get('time');// 做题总时间
       if ($uid) {

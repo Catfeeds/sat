@@ -1,9 +1,7 @@
 /**
  * Created by Administrator on 2017/9/14.
  */
-$(function () {
-  subject.init();
-});
+
 var subject = {
   init: function () {
     this.onLoad();
@@ -106,4 +104,8 @@ var subject = {
       }
     })
   }
-}
+};
+
+$(function () {
+    subject.init();
+});
