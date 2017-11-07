@@ -13,6 +13,7 @@ use app\libs\Format;
 use app\libs\GetScore;
 use yii\web\Controller;
 use app\libs\KeepAnswer;
+use app\modules\cn\models\Info;
 use app\modules\cn\models\Login;
 use app\modules\cn\models\Notes;
 use app\modules\cn\models\Report;
@@ -812,7 +813,6 @@ class WapApiController extends Controller
         $data['user'] = Yii::$app->session->get('userData', '');
         $major = Yii::$app->session->get('part', '');
         $id = Yii::$app->request->post('id', '');// 个人中心才传参,报告的id
-
         if ($id == false) {
             if (isset($_SESSION['answer']) && isset($_SESSION['tpId'])) {
                 $answerData = ((array)$_SESSION['answer']);
@@ -990,6 +990,8 @@ class WapApiController extends Controller
         $userTime = Yii::$app->request->post('userTime');
         $number = Yii::$app->request->post('number');
         $section = Yii::$app->request->post('section',1);
+        $time=Yii::$app->request->post('time',0);
+        Yii::$app->session->set('time',$time);//测评总时间
         session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $answer, $userTime);//保存做题数据
@@ -1245,6 +1247,7 @@ class WapApiController extends Controller
     public function actionRemoved()
     {
         $uid = Yii::$app->session->get('uid');
+        $uid = 14329;
         $qid = Yii::$app->request->post('qid');
 //        if($uid==false){
 //            $re['code'] = 5;
@@ -1310,11 +1313,11 @@ class WapApiController extends Controller
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-        $arr['data']['pageSize'] = $pagesize = 15;
+        $arr['data']['pageSize'] = $pagesize = 3;
         $offset = $pagesize * ($p - 1);
         $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
         $arr['data']['allTotal'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
-        $arr['data']['allPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $arr['data']['allPage'] = ceil($arr['data']['allTotal'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
             $arr['data']['data'][] = array(
@@ -1331,24 +1334,35 @@ class WapApiController extends Controller
         die(json_encode(['data' => $arr, 'code' => 0]));
     }
 
+    // 个人中心删除测评
+    public function actionDelete()
+    {
+        $uid = Yii::$app->session->get('uid');
+        $uid = 14329;
+//        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
+        $id = Yii::$app->request->post('id');
+        $re = Report::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
+            $res['code'] = 0;
+            $res['msg'] = '删除成功';
+        } else {
+            $res['code'] = 1;
+            $res['msg'] = '删除失败';
+        }
+        echo die(json_encode($res));
+    }
     //首页
     public function actionSat()
     {
-        $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='sat' order by id DESC limit 5")->queryAll();
+        $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='wapIndex' order by id DESC limit 5")->queryAll();
+//        $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='sat' order by id DESC limit 5")->queryAll();
         $data['publicClass'] = Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 4")->queryAll();
         $data['class'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
-        $data['teacher'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 20")->queryAll();
-//        $teacher = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 20")->queryAll();
-//        static $arr=array();
-//        foreach($teacher as $k=>$v){
-//            if($k%2==0){
-//                floor($k/2);
-//                $arr[floor($k/2)][]=$v;
-//            }else{
-//                $arr[floor($k/2)][]=$v;
-//            }
-//        }
-//        $data['teacher']=$arr;
+        $data['teacher'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 10")->queryAll();
         $data['news'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,hits from {{%info}} where cate='新闻资讯' order by isShow asc,id desc limit 5")->queryAll();
         $data['academic'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,hits from {{%info}} where cate='学术报告' order by isShow asc,id desc limit 5")->queryAll();
         $data['score'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,hits from {{%info}} where cate='高分经验' order by isShow asc,id desc limit 5")->queryAll();
@@ -1413,11 +1427,23 @@ class WapApiController extends Controller
         $pageSize = 10;
         $page = Yii::$app->request->post('p', 1);
         $cate = Yii::$app->request->post('cate','');
-        $offset = $pageSize * ($page - 1);
-        $data['news'] = Yii::$app->db->createCommand("select hits,title,pic,id,cate,publishTime,summary from {{%info}} where cate='新闻资讯' order by isShow asc,id desc limit 0,$pageSize")->queryAll();
-        $data['report'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,hits,summary from {{%info}} where cate='学术报告' order by isShow asc,id desc limit 0,$pageSize")->queryAll();
-        $data['experience'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,hits,summary from {{%info}} where cate='高分经验' order by isShow asc,id desc limit 0,$pageSize")->queryAll();
-        if($cate!=false) $data["$cate"] = Yii::$app->db->createCommand("select title,pic,id,cate,hits,publishTime,summary from {{%info}} where cate='".$cate."' order by isShow asc,id desc limit $offset,$pageSize")->queryAll();
+        $info=new Info();
+//        $data['news'] = $info->Data('新闻资讯',1,$pageSize);
+//        $data['report'] = $info->Data('学术报告',1,$pageSize);
+        if($cate==false){
+            $data['news'] = $info->Data('新闻资讯',1,$pageSize);
+            $data['report'] = $info->Data('学术报告',1,$pageSize);
+            $data['experience'] = $info->Data('高分经验',1,$pageSize);
+        } else{
+            if($cate=='news'){
+                $c='新闻资讯';
+            }elseif($cate=='report'){
+                $c='学术报告';
+            }else{
+                $c='高分经验';
+            }
+            $data['data'] =  $info->Data($c,$page,$pageSize);
+        }
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
