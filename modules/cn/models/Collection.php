@@ -43,7 +43,7 @@ class Collection extends ActiveRecord{
 
         return $brr;
     }
-
+    // wap个人中心
     public function CateData($uid, $major, $offset, $pagesize,$p)
     {
         $arr= Yii::$app->db->createCommand("select id,qid,uid from {{%collection}} where uid=".$uid)->queryOne();
@@ -61,10 +61,17 @@ class Collection extends ActiveRecord{
                 }
             }
         }
-        $data['data']['Math'] =$this->Data('Math',$pagesize,0,$brr,1);
-        $data['data']['Reading'] = $this->Data('Reading',$pagesize,0,$brr,1);
-        $data['data']['Writing'] =$this->Data('Writing',$pagesize,0,$brr,1);
-        if($major!=false) $data['data'][$major] = $this->Data($major,$pagesize,$offset,$brr,$p);
+        if($major==false){
+            $data['data']['Math'] =$this->Data('Math',$pagesize,0,$brr,1);
+            $data['data']['Reading'] = $this->Data('Reading',$pagesize,0,$brr,1);
+            $data['data']['Writing'] =$this->Data('Writing',$pagesize,0,$brr,1);
+        }else{
+            $data['dataTotal']=count( $brr['data']["$major"]);
+            $data['dataPage']=ceil($data['dataTotal']/$pagesize);
+            $data['dataCurrent']=$p;
+            $data['data']=array_slice ($brr['data']["$major"],$offset ,$pagesize);
+        }
+
         return $data;
 
     }

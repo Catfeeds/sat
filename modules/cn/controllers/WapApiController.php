@@ -1155,7 +1155,7 @@ class WapApiController extends Controller
         $uid = 14329;
         $p = Yii::$app->request->post('p', '1');
         $major = Yii::$app->request->post('major', '');
-        //        if($uid==false){
+//        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
@@ -1174,8 +1174,7 @@ class WapApiController extends Controller
         $uid = 14329;
         $major = Yii::$app->request->post('major','');
         $p = Yii::$app->request->post('p', '1');
-//        var_dump($page);die;
-        //        if($uid==false){
+//        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
@@ -1243,6 +1242,7 @@ class WapApiController extends Controller
     public function actionRemoved()
     {
         $uid = Yii::$app->session->get('uid');
+        $uid=14329;
         $qid = Yii::$app->request->post('qid');
 //        if($uid==false){
 //            $re['code'] = 5;
@@ -1264,6 +1264,7 @@ class WapApiController extends Controller
         $model = new Format();
         $data['notes'] = $model->arrToStr($crr);
         $notes = new Notes();
+//        var_dump($arr['id']);die;
         $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
         if ($re) {
             $res['code'] = 0;
@@ -1335,18 +1336,8 @@ class WapApiController extends Controller
         $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='wapIndex' order by id DESC limit 5")->queryAll();
 //        $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='sat' order by id DESC limit 5")->queryAll();
         $data['publicClass'] = Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 4")->queryAll();
-        $data['classs'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
-        $teacher = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 20")->queryAll();
-        static $arr=array();
-        foreach($teacher as $k=>$v){
-            if($k%2==0){
-                floor($k/2);
-                $arr[floor($k/2)][]=$v;
-            }else{
-                $arr[floor($k/2)][]=$v;
-            }
-        }
-        $data['teacher']=$arr;
+        $data['class'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
+        $data['teacher'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 10")->queryAll();
         $data['news'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,hits from {{%info}} where cate='新闻资讯' order by isShow asc,id desc limit 5")->queryAll();
         $data['academic'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,hits from {{%info}} where cate='学术报告' order by isShow asc,id desc limit 5")->queryAll();
         $data['score'] = Yii::$app->db->createCommand("select title,pic,id,cate,publishTime,summary,hits from {{%info}} where cate='高分经验' order by isShow asc,id desc limit 5")->queryAll();
@@ -1374,7 +1365,6 @@ class WapApiController extends Controller
     // 公开课
     public function actionPubClass()
     {
-        // 观看往期视频需登录
         $data = array();
         $page = Yii::$app->request->post('p',1);
         $pageSize=10;
@@ -1391,10 +1381,10 @@ class WapApiController extends Controller
     // 名师
     public function actionTeacher()
     {
-        $page = Yii::$app->request->post('p', 1);
-        $pageSize = 10;
-        $offset = $pageSize * ($page - 1);
-        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit $offset,$pageSize")->queryAll();
+//        $page = Yii::$app->request->post('p', 1);
+//        $pageSize = 10;
+//        $offset = $pageSize * ($page - 1);
+        $data = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC ")->queryAll();
         die(json_encode(['data' => $data, 'code' => 0]));
     }
 
@@ -1410,13 +1400,14 @@ class WapApiController extends Controller
     public function actionInfo()
     {
         $pageSize = 10;
-        $page = Yii::$app->request->post('p', 2);
+        $page = Yii::$app->request->post('p', 6);
         $cate = Yii::$app->request->post('cate','news');
         $info=new Info();
-        $data['news'] = $info->Data('新闻资讯',1,$pageSize);
-        $data['report'] = $info->Data('学术报告',1,$pageSize);
-        $data['experience'] = $info->Data('高分经验',1,$pageSize);
-        if($cate!=false) {
+        if($cate==false){
+            $data['news'] = $info->Data('新闻资讯',1,$pageSize);
+            $data['report'] = $info->Data('学术报告',1,$pageSize);
+            $data['experience'] = $info->Data('高分经验',1,$pageSize);
+        } else{
             if($cate=='news'){
                 $c='新闻资讯';
             }elseif($cate=='report'){
@@ -1424,7 +1415,7 @@ class WapApiController extends Controller
             }else{
                 $c='高分经验';
             }
-            $data["$cate"] =  $info->Data($c,$page,$pageSize);
+            $data['data'] =  $info->Data($c,$page,$pageSize);
         }
         die(json_encode(['data' => $data, 'code' => 0]));
     }
