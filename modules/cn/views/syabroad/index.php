@@ -357,9 +357,9 @@
     </ul>
     <div class="group-wrap">
       <div class="group-cnt">
-        <?php $a=($data==false?0:ceil(count($data)/4)); for($i=0;$i<$a;$i++){?>
+        <?php $a=($data==false?0:ceil(count($data)/2)); for($i=0;$i<$a;$i++){?>
         <ul class="group-ul clearfix">
-          <?php foreach($data as $k=>$v){if($k<($i+1)*4&&$k>=$i*4){?>
+          <?php foreach($data as $k=>$v){if($k<($i+1)*2&&$k>=$i*2){?>
           <li>
             <div>
               <div class="group-img clearfix">
