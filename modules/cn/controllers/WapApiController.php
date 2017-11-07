@@ -991,9 +991,9 @@ class WapApiController extends Controller
         $tpId = Yii::$app->request->post('tpId');
         $qid = Yii::$app->request->post('qid');
         $uid = Yii::$app->request->post('uid');
-        $userTime = Yii::$app->request->post('userTime');
         $number = Yii::$app->request->post('number');
         $section = Yii::$app->request->post('section',1);
+        $userTime = Yii::$app->request->post('userTime');
         $time=Yii::$app->request->post('time',0);
         Yii::$app->session->set('time',$time);//测评总时间
         session_start();
@@ -1042,7 +1042,6 @@ class WapApiController extends Controller
                 $re['score'] = $this->actionScore($data) + $number['Math'] * 3 + $number['Reading'] * (30 / ($number['Reading'] + $number['readerror'])) + $number['Writing'] * 2 + $number['Vocabulary'];
                 $re['date'] = time();
                 $re['time'] = Yii::$app->session->get('time');// 做题总时间
-                $re['uid'] = 14329;
                 if ($uid) {
                     // 将答案组合成字符串
                     $format = new Format();
@@ -1180,13 +1179,12 @@ class WapApiController extends Controller
         $uid = Yii::$app->session->get('uid');
         $uid = 14329;
         $major = Yii::$app->request->post('major','');
-        $p = Yii::$app->request->post('p', '1');
+        $p = Yii::$app->request->post('p', 1);
 //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-
         $notes = new Notes();
         $arr = $notes->details($major, $p);
         echo die(json_encode(['data' => $arr, 'code' => 0]));
@@ -1311,7 +1309,7 @@ class WapApiController extends Controller
         $uid = Yii::$app->session->get('uid');
         $uid = 14329;
         $arr['data']['Current'] = $p = Yii::$app->request->post('p', '1');
-        //        if($uid==false){
+//        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
@@ -1337,32 +1335,10 @@ class WapApiController extends Controller
         die(json_encode(['data' => $arr, 'code' => 0]));
     }
 
-    // 个人中心删除测评
-    public function actionDelete()
-    {
-        $uid = Yii::$app->session->get('uid');
-        $uid = 14329;
-//        if($uid==false){
-//            $re['code'] = 5;
-//            $re['msg'] = '用户未登录';
-//            die(json_encode($re));
-//        }
-        $id = Yii::$app->request->post('id');
-        $re = Report::deleteAll("id=:id", array(':id' => $id));
-        if ($re) {
-            $res['code'] = 0;
-            $res['msg'] = '删除成功';
-        } else {
-            $res['code'] = 1;
-            $res['msg'] = '删除失败';
-        }
-        echo die(json_encode($res));
-    }
     //首页
     public function actionSat()
     {
         $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='wapIndex' order by id DESC limit 5")->queryAll();
-//        $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='sat' order by id DESC limit 5")->queryAll();
         $data['publicClass'] = Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 4")->queryAll();
         $data['class'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
         $data['teacher'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 10")->queryAll();
@@ -1494,4 +1470,25 @@ class WapApiController extends Controller
         echo json_encode(['data' => $data, 'code' => 0]);
     }
 
+    // 个人中心删除测评
+    public function actionDelete()
+    {
+        $uid = Yii::$app->session->get('uid');
+        $uid = 14329;
+//        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
+        $id = Yii::$app->request->post('id');
+        $re = Report::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
+            $res['code'] = 0;
+            $res['msg'] = '删除成功';
+        } else {
+            $res['code'] = 1;
+            $res['msg'] = '删除失败';
+        }
+        echo die(json_encode($res));
+    }
 }
