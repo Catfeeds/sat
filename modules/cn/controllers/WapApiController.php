@@ -427,8 +427,8 @@ class WapApiController extends Controller
 //            die(json_encode($re));
 //        }
         $q = new Questions();
-        $data['collection'] = $q->isCollection($uid, $qid);
         if ($qid != false) {
+            $data['collection'] = $q->isCollection($uid, $qid);
             $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where q.id=" . $qid)->queryOne();
             $answerData = isset($_SESSION['answer']) ? (array)$_SESSION['answer'] : '';
             if (isset($answerData['item'][$qid])) {
@@ -446,6 +446,7 @@ class WapApiController extends Controller
             } else {
                 $data['data'] = Yii::$app->db->createCommand("select q.content,q.analysis,q.answer,q.essayId,q.number,q.keyA,q.keyB,q.keyC,q.keyD,q.major,q.section,q.tpId,q.isFilling,qe.*,q.id as qid,t.name,t.time,t.id as tpId from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId  left join {{%testpaper}} t on q.tpId=t.id where qe.num=$num and q.tpId=$tpId and major='" . $major . "' order by q.number asc limit 1 ")->queryOne();
             }
+            $data['collection'] = $q->isCollection($uid, $data['data']['qid']);
         }
         $data['n'] = $q->Progress($data['data']['major'], $data['data']['qid'], $data['data']['section'], $data['data']['tpId'], $data['data']['essayId']);
         if ($data['data']['major'] == 'Reading' || $data['data']['major'] == 'Writing') {
@@ -583,6 +584,7 @@ class WapApiController extends Controller
     {
         $data['qid'] = (string)Yii::$app->request->post('qid', '');
         $data['uid'] = Yii::$app->session->get('uid', '');
+        $data['uid'] = 14329;
         $flag = Yii::$app->request->post('flag');// 是否收藏
         $model = new Collection();
         // 查找 uid 是否存在
@@ -986,9 +988,11 @@ class WapApiController extends Controller
         $tpId = Yii::$app->request->post('tpId');
         $qid = Yii::$app->request->post('qid');
         $uid = Yii::$app->request->post('uid');
-        $userTime = Yii::$app->request->post('userTime');
         $number = Yii::$app->request->post('number');
         $section = Yii::$app->request->post('section',1);
+        $userTime = Yii::$app->request->post('userTime');
+        $time=Yii::$app->request->post('time',0);
+        Yii::$app->session->set('time',$time);//测评总时间
         session_start();
         $a = KeepAnswer::getCat();
         $re = $a->addPro($qid, $answer, $userTime);//保存做题数据
@@ -1035,7 +1039,6 @@ class WapApiController extends Controller
                 $re['score'] = $this->actionScore($data) + $number['Math'] * 3 + $number['Reading'] * (30 / ($number['Reading'] + $number['readerror'])) + $number['Writing'] * 2 + $number['Vocabulary'];
                 $re['date'] = time();
                 $re['time'] = Yii::$app->session->get('time');// 做题总时间
-                $re['uid'] = 14329;
                 if ($uid) {
                     // 将答案组合成字符串
                     $format = new Format();
@@ -1173,13 +1176,12 @@ class WapApiController extends Controller
         $uid = Yii::$app->session->get('uid');
         $uid = 14329;
         $major = Yii::$app->request->post('major','');
-        $p = Yii::$app->request->post('p', '1');
+        $p = Yii::$app->request->post('p', 1);
 //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
 //        }
-
         $notes = new Notes();
         $arr = $notes->details($major, $p);
         echo die(json_encode(['data' => $arr, 'code' => 0]));
@@ -1243,7 +1245,7 @@ class WapApiController extends Controller
     {
         $uid = Yii::$app->session->get('uid');
         $uid=14329;
-        $qid = Yii::$app->request->post('qid');
+        $qid = Yii::$app->request->post('id');
 //        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
@@ -1264,7 +1266,6 @@ class WapApiController extends Controller
         $model = new Format();
         $data['notes'] = $model->arrToStr($crr);
         $notes = new Notes();
-//        var_dump($arr['id']);die;
         $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
         if ($re) {
             $res['code'] = 0;
@@ -1304,7 +1305,7 @@ class WapApiController extends Controller
         $uid = Yii::$app->session->get('uid');
         $uid = 14329;
         $arr['data']['Current'] = $p = Yii::$app->request->post('p', '1');
-        //        if($uid==false){
+//        if($uid==false){
 //            $re['code'] = 5;
 //            $re['msg'] = '用户未登录';
 //            die(json_encode($re));
@@ -1313,7 +1314,7 @@ class WapApiController extends Controller
         $offset = $pagesize * ($p - 1);
         $data = Yii::$app->db->createCommand("select r.id,r.part,r.tpId,r.mathnum,r.readnum,r.writenum,r.date,t.name,t.time,r.time as rtime from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%' limit $offset,$pagesize")->queryAll();
         $arr['data']['allTotal'] = count(Yii::$app->db->createCommand("select r.id from {{%report}} r left join {{%testpaper}} t on r.tpId=t.id  where uid=" . $uid . " and part like '%测评%'")->queryAll());
-        $arr['data']['allPage'] = ceil($arr['total'] / $pagesize);// 总页数
+        $arr['data']['allPage'] = ceil($arr['data']['allTotal'] / $pagesize);// 总页数
         $model = new Format();
         foreach ($data as $k => $v) {
             $arr['data']['data'][] = array(
@@ -1334,7 +1335,6 @@ class WapApiController extends Controller
     public function actionSat()
     {
         $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='wapIndex' order by id DESC limit 5")->queryAll();
-//        $data['banner'] = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='sat' order by id DESC limit 5")->queryAll();
         $data['publicClass'] = Yii::$app->db->createCommand("select id,pic,title,name,hits,activeTime,summary from {{%info}} where cate='公开课' order by id desc limit 4")->queryAll();
         $data['class'] = Yii::$app->db->createCommand("select id,pic,cate,duration,plan,introduction from {{%classes}} limit 4")->queryAll();
         $data['teacher'] = Yii::$app->db->createCommand("select id,name,pic,introduction,subject,honorary from {{%teachers}} where seniority='讲师' ORDER BY flag ASC,id ASC limit 10")->queryAll();
@@ -1467,4 +1467,24 @@ class WapApiController extends Controller
         echo json_encode(['data' => $data, 'code' => 0]);
     }
 
+    // 个人中心删除测评
+    public function actionDelete()
+    {
+        $uid = Yii::$app->session->get('uid');
+//        if($uid==false){
+//            $re['code'] = 5;
+//            $re['msg'] = '用户未登录';
+//            die(json_encode($re));
+//        }
+        $id = Yii::$app->request->post('id');
+        $re = Report::deleteAll("id=:id", array(':id' => $id));
+        if ($re) {
+            $res['code'] = 0;
+            $res['msg'] = '删除成功';
+        } else {
+            $res['code'] = 1;
+            $res['msg'] = '删除失败';
+        }
+        echo die(json_encode($res));
+    }
 }

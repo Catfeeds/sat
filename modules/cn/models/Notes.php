@@ -155,17 +155,22 @@ class Notes extends ActiveRecord
             }
         }
         $pagesize=10;
+        $offset = $pagesize * ($p - 1);
         if($major==false){
             $data['data']['Math'] =$this->Data('Math',$pagesize,1,$s);
             $data['data']['Reading'] = $this->Data('Reading',$pagesize,1,$s);
             $data['data']['Writing'] =$this->Data('Writing',$pagesize,1,$s);
         }else{
-            $data['data']['data'] = $this->Data('data',$pagesize,$p,$s);
+            $s[$major]=rtrim($s[$major],',');
+            $data['data'] = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in (".$s[$major].")  limit $offset,$pagesize")->queryAll();
+            $data["dataTotal"] =count(Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in (".$s[$major].")  ")->queryAll());
+            $data["dataCurrent"] = $p;
+            $data["dataPage"] =ceil($data["dataTotal"]/$pagesize);
         }
         return $data;
     }
 
-    private function Data($major,$pagesize,$p,$s){
+    public function Data($major,$pagesize,$p,$s){
         $offset = $pagesize * ($p - 1);
         if($s[$major]!=false){
             $s[$major]=rtrim($s[$major],',');
