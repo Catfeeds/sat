@@ -1,9 +1,7 @@
 /**
  * Created by Administrator on 2017/9/14.
  */
-$(function () {
-  subject.init();
-});
+
 var subject = {
   init: function () {
     this.onLoad();
@@ -83,7 +81,7 @@ var subject = {
         $.each(res.data, function (i,data) {
           li+="<h3>"+data['name']+"-"+data['time']+"-"+data['major']+"-"+data['number']+"</h3>";
           if (data['content']) {
-            li+="<div>"+data['content']+"</div>";
+              li+="<div>"+data['content']+"</div>";
           }else {
             li+="<div>Title hidden, click to view</div>";
           }
@@ -106,4 +104,8 @@ var subject = {
       }
     })
   }
-}
+};
+
+$(function () {
+    subject.init();
+});

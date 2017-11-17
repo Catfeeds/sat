@@ -7,6 +7,7 @@
  */
 namespace app\modules\cn\models;
 use yii\db\ActiveRecord;
+use app\modules\cn\models\Notes;
 use yii;
 class Collection extends ActiveRecord{
     public static function tableName()
@@ -42,5 +43,49 @@ class Collection extends ActiveRecord{
         $brr['totalPage'] = ceil($brr['total']/$pagesize);// 总页数
 
         return $brr;
+    }
+
+// wap个人中心
+    public function CateData($uid, $major, $offset, $pagesize,$p)
+    {
+        $arr= Yii::$app->db->createCommand("select id,qid,uid from {{%collection}} where uid=".$uid)->queryOne();
+        $qid=explode(',',ltrim($arr['qid'],','));
+        static $crr = array();
+        static $s =array();
+        foreach ($qid as $k => $v) {
+            if ($v !='') {
+                $key=explode(',', $v)[0];
+                $crr[$key]=explode(',', $v);
+                $part= Yii::$app->db->createCommand("select major,id from {{%questions}} where id=".$key)->queryOne()['major'];
+                if($part=='Math1' || $part=='Math2'){
+                    $s["Math"].=$key.',';
+                }else{
+                    $s["$part"].=$key.',';
+                }
+            }
+        }
+        $notes=new Notes();
+        if($major==false){
+            $data['data']['Math'] =$notes->Data('Math',$pagesize,1,$s);
+            $data['data']['Reading'] = $notes->Data('Reading',$pagesize,1,$s);
+            $data['data']['Writing'] =$notes->Data('Writing',$pagesize,1,$s);
+        }else{
+            $s[$major]=rtrim($s[$major],',');
+            $data['data'] = Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in (".$s[$major].")  limit $offset,$pagesize")->queryAll();
+            $data["dataTotal"] =count(Yii::$app->db->createCommand("select q.id as qid,q.answer,q.number,q.content,q.major,t.name,t.time from {{%questions}} q left join {{%testpaper}} t on q.tpId=t.id where q.id in (".$s[$major].")  ")->queryAll());
+            $data["dataCurrent"] = $p;
+            $data["dataPage"] =ceil($data["dataTotal"]/$pagesize);
+        }
+        return $data;
+
+    }
+
+    public function Data($major,$pagesize,$offset,$data,$p)
+    {
+        $arr["$major".'Total']=count( $data['data']["$major"]);
+        $arr["$major".'Page']=ceil($arr["$major".'Total']/$pagesize);
+        $arr["$major".'Current']=$p;
+        $arr['data']=array_slice ($data['data']["$major"],$offset ,$pagesize);
+        return $arr;
     }
 }

@@ -7,6 +7,7 @@
  */
 namespace app\modules\cn\controllers;
 
+use app\modules\cn\models\UserAnswer;
 use yii;
 use yii\web\Controller;
 use app\modules\cn\models\Questions;
@@ -37,8 +38,6 @@ class ExerciseController extends Controller
         $arr = Yii::$app->db->createCommand("select q.content,q.number,q.major,q.section,q.tpId,q.isFilling,q.id as qid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 18")->queryAll();
         $paper = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} where name!='测评'")->queryAll();
         $rank = Yii::$app->db->createCommand("select count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  order by count desc,correctRate DESC limit 10")->queryAll();
-//        var_dump($this->actionTopic());die;
-//        var_dump($arr);
         return $this->render('index', ['data' => $data,'paper' => $paper, 'rank' => $rank, 'page' => $str, 'arr' => $arr]);
     }
 
@@ -61,7 +60,6 @@ class ExerciseController extends Controller
         $data['uid'] = Yii::$app->session->get('uid');
         // 关于题目的讨论信息
         $dis = $q->getReplyData($id);
-//        var_dump($data);die;
         return $this->render('exercise', ['data' => $data, 'dis' => $dis, 'nextid' => $nextid['id'], 'upid' => $upid['id'], 'knowledge' => $knowledge, 'question' => $question, 'mock' => $mock, 'n' => $n]);
 
     }
@@ -75,8 +73,6 @@ class ExerciseController extends Controller
         $up = Yii::$app->request->post('up');
         $date = time();
         $data['uid'] = Yii::$app->session->get('uid');
-
-//        $data['uid'] = 333;
         // 计算平均时间等
         $que = Yii::$app->db->createCommand("select content,answer,number,keyA,keyB,keyC,keyD,major,section,tpId,isFilling from {{%questions}} where id=" . $qid)->queryOne();
         $model = new Questions();
@@ -100,11 +96,11 @@ class ExerciseController extends Controller
                 } else {
                     $data['correctRate'] = $correct / $data['count'] * 100;
                 }
-
                 $data['notes'] = $arr['notes'] . $qid . ',' . $answer . ',' . $time . ',' . $date . ';';
                 $re = $model->updateAll($data, 'id=:id', array(':id' => $arr['id']));
             }
-
+            $ua=new UserAnswer();
+            $re=$ua->AnswerKeep($time,$qid,$que['tpId'],$answer,$que['answer'],'exercise');
         }
         if ($up == 'next') {
             $res = Yii::$app->db->createCommand("select id from {{%questions}} where id>" . $qid . " and major='" . $que['major'] . "' and section=" . $que['section'] . " and tpId=" . $que['tpId'] . " order by id asc limit 1")->queryOne();

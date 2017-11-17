@@ -81,13 +81,13 @@ class Report extends ActiveRecord{
         return $que;
     }
 
-    // 用户的最新一套试题数据
+    // 用户报告的数据
     function Show($uid,$id)
     {
         if($id==false){
             $data = Yii::$app->db->createCommand("select * from {{%report}} where uid=" . $uid. " and (part='Reading' or part='Writing' or part='all' or part='Math') order by id desc limit 1")->queryOne();
         }else{
-            $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id)->queryOne();
+            $data = Yii::$app->db->createCommand("select * from {{%report}} where id=" . $id. " order by id desc")->queryOne();
         }
         if($data){
             $getscore   = new GetScore();
