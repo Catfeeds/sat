@@ -8,21 +8,21 @@ require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 $config = require(__DIR__ . '/../config/web.php');
 
 //增加移动端访问代码
-//require(__DIR__ . '/../libs/Mobile_Detect.php');
-//$detect = new Mobile_Detect;
-//$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-//switch ($deviceType){
-//    case 'tablet':
-//        header('Location: http://www.baidu.com/');die;
-//        break;
-//
-//    case 'phone':
-//        header('Location: http://www.baidu.com/');die;
-//        break;
-//
-//    default:
-//        break;
-//}
+require(__DIR__ . '/../libs/Mobile_Detect.php');
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+switch ($deviceType){
+    case 'tablet':
+        header('Location:http://m.thinkusat.com/');die;
+        break;
+
+    case 'phone':
+        header('Location:http://m.thinkusat.com/');die;
+        break;
+
+    default:
+        break;
+}
 
 error_reporting(E_ALL);
 (new yii\web\Application($config))->run();

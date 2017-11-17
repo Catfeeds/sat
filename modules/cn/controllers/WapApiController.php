@@ -24,7 +24,8 @@ use app\modules\cn\models\Collection;
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 $allow_origin = array(
     'http://www.yii.com',
-    'http://localhost:8080'
+    'http://localhost:8080',
+    'http://m.thinkusat.com/'
 );
 if (in_array($origin, $allow_origin)) {
     header("Access-Control-Allow-Origin:$origin");
