@@ -18,6 +18,7 @@ use app\modules\cn\models\Login;
 use app\modules\cn\models\Notes;
 use app\modules\cn\models\Report;
 use app\modules\cn\models\Questions;
+use app\modules\cn\models\UserAnswer;
 use app\modules\cn\models\Collection;
 
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
@@ -416,7 +417,7 @@ class WapApiController extends Controller
         die(json_encode(['data' => $data, 'code' => $code]));
     }
 
-    //做题详情,有待商榷
+    //做题详情
     public function actionExerDetails()
     {
         $qid = Yii::$app->request->post('qid');
@@ -507,6 +508,8 @@ class WapApiController extends Controller
                 $data['notes'] = $arr['notes'] . $qid . ',' . $answer . ',' . $uesrTime . ',' . $date . ';';
                 $re = $notes->updateAll($data, 'id=:id', array(':id' => $arr['id']));
             }
+            $ua=new UserAnswer();
+            $re=$ua->AnswerKeep($uesrTime,$qid,$que['tpId'],$answer,$que['answer'],'exercise');
         }
         if ($pos == 'next') {
             if ($que['major'] != 'Reading' && $que['major'] != 'Writing') {
@@ -582,10 +585,15 @@ class WapApiController extends Controller
     // 收藏题目与取消收藏
     public function actionCollection()
     {
-        $data['qid'] = (string)Yii::$app->request->post('qid', '');
+        $data['qid'] = (string)Yii::$app->request->post('qid');
         $data['uid'] = Yii::$app->session->get('uid', '');
         $flag = Yii::$app->request->post('flag');// 是否收藏
         $model = new Collection();
+        if($data['uid']==false){
+            $re['code'] = 5;
+            $re['msg'] = '用户未登录';
+            die(json_encode($re));
+        }
         // 查找 uid 是否存在
         $arr = Yii::$app->db->createCommand("select qid,id from {{%collection}} where uid=" . $data['uid'])->queryOne();
         if ($flag == 0) {
@@ -806,10 +814,11 @@ class WapApiController extends Controller
     // 模考报告页面
     public function actionMockReport()
     {
-        // 生成报告页面
-        //个人中心页面
-        //登录状态直接点击‘报告’
-        // 将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
+        /* 生成报告页面
+        *个人中心页面
+        *登录状态直接点击‘报告’
+        *将session 的数据存到数据库有uid的情况下，无uid的情况下只生成报告页面
+        */
         $uid = Yii::$app->session->get('uid', '');
         $data['user'] = Yii::$app->session->get('userData', '');
         $major = Yii::$app->session->get('part', '');
@@ -988,7 +997,6 @@ class WapApiController extends Controller
         $tpId = Yii::$app->request->post('tpId');
         $qid = Yii::$app->request->post('qid');
         $uid = Yii::$app->session->get('uid');
-//        var_dump($uid);die;
         $number = Yii::$app->request->post('number');
         $section = Yii::$app->request->post('section',1);
         $userTime = Yii::$app->request->post('userTime');
@@ -1019,7 +1027,6 @@ class WapApiController extends Controller
     {
         $id = Yii::$app->request->post('id', '');// 报告的id
         $uid = Yii::$app->session->get('uid', '');
-//        var_dump($uid);die;
         if ($id == false) {
             if (isset($_SESSION['answer']) && isset($_SESSION['tpId'])) {
                 $data = ((array)$_SESSION['answer']);
@@ -1159,7 +1166,6 @@ class WapApiController extends Controller
         if($uid==false){
             $re['code'] = 5;
             $re['msg'] = '用户未登录';
-            var_dump(111);die;
             die(json_encode($re));
         }
         $model = new collection();
@@ -1482,5 +1488,12 @@ class WapApiController extends Controller
             $res['msg'] = '删除失败';
         }
         echo die(json_encode($res));
+    }
+
+    // seo
+    public function actionSeo()
+    {
+        $data = Yii::$app->db->createCommand("select title,keywords,description from {{%seo}} where url='index'")->queryOne();
+        die(json_encode(['data' => $data, 'code' => 0]));
     }
 }
