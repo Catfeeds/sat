@@ -21,19 +21,18 @@ use app\modules\cn\models\Questions;
 use app\modules\cn\models\UserAnswer;
 use app\modules\cn\models\Collection;
 
-//$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
-//$allow_origin = array(
-//    'http://www.yii.com',
-//    'http://localhost:8080',
-//    'http://m.thinkusat.com'
-//);
-//if (in_array($origin, $allow_origin)) {
-//    header("Access-Control-Allow-Origin:$origin");
-//}
-header('Access-Control-Allow-Origin: *');
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+$allow_origin = array(
+    'http://www.yii.com',
+    'http://localhost:8080',
+    'http://m.thinkusat.com'
+);
+if (in_array($origin, $allow_origin)) {
+    header("Access-Control-Allow-Origin:$origin");
+}
 header('Access-Control-Allow-Headers: X-Requested-With, accept, content-type, xxxx');
 header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
-//Header("Access-Control-Allow-Credentials: true");
+Header("Access-Control-Allow-Credentials: true");
 
 class WapApiController extends Controller
 {
