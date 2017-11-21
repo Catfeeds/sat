@@ -17,6 +17,21 @@ class SatController extends Controller
     public $layout='cn.php';
     public function actionIndex()
     {
+        require($_SERVER['DOCUMENT_ROOT'] . '/../libs/Mobile_Detect.php');
+        $detect = new \Mobile_Detect;
+        $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+        switch ($deviceType){
+            case 'tablet':
+                header('Location: http://m.thinkusat.com/');die;
+                break;
+
+            case 'phone':
+                header('Location: http://m.thinkusat.com/');die;
+                break;
+
+            default:
+                break;
+        }
         $classes = Yii::$app->db->createCommand("select id,cate,smallIntro,cate from {{%classes}} ")->queryAll();
         $banner = Yii::$app->db->createCommand("select pic,url,alt from {{%banner}}  where module='classes'")->queryAll();
         $teachers = Yii::$app->db->createCommand("select pic,name,subject,introduction from {{%teachers}} ")->queryAll();
