@@ -655,6 +655,7 @@ class WapApiController extends Controller
     {
         $tpId = Yii::$app->request->post('tpId');
         $major = Yii::$app->request->post('major', '');
+        Yii::$app->session->set('part',$major);
         $uid = Yii::$app->session->get('uid', '');
         if($uid==false){
             $re['code'] = 5;
@@ -836,7 +837,7 @@ class WapApiController extends Controller
                 // 需要存到数据库里的数据
                 $re['tpId'] = $_SESSION['tpId'];
                 $re['readnum'] = $number['Reading'];
-                $re['part'] = ($major == false) ? 'all' : "$major";
+                $re['part'] = ($major == false ? 'all' : "$major");
                 $re['uid'] = $uid;
                 $re['mathnum'] = $number['Math'];
                 $re['writenum'] = $number['Writing'];
