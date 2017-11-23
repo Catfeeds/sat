@@ -129,7 +129,7 @@ class uc_note {
 		}
 		$sql = "set names utf8";
 		$this->dbLink->query($sql);
-		$sql = "select * from sat_user WHERE  uid=$uid";
+		$sql = "select * from sat_user WHERE uid=".$uid;
 		$u = $this->dbLink->fetch_first($sql);
 		if(!$u){
 			$where = '';

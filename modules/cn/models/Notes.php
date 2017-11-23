@@ -135,7 +135,6 @@ class Notes extends ActiveRecord
     public function Details($major,$p)
     {
         $uid = Yii::$app->session->get('uid');
-        $uid=14329;
         $arr= Yii::$app->db->createCommand("select uid,notes,count,correctRate from {{%notes}} where uid=".$uid)->queryOne();
         if ($arr['notes'] != false) {
             $brr = explode(';', $arr['notes']);
