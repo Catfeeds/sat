@@ -1498,4 +1498,5 @@ class WapApiController extends Controller
         $data = Yii::$app->db->createCommand("select title,keywords,description from {{%seo}} where url='index'")->queryOne();
         die(json_encode(['data' => $data, 'code' => 0]));
     }
+
 }

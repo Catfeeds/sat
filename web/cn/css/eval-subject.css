@@ -44,6 +44,17 @@ body,html {
 .work-question-part .work-que-list {
   padding-left: 20px;
 }
+.work-wrap-right .words-ul>li {
+  margin-bottom: 20px;
+}
+.words-ul .work-question-input {
+  width: 100px;
+  outline: none;
+  border: 0;
+  padding: 0 10px;
+  border-bottom: 1px solid #666;
+  background-color: #ccc;
+}
 /*
   语法
 */

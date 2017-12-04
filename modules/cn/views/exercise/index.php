@@ -78,7 +78,7 @@
 <!--底部-->
 <script>
   $(function () {
-    jQuery(".s-right").slide({mainCell: ".s-right1 ul", autoPlay: true, effect: "topMarquee", vis: 4, interTime: 100});
+//    jQuery(".s-right").slide({mainCell: ".s-right1 ul", autoPlay: true, effect: "topMarquee", vis: 4, interTime: 100});
     jQuery(".s-right").slide({mainCell: ".s-right2 ul", autoPlay: true, effect: "topMarquee", vis: 4, interTime: 100});
   })
 </script>

@@ -32,7 +32,6 @@ $(function () {
           success  : function (res) {
             if (res.code) {
               _this.wordTemplate(res);
-              console.log(res);
             }else {
               window.location.href = '/evaulation_report.html';
             }
@@ -51,16 +50,16 @@ $(function () {
       //退出测评
       $('.quit-wrap .exit-out').click(function(){
         window.location.href = '/evaulation.html';
-      })
+      });
     },
     //获取答案
     answer : function (sec,name) {
       var ans = [];
-      //第二小节文法答案
-      if ((sec == 2) && (name == '测评初级卷')) {
-        var artInputL   = $('.article-input').length,
-          artSelectL  = $('.work-mk-cnt .work-question-part').length,
-          artSelectS  = $('.work-select.active').length;
+      // 第一小节词汇答案
+      if (sec == 1){
+        var artInputL  = $('.article-input').length,
+            artSelectL = $('.work-mk-cnt .work-question-part').length,
+            artSelectS = $('.work-select.active').length;
         for (var i=0; i<artInputL; i++) {
           if ($('.article-input').eq(i).val()) {
             $('.article-input').eq(i).addClass('hva');
@@ -72,19 +71,51 @@ $(function () {
           var artNum = Number(artInputL) + Number(artSelectL);
           for (var i=0; i<artNum; i++) {
             ans[i] = new Array();
-            if (i < artInputL) {
+            if (i < artSelectS) {
               for (var j=0; j<1; j++) {
-                ans[i].push($('.article-input').eq(i).parent().attr('data-pid'));
-                ans[i].push($('.article-input').eq(i).val());
+                ans[i].push($('.work-select.active').eq(i).parent().parent().attr('data-pid'));
+                ans[i].push($('.work-select.active').eq(i).attr('data-id'));
               }
             }
-            if (i >= artInputL){
+            if (i >= artSelectS){
               for (var j=0; j<1; j++) {
-                ans[i].push($('.work-select.active').eq(i-artInputL).parent().parent().attr('data-pid'));
-                ans[i].push($('.work-select.active').eq(i-artInputL).attr('data-id'));
+                ans[i].push($('.article-input').eq(i-artSelectS).parent().attr('data-pid'));
+                ans[i].push($('.article-input').eq(i-artSelectS).val());
               }
             }
           }
+          return ans;
+        }
+      }
+      //第二小节文法答案
+      else if ((sec == 2) && (name == '测评初级卷')) {
+        var artInputL   = $('.article-input').length,
+            artSelectL  = $('.work-mk-cnt .work-question-part').length,
+            artSelectS  = $('.work-select.active').length;
+        for (var i=0; i<artInputL; i++) {
+          if ($('.article-input').eq(i).val()) {
+            $('.article-input').eq(i).addClass('hva');
+          }
+        }
+        if (($('.article-input.hva').length < artInputL) || (Number(artSelectS) < 5)) {
+          alert('还有题目没做哦！');
+        } else {
+          var artNum = Number(artInputL) + Number(artSelectL);
+            for (var i=0; i<artNum; i++) {
+              ans[i] = new Array();
+              if (i < artInputL) {
+                for (var j=0; j<1; j++) {
+                  ans[i].push($('.article-input').eq(i).parent().attr('data-pid'));
+                  ans[i].push($('.article-input').eq(i).val());
+                }
+              }
+              if (i >= artInputL){
+                for (var j=0; j<1; j++) {
+                  ans[i].push($('.work-select.active').eq(i-artInputL).parent().parent().attr('data-pid'));
+                  ans[i].push($('.work-select.active').eq(i-artInputL).attr('data-id'));
+                }
+              }
+            }
           return ans;
         }
       }
@@ -231,15 +262,15 @@ $(function () {
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='B'>B</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyB'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='C'>C</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyC'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='D'>D</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyD'] +"</div>"+
               "</li>"+
               "</ul>"+
               "</li>";
@@ -263,15 +294,15 @@ $(function () {
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='B'>B</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyB'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='C'>C</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyC'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='D'>D</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyD'] +"</div>"+
               "</li>"+
               "</ul>"+
               "</li>";
@@ -345,15 +376,15 @@ $(function () {
                 "</li>"+
                 "<li class='work-que-wrap clearfix'>"+
                 "<div class='work-select' data-id='B'>B</div>"+
-                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "<div class='work-que'>"+ data['keyB'] +"</div>"+
                 "</li>"+
                 "<li class='work-que-wrap clearfix'>"+
                 "<div class='work-select' data-id='C'>C</div>"+
-                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "<div class='work-que'>"+ data['keyC'] +"</div>"+
                 "</li>"+
                 "<li class='work-que-wrap clearfix'>"+
                 "<div class='work-select' data-id='D'>D</div>"+
-                "<div class='work-que'>"+ data['keyA'] +"</div>"+
+                "<div class='work-que'>"+ data['keyD'] +"</div>"+
                 "</li>"+
                 "</ul>"+
                 "</li>";
@@ -386,15 +417,15 @@ $(function () {
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='B'>B</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyB'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='C'>C</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyC'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='D'>D</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyD'] +"</div>"+
               "</li>"+
               "</ul>"+
               "</li>";
@@ -418,15 +449,15 @@ $(function () {
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='B'>B</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyB'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='C'>C</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyC'] +"</div>"+
               "</li>"+
               "<li class='work-que-wrap clearfix'>"+
               "<div class='work-select' data-id='D'>D</div>"+
-              "<div class='work-que'>"+ data['keyA'] +"</div>"+
+              "<div class='work-que'>"+ data['keyD'] +"</div>"+
               "</li>"+
               "</ul>"+
               "</li>";
