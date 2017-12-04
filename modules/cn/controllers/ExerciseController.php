@@ -36,7 +36,7 @@ class ExerciseController extends Controller
         unset($data['str']);
         $arr = Yii::$app->db->createCommand("select q.content,q.number,q.major,q.section,q.tpId,q.isFilling,q.id as qid  from {{%questions}} q left join {{%questions_extend}} qe on  qe.id=q.essayId order by q.id desc limit 18")->queryAll();
         $paper = Yii::$app->db->createCommand("select id,name,time  from {{%testpaper}} where name!='测评'")->queryAll();
-        $rank = Yii::$app->db->createCommand("select count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  order by count desc,correctRate DESC limit 10")->queryAll();
+        $rank = Yii::$app->db->createCommand("select DISTINCT count,correctRate,nickname,username from {{%notes}} n  left join {{%user}} u on u.uid=n.uid  order by count desc,correctRate DESC limit 10")->queryAll();
 //        var_dump($this->actionTopic());die;
 //        var_dump($arr);
         return $this->render('index', ['data' => $data,'paper' => $paper, 'rank' => $rank, 'page' => $str, 'arr' => $arr]);
