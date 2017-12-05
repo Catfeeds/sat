@@ -56,7 +56,7 @@
         <ul>
             <i class="fa fa-times"></i>
             <li class="side-service">
-                <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">
+                <a href="http://p.qiao.baidu.com/im/index?siteid=2812884738&ucid=18329536&cp=&cr=&cw=" target="_blank">
                     <p></p>
                     <div><i class="fa fa-user-circle"></i></div>
                 </a>
@@ -69,7 +69,7 @@
                 </div>
             </li>
             <li class="side-qq">
-                <a href="tencent://message/?uin=2992826058&Site=www.cnclcy&Menu=yes">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=2992826058&site=qq&menu=yes" target="_blank">
                     <p></p>
                     <div><i class="fa fa-qq"></i></div>
                 </a>
