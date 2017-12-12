@@ -69,7 +69,7 @@
                 </div>
             </li>
             <li class="side-qq">
-                <a href="tencent://message/?uin=2992826058&Site=www.cnclcy&Menu=yes">
+                <a href="tencent://message/?uin=2992826058&Site=www.cnclcy&Menu=yes" target="_blank">
                     <p></p>
                     <div><i class="fa fa-qq"></i></div>
                 </a>
