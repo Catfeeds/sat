@@ -16,7 +16,7 @@
                 <li><a href="http://class.viplgw.cn/" target="_blank">网校</a></li>
                 <li><a href="http://class.viplgw.cn/studyGroup.html" target="_blank">小组</a></li>
                 <li><a href="http://class.viplgw.cn/vip.html" target="_blank">会员</a></li>
-                <li class="phone"><span>400-1816-180</span></li>
+                <li class="phone"><span>400-6021-727</span></li>
                 <li><a href="http://wpa.qq.com/msgrd?v=3&uin=1746295647&site=qq&menu=yes" target="_blank">在线咨询</a></li>
             </ul>
         </div>

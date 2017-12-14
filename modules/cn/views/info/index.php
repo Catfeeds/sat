@@ -83,7 +83,8 @@
           </div>
         </div>
       </div>
-      <div class="s-right pull-right">
+      <!--  侧边栏-->
+      <aside class="s-right pull-right">
         <div class="s-read">
           <h2>阅读排行</h2>
           <ul>
@@ -125,7 +126,7 @@
 <!--            --><?php //}?>
 <!--          </ul>-->
 <!--        </div>-->
-      </div>
+      </aside>
     </div>
   </section>
 <script>

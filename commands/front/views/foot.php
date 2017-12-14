@@ -27,7 +27,7 @@
             </div>
             <div class="s-tel">
                 <img src="/cn/images/tel_icon.png" alt="">
-                <p>400-1816-180</p>
+                <p>400-6021-727</p>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
             </li>
             <li class="side-tel">
                 <p></p>
-                <div><i class="fa fa-phone"></i>电话：400-1816-180</div>
+                <div><i class="fa fa-phone"></i>电话：400-6021-727</div>
             </li>
             <li class="side-arrow">
                 <p></p>
