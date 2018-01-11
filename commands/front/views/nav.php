@@ -76,6 +76,12 @@
                             <img src="/cn/images/toefl-android.png" alt="app二维码">
                         </div>
                     </li>
+                    <li>
+                      <a href="http://www.smartapply.cn/app.html" target="_blank">雷哥选校苹果版</a>
+                      <div class="app-box">
+                        <img src="http://www.smartapply.cn/cn/images/smart-erweima.png" alt="app二维码">
+                      </div>
+                    </li>
                 </ul>
             </div>
         </div>
