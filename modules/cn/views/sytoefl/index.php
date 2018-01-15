@@ -226,38 +226,38 @@
   </div>
 </div>
 <!--中外托福名师团队-->
-<!--<div class="toefl-teacher">-->
-<!--  <div class="inTeacher">-->
-<!--    <h2><a href="/teachers.html" target="_blank">中外托福名师团队</a></h2>-->
-<!--    <span>全程助你托福高分训练</span>-->
-<!--    <div class="toggleSummer">-->
-<!--      <div class="summerHd hd">-->
-<!--        <a href="javascript:void(0);" class="prev">&lt;</a>-->
-<!--        <a href="javascript:void(0);" class="next">&gt;</a>-->
-<!--      </div>-->
-<!--      <div class="summerBd">-->
-<!--        <ul>-->
-<!--          --><?php //foreach($teacher as $k=>$v){?>
-<!--            <li>-->
-<!--              <img src="--><?php //echo $v['image']?><!--" alt="老师照片"/>-->
-<!--              <div class="summer-title">-->
-<!--                <p>--><?php //echo $v['name']?><!--</p>-->
-<!--                <p>主讲：--><?php //echo $v['speaker']?><!--</p>-->
-<!--              </div>-->
-<!--              <p class="summer-cent">--><?php //echo strip_tags($v['description'])?>
-<!--              </p>-->
-<!--              <a class="btn-2" target="_blank"-->
-<!--                 href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>-->
-<!--            </li>-->
-<!--          --><?php //}?>
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <script type="text/javascript">-->
-<!--      jQuery(".toggleSummer").slide({ mainCell:".summerBd ul", effect:"leftLoop",vis:3, autoPlay:false});-->
-<!--    </script>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="toefl-teacher">
+  <div class="inTeacher">
+    <h2><a href="/teachers.html" target="_blank">中外托福名师团队</a></h2>
+    <span>全程助你托福高分训练</span>
+    <div class="toggleSummer">
+      <div class="summerHd hd">
+        <a href="javascript:void(0);" class="prev">&lt;</a>
+        <a href="javascript:void(0);" class="next">&gt;</a>
+      </div>
+      <div class="summerBd">
+        <ul>
+          <?php foreach($teacher as $k=>$v){?>
+            <li>
+              <img src="http://www.toeflonline.cn/<?php echo $v['image']?>" alt="老师照片"/>
+              <div class="summer-title">
+                <p><?php echo $v['name']?></p>
+                <p>主讲：<?php echo $v['performance']?></p>
+              </div>
+              <p class="summer-cent"><?php echo strip_tags($v['description'])?>
+              </p>
+              <a class="btn-2" target="_blank"
+                 href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>
+            </li>
+          <?php }?>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+      jQuery(".toggleSummer").slide({ mainCell:".summerBd ul", effect:"leftLoop",vis:3, autoPlay:false});
+    </script>
+  </div>
+</div>
 <script type="text/javascript">
   jQuery(".connection").slide({mainCell:".connectBd",trigger:"mouseover"});
 </script>

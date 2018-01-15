@@ -12,10 +12,11 @@ use yii;
 use yii\web\Controller;
 class SygmatController extends Controller
 {
-  public $layout='';
+  public $layout='cn.php';
   public function actionIndex()
   {
-    $this->layout="cn1.php";
-    return $this->render('index');
+    $data=file_get_contents('http://www.thinkwithu.com/cn/api/start-class?source="sat"');
+    $data=json_decode($data,true);
+    return $this->render('index',['data'=>$data]);
   }
 }

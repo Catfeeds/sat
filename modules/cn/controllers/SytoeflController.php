@@ -12,11 +12,13 @@ use yii;
 use yii\web\Controller;
 class SytoeflController extends Controller
 {
-  public $layout='';
+  public $layout='cn.php';
   public function actionIndex()
   {
-    $this->layout="cn1.php";
-    return $this->render('index');
+    $data=file_get_contents('http://www.toeflonline.cn/cn/teacher/index?data-type=json');
+    $data=json_decode($data,true);
+    $teacher=$data['data'];
+    return $this->render('index',['teacher'=>$teacher]);
   }
 
 }

@@ -103,21 +103,20 @@
         <th></th>
       </tr>
 <!--      --><?php
-//      $data = \app\modules\cn\models\Content::getContent(['fields' => 'hot,time,job,place,url','category' => "248",'pageSize'=>6,'order'=>'sort']);
-//      foreach($data as $k=>$v) {
-//        ?>
-<!--        <tr>-->
-<!--          <td><a href="--><?php //echo $v['url']?><!--">--><?php //echo $v['hot']?><!--</a><i class="fa fa-fire" style="color: red;"></i></td>-->
-<!--          <td>--><?php //echo $v['time']?><!--</td>-->
-<!--          <td>--><?php //echo $v['job']?><!--</td>-->
-<!--          <td>--><?php //echo $v['place']?><!--</td>-->
-<!--          <td class="open-apply">-->
-<!--            <a href="--><?php
-//            if($k=='2'){echo 'http://www.gmatonline.cn/gmatcourses/index.html' ;}else {echo 'http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw='; } ?><!--"  target="_blank">在线报名 </a></td>-->
-<!--        </tr>-->
-<!--        --><?php
-//      }
-//      ?>
+      foreach($data as $k=>$v) {
+        ?>
+        <tr>
+          <td><a href="<?php echo $v['url']?>"><?php echo $v['hot']?></a><i class="fa fa-fire" style="color: red;"></i></td>
+          <td><?php echo $v['time']?></td>
+          <td><?php echo $v['job']?></td>
+          <td><?php echo $v['place']?></td>
+          <td class="open-apply">
+            <a href="<?php
+            if($k=='2'){echo 'http://www.gmatonline.cn/gmatcourses/index.html' ;}else {echo 'http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw='; } ?>"  target="_blank">在线报名 </a></td>
+        </tr>
+        <?php
+      }
+      ?>
     </table>
     <div class="pub-more">
       <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">
