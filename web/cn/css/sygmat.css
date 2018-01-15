@@ -1,0 +1,485 @@
+/*
+	公共样式
+*/
+body{
+  font-size: 14px;
+}
+/*头部*/
+.pub-title {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  padding-bottom: 10px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 24px;
+  border-bottom: 1px solid #681d72;
+  color: #681d72;
+}
+.pub-title:before,
+.pub-title:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 5px;
+  height: 5px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #681d72;
+  bottom: -2.5px;
+}
+.pub-title:before {
+  left: 0;
+}
+.pub-title:after {
+  right: 0;
+}
+/*公共更多课程样式*/
+.pub-more {
+  width: 264px;
+  height: 45px;
+  line-height: 45px;
+  margin: 20px auto 0;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #681d72;
+}
+.pub-more:hover{
+  background-color: #681d72;
+  color: #fff;
+}
+.pub-more:hover a {
+  color: #fff;
+}
+
+
+.gmat-topImg{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.gmat-topImg a{
+  position: absolute;
+  width: 420px;
+  height: 46px;
+  line-height: 46px;
+  bottom: 95px;
+  left: 50%;
+  margin-left: -210px;
+  text-align: center;
+  display: block;
+  font-size: 28px;
+  border: 2px solid #681d72;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #681d72;
+}
+.gmat-topImg a:hover {
+  background-color: #681d72;
+  color: #fff;
+}
+/*
+*	申友Gmat精品课程
+*/
+.gmat-class{
+  width: 1000px;
+  padding: 40px 0 40px 0;
+  margin: 0 auto;
+}
+.gmat-class .gmat-box {
+  display: table;
+  margin-bottom: 15px;
+}
+.gmat-class .gmat-box>div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gmat-class .img-box {
+  width: 270px;
+  overflow: hidden;
+}
+.gmat-class .img-box img {
+  width: 100%;
+}
+.gmat-class .gmat-box .cnt-box {
+  width: 900px;
+  position: relative;
+}
+.gmat-class .gmat-box .cnt-box>a {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  top: 50%;
+  line-height: 88px;
+  margin-top: -44px;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #fb9c36;
+  background-color: #fff;
+  color: #fb9c36;
+  font-size: 18px;
+}
+.gmat-class .left .cnt-box>a {
+  left: 0;
+  margin-left: -44px;
+}
+.gmat-class .right .cnt-box>a {
+  right: 0;
+  margin-right: -44px;
+}
+.gmat-class .gmat-box:nth-child(1) .cnt-box:hover>a{
+  color: #fff;
+  background-color: #fb9c36;
+}
+.gmat-class .gmat-box:nth-child(2) .cnt-box>a {
+  color: #f6db24;
+  border-color: #f6db24;
+}
+.gmat-class .gmat-box:nth-child(2) .cnt-box:hover>a {
+  background-color: #f6db24;
+  color: #fff;
+}
+.gmat-class .gmat-box:nth-child(3) .cnt-box>a {
+  color: #2bf6f5;
+  border-color: #2bf6f5;
+}
+.gmat-class .gmat-box:nth-child(3) .cnt-box:hover>a {
+  color: #fff;
+  background-color: #2bf6f5;
+}
+.gmat-class .gmat-box:nth-child(4) .cnt-box>a {
+  color: #f348d9;
+  border-color: #f348d9;
+}
+.gmat-class .gmat-box:nth-child(4) .cnt-box:hover>a {
+  color: #fff;
+  background-color: #f348d9;
+}
+.gmat-class .gmat-box .cnt-text {
+  padding: 20px 65px 20px 70px;
+  -webkit-box-shadow: 0 0 5px #999;
+  -moz-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;
+  font-size: 16px;
+}
+.gmat-class .gmat-box .cnt-box h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.gmat-class .gmat-box .cnt-text>div {
+  line-height: 24px;
+}
+.gmat-class .gmat-box .cnt-text div span {
+  float: left;
+}
+.gmat-class .gmat-box .cnt-text div p  {
+  overflow: hidden;
+}
+/*
+*	近期开班
+*/
+.gmat-open>h2 {
+  margin-top: 20px;
+}
+.openClass{
+  width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0 53px 0;
+}
+.topTitle{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.openClass table{
+  width: 100%;
+  border: 1px #E9F1FF solid;
+  background-color: #f5f0f6;
+}
+.openClass table tr:first-child{
+  background-color: #681d72;
+  height: 53px;
+  line-height: 53px;
+  font-size: 20px;
+}
+.openClass table tr:first-child th{
+  color: #fff;
+}
+.openClass table tr i {
+  display: none;
+}
+.openClass table tr:nth-child(2) i{
+  display: inline;
+}
+.openClass table tr th{
+  text-align: left;
+}
+.openClass table tr td,.openClass table tr th{
+  padding: 15px 0;
+}
+.openClass table tr td:first-child,.openClass table tr th:first-child{
+  padding-left: 40px;
+}
+.openClass table tr td{
+  color: #696766;
+}
+.openClass table tr td a{
+  color: #696766;
+  font-weight: bold;
+}
+.openClass table tr td a:hover{
+  color: #9a4fd7;
+}
+.openClass table tr td:nth-child(3),.openClass table tr td:nth-child(4){
+  width: 100px;
+}
+.openClass table tr td:nth-child(5){
+  width: 169px;
+}
+.openClass table tr td:nth-child(5) a{
+  display: block;
+  width: 129px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #681d72;
+  font-size: 14px;
+  color: #681d72;
+  border-radius: 30px;
+}
+.openClass table tr:hover .open-apply a{
+  background-color: #681d72;
+  color: #fff;
+}
+/*
+*	申友GMAT课程特色服务
+*/
+.gmat-special{
+  width: 100%;
+  height: 780px;
+  background: url("../images/sy/gmat_specialBG.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 55px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.gmat-special h2{
+  color: white;
+  border-bottom-color: #fff;
+}
+.gmat-special h2:after,
+.gmat-special h2:before {
+  background-color: #fff;
+}
+.gmat-special .in-special {
+  width: 1000px;
+  margin: 0 auto;
+}
+.gmat-special .in-special:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.gmat-special .in-special .list {
+  position: relative;
+  float: left;
+  background-color: #fff;
+  width: 300px;
+  height: 80px;
+  margin: 40px 16px 0 16px;
+  padding-top: 20px;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.gmat-special .in-special .list p{
+  line-height: 24px;
+}
+.gmat-special .in-special .list:nth-child(4) p {
+  line-height: 20px;
+}
+.gmat-special .in-special .list div {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -125px;
+  margin-bottom: -20px;
+  background-color: #2686be;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+.gmat-special .in-special .list:nth-child(2) div {
+  background-color: #dba030;
+}
+.gmat-special .in-special .list:nth-child(3) div {
+  background-color: #2b4b73;
+}
+.gmat-special .in-special .list:nth-child(4) div {
+  background-color: #cf687b;
+}
+.gmat-special .in-special .list:nth-child(5) div {
+  background-color: #90933c;
+}
+.gmat-special .in-special .list:nth-child(6) div {
+  background-color: #9b54b9;
+}
+.gmat-special .in-special .list:nth-child(7) div {
+  background-color: #64a4a3;
+}
+.gmat-special .in-special .list:nth-child(8) div {
+  background-color: #2686be;
+}
+.gmat-special .in-special .list:nth-child(9) div {
+  background-color: #dba030;
+}
+.gmat-special .in-special .list:nth-child(10) div {
+  background-color: #9b54b9;
+}
+.gmat-special .in-special .list:nth-child(11) div {
+  background-color: #2b4b73;
+}
+.gmat-special .in-special .list:nth-child(12) div {
+  background-color: #cf687b;
+}
+.gmat-special .pub-more {
+  margin-top: 40px;
+}
+/*
+*	国际范名师团队
+*/
+.toefl-teacher{
+  width: 100%;
+  height:710px;
+}
+.toefl-teacher>h2 {
+  margin-top: 40px;
+}
+.inTeacher{
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.inTeacher h2{
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.inTeacher h2 a{
+  color: #000;
+}
+.inTeacher>span{
+  color: #494544;
+  font-size: 18px;
+}
+.toggleSummer{
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+/*箭头*/
+.summerHd{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -35px;
+}
+.summerHd a{
+  position: absolute;
+  width: 34px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  font: 400 50px/70px simsun;
+  background-color: #fff;
+}
+.summerHd a.prev{
+  left: 0;
+}
+.summerHd a.next{
+  right: 0;
+}
+.summerHd a:hover{
+  background-color: #dfdfdf;
+}
+/*老师介绍*/
+.summerBd{
+  width: 90%;
+  margin: 0 auto;
+  height: 492px;
+  overflow: hidden;
+}
+.summerBd ul li{
+  width: 30%;
+  text-align: center;
+  float: left;
+  margin: 0 15px;
+  background-color: #F2F5FA;
+  padding-bottom:20px ;
+}
+.summerBd ul li:hover a{
+  background-color: #681d72;
+  color: #E9F1FF;
+}
+.summerBd .summer-title{
+  border-bottom: 1px solid #ccc;
+  padding: 14px 0 5px 0;
+  margin: 0 auto;
+}
+.summerBd .summer-title p{
+  font-size: 13px;
+  color: #681d72;
+  text-align: center;
+}
+.summerBd .summer-title p:first-child{
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 7px;
+}
+.summerBd li .summer-cent{
+  height: 120px;
+  overflow: hidden;
+  padding: 0 13px;
+  line-height: 23px;
+  margin: 10px 0 20px 0;
+  text-align: left;
+}
+.summerBd li .summer-cent:hover{
+  overflow-y: scroll;
+}
+.summerBd li .summer-cent:after{
+  content: "...";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.summerBd li a{
+  display: block;
+  border: 1px solid #681d72;
+  font-size: 16px;
+  margin:0 auto;
+  width: 105px;
+  border-radius: 10px;
+}
+.summerBd ul li img{
+  width: 100%;
+  height: 222px;
+  overflow: hidden;
+}
+.summerBd:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}

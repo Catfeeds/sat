@@ -1,0 +1,1195 @@
+
+.toefl-banner{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.toefl-banner a{
+  position: absolute;
+  left: 50%;
+  margin-left: -170px;
+  bottom: 10.09%;
+  padding: 10px 79px;
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(51,51,47,.6);
+  box-shadow:0 0 7px rgb(150,115,78) inset;
+  border: 3px solid rgb(150,115,78);
+  border-radius: 10px;
+}
+.toefl-banner a:hover{
+  background-color: rgba(51,51,47,.9)
+}
+@media screen and (max-width: 1600px) {
+  .toefl-banner a{
+    padding: 7px 59px;
+    margin-left: -134px;
+  }
+}
+/*申友托福精品课程*/
+.excellent{
+  width: 1000px;
+  padding: 46px 0 43px 0;
+  margin: 0 auto;
+}
+.excellent h4{
+  color: #000;
+  font-size: 35px;
+  text-align: center;
+}
+.excellent p{
+  text-align: center;
+  font-size: 24px;
+  margin-top: 19px;
+  color: #5b5b5b;
+}
+.excel-in{
+  width: 100%;
+  margin-top: 60px;
+}
+.excel-in ul li{
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+  border: 1px solid rgb(224,224,224);
+}
+.excel-in ul li:last-child{
+  margin-right: 0;
+}
+.excel-in ul .excel-top1 .eT-circle{
+  background-color: #F5C815;
+}
+.excel-in ul .excel-top2 .eT-circle{
+  background-color: #99CC67;
+}
+.excel-in ul .excel-top3 .eT-circle{
+  background-color: #FF6666;
+}
+.excel-in ul .excel-top4 .eT-circle{
+  background-color: #66CDCC;
+}
+.excel-in ul .excel-top5 .eT-circle{
+  background-color: #54BCF1;
+}
+.excel-in ul li.on .excel-top1{
+  background-color: #F5C815;
+}
+.excel-in ul li.on .excel-top2{
+  background-color: #99CC67;
+}
+.excel-in ul li.on .excel-top3{
+  background-color: #FF6666;
+}
+.excel-in ul li.on .excel-top4{
+  background-color: #66CDCC;
+}
+.excel-in ul li.on .excel-top5{
+  background-color: #54BCF1;
+}
+.excel-in ul li.on .eT-circle{
+  background-color: #fff;
+}
+.excel-in ul li.on .excel-top h5{
+  color: white;
+}
+.excel-in ul li.on .excel-top .inFonts p{
+  color: white;
+}
+.excel-in ul .excel-top .excel-det{
+  font-size: 12px;
+  border: 1px solid #fff;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: #fff;
+}
+.excel-in ul .excel-top1 .excel-det{
+  background-color: #F5C815;
+}
+.excel-in ul .excel-top2 .excel-det{
+  background-color: #99CC67;
+}
+.excel-in ul .excel-top3 .excel-det{
+  background-color: #FF6666;
+}
+.excel-in ul .excel-top4 .excel-det{
+  background-color: #66CDCC;
+}
+.excel-in ul .excel-top5 .excel-det{
+  background-color: #54BCF1;
+}
+.excel-in ul li.on .excel-top .excel-det{
+  background-color: #fff;
+  color: #000;
+}
+.excel-top{
+  width: 100%;
+  height: 330px;
+  background-color: #fff;
+  padding-top: 25px;
+  text-align: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.eT-circle{
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 84px;
+}
+.eT-circle a{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.eT-circle span{
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.eT-circle img{
+  vertical-align: middle;
+}
+.excel-top h5{
+  font-size: 20px;
+  color: #000;
+  margin-top: 40px;
+}
+.excel-in ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.inFonts{
+  width: 100%;
+  height: 65px;
+  display: table;
+  margin: 21px 0 8px 0;
+}
+.inFonts p{
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 12px;
+}
+.moreUpload{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.moreUpload i{
+  font-size: 45px;
+  color: #818181;
+}
+.moreUpload a{
+  display: block;
+  font-size: 25px;
+  color: #000;
+}
+.moreUpload a:hover{
+  color: #663399;
+}
+/*超值服务系统*/
+.serviceSystem{
+  width: 100%;
+  padding: 62px 0 44px 0;
+  background-color: #FF8259;
+  height: 622px;
+}
+.serviceSystem h2{
+  font-size: 35px;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+}
+.serviceUl{
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 82px;
+}
+.serviceUl>ul>li{
+  width: 186px;
+  height: 289px;
+  position: relative;
+  float: left;
+  margin-right: 16px;
+}
+.serviceUl>ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.serviceUl>ul>li:last-child{
+  margin-right: 0;
+}
+.serviceTop{
+  width: 100%;
+  text-align: center;
+}
+.serviceTop img{
+  position: relative;
+  top: 3px;
+}
+.serviceSort{
+  width: 100%;
+  text-align: center;
+  margin-top: 14px;
+  font-size: 12px;
+  background-color: rgba(255,255,255,.3);
+  height: 297px;
+}
+.serviceSort:hover{
+  background-color: rgba(255,255,255,.5)
+}
+.serviceSort ul li{
+  margin-bottom: 15px;
+  color: #fff;
+}
+.oneSort ul li{
+  margin-bottom: 20px;
+}
+.threeSort ul li{
+  margin-bottom: 8px;
+}
+.serviceSort .serviceTitle{
+  font-size: 22px;
+  width: 95px;
+  padding: 26px 0 17px 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.serviceSort .serviceTitle p{
+  color: #fff;
+}
+.serviceSort .serviceTitle i{
+  display:block;
+  border-bottom: 2px solid #fff;
+  margin-top: 8px;
+}
+.fourSort>a{
+  width: 137px;
+  height: 32px;
+  line-height: 32px;
+  display: block;
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+  color: #ff6666;
+  font-size: 14px;
+}
+.fourSort ul li{
+  margin-bottom: 12px;
+}
+.fourSort ul li:last-child{
+  margin-bottom: 27px;
+}
+/*中外托福名师团队*/
+.toefl-teacher{
+  width: 100%;
+  height:710px;
+  background-color:#E9F1FF;
+}
+.inTeacher{
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 45px;
+  text-align: center;
+}
+.inTeacher h2{
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.inTeacher h2 a{
+  color: #000;
+}
+.inTeacher>span{
+  color: #494544;
+  font-size: 18px;
+}
+.toggleSummer{
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+/*箭头*/
+.summerHd{
+  width: 90px;
+  position: absolute;
+  bottom: -30px;
+  right: 28px;
+}
+.summerHd a{
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #FFA234;
+  line-height: 34px;
+  text-align: center;
+  font: 400 30px/34px simsun;
+  background-color: #E9F1FF;
+}
+.summerHd a.prev{
+  left: 0;
+}
+.summerHd a.next{
+  right: 0;
+}
+.summerHd a:hover{
+  background-color: #dfdfdf;
+}
+/*老师介绍*/
+.summerBd{
+  width: 100%;
+  height: 492px;
+  overflow: hidden;
+}
+.summerBd ul li{
+  width: 290px;
+  text-align: center;
+  float: left;
+  margin: 0 21px;
+  background-color: #F2F5FA;
+  padding-bottom:20px ;
+}
+.summerBd ul li:hover a{
+  background-color: #FFA234;
+  color: #E9F1FF;
+}
+.summerBd .summer-title{
+  width: 200px;
+  border-bottom: 1px solid #ccc;
+  padding: 14px 0 5px 0;
+  margin: 0 auto;
+}
+.summerBd .summer-title p{
+  font-size: 14px;
+  color: #E6953E;
+  text-align: center;
+}
+.summerBd .summer-title p:first-child{
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 7px;
+}
+.summerBd li .summer-cent{
+  height: 120px;
+  overflow: hidden;
+  padding: 0 13px;
+  line-height: 23px;
+  margin: 10px 0 20px 0;
+  text-align: left;
+}
+.summerBd li .summer-cent:hover{
+  overflow-y: scroll;
+}
+.summerBd li .summer-cent:after{
+  content: "...";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.summerBd li a{
+  display: block;
+  border: 1px solid #FFA234;
+  font-size: 16px;
+  margin:0 auto;
+  width: 105px;
+  border-radius: 10px;
+}
+.summerBd ul li img{
+  width: 100%;
+  height: 222px;
+  overflow: hidden;
+}
+.summerBd:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+/*关于申友托福，他们有话说*/
+.aboutToefl{
+  width: 983px;
+  padding: 49px 0 33px 0;
+  margin: 0 auto;
+}
+.aboutToefl h2{
+  font-size: 35px;
+  font-weight: normal;
+  text-align: center;
+}
+/*改版后css*/
+.aboutTSlide{
+  width: 986px;
+  height: 326px;
+  margin: 0 auto;
+  margin-top: 24px;
+  position: relative;
+}
+.aboutTHd{
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.aboutTHd a{
+  width: 27px;
+  height: 24px;
+  line-height: 24px;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  background: #7440a2;
+  float: right;
+}
+.aboutTHd a.prevStop{
+  background: #b6b6b7;
+}
+.aboutTHd a.nextStop{
+  background: #b6b6b7;
+}
+
+.aboutTBd{
+  width: 100%;
+}
+.aboutTBd ul li{
+  width: 484px;
+  height: 132px;
+  float: left;
+  margin-right: 18px;
+  margin-bottom: 17px;
+}
+.aboutTBd ul li:nth-child(2n){
+  margin-right: 0;
+}
+.aboutTBd-left{
+  width: 145px;
+  height: 135px;
+  float: left;
+}
+.aboutTBd-left img{
+  width: 100%;
+  height: 100%;
+}
+.aboutTBd-right{
+  width: 338px;
+  height: 100%;
+  background: #fffced;
+  float: left;
+  padding: 15px 0 0 14px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.aboutTBd-right h4{
+  font-weight: normal;
+  font-size: 20px;
+  display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.aboutTBd-right h5{
+  color: #7440a2;
+  font-size: 20px;
+  font-weight: normal;
+  display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.aboutTBd-right p{
+  line-height: 15px;
+}
+.aboutTBd-right>a{
+  width: 95px;
+  height: 29px;
+  line-height: 29px;
+  display: block;
+  text-align: center;
+  background: #ffffff;
+  color: #7440a2;
+  float: right;
+  margin-top: 5px;
+}
+.aboutTBd-right>a:hover{
+  background: #7440a2;
+  color: white;
+}
+/*改版后css end*/
+.about-center{
+  width: 100%;
+  margin-top: 29px;
+}
+.about-center>ul>li{
+  float: left;
+  margin-right: 13px;
+}
+.about-center>ul>li:last-child{
+  margin-right: 0;
+}
+.about-center>ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.about-bottom{
+  width: 100%;
+  border: 1px #e5e5e5 solid;
+  background: #f3f3f3;
+  padding: 15px 16px 20px 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-top: 26px;
+}
+.abttomBd ul li{
+  width: 112px;
+  float: left;
+  margin-right: 26px;
+}
+.abttomBd ul li a{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.abttomBd ul li img{
+  width: 100%;
+  height: 75px;
+  vertical-align: middle;
+}
+.abttomBd ul li:last-child{
+  margin-right: 0;
+}
+.abttomBd ul li p{
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  color: white;
+  text-align: center;
+  background: #000000;
+  font-size: 12px;
+}
+.abttomBd ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.aboutC-left{
+  width: 125px;
+  height: 125px;
+  float: left;
+  border-radius: 50%;
+  /*overflow: hidden;*/
+  border: 2px #cccccc solid;
+  position: relative;
+}
+.aboutC-left img.leftDefault{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.aboutC-left img.rightSJ{
+  position: absolute;
+  right: -11px;
+  bottom: 16px;
+}
+.aboutC-right{
+  width: 165px;
+  float: left;
+  margin-left: 17px;
+}
+.aboutC-right ul li{
+  font-size: 18px;
+}
+.aboutC-right ul li:nth-child(3){
+  color: #7440a2;
+}
+.aboutC-right ul li:last-child a{
+  width: 95px;
+  height: 26px;
+  line-height: 26px;
+  display: block;
+  font-size: 14px;
+  text-align:center;
+  color: #7440a2;
+  border: 1px #7440a2 solid;
+  margin-top: 23px;
+}
+.aboutC-right ul li:last-child a:hover{
+
+  background: #7440a2;
+  color: white;
+}
+.shenYou-class{
+  width: 100%;
+  padding: 27px 0 46px 0;
+  background: #e6e6e6;
+}
+.shenYou-class h2{
+  font-weight: normal;
+  font-size: 35px;
+  text-align: center;
+}
+.shenYou-class>ul{
+  width: 984px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+.shenYou-class ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.shenYou-class>ul>li{
+  width: 237px;
+  margin-right: 12px;
+  float: left;
+}
+.shenYou-class>ul>li:last-child{
+  margin-right: 0;
+}
+.open-commonStyle{
+  width: 1001px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+.open-commonStyle:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.open-commonStyle ul li{
+  width: 236px;
+  height: 260px;
+  float: left;
+  margin-right: 19px;
+  margin-bottom: 11px;
+}
+.open-commonStyle ul li:not(.noBorderLi){
+  background: #fefefe;
+  border: 1px #dcdedb solid;
+  padding: 10px 10px 0 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.open-commonStyle ul li:nth-child(4n){
+  margin-right: 0;
+}
+.open-commonStyle ul li img{
+  width: 100%;
+}
+.open-commonStyle ul li p{
+  margin-top: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.open-commonStyle ul li span{
+  color: #969696;
+  font-size: 12px;
+}
+.open-commonStyle ul li b{
+  color: #969696;
+  font-size: 12px;
+  font-weight: normal;
+  float: right;
+  background: url("../images/open_love.png") no-repeat left center;
+  padding-left: 13px;
+}
+.classBtn{
+  width: 71px;
+  height: 32px;
+  display: inline-block;
+  line-height: 32px;
+  background: #c3a3e9;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+.diffColor01{
+  color: #7e4596;
+  margin-left: 18px;
+}
+.diffColor02{
+  color: white;
+  margin-left: 30px;
+}
+.topPurple{
+  width: 100%;
+  padding: 14px 0;
+  background: #f2e7fd;
+  color: #7440a2;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.botWhite{
+  width: 100%;
+  background: white;
+  padding: 22px 0 17px 0;
+}
+.botWhite ul{
+  margin-left: 39px;
+  font-size: 12px;
+}
+.botWhite ul li:last-child a{
+  width: 138px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 20px;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  margin-top: 20px;
+  border: 1px #aaaaaa solid;
+}
+.botWhite ul li:last-child a:hover{
+  background: #7440a2;
+  color: white;
+}
+.researchCenter{
+  width: 100%;
+  height: 467px;
+  margin: 0 auto;
+  background: url("../images/toeflresearchBG_.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+.inResearch{
+  width: 989px;
+  margin: 0 auto;
+  padding-top: 19px;
+}
+.inResearch h2{
+  color: white;
+  font-weight: normal;
+  font-size: 35px;
+  text-align: center;
+}
+.research-top{
+  width: 100%;
+  margin-top: 40px;
+}
+.research-top ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.research-top ul li{
+  margin-right: 33px;
+  float: left;
+}
+.research-top ul li:last-child{
+  margin-right: 0;
+}
+.research-bottom{
+  width: 895px;
+  margin: 0 auto;
+  margin-top: 38px;
+}
+.research-bottom ul li{
+  width: 114px;
+  float: left;
+  margin-right: 38px;
+  text-align: center;
+}
+.research-bottom ul li:last-child{
+  margin-right: 0;
+}
+.research-bottom ul li a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: white;
+}
+.reseT-img{
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  border: 2px white solid;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.reseT-img img{
+  width: 100%;
+}
+.researchT-left{
+  width: 123px;
+  height: 141px;
+  float: left;
+  border: 1px white solid;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.researchT-left img{
+  width: 100%;
+}
+.researchT-right{
+  width: 340px;
+  float: left;
+  margin-left: 7px;
+}
+.researchT-right h5{
+  color: white;
+  font-size: 16px;
+}
+.researchT-right h5 a{
+  color: white;
+}
+.whiteRes{
+  width: 100%;
+  height: 111px;
+  background: white;
+  padding: 16px 16px 0 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.whiteRes p{
+  display: -webkit-box;
+  display: -moz-box;
+  height: 80px;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -moz-line-clamp: 5;
+  -moz-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.dynamic{
+  width: 990px;
+  padding: 28px 0;
+  margin: 0 auto;
+}
+.dynamic>ul>li{
+  width: 318px;
+  height: 144px;
+  background: #f5f5f5;
+  float: left;
+  margin-right: 14px;
+  padding-top: 13px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.dynamic>ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.dynamic>ul>li:last-child{
+  margin-right: 0;
+}
+.dynamic-left{
+  width: 36px;
+  float: left;
+  margin-left: 24px;
+}
+.dynamic-right{
+  width: 248px;
+  float: left;
+  margin-top: 5px;
+}
+.dynamic-right  ul li{
+  font-size: 12px;
+  margin-bottom: 5px;
+  display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.dynamic-right h4{
+  color: #7440a2;
+  font-weight: normal;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.moreDiv{
+  width: 71px;
+  height: 18px;
+  background: white;
+  text-align: center;
+  font-size: 12px;
+  float: right;
+  padding-left: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.moreDiv:hover  a div{
+  background: #7541a3;
+}
+.moreDiv:hover  a{
+  color: #7541a3;
+}
+.moreDiv a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #878787;
+}
+.moreDiv a span{
+  float: left;
+}
+.moreDiv a div{
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  background: #676767;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  float: right;
+}
+.favorable{
+  width: 992px;
+  height: 261px;
+  margin: 0 auto;
+  padding-top: 45px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: url("../images/toefl_advtange.png") no-repeat;
+}
+.favorable a{
+  width: 144px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: #7440a2;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-left: 400px;
+  margin-top: 30px;
+}
+.favorable h2{
+  font-weight: normal;
+  font-size: 35px;
+  text-align: center;
+}
+.favorable ul{
+  width: 914px;
+  margin: 0 auto;
+  margin-top: 34px;
+}
+.favorable ul li{
+  float: left;
+  margin-right: 15px;
+}
+.favorable ul li:last-child{
+  margin-right: 0;
+}
+.favorable ul li label{
+  line-height: 28px;
+  display: block;
+  float: left;
+}
+.favorable ul li label span{
+  color: red;
+}
+.favorable ul li a{
+  /*float: left;*/
+  /*margin-left: 6px;*/
+}
+.favorable ul li input[type='text']{
+  height: 28px;
+  float: left;
+  border: 1px #a6a6a6 solid;
+}
+.favorable ul li input[type='button']{
+  height: 28px;
+  border: none;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+.favorable ul li input.oneWidth{
+  width: 132px;
+}
+.favorable ul li input.twoWidth{
+  width: 96px;
+}
+.favorable ul:after{
+  display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.contactWay{
+  width: 992px;
+  margin: 0 auto;
+}
+.contactHead{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #7440a2;
+  margin-top: 30px;
+  padding-left: 17px;
+  color: white;
+  font-size: 18px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.contactSlide{
+  width: 100%;
+  height: 122px;
+  margin-top: 27px;
+  margin-bottom: 35px;
+  position: relative;
+}
+.conHd a{
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+}
+.conHd a.prev{
+  left: 0;
+}
+.conHd a.next{
+  right: 0;
+}
+.conBd{
+  width: 885px;
+  /*height: 141px;*/
+  margin: 0 auto;
+  overflow: hidden;
+  /*border: 1px red solid;*/
+  padding-top: 15px;
+}
+.conBd ul{
+  width: 3670px;
+}
+.conBd ul li{
+  float: left;
+  margin-right: 6px;
+}
+.smallStyle{
+  width: 122px;
+  height: 119px;
+  background: #f96c4e;
+  position: relative;
+}
+
+.city{
+  width: 72px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  overflow: hidden;
+}
+.smallStyle img{
+  width: 100%;
+  height: 100%;
+}
+
+.conBd ul li.on  .bigStyle{
+  display: block;
+}
+.conBd ul li.on  .smallStyle{
+  display: none;
+}
+.bigStyle{
+  width: 367px;
+  height: 141px;
+  margin-top: -11px;
+  display: none;
+}
+.big-left{
+  width: 142px;
+  height: 100%;
+  float: left;
+  background: red;
+  position: relative;
+}
+.big-right{
+  width: 223px;
+  height: 139px;
+  float: left;
+  border-top: 1px #c5c5c5 solid;
+  border-right: 1px #c5c5c5 solid;
+  border-bottom: 1px #c5c5c5 solid;
+  padding: 12px 0 0 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.big-right a{
+  width: 122px;
+  height: 25px;
+  display: block;
+  line-height: 25px;
+  color: white;
+  text-align: center;
+  background: #34cc34;
+  margin-bottom: 10px;
+}
+.big-right a img{
+  position: relative;
+  top: 3px;
+}
+.big-right p{
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-line-clamp: 2;
+  -moz-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+}
+.big-right p.purpleColor{
+  color: #84358e;
+  font-size: 18px;
+}
+.big-city{
+  width: 82px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 16px;
+  overflow: hidden;
+}
+.big-left img{
+  width: 100%;
+  height: 100%;
+}
+.addShenYou{
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  background: #1c1c1c;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  text-align: center;
+  color: white;
+}
+.addShenYou i{
+  line-height: 30px;
+  color: white;
+  position: absolute;
+  right: 10px;
+  top:0;
+  font-size: 30px;
+}
+.addShenYou i:hover{
+  cursor: pointer;
+}
+.addShenYou span{
+  font-size: 30px;
+  font-style: italic;
+}
+.addShenYou a{
+  background: #ffff02;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-left: 30px;
+}
+.addShenYou img{
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+}

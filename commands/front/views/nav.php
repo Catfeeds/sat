@@ -142,8 +142,8 @@
       <li><a <?php if ($path == 'act.html') {
           echo 'class="on"';
         } ?> href="/act.html">ACT</a></li>
-      <li><a href="/toefl.com">TOEFL</a></li>
-      <li><a href="/gmat.com">GMAT</a></li>
+      <li><a href="/toefl.html">TOEFL</a></li>
+      <li><a href="/gmat.html">GMAT</a></li>
       <li><a href="/US_abroad.html" <?php if (strpos($path, 'syabroad') !== false) {
           echo 'class="on"';
         } ?> target="_blank">美国留学</a></li>
