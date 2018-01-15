@@ -16,8 +16,8 @@ body{
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
   font-size: 24px;
-  border-bottom: 1px solid #681d72;
-  color: #681d72;
+  border-bottom: 1px solid rgb(54,178,251);
+  color: rgb(54,178,251);
 }
 .pub-title:before,
 .pub-title:after {
@@ -29,7 +29,7 @@ body{
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  background-color: #681d72;
+  background-color: rgb(54,178,251);
   bottom: -2.5px;
 }
 .pub-title:before {
@@ -49,10 +49,10 @@ body{
   border-radius: 20px;
   text-align: center;
   background-color: #fff;
-  border: 2px solid #681d72;
+  border: 2px solid rgb(54,178,251);
 }
 .pub-more:hover{
-  background-color: #681d72;
+  background-color: rgb(54,178,251);
   color: #fff;
 }
 .pub-more:hover a {
@@ -76,13 +76,13 @@ body{
   text-align: center;
   display: block;
   font-size: 28px;
-  border: 2px solid #681d72;
+  border: 2px solid rgb(54,178,251);
   border-radius: 30px;
   background-color: #fff;
-  color: #681d72;
+  color: rgb(54,178,251);
 }
 .gmat-topImg a:hover {
-  background-color: #681d72;
+  background-color: rgb(54,178,251);
   color: #fff;
 }
 /*
@@ -206,7 +206,7 @@ body{
   background-color: #f5f0f6;
 }
 .openClass table tr:first-child{
-  background-color: #681d72;
+  background-color: rgb(54,178,251);
   height: 53px;
   line-height: 53px;
   font-size: 20px;
@@ -251,13 +251,13 @@ body{
   height: 32px;
   line-height: 32px;
   text-align: center;
-  border: 1px solid #681d72;
+  border: 1px solid rgb(54,178,251);
   font-size: 14px;
-  color: #681d72;
+  color: rgb(54,178,251);
   border-radius: 30px;
 }
 .openClass table tr:hover .open-apply a{
-  background-color: #681d72;
+  background-color: rgb(54,178,251);
   color: #fff;
 }
 /*
@@ -295,7 +295,7 @@ body{
   float: left;
   background-color: #fff;
   width: 300px;
-  height: 80px;
+  height: 90px;
   margin: 40px 16px 0 16px;
   padding-top: 20px;
   text-align: center;
@@ -407,6 +407,14 @@ body{
   font: 400 50px/70px simsun;
   background-color: #fff;
 }
+.summerHd a:hover {
+  text-decoration: none;
+  color: rgb(54,178,251);
+}
+.summerHd a:visited,
+.summerHd a:link {
+  text-decoration: none;
+}
 .summerHd a.prev{
   left: 0;
 }
@@ -432,7 +440,7 @@ body{
   padding-bottom:20px ;
 }
 .summerBd ul li:hover a{
-  background-color: #681d72;
+  background-color: rgb(54,178,251);
   color: #E9F1FF;
 }
 .summerBd .summer-title{
@@ -442,7 +450,7 @@ body{
 }
 .summerBd .summer-title p{
   font-size: 13px;
-  color: #681d72;
+  color: rgb(54,178,251);
   text-align: center;
 }
 .summerBd .summer-title p:first-child{
@@ -469,7 +477,7 @@ body{
 }
 .summerBd li a{
   display: block;
-  border: 1px solid #681d72;
+  border: 1px solid rgb(54,178,251);
   font-size: 16px;
   margin:0 auto;
   width: 105px;

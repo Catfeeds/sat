@@ -41,7 +41,7 @@
         <img src="/cn/images/sy/gmat-class01.png" alt="零基础进阶课">
       </div>
       <div class="cnt-box">
-        <a href="/picture-details/160/index,161,115.html">了解详情</a>
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">了解详情</a>
         <div class="cnt-text">
           <h2>GMAT零基础进阶课</h2>
           <div><span>适合人群：</span><p>零基础备考GMAT，初次备考或自觉性不是很高。</p></div>
@@ -51,7 +51,7 @@
     </li>
     <li class="gmat-box right">
       <div class="cnt-box">
-        <a href="/picture-details/161/index,109,162,115.html">了解详情</a>
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">了解详情</a>
         <div class="cnt-text">
           <h2>GMAT经典强化方法课</h2>
           <div><span>适合人群：</span><p>有一定的语言基础；希望系统全面学习GMAT核心方法及运用。</p></div>
@@ -67,7 +67,7 @@
         <img src="/cn/images/sy/gmat-class03.png" alt="GMAT700分冲刺课">
       </div>
       <div class="cnt-box">
-        <a href="/picture-details/2325/index,109,163,115.html">了解详情</a>
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">了解详情</a>
         <div class="cnt-text">
           <h2>GMAT700分冲刺课</h2>
           <div><span>适合人群：</span><p>GMAT目标分700+，希望在申友GMAT名师指点下通过精准、高效复习一次拿下GMAT高分。</p></div>
@@ -77,7 +77,7 @@
     </li>
     <li class="gmat-box right">
       <div class="cnt-box">
-        <a href="/picture-details/2326/index,109,163,115.html">了解详情</a>
+        <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" target="_blank">了解详情</a>
         <div class="cnt-text">
           <h2>GMAT750分冲刺课</h2>
           <div><span>适合人群：</span><p>GMAT目标分750+，希望系统全面学习GMAT核心考点，希望在申友GMAT名师指点下精准、高效复习拿下GMAT750+高分。</p></div>
