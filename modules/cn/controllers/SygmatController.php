@@ -8,8 +8,9 @@
 
 namespace app\modules\cn\controllers;
 
-
-class SygmatController
+use yii;
+use yii\web\Controller;
+class SygmatController extends Controller
 {
   public $layout='';
   public function actionIndex()

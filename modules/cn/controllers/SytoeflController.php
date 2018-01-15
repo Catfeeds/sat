@@ -8,8 +8,9 @@
 
 namespace app\modules\cn\controllers;
 
-
-class SytoeflController
+use yii;
+use yii\web\Controller;
+class SytoeflController extends Controller
 {
   public $layout='';
   public function actionIndex()
