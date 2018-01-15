@@ -228,7 +228,7 @@ body {
   display: inline-block;
 }
 .s-nav-cnt li a {
-  padding: 8px;
+  padding: 8px 7px;
 }
 .s-nav-cnt li a:hover,
 .s-nav-cnt li a:focus {
@@ -606,7 +606,7 @@ body {
 .a-close {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
   color: #fff;
   top: 0;
   -webkit-transition: all 1s;

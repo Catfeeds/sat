@@ -21,9 +21,6 @@ class SyabroadController extends Controller
         foreach($data as $k=>$v){
             $data[$k]['case']= Yii::$app->db->createCommand("select name,direction,matriculate from {{%student_case}} where teacher like '%".$data[$k]['name']."%'")->queryAll();
         }
-//        echo '<pre>';
-//        var_dump($data);
-//        echo '</pre>';die;
         return $this->render('index',['info'=>$info,'data'=>$data]);
     }
 }
