@@ -93,6 +93,9 @@ body{
   padding: 40px 0 40px 0;
   margin: 0 auto;
 }
+.gmat-class .pub-title {
+  margin-bottom: 30px;
+}
 .gmat-class .gmat-box {
   display: table;
   margin-bottom: 15px;
@@ -459,7 +462,7 @@ body{
   margin-bottom: 7px;
 }
 .summerBd li .summer-cent{
-  height: 120px;
+  height: 118px;
   overflow: hidden;
   padding: 0 13px;
   line-height: 23px;

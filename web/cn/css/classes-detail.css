@@ -12,7 +12,9 @@
 }
 .s-course-details img {
   width: 470px;
-  margin-right: 90px;
+}
+.s-course-details>div {
+  margin-left: 560px;
 }
 .s-course-details>div h2 {
   font-size: 16px;

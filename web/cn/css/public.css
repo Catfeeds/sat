@@ -209,13 +209,14 @@ body {
   padding-top: 10px;
   background-color: #fff;
 }
-.s-nav  .container {
+.s-nav  .contain {
   width: 1200px;
+  margin: 0 auto;
 }
-.s-nav .container .s-nav-logo {
-  margin-right: 20px;
+.s-nav .contain .s-nav-logo {
+  margin-right: 15px;
 }
-.s-nav .container .s-nav-logo img {
+.s-nav .contain .s-nav-logo img {
  width: 170px;
  height: 50px;
 }
@@ -228,7 +229,7 @@ body {
   display: inline-block;
 }
 .s-nav-cnt li a {
-  padding: 8px 7px;
+  padding: 8px 6px;
 }
 .s-nav-cnt li a:hover,
 .s-nav-cnt li a:focus {
@@ -570,7 +571,9 @@ body {
   width: 215px;
   height: 26px;
   padding: 0 15px;
-  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 14px;
@@ -579,7 +582,7 @@ body {
 .apply-wrap li i {
   position: absolute;
   top: 30px;
-  right: 20px;
+  right: 10px;
   color: #000;
 }
 /*验证码*/

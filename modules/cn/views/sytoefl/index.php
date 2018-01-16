@@ -228,7 +228,7 @@
 <!--中外托福名师团队-->
 <div class="toefl-teacher">
   <div class="inTeacher">
-    <h2><a href="/teachers.html" target="_blank">中外托福名师团队</a></h2>
+    <h2>中外托福名师团队</h2>
     <span>全程助你托福高分训练</span>
     <div class="toggleSummer">
       <div class="summerHd hd">
@@ -237,7 +237,6 @@
       </div>
       <div class="summerBd">
         <ul>
-<<<<<<< Updated upstream
           <?php foreach($teacher as $k=>$v){?>
             <li>
               <img src="http://www.toeflonline.cn/<?php echo $v['image']?>" alt="老师照片"/>
@@ -251,62 +250,6 @@
                  href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>
             </li>
           <?php }?>
-=======
-            <li>
-              <img src="/cn/images/sy/gmat_kevin.png" alt="老师照片"/>
-              <div class="summer-title">
-                <p>Kevin Ni</p>
-                <p>主讲：托福听力、口语</p>
-              </div>
-              <p class="summer-cent">申友联合创始人，留学规划与英语教育名家，GMAT / TOEFL名师。        申友联合创始人，中国留学咨询行业领军人物。多次走访海外名校，考察美国名企，多年研究英语系国家名校留学，尤其擅长商科申请规划。指导的学生多人获得美英著名商学院录取，如Stanford、MIT、Yale、哥大、JHU、剑桥、LSE、帝国理工等。对文书创作颇有建树，研究名校文书上千篇，洞悉名校录取官喜好和录取倾向。    　　留学考试学术成果：“GMAT逻辑靶向图”、“GMAT逻辑本质论”、“GMAT语法优先原则”、“GMAT必要性阅读法”、“新托福听力阈值训练法”、“新托福万能口语法”、“雅思西方批判式作文法”等，是留学英语考试的集大成者。在国内首创“新托福四化一中心作文法”。研发和出版多本留学英语培训教材，并不断优化教学方法，专著有《Influence--雷哥GMAT逻辑》、 《雅思写作攻略》、《申友GMAT高分讲义》、 《GMAT真题名师精讲》等。</p>
-              <a class="btn-2" target="_blank"
-                 href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=">约课</a>
-            </li>
-          <li>
-            <img src="/cn/images/sy/toefl_amanda.png" alt="老师照片"/>
-            <div class="summer-title">
-              <p>Amanda</p>
-              <p>主讲：托福听力</p>
-            </div>
-            <p class="summer-cent">主讲：托福听力  申友集团语言教学研发总监，兰卡斯特大学硕士，听力满分鬼才，师从世界著名语言学家J.L，上课风格生动幽默，深受学生的喜欢。</p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" class="btn-2" target="_blank">
-              约课
-            </a>
-          </li>
-          <li>
-            <img src="/cn/images/sy/gmat_zora.jpg" alt="老师照片"/>
-            <div class="summer-title">
-              <p>Zora</p>
-              <p>主讲：托福阅读</p>
-            </div>
-            <p class="summer-cent">申友教育/雷哥网托福阅读名师，对托福雅思等国外语言类考试中阅读部分的教学有深刻独到的见解，英语专业八级，语言功底深厚，曾担任第十四届中国澳大利亚研究国际学术研讨会外事接待组组长，并负责东北地区渤海靺鞨秀详细资料、澳大利亚吉拉德政府外交政策以及澳大利亚女作家伊丽莎白•乔利小说《果园窃贼》等多个中澳研讨会的前期翻译项目。普通话水平一级乙等，“东北话水平八级”；教学风格激情幽默，深受学生喜爱。</p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" class="btn-2" target="_blank">
-              约课
-            </a>
-          </li>
-          <li>
-            <img src="/cn/images/sy/gmat_julie.png" alt="老师照片"/>
-            <div class="summer-title">
-              <p>Julie</p>
-              <p>主讲：托福口语</p>
-            </div>
-            <p class="summer-cent">主讲：托福口语  美国加州大学博士，国外生活近十年，多年的托福教学经验，对托福考试认识深刻，自创的学习技巧，为广大考生带来福音。</p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" class="btn-2" target="_blank">
-              约课
-            </a>
-          </li>
-          <li>
-            <img src="/cn/images/sy/toefl-leonard.jpg" alt="老师照片">
-            <div class="summer-title">
-              <p>Leonard</p>
-              <p>主讲：托福口语</p>
-            </div>
-            <p class="summer-cent">美国佐治亚大学英语教育学硕士，美国佐治亚州K-12外语教师资格证持有者。有多年在美国小学，初中，高中，大学教授英语和汉语的经验，上课风格风趣幽默，深受美国学生和家长喜爱。本科英语翻译专业，英语专业八级证书，高级口译证书，BEC剑桥商务英语（高级）证书持有者。培养出大量雅思托福口语写作高分学员。</p>
-            <a href="http://p.qiao.baidu.com/im/index?siteid=6058744&ucid=3827656&cp=&cr=&cw=" class="btn-2" target="_blank">
-              约课
-            </a>
-          </li>
->>>>>>> Stashed changes
         </ul>
       </div>
     </div>
@@ -315,13 +258,5 @@
     </script>
   </div>
 </div>
-<<<<<<< Updated upstream
-<script type="text/javascript">
-  jQuery(".connection").slide({mainCell:".connectBd",trigger:"mouseover"});
-</script>
-
-=======
->>>>>>> Stashed changes
-</body>
 </html>
 

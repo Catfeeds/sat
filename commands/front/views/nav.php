@@ -104,7 +104,7 @@
 <div id="outjs" style="display: none;">
 </div>
 <nav class="s-nav">
-  <div class="container clearfix">
+  <div class="contain clearfix">
     <a class="s-nav-logo pull-left" href="http://www.thinkusat.com">
       <img src="/cn/images/logo.png" alt="企业logo">
     </a>
@@ -145,9 +145,9 @@
       <li><a <?php if ($path == 'toefl.html') {
           echo 'class="on"';
         } ?> href="/toefl.html">TOEFL</a></li>
-      <li><?php if ($path == 'gmat.html') {
+      <li><a <?php if ($path == 'gmat.html') {
           echo 'class="on"';
-        } ?> <a href="/gmat.html">GMAT</a></li>
+        } ?> href="/gmat.html">GMAT</a></li>
       <li><a href="/US_abroad.html" <?php if (strpos($path, 'syabroad') !== false) {
           echo 'class="on"';
         } ?> target="_blank">美国留学</a></li>

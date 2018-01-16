@@ -16,6 +16,7 @@ class SygmatController extends Controller
   public function actionIndex()
   {
     $data=file_get_contents('http://www.thinkwithu.com/cn/api/start-class?source="sat"');
+//    $data=file_get_contents('http://thinku.com/cn/api/start-class?source="sat"');
     $data=json_decode($data,true);
     return $this->render('index',['data'=>$data]);
   }

@@ -287,6 +287,7 @@ body {
 .toefl-teacher{
   width: 100%;
   height:710px;
+  padding: 46px 0;
 }
 .toefl-teacher>h2 {
   margin-top: 40px;
@@ -299,9 +300,8 @@ body {
 .inTeacher h2{
   font-size: 35px;
   margin-bottom: 10px;
-}
-.inTeacher h2 a{
   color: #000;
+  text-align: center;
 }
 .inTeacher>span{
   color: #494544;
@@ -380,11 +380,11 @@ body {
   margin-bottom: 7px;
 }
 .summerBd li .summer-cent{
-  height: 120px;
+  height: 118px;
   overflow: hidden;
   padding: 0 13px;
   line-height: 23px;
-  margin: 10px 0 20px 0;
+  margin: 10px 0;
   text-align: left;
 }
 .summerBd li .summer-cent:hover{
