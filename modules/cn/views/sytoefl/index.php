@@ -242,7 +242,7 @@
               <img src="http://www.toeflonline.cn/<?php echo $v['image']?>" alt="老师照片"/>
               <div class="summer-title">
                 <p><?php echo $v['name']?></p>
-                <p>主讲：<?php echo $v['performance']?></p>
+                <p>主讲：<?php echo $v['speak']?></p>
               </div>
               <p class="summer-cent"><?php echo strip_tags($v['description'])?>
               </p>
