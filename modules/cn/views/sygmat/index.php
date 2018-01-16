@@ -102,7 +102,7 @@
         <th>城市</th>
         <th></th>
       </tr>
-<!--      --><?php
+      <?php
       foreach($data as $k=>$v) {
         ?>
         <tr>
@@ -214,7 +214,7 @@
           <li>
             <img src="/cn/images/sy/gmat_kevin.png" alt="老师照片"/>
             <div class="summer-title">
-              <p>雷哥Kevin</p>
+              <h4>雷哥Kevin</h4>
               <p>主讲：GMAT逻辑、语法、数学、IR</p>
             </div>
             <p class="summer-cent">Kevin，学生赠名“雷哥”。具有多年GMAT教学经验，曾受邀到全国数十所著名高校巡回讲座。资深留学英语名师，国内早批新托福教师长期专注海外留学规划和出国考试研究，培养留学学生过万，遍布世界名校。留学考试学术成果：GMAT逻辑靶向图、GMAT逻辑本质论、GMAT语法优先原则、GMAT必要性阅读法、是留学英语考试的集大成者。研发和出版多本留学英语培训教材，并不断优化教学方法，专著有《Influence--雷哥GMAT逻辑》、《申友GMAT高分讲义》、《GMAT真题名师精讲》等。 </p>
@@ -223,7 +223,7 @@
           <li>
             <img src="/cn/images/sy/toefl_amanda.png" alt="老师照片"/>
             <div class="summer-title">
-              <p>阿曼Amanda</p>
+              <h4>Amanda</h4>
               <p>主讲：GMAT阅读、语法</p>
             </div>
             <p class="summer-cent">申友集团语言教学研发总监，《申友GMAT阅读笔记》主编，《申友GMAT语法笔记》副主编。英国兰卡斯特大学硕士，国内重本英语专业毕业；曾以培训师身份受邀参加GMAC官方举办的亚太峰会。亲历雅思，GMAT考试。国外的几年深造，使她对西方人的思维方式和表达习惯有着深刻的了解;多年教授和研发留学英语课程，尤其是GMAT、TOEFL、SAT阅读和雅思口语，对其有个人的见解;上课风格诙谐活泼，深受学生的喜欢。</p>
@@ -232,7 +232,7 @@
           <li>
             <img src="/cn/images/sy/gmat_zora.jpg" alt="老师照片"/>
             <div class="summer-title">
-              <p>Zora</p>
+              <h4>Zora</h4>
               <p>主讲：GMAT逻辑、数学、SC、IR</p>
             </div>
             <p class="summer-cent">著作：参编《牡丹江主要旅游景点中英文对照翻译》（东北林业大学出版社）
@@ -244,7 +244,7 @@
           <li>
             <img src="/cn/images/sy/gmat-sharron.jpg" alt="老师照片"/>
             <div class="summer-title">
-              <p>Sharron</p>
+              <h4>Sharron</h4>
               <p>主讲：GMAT逻辑、阅读</p>
             </div>
             <p class="summer-cent">英国巴斯大学管理学院硕士，国内重本商务英语专业，持专八证书。对出国留学考试认识深刻，在留学考试中各科均斩获高分。曾数十次参与涉及外籍人员刑事案件的公安提审、律师会见、法院文件传达、该国领事会见等重要口译工作。</p>
@@ -253,7 +253,7 @@
           <li>
             <img src="/cn/images/sy/gmat_portia.jpg" alt="教师照片"/>
             <div class="summer-title">
-              <p>Portia</p>
+              <h4>Portia</h4>
               <p>主讲：GMAT数学、SC、IR</p>
             </div>
             <p class="summer-cent">善于挖掘学生学习的盲点，并能及时满足学生学习所需，对GMAT、SAT数学研究深入，针对基础、中等、高分三段不同程度的学生有独特的教学方案，拥有独特的数学学习构架，难点部分讲解深入易懂；GMAT句子改错讲解细致，对题目分析透彻，善于总结做题技巧，深受学生喜爱。</p>
@@ -262,7 +262,7 @@
           <li>
             <img src="/cn/images/sy/gmat_julie.png" alt="老师照片"/>
             <div class="summer-title">
-              <p>Julie</p>
+              <h4>Julie</h4>
               <p>主讲：GMAT阅读、数学、逻辑</p>
             </div>
             <p class="summer-cent">美国工学硕士、博士。美国化工协会会员，全奖赴美留学，后留美工作。在美期间，多次参加国际会议，亲历美国文化，游遍美国。本科毕业于西安交通大学，取得双学位(工程/英语)，在校期间以作者身份在英国知名环境类杂志发表论文一篇。在所参加过的各类出国考试中均获得高分，并不断尝试刷新。
