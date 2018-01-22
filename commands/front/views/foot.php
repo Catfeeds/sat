@@ -56,7 +56,7 @@
         <ul>
             <i class="fa fa-times"></i>
             <li class="side-service">
-                <a href="http://p.qiao.baidu.com/im/index?siteid=2812884738&ucid=18329536&cp=&cr=&cw=" target="_blank">
+                <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">
                     <p></p>
                     <div><i class="fa fa-user-circle"></i></div>
                 </a>
