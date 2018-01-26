@@ -81,7 +81,7 @@
           <li>
             <a href="http://www.gmatonline.cn/DownloadApp.html" target="_blank">雷哥托福苹果版</a>
             <div class="app-box">
-              <img src="/cn/images/toefl-ios.jpg" alt="app二维码">
+              <img src="/cn/images/toefl-ios.png" alt="app二维码">
             </div>
           </li>
           <li>
