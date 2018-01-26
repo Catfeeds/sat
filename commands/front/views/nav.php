@@ -142,12 +142,6 @@
       <li><a <?php if ($path == 'act.html') {
           echo 'class="on"';
         } ?> href="/act.html">ACT</a></li>
-      <li><a <?php if ($path == 'toefl.html') {
-          echo 'class="on"';
-        } ?> href="/toefl.html">TOEFL</a></li>
-      <li><a <?php if ($path == 'gmat.html') {
-          echo 'class="on"';
-        } ?> href="/gmat.html">GMAT</a></li>
       <li><a href="/US_abroad.html" <?php if (strpos($path, 'syabroad') !== false) {
           echo 'class="on"';
         } ?> target="_blank">美国留学</a></li>
