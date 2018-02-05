@@ -23,7 +23,7 @@
             <div class="s-qr">
                 <img src="/cn/images/qr-code02.png" alt="">
                 <p>雷哥SAT微助手</p>
-                <p>(sat0704)</p>
+                <p>(go-office)</p>
             </div>
             <div class="s-tel">
                 <img src="/cn/images/tel_icon.png" alt="">
@@ -69,7 +69,7 @@
                 </div>
             </li>
             <li class="side-qq">
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=2992826058&site=qq&menu=yes" target="_blank">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=3520185125&site=qq&menu=yes" target="_blank">
                     <p></p>
                     <div><i class="fa fa-qq"></i></div>
                 </a>
